@@ -1,0 +1,228 @@
+#phone {
+    background-color: $gray-300;
+    position: relative;
+    @include flex-box (column, center, center);
+    padding-top: 48px;
+    @include break-point ('500') {
+        padding-top: 80px;
+    }
+    @include break-point('800') {
+        padding-top: 114px;
+    }
+    @include break-point('1100') {
+        padding-top: 60px;
+    }
+    // @include break-point('1400') {
+    //     padding-top: 148px;
+    // }
+    // @include break-point('1700') {
+    //     padding-top: 152px;
+    // }
+    & > #headerPhone {
+        width: 100%;
+        background-color: transparent;           
+        position: sticky;
+        height: 56px;
+        top:0px;
+        @include flex-box (column, flex-start, center);        
+        @include break-point('500') {
+            height: 69px;
+        }
+        @include break-point('800') {
+            height: 78px;
+        }      
+        @include break-point('1100'){
+            height: 80px;
+        }
+        @include break-point('1700') {
+            height: 93px;
+        }
+        & > div {
+            width: 96%;
+            max-width: 1034px;
+            background-color: transparent;
+            @include flex-box (column, center, center);
+            & > img {
+                width: auto;
+                transition: 0.3s;
+                margin-bottom: 16px;
+                height: 24px;
+                @include break-point('500'){
+                    margin-bottom: 28px;
+                    height: 37px;
+                }
+                @include break-point('800'){
+                    height: 44px;
+                }
+                @include break-point('1700') {
+                    margin-bottom: 40px;
+                    height: 48px;
+                }
+            }
+            & > span {
+                width: 90%;
+                max-width: 1034px;
+                background-color: $purple-100;
+                height: 4px;
+                position: relative;
+                transition: 0.3s;
+                @include break-point('500'){
+                    height: 6px;
+                }
+                @include break-point('800'){
+                    height: 4px;
+                }
+                @include break-point('1100'){
+                    max-width: 990px;
+                }
+                @include break-point('1700'){
+                    height: 6px;
+                    max-width: 1312px;
+                }
+            }
+        }   
+    }
+    & > #headerPhone.active {
+        z-index: 10;
+        & > div {
+            max-width: 100%;        
+            width: 100%;            
+            background-color: $gray-1100;
+            padding-top: 18px;
+            @include break-point('500') {
+                padding-top: 23px;
+            }
+            @include break-point('800') {
+                padding-top: 16px;
+            }
+            @include break-point('1700') {
+                padding-top: 17px;
+            }
+            & > img {
+                transition: 0.3s;
+                height: 20px;
+                margin-bottom: 14px;
+                width: auto;
+                @include break-point('500') {
+                    margin-bottom: 19px;
+                    height: 30px;
+                    width: auto;
+                }
+                @include break-point('800') {
+                    margin-bottom: 14px;
+                    width: auto;
+                }
+                @include break-point('1700') {
+                    height: 34px;
+                    width: auto;
+                }
+            }
+            & > span {
+                width: 100%;
+                max-width: 100%;
+                transition: 0.3s;            
+            }
+        } 
+    }
+    & > h1 {
+        @include text-font-light (24px, $gray-400, 28px);
+        max-width: 238px;
+        text-align: center;
+        margin-top: 22px;
+        @include break-point('500') {
+            @include text-font-light (36px, $gray-400, 48px);
+            max-width: 357px;
+            // margin-top: 38px;
+            margin-top: 20px;
+        }
+        @include break-point('800') {
+            @include text-font-light (48px, $gray-400, 58px);
+            max-width: 476px;
+            margin-top: 20px;
+            // margin-top: 58px;
+        }
+        @include break-point('1100') {
+            // margin-top: 48px;
+            margin-top: 16px;
+        }
+        @include break-point('1400') {
+            max-width: 512px;
+            // margin-top: 62px;
+            margin-top: 16px;
+        }
+        @include break-point('1700') {
+            @include text-font-light(52px, $gray-400, 68px);
+            max-width: 564px;
+            margin-top: 68px;
+        }
+        & > span {
+            font-family: 'Montserrat-Medium';
+        }
+    }
+    & > #phones {
+        @include flex-box(row, center, center);
+        flex-wrap: wrap;
+        width: 100%;
+        max-width: 1034px;
+        position: relative;
+        height: 323px;
+        @include break-point('500') {
+            height: 461px;
+        }
+        @include break-point('800') {
+            height: 542px;
+        }
+        @include break-point('1700') {
+            height: 638px;
+        }
+        & > img:nth-child(1) {
+            width: 185px;
+            position: absolute;
+            transition: 0.3s;
+            top: 20px;
+            @include break-point('500'){
+                width: 264px;
+                top: 50px;
+            }
+            @include break-point('800'){
+                width: 311px;
+            }
+            @include break-point('1700') {
+                width: 366px;
+            }
+        }  
+    }
+    & > p {
+        @include text-font-regular (16px, $gray-400, 20px);
+        width: 80%;
+        text-align: center;
+        margin-top: 19px;
+        @include break-point('500') {
+           // @include text-font-regular (28px, $gray-400, 30px);// cambio por datos de invision 2020-02-25
+           @include text-font-regular (24px, $gray-400, 34px);
+            margin-top: 51px;
+        }
+        @include break-point('800') {
+            margin-top: 55px;
+        }
+        @include break-point('1100') {
+            //max-width: 652px;
+            max-width: 800px;// cambio por datos de invision 2020-02-25
+            margin-top: 44px;
+            height: 68px;// cambio por datos de invision 2020-02-25
+        }
+        & > span {
+            font-family: 'Montserrat-Bold';
+        }
+    }
+    & > .btn__blue {        
+        margin-top: 41px;
+        @include break-point('500'){
+            margin-top: 54px;
+            
+        }
+        @include break-point('800') {
+            margin-top: 63px;
+        }
+    }
+}

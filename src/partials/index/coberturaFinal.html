@@ -1,0 +1,31 @@
+<section id="cobertura">
+    <img src="assets/img/cobertura.svg" class="cobertura-image">
+    <div class="text-message">
+        <p class="text-normal">
+            Antes de comenzar tu experiencia,   <br></br>
+            <i class="text-regular" id="txtregular"> 
+                valida tu cobertura.
+            </i> 
+        </p>
+    </div> 
+    <form class="form-cobertura" id="formPersonalData2" autocomplete="off" >
+        <div class="input__float">
+            <input name="cpSection" id="cpSection" type="text" autocomplete="off" minlength="5" maxlength="5" required class="solo-numeros" placeholder=" ">
+            <label for="cpSection">C&oacute;digo postal</label>
+            <p class="text-danger-white" id="errorcp" ></p>
+        </div>
+
+        <div class="input__float">
+            <input id="ciudadSection" name="ciudadSection" type="text" autocomplete="off" required class="mb-0" placeholder=" " style="height: auto;padding-bottom: 5px;" disabled="">
+            <label for="ciudadSection" class="labelBusqueda">Ciudad</label>
+        </div>
+
+        <div class="input__float">
+            <input name="calleSection" id="calleSection" type="text" autocomplete="off" required class="direccion" placeholder=" ">
+            <label for="calleSection">Calle y n&uacute;mero</label>
+            <p class="text-danger-white" id="errorCalle" ></p>
+            <ul id="listDireccionesSeccion" class="pac-container"></ul>
+        </div>
+    </form>
+    <button id="btnCoberturaSeccion" class="btn__outline__white szBtnCob">Validar cobertura</button>
+</section>

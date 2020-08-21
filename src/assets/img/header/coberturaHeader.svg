@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>CD8522FE-C0EC-4531-AA3B-B577D81D827B</title>
+    <defs>
+        <path d="M7,0 C3.13,0 0,3.13 0,7 C0,12.25 7,20 7,20 C7,20 14,12.25 14,7 C14,3.13 10.87,0 7,0 Z M7,9.5 C5.62,9.5 4.5,8.38 4.5,7 C4.5,5.62 5.62,4.5 7,4.5 C8.38,4.5 9.5,5.62 9.5,7 C9.5,8.38 8.38,9.5 7,9.5 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home---1700-x-768-" transform="translate(-1396.000000, -10.000000)">
+            <g id="Header">
+                <g id="miniTab">
+                    <g id="cobertura" transform="translate(1396.000000, 10.000000)">
+                        <g id="Group-7">
+                            <g id="icon/communication/call_24px" transform="translate(5.000000, 2.000000)">
+                                <mask id="mask-2" fill="white">
+                                    <use xlink:href="#path-1"></use>
+                                </mask>
+                                <use id="Shape" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+                                <g id="Icon-Color" mask="url(#mask-2)" fill="#1A76D2">
+                                    <g transform="translate(-5.000000, -2.000000)" id="Color">
+                                        <rect x="0" y="0" width="24" height="24"></rect>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

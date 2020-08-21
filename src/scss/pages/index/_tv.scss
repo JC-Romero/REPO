@@ -1,0 +1,803 @@
+#tv {
+    background-color: $gray-300;
+    position: relative;
+    @include flex-box (column, center, center);
+    padding-top: 48px;
+    @include break-point ('500') {
+        padding-top: 80px;
+    }
+    @include break-point('800') {
+        padding-top: 114px;
+    }
+    @include break-point('1100') {
+        padding-top: 60px;
+    }
+    // @include break-point('1400') {
+    //     padding-top: 148px;
+    // }
+    // @include break-point('1700') {
+    //     padding-top: 152px;
+    // }
+    & > #headerTv {
+        width: 100%;
+        background-color: transparent;
+        position: sticky;
+        height: 56px;
+        top: 0px;
+        @include flex-box (column, flex-start, center);
+        @include break-point('500') {
+            height: 69px;
+        }
+        @include break-point('800') {
+            height: 78px;
+        }      
+        @include break-point('1100'){
+            height: 80px;
+        }
+        @include break-point('1700') {
+            height: 93px;
+        }
+        & > div {
+            width: 96%;
+            max-width: 1034px;
+            background-color: transparent;
+            @include flex-box (column, center, center);
+            & > img {
+                width: auto;
+                transition: 0.3s;
+                margin-bottom: 16px;
+                height: 24px;
+                @include break-point('500') {
+                    margin-bottom: 28px;
+                    height: 37px;
+                }
+                @include break-point('800') {
+                    height: 44px;
+                }
+                @include break-point('1700') {
+                    margin-bottom: 40px;
+                    height: 48px;
+                }
+            }
+            & > span {
+                width: 90%;
+                max-width: 1034px;
+                background-color: $pink-300;
+                height: 4px;
+                position: relative;
+                transition: 0.3s;
+                @include break-point('500') {
+                    height: 6px;
+                }
+                @include break-point('800'){
+                    height: 4px;
+                }
+                @include break-point('1100') {
+                    max-width: 990px;
+                    position: relative;
+                    // top: 150px;
+                }
+                @include break-point('1700') {
+                    height: 6px;
+                    max-width: 1312px;
+                }
+            }
+        }        
+    }
+    & > #headerTv.active {
+        z-index: 11;
+        & > div {
+            max-width: 100%;        
+            width: 100%;            
+            background-color: $gray-1100;
+            padding-top: 18px;
+            @include break-point('500') {
+                padding-top: 23px;
+            }
+            @include break-point('800') {
+                padding-top: 16px;
+            }
+            @include break-point('1700') {
+                padding-top: 17px;
+            }
+            & > img {
+                transition: 0.3s;
+                margin-bottom: 14px;
+                height: 20px;
+                width: auto;            
+                @include break-point('500') {
+                    margin-bottom: 19px;
+                    height: 30px;
+                    width: auto;
+                }
+                @include break-point('800') {
+                    margin-bottom: 14px;
+                    width: auto;
+                }
+                @include break-point('1700') {
+                    height: 34px;
+                    width: auto;
+                }
+            }
+            & > span {
+                width: 100%;
+                max-width: 100%;
+                transition: 0.3s;
+                @include break-point('1100') {
+                    top: 0px;
+                }
+            }
+        }
+        
+    }
+
+    .tv__television {
+        position: relative;
+        margin-top: 0px;
+        display: block;
+        width: 99.4%;
+        height: 16.4%;
+        
+
+        @include break-point('500') {
+            width: 99.2%;
+            height: auto;
+            margin-top: 14px;
+        }
+
+        @include break-point('800') {
+            width: 92.6%;
+        }
+
+        @include break-point('1100') {
+            width: 76.9%;
+        }
+
+        @include break-point('1400') {
+            width: 67.5%;
+            
+        }
+        @include break-point('1700') {
+           width: 62.9%
+        }
+
+        //width: 810px;
+        //height: 508px;
+        //border: solid 2px red;
+        //background-image: url(/img/tv/back-television.png);
+        // padding-left: 33px;
+        // padding-right: 29px;
+        // padding-top: 10px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            //border: dashed 1px red;
+
+            @include break-point('500') {
+                width: 100%;
+            }
+
+            @include break-point('800') {
+                width: 100%;
+            }
+        }
+
+        .content-video {
+            position: absolute;
+            //top: 2%;
+            top: 2%;
+            left: 4%;
+            //width: 91.8%;
+            width: 92%;
+            height: 81.3%;
+            background: black;
+
+            @include break-point('500') {
+                //width: 91.6%;
+                width: 92%;
+                //height: 81.3%;
+                height: 81.5%;
+                //left: 4.1%;
+                left: 4%;
+                top: 1.9%;  
+            }
+
+            @include break-point('800') {
+                // width: 91.6%;
+                // height: 81.3%;
+                // left: 4.1%;
+                // top: 1.9%; 
+            }
+
+            @include break-point ('1100') {
+                // width: 91.6%;
+                height: 82%;
+                // left: 4.1%;
+                // top: 1.9%; 
+            }
+            @include break-point ('1700') {
+                width: 91.9%;
+                // height: 81.3%;
+                // left: 4.1%;
+                // top: 1.9%; 
+                left: 4%;
+                
+            }
+
+            .tv__video {
+                position: relative;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                height: 100%;
+                z-index: 10;
+                @include break-point('1700'){
+                    width: 100%;
+                }
+            }
+        }
+
+        .tv__descriptiom-video {
+            @include flex-box (column, center, center);
+            position: absolute;
+            bottom: 4.5%;
+            width: 100%;
+            @include break-point('1100'){
+                bottom: 6.5%;
+            }
+            @include break-point('1400'){
+                bottom: 7.5%;
+            }
+            p {
+                @include text-font-regular(10px, $gray-600);
+                width: 289px;
+                height: 16px;
+                text-align: center;
+                @include break-point('500'){
+                    @include text-font-regular(12px, $gray-600);
+                }
+                @include break-point('800'){
+                    width: 583px;
+                    height: 36px;
+                    @include text-font-regular(16px, $gray-600);
+                }
+                @include break-point('1100'){
+                    //font-size: 10.5px;
+                    
+                }
+                @include break-point('1400'){
+                    @include text-font-medium (14px, $gray-600,18px);// cambio por datos de invision 2020-02-24
+                    //font-size: 12px;
+                    padding-bottom: 5px;
+                }
+                @include break-point('1700'){
+                    width: 530px;
+                    font-size: 13.2px;
+                }
+            } 
+        }
+    }
+
+
+
+    .tv__main-text{
+            text-align: center;
+            width: 80.9%; //max-width: 265px;
+            position: absolute;
+            z-index: 3;
+            top: -15px;
+            @include text-font-regular(24px, $gray-400, 1.21);
+            font-weight: 500;
+            font-style: normal;
+            font-stretch: normal;
+            letter-spacing: normal;
+            text-align: center;
+            @include break-point('500') {
+                width: 60.3%;
+                font-size: 36px;
+                //top: 0px;
+            }
+
+            @include break-point('800') {
+                font-size: 48px;
+                width: 64%;
+                top: 30px;
+            }
+
+            @include break-point('1100') {
+                @include text-font-light (48px, $gray-400, 58px);// cambio por datos de invision 2020-02-24
+                // max-width: 513px;
+                font-size: 48px;
+                width: 46.5%;
+            }
+
+            @include break-point('1400') {
+                top: 30px;
+                font-size: 48px;
+                width: 36.8%;
+            }
+
+            @include break-point('1700') {
+
+                width: 36.8%;
+                font-size: 52px;
+
+            }
+            span{
+                @include text-font-regular(24px, $gray-400, 24px);
+                font-weight: 600;
+                @include break-point('500') {
+                    font-weight: 800;
+                    @include text-font-regular(36px, $gray-400, 36px);
+                }
+                @include break-point('800') {
+                    //@include text-font-regular(48px, $gray-400, 58px);// cambio por datos de invision 2020-02-24
+                    @include text-font-light (48px, $gray-400, 58px);                    
+                }
+            }
+    }
+    
+    .tv__footer {
+
+        width: 100%;
+        height: 174px;
+        position: relative;
+        @include flex-box(column, space-between, center);
+        z-index: 1;
+        :nth-child(2){
+            position: relative;
+            z-index: 5;
+            height: 100%;
+            width: 100%;
+            background-image: url('../img/Furniture.png');
+            background-position: bottom center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            // @include break-point('500') {
+            //     background-size: contain;
+            // }    
+            // @include break-point('1100') {
+            //     background-size: contain;
+            // }
+            // @include break-point('1400') {
+            //     background-size: contain;
+            // }
+            // @include break-point('1700') {
+            //     background-size: 100%;
+            // }
+        }
+        
+        @include break-point('500') {
+            height: 271px;
+        }
+        @include break-point('800') {
+            height: 401px;
+            position: relative;
+            //top: -110px;
+        }
+        @include break-point('1100') {
+            height: 401px;
+            position: relative;
+            //top: -115px;
+        }
+        @include break-point('1700') {
+            height: 442px;
+            position: relative;
+            top: -100px;
+            width: 1544px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    
+
+    .tv__channels {
+
+        min-width: 285px;
+        max-width: 305px;
+        height: 170px;
+        position: relative;
+        @include flex-box(row, space-around, flex-start);
+        flex-wrap: wrap;
+        align-content: flex-start;
+        overflow: hidden;
+        transition: all .3s ease-in-out; 
+        // margin: 28px 11px 0 11px; ******
+        padding: 10px;
+        @include break-point('500') {
+            @include flex-box(row, center, flex-start);
+            flex-wrap: wrap;
+            max-width: 454px;
+            height: 265px;
+            margin: 45px 13px 0 13px;
+        }
+        @include break-point('800') {
+            height: 255px;
+            padding: 16px;
+            max-width: 768px;
+            margin: 0;
+        }
+
+        @include break-point('1100') {
+            padding: 20px;
+            max-width: 956px;
+            margin: 0 74px 0 74px;
+        }
+
+        @include break-point('1700') {
+            max-width: 1050px;
+            height: 274.6px;
+            margin: 0 325px 0 325px;
+        }
+    
+        img {
+            width: 68px; 
+            object-fit: contain;
+            cursor: pointer;
+            margin-bottom: 17px;
+            margin-right: 36px;
+            border-radius: 4px;
+            &:nth-child(3n + 0){
+                margin-right: 0;
+            }
+            &:last-child{
+                margin-right: 0;
+            }
+            @include break-point('500') {
+                width: 107px;
+                //width: 21.4%;
+                margin-right: 56px;
+                margin-bottom: 27px;
+                &:nth-child(3n){margin-right: 0;}
+                &:last-child{margin-right: 0;}
+            }
+
+            @include break-point('800') {
+                //width: 128px;
+                //width: 16.7%;
+                margin-bottom: 48px;
+                margin-right: 24px;
+                &:nth-child(3n){
+                    margin-right: 24px;
+                }
+                &:nth-child(5n){
+                    margin-right: 0
+                }
+            }
+
+            @include break-point('1100') {
+                
+                width: 107px;
+                margin-bottom: 48px;
+                margin-right: 68px;
+                &:nth-child(3n){margin-right: 68px;}
+                &:nth-child(5n){margin-right: 0}
+            }
+             @include break-point('1366') {
+                
+                width: 128px;
+            }
+
+            @include break-point('1700'){
+                width: 141px;
+                margin-bottom: 53px;
+                margin-right: 76px;
+                &:nth-child(3n){margin-right: 76px;}
+                &:nth-child(5n){margin-right: 0}
+            }
+            
+        }
+
+        &:last-child{
+            margin-right: 0;
+        }
+
+        
+        img:hover {
+            transform: scale(1.1);
+            transition: all .3s;
+            box-shadow: $main-shadow;
+        }
+    }
+
+    .tv_btn-more{
+
+        @include text-font-regular(14px, $blue-1100); //width: 245px;
+        width: 253px;
+        height: 40px;
+        @include flex-box(row, center, center);
+        cursor: pointer;
+        margin-bottom: 41px;
+        @include break-point('500'){
+            font-size: 16px;
+            //margin-bottom: 41px;
+        }
+
+        @include break-point('800'){
+            @include text-font-regular(18px, #1A76D2, 28px);// cambio por datos de invision 2020-02-25
+            font-size: 16px;
+            margin-bottom: 55px;
+        }
+
+    }
+
+    .tv__description-channels {
+        position: relative;
+        @include text-font-regular(16px, $gray-400, 1.25); //width: 245px;
+        width: 82.8%;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        letter-spacing: normal;
+        text-align: center;
+        margin: 31px 0 26px 0;
+        @include break-point('500') {
+            @include text-font-regular(26px, $gray-400, 1.25);
+            margin: 52px 44px 49px 44px;
+            min-width: 428px;
+        }
+        @include break-point('800') {
+            width: 64%;
+            //height: 112px;
+            font-size: 24px;
+            line-height: 30px;
+            align-content: center;
+            top: -70px;
+            margin: 40px 44px 40px 44px;
+        }
+        @include break-point('1100') {
+            width: 46.6%;
+            margin: 30px 44px 30px 44px;
+        }
+        @include break-point('1400') { 
+            //@include text-font-regular(28px, $gray-400, 42px);
+            @include text-font-regular(28px, $gray-400, 34px);// cambio por datos de invision 2020-02-24
+            margin: 20px 44px 30px 44px;
+            width: 40.6%;
+        }
+        @include break-point('1700') {
+            @include text-font-regular(32px, $gray-400, 42px);
+            margin: 40px 44px 40px 44px;
+            width: 39.5%;
+        }
+
+        & > span{
+            @include text-font-regular(28px, $gray-400, 34px);// cambio por datos de invision 2020-02-24
+            //font-weight: 600;
+        }
+    } // Styling
+
+
+    .slider {
+        height: 148px;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        display: flex;
+        //margin-bottom: 3.4%;
+        margin-top: 15px;
+        @include break-point('500') {
+            height: 194px;
+        }
+
+        @include break-point('1100') {
+            height: 312px;
+        }
+
+        .slide-track {
+            animation: scroll $animationSpeed linear infinite;
+            display: flex;
+            width: calc(267px * 12); //    //3500
+            @include break-point('500') {
+                width: calc(343px * 12);//6
+            }
+            @include break-point('1100') {
+                width: calc(559px * 12);//6
+            }
+        }
+
+        .slide {
+            width: 264px;
+            margin-left: 4px;
+            position: relative; // ***
+            @include break-point('500') {
+                width: 343px;
+                margin-left: 6px;
+            }
+            @include break-point('1100'){
+                width: 559px;
+                margin-left: 8px;
+            }
+            div.content-image {
+
+                width: 100%;
+                height: 100%;
+                position: relative;
+
+                img {
+
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;  
+                    border-radius: 4px;    
+                    
+                }
+            }
+
+            .mask-image{
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                z-index: 999;
+                background-color: rgba(#1e1e28, 0.2);
+                
+            }
+
+           
+
+            ul {
+                height: 100%;
+                display: grid;
+                grid-template-columns: 130px 130px;
+                grid-template-rows: 72px 72px;
+                grid-gap: 4px;
+
+                @include break-point('500') {
+                    grid-template-columns: 166px 166px;
+                    grid-template-rows: 94px 94px;
+                    grid-gap: 6px;
+                }
+
+                @include break-point('1100') {
+                    grid-template-columns: 270px 270px;
+                    grid-template-rows: 152px 152px;
+                    grid-gap: 8px;
+                }
+
+                li{
+        
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius: 4px;                
+                    }
+                }
+            }
+
+        }
+
+        .slide-details {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(#000, .5);
+            @include flex-box(row, flex-start, flex-end);
+
+            &-content{
+                position: relative;
+                margin-bottom: 30px;
+                margin-left: 25px;
+
+            }
+
+            &__logo {
+                background: url('../img/tv/channel-icon-hbo.png') no-repeat;
+                height: 55px;
+                width: 95px;
+                margin-bottom: 22px;
+            }
+
+            &__title {
+                @include text-font-semibold(14px, #f5f5f5);
+                @include break-point('500'){font-size: 18px;}
+                @include break-point('1100'){font-size: 24px;}
+            }
+
+        }
+    } // Animation
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-267px * 3))
+        }
+    }
+
+    @include break-point('500') {
+        @keyframes scroll {
+            0% {transform: translateX(0);}
+            100% {transform: translateX(calc(-343px * 3))}
+        }
+    }
+
+    @include break-point('800') {
+        @keyframes scroll {
+            0% {transform: translateX(0);}
+            100% {transform: translateX(calc(-559px * 3))}
+        }
+    }
+
+    .tv__list-options {
+
+        //width: 250px;
+        width: 80%;
+        max-width: 1034px;
+        @include flex-box(row, space-around, center);
+        flex-wrap: wrap;
+        align-content: center;
+        margin-bottom: 2.3%;
+
+
+        @include break-point('1100') {
+            width: 60%;
+        }
+
+        .info__icon {
+            width: 45%;
+            @include flex-box(column, center, center);
+            @include break-point('500') {
+                width: 45%;
+            }
+
+            @include break-point('800') {
+                min-width: 45%;
+            }
+
+            @include break-point('1100') {
+                min-width: 30%;
+            }
+            & > h1 {
+                @include break-point('500'){
+                    min-width: 100%;
+                }                
+            }
+        }
+        
+        & > .info__icon:nth-child(even){
+            @include break-point('800') {
+                transform: translate(-5%);
+            }
+            @include break-point('1100'){
+                transform: none;
+            }
+        }
+        & > .info__icon:nth-child(odd){
+            @include break-point('800') {
+                transform: translate(5%);
+            }
+            @include break-point('1100'){
+                transform: none;
+            }
+        }
+
+    }
+    & > .btn__blue {        
+        margin-top: 34px;
+        @include break-point('500') {
+            margin-top: 90px;            
+        }
+        @include break-point('800') {
+            margin-top: 79px;
+        }
+        @include break-point('1100') {
+            margin-top: 72px;
+        }
+    }
+
+}
+
+// hacks para nuevas pantallas
+#tv .main-title-flex { margin-bottom: 35px;}
+#tv .btn__transparent {
+    //margin-bottom: 0;
+}

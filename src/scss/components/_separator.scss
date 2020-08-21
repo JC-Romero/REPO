@@ -1,0 +1,15 @@
+.separator {
+    width: 100%;
+    position: relative;
+    height: 1px;
+    margin: 40px 0;
+    &::before{
+        content: '';
+        position: absolute;
+        width: 76%;
+        height: 1px;
+        background-color: $gray-200;
+        left: calc(15% -  35px);
+        top: 0px;
+    }
+}

@@ -1,0 +1,32 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10  
+    commands:
+      - echo Installing gulp-cli...
+      - npm install -g gulp-cli
+  pre_build:
+    commands:
+      - echo Installing source NPM dependencies...
+      - npm install
+      #- aws s3 rm s3://mc-ott-site-cloud.build/totalplay_dev --recursive
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Compiling the Node.js code
+      - gulp build
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - rm -rf node_modules
+      - find . -mindepth 1 -name public -prune -o -exec rm -rf {} +
+      - mv public/* ./
+      - rm -rf public 
+      #- aws s3 cp s3://mc-ott-site-cloud.build/font s3://mc-ott-site-cloud.build/totalplay_dev/assets/font --recursive
+      #- aws s3 cp s3://mc-ott-site-cloud.build/media s3://mc-ott-site-cloud.build/totalplay_dev/assets/media --recursive
+      #- aws s3 cp s3://mc-ott-site-cloud.build/lib s3://mc-ott-site-cloud.build/totalplay_dev/assets/js/lib --recursive
+artifacts:
+  files:
+    - '**/*'

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="464px" height="80px" viewBox="0 0 464 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>ticket-vertical</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M-5.68434189e-14,207 L-5.68434189e-14,8 C-5.73845019e-14,3.581722 3.581722,8.11624501e-16 8,0 L424,0 C428.418278,-8.11624501e-16 432,3.581722 432,8 L432,207 C414.326888,207 400,221.326888 400,239 C400,256.673112 414.326888,271 432,271 L432,626 C432,630.418278 428.418278,634 424,634 L8,634 C3.581722,634 -5.63023359e-14,630.418278 -5.68434189e-14,626 L-5.68434189e-14,271 C17.673112,271 32,256.673112 32,239 C32,221.326888 17.673112,207 -5.68434189e-14,207 Z" id="path-1"></path>
+        <filter x="-6.5%" y="-3.2%" width="113.0%" height="108.8%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="8" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="8" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.15 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="ticket-vertical" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(16.000000, -199.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="shape-2" transform="translate(216.000000, 317.000000) scale(1, -1) rotate(-180.000000) translate(-216.000000, -317.000000) ">
+                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-1"></use>
+                <use fill="#FAFAFA" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

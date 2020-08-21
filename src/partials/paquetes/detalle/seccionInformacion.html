@@ -1,0 +1,69 @@
+<style>
+    .btnDeshabilitado {
+        background: gray !important;
+        opacity: .5 !important;
+    }
+</style>
+<div id="ticketResume" class="ticket_resume">
+    <div class="package_main_info">
+        <span>Paquete <i class="purple-light" id="paqueteNombre"></i></span>
+        <span class="purple-light" id="paqueteIncluye"></span>
+    </div>
+    <div class="ticket_card">
+        <div class="content_pack_resume" id="divContentPackResume">
+            <div id="resumePackage" class="resume_pack">
+                <span>Total pronto pago</span>
+                <span id="paqueteTotalPago">$ 0.00</span>
+                <span>a partir del 6to mes</span>
+            </div>
+            <div id="resumeInfo" class="resume_info">
+                <div> 
+                    <span>Precio de lista</span>
+                    <span>Por pronto pago</span>
+                    <span>A partir del 6° mes</span>
+                    <span>Precio de lista</span>
+                    <span>Por pronto pago</span>
+                    <!--span>Descuento de por vida</span-->
+                </div>
+                <div>
+                    <span id="paquetePrecioLista">$ 0.00</span>
+                    <span id="paquetePrecioProntoPago">$ 0.00</span>
+                    <span style="margin-bottom: 26px;"></span>
+                    <span id="paqueteMes6PrecioLista" style="margin-bottom: 5px;">$ 0.00</span>
+                    <span id="paqueteMes6PrecioProntoPago" style="margin-bottom: 5px;">$ 0.00</span>
+                    <!--span id="paqueteDescuentoVida">$ 0</span-->
+                </div>
+            </div>
+            <div class="btn-container-ticket">
+                <label id="btn_transparentLinkDetailPaq" style="margin-bottom: 15px;"></label>
+                <a id="linkPromociones" class="btn__transparent " href="#promotionCards" 
+                style="text-align: center;width: 85%;display: none;margin-bottom: 15px;">Ver promociones</a>
+                <button onclick="window.location='contratacion.html'" class="btn__blue btnDeshabilitado" disabled="" id="botonQuiero">¡Lo quiero!</button>
+            </div>
+        </div>
+        <div class="extra_info">
+            <span>Incluido en tu paquete:</span>
+            <a href="#tarjetaMegas" class="btn__outline__gray" id="ligaMegas">
+                <img src="assets/img/iconos/buttons/icn-internet.svg">
+                <h1 id="paqueteTotalMegas"> 0 Megas↓</h1>
+                <h2 id="mensajeMegas" class="titulo2"></h2>
+            </a>
+            <a href="#tarjetaTelevision" class="btn__outline__gray" id="ligaTelevision">
+                <img src="assets/img/iconos/buttons/icn-tv-4k.svg">
+                <h1 id="paqueteCanales"></h1>
+                <h2 id="paqueteCanalesAuxiliar">Podrás elegir 120 canales</h2>
+            </a>
+            
+            <a href="#tvPackages" class="btn__outline__gray" id="ligaAplicacion">
+                <img src="assets/img/iconos/buttons/icn-apps.svg">
+                <h1>Las apps más populares</h1>
+                <h3>Convierte tu TV en SmartTV</h3>
+            </a>
+            <a href="#tarjetaTelefonia" class="btn__outline__gray" id="ligaTelefonia">
+                <img src="assets/img/iconos/buttons/icn-telefono.svg">
+                <h1 id="paqueteLineas"></h1>
+                <h3>Con llamadas ilimitadas</h3>
+            </a>
+        </div>
+    </div> 
+</div>

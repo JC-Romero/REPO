@@ -1,0 +1,24 @@
+{
+    "codigoRespuesta":0,
+    "mensaje":"Proceso completado",
+    "datos":{
+       "informacion":{
+          "ArrColonias":[
+             {
+                "Nombre":"04510 - Universidad Nacional Autonoma de Mexico",
+                "DelegacionMunicipio":"Coyoacan",
+                "Colonia":"Universidad Nacional Autonoma de Mexico",
+                "Ciudad":"Ciudad de Mexico",
+                "Estado":"Distrito Federal",
+                "AplicaEstimuloFiscal":"false",
+                "idOrigen":"8610"
+             }
+          ],
+          "Result":{
+             "Description":"Petición procesada con éxito",
+             "Result":"625312882",
+             "IdResult":"0"
+          }
+       }
+    }
+ }

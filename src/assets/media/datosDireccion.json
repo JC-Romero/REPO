@@ -1,0 +1,85 @@
+{
+    "status":0,
+    "payload":[
+       {
+          "address_components":[
+             {
+                "long_name":"217",
+                "short_name":"217",
+                "types":[
+                   "street_number"
+                ]
+             },
+             {
+                "long_name":"Cañada",
+                "short_name":"Cañada",
+                "types":[
+                   "route"
+                ]
+             },
+             {
+                "long_name":"Jardines del Pedregal",
+                "short_name":"Jardines del Pedregal",
+                "types":[
+                   "political",
+                   "sublocality",
+                   "sublocality_level_1"
+                ]
+             },
+             {
+                "long_name":"Ciudad de México",
+                "short_name":"México D.F.",
+                "types":[
+                   "locality",
+                   "political"
+                ]
+             },
+             {
+                "long_name":"Ciudad de México",
+                "short_name":"CDMX",
+                "types":[
+                   "administrative_area_level_1",
+                   "political"
+                ]
+             },
+             {
+                "long_name":"Mexico",
+                "short_name":"MX",
+                "types":[
+                   "country",
+                   "political"
+                ]
+             },
+             {
+                "long_name":"01900",
+                "short_name":"01900",
+                "types":[
+                   "postal_code"
+                ]
+             }
+          ],
+          "formatted_address":"Cañada 217, Jardines del Pedregal, Álvaro Obregón, 01900 Ciudad de México, CDMX, Mexico",
+          "geometry":{
+             "location":{
+                "lat":19.3232913,
+                "lng":-99.2009779
+             },
+             "location_type":"RANGE_INTERPOLATED",
+             "viewport":{
+                "northeast":{
+                   "lat":19.3246402802915,
+                   "lng":-99.1996289197085
+                },
+                "southwest":{
+                   "lat":19.32194231970849,
+                   "lng":-99.20232688029151
+                }
+             }
+          },
+          "place_id":"EltDYcOxYWRhIDIxNywgSmFyZGluZXMgZGVsIFBlZHJlZ2FsLCDDgWx2YXJvIE9icmVnw7NuLCAwMTkwMCBDaXVkYWQgZGUgTcOpeGljbywgQ0RNWCwgTWV4aWNvIhsSGQoUChIJpQZj_O__zYUR8IKpo7BblnMQ2QE",
+          "types":[
+             "street_address"
+          ]
+       }
+    ]
+ }

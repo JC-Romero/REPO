@@ -1,0 +1,95 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    max-width: 100%;
+}
+
+input {
+    border: none;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:link ,
+a:visited,
+a:hover,
+a:active{
+    color: inherit;
+}
+
+/*AGREGADO POR KAREN MURRIETA*/
+a:not([href]):not([tabindex]) {
+  color:none !important;
+}
+a:not([href]):not([tabindex]):focus, 
+a:not([href]):not([tabindex]):hover{
+  color:none !important;
+}
+
+button {
+    border: none;
+    cursor: pointer
+}
+
+/* Efectos para inputs */
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+      background: none !important;
+  }
+
+  body.main-paquetes{
+      background-color: $gray-100;
+  }
+
+  body.main-detallePaquete{
+    background-color: $gray-100;
+    @include flex-box(column, center, center);
+    #tvPackages{
+        background-color: $gray-100;
+    }
+}
+
+// html body.main-servicios {
+//     scroll-behavior: smooth;
+//     // background-color: red;
+//     // border: dashed 3px red;
+//   }
+
+#popupHome {
+    position: absolute;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    top: -16px;
+    right: -14px;
+    background: black;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 50px;
+    color: white;
+  }
+  #id_icoClose{
+    position: absolute;
+    top: 4px;
+    right: 7px;
+  }

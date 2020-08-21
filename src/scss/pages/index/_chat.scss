@@ -1,0 +1,693 @@
+#sectionChat{
+   width: 83px;
+   height: 83px;
+   border-radius: 50%;
+   right: 20px;
+   transition: 0.3;
+   z-index: 50;
+   //bottom: 24px;
+   bottom: 60px;
+   top: 590px;
+   //position: fixed !important; top:auto !important;
+   @include flex-box(row, center, center);
+   @include break-point('375') { 
+      right: 35px;
+      bottom: 48px;
+   }
+   @include break-point('500') { 
+      right: 30px;
+      /*bottom: 24px;*/
+   }
+   @include break-point('800') {
+      width: 137px;
+      height: 88px;
+      right: 23px;
+      top: 630px;
+      /*bottom: 24px*/
+   }
+   @include break-point('1100') {
+      top: 630px;
+   }
+   @include break-point('1400') {
+      right: 54px;
+   }
+   @include break-point('1700') {
+      @include flex-box(row, flex-start, center);
+      margin-right: calc(50%-896px);
+   }
+   & > img {
+      width: 50px;
+      height: 50px;
+      position: relative;
+      @include break-point('800'){
+         width: 62px;
+         height: 62px;
+      }
+   &:hover {
+      cursor: pointer;
+      }
+   }
+}
+
+.menu-movil__help {
+   width: 180px;
+   height: 48px;
+   @include flex-box(row, flex-start, center);
+   margin-left: 6.2%;
+   @include break-point('500'){
+      width: 240px;
+      height: 48px;
+   }
+   img{
+      margin-right: 3.1%;
+      width: 40px;
+      @include break-point('500'){
+         width: 36px;
+         height: 36px;
+      }
+      @include break-point('375'){
+         width: 64x;
+         height: 64px;
+         margin-top: 16.2%;
+      }
+   }
+   div {
+      @include text-font-regular(14px, $gray-400);
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      @include break-point('500'){
+         font-size: 18px;
+      }
+   }
+}
+/* ESTILO PARA FUNCONALIDAD DE ROBOT CON MENU */
+.menu-help-robot {
+   position: absolute;
+   display: block;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   left: 0;
+   margin: auto;
+   width: 54px;
+   height: 54px;
+   z-index: 2;
+   opacity: 0;
+   cursor: pointer;
+   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3);
+   @include break-point('375'){
+      right: 38px;
+   }
+}
+/* estilos para el cursor sobre la imagen para abrir y cerrar menu robot*/
+.menu-help-robot:hover+label,
+.menu-help-robot:hover+label:after {
+   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3);
+   animation: pulse-blue 3s infinite;
+}
+/* estilo transparente para ocultar imagen de boton check*/
+.menu-help-robot:checked+label {
+   background: #3B4559;
+   background-image: url('../img/header/close_24px.png');
+   background-position: center;
+   background-repeat: no-repeat;
+   transition: top 0.5s, -webkit-transform 0.5s;
+   transition: transform 0.5s, top 0.5s;
+   transition: transform 0.5s, top 0.5s, -webkit-transform 0.5s;
+}
+.menu-help-robot:checked+label::before {
+   content: 'CERRAR';
+   width: 70px;
+}
+.menu-help-robot+label::before {
+   content: 'AYUDA EN LÍNEA';
+   position: absolute;
+   height: 30px;
+   width: 80px;
+   background-color: $gray-400;
+   bottom: 0px;
+   left: 50%;
+   top:55px;
+   z-index: 10;
+   @include text-font-regular(11px, $gray-100, normal);
+   text-align: center;
+   border-radius: 8px;
+   transform: translateX(-50%) translateY(75%);
+   @include break-point('500') {
+      font-size: 12px;
+   }
+   @include break-point('1100') {
+      width: 123px;
+      height: 18px;
+      line-height: 20px;
+      margin-bottom: 8px;
+   }
+}
+/* muestra los elementos del menu*/
+.menu-help-robot:checked~ul .menu-item-help {
+   opacity: 1;
+}
+/*transicion para colocar los 3 elementos del menu ayuda del robot*/
+.menu-help-robot:checked~ul .menu-item-help:nth-child(1) {
+   -webkit-transform: rotate(0deg) translateX(-114px);
+   transform: rotate(0deg) translateX(-114px);
+}
+.menu-help-robot:checked~ul .menu-item-help:nth-child(2) {
+   -webkit-transform: rotate(45deg) translateX(-114px);
+   transform: rotate(45deg) translateX(-114px);
+}
+.menu-help-robot:checked~ul .menu-item-help:nth-child(3) {
+   -webkit-transform: rotate(90deg) translateX(-114px);
+   transform: rotate(90deg) translateX(-114px);
+}
+.menu-help-robot:checked~ul .menu-item-help a {
+   pointer-events: auto;
+}
+/* valor de la etiqueta */
+.menu-help-robot+label {
+   width: 54px;
+   height: 54px;
+   display: block;
+   z-index: 1;
+   border-radius: 50%;
+   background-image: url('../img/header/ic-app-chat.png');
+   background-position: bottom center;
+   background-repeat: no-repeat;
+   background-size: 100%;
+   transition: top 0.5s, -webkit-transform 0.5s;
+   transition: transform 0.5s, top 0.5s;
+   transition: transform 0.5s, top 0.5s, -webkit-transform 0.5s;
+   position: absolute;
+   display: block;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   left: 0;
+   margin: auto;
+}
+
+
+/*roatcion de los elementos de la lista*/
+.menu-item-help:nth-child(1) a {
+   -webkit-transform: rotate(0deg);
+   transform: rotate(0deg);
+}
+.menu-item-help:nth-child(2) a {
+   -webkit-transform: rotate(-45deg);
+   transform: rotate(-45deg);
+}
+.menu-item-help:nth-child(3) a {
+   -webkit-transform: rotate(-90deg);
+   transform: rotate(-90deg);
+}
+.menu-item-help:nth-child(1) a:hover {
+   -webkit-transform: rotate(0deg) scale(0.85);
+   transform: rotate(0deg) scale(0.85);
+   }
+.menu-item-help:nth-child(2) a:hover {
+   -webkit-transform: rotate(-45deg) scale(0.85);
+   transform: rotate(-45deg) scale(0.85);
+   }
+.menu-item-help:nth-child(3) a:hover {
+   -webkit-transform: rotate(-90deg)  scale(0.85);
+   transform: rotate(-90deg)  scale(0.85);
+}
+.menu-item-help {
+   position: absolute;
+   display: block;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   left: 0;
+   margin: auto;
+   width: 64px;
+   height: 64px;
+   display: block;
+   opacity: 0;
+   transition: 0.2s;
+   @include break-point('375'){
+      right: 33px;
+   }
+}
+.menu-item-help a {
+   display: block;
+   width: inherit;
+   height: inherit;
+   line-height: 60px;
+   border-radius: 50%;
+   text-align: center;
+   text-decoration: none;
+   font-size: 40px;
+   pointer-events: none;
+   transition: 0.2s;
+   padding-top: 6px;
+   padding-left: 2px;
+}
+#whatsAppChat {
+   background-color: #25D366;
+}
+#messageChat {
+   background-color: #76C1E8;
+}
+#phoneChat {
+   background-color: #9767BD;
+}
+.modalDialogChat {
+   position: fixed;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   background: rgba(117, 120, 123, 0.2);
+   z-index: 99999;
+   opacity:0;
+   //-webkit-transition: opacity 400ms ease-in;
+   //-moz-transition: opacity 400ms ease-in;
+   //transition: opacity 400ms ease-in;
+   pointer-events: none;
+}
+.modalDialogChat:target {
+   opacity:1;
+   pointer-events: auto;
+}
+.modalDialogChat > div {
+   /*width: 392px;*/
+   width: 350px;
+   height: 424px;
+   position: relative;
+   margin: 102px auto;
+   padding: 5px 20px 13px 20px;
+   border-radius: 8px;
+   background-color: #FAFAFA;
+   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1);
+   display: flex;
+   flex-wrap: nowrap;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+   @include text-font-regular(20px, #1a76d2, 1);
+}
+.close {
+   position: absolute;
+   right: 29px;
+   top: 29px;
+   cursor: pointer;
+   width: 14px;
+   height: 14px;
+   z-index: 10;
+   @include break-point('1100') { 
+      right: 25px;
+      top: 25px;
+   }
+}
+.close img{
+   height: 100%;
+   position: absolute;
+}
+.content-modal_chat {
+   display: flex;
+   flex-wrap: nowrap;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+.div_title_chat{
+   width: 312px; 
+   height: 89px; 
+   margin-top: 40px; 
+   margin-bottom: 16px; 
+   text-align: center;
+   font-size: 28px; 
+}
+.div_title_phone{
+   width: 100%; 
+   height: 61px; 
+   margin-top: 25px; 
+   margin-bottom: 25px; 
+   text-align: center;
+   z-index: 9;
+}
+.text_bold_phone_title{
+   @include text-font-bold(22px, #3b4559, normal);
+   width: 370px;
+   height: 27px;
+   margin-bottom: 24px;
+   text-align: left;
+   margin-left: 40px;
+   @include break-point('768') { 
+      @include text-font-bold(24px, #3b4559, normal);
+      width: 200px;
+      height: 29px;
+      margin-bottom: 32px;   
+   }
+   @include break-point('1100') { 
+      width: 199px;
+      height: 29px;   
+   }
+}
+.text_medium_phone_subtitle{
+   @include text-font-medium(18px, #3b4559, normal);
+   width: 290px;
+   height: 22px;
+   margin-left: 40px;
+   margin-bottom: 8px;
+   text-align: left;
+   @include break-point('768'){
+      width: 285px;
+      height: 22px;
+   }
+}
+.text_medium_phone_blue{
+   @include text-font-medium(22px, #1a76d2, normal);
+   width: 148px;
+   height: 27px;
+   margin-left: 40px;  
+   margin-bottom: 4px;
+   text-align: left;
+}
+.text_regular_phone_txt{
+   @include text-font-regular(16px,#75787b, normal);
+   width: 235px;
+   height: 48px; 
+   margin-left: 40px;
+   margin-bottom: 24px;
+   text-align: left;
+   line-height: 1.5;
+   @include break-point('768'){
+      width: 218px;
+      height: 48px;
+      margin-bottom: 32px;
+   }
+}
+.text_semibold_chat{
+   position: relative;
+   @include text-font-semibold(22px, #3b4559, normal);
+   @include break-point('768') { 
+      @include text-font-semibold(28px,#3b4559, normal);      
+   }
+}
+.text_regular_chat{
+   @include text-font-regular(22px, #3b4559, normal);
+   right: 18px;
+   @include break-point('768') { 
+      @include text-font-regular(28px,#3b4559, normal);      
+   }
+}
+.text_regular_chat22{
+   @include text-font-regular(18px, $gray-600, 22px);
+   margin-top: 16px;
+}
+.icon_logo_chat{
+   position: relative;
+   top: 7px;
+}
+.icon_logo_phone{
+   position: relative;
+   top: 5px;
+   @include break-point('375') { 
+      width: 22px;
+      height: 22px;
+   }  
+   @include break-point('768') { 
+      width: 28px;
+      height: 28px;
+   }
+}
+.card-chat--separator {
+   width: 312px; 
+   height: 1px; 
+   background-color: #e0e0e0; 
+   margin-top: 16px;
+}
+.card-phone--separator {
+   width: 100%; 
+   height: 1px; 
+   background-color: #e0e0e0; 
+   margin-top: 16px;
+   z-index: 1;
+}
+.card-phone--separator-vertical-1{
+   height: 100px; 
+   width: 1px; 
+   background-color: #e0e0e0; 
+   margin-top: 16px; 
+   position: absolute;
+   margin-left: 0px;
+   left: 341px;
+   z-index: 1;
+   @include break-point('375'){
+      display: none;
+   }
+   @include break-point('768') { 
+      display: inherit;
+      height: 232px;
+      top: 110px;
+   }
+}
+.card-phone--separator-vertical-2{
+   height: 313px; 
+   width: 1px; 
+   display: none;
+   background-color: #e0e0e0; 
+   margin-top: 16px; 
+   position: absolute;
+   right: 0px;
+   left: 645px;
+   z-index: 1;
+   @include break-point('1100') { 
+      display: inherit;
+      height: 305px;
+      top: 71px;
+      left: 666px;
+      }
+}
+
+.div_button-modalDialog{
+   width: 312px; 
+   height: 72px; 
+   position: relative; 
+   text-align: center;
+   display: flex;
+	flex-wrap: nowrap;
+	flex-direction: columns;
+	justify-content: center;
+   align-items: center;
+   margin-top: 8px;
+}
+
+.modalChat-item__button {
+   width: 100%; height: 100%;
+   border-radius: 8px;
+   background-color: #f5f5f5;
+   font-size: 20px;
+   font-weight: 500;
+   color:#1a76d2;
+   line-height: 16px;
+   text-align: center;
+   display: flex;
+   flex-wrap: nowrap;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   transition-duration: 400ms;
+}
+.modalChat-item__button:hover{
+   font-weight: 500;
+   line-height: 24px;
+   text-align: center;
+   background-color: #FAFAFA;
+   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1);
+   @include text-font-medium(24px, $gray-2500, 24px);
+
+}
+.content-modal_chat .card-chat--separator {
+   width: 1312px;
+   height: 1px;
+   background-color: 
+   #e0e0e0;
+   margin-bottom: 23px;
+   margin-top: 14px;
+}
+.modalDialogPhone {
+   position: fixed;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   background: rgba(117, 120, 123, 0.2);
+   z-index: 99999;
+   opacity:0;
+   //-webkit-transition: opacity 400ms ease-in;
+   //-moz-transition: opacity 400ms ease-in;
+   //transition: opacity 400ms ease-in;
+   pointer-events: none;
+   overflow-y: auto;
+   min-height: 100vh;
+}
+.modalDialogPhone:target {
+   opacity:1;
+   pointer-events: auto;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+.modalDialogPhone > div {
+   width: 375px;
+   height: 922px;
+   position: relative;
+   border-radius: 8px;
+   background-color: #FAFAFA;
+   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1);
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+   flex-wrap: wrap;
+   @include text-font-regular(120px, #1a76d2, 1); 
+   @include break-point('768'){
+      width: 687px;
+      height: 722px;
+   }
+   @include break-point('1100'){
+      width: 1007px;
+      height: 471px;
+   }
+}
+.container-modal-phone {
+   width: 100%;
+   height: 100%;
+   position: relative;
+ }
+.phone_div {
+   padding: 5px;
+   display: flex; 
+   flex-direction: row;
+   align-items: center;
+   justify-content: flex-start;
+   /*pointer-events: none; */
+   min-width: 100%; 
+}
+.content-phone-chat {
+   @include flex-box(row, flex-start, center);
+   padding: 5px;
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+   align-items: flex-start;
+    min-height: 100%;
+   flex-wrap: inherit;
+   &__phoneChat {
+      @include flex-box(row, flex-start, flex-start);
+
+      @include break-point('320'){
+         flex-wrap: wrap;
+      }
+      @include break-point('375'){
+         flex-wrap: wrap;
+      }
+      @include break-point('768'){
+         flex-wrap: wrap;
+      }
+      @include break-point('1100'){
+         flex-wrap: inherit;
+      }
+      .card-phone__phoneChat:last-child{
+         margin-right: 0;
+      }
+     .card-phone__phoneChat {
+         position: relative;
+         border-radius: 4px;
+         box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+         background-color: $gray-100;
+         cursor: pointer;
+         width: 100%;
+         @include flex-box(none, inherit, unset);
+         padding: 25px 0 24px 0;
+         height: auto; 
+         padding: 0px; 
+         box-shadow: none;
+         @include break-point('768'){
+            width: 50%;
+         }
+         @include break-point('1100') { 
+            width: 100%;
+         }
+      .selected-settopbox {
+         position: absolute;
+         height: 100%;
+         width: 100%;
+         top: 0;
+         left: 0;
+         border-radius: 8px;
+         background-color: rgba(250, 250, 250, 0.95);
+         transition: all 0.2s;
+         z-index: 5;
+         cursor: default;
+         padding: 72px 0;
+         @include flex-box(column, space-between, center);
+         div {
+            width: 168px;
+            height: 19px;
+            @include text-font-regular(16px, $gray-1800);
+            text-align: center;
+         }
+         ul {
+            width: 127px;
+            @include flex-box(row, space-between, center);
+            height: 44px;
+            flex-wrap: initial;
+               li:first-child {
+                  width: 311px; 
+                  height: 311px; 
+                  padding: 0px; 
+                  flex:none; 
+                  flex-wrap:none; 
+                  flex-direction:none; 
+                  align-items: unset; 
+                  flex-direction:inherit;
+                  justify-content:unset;
+                  box-shadow: none;
+                  margin-left: 40px;
+               }
+               li:nth-child(2) {
+                  width: 311px; 
+                  height: 311px; 
+                  padding: 0px; 
+                  flex:none; 
+                  flex-wrap:none; 
+                  flex-direction:none; 
+                  align-items: unset; 
+                  flex-direction:inherit;
+                  justify-content:unset;
+                  box-shadow: none;
+                  margin-left: 40px;
+               }
+               li:last-child {
+                  width: 311px; 
+                  height: 311px; 
+                  padding: 0px; 
+                  flex:none; 
+                  flex-wrap:none; 
+                  flex-direction:none; 
+                  align-items: unset; 
+                  flex-direction:inherit;
+                  justify-content:unset;
+                  box-shadow: none;
+                  margin-left: 40px;
+               }
+            }
+         }
+      }
+   }
+}
+
+
+
+
+
+
+

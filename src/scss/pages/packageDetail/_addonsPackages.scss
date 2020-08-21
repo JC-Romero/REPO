@@ -1,0 +1,602 @@
+.addons-package { 
+    position: relative;
+    padding-top: 38px;
+    width: 100%;
+    margin-top: 0;
+    background-color: #f5f5f5;
+    @include flex-box(column, center, center);
+    @include break-point('768'){
+        margin-top: 0;
+        padding-top: 42px;
+    }
+    @include break-point('1024'){
+        margin-top: 0;
+        padding-top: 38px;
+    }
+    @include break-point('1366'){
+        margin-top: 0;
+        padding-top: 38px;
+    }
+    @include break-point('1700'){
+        margin-top: 0;
+        padding-top: 40px;
+    }
+}
+
+// main titulo
+.addons-package--title{
+    width: 334px;
+    height: 72px;
+    text-align: center;
+    //padding-left: 10px;
+    margin-bottom: 8px;
+    margin-top: 0;
+    @include text-font-regular(24px, $gray-400, 1.5);
+    span.color-black {
+        @include text-font-bold(24px, $gray-400, 1.5);
+    }
+    span.color-purple {
+        @include text-font-bold(24px, $purple-700, 1.5);
+    }
+
+    @include break-point('768'){
+        width: 600px;
+        height: 29px;
+        margin-top: 0;
+        margin-bottom: 7px;
+        @include text-font-regular(24px, $gray-400, normal);
+        span.color-black{
+            @include text-font-bold(24px, $gray-400, normal);
+        }
+        span.color-purple {
+             @include text-font-bold(24px, $purple-700, normal);
+        }
+    }
+    @include break-point('1024'){
+        width: 800px;
+        height: 34px;
+        margin-bottom: 6px;
+        @include text-font-regular(28px, $gray-400, normal);
+        span.color-black {
+            @include text-font-bold(28px, $gray-400, normal);
+        } 
+        span.color-purple {
+            @include text-font-bold(28px, $purple-700, normal);
+           }
+    }
+    @include break-point('1700'){
+        width: 800px;
+        height: 34px;
+        margin-bottom: 6px;
+        @include text-font-regular(28px, $gray-400, normal);
+        span.color-black {
+            @include text-font-bold(28px, $gray-400, normal);
+        } 
+        span.color-purple {
+            @include text-font-bold(28px, $purple-700, normal);
+        }
+    }
+}
+
+
+// main description
+.addons-package--description {
+    width: 334px;
+    height: 54px;
+    text-align: center;
+    @include text-font-regular(18px, #75787B, 1.5);
+    span{ color: #1A76D2}
+    margin-bottom: 2.7%;
+    @include break-point('768'){
+        width: 540px;
+        height: 32px;
+        margin-bottom: 49px;
+        @include text-font-regular(18px, #75787B, 1.5);
+        span{ color: #1A76D2}
+    }
+    @include break-point('1024'){
+        margin-bottom: 48px;
+    }
+
+    
+}
+
+// CONTENT LIST
+.addons-package--listAddons--content {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    @include flex-box(row, center, center);
+    @include break-point('768'){
+        margin-bottom: 40px;
+    }
+    @include break-point('768'){
+        margin-bottom: 40px;
+    }
+    @include break-point('1366'){
+        margin-bottom: 33px;
+    }
+    @include break-point('1700'){
+        margin-bottom: 40px;
+    }
+}
+
+// UL LIST
+.addons-package--listAddons {
+    width: 100%;
+    margin-left: 2.1%;
+    margin-right: 2.1%;
+    max-width: 1400px;
+    height: auto;
+    @include flex-box(row, center, center);
+    flex-wrap: wrap;
+    @include break-point('768'){
+        width: 100%; // revisar ancho
+    }
+
+    @include break-point('1366'){
+        max-width: 1040px;
+    }
+
+    @include break-point('1366'){//////////////////////////////////////////////////////////////////////////////Luis
+        max-width: 1100px;
+    }
+}
+
+// LI ITEM
+.addons-package--listAddons__item {
+    width: 360px;
+    height: 388px;
+    position: relative;
+    border-radius: 8px;
+    background-color: #FAFAFA;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 24px;
+    @include flex-box(column, flex-start, center);
+    margin-bottom: 10px;
+    &:nth-child(even){
+        margin-right: 0;
+    }
+    @include break-point('768'){
+        width: 368px;
+        height: 397px;
+        padding-left: 12px;
+        padding-right: 12px;
+        margin-bottom: 8px;
+        margin-top: 0px;
+        margin-right: 8px;
+    }
+    @include break-point('1024'){
+        width: 432px;
+        height: 552px;
+        padding-top: 48px;
+        padding-left: 72px;
+        padding-right: 72px;
+        margin-bottom: 16px;
+        margin-right: 16px;
+    }
+    
+    @include break-point('1366'){
+        width: 512px;
+        height: 552px;
+        padding-left: 11%;
+        padding-right: 11%;
+    }
+    @include break-point('1700'){
+        padding-left: 19%;
+        padding-right: 19%;
+    }
+
+}
+
+// LI CONTENT
+.listAddons__item--content {
+
+    @include flex-box(column, flex-start, center);
+}
+
+// LI TITLE
+.listAddons__item--content__title {
+    width: auto;
+    height: 40px;
+    position: relative;
+    @include text-font-medium(28px, $gray-400, normal);
+    
+    text-align: center;
+    margin-bottom: 8px;
+
+    @include break-point('768'){
+       // width: 196px;
+        @include text-font-medium(30px, $gray-400, normal);
+        margin-bottom: 8px; 
+    }
+    @include break-point('1024'){
+       width: 380px;
+       height: 44px;
+        @include text-font-medium(36px, $gray-400, normal);
+        margin-bottom: 16px;
+    }
+    @include break-point('1700'){
+        width: 400px;
+         @include text-font-medium(36px, $gray-400, normal);
+         height: 40px;
+     } 
+}
+.listAddons__item--content__title1 {
+    width: auto;
+    height: 40px;
+    position: relative;
+    @include text-font-medium(28px, $gray-400, normal);
+    
+    text-align: center;
+    margin-bottom: 8px;
+
+    @include break-point('768'){
+       // width: 196px;
+        @include text-font-medium(30px, $gray-400, normal);
+        margin-bottom: 13px; 
+    }
+    @include break-point('1024'){
+       width: 380px;
+       height: 44px;
+        @include text-font-medium(36px, $gray-400, normal);
+        margin-bottom: 16px;
+    }
+    @include break-point('1700'){
+        width: 400px;
+         @include text-font-medium(36px, $gray-400, normal);
+         height: 40px;
+     } 
+}
+.listAddons__item--content__title2{
+    width: auto;
+    height: 40px;
+    position: relative;
+    @include text-font-medium(28px, $gray-400, normal);
+    
+    text-align: center;
+    margin-bottom: 8px;
+
+    @include break-point('768'){
+       // width: 196px;
+        @include text-font-medium(30px, $gray-400, normal);
+        margin-bottom: 16px; 
+    }
+    @include break-point('1024'){
+       width: 380px;
+       height: 44px;
+        @include text-font-medium(36px, $gray-400, normal);
+        margin-bottom: 16px;
+    }
+    @include break-point('1700'){
+        width: 400px;
+         @include text-font-medium(36px, $gray-400, normal);
+         height: 40px;
+     } 
+}
+ 
+
+// LI DESCRIPTION
+.listAddons__item--content__description {
+    width: 312px;
+    height: 48px;
+    margin-bottom: 8px;
+    position: relative;
+    @include text-font-medium(16px, $gray-400, 1.5);
+    text-align: center;   
+    @include break-point('768'){
+        width: 328px;
+        height: 52px;
+        margin-bottom: 13px;
+    } 
+    @include break-point('1024'){
+        @include text-font-medium(18px, $gray-400, 1.5);
+        width: 352px;
+        height: 54px;
+        margin-bottom: 32px;
+    } 
+    @include break-point('1700'){ 
+        @include text-font-medium(18px, $gray-400, 1.5);
+        width: 352px;
+        height: 54px;
+        margin-bottom: 32px;
+    } 
+
+}
+.mrgn-btm{
+    //padding-bottom: 9px;
+    margin-bottom: 12px;
+    @include break-point('1024'){ 
+        margin-bottom: 9px;
+    }
+}
+.mrgn-btm1{ 
+    height: 20px;
+    margin-bottom: 8px;
+    @include break-point('1024'){
+        height: 28px;
+        margin-bottom: 9px;
+    }
+}
+.mrgn-btm2{
+    //padding-bottom: 9px;
+    margin-bottom: 12px;
+    @include break-point('1024'){ 
+        margin-bottom: 24px;
+    }
+} 
+
+.mrgn-btm3{ 
+    height: 20px;
+    margin-bottom: 8px;
+    @include break-point('1024'){
+        height: 28px;
+        margin-bottom: 9px;
+    }
+}
+// APPS LIST
+.listAddons__item--content__apps {
+    @include flex-box(row, center, center);
+    top: 24px;
+    position: relative;
+    @include break-point('768'){
+        margin-top: -21px;
+    }
+}
+
+.listAddons__item--content__apps__item {
+    cursor: pointer;
+    margin-right: 16px;
+}
+
+
+// LI LINK
+.listAddons__item--content__link {
+    position: relative;
+    top: -17px;
+    font-size: 16px;
+    @include break-point('375'){
+        top: 0px;
+    }
+    @include break-point('768'){
+        top: 0px;
+    }
+    @include break-point('1024'){
+        top: 0px;
+        font-size: 18px;
+    }
+    @include break-point('1366'){
+        top: 0px;
+        font-size: 18px;
+    }
+    @include break-point('1700'){
+        top: 0px;
+        font-size: 18px;
+    }
+}
+
+// LI LINK
+.listAddons__item--content__link--black {
+    position: relative;
+    top: 8px;
+    font-size: 16px;
+    @include break-point('1024'){
+        top: 0px;  
+        font-size: 18px;
+    }
+
+}
+
+// LI LINK
+.listAddons__item--content .btn__transparent {
+
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+    margin-top: 0;
+    margin-bottom: 0;
+    cursor: pointer;
+    @include break-point('768'){
+        margin-top: -25px;
+    }
+    @include break-point('1700'){
+        margin-top: -18px;
+    }
+}
+
+// DESCRIPTION
+.listAddons__item--content__option {
+    width: 271px;
+    height: 48px;
+    position: relative;
+    border-radius: 4px;
+    border: solid 0.7px rgba(239, 108, 0, 0.3);
+    //background-color: rgba(239,108,0,0.15);
+    @include text-font-medium(14px, #EF6C00, 1.5);
+    //padding: 8px;
+    text-align: center;
+    margin-bottom: 10px;
+    @include flex-box(row,center,center);
+
+    @include break-point('768'){
+        width: 272px;
+        margin-bottom: 1px;
+    }
+    @include break-point('1024'){
+        width: 315px;
+        height: 64px;
+        padding: 9px;
+        margin-bottom: 28px;
+        font-size: 14px;
+    }
+    @include break-point('1366'){
+       margin-bottom: 10px;
+       font-size: 14px;
+    }
+    @include break-point('1700'){
+        margin-bottom: 10px;
+       font-size: 14px;
+    }
+} 
+.listAddons__item--content__option2 {
+    width: 271px;
+    height: 48px;
+    position: relative;
+    border-radius: 4px;
+    border: solid 0.7px rgba(239, 108, 0, 0.3);
+    //background-color: rgba(239,108,0,0.15);
+    @include text-font-medium(14px, #EF6C00, 1.5);
+    //padding: 8px;
+    text-align: center;
+    margin-bottom: 10px;
+    @include flex-box(row,center,center);
+
+    @include break-point('768'){
+        width: 272px;
+        margin-bottom: 4px;
+    }
+    @include break-point('1024'){
+        width: 315px;
+        height: 64px;
+        padding: 9px;
+        margin-bottom: 53px;
+        font-size: 16px;
+    }
+    @include break-point('1366'){
+       margin-bottom: 30px;
+       font-size: 16px;
+    }
+    @include break-point('1700'){
+        margin-bottom: 30px;
+       font-size: 16px;
+    }
+} 
+
+// IMAGEN
+.listAddons__item--content__image {
+    width: 100%;
+    height: 202px;
+    position: absolute;
+    @include flex-box(column, center, center);
+    bottom: 0;
+    @include break-point('768'){
+        height: 207px;
+    }
+    @include break-point('1024'){
+        height: 243px;
+        bottom: 22px;
+    }
+    @include break-point('1366'){
+        width: 100%;
+        height: 288px;
+        bottom: 0px;
+    }
+   
+
+}
+
+.addon-item-defaul {
+    background-color: #fafafa; 
+    margin-top: 0px;
+    height: 388px; 
+    width: 368px; 
+
+    &:nth-child(even){
+        margin-right: 0;
+    }
+    @include break-point('1024'){
+        width: 432px;
+        height: 552px; 
+    } 
+    @include break-point('1366'){
+        width: 512px;
+        height: 552px; 
+    } 
+        
+}
+
+.addon-item-black {
+    background-color: #1E1E28; 
+    height: 388px; 
+    width: 368px; 
+        margin-top: 0px; 
+        @include break-point('1024'){
+            width: 432px;
+            height: 552px;
+        }
+        @include break-point('1366'){
+            width: 512px;
+            height: 552px;
+        } 
+}
+
+.addon-item-blue {
+    background: linear-gradient(180deg, #5CAADD 0%, #636DDB 100%); 
+    height: 388px; 
+    width: 368px; 
+        margin-top: 0px; 
+        @include break-point('1024'){
+            width: 432px;
+            height: 552px;
+        }
+        @include break-point('1366'){
+            width: 512px;
+            height: 552px;
+        } 
+}
+
+.addon-item-orange {
+    background: linear-gradient(180deg, #F5997E 0%, #F75A80 100%); 
+    height: 388px; 
+    width: 368px; 
+        margin-top: 0px;
+        @include break-point('1024'){
+            width: 432px;
+            height: 552px;
+        }
+        @include break-point('1366'){
+            width: 512px;
+            height: 552px;
+        }  
+}
+
+.addon-item-purple {
+    background: linear-gradient(180deg, #1E1E28 0%, #49246F 100%); 
+    height: 388px; 
+    width: 368px; 
+        margin-top: 0px;
+        @include break-point('1024'){
+            width: 432px;
+            height: 552px;
+        }
+        @include break-point('1366'){
+            width: 512px;
+            height: 552px;
+        }  
+}
+
+.skin-white > .listAddons__item--content__title,
+.skin-white > .listAddons__item--content__description { color: #F5F5F5;
+    
+} 
+.skin-white > .listAddons__item--content__title1,
+.skin-white > .listAddons__item--content__description { color: #F5F5F5;
+    
+} 
+.skin-white > .listAddons__item--content__title2,
+.skin-white > .listAddons__item--content__description { color: #F5F5F5;
+    
+}  
+.skin-white > .listAddons__item--content__option { 
+    background-color: #FFF; 
+        width: 268px;
+        height: 40px;  
+}
+.skin-white > .listAddons__item--content__option2 { 
+    background-color: #FFF; 
+        width: 95px;
+        height: 40px; 
+        top: 0px; 
+}
+ 

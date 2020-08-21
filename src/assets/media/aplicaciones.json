@@ -1,0 +1,74 @@
+{
+    "status": 0,
+    "descripcion": "Proceso correcto",
+    "bean": {
+        "listaimagenes": [
+            {
+                "orden": 1,
+                "nombre": "Netflix",
+                "urlimg": "https://imgn.cdn.iutpcdn.com/IMGS/APP/COVER/112335-3c.jpg",
+                "pagina": "netflix.html"
+            },
+            {
+                "orden": 2,
+                "nombre": "Amazon Prime",
+                "urlimg": "https://imgn.cdn.iutpcdn.com/IMGS/APP/COVER/354189-3c.jpg",
+                "pagina": "amazon.html"
+            },
+            {
+                "orden": 3,
+                "nombre": "You tube",
+                "urlimg": "https://imgn.cdn.iutpcdn.com/IMGS/APP/COVER/112323-3c.jpg",
+                "pagina": "youtube.html"
+            },
+            {
+                "orden": 4,
+                "nombre": "FoxPlay V3",
+                "urlimg": "https://imgn.cdn.iutpcdn.com/IMGS/APP/COVER/305109-3c.jpg",
+                "pagina": "fox.html"
+            },
+            {
+                "orden": 5,
+                "nombre": "Comedy Central",
+                "urlimg": "https://imgn.cdn.iutpcdn.com/IMGS/APP/COVER/314063-3c.jpg",
+                "pagina": "comedycentral.html"
+            },
+            {
+                "orden": 6,
+                "nombre": "Nickelodeon",
+                "urlimg": "https://imgn.cdn.iutpcdn.com/IMGS/APP/COVER/314065-3c.jpg",
+                "pagina": "nickelodeon.html"
+            },
+            {
+                "orden": 7,
+                "nombre": "MTV",
+                "urlimg": "https://imgn.cdn.iutpcdn.com/IMGS/APP/COVER/314067-3c.jpg",
+                "pagina": "mtv.html"
+            },
+            {
+                "orden": 8,
+                "nombre": "Discovery Kids",
+                "urlimg": "https://imgn.cdn.iutpcdn.com/IMGS/APP/COVER/315051-3c.jpg",
+                "pagina": "discoverykids.html"
+            },
+            {
+                "orden": 9,
+                "nombre": "Blim",
+                "urlimg": "https://imgn.cdn.iutpcdn.com/IMGS/APP/COVER/403477-3c.jpg",
+                "pagina": "blim.html"
+            },
+            {
+                "orden": 11,
+                "nombre": "STARZ",
+                "urlimg": "https://imgn.cdn.iutpcdn.com/IMGS/APP/COVER/389506-3c.jpg",
+                "pagina": "starz.html"
+            },
+            {
+                "orden": 14,
+                "nombre": "Tunein",
+                "urlimg": "https://imgn.cdn.iutpcdn.com/IMGS/APP/COVER/112328-3c.jpg",
+                "pagina": "tunein.html"
+            }
+        ]
+    }
+}

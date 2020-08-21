@@ -1,0 +1,8 @@
+{
+    "statusCode":200,
+    "codigo":0,
+    "mensaje":"Cupon Valido",
+    "descuento":150,
+    "fechaVencimiento":"15-Julio-2020",
+    "descripcion":"Convenio con Vendedores, 10% adicional al paquete seleccionado"
+ }

@@ -1,0 +1,76 @@
+/************************ GENERALES ***********************/
+body {
+  color: var(--main-gris-oscuro-color);
+  font-size: 12px;
+  background-color: #fafafa !important;
+  padding-bottom: 80px; /*72*/
+  font-family: "Montserrat", Sans-serif !important;
+}
+
+h1 {
+  font-size: 25px;
+  color: #3b4559;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #3b4559;
+  line-height: 34px;
+}
+
+h3 {
+  font-size: 16px;
+  color: #3b4559;
+  font-weight: 700;
+  margin: 0px;
+}
+
+p {
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--main-gris-oscuro-color);
+  margin: 0px;
+}
+
+ 
+body {
+  padding-bottom: 0;
+}
+
+
+ul, ol {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 19px;
+    padding-left: 40px !important;
+}
+
+li{
+  
+}
+
+b {
+    font-weight: bold;
+}
+
+img {
+    border: none;
+    max-width: 100%;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+img{
+    display: block;
+    margin: auto;
+}
+
+p {
+    color: #3D4669;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 19px;
+}

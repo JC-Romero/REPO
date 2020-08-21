@@ -1,0 +1,42 @@
+<style type="text/css">
+    .btn__transparent:before {
+        background-image: none !important;
+    }
+
+    #mensajeCuponInvalido {
+        font-family: Montserrat-Regular;
+        font-size: 16px;
+        color: #3b4559;
+    }
+</style>
+<div class="modal--cupon">
+    <div class="modal--cupon__layer"></div>
+    <div class="modal--cupon__content-form">
+        <span class="cupon__content-form__close" id="btncloseModalC"></span>
+        <div class="cupon__content-form__title">Agregar Cupón</div>
+        <div class="cupon__content-form__description"></div>
+        <form class="cupon__content-form__form">
+            <h1>Ingresa el código de promoción</h1>
+            <textarea id="cuponNum" rows="1" cols="15" class="borinp montomodcupon" maxlength="10"></textarea>
+
+            <label id="botonValidarCupon" class="btn__transparent" style="margin-top: 25px;width: 100%;margin: 0;text-align: center;cursor: pointer;">Validar</label>
+
+            <div id="mensajeCuponInvalido" style="display: none;">
+                <i class="fas fa-exclamation-circle"></i>&nbsp;El cupon no es valido, por favor verifica la informacion
+            </div>
+
+            <div id="cargadorCupon" style="display: none;">
+                <i class="fas fa-circle-notch fa-spin fa-3x"></i>
+            </div>
+
+            <div class="cuponfind">
+                <div id="idContenedorTablaCupon"  class="tabla-cupon" >
+                    <div id="idNumeroCuponAceptado" class="tabla-cupon__numero" > </div>
+                    <div id="idDescripcionCuponAceptado" class="tabla-cupon__descripcion"></div>
+                </div>
+                <div id="idMensajeCupon"></div>
+            </div>
+        </form>
+        <button id="idbotonAplicarCupon" class="btn__blue cupon__content-form__button">Aplicar</button>
+    </div>
+</div>

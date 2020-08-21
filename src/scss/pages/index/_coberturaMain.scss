@@ -1,0 +1,514 @@
+.header-cobertura{
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    position: fixed;
+    background-color: rgba(30,30,40,.6);
+    z-index: 999;
+    opacity: 1;
+    overflow: hidden;
+    transition: 0.5s ease-in;
+    top: 0;
+    @include flex-box(column, flex-start, center);
+    display: none;
+ 
+    & > .cobertura-container{
+        //border: solid 0.5px red;
+        width: 100%;
+        height: 426px;
+        position: absolute;
+        display: flex;
+        background-color: $gray-100;
+        box-shadow: $shadow-1000;
+        transition:  height 0.3s linear;
+        bottom: 0;
+        @include flex-box(column, flex-start, center);
+
+        @include break-point('800'){
+            width: 87.5%;
+            height: 328px;
+            background-color: $gray-100;
+            box-shadow: $shadow-1000;
+            border-radius: 4px;
+            top: 198px;
+        }
+
+        @include break-point('1100'){
+            max-width: 93%;
+            height: 315px;
+            max-width: 952px;
+            top: 160px;
+        }
+  
+        & > .step{
+            //border: solid 0.5px magenta;
+            //display: flex;
+            width: 100%;
+            height: auto;
+            position: relative;
+            @include flex-box(column, center, center);
+
+            & > .text-message{
+                //border: solid 0.5px mediumorchid;
+                width: 68%;
+                height: auto;
+                position: relative;
+                margin-top: 16px;
+                @include flex-box(row, flex-start, center);
+                flex-wrap: wrap;
+
+                @include break-point('800'){
+                    width: 100%;
+                    margin-top: 24px;
+                    @include flex-box(column, center, center);
+                }
+
+                // @include break-point('1100'){
+                //     @include flex-box(row, center, center);
+                // }
+    
+                div{
+                    height: 68;
+                    @include flex-box(row, flex-start, flex-start);
+                    flex-wrap: wrap;
+
+                    @include break-point('768'){
+                        height: 30px;
+                    }
+                    
+                    .text-bold{
+                        height: 68px;
+                        @include text-font-bold(18px, $gray-400, normal);
+                        line-height: 30px;
+                        //margin-right: 4px;
+    
+                        @include break-point('800'){
+                            height: 30px;
+                            font-size: 20px;
+                            line-height: 30px;
+                            @include flex-box(row, center, center);
+                        }
+
+                        i{
+                            //border: dashed 0.5px orange;
+                            //height: 30px;
+                            //margin-right: 4px;
+                            
+                            @include text-font-regular(18px, $gray-400, normal);
+                            line-height: 30px;
+
+                            @include break-point('800'){
+                                margin: 0 4px;
+                            }
+                        }
+
+                        .text-blue{
+                            height: 30px;
+                            @include text-font-bold(28px, $blue-400, normal);
+                            line-height: 30px;
+                    
+                            @include break-point('800'){
+                                font-size: 32px;
+                                line-height: 30px;
+                            }
+                        }
+                    }
+                }
+                
+                
+            }
+
+            & > .separator-container{
+                //border: solid 0.5px purple;
+                width: 100%;
+                height: 28px;
+                margin-top: 16px;
+                position: relative;
+                flex-wrap: nowrap;
+                @include flex-box(column, center, center);
+
+                @include break-point('1100'){
+                    width: 872px;
+                    margin-top: 26px;
+                    @include flex-box(column, center, center);
+                }
+            
+                & > .separator-text{
+                    width: 202px;
+                    height: 28px;
+                    border-radius: 4px;
+                    background-color: $gray-200;
+                    @include text-font-regular(16px, $gray-400, normal);
+                    line-height: 19px;
+                    font-weight: 500;		
+                    text-align: center;
+                    z-index: 30;
+                    @include flex-box(column, center, center);
+                }
+        
+                & > .separator-line{
+                    width: 100%;
+                    height: 1px;
+                    top: 12px;
+                    position: absolute;
+                    background-color: $gray-200;
+                    z-index: 25;
+
+                    @include break-point('1100'){
+                        width: 872px;
+                    }
+                }
+            }
+        
+            & > .form-cobertura{
+                width: 100%;
+                height: auto;
+                //padding: 0 26px;
+                //border: solid 0.5px green;
+                //margin-top: 22px;
+                @include flex-box(row, space-around, center);
+                flex-wrap: wrap;
+
+                @include break-point('500'){
+                    padding: 0 40px;
+                }
+
+                // @include break-point('800'){
+                //     margin-top: 14px;
+                // }
+
+                @include break-point('1100'){
+                    margin-top: 8px;
+                    min-height: 52px;
+                    @include flex-box(row, space-around, center);
+                }
+            
+                & > .input__float {
+                    margin-top: 38px;
+                    border-bottom: 1px solid $gray-400;
+
+                    @include break-point('800'){
+                        margin-top: 40px;
+                    }
+
+                    & > input{
+                    height: 30px;
+                    @include text-font-light(18px, $gray-400);
+                    // @include break-point('500'){
+                    //   @include text-font-light(28px, $gray-100);
+                    // }
+
+
+            
+                    &[data-empty="false"] + label,
+                    &:valid + label,
+                    &:focus + label,
+                    &:not(:placeholder-shown) + label   {
+                        @include text-font-regular(14px, $gray-800);
+                        transform: translate3d(0, -20px, 0);
+                    }
+                }
+        
+                & > label{
+                    top: 7px;
+                    @include text-font-regular(16px, $gray-600);
+                    // @include break-point('500'){
+                    //   @include text-font-light(14px, $gray-200);
+                    // }
+                    // @include break-point('800'){
+                    //   @include text-font-light(18px, $gray-200);
+                    // }
+                    // @include break-point('1700'){
+                    //   @include text-font-light(20px, $gray-200);
+                    // }
+                    }
+            }
+        
+                & > :nth-child(1){
+                    width: 312px;
+
+                    @include break-point('375'){
+                        width: 85%;
+                    }
+
+                    @include break-point('500'){
+                         width: 85%;
+                    }
+
+                    @include break-point('800'){
+                        width: 250px;
+                    }
+
+                    @include break-point('1100'){
+                        width: 250px;
+                    }
+                   
+                }
+
+                & > :nth-child(2){
+                    width: 148px;
+
+                    @include break-point('375'){
+                        width: 85%;
+                    }
+
+                    @include break-point('800'){
+                        width: 125px;
+                        order: 3;
+                    }
+
+                    @include break-point('1100'){
+                        width: 125px;
+                        order: 3;
+                    }
+                   
+                }
+                
+                & > :nth-child(3){
+                    width: 148px;
+
+                    @include break-point('375'){
+                        width: 85%;
+                    }
+
+                    @include break-point('800'){
+                        width: 120px;
+                        order: 4;
+                    }
+
+                    @include break-point('1100'){
+                        width: 120px;
+                        order: 4;
+                    }
+
+                }
+
+                & > :nth-child(4){
+                    
+                    width: 312px;
+
+                    @include break-point('375'){
+                        width: 85%;
+                    }
+
+                    @include break-point('500'){
+                        width: 85%;
+                    }
+
+                    @include break-point('800'){
+                        width: 210px;
+                        order: 2;
+                    }
+
+                    @include break-point('1100'){
+                        width: 210px;
+                        order: 2;
+                    }
+                   
+                }
+    
+            }//form
+
+            .confirm-cobertura{
+                display: none;
+                height: 159px;
+                transition: 0.4s;
+                //@include flex-box(row, space-between, flex-start);
+
+                @include break-point('800'){
+                    width: auto;
+                    height: 196px;
+                }
+
+
+                & > .text-message{
+                    width: 300px;
+                    height: auto;
+                    position: relative;
+                   // @include flex-box(row, center, flex-start);
+
+                   @include break-point('768'){
+                        margin-right: 35px;
+                   }
+        
+                    & > .text-normal{
+                        @include text-font-regular(16px, $gray-400, normal);
+
+                        .text-bold{
+                            @include text-font-regular(16px, $gray-400, normal);
+                            font-weight: bold;
+                            }
+                    }
+            
+                }
+
+                .btn__outline__green{
+                    margin: 0 auto;
+
+                    &:focus {
+                        outline: none!important; 
+                        outline: none!important;
+                    }
+                }
+                .ok-symbol{
+                    width: 32px;
+                    height: 32px;
+                    position: relative;
+                    margin-right: 8px;
+                    background-image: url(../img/ic_OK.png);
+                    object-fit: cover;
+
+                    @include break-point('768'){
+                        margin-right: 24px;
+                    }
+                }
+
+                .err-symbol{
+                    width: 32px;
+                    height: 32px;
+                    position: relative;
+                    margin-right: 8px;
+                    background-image: url(../img/iconos/ic_err.png);
+                    object-fit: cover;
+
+                    @include break-point('768'){
+                        margin-right: 24px;
+                    }
+                }
+
+                .blue-symbol{
+                    width: 32px;
+                    height: 32px;
+                    position: relative;
+                    margin-right: 8px;
+                    background-image: url(../img/iconos/ic_OK.png);
+                    object-fit: cover;
+
+                    @include break-point('768'){
+                        margin-right: 24px;
+                    }
+                }
+
+                &.active{
+                    height: 159px;
+                    @include flex-box(row, center, center);
+                    flex-wrap: wrap;
+                    @include break-point('768'){
+                        height: 92px;
+                    }
+                }               
+                
+
+            }
+
+
+      & > .btn__outline__blue {
+        margin-top: 16px;
+        margin-bottom: 32px;
+        background-color: transparent;
+        padding: 0 24px;
+
+        @include break-point('800'){
+            //height: 40px;
+            //margin: 24px 0;
+        }
+
+        &:hover {
+          background-color: $blue-300;
+          color: $gray-100;
+          box-shadow: $main-shadow;
+        }
+
+        &:focus {
+            outline: none!important; 
+            outline: none!important;
+        }
+        
+      }
+  
+    }//step
+    
+      .container-close-pop {
+        position: absolute;
+        right: 14px;
+        top: 14px;
+        display: none;
+        cursor: pointer;
+        @include break-point('500'){
+            top: 22px;
+            right: 22px;
+        }
+        @include break-point('800'){
+            display: flex;
+            top: 28px;
+            right: 21px;
+        }
+        // @include break-point('1100'){
+        //     right: 137px;
+        // }
+        // @include break-point('1400'){
+        //     right: 287px;
+        // }
+        // @include break-point('1700'){
+        //     top: 18px;
+        //     right: 352px;
+        // }
+  
+        &::after {
+            content: '';
+            background: url(../img/header/close-24-px.svg) no-repeat;
+            background-size: contain;
+            display: block;
+            height: 22px;
+            width: 22px;
+            // @include break-point('500'){
+            //     width: 43.8px;
+            //     height: 43.8px;
+            // }
+            // @include break-point('800'){
+            //     width: 32px;
+            //     height: 32px;
+            // }
+            // @include break-point('1700'){
+            //     width: 26px;
+            //     height: 26px;
+            // }
+        }
+      
+      }
+  
+      &.close-one{
+        animation: close1 0.3s ease-in forwards;
+      }
+
+      &.close-two{
+        animation: close2 0.3s ease-in forwards;
+      }
+  
+    }
+    
+  }
+  
+@keyframes close1 {
+    from {opacity: 1; height: 272px;}
+    to{opacity: 0; height: 0;}
+}
+
+@include break-point('800'){
+    @keyframes close1 {
+        from {opacity: 1; height: 92px;}
+        to{opacity: 0; height: 0;}
+        }
+}
+
+@keyframes close2 {
+    from {opacity: 1; height: 159px;}
+    to{opacity: 0; height: 0;}
+}
+
+@include break-point('800'){
+    @keyframes close2 {
+        from {opacity: 1; height: 92px;}
+        to{opacity: 0; height: 0;}
+        }
+}

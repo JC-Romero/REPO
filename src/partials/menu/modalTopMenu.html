@@ -1,0 +1,82 @@
+<div class="modal" id="modalMenu">
+    <!-- inicia aqui -->
+    
+    <!-- cobertura -->
+    <div class="modal--content-form" id="modalContentForm">
+
+        <div class="modal--content-form__cobertura" id="coberturaUser"></div>
+
+        <form id="formPersonalData" class="modal--content-form__form form-label form-css-label" >
+
+            <!-- step 0-->
+            <div id="step0" class="step">
+
+                <div class="modal--content-form__title" id="titleFormStep0"></div>
+                
+                <div class="container-inputs">
+
+                    <div class="input__float">
+                        <input id="calleModal" name="calleModal" type="text" autocomplete="off" required>
+                        <label for="calleModal">Calle</label>
+                    </div>
+    
+                    <div class="input__float">
+                        <input id="noExtModal" name="noExtModal" type="text" autocomplete="off" required>
+                        <label for="noExtModal">No. Exterior</label>
+                    </div>
+    
+                    <div class="input__float">
+                        <input id="cpModal" name="cpModal" type="text" autocomplete="off" minlength="5" maxlength="5" required>
+                        <label for="cpModal">Código postal</label>
+                    </div>
+
+                </div>
+
+                <button class="btn__outline__blue wd_hg" id="btnCobertura1"></button>
+
+            </div>
+
+            <!-- step 1-->
+            <div id="step1" class="step">
+
+                <div class="modal--content-form__title" id="titleFormStep1"></div>
+
+                <div class="cargador"></div>
+                
+            </div>
+
+            <!-- step 2-->
+            <div id="step2" class="step">
+
+                <div class="modal--content-form__title" id="titleFormStep2"></div>
+
+                <div class="modal--content-form__subtitle" id="subtitleFormStep2"></div>
+
+                <div class="container-inputs">
+
+                    <div class="input__float">
+                        <input id="cuModal" name="cuModal" type="text" autocomplete="off" required>
+                        <label for="cuModal">Tu correo</label>
+                    </div>
+
+                </div>
+                
+            </div>
+
+            <div id="step3" class="step">
+
+            </div>
+
+            <button class="btn__outline__blue" id="btnCobertura2"></button>
+            <a id="btnCoberturaText" class="btn__transparent">Probar otra dirección</a>
+
+        </form>
+
+        <!-- <div class="modal--content-form__text" id="ModalMessage">
+            Al enviar tu datos un ejecutivo se pondrá en contacto contigo pronto.
+        </div> -->
+
+    </div>
+
+    <div class="modal---close" id="closeModal"></div>
+</div> <!-- termina aqui ***--->

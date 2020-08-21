@@ -1,0 +1,58 @@
+.info__icon {
+    margin-top: 31px;
+    max-width: 182px;
+    text-align: center;
+    cursor: pointer;
+    @include flex-box (column, center, center);
+    & > div {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        cursor: pointer;
+        overflow: hidden;
+        width: 56px;
+        height: 56px;
+        @include break-point('500') {
+            width: 78px;
+            height: 78px;
+        }
+    }
+    & > h2 {
+        @include text-font-regular (12px, $gray-600);
+        margin-top: 13px;
+        @include break-point('500') {
+            @include text-font-regular (14px, $gray-600, 18px);
+        }
+    }
+    & > h1 {
+        @include text-font-medium (18px, $gray-400);
+        width: 100%;
+        @include break-point('500') {
+            @include text-font-medium (24px, $gray-400, 26px);
+        }
+        @include break-point('800') {
+            max-width: 192px;
+        }
+    }
+}
+
+.info__icon.green {
+    & > div {
+        border: 3px solid $green-200;
+        border-radius: 50%;
+    }
+}
+
+.info__icon.pink {
+    & > div {
+        border: 3px solid $pink-200;
+        border-radius: 50%;
+    }
+}
+
+.info__icon.purple {
+    & > div {
+        border: 3px solid $purple-100;
+        border-radius: 50%;
+    }
+}

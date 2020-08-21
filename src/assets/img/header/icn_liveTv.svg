@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="18px" viewBox="0 0 20 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>material/comunicacion/icn_liveTv</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M17.5228162,5.0065189 L11.1895698,5.0065189 L13.934811,2.26127771 L13.3507171,1.66883963 L10.0130378,5.0065189 L6.67535854,1.66883963 L6.08292047,2.26127771 L8.83650587,5.0065189 L2.50325945,5.0065189 C1.58539765,5.0065189 0.834419817,5.74915254 0.834419817,6.67535854 L0.834419817,16.6883963 C0.834419817,17.6062581 1.58539765,18.357236 2.50325945,18.357236 L17.5228162,18.357236 C18.440678,18.357236 19.1916558,17.6062581 19.1916558,16.6883963 L19.1916558,6.67535854 C19.1916558,5.74915254 18.440678,5.0065189 17.5228162,5.0065189 Z M17.5228162,16.6883963 L2.50325945,16.6883963 L2.50325945,6.67535854 L17.5228162,6.67535854 L17.5228162,16.6883963 Z M7.50977836,8.34419817 L7.50977836,15.0195567 L13.3507171,11.6818774 L7.50977836,8.34419817 Z" id="path-1"></path>
+        <linearGradient x1="0%" y1="100%" x2="100%" y2="0%" id="linearGradient-3">
+            <stop stop-color="#F04E98" offset="0%"></stop>
+            <stop stop-color="#FD78B4" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Header/Footer" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Breakpoint-4x---1100-x-768-Copy" transform="translate(-828.000000, -47.000000)">
+            <g id="Header">
+                <g id="Main-Header" transform="translate(0.000000, 11.000000)">
+                    <g id="Watch-Tv" transform="translate(814.000000, 29.000000)">
+                        <g id="Content">
+                            <g transform="translate(14.000000, 6.000000)">
+                                <g id="material/comunicacion/icn_liveTv">
+                                    <rect id="zona_sensible" x="0" y="0" width="20.0260756" height="20.0260756"></rect>
+                                    <mask id="mask-2" fill="white">
+                                        <use xlink:href="#path-1"></use>
+                                    </mask>
+                                    <use id="Shape" fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+                                    <g id="Acentos/-d---Degradado-Rosa-" mask="url(#mask-2)" fill="url(#linearGradient-3)" fill-rule="evenodd">
+                                        <rect id="Color" x="0" y="0" width="20.0668896" height="20.0668896"></rect>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

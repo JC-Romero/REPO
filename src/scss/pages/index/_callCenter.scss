@@ -1,0 +1,83 @@
+#callCenter{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: $blue-400;
+    z-index: 80;
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
+    padding: 8px;
+    @include flex-box(column, center, center);
+    text-align: center;
+    //top: 145vh;
+    height: 75px;
+    @include break-point('500') {
+        height: 112px;
+    }
+    @include break-point('800') {
+        padding: 22px;
+        height: 72px;
+    }
+    @include break-point('1100') {
+        padding: 20px;
+        height: 63px;
+    }
+    @include break-point('1700') {
+        height: 69px;
+    }
+
+    .call-center-container{
+        @include text-font-regular(14px, $gray-1700, 1.29);
+        font-weight: normal;
+        @include break-point('500') {
+            font-size: 22px;
+            line-height: 28px;
+        }
+        @include break-point('1100') {
+            font-size: 18px;
+            line-height: 18px;
+        }
+        @include break-point('1700') {
+            font-size: 20px;
+            line-height: 20px;
+        }
+
+        & > p {
+            @include break-point('800'){
+                display: inline-block;
+            }
+            & > span {
+                @include text-font-regular(14px, $gray-1700, 1.29);
+                font-weight: bold;
+                @include break-point('500') {
+                    font-size: 22px;
+                    line-height: 28px;
+                }
+                @include break-point('1100') {
+                    font-size: 20px;
+                    line-height: 20px;
+                } 
+                @include break-point('1700') {
+                    font-size: 22px;
+                    line-height: 22px;
+                } 
+            }
+            &:nth-child(3) {
+                & > span {
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
+            }
+        }        
+    }
+
+    .close-call-center {
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        background-image: url(../img/iconos/close-24-px.svg);
+        object-fit: contain;
+        cursor: pointer;
+        align-self: flex-end;
+    }
+
+}

@@ -1,0 +1,130 @@
+
+.card_packages{
+    width: 100%;
+    position: relative;
+    background-color: $blue-1800;
+    overflow-x: hidden;
+    @include flex-box(column, center, center);
+    & > span {
+        margin-top: 40px;
+        margin-bottom: 24px; 
+        width: 340px;
+        height: 73px;
+        text-align: center;
+        @include text-font-regular(22px, $gray-100, 1.5);
+
+        @include break-point('768'){
+            @include text-font-regular(28px, $gray-100, 1.5);
+            width: 713px;
+            margin-top: 49px;
+            margin-bottom: 40px; 
+            padding-left: 32px;
+            padding-right: 23px;
+        }
+        @include break-point('1024'){
+            padding-left: 9%;
+            padding-right: 11%;
+        }
+        @include break-point('1366'){
+            padding-left: 0;
+            padding-right: 0;
+        }
+        @include break-point('1700'){
+            width: 800px;
+        }
+
+        & > span{
+            @include text-font-semibold(22px, $gray-100, 1.5);
+            @include break-point('768'){
+                font-size: 28px;
+            }
+            @include break-point('800'){
+                font-size: 28px;
+            }
+            @include break-point('1700'){
+                font-size: 31px;
+            }
+        }
+    }
+
+    & > .detail_cards{
+        width: auto;
+        margin-bottom: 8px;
+        position: relative;
+        overflow-x: hidden;
+        padding: 0 10%;
+        transition: 0.3s;
+        left: 0;
+        @include break-point('1100'){
+            margin-bottom: 64px;
+        }
+        @include break-point('1366'){
+            margin-top: 3px;
+            margin-bottom: 48px;
+        }
+        @include break-point('1700'){
+            margin-bottom: 49px;
+            margin-top: 3px;
+        }
+        @include flex-box(row, space-around, center);
+        & .card-package-item{
+            margin-bottom: 0;
+            margin-left: 12px;
+            margin-right: 12px;
+            opacity: 0.5;
+            &.active{
+                opacity: 1;
+            }
+            @include break-point('1024'){
+                margin-left: 12px;
+                margin-right: 12px;
+                opacity: 1;
+            }
+            @include break-point('1366'){
+                margin-left: 24px;
+                margin-right: 24px;
+            }
+            &:first-child{
+                margin-left: 0;
+            }
+            &:last-child{
+                margin-right: 0;
+            }
+        }
+    }
+
+    & .circle_indicators{
+        @include flex-box(row, center, center);
+        margin-bottom: 20px;
+        @include break-point('500'){
+            margin-bottom: 16px;
+        }
+        @include break-point('1100'){
+            display: none;
+        }
+        li{
+            width: 12px;
+            height: 12px;
+            border-radius: 100px;
+            margin: 18px 14px;
+            background-color: $gray-2400;
+            cursor: pointer;
+            &.active{
+                background-color: $blue-400;
+            }
+        }
+    }
+
+    & .terms_conditions{
+        background-color: $gray-100;
+        & span{
+            &:nth-child(1) {
+                padding-top: 40px;
+            }
+            &:nth-child(3) {
+                 margin-bottom: 48px;
+            }
+        }
+    }
+}
+

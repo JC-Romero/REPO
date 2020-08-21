@@ -1,0 +1,1807 @@
+.modal-channels-content{
+    position: fixed;
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba($gray-1700, 1);
+    z-index: 999;
+    overflow-y: auto;
+    transition: all 500ms;
+    display: initial;
+
+    &__title{
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        position: relative;
+        margin-top: 32px;
+        margin-bottom: 32px;
+        @include text-font-regular(25px, $gray-400, normal);
+        @include flex-box(row, center, center);
+        @include break-point('768'){ 
+            font-size: 32px;
+        }
+        @include break-point('1024'){ 
+            font-size: 36px;
+        }
+        @include break-point('1366'){
+            @include text-font-regular(36px, $gray-400, 58px);
+            height: 72px;
+            padding: 37px 0 0 0;
+        }
+        @include break-point('1700'){
+            @include text-font-regular(38px, $gray-400, 58px);
+            height: 72px;
+            padding: 37px 0 0 0;
+        }
+    }
+
+    &__close {
+        top: 32px;
+        right: 8px;
+        cursor: pointer;
+        z-index: 210;
+        position: absolute;
+        @include break-point('768') {
+            top: 28px;
+            right: 28px;
+        }
+        @include break-point('1100') {
+            top: 40px;
+            right: 40px;
+        }
+        @include break-point('1400') {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+        @include break-point('1700') {
+            top: 37px;
+            right: 2.8%;
+        }
+        &::before {
+            content: '';
+            background: url(../img/pages/packages/closeModalPackages.svg) no-repeat;
+            background-size: contain;
+            display: block;
+            height: 40px;
+            width: 40px;
+            @include break-point('375') {
+                height: 40px;
+                width: 40px;
+                background: url(../img/pages/packages/close-24-px.svg) no-repeat;
+            }
+            @include break-point('800') {
+                height: 33px;
+                width: 33px;
+            }
+            @include break-point('1400') {
+                height: 32px;
+                width: 32px;
+                background: url(../img/pages/packages/close-1366-px.svg) no-repeat;
+                background-position: center;
+            }
+            @include break-point('1700') {
+                height: 40px;
+                width: 40px;
+                background: url(../img/pages/packages/close-1700-px.svg) no-repeat;
+                background-position: center;
+            }
+        }
+    }
+
+    &__select-options{
+        position: sticky;
+        position: -webkit-sticky;
+        width: 100%;
+        top: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        z-index: 200;
+        transition: 0.2s;
+        @include flex-box(column, center, center);
+        @include break-point('375'){
+            display: block;
+        }
+        @include break-point('1366'){
+            display: block;
+            padding-top: 10px;
+        }
+        @include break-point('1400'){
+            padding-top: 10px;
+        }
+        @include break-point('1700'){
+            padding-top: 10px;
+        }
+        .menu-channels {
+            width: 100%;
+            height: auto;
+            position: relative;
+            left: 0;
+            @include flex-box(row, center, center);
+            &__item:last-child{
+                margin-right: 0;
+            }
+            li{
+                margin-right: 8px;
+                @include break-point('1400'){
+                    margin-right: 8px;
+                    height: 44px;
+                    width: 211px;
+                    @include text-font-regular(20px, $gray-400, 1.5);
+                }
+                @include break-point('1700'){
+                    margin-right: 9px;
+                    @include text-font-regular(22px, $gray-400, 1.5);
+                }
+            }
+            li:last-child{
+                margin-right: 0;
+            }
+        }
+        span{
+            height: 42px;
+            text-align: center;
+            margin-top: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @include text-font-regular(20px, $gray-400, normal);
+            @include break-point('375'){
+                @include text-font-regular(20px, $gray-400, 2.1);
+            }
+            @include break-point('768'){
+                @include text-font-regular(24px, $gray-400, 1.75);
+            }
+            @include break-point('1024'){
+                @include text-font-regular(24px, $gray-400, 1.75);
+            }
+            @include break-point('1366'){
+                @include text-font-regular(24px, $gray-400, 1.75);
+                text-align: center;
+            }
+            @include break-point('1700'){
+                @include text-font-regular(28px, $gray-400, 1.65);
+                height: 47px;
+            }
+            i{
+                @include break-point('375'){
+                    @include text-font-medium(20px, $gray-400, 2.1);
+                }
+                @include break-point('768'){
+                    @include text-font-medium(24px, $gray-400, 1.75);
+                }
+                @include break-point('1024'){
+                    @include text-font-medium(24px, $gray-400, 1.75);
+                }
+                @include break-point('1366'){
+                    @include text-font-medium(24px, $gray-400, 1.75);
+                }
+                @include break-point('1700'){
+                    @include text-font-medium(28px, $gray-400, 1.65);
+                    height: 47px;
+                }
+            }
+        }
+        &.toWhite{
+            background-color: $gray-100;
+            box-shadow:  0 8px 24px 0 rgba(0,0,0,0.05);
+        }
+    }
+
+    &__content-menu{
+        position: relative;
+        overflow-x: hidden;
+        width: 1400px;
+        height: 46px;
+        @include flex-box(row, flex-start, flex-start);
+        margin-bottom: 15px;
+        @include break-point('500'){
+            margin-bottom: 27px;
+        }
+        @include break-point('800'){
+            margin-bottom: 30px;
+        }
+        @include break-point('1100'){
+            margin-bottom: 40px;
+        }
+        @include break-point('1400'){
+            width: 100%;
+        }
+        @include break-point('1700'){
+            height: 50.6px;
+            margin-bottom: 44px;
+        }
+    }
+
+    &__content-filter-channels{
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding-top: 32px;
+        @include flex-box(row, center, flex-start);
+        @include break-point('1366'){
+            @include flex-box(row, center, flex-start);
+            padding-left: 28px;
+            padding-right: 28px;
+            padding-top: 34px;
+        }
+        .container-content-channels{ 
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            @include flex-box(column, space-between, flex-start); 
+            @include break-point('1366'){
+                max-width: 1110px;
+                margin-left: 3.5%;
+            }
+            @include break-point('1700'){
+                width: 1223px;
+                max-width: 1223px;
+                margin-left: 52.8px;
+            }
+        }
+    }
+
+    &__container-filter{
+        position: relative;
+        @include break-point('1366'){
+            width: 192px;
+        }
+        @include break-point('1700'){
+            width: 12.6%;
+        }
+        .filter{
+            @include break-point('1366'){
+                display: block;
+            }
+            @include break-point('1700'){
+                display: block;
+            }
+            & > span{
+                display: block;
+                left: 38px;
+                position: relative;
+                @include text-font-regular(14px, $gray-400, normal);
+
+                @include break-point('500'){
+                    display: block;
+                    left: 38px;
+                    position: relative;
+                    @include text-font-regular(16px, $gray-400, normal);
+                }
+                @include break-point('1366'){
+                    left: 0px;
+                    width: 192px;
+                    height: 19px;
+                }
+                @include break-point('1700'){
+                    height: 21px;
+                    width: 100%;
+                }
+                &:nth-child(2){
+                    font-weight: 700;
+                    margin-top: 41px;
+                    margin-bottom: 20px;
+                    @include break-point('1366'){
+                        font-size: 16px;
+                        margin-top: 40px;
+                        margin-bottom: 19px;
+                    }
+                    @include break-point('1700'){
+                        font-size: 18px;
+                        margin-top: 45px;
+                    }
+                }
+                &:nth-child(4){
+                    font-weight: 700;
+                    height: 43px;
+                    //border-top: solid 1px $gray-200;
+                    padding-top: 24px;
+                    margin-top: 6px;
+                    margin-bottom: 20px;
+                    @include break-point('1366'){
+                        font-size: 16px;
+                        padding-top: 16px;
+                        margin-bottom: 20px;
+                        margin-top: 0;
+                    }
+                    @include break-point('1700'){
+                        height: 47px;
+                        font-size: 18px;
+                        padding-top: 26px;
+                        margin-bottom: 22px;
+                    }
+                }
+                &:nth-child(6){
+                    font-weight: 700;
+                    height: 43px;
+                    border-top: solid 1px $gray-200;
+                    padding-top: 24px;
+                    margin-top: 6px;
+                    margin-bottom: 20px;
+                    @include break-point('1700'){
+                        height: 47px;
+                        font-size: 18px;
+                        padding-top: 26px;
+                        margin-bottom: 22px;
+                    }
+                }
+            }
+            .filter-tab{
+                display: flex;
+                flex-wrap: nowrap;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                @include break-point('800'){
+                    display: block;
+                    margin-top: 30px;
+                    width: 100%;
+                    height: 46px;
+                    border-top: solid 1px $gray-200;
+                    border-bottom: solid 1px $gray-200;
+                    @include flex-box(row, space-around, center);
+                }
+                @include break-point('1400'){
+                    margin-top: 0;
+                }
+                @include break-point('1700'){
+                    height: 50.6px;
+                }
+                span{
+                    left: 40px;
+                    @include text-font-regular(16px, $gray-400, normal);
+                    @include break-point('1700'){
+                        @include text-font-medium(18px, $gray-400);
+                        margin-left: calc(-35%);
+                    }
+                }
+                &::before{
+                    content: "";
+                    width: 40px;
+                    height: 40px;
+                    left: 0;
+                    position: absolute;
+                    background-image: url(../img/pages/canales/filter-list-24-px.svg);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    @include break-point('1700'){
+                        width: 35px;
+                        height: 35px;
+                        background-size: 35px 35px;
+                    }
+                }
+            }
+            .type{
+                width: 192px;
+                @include break-point('1700'){
+                    width: 100%;
+                }
+                li{
+                    width: 100%;
+                    height: 22px;
+                    margin-bottom: 18px;
+                    @include flex-box(row, flex-start, center);
+                    @include break-point('1366'){
+                        height: 22px;
+                        margin-bottom: 20px;
+                        padding-left: 5px;
+                    }
+                    @include break-point('1700'){
+                        height: 24px;
+                        margin-bottom: 20px;
+                        padding-left: 6px;
+                    }
+                    span{
+                        width: 60%;
+                        margin-left: 8px;
+                        @include text-font-regular(14px, $gray-600, normal);
+                        @include break-point('1366'){
+                            font-size: 14px;
+                            margin-left: 9px;
+                        }
+                        @include break-point('1700'){
+                            font-size: 16px;
+                            margin-left: 14px;
+                        }
+                    }
+                    img{
+                        background-size: contain;
+                        display: block;
+                        height: 20px;
+                        width: 20px;
+                        margin-left: 13px;
+                        cursor: pointer;
+                        @include break-point('1366'){
+                            margin-left: 9px;
+                        }
+                        @include break-point('1700'){
+                            margin-left: 14px;
+                        }
+                    }
+                    div{
+                        width: 22px;
+                        height: 22px;
+                        border: solid 1px $gray-200;
+                        background-color: $gray-100;
+                        border-radius: 4px;
+                        transition: 0.3s;
+                        cursor: pointer;
+                        @include flex-box(row, center, center);
+
+                        @include break-point('1700'){
+                            width: 24px;
+                            height: 24px;
+                            border-radius: 4px;
+                            border: solid 1.1px $gray-200;
+                        }
+                        &.active{
+                            border: solid 1px $blue-400;
+                            &::before{
+                                content: "";
+                                width: 12px;
+                                height: 12px;
+                                border-radius: 50%;
+                                border: solid 2px $blue-400;
+                                background-color: transparent;
+                                @include break-point('1700'){
+                                    width: 14px;
+                                    height: 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .city{
+                width: 192px;
+                @include break-point('1366'){
+                    width: 100%;
+                }
+                @include break-point('1700'){
+                    width: 100%;
+                }
+                li{
+                    width: 100%;
+                    height: 22px;
+                    margin-bottom: 18px;
+                    @include flex-box(row, flex-start, center);
+                    @include break-point('1366'){
+                        height: 24px;
+                        margin-bottom: 18px;
+                        padding-left: 5px;
+                        height: 20px;
+                    }
+                    @include break-point('1700'){
+                        height: 24px;
+                        margin-bottom: 20px;
+                        padding-left: 6px;
+                    }
+                    span{
+                        width: 80%;
+                        margin-left: 13px;
+                        @include text-font-regular(14px, $gray-600, normal);
+                        @include break-point('1366'){
+                            font-size: 14px;
+                            margin-left: 9px;
+                        }
+                        @include break-point('1700'){
+                            font-size: 16px;
+                            margin-left: 14px;
+                        }
+                    }
+                    .btn-check-square{
+                        width: 22px;
+                        height: 22px;
+                        border: solid 1px $gray-200;
+                        background-color: $gray-100;
+                        border-radius: 4px;
+                        transition: 0.3s;
+                        cursor: pointer;
+                        @include flex-box(row, center, center);
+                        @include break-point('1700'){
+                            width: 24px;
+                            height: 24px;
+                            border-radius: 4px;
+                            border: solid 1.1px $gray-200;
+                        }
+                        &.active{
+                            border: solid 1px $blue-400;
+                            &::before{
+                                content: "";
+                                width: 12px;
+                                height: 12px;
+                                border-radius: 50%;
+                                border: solid 2px $blue-400;
+                                background-color: transparent;
+                                @include break-point('1700'){
+                                    width: 14px;
+                                    height: 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__container-filterMovil{
+        position: relative;
+        @include break-point('1366'){
+            width: 192px;
+        }
+        @include break-point('1700'){
+            width: 12.6%;
+        }
+        .filter{
+            display: block;
+            @include break-point('1366'){
+                display: none;
+            }
+
+            & > span{
+                display: block;
+                left: 0;
+                position: relative;
+                @include text-font-regular(16px, $gray-400, normal);
+                @include break-point('375'){
+                    @include text-font-regular(16px, $gray-400, normal);
+
+                }
+                &:nth-child(1){
+                    font-weight: 700;
+                    margin-top: 41px;
+                    margin-bottom: 20px;
+                    @include break-point('375'){
+                        font-weight: 700;
+                        margin-top: 13px;
+                        margin-bottom: 19px;
+                    }
+                }
+                &:nth-child(3){
+                    font-weight: 700;
+                    height: 43px;
+                    border-top: solid 1px $gray-200;
+                    padding-top: 24px;
+                    margin-top: 6px;
+                    margin-bottom: 20px;
+                }
+                &:nth-child(5){
+                    font-weight: 700;
+                    height: 43px;
+                    border-top: solid 1px $gray-200;
+                    padding-top: 24px;
+                    margin-top: 6px;
+                    margin-bottom: 20px;
+                }
+            }
+            .filter-tab{
+                display: block;
+                @include break-point('800'){
+                    display: block;
+                    margin-top: 30px;
+                    width: 100%;
+                    height: 46px;
+                    border-top: solid 1px $gray-200;
+                    border-bottom: solid 1px $gray-200;
+                    @include flex-box(row, space-around, center);
+                }
+                @include break-point('1400'){
+                    margin-top: 0;
+                }
+                @include break-point('1700'){
+                    height: 50.6px;
+                }
+                span{
+                    left: 40px;
+                    @include text-font-regular(16px, $gray-400, normal);
+                    @include break-point('1700'){
+                        @include text-font-medium(18px, $gray-400);
+                        margin-left: calc(-35%);
+                    }
+                }
+                &::before{
+                    content: "";
+                    width: 40px;
+                    height: 40px;
+                    left: 0;
+                    position: absolute;
+                    background-image: url(../img/pages/canales/filter-list-24-px.svg);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    @include break-point('1700'){
+                        width: 35px;
+                        height: 35px;
+                        background-size: 35px 35px;
+                    }
+                }
+            }
+            .type{
+                width: 192px;
+                @include break-point('1700'){
+                    width: 100%;
+                }
+                li{
+                    width: 100%;
+                    height: 22px;
+                    margin-bottom: 18px;
+                    @include flex-box(row, flex-start, center);
+                    @include break-point('1366'){
+                        height: 22px;
+                        margin-bottom: 20px;
+                        padding-left: 5px;
+                    }
+                    @include break-point('1700'){
+                        height: 24px;
+                        margin-bottom: 20px;
+                        padding-left: 6px;
+                    }
+                    span{
+                        width: 60%;
+                        margin-left: 8px;
+                        @include text-font-regular(14px, $gray-600, normal);
+                        @include break-point('1366'){
+                            font-size: 14px;
+                            margin-left: 9px;
+                        }
+                        @include break-point('1700'){
+                            font-size: 16px;
+                            margin-left: 14px;
+                        }
+                    }
+                    img{
+                        background-size: contain;
+                        display: block;
+                        height: 20px;
+                        width: 20px;
+                        margin-left: 13px;
+                        cursor: pointer;
+                        @include break-point('1366'){
+                            margin-left: 9px;
+                        }
+                        @include break-point('1700'){
+                            margin-left: 14px;
+                        }
+                    }
+                    div{
+                        width: 22px;
+                        height: 22px;
+                        border: solid 1px $gray-200;
+                        background-color: $gray-100;
+                        border-radius: 4px;
+                        transition: 0.3s;
+                        cursor: pointer;
+                        @include flex-box(row, center, center);
+
+                        @include break-point('1700'){
+                            width: 24px;
+                            height: 24px;
+                            border-radius: 4px;
+                            border: solid 1.1px $gray-200;
+                        }
+                        &.active{
+                            border: solid 1px $blue-400;
+                            &::before{
+                                content: "";
+                                width: 12px;
+                                height: 12px;
+                                border-radius: 50%;
+                                border: solid 2px $blue-400;
+                                background-color: transparent;
+                                @include break-point('1700'){
+                                    width: 14px;
+                                    height: 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .city{
+                width: 192px;
+                @include break-point('1366'){
+                    width: 100%;
+                }
+                @include break-point('1700'){
+                    width: 100%;
+                }
+                li{
+                    width: 100%;
+                    height: 22px;
+                    margin-bottom: 18px;
+                    @include flex-box(row, flex-start, center);
+                    @include break-point('1366'){
+                        height: 24px;
+                        margin-bottom: 18px;
+                        padding-left: 5px;
+                        height: 20px;
+                    }
+                    @include break-point('1700'){
+                        height: 24px;
+                        margin-bottom: 20px;
+                        padding-left: 6px;
+                    }
+                    span{
+                        width: 80%;
+                        margin-left: 13px;
+                        @include text-font-regular(14px, $gray-600, normal);
+                        @include break-point('1366'){
+                            font-size: 14px;
+                            margin-left: 9px;
+                        }
+                        @include break-point('1700'){
+                            font-size: 16px;
+                            margin-left: 14px;
+                        }
+                    }
+                    .btn-check-square{
+                        width: 22px;
+                        height: 22px;
+                        border: solid 1px $gray-200;
+                        background-color: $gray-100;
+                        border-radius: 4px;
+                        transition: 0.3s;
+                        cursor: pointer;
+                        @include flex-box(row, center, center);
+                        @include break-point('1700'){
+                            width: 24px;
+                            height: 24px;
+                            border-radius: 4px;
+                            border: solid 1.1px $gray-200;
+                        }
+                        &.active{
+                            border: solid 1px $blue-400;
+                            &::before{
+                                content: "";
+                                width: 12px;
+                                height: 12px;
+                                border-radius: 50%;
+                                border: solid 2px $blue-400;
+                                background-color: transparent;
+                                @include break-point('1700'){
+                                    width: 14px;
+                                    height: 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__content-tabs {
+        width: 100%;
+        height: auto;
+        position: relative;
+        @include flex-box(row, flex-start, flex-start);
+        .channels-container{
+            min-width: 100%;
+            height: auto;
+            position: relative;
+            .channels-list{
+                position: relative;
+                height: auto;
+                padding: 0 2.5%;
+                @include flex-box(row, center, center);
+                flex-wrap: wrap;
+                @include break-point('500'){
+                    padding: 0 3.6%;
+                }
+                @include break-point('768'){
+                    padding: 0;
+                    @include flex-box(row, center center);
+                    flex-wrap: wrap;
+                }
+                @include break-point('1024'){ 
+                    padding: 0;
+                    @include flex-box(row, center, center);
+                    flex-wrap: wrap;
+                }
+                @include break-point('1366'){
+                    padding: 0;
+                    @include flex-box(row, flex-start, center);
+                    flex-wrap: wrap;
+                }
+                li{
+                    width: 100%;
+                    position: relative;
+                    @include flex-box(row, flex-start, flex-start);
+                    flex-wrap: wrap;
+                    padding-left: 5%;
+
+
+                    .description-channel{
+                        position: absolute;
+                        width: 90%;
+                        left: 0;
+                        border-radius: 3px;
+                        transition: 0.3s;
+                        background-color: $blue-1800;
+                        padding: 28px 2.5% 15px 2.5%;
+                        box-shadow: $shadow-600;
+                        z-index: 5;
+                        opacity: 0;
+                        @include flex-box(row, flex-start, flex-start);
+                        flex-wrap: wrap;
+                        @include break-point('375'){
+                            border-radius: 4px;
+                            padding: 17px 16px 17px 16px; 
+                            margin-left: 16px; 
+                        }
+                        @include break-point('768'){
+                            border-radius: 4px;
+                            padding: 16px 24px 16px 24px; 
+                            margin-left: 40px; 
+                        }
+                        @include break-point('1024'){
+                            @include flex-box(column, flex-start, flex-start);
+                            flex-wrap: wrap;
+                            border-radius: 4px;
+                            height: 260px; 
+                            padding: 11px 24px 11px 24px;
+                            margin-left: 36px; 
+                            width: 95%;
+                        }
+
+                        .selector-channel{
+                            width: 0;
+                            height: 0;
+                            position: absolute;
+                            transition: 0.3s;
+                            border-right: 13px solid transparent;
+                            border-left: 13px solid transparent;
+                            border-bottom: 15px solid $blue-1800;
+                            top: -14px;
+                        }
+
+                        .header-channel{
+                            position: relative;
+                            height: 22px;
+                            margin-bottom: 13px;
+                            width: 100%;
+                            @include flex-box(row, flex-start, center);
+                            @include break-point('500'){
+                                height: 24px;
+                            }
+                            
+                            @include break-point('1024'){
+                                width: 45%;
+                            }
+                            
+                            span{
+                                @include text-font-regular(18px, $gray-100, normal);
+                                @include break-point('500'){
+                                    font-size: 20px;
+                                }
+                                @include break-point('1700'){
+                                    font-size: 22px;
+                                }
+                            }
+                            img{
+                                width: 18px;
+                                height: 18px;
+                                margin-right: 8px;
+                                @include break-point('500'){
+                                    width: 22px;
+                                    height: 22px;
+                                }
+                                @include break-point('1700'){
+                                    width: 24.2px;
+                                    height: 24.2px;
+                                }
+                            }
+                        }
+
+                        .content-channel-description{
+                            position: relative;
+                            height: auto;
+                            width: 100%;
+                            margin-bottom: 8px;
+                            @include flex-box(column, flex-start, center);
+                            @include break-point('500'){
+                                margin-bottom: 16px;
+                            }
+                            @include break-point('800'){
+                                margin-bottom: 32px;
+                                margin-right: 10px; 
+                            }
+                            @include break-point('1024'){ 
+                                width: 45%;
+                                margin-bottom: 20px;
+                                margin-right: 41px; 
+                            }
+                            @include break-point('1366'){
+                                margin-right: 0; 
+                            }
+                            & > .principal{
+                                position: relative;
+                                height: 130px;
+                                margin-bottom: 8px;
+                                text-align: left;
+                                @include text-font-regular(16px, $gray-100, 1.63);
+                                @include break-point('375'){
+                                    height: 104px; 
+                                    margin-bottom: 8px;
+                                }
+                                @include break-point('500'){
+                                    height: 78px;
+                                    margin-bottom: 42px;
+                                }
+                                @include break-point('800'){
+                                    height: 104px;
+                                    margin-bottom: 16px;
+                                }
+                                @include break-point('1024'){
+                                    height: 78px;
+                                    margin-bottom: 42px;
+                                }
+                                @include break-point('1700'){
+                                    height: 86px;
+                                    font-size: 17px;
+                                    line-height: 1.63;
+                                    margin-bottom: 46px;
+                                }
+                            }
+                            & > .aditional{
+                                position: relative;
+                                height: 104px;
+                                @include flex-box(row, flex-start, center);
+                                @include break-point('375'){
+                                    height: 80px; 
+                                    padding-bottom: 8px;
+                                }
+                                @include break-point('500'){
+                                    height: 52px; 
+                                }
+                                @include break-point('800'){
+                                    height: 78px;
+                                }
+                                @include break-point('1100'){
+                                    height: 52px;
+                                }
+                                @include break-point('1700'){
+                                    height: 57px;
+                                }
+                                span{
+                                    text-align: left;
+                                    @include text-font-regular(16px, $gray-100, 1.63);
+                                    font-weight: bold;
+                                    i{
+                                        position: relative;
+                                        cursor: pointer;
+                                        @include text-font-regular(16px, $blue-1000, 1.63);
+                                        font-weight: normal;   
+                                        @include break-point('1700'){
+                                            font-size: 18px;
+                                            line-height: 1.59;
+                                        }
+                                        &::after{
+                                            position: relative;
+                                            content: '';
+                                            width: 18px;
+                                            height: 18px;
+                                            right: 0;
+                                            background-image: url(../img/pages/canales/play-circle-outline-24-px.svg);
+                                            object-fit: contain;
+                                            background-position: center;
+                                            display: inline-block;
+                                            @include break-point('1700'){
+                                                width: 20px;
+                                                height: 20px;
+                                                background-size: 23px 24px;
+                                                left: 3px;
+                                                top: 5px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .media-channel{
+                            position: relative;
+                            width: 100%;
+                            height: 172px;
+                            @include flex-box(row, center, center);
+                            flex-wrap: wrap;
+                            object-fit: contain;
+                            @include break-point('800'){
+                                height: 100%;
+                            }
+                            @include break-point('1024'){
+                                width: 52%;
+                                height: 100%;
+                                @include flex-box(column, space-between, center);
+                                flex-wrap: wrap;
+                            }
+                            @include break-point('1400'){
+                                height: 100%;
+                                flex-wrap: wrap;
+                            }
+                            @include break-point('1700'){
+                                height: 265px;
+                            }
+
+                            img{
+                                cursor: pointer;
+                                &:nth-child(1){
+                                    border-radius: 2.8px;
+                                    width: 33%;
+                                    height: 100%;
+                                    
+                                    @include break-point('1024'){
+                                        width: 55%;
+                                        height: 100%;
+                                    }
+                                }
+                                &:nth-child(2){
+                                    border-radius: 2.8px;
+                                    width: 33%;
+                                    height: 100%;
+                                    
+                                    @include break-point('1024'){
+                                        //display: none;
+                                        width: 25%;
+                                        height: 42.5%;
+                                    }
+                                }
+                                &:nth-child(3){
+                                    border-radius: 2.8px;
+                                    width: 33%;
+                                    height: 100%;
+                                    
+                                    @include break-point('1024'){
+                                        width: 25%;
+                                        height: 42.5%;
+                                    }
+                                }
+                            }
+                        }
+
+                        &.open-info{
+                            animation: active 0.3s ease-out forwards;
+                        }
+                        &.close-info{
+                            animation: inactive 0.2s ease-in forwards;
+                        }
+                    }
+
+                    .content-channel{
+                        width: 100px;
+                        height: 73px;
+                        margin-right: 0.6%;
+                        margin-bottom: 8px;
+                        transition: 0.3s;
+                        @include flex-box(row, center, center);
+                        flex-wrap: wrap;
+                        @include break-point('375'){
+                            margin: 0 10px;
+                            width: 100px;
+                            height: 90px;  
+                        }
+                        @include break-point('768'){
+                            margin: 0 14px;
+                            width: 152px;
+                            height: 136px;  
+                        }
+                        @include break-point('1024'){
+                            margin: 0 4px;
+                            width: 152px;
+                            height: 136px; 
+                        }
+                        @include break-point('1366'){
+                            margin: 0 16px;
+                            width: 152px;
+                            height: 136px;
+                        }
+                        @include break-point('1700'){
+                            width: 167px;
+                            height: 150px;
+                            margin: 0 18px;
+                        }
+                        .logo-channel{
+                            width: 100%;
+                            height: 56px;
+                            background-color: $gray-100;
+                            box-shadow: $shadow-1500;
+                            transition: 0.3s;
+                            margin-bottom: 6px;
+                            transition: 0.3s;
+                            border-radius: 2.6px;
+                            cursor: pointer;
+                            //filter: grayscale(100%);
+                            background: lightslategrey;
+                            @include break-point('768'){
+                                box-shadow: $shadow-600;
+                                height: 86px;
+                            }
+                            @include break-point('1700'){
+                                height: 95px;
+                                border-radius: 4.4px;
+                                box-shadow: $shadow-1400;
+                                margin-bottom: 0;
+                            }
+                            img{
+                                width: 100%;
+                                height: 100%;
+                                object-fit: contain;
+                                background-position: center;
+                            }
+                            &:hover{
+                                box-shadow: $shadow-600;
+                                filter: grayscale(0%);
+                            }
+                            &.active{
+                                filter: grayscale(0%);
+                            }
+                        }
+                        .type-channel{
+                            width: 14px;
+                            height: 14px;
+                            margin-right: 6px;
+                            @include break-point('375'){
+                                margin-top: -18px;
+                            }
+                            @include break-point('500'){
+                                width: 22px;
+                                height: 22px;
+                            }
+                            @include break-point('768'){
+                                margin-top: -23px;
+                            }
+                            @include break-point('1024'){
+                                margin-top: -23px;
+                            }
+                            @include break-point('1366'){
+                                margin-top: -23px;
+                            }
+                            @include break-point('1700'){
+                                margin-top: -23px;
+                            }
+                        }
+                        span{
+                            @include text-font-regular(14px, $gray-3100, normal);
+                            @include break-point('375'){
+                                margin-top: -18px;
+                                font-size: 16px;
+                            }
+                            @include break-point('500'){
+                                font-size: 16px;
+                            }
+                            @include break-point('800'){
+                                margin-top: -23px;
+                                font-size: 16px;
+                            }
+                            @include break-point('1024'){
+                                margin-top: -23px;
+                                font-size: 16px;
+                            }
+                            @include break-point('1366'){
+                                margin-top: -23px;
+                                font-size: 16px;
+                            }
+                            @include break-point('1700'){
+                                margin-top: -23px;
+                                font-size: 18px;
+                            }
+                        }
+                        &:nth-child(3n+0){
+                            margin-right: 0;
+                            @include break-point('375'){
+                                margin-right: 10px; 
+                            }
+                            @include break-point('768'){
+                                margin-right: 14px; 
+                            }
+                            @include break-point('1100'){
+                                margin-right: 4px; 
+                            }
+                            @include break-point('1366'){
+                                margin-right: 16px;
+                            }
+                            @include break-point('1700'){
+                                margin-right: 18px;
+                            }
+                        }
+                        &:nth-child(4n+0){
+                            @include break-point('375'){
+                                margin-right: 14px; 
+                            }
+                            @include break-point('768'){
+                                margin-right: 14px; 
+                            }
+                            @include break-point('1100'){
+                                margin-right: 4px; 
+                            }
+                            @include break-point('1366'){
+                                margin-right: 16px;
+                            }
+                            @include break-point('1700'){
+                                margin-right: 18px;
+                            }
+                        }
+                        &:nth-child(6n+0){
+                            @include break-point('768'){
+                                margin-right: 14px; 
+                            }
+                            @include break-point('1100'){
+                                margin-right: 4px; 
+                            }
+                            @include break-point('1366'){
+                                margin-right: 16px;
+                            }
+                            @include break-point('1700'){
+                                margin-right: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__content-new-section{
+        width: 100%;
+        height: auto;
+        position: relative;
+        @include flex-box(column, center, center);
+        .content-slider-channels{
+            width: 100%;
+            height: auto;
+            position: relative;
+            margin-top: 16px;
+            padding-top: 48px;
+            padding-bottom: 48px;
+            background-color: $gray-3400;
+            @include flex-box(row, center, center);
+            @include break-point('375'){ 
+                margin-top: 0px;
+                padding-top: 15px;
+                padding-bottom: 33px; 
+                padding-left: 16px;
+                height: 252px; 
+            }
+            @include break-point('768'){ 
+                margin-top: 44px;
+                padding-top: 8px;
+                padding-bottom: 40px; 
+                padding-left: 33px;
+                height: 416px; 
+            }
+            @include break-point('1024'){ 
+                height: auto;
+                margin-top: 41px;
+                padding-top: 71px;
+                padding-bottom: 71px;
+                padding-left: 0px;
+            }
+            @include break-point('1366'){
+                margin-top: 25px;
+                padding-top: 71px;
+                padding-bottom: 71px;
+                padding-left: 0px;
+            }
+            @include break-point('1700'){
+                margin-top: 25px;
+                padding-top: 38px;
+                padding-bottom: 38px;
+                padding-left: 0px;
+            }
+            .slider-channels-list{
+
+                width: auto;
+                height: 416px;
+                @include flex-box(row, flex-start, center);
+                @include break-point('375'){
+                    @include flex-box(row, center, center);
+                    height: auto;
+                    flex-wrap: wrap; 
+                }
+                @include break-point('768'){
+                    @include flex-box(row, center, center);
+                    height: auto;
+                    flex-wrap: wrap; 
+                } 
+                @include break-point('1024'){
+                    @include flex-box(row, flex-start, center);
+                    width: auto;
+                    height: 152px;
+                }
+                @include break-point('1366'){
+                    height: 198px;
+                }
+                @include break-point('1700'){
+                    height: 218px;
+                }
+                li{
+                    margin-right: 8px;
+                    @include break-point('375'){
+                        width: 152px;
+                        margin-right: 16px;
+                        margin-top: 17px;
+                        height: 85px; 
+                    }
+                    @include break-point('768'){
+                        width: 270px;
+                        margin-right: 33px;
+                        margin-top: 32px;
+                        height: 152px; 
+                    }
+                    @include break-point('1024'){
+                        width: auto;
+                        margin-right: 33px;
+                        margin-top: 0px;
+                        height: 152px;
+                    }
+                    @include break-point('1366'){
+                        margin-right: 8px;
+                        margin-top: 0px;
+                        height: 218px;
+                    }
+                    @include break-point('1700'){
+                        margin-right: 9px;
+                        margin-top: 0px;
+                        height: 218px;
+                    }
+                    &:last-child{
+                        margin-right: 0;
+                    }
+                    img{
+                        background-size: 352px 198px;
+                        object-fit: contain;
+                        @include break-point('1024'){
+                            background-size: 387px 218px;
+                            width: 100%;
+                            height: 152px;
+                            border-radius: 8px;
+                        }
+                        @include break-point('1366'){
+                            background-size: 387px 218px;
+                            width: 100%;
+                            height: 198px;
+                            border-radius: 8px;
+                        }
+                        @include break-point('1700'){
+                            background-size: 387px 218px;
+                            width: 100%;
+                            height: 218px;
+                            border-radius: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .content-premium-channels{
+            width: 100%;
+            height: auto;
+            position: relative;
+            background-color: $gray-3500;
+            padding-top: 48px;
+            padding-bottom: 24px;
+            @include flex-box(column, center, center);
+            @include break-point('375'){
+                padding-top: 32px;
+                padding-bottom: 40px;
+            }
+            @include break-point('768'){
+                padding-top: 48px;
+                padding-bottom: 24px;
+            }
+            @include break-point('1024'){
+                padding-top: 48px;
+                padding-bottom: 26px;
+            }
+            @include break-point('1366'){
+                padding-top: 48px;
+                padding-bottom: 0;
+            }
+            @include break-point('1700'){
+                padding-top: 47px;
+                padding-bottom: 0;
+            }
+            .title{
+                width: 312px;
+                height: 81px;
+                text-align: center;
+                @include text-font-regular(28px, $gray-1700, normal);
+                line-height: 81px;
+                margin-bottom: 32px;
+                @include break-point('375'){ 
+                    width: 312px;
+                    font-size: 18px;
+                    margin-bottom: 24px;
+                    height: 81px;
+                    line-height: 27px;
+                }
+                @include break-point('768'){
+                    width: 608px;
+                    height: 84px;
+                    line-height: 42px;
+                    font-size: 28px;
+                    margin-bottom: 46px;
+                }
+                @include break-point('1024'){
+                    width: 832px;
+                    height: 84px;
+                    line-height: 42px;
+                    font-size: 28px;
+                    margin-bottom: 32px;
+                }
+                @include break-point('1366'){
+                    width: 832px;
+                    height: 84px;
+                    line-height: 42px;
+                    font-size: 28px;
+                    margin-bottom: 32px;
+                }
+                @include break-point('1700'){
+                    width: 832px;
+                    height: 84px;
+                    line-height: 42px;
+                    font-size: 32px;
+                    margin-bottom: 48px;
+                }
+            }
+            .premium-channels-list{
+                position: relative;
+                @include flex-box(column, center, center);
+                @include break-point('375'){
+                    width: 312px;
+                } 
+                @include break-point('768'){
+                    width: 100%;
+                } 
+                @include break-point('1024'){
+                    width: 100%;
+                } 
+                @include break-point('1366'){
+                    width: 100%;
+                } 
+                @include break-point('1700'){
+                    width: 100%;
+                }
+                .premium-channel-card{
+                    @include break-point('375'){
+                        margin-bottom: 24px;
+                    }
+                    @include break-point('768'){
+                        margin-bottom: 32px;
+                    } 
+                    @include break-point('1024'){
+                        margin-bottom: 32px;
+                    }
+                    @include break-point('1366'){
+                        margin-bottom: 32px;
+                    }
+                    @include break-point('1700'){
+                        margin-bottom: 57px;
+                    }
+                    &:nth-child(1){
+                        //background-color: $purple-500;
+                        background-color: #402B3C;
+                        @include break-point('375'){ 
+                            height: 415px;
+                            width: 312px;
+                        }
+                        @include break-point('768'){ 
+                            height: 238px;
+                            width: 678px;
+                        }
+                        @include break-point('1024'){ 
+                            height: 272px;
+                            width: 752px;
+                        }
+                        @include break-point('1366'){ 
+                            height: 423px;
+                            width: 1072px;
+                        }
+                        @include break-point('1700'){ 
+                            height: 465px;
+                            width: 1180px;
+                        }
+                    }
+                    &:nth-child(2){
+                        background-color: $gray-3400;
+                        @include break-point('1700'){
+                            margin-bottom: 81px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes gray-filter{
+    from { filter: grayscale(100%);}
+    to{filter: grayscale(0%);}
+}
+
+@keyframes active{
+    from { opacity: 0;}
+    to{ opacity: 1;}
+}
+
+@keyframes inactive{
+    from { opacity: 1; }
+    to{ opacity: 0; }
+}
+
+.detailChann{
+    width: 192px;
+    height: 40px;
+    @include break-point('375'){
+        width: 192px;
+        height: 48px;
+    }
+    @include break-point('768'){
+        width: 192px;
+        height: 40px;
+    }
+    @include break-point('1400'){
+        width: 211px;
+        height: 44px;
+    }
+    @include break-point('1700'){
+        width: 211px;
+        height: 44px;
+    }
+}
+
+.mainTitle-modal{
+    &__channel-touch{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        background: #f5f5f5;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
+        transition: 0.3s ease-out;
+        position: sticky;
+        position: -webkit-sticky;
+        width: 100%;
+        top: 0;
+        padding-top: 22px;
+        padding-bottom: 10px;
+        z-index: 200;
+        transition: 0.2s;
+        @include flex-box(column, flex-start, center);
+        @include break-point('1024'){
+            display: block;
+        }
+        @include break-point('1366'){
+            display: none;
+        }
+
+        &--filters-container{
+            width: 100pX;
+            height: 48px;
+            position: absolute;
+            background-color: #f5f5f5;
+            z-index: 1; 
+            left: 0;
+            float: left;
+            .element-one{
+                margin-left: 16px;
+                width: 48px;
+                height: 48px;
+                float: left;
+                position: relative;
+                border-radius: 24px;
+                background-color: #fafafa;
+                cursor: pointer;
+                @include flex-box(column, center, center);
+            }
+            .element-two{
+                border-right: 1px solid;
+                margin-left: 8px;
+                margin-right: 0;
+                height: 16px;
+                position: absolute;
+                float: right;
+                position: relative;
+                margin-top: 16px;
+            }
+            .element-three{
+                border-right: 1px solid;
+                height: 32px;
+                position: absolute;
+                float: right;
+                position: relative;
+                margin-top: 8px;
+            }
+        }
+        
+        &--channels-container{
+            background-color: #f5f5f5;
+            padding-top: 0px;
+            height: 48px; 
+            min-height: 48px;
+            width: 100%;
+            height: auto;
+            position: relative;
+            padding: 0; 
+            overflow-x: hidden;
+            float: right;
+            .channels-touch-options{
+                height: 100%;
+                width: 100%;
+                position: relative;
+                transition: 0.3s ease-out;
+                @include flex-box(row, flex-start, center);
+                @include break-point('1024'){
+                    @include flex-box(row, center, center);
+                }
+                &__item{
+                    min-width: 192px;
+                    height: 48px;
+                    position: relative;
+                    border-radius: 24px;
+                    opacity: 0.5;
+                    border: solid 1px #e0e0e0;
+                    background-color: rgba(224,224,224,0.5);
+                    margin-right: 8px;
+                    @include flex-box(row, center, center);
+                    transition: 0.3s ease-out;
+                    cursor: pointer;
+                    &:last-child{
+                        margin-right: 0;
+                    }
+                    &:hover{
+                        border: solid 2px #1a76d2;
+                        opacity: 1;
+                    }
+                    &.active{
+                        border: solid 2px #1a76d2;
+                        opacity: 1;
+                    }
+                    &--options{
+                        margin-right: 8px;
+                        @include text-font-medium(18px, #3b4559, normal);
+                        pointer-events: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.channels-text{
+    background: #f5f5f5;
+    @include break-point('375'){
+        margin-top: 50px;
+        @include text-font-regular(20px, $gray-400, 2.1);
+    }
+    @include break-point('768'){
+        @include text-font-regular(24px, $gray-400, 1.75);
+    }
+    @include break-point('1024'){
+        @include text-font-regular(24px, $gray-400, 1.75);
+        margin-left: 33%;
+    }
+    @include break-point('1366'){
+        @include text-font-regular(24px, $gray-400, 1.75);
+        border: solid 1px
+    }
+    @include break-point('1700'){
+        @include text-font-regular(28px, $gray-400, 1.65);
+        height: 47px;
+    }
+}
+
+i{
+    @include break-point('375'){
+        @include text-font-medium(20px, $gray-400, 2.1);
+    }
+    @include break-point('768'){
+        @include text-font-medium(24px, $gray-400, 1.75);
+    }
+    @include break-point('1024'){
+        @include text-font-medium(24px, $gray-400, 1.75);
+    }
+}
+
+.slider-touch{
+    position: absolute;
+    float: right;
+    right: 0;
+    width: calc( 100% - 100px );
+}
+
+.containerModalFilter {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(30, 30, 40, 0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+.containerModalFilter:target {
+    opacity:1;
+    pointer-events: auto;
+    overflow-y: auto;
+}
+
+.containerModalFilter > div {
+    width: 232px;
+    height: auto;
+    position: relative;
+    margin: 176px auto;
+    border-radius: 8px;
+    background-color: #FAFAFA;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1);
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    @include text-font-regular(20px, #1a76d2, 1);
+}
+
+.closed {
+    right: 29px;
+    top: 29px;
+    cursor: pointer;
+    z-index: 10;
+}
+.closed img{
+    height: 24px;
+    width: 24px;
+}
+.container-close{
+    border-bottom: 1px solid #e0e0e0;
+    height: 40px; 
+    width: 100%;
+    cursor: pointer;
+    @include flex-box(column, center, center);
+    margin-bottom: 13px;
+}
+
+.modalFilter{
+    display: block;
+    @include flex-box(row, flex-start, flex-start);
+    width: 100%;
+    text-align: left;
+    @include break-point('1366'){ 
+    }
+    & > span{
+        display: block;
+        left: 20px;
+        position: relative;
+        @include text-font-regular(14px, $gray-400, normal);
+    }
+}
+
+/*.container-program container-firts{
+    img{
+        width: 377px;
+        height: 241px;
+    }
+}
+
+.container-program container-second{
+    img{
+        width: 209px;
+        height: 117px;
+    }
+}
+
+.container-program container-third{
+    img{
+        width: 209px;
+        height: 117px;
+    }
+}*/

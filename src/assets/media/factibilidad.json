@@ -1,0 +1,18 @@
+{
+    "status":0,
+    "descripcion":"Proceso exitoso",
+    "bean":{
+       "factibilidad":"1",
+       "comentarios":"FACTIBLE POR FO DE ACCESO DENTRO DE CLÚSTER",
+       "IdRegion":"12",
+       "Region":"MEGACENTRO-CENTRO/SUR",
+       "Cuidad":"CIUDAD DE MEXICO",
+       "distrito":"PEDREGAL",
+       "zona":"",
+       "nombre_cluster":"PEDREGAL",
+       "CategoryService":"HUAWEI",
+       "NSE":"A/B",
+       "estimulofiscal":"false",
+       "idCodigoPostal":"a0061000004Ow8TAAS"
+    }
+ }

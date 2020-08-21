@@ -1,0 +1,85 @@
+/*
+  This boilerplate is based in ITCSS and SMACSS
+*/
+@import 'helpers/variables';
+@import 'helpers/mixins';
+@import 'helpers/colors';
+@import 'helpers/animations';
+@import 'base/reset';
+@import 'base/base';
+@import 'base/typography';
+@import 'components/buttons';
+@import 'components/info';
+@import 'components/input';
+@import 'components/card';
+@import 'components/card_detail';
+@import 'components/header_detail';
+@import 'components/titles';
+//
+@import 'components/serviceCard';
+
+//@import 'components/chats';
+@import 'components/applause';
+@import 'components/card_component';
+@import 'components/separator';
+@import 'components/premium_cards';
+@import 'layout/footer';
+@import 'layout/header';
+@import 'layout/menu';
+@import 'layout/termsConditions';
+@import 'pages/index/slider';
+//@import 'pages/index/newSlider';
+@import 'pages/index/internet';
+@import 'pages/index/tv';
+@import 'pages/index/phone';
+@import 'pages/index/packages';
+@import 'pages/index/cobertura';
+@import 'pages/index/callCenter';
+@import 'pages/index/movil';
+@import 'pages/index/promoHome';
+@import 'pages/index/chat';
+@import 'pages/index/coberturaMain';
+//Nuevo contenido v4 feb1419
+@import 'pages/index/videoBanner';
+@import 'pages/index/sectionApps';
+@import 'pages/index/serviceApps';
+//Paquetes
+@import 'pages/packages/description';
+@import 'pages/packages/packages';
+@import 'pages/packages/modal';
+@import 'pages/packages/tv';
+@import 'pages/packages/selectPackage';
+@import 'pages/packages/bannerPackageChoose';
+//DetallePaquete
+@import 'pages/packageDetail/ticketResume';
+@import 'pages/packageDetail/cardPackages';
+@import 'pages/packageDetail/cardPromotions';
+@import 'pages/packageDetail/internet';
+@import 'pages/packageDetail/tv';
+@import 'pages/packageDetail/phone';
+@import 'pages/packageDetail/barDetail';
+@import 'pages/packageDetail/addonsPackages';
+//Contratacion
+@import 'pages/contratacion/contratacion';
+@import 'pages/contratacion/finalizaContratacion';
+@import 'pages/contratacion/contract';
+@import 'pages/contratacion/folio';
+//@import 'pages/contratacion/folio';
+//Channels
+@import 'pages/channels/channels';
+@import 'commons/commons';
+
+//Ventajas
+@import 'pages/advantages/advantages.scss';
+
+
+@import 'pages/landings/landings';
+
+// asistencia
+@import 'pages/asistencia/asistencia';
+// faq
+@import 'pages/faq/faq';
+@import 'pages/faq/faq_mobile';
+
+
+

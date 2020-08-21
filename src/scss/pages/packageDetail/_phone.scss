@@ -1,0 +1,195 @@
+#phoneDetail{
+    //border: solid 0.5px goldenrod;
+    position: relative;
+    width: 96.3%;
+    //left: 6px;
+    padding-top: 32px;
+    margin-bottom: 16px;
+    position: relative;
+    border-radius: 8px;
+    background-color: $gray-1700;
+    @include flex-box(column, center, center);
+    @include break-point('500'){
+        width: 97.6%;
+        padding-top: 40px;
+        margin-bottom: 24px;
+    }
+    @include break-point('800'){
+        width: 89.6%;
+        padding-top: 48px;
+        margin-bottom: 32px;
+        //left: 5.2%;
+    }
+    @include break-point('1100'){
+        width: 98.9%;
+        padding-top: 39px;
+        margin-bottom: 48px;
+        @include flex-box(row, center, center);
+        flex-wrap: wrap;
+    }
+    @include break-point('1400'){
+        width: 96.6%;
+    }
+    @include break-point('1700'){
+        width: 87.5%;
+        max-width: 1487px;
+        padding-top: 44px;
+        margin-bottom: 53px;
+    }
+
+    & > div:nth-child(3){
+        @include break-point ('1100'){
+            margin-right: 1.4%;
+        }
+        @include break-point ('1400'){
+            margin-right: 3.5%;
+        }
+        @include break-point ('1700'){
+            margin-right: 3.2%;
+        }
+    }
+
+    .main__card{
+        & > .card__simple{
+            box-shadow: none;
+            @include break-point('500'){
+                height: 267px;
+                border-radius: 8px;
+            }
+            @include break-point('800'){
+                height: 333px;
+                border-radius: 9.2px;
+            }
+            @include break-point('1100'){
+                height: 300px;
+                border-radius: 8px;
+                margin: 0;
+            }
+            @include break-point('1400'){
+                height: 333px;
+            }
+        }
+        & > .card__double{
+            box-shadow: none;
+            @include break-point('500'){
+                height: 267px;
+            }
+            @include break-point('800'){
+                height: 333px;
+                border-radius: 9.2px;
+            }
+            @include break-point('1100'){
+                height: 300px;
+                border-radius: 8px;
+                margin: 0;
+            }
+            @include break-point('1400'){
+                height: 333px;
+            }
+        }
+    }
+
+    .card__simple{
+        height: 169px;
+        margin-bottom: 16px;
+        border-radius: 5px;
+        box-shadow: $shadow-500;
+        @include break-point('500'){
+            height: 267px;
+            margin-bottom: 24px;
+        }
+        @include break-point('800'){
+            height: 333px;
+        }
+        @include break-point('1100'){
+            height: 300px;
+            border-radius: 8px;
+            margin-bottom: 34px;
+        }
+        @include break-point('1400'){
+            height: 333px;
+        }
+    }
+    .card__double{
+        height: 169px;
+        margin-bottom: 16px;
+        border-radius: 5px;
+        box-shadow: $shadow-500;
+        @include break-point('500'){
+            height: 267px;
+            margin-bottom: 24px;
+        }
+        @include break-point('800'){
+            height: 333px;
+        }
+        @include break-point('1100'){
+            height: 300px;
+            border-radius: 8px;
+            margin-bottom: 34px;
+        }
+        @include break-point('1400'){
+            height: 333px;
+        }
+    }
+
+    & > span{
+        width: 93.5%;
+        text-align: center;
+        margin-top: 24px;
+        margin-bottom: 16px;
+        @include text-font-regular(14px, $gray-400, 1.71);
+        @include break-point('800'){
+            width: 88.4%;
+            font-size: 20px;
+            margin-top: 40px;
+            margin-bottom: 35px;
+        }
+        @include break-point('1100'){
+            width: 62.7%;
+        }
+        @include break-point('1400'){
+            width: 52.8%;
+        }
+        @include break-point('1700'){
+            width: 53.7%;
+            font-size: 22px;
+            line-height: 1.73;
+            margin-bottom: 38px;
+        }
+        i{
+            @include text-font-bold(14px, $gray-400, 1.71);
+            @include break-point('800'){
+                font-size: 20px;
+            }
+            @include break-point('1700'){
+                font-size: 22px;
+                line-height: 1.73;
+            }
+        }
+    }
+
+    & > .btn__text__simple{
+        margin-bottom: 16px;
+        @include break-point('500'){
+            margin-bottom: 15px;
+        }
+        @include break-point('1700'){
+            margin-bottom: 16.4px;
+        }
+        &:last-child{
+            margin-bottom: 24px;
+            @include break-point('500'){
+                margin-bottom: 40px;
+            }
+            @include break-point('1100'){
+                margin-bottom: 62px;
+            }
+            @include break-point('1400'){
+                margin-bottom: 55px;
+            }
+            @include break-point('1700'){
+                margin-bottom: 68.2px;
+            }
+        }
+    }
+}

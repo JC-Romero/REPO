@@ -1,0 +1,375 @@
+#description {
+    overflow: hidden;
+    background-color: transparent;
+    @include flex-box(column, center, flex-start);
+    transition: 0.2s;
+    background-color: $gray-1700;
+    &>h1 {
+        width: 100%; 
+        @include flex-box(row, center, center);
+        height: auto;
+        text-align: center;
+        margin: 50px auto 30px auto;
+        @include break-point('1024'){
+            margin-top: 20px;
+            height: 52px;
+            margin-bottom: 28px; 
+        }
+        @include break-point('1366'){
+            margin-top: 20px;
+            height: 52px;
+            margin-bottom: 28px; 
+        }
+        @include break-point('1700'){
+            margin-top: 20px;
+            height: 112px;
+            margin-bottom: 28px;
+        }
+        &.left {
+            @include break-point('1100') {
+                display: none;
+            }
+        }
+        &>span {
+            width: 272px;
+            height: 52px;
+            @include flex-box(row, center, center);
+            @include text-font-regular(22px, $gray-400, 26px);
+            @include break-point('500') {
+                font-size: 24px;
+                width: 448px;
+                height: 60px;
+            }
+            @include break-point('800') {
+                width: 651px;
+                font-size: 32px;
+                line-height: 36px;
+            }
+            @include break-point('1024') {
+                font-size: 34px;
+                line-height: 46px;
+                width: 740px;
+                height: 52px;
+            }
+            @include break-point('1366') {
+                font-size: 36px;
+                line-height: 46px;
+                width: 740px;
+                height: 52px;
+            }
+            @include break-point('1700') {
+                font-size: 40px;
+                line-height: 50px;
+                width: 872px;
+            }
+        }
+    }
+    & .slider {
+        height: 494px;
+        //margin-bottom: 100px;
+        @include break-point('375'){
+            margin-bottom: 0px; 
+        }
+        @include break-point('1100'){
+            height: auto;
+        }
+        &:last-child{
+            margin-bottom: 60px;
+        }
+        &:nth-child(odd){
+            @include break-point('1024') {
+                margin-top: 0px;
+            }
+            @include break-point('1400') {
+                margin-top: 0px;
+            }
+            @include break-point('1700') {
+                margin-top: 162px; 
+            }
+        }
+        @include flex-box(row, flex-start, center);
+        position: relative;
+        &.time {
+            min-width: 100%;
+            @include flex-box(row, center, center); 
+            & .titles {
+                min-width: 432px;
+                max-width: 432px;
+                @include break-point('1400') {
+                    min-width: 432px;
+                    max-width: 432px;
+                }
+                @include break-point('1700') {
+                    min-width: 520px;
+                    max-width: 520px;
+                }
+                &>h1 { 
+                    margin-bottom: 32px;
+                    &>span {
+                        width: 100%;
+                        min-width: 392px;
+                        @include text-font-regular(36px, $gray-400, 46px);
+                        @include break-point('1700'){
+                            min-width: 480px;
+                            height: 125px;
+                            font-size: 40px;
+                        }
+                    }
+                }
+                & li {
+                    height: auto;
+                    cursor: pointer;
+                    & h1 {
+                        @include text-font-medium(22px, $gray-600, 26px);
+                        @include break-point('1100') {
+                            margin-bottom: 8px;
+                        }
+                    }
+                    &>div {
+                        height: 0px;
+                        overflow: hidden;
+                        transition: 0.3s;
+                        & p {
+                            @include text-font-regular(16px, $gray-600, 26px);
+                            text-align: justify;
+                            @include break-point('1700') {
+                                @include text-font-regular(18px, $gray-600, 32px);
+                                height: auto;
+                            }
+                        }
+                        & a {
+                            @include text-font-regular(16px, $blue-400, 26px);
+                            margin-top: 8px;
+                            display: inline-block;
+                            @include break-point('1700'){
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                    & span {
+                        border-bottom: 1px solid $gray-2200;
+                        width: 112px;
+                        margin-top: 24px;
+                        margin-bottom: 24px;
+                        display: inline-block;
+                        position: relative;
+                        @include break-point('1700'){
+                            margin-top: 28px;
+                            margin-bottom: 28px;
+                        }
+                        & div {
+                            display: inline-block;
+                            min-height: 3px;
+                            background-color: $gray-600;
+                            position: absolute;
+                            top: -1px;
+                        }
+                    }
+                    &.active {
+                        cursor: auto;
+                        & h1 { 
+                            color: $gray-400;
+                        }
+                        &>div {
+                            height: auto;
+                        }
+                    }
+                }
+            }
+            & .imgs {
+                position: relative;
+                @include break-point('1024'){
+                    left: 0px;
+                }
+                & li {
+                    height: 100%;
+                    width: 100%;
+                    opacity: 0;
+                    transition: 0.3s;
+                    & img {
+                        max-width: 200%;
+                        height: 100%;
+                        @include break-point('1024'){
+                            max-width: 135%;
+                            height: 100%;
+                        }
+                        @include break-point('1366'){
+                            //max-width: 200%;
+                            //height: 100%;
+                            height: 70%;
+                        }
+                        @include break-point('1700'){
+                            //max-width: 200%;
+                            //height: 100%;
+                            height: 50%;
+                        }
+                    }
+                    &.active {
+                        opacity: 1;
+                    }
+                }
+            }
+            &.left {
+                flex-direction: row-reverse;
+                & .titles {
+                    @include flex-box(column, center, center);
+                    margin-left: 48px;
+                    @include break-point('1024') {
+                        margin-left: 0px;
+                        margin-right: 190px;
+                    }
+                    @include break-point('1366') {
+                        margin-left: 88px;
+                        margin-right: 104px; 
+                    }
+                    @include break-point('1700') {
+                        margin-left: 88px;
+                        margin-right: 104px; 
+                    }
+                    & li {
+                        div { 
+                            @include flex-box(column, center, flex-start);
+                            @include break-point('1024') {
+                                padding: 0px 10px;
+                            }
+                            @include break-point('1366') {
+                                padding: 0px 0px;
+                            }
+                        }
+                    }
+                }
+                & .imgs {
+                    min-width: 840px;
+                    max-width: 840px;
+                    height: 472px;
+                    position: relative;
+                    @include break-point('1024') {
+                        min-width: 776px;
+                        max-width: 776px;
+                        height: 594px;
+                    }
+                    @include break-point('1700') {
+                        min-width: 946px;
+                        max-width: 946px;
+                        height: 632px;
+                    }
+                    & li {
+                        position: absolute;
+                        top: 0px;
+                        transform: translateX(-100%);
+                        & img {
+                            position: absolute;
+                            right: 0px;
+                            @include break-point('1024') {
+                                right: 10px;
+                            }
+                        }
+                        &.active {
+                            transform: translateX(0%);
+                        }
+                    }
+                }
+            }
+            &.right {
+                text-align: right;
+                @include break-point('1024') {
+                    height: 632px;
+                    bottom: 70px;
+                    margin-top: 50px;
+                }
+                @include break-point('1366') {
+                    height: 672px;
+                }
+                @include break-point('1700') {
+                    height: 672px;
+                    margin-top: 168px;
+                }
+                & .titles {
+                    margin-right: 48px;
+                    @include break-point('1024') {
+                        position: relative;
+                        margin-right: 48px;
+                        margin-top: 96px;
+                        left: 75px;
+                    }
+                    @include break-point('1366') {
+                        margin-right: 88px;
+                    }
+                    & li {
+                        &>div {
+                            & p {
+                                text-align: right;
+                                @include break-point('1100'){
+                                    line-height: 27px;
+                                    padding: 0px 10px; 
+                                }
+                                @include break-point('1366'){ 
+                                    padding: 0px 0px; 
+                                }
+                                @include break-point('1700'){
+                                    padding: 0px 0px;
+                                    line-height: 1.59;
+                                }
+                            }
+                        }
+                    }
+                    & span {
+                        & div {
+                            left: 0px;
+                        }
+                    }
+                }
+                & .imgs {
+                    min-width: 592px;
+                    max-width: 592px;
+                    height: 472px;
+                    overflow: hidden;
+                    @include flex-box(column, flex-start, center);
+                    @include break-point('1024') {
+                        min-width: 702px;
+                        height: 632px;
+                        left: 40px;
+                    }
+                    @include break-point('1700') {
+                        min-width: 848px;
+                        max-width: 848px;
+                        height: 672px;
+                        left: 140px;
+                    }
+                    & li {
+                        position: relative;
+                        transform: translateY(0%);
+                        min-height: 100%; 
+                        & img {
+                            transform: translateX(-20%);
+                        }
+                    }
+                }
+            }
+        }
+    } 
+}
+.txtleft{
+    position: relative;
+    @include break-point('1024') {
+        top: 94px;
+        right: 300px;
+        width: 430px !important; 
+        margin-bottom: 62px !important;
+        text-align: right;
+    }
+    @include break-point('1366') {
+        top: 114px;
+        right: 320px;
+        width: 430px !important; 
+        margin-bottom: 62px !important;  
+        text-align: right;
+    }
+    @include break-point('1700') {
+        top: 134px;
+        right: 390px;
+        width: 520px !important; 
+        margin-bottom: 62px !important;  
+        text-align: right;
+    }
+}

@@ -1,0 +1,683 @@
+.movil {
+    background-color: $gray-1700;
+    position: relative;
+    @include flex-box (column, center, center);
+    padding-top: 48px;
+    @include break-point ('500') {
+        padding-top: 80px;
+    }
+    @include break-point('800') {
+        padding-top: 114px;
+    }
+    @include break-point('1100') {
+        padding-top: 60px;
+    }
+    // @include break-point('1400') {
+    //     padding-top: 148px;
+    // }
+    // @include break-point('1700') {
+    //     padding-top: 152px;
+    // }
+   &--main-title {
+        width: 100%;
+        background-color: transparent;           
+        position: sticky;
+        height: 56px;
+        top: 0px;
+        @include flex-box (column, flex-start, center);        
+        @include break-point('500') {
+            height: 69px;
+        }
+        @include break-point('800') {
+            height: 78px;
+        }      
+        @include break-point('1100'){
+            height: 80px;
+        }
+        @include break-point('1700') {
+            height: 93px;
+        }
+        & > div {
+            width: 96%;
+            max-width: 1034px;
+            background-color: transparent;
+            @include flex-box (column, center, center);
+            & > img {
+                width: auto;
+                transition: 0.3s;
+                margin-bottom: 16px;
+                height: 24px;
+                @include break-point('500'){
+                    margin-bottom: 28px;
+                    height: 37px;
+                }
+                @include break-point('800'){
+                    height: 44px;
+                }
+                @include break-point('1700') {
+                    margin-bottom: 40px;
+                    height: 48px;
+                }
+            }
+            span {
+                width: 90%;
+                max-width: 1034px;
+                background-color: $blue-200;
+                height: 4px;
+                position: relative;
+                transition: 0.3s;
+                @include break-point('500'){
+                    height: 6px;
+                }
+                @include break-point('800'){
+                    height: 4px;
+                }
+                @include break-point('1100'){
+                    max-width: 990px;
+                }
+                @include break-point('1700'){
+                    height: 6px;
+                    max-width: 1312px;
+                }
+            }
+        }     
+    }
+
+    &--main-title.active {
+        z-index: 10;
+        & > div {
+            max-width: 100%;        
+            width: 100%;            
+            background-color: $gray-1100;
+            padding-top: 18px;
+            @include break-point('500') {
+                padding-top: 23px;
+            }
+            @include break-point('800') {
+                padding-top: 16px;
+            }
+            @include break-point('1700') {
+                padding-top: 17px;
+            }         
+            & > img {
+                transition: 0.3s;
+                margin-bottom: 14px;
+                height: 20px;
+                width: auto;
+                @include break-point('500') {
+                    margin-bottom: 19px;
+                    height: 24px;
+                    width: auto;
+                }
+                @include break-point('800') {
+                    margin-bottom: 14px;
+                    width: auto;
+                    height: 30px;
+                }
+                @include break-point('1700') {
+                    height: 34px;
+                    width: auto;
+                }
+            }
+            & > span {
+                width: 100%;
+                max-width: 100%;
+                transition: 0.3s;            
+            }
+        }   
+    }
+
+
+    h2 {
+        max-width: 284px;
+        margin-top: 22px;
+        @include text-font-light(24px, $gray-400, 1.21);
+        font-weight: 300;
+        font-style: normal;
+        font-stretch: normal;
+        letter-spacing: normal;
+        text-align: center;
+        @include break-point('500') {
+            @include text-font-light (36px, $gray-400, 48px);
+            max-width: 426px;
+            // margin-top: 38px;
+            margin-top: 20px;
+        }
+        @include break-point('800') {
+            //@include text-font-light (48px, $gray-400, 58px);
+            @include text-font-light(48px, $gray-400, 58px);//cambio por datos de invision 2020-02-25
+            max-width: 568px;
+            // margin-top: 58px;
+            margin-top: 20px;
+        }
+        @include break-point('1100') {
+            // margin-top: 48px;
+            margin-top: 16px;
+
+        }
+        @include break-point('1400') {
+            // margin-top: 62px;
+            margin-top: 16px;
+        }
+        @include break-point('1700') {
+            @include text-font-light(52px, $gray-400, 68px);
+            max-width: 620px;
+            margin-top: 68px;
+        }
+        span {
+            @include text-font-medium(24px, $gray-400, 1.21);
+            font-weight: 500;
+
+            @include break-point('500'){
+                font-size: 36px;
+
+            }
+            @include break-point('800'){
+                @include text-font-medium(48px, $gray-400, 58px);//cambio por datos de invision 2020-02-25
+                //font-size: 48px;
+
+            }
+            
+            @include break-point('1700'){
+                font-size:52px;
+            }
+
+        }
+    }
+
+    &--content-slider {
+        
+        width: 100%;
+        position: relative;
+        margin-bottom: 43px;
+        margin-top: 5.5%;
+        overflow: hidden;
+        //@include flex-box(row, center, center);
+        padding-bottom: 9.5%;
+        // border: dashed 1px green;
+        
+        
+
+        @include break-point('500'){
+            margin-bottom: 0;
+            margin-bottom: 38px;
+            padding-bottom: 6%;
+        }
+
+        @include break-point('800'){
+
+            width: 100%;
+            height: 26.7%;
+            margin-bottom: 61px;
+            padding-bottom: 5%;
+        }
+
+        @include break-point('1100'){
+           width: 100%;
+           height: 33.3%;
+           margin-bottom: 34px;
+           padding-bottom: 5.5%;
+        }
+
+        @include break-point('1400'){
+
+            width: 100%;
+            margin-bottom: 54px;
+            padding-bottom: 2.5%;
+        }
+
+        @include break-point('1700'){
+            margin-bottom: 7.3%;
+            margin-bottom: 46px;
+            padding-bottom: 2%;
+        }
+        
+
+        img {
+            width: 100%;
+            position: relative;
+            z-index: 3;
+            object-fit: contain;
+            display: block;
+        }
+
+        .content--element-lapTop {
+
+            position: relative;
+            width: 105.6%;
+            height: 93.1%;
+            left: -5.5%;
+            transition: all .3s;
+            z-index: 1;
+
+            @include break-point('500'){
+                left: -4.5%;
+                width: 94%;
+            }
+            @include break-point('800'){
+                width: 91.5%;
+                right: 8.6%;
+            }
+
+            @include break-point('1100'){
+                width: 74.7%;
+                left: 5.5%;  
+            }
+
+            @include break-point('1400'){
+                width: 60%;
+                left: 17.5%;
+            }
+
+            @include break-point('1700'){
+                width: 54.5%;
+
+            }
+            
+
+            .element-laptop__content {
+                position: absolute;
+                width: 55.7%;
+                height: 84%;
+                left: 21.5%;
+                top: 4.6%;
+                background-color: black;
+                background-size: contain;
+                background-repeat: no-repeat;
+                transition: all .3s;
+            }
+
+        }
+
+        .content--element-smartphone {
+            
+            position: absolute;
+            width: 22.5%;
+            left: 37.8%;
+            top: 33.9%;
+            transition: all .3s;
+            z-index: 3;
+            // border: dashed 1px red;
+
+            @include break-point('500'){
+                width: 21%;
+                left: 36.8%;
+                top: 76px;
+                // border: dashed 1px green;
+            }
+
+            @include break-point('800'){
+                width: 19.9%;
+                left: 37.1%;
+                top: 112px;
+            }
+
+            @include break-point('1100'){
+                width: 17.7%;
+                left: 36.7%;
+                top: 125px;
+            }
+
+            @include break-point('1400'){
+                width: 13.5%;
+                left: 44.5%;
+                top: 111px;
+            }
+
+            @include break-point('1700'){
+                width: 11.4%;
+                left: 41.6%;
+                top: 139px;
+            }
+            .element-smartphone__content{
+                position: absolute;
+                
+                background-color: black;
+                width: 64.2%;
+                height: 70.1%;
+                top: 12.7%;
+                left: 18.2%;
+                background-size: cover;
+                background-repeat: no-repeat;
+                transition: all .3s;
+            }
+        
+        }
+
+        .content--element-ipad {
+            
+            position: absolute;
+            width: 60.1%;
+            top: 23.7%;
+            left: 38.4%;
+            transition: all .3s;
+            z-index: 2;
+            
+
+            @include break-point('500'){
+                width: 62.8%;
+                right: 9.9%;
+                top: 52px;
+            }
+
+            @include break-point('800'){
+                width: 59.6%;
+                right: 12.2%;
+                top: 77px;
+            }
+            @include break-point('1100'){
+                
+                width: 52.8%;
+                left: 39.1%;
+                top: 86px;
+            }
+            @include break-point('1400'){
+                width: 38.4%;
+                left: 44.5%;
+                top: 76px;
+            }
+            @include break-point('1700'){
+
+                width: 33.9%;
+                left: 42.2%;
+                top: 95px;
+
+            }
+            .element-ipad__content{
+                position: absolute;
+                background-color: black;
+                width: 56.1%;
+                height: 79.8%;
+                top: 9.6%;
+                left: 22.1%;
+                background-size: cover;
+                background-repeat: no-repeat;
+                transition: all .3s;
+            }
+
+        }
+
+        .content--element-ipad-2 {
+
+            display: none;
+            position: absolute;
+            width: 56.6%;
+            top: 0%;
+            left: 28.4%;
+            transition: all .3s;
+
+            @include break-point('500'){
+                width: 57.6%;
+                left: 21.5%;
+                
+            }
+
+            @include break-point('768'){
+                width: 54%;
+            }
+
+            @include break-point('1100'){
+                width: 37.7%;
+                left: 35.8%;
+            }
+
+            @include break-point('1400'){
+                width: 30.6%;
+            }
+
+            @include break-point('1700'){
+                width: 32%;
+            }
+            
+            .element-ipad__content2{
+                
+                position: absolute;
+                background-color: black;
+                width: 55%;
+                height: 81.8%;
+                top: 9.2%;
+                left: 21.5%;
+                background-size: cover;
+                background-repeat: no-repeat;
+                transition: all .3s;
+
+              
+
+              
+
+            }
+        }
+
+    }
+
+    .movil--element-text{
+            
+        width: 100%;
+        @include text-font-regular(11px, $gray-600, 0.89);
+        text-align: center;
+        //border: dashed 1px red;
+        @include flex-box(row, center, flex-end);
+        margin-bottom: 14px;
+
+        @include break-point('500'){
+            @include flex-box(row, flex-end, flex-end);
+            padding-right: 4%;
+        }
+        @include break-point('800'){
+            font-size: 12px;
+            padding-right: 9%;
+        }
+        @include break-point('1100'){
+            padding-right: 13%;
+        }
+    }
+
+    &--container-menu {
+
+        border-top: solid 1px $gray-200;
+        border-bottom: solid 1px $gray-200;
+        position: relative;
+        // overflow-x: hidden;
+        overflow-y: hidden;
+        height: 48px;
+
+        
+        @include break-point('500'){
+            width: 100%;
+            height: 56px;
+        }
+
+        @include break-point('800') {
+
+            width: 85%;
+            height: 46px;
+            //overflow: visible;
+            //display: block;
+            @include flex-box(row, center, center);
+
+        }
+
+        @include break-point('1100'){
+            width: 70%;
+        }
+
+        @include break-point('1400'){
+            width: 55%;
+        }
+
+        @include break-point('1700'){
+            width: 45%;
+            height: 50px;
+        }
+    }   
+    
+    &--menu-slider {
+
+        position: relative;
+        height: inherit;
+        padding-left: 5px;
+        @include flex-box(row, flex-start, center);
+        left: 0;
+        
+        //break points **** 
+        @include break-point('360'){
+            padding-left: 25px;
+        }
+
+        @include break-point('500'){
+            //display: block;
+            width: 100%;
+            padding-left: 5px;
+        }
+        
+        @include break-point('800'){
+            width: 60%;
+            @include flex-box(row, center, center);
+            // padding-left: 15px;
+            // padding-right: 15px;
+        }
+        
+        @include break-point('1100'){
+            width: 95%;
+        }
+        
+        @include break-point('1400'){
+
+            width: 95%;
+        }
+
+        @include break-point('1700'){
+            width: 45%;
+        }
+
+        .selector-menu-lider{
+
+            position: absolute;
+            height: 5px;
+            width: 32px;
+            bottom: -2px;
+            transition: all 600ms ease;
+            background-color: $blue-300;
+            
+        }
+
+        &__item:last-child{
+            margin-right: 0;
+        }
+        
+        &__item{
+            
+            cursor: pointer;
+            @include text-font-regular(16px, $gray-600);
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: center;
+            flex: auto 1 0;
+            margin-right: 5%;
+
+            @include break-point('360'){
+                margin-right:6%;
+            }
+
+            @include break-point('500'){
+                margin-right: 3%;
+                font-size: 24px;
+            }
+
+            @include break-point('800'){
+                font-size: 16px;
+            }
+
+            @include break-point('1700'){
+            //border: dashed 1px green;
+            margin-right: 6%;
+            font-size: 17.6px;
+            }
+            
+            &.active {
+                color: $blue-400;
+                //font-weight: bold;
+
+            }
+
+            @include break-point('800'){
+                font-size: 18px;
+            }
+
+
+        }
+
+    }
+    
+
+    &--description {
+
+        width: 93.8%;
+        margin-top: 24px;
+        @include text-font-regular(20px, $gray-400, 1.5);
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        letter-spacing: normal;
+        text-align: center;
+        @include break-point ('500'){
+            margin-top: 52px;
+        }
+        span {//cambio por datos de invision 2020-02-25
+            //@include text-font-semibold(20px, $gray-400, 1.25);
+            //font-weight: 600;
+            /*@include break-point ('500'){
+               // font-size: 24px;
+            }*/
+            @include break-point ('1700'){
+                font-size: 26px;
+            }
+
+        }
+        @include break-point ('500'){
+            @include text-font-regular(24px, $gray-400, 34px);//cambio por datos de invision 2020-02-25
+            width: 89.6%;
+            //font-size: 24px;
+        }
+
+        @include break-point ('800'){
+            width: 64.1%;
+        }
+
+        @include break-point ('1100'){
+            width: 46.6%;
+        }
+
+        @include break-point ('1400'){//cambio por datos de invision 2020-02-25
+            //max-width: 513px;
+              max-width: 652px;
+        }
+        @include break-point ('1700'){
+            font-size: 26px;
+            max-width: 564px;
+        }
+
+
+    }
+    & > .btn__blue {
+        margin: 50px 0;
+        margin-bottom: 142px;
+        @include break-point('800') {
+            margin-bottom: 145px;
+        }
+        @include break-point('1100') {
+            margin-bottom: 124px;
+        }
+        @include break-point('1400') {
+            margin-bottom: 148px;
+        }
+        @include break-point('1700'){
+            margin-bottom: 152px;
+        }
+    }
+
+         
+}

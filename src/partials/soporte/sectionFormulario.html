@@ -1,0 +1,58 @@
+<div class="form-help-container" id="buzonDirector">
+    
+    <img src="assets/img/iconos/mail_outline_24px@4x.png" alt="">
+    <span id="buzonComentarios">¿Aún no resolvemos tu problema?</span>
+
+    <div class="form-content container-inputs" id="formBuzon">
+        <div class="input__float">
+            <input name="nombreAyuda" id="nombreAyuda" type="text" autocomplete="off" required class="letras" placeholder=" ">
+            <label for="nombreAyuda">Nombre*</label>
+            <p class="text-danger-white" id="errorNombreAyuda" ></p>
+        </div>
+
+        <div class="input__float">
+            <input name="noCuentaAyuda" id="noCuentaAyuda" type="text" autocomplete="off" required class="solo-numeros" maxlength="10" placeholder=" ">
+            <label for="noCuentaAyuda">No. de Cuenta*</label>
+            <p class="text-danger-white" id="errorNocuenta" ></p>
+        </div>
+
+        <div class="input__float">
+            <input name="correoAyuda" id="correoAyuda" type="text" autocomplete="off" required placeholder=" ">
+            <label for="correoAyuda">Correo*</label>
+            <p class="text-danger-white" id="errorCorreoAyuda" ></p>
+        </div>
+
+        <div class="input__float">
+            <input name="movilAyuda" id="movilAyuda" type="text" autocomplete="off" required class="solo-numeros" maxlength="10" placeholder=" ">
+            <label for="movilAyuda">Celular de contacto*</label>
+            <p class="text-danger-white" id="errorMovilAyuda" ></p>
+        </div>
+
+        <div class="input__float" style="border-bottom: unset;">
+            <select class="custom-select" id="motivoAyuda">
+                <option value="0" selected>Motivo de Contacto*</option>
+                <option value="soporte">Soporte t&eacute;cnico</option>
+                <option value="sugerencias">Sugerencias al director</option>
+                <option value="dudas">Dudas generales</option>
+            </select>
+            <p class="text-danger-white" id="errorMotivoAyuda" ></p>
+        </div>
+
+        <div class="input__float">
+            <input name="comentarioAyuda" id="comentarioAyuda" type="text" autocomplete="off" required class="direccion" placeholder=" ">
+            <label for="comentarioAyuda">¿En qué podemos ayudarte?</label>
+            <p class="text-danger-white" id="errorComentarioAyuda" ></p>
+        </div>
+
+    </div>
+    <span class="btn__outline__white form" id="botonEnviarBuzon">Enviar</span>
+
+    <div class="cargador" id="cargador"></div>
+</div>
+<div class="form-help-container" id="buzonDirectorRespuesta" style="display: none">
+    <div class="" id="confirmarEnvio">
+        <div  id="iconoMsg"></div>
+        <span id="buzonComentarios">Gracias por enviarnos tus comentarios.</span>
+    </div>
+    <span class="btn__outline__white form" id="botonBuzonRegresar">Ok, gracias</span>
+</div>

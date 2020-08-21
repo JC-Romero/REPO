@@ -1,0 +1,41 @@
+.input__float {
+  position: relative;
+  margin-top: 15px;
+  & > input {
+    width: 100%;
+    height: 22px;
+    background-color: transparent;
+    position: relative;
+    z-index: 10;
+    padding-bottom: 8px;
+    outline: 0px;
+    box-shadow: none;
+    @include text-font-regular(16px, $gray-400);
+    //color: $gray-400;
+    //&[data-empty="false"],
+    //&:valid,
+    //&:focus {
+    // padding: 0;
+    //}
+    &:focus {
+      outline: 0px;
+      background-color: transparent;
+      //box-shadow: 0 1px 0 0 $gray-400;
+    }
+    &[data-empty="false"] + label,
+    &:valid + label,
+    &:focus + label,
+    &:not(:placeholder-shown) + label  {
+      @include text-font-regular(14px, $gray-600);
+      transform: translate3d(0, -20px, 0);
+    }
+  }
+  & > label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include text-font-regular(16px, $gray-600);
+    transform: translate3d(0, 0, 0);
+    transition: all 0.2s ease-in-out;
+  } 
+}

@@ -1,0 +1,93 @@
+.terms_conditions {
+  width: 100%;
+  background-color: $gray-100;
+  @include flex-box(column, flex-start, left);
+  & > span {
+    width: 90%;
+    margin: 0px 16px 46px 16px;
+    @include break-point('375'){
+      margin: 0px 34px 48px 34px;
+    }
+    @include break-point('768'){
+      margin: 0px 40px 60px 40px;
+    }
+    @include break-point('1024'){
+      margin: 0px 48px 32px 48px;
+    }
+    @include break-point('1400'){
+      margin: 0px 64px 60px 64px;
+    }
+    @include break-point('1700'){
+      margin: 0px 114px 83px 114px;
+    }
+    @include break-point('2000'){
+      width: 72%;
+    }
+    &:nth-child(1) {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 0;
+      padding-top: 20px;
+      border-top: solid 1px rgba(117, 120, 123, 0.5);
+      @include text-font-bold(10px, $gray-600, 18px);
+      @include break-point('375'){
+        padding-top: 40px;
+        @include text-font-bold(11px, $gray-600, 18px);
+      }
+      @include break-point('1100'){
+        padding-top: 40px;
+      }
+      @include break-point('1700'){
+        padding-top: 40px;
+        @include text-font-bold(11px, $gray-600, 18px);
+      }
+    }
+    &:nth-child(2) {
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 0;
+      margin-bottom: 0;
+      @include text-font-regular(10px, $gray-600, 18px);
+      @include break-point('500'){
+        @include text-font-regular(11px, $gray-600, 18px);
+      }
+      @include break-point('1700'){
+        @include text-font-regular(11px, $gray-600, 18px);
+      }
+      & > i {
+        @include text-font-regular(10px, $blue-400, 18px);//$gray-400
+        text-decoration: underline;
+        cursor: pointer;
+        @include break-point('500'){
+          @include text-font-regular(11px, $blue-400, 18px);
+        }
+        @include break-point('1700'){
+          @include text-font-regular(11px, $blue-400, 18px);
+        }
+      }
+    }
+    &:nth-child(3) {
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 20px;
+      @include text-font-regular(10px, $gray-600, 18px);
+      @include break-point('500'){
+        @include text-font-regular(11px, $gray-600, 18px);
+      }
+      @include break-point('1700'){
+        @include text-font-regular(11px, $gray-600, 18px);
+      }
+    }
+    &:nth-child(4) {
+      margin-left: auto;
+      margin-right: auto;
+      @include text-font-regular(10px, $gray-600, 18px);
+      @include break-point('500'){
+        @include text-font-regular(11px, $gray-600, 18px);
+      }
+      @include break-point('1700'){
+        @include text-font-regular(11px, $gray-600, 18px);
+      }
+    }
+  }
+}

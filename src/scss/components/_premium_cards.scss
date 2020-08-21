@@ -1,0 +1,359 @@
+.premium-channel-card{
+    height: 415px;
+    border-radius: 7.5px;
+    @include flex-box(row, flex-start, center);
+    @include break-point('375'){ 
+        height: 415px; 
+    }
+    @include break-point('768'){ 
+        height: 238px;
+    }
+    @include break-point('1024'){ 
+        height: 272px;
+    }
+    @include break-point('1366'){ 
+        height: 423px;
+    }
+    @include break-point('1700'){ 
+        height: 423px;
+    }
+    .description-channel-card{
+        position: relative;
+        width: 320px;
+        height: 423px;
+        @include flex-box(column, flex-start, center);
+        @include break-point('375'){
+            width: 312px;
+            height: 415px;
+        }
+        @include break-point('768'){
+            width: 270px;
+            height: 238px;
+        }
+        @include break-point('1024'){
+            width: 286px;
+            height: 272px;
+        }
+        @include break-point('1366'){
+            width: 320px;
+            height: 423px;
+        }
+        @include break-point('1700'){
+            width: 352px;
+            height: 465px;
+        }
+    
+        .logo-channel-card{
+            width: 152px;
+            height: 85px;
+            margin-top: 16px;
+            @include break-point('375'){
+                margin-top: 16px;
+            }
+            @include break-point('768'){
+                margin-top: 16px;
+            }
+            @include break-point('1024'){
+                margin-top: 24px;
+            }
+            @include break-point('1366'){
+                margin-top: 32px;
+            }
+            @include break-point('1700'){
+                width: 167px;
+                height: 94px;
+                margin-top: 35px;
+                margin-bottom: 20px;
+            }
+            img{
+                object-fit: contain;
+            }
+    
+        }
+    
+        .content-channel-card{
+            width: 217px;
+            height: 37px;
+            @include text-font-regular(16px, $gray-1700, normal);
+            @include flex-box(column, center, center);
+            background-color: rgba($gray-100, 0.1);
+            border-radius: 4px;
+            margin-top: 4px;
+            cursor: default;
+            @include break-point('375'){
+                margin-top: 8px;
+                width: 230px;
+                height: 37px;
+                @include text-font-regular(16px, $gray-1700, 1.27);
+                margin-bottom: 24px;
+            }
+            @include break-point('768'){
+                margin-top: 8px;
+                width: 230px;
+                height: 37px;
+                @include text-font-regular(16px, $gray-1700, 1.27);
+                margin-bottom: 24px;
+            }
+            @include break-point('1024'){
+                margin-top: 8px;
+                width: 232px;
+                height: 37px;
+                @include text-font-regular(16px, $gray-1700, 1.27);
+                margin-bottom: 67px;
+            }
+            @include break-point('1366'){
+                margin-top: 24px;
+                width: 224px;
+                height: 37px;
+                @include text-font-regular(16px, $gray-1700, 1.27);
+                margin-bottom: 24px;
+            }
+            @include break-point('1700'){
+                width: 246px;
+                height: 53px;
+                @include text-font-regular(17px, $gray-1700, 1.27);
+                margin-bottom: 27px;
+            }
+        }
+    
+        .description-channel-text{
+            width: 288px;
+            height: 48px;
+            text-align: center;
+            @include text-font-regular(18px, $gray-1700, normal);
+            line-height: 24px;
+            margin-top: 16px;
+            margin-bottom: 16px;
+            @include break-point('375'){
+                display: none;
+                width: 272px;
+                height: 72px;
+                @include text-font-regular(18px, $gray-1700, 1.33);
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+            @include break-point('768'){
+                display: none;
+                width: 272px;
+                height: 72px;
+                @include text-font-regular(18px, $gray-1700, 1.33);
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+            @include break-point('1024'){
+                display: none;
+                width: 272px;
+                height: 72px;
+                @include text-font-regular(18px, $gray-1700, 1.33);
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+            @include break-point('1366'){
+                display: block;
+                width: 272px;
+                height: 72px;
+                @include text-font-regular(18px, $gray-1700, 1.33);
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+            @include break-point('1700'){
+                display: block;
+                width: 300px;
+                height: 79px;
+                @include text-font-regular(20px, $gray-1700, 1.32);
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
+    
+        .price-channel-card{
+            width: 232px;
+            height: 20px;
+            @include text-font-bold(20px, $gray-1700, normal);
+            opacity: 0;
+            display: none;
+        }
+    
+        .btn__transparent{
+            height: 21px;
+            font-size: 16px;
+            margin: 0;
+            right: 0;
+            left: 0;
+        }
+    }
+
+    .banner-channel-card{ 
+        width: 312px;
+        height: 100%;
+        position: relative;
+        @include flex-box(column, center, center);
+        @include break-point('375'){
+            position: absolute;
+            width: 312px;
+            height: 182px; 
+            margin-top: 0px;
+        }
+        @include break-point('768'){
+            position: relative;
+            width: 408px;
+            height: 100%;
+            margin-top: 0px;
+        }
+        @include break-point('1024'){
+            position: relative;
+            width: 466px;
+            height: 100%;
+            margin-top: 0px;
+        }
+        @include break-point('1366'){
+            position: relative;
+            width: 752px;
+            height: 100%;
+            margin-top: 0px;
+        }
+        @include break-point('1700'){
+            position: relative;
+            width: 827px;
+            height: 100%;
+            margin-top: 0px;
+        }
+        img{ 
+            width: 100%;
+            height: 100%;
+            border-radius: 0 7.5px 7.5px 0;
+            &:nth-child(1){
+                @include break-point('375'){
+                    position: relative;
+                     top: 47px;
+                }
+                @include break-point('768'){
+                    position: relative;
+                     top: 0px;
+                }
+                @include break-point('1024'){
+                    position: relative;
+                     top: 0px;
+                }
+                @include break-point('1366'){
+                    position: relative;
+                     top: 0px;
+                }
+                @include break-point('1700'){
+                    position: relative;
+                     top: 0px;
+                }
+            }
+        }
+        
+        .banner-channel-text{
+            height: 29px;
+            position: absolute;
+            @include text-font-bold(20px, $gray-1700, normal);
+            bottom: 25px;
+            @include break-point('375'){
+                height: 20px;
+                font-size: 14px;
+                bottom: -45px; 
+                margin-bottom: 22px;
+            }
+            @include break-point('768'){
+                height: 25px;
+                font-size: 18px;
+                bottom: 25px;
+                margin-bottom: 0px;
+            }
+            @include break-point('1024'){
+                height: 25px;
+                font-size: 18px;
+                bottom: 32px;
+                margin-bottom: 0px;
+            }
+            @include break-point('1366'){
+                height: 39px;
+                font-size: 32px;
+                bottom: 32px;
+                margin-bottom: 0px;
+            }
+            @include break-point('1700'){
+                height: 43px;
+                font-size: 35px;
+                bottom: 35px;
+                margin-bottom: 0px;
+            }
+            i{
+                @include text-font-regular(20px, $gray-1700, normal);
+                @include break-point('375'){
+                    font-size: 14px;
+                }
+                @include break-point('768'){
+                    font-size: 18px;
+                }
+                @include break-point('1024'){
+                    font-size: 18px;
+                }
+                @include break-point('1366'){
+                    font-size: 32px;
+                }
+                @include break-point('1700'){
+                    font-size: 35px;
+                }
+            }
+            
+
+        }
+
+    }
+
+}
+.zd_1{
+    @include break-point('375'){
+        font-size: 16px;
+        margin-top: 200px !important; 
+        margin-bottom: 22px; 
+    }
+    @include break-point('768'){
+        font-size: 16px;
+        margin-top: 35px !important; 
+        margin-bottom: 29px; 
+    }
+    @include break-point('1024'){
+        font-size: 16px;
+        margin-top: -10px !important; 
+        margin-bottom: 24px; 
+    }
+    @include break-point('1366'){
+        font-size: 16px;
+        margin-top: 80px !important;
+    }
+    @include break-point('1700'){
+        font-size: 18px;
+        margin-top:65px !important;
+    }
+}
+.zd_2{
+    @include break-point('375'){
+        font-size: 16px;
+        margin-top: 200px !important; 
+        margin-bottom: 22px; 
+    }
+    @include break-point('768'){
+        font-size: 16px;
+        margin-top: 35px !important; 
+        margin-bottom: 29px; 
+    }
+    @include break-point('1024'){
+        font-size: 16px;
+        margin-top: -10px !important; 
+        margin-bottom: 24px; 
+    }
+    @include break-point('1366'){
+        font-size: 16px;
+        margin-top: 85px !important;
+    }
+    @include break-point('1700'){
+        font-size: 18px;
+        margin-top:45px !important;
+    }
+}
+ 

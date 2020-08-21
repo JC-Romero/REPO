@@ -1,0 +1,560 @@
+.ticket_resume{
+    width: 100%;
+    position: relative;
+    @include flex-box(column, flex-start, center);
+    flex-wrap: nowrap;
+    z-index: 10;
+    margin-bottom: 20px;
+    @include break-point('1700'){
+        height: 655px;
+        margin-bottom: 0;
+    }
+    .package_main_info{
+        padding-top: 0;
+        margin-bottom: 0;
+        @include flex-box(column, center, center);
+        span{
+            @include flex-box(row, center, center);
+            &:nth-child(1){
+                height: 52px;
+                @include text-font-regular(28px, #3b4559,52px);
+                width: 475px;
+                height: 52px;
+                padding-left: 0;
+                margin-top: 16px;
+                @include break-point('768'){
+                    @include text-font-regular(36px, #3b4559,52px);
+                    margin-top: 24px;
+                    width: 723px;
+                    height: 52px;
+                    padding-left: 8.7%;
+                    padding-right: 10%;
+                }
+                @include break-point('1024'){ 
+                    margin-top: 46px; 
+                    padding-left: 15%;
+                    padding-right: 15%;
+               }
+                @include break-point('1366'){  
+                    margin-top: 38px;
+                    padding-left: 15%;
+                    padding-right: 15%;
+                }
+                @include break-point('1700'){
+                    margin-top: 41px;
+                    padding-left: 15%;
+                    padding-right: 15%;
+                }
+                & > i{
+                    margin-left: 4px;
+                    @include text-font-bold(28px, transparent,52px);
+                    display: -webkit-box;
+                    @include break-point('768'){
+                        @include text-font-bold(36px,transparent,52px);
+                    }
+                    &.new-purple {
+                        @include text-color-solid($purple-500);
+                    }
+                    &.purple-light {
+                        @include text-color-solid($purple-700);
+                        @include break-point('1700'){
+                            @include text-color-solid($purple-700);
+                        }
+                    }
+                    &.new-cyan {
+                        @include text-color-solid($blue-2200);
+                    }
+                    &.new-blue {
+                        @include text-color-solid($blue-2300);
+                    }
+                    &.new-yellow {
+                        @include text-color-solid($yellow-400);
+                    }
+                    &.new-yellow-light {
+                        @include text-color-solid($yellow-500);
+                    }
+                    &.gray {
+                        @include text-color-solid($gray-3300);
+                    }
+                }
+            }
+            &:nth-child(2){
+                width: 411px;
+                height: 38px;
+                @include text-font-regular(16px,#9274ac,38px);
+                @include flex-box(column, center, center);
+                margin-bottom: 8px;
+                @include break-point('768'){
+                    @include text-font-regular(18px,#9274ac,38px);
+                    width: 480px;
+                    margin-bottom: 32px;
+                }
+                @include break-point('1024'){
+                    margin-bottom: 37px;
+                }
+                @include break-point('1366'){
+                    margin-bottom: 16px;
+                }
+                &.new-purple {
+                    @include text-color-solid($purple-500);
+                }
+                &.purple-light {
+                    @include text-color-solid($purple-700);
+                }
+                &.new-cyan {
+                    @include text-color-solid($blue-2200);
+                }
+                &.new-blue {
+                    @include text-color-solid($blue-2300);
+                }
+                &.new-yellow {
+                    @include text-color-solid($yellow-400);
+                }
+                &.new-yellow-light {
+                    @include text-color-solid($yellow-500);
+                }
+                &.gray {
+                    @include text-color-solid($gray-3300);
+                }
+            }
+        }
+    }
+    .ticket_card{
+        position: relative;
+        width: 352px;
+        height: auto;
+        border-radius: 8px;
+        background-color: transparent;
+        transition: 0.3s;
+        z-index: 10;
+        @include flex-box(column, flex-start, center);
+        flex-wrap: nowrap;
+        @include break-point('768'){
+            width: 100%;
+            
+            padding: 0 24px;
+            max-width: 768px;
+            @include flex-box(row-reverse, center, flex-start);
+            flex-wrap: nowrap;
+        }
+        @include break-point('1024'){
+            padding: 0 96px;
+            max-width: 1124px;
+        }
+        @include break-point('1366'){
+            padding: 0 267px;
+            max-width: 1466px;
+        }
+        @include break-point('1700'){
+            padding: 0 392px;
+            max-width: 1700px;
+        }
+        .content_pack_resume{
+            position: relative;
+            width: 100%;
+            //min-height: 314px;
+            top: 0;
+            margin-bottom: 16px;
+            transition: 0.3s;
+            border-radius: 8px;
+            box-shadow: $shadow-900;
+            background-color: $gray-100;
+            @include flex-box(column, space-between, center);
+            transition: 0.3s;
+            @include break-point('768'){
+                width: 352px;
+                //height: 394px;
+                flex-wrap: nowrap;
+                margin: 0;
+                right: 0;
+                padding-left: 16px;
+                padding-right: 24px;
+                @include break-point('1024'){
+                    padding-left: 88px;
+                    padding-right: 96px;
+                }
+                @include break-point('1366'){
+                    padding-left: 88px;
+                }
+            }
+            @include break-point('1024'){
+                //height: 440px;
+                width: 352px;
+            }
+            @include break-point('1366'){
+                //height: 440px;
+                width: 352px;
+            }
+            @include break-point('1700'){
+                //height: 440px;
+                width: 387px;
+            }
+            .resume_pack{
+                
+                width: 100%;
+                //height: 150px;
+                padding-top: 24px;
+                transition: 0.3s;
+                @include flex-box(column, flex-start, center);
+                flex-wrap: nowrap;
+                overflow-y: hidden;
+                @include break-point('800'){
+                    width: 232px;
+                    height: auto;
+                }
+                @include break-point('1366'){
+                    padding-top: 24px;
+                }
+                @include break-point('1700'){
+                    padding-top: 26px;
+                }
+                & > span{
+                    width: inherit;
+                    text-align: center;
+                    position: relative;
+                    &:nth-child(1){
+                        width: 100%;
+                        height: 19px;
+                        margin-bottom: 4px;
+                        @include text-font-bold(16px, $gray-400, normal);
+                        @include break-point('1700'){
+                            width: 212px; 
+                            height: 22px;
+                            font-size: 18px;
+                        }
+                    }
+                    &:nth-child(2){
+                        width: 100%;
+                        height: 77px;
+                        margin-bottom: 0;
+                        @include text-font-regular(48px, $gray-2500, normal);
+                        @include break-point('1700'){
+                            @include text-font-regular(52px, $gray-2500, normal);
+                        }
+                    }
+                    &:nth-child(3){
+                        height: 19px;
+                        @include text-font-regular(16px, $gray-2500, normal);
+                        margin-bottom: 10px;
+                        @include break-point('768'){
+                            top:-21px;
+                            margin-bottom: 10px;
+                        }
+                        @include break-point('1700'){
+                            @include text-font-regular(18px, $gray-2500, normal);
+                            margin-bottom: 42px;
+                        }
+                    }
+                }
+                .expand-row{
+                    width: inherit;
+                    height: 24px;
+                    margin-bottom: 4px;
+                    cursor: pointer;
+                    @include flex-box(row, center, center);
+                    img{
+                        display: block;
+                        height: 24px;
+                        width: 24px;
+                    }
+                    @include break-point('800'){
+                        display: none;
+                    }
+                }
+                &.close{
+                    padding-top: 0;
+                    height: 0;
+                }
+                &.open{
+                    height: 394px;
+                }
+            } 
+            .resume_info{
+                
+                width: 100%;
+                height: auto;
+                top: 151px;
+                padding-left: 40px;
+                padding-right: 40px;
+                @include flex-box(row, space-around, space-around);
+                flex-wrap: wrap;
+                overflow: hidden;
+                transition: 0.3s;
+                background-color: #fafafa;
+                @include  break-point('768'){
+                    width: 272px;
+                    height: auto;
+                    border-top: dashed 1px $gray-200;
+                    padding-top: 16px;
+                    padding-left: 0;
+                    padding-right: 0;
+                    top: 144px;
+                }
+                @include  break-point('1366'){
+                    padding-top: 20px;
+                    width: 272px;
+                    padding-bottom: 0px;
+                }
+                @include  break-point('1700'){
+                    padding-top: 21px;
+                    width: 300px;
+                    padding-bottom: 20px;
+                }
+                & > div{
+                    &:nth-child(1){
+                        width: 70%;
+                        background-color: #fafafa;
+                        @include flex-box(column, flex-start, center);
+                        @include break-point('375'){
+                            border-top: dashed 1px $gray-200;
+                            padding-top: 10px;
+                        }
+                        @include break-point('768'){
+                            border-top: none;
+                            padding-top: 0;
+                        }
+                        @include break-point('1700'){
+                            width: 200px; 
+                        }
+                        & > span{
+                            width: 100%;
+                            text-align:left;
+                            position: relative;
+                            &:nth-child(1),
+                            &:nth-child(2){
+                                @include text-font-medium(16px, $gray-2500, normal);
+                                font-weight: 500;
+                                margin-bottom: 5px;
+                                @include break-point('1700'){
+                                    @include text-font-medium(18px, $gray-2500, normal);
+                                    margin-bottom: 5px;
+                                }
+                            }
+                            &:nth-child(3),&:nth-child(4),&:nth-child(5),&:nth-child(6){
+                                @include text-font-medium(16px, $orange-200, normal);
+                                font-weight: 500;
+                                margin-bottom: 8px;
+                                @include break-point('768'){
+                                    @include text-font-medium(16px, $orange-200, 24px);
+                                    margin-bottom: 18px;
+                                }
+                                @include break-point('768'){
+                                    margin-bottom: 0;
+                                }
+                                @include break-point('1700'){
+                                    @include text-font-medium(18px, $orange-200, 26.4px);
+                                    margin-bottom: 0;
+                                }
+                            }
+                        } 
+                    }
+                    &:nth-child(2){
+                        width: 30%;
+                        @include flex-box(column, flex-start, center);
+                        @include break-point('375'){
+                            border-top: dashed 1px $gray-200;
+                            padding-top: 10px;
+                        }
+                        @include break-point('768'){
+                            border-top: none;
+                            padding-top: 0;
+                        }
+                        @include break-point('1700'){
+                            width: 100px;
+                        }
+                        span{
+                            width: 100%;
+                            text-align: right;
+                            position: relative;
+                            &:nth-child(1),
+                            &:nth-child(2){
+                                @include text-font-medium(16px, $gray-2500, normal);
+                                font-weight: 500;
+                                margin-bottom: 5px;
+                                @include break-point('1700'){
+                                    font-size: 18px;
+                                    margin-bottom: 5px;
+                                }
+                            }
+                            &:nth-child(3),&:nth-child(4),&:nth-child(5),&:nth-child(6){
+                                @include text-font-medium(16px, $orange-200, normal);
+                                font-weight: 500;
+                                margin-bottom: 8px;
+                                @include break-point('1366'){
+                                    margin-bottom: 0;
+                                }
+                                @include break-point('1700'){
+                                    font-size: 18px;
+                                    margin-bottom: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+                &.open{
+                    &::after{
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        background-image: linear-gradient(to top, #fafafa, rgba(250, 250, 250, 0));
+                        top: 0;
+                        left: 0;
+                    }
+                }
+            }
+            .btn-container-ticket{
+                
+                bottom: 0px;
+                width: 300px;
+                @include flex-box(column, center, center);
+                & > .btn__transparent{
+                    position: relative;
+                    margin: 0;
+                    right: 0;
+                    @include break-point('500'){
+                        margin: 0;
+                        right: 0;
+                    }
+                    @include break-point('768'){
+                        margin: 0;
+                        right: 0;
+                    }
+                    @include break-point('1100'){
+                        margin: 0;
+                        right: 0;
+                    }
+                    @include break-point('1400'){
+                        margin: 0;
+                        right: 0;
+                    }
+                    @include break-point('1700'){
+                        margin: 0;
+                        right: 0;
+                        top: -10px;
+                    }
+                }
+                & > .btn__blue{
+                    width: 272px;
+                    height: 48px;
+                    z-index: 15;
+                    padding: 0 24px;
+                    position: relative;
+                    margin-top: 16px;
+                    margin-bottom: 16px;
+                    font-size: 20px;
+                    @include text-font-regular(20px,$gradient-300,normal);
+                    line-height: 48px;
+                    @include break-point('768'){
+                        @include text-font-regular(20px,$gradient-300,normal);
+                        width: 192px;
+                        line-height: 48px;
+                        margin-top: 27px;
+                        margin-bottom: 24px;
+                    }
+                    @include break-point('1024'){
+                        @include text-font-regular(20px,$gradient-300,normal);
+                        line-height: 48px;
+                        margin-top: 8px;  
+                    }
+                    @include break-point('1366'){
+                        margin-top: 0;
+                    }
+                    @include break-point('1700'){
+                        @include text-font-regular(20px,$gradient-300,normal);
+                        width: 211px;
+                        height: 53px;
+                        line-height: 53px;
+                        margin-top: 0; 
+                        margin-bottom: 26px; 
+                        bottom: 0;
+                    }
+                }
+            }
+            &.open{
+                &::after{
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background-image: $gradient-3400;
+                    top: 0;
+                    left: 0;
+                    border-radius: 8px;
+                }
+            }
+        }
+        .extra_info{
+            position: relative;
+            width: inherit;
+            height: auto;
+            background-color: $gray-100;
+            @include flex-box(column, center, flex-start);
+            @include break-point('500'){
+                //height: 363px;
+            }
+            @include break-point('768'){
+                width: 352px;
+                //height: 394px;
+                top: 0;
+                left: 0;
+                margin-right: 16px;
+                border-radius: 8px 0 0 8px;
+            }
+            @include break-point('1024'){
+                margin-right: 88px;
+                width: 392px;
+            }
+            @include break-point('1366'){
+                margin-right: 88px;
+                width: 392px;
+            }
+            @include break-point('1700'){
+                width: 431px;
+                margin-right: 97px;
+            }
+            span{
+                @include text-font-bold(20px, $gray-400, normal);
+                width: 244px;
+                height: 24px;
+                text-align: left;
+                margin-bottom: 16px;
+                @include break-point('1700'){
+                    @include text-font-bold(22px, $gray-400, normal);
+                    width: 269px;
+                    height: 27px;
+                    margin-bottom: 17px;
+                }
+            }
+            .btn__outline__gray{
+                margin-top: 0px;
+                width: 100%;
+                margin-bottom: 8px;
+                @include break-point('1366'){
+                    margin-top: 0px;
+                    width: 392px;
+                    height: 72px;
+                    margin-bottom: 8px;
+                 }
+                @include break-point('1700'){
+                    margin-top: 0px;
+                    width: 100%;
+                    margin-bottom: 8px; 
+                    height: 80px;
+                }
+            }
+        }
+    }
+}
+@keyframes openTicket { // esta fucncion te permite hacer mas grande contenedor
+    from{
+        min-height: 304px;
+        height: 304px;
+    }
+    to{
+        min-height: 394px;
+        height: 394px;
+    }
+}

@@ -1,0 +1,190 @@
+#cobertura {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  background-color: $blue-400;
+  @include flex-box(column, center, center);
+  flex-wrap: wrap;
+  & > .cobertura-image {
+    width: 72px;
+    height: 72px;
+    margin-top: 45px;
+    @include break-point("375") {
+      margin-top: 46px;
+      margin-bottom: 14px;
+    }
+
+    @include break-point("500") {
+      width: 72px;
+      margin-top: 64px;
+    }
+    @include break-point("768") {
+      width: 72px;
+      height: 72px;
+      margin-top: 45px;
+      margin-bottom: 14px;
+    }
+  }
+  & > .text-message {
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    margin: 14px 0 26px 0;
+    padding: 0 4%;
+    & > .text-normal {
+      #txtregular {
+        margin-top: 13px;
+      }
+
+      @include text-font-light(18px, $gray-100, 18.4px);
+
+      @include break-point("500") {
+        margin-top: 13px;
+        @include text-font-light(24px, $gray-100, 32px);
+      }
+      @include break-point("768") {
+        br {
+          display: none;
+        }
+      }
+      @include break-point("1700") {
+        @include text-font-light(24px, $gray-100, 32px);
+      }
+      & > .text-regular {
+        @include text-font-medium(18px, $gray-100, 18px);
+        font-family: "Montserrat-Medium";
+        @include break-point("500") {
+          @include text-font-medium(24px, $gray-100, 32px);
+        }
+        @include break-point("768") {
+          @include text-font-medium(24px, $gray-100, 32px);
+          font-family: "Montserrat-Medium";
+        }
+        @include break-point("1700") {
+          @include text-font-medium(24px, $gray-100, 32px);
+        }
+      }
+    }
+  }
+  & > .form-cobertura {
+    width: auto;
+    margin: 0 20px;
+    @include flex-box(row, space-between, flex-start);
+    flex-wrap: wrap;
+    @include break-point("500") {
+      margin: 0 34px;
+    }
+    @include break-point("800") {
+      @include flex-box(row, center, space-between);
+    }
+    
+
+    & > .input__float {
+      border-bottom: 1px solid $gray-1600;
+      & > input {
+        height: 30px;
+        @include text-font-light(18px, $gray-100);
+        @include break-point("500") {
+          @include text-font-light(28px, $gray-100);
+        }
+        @include break-point("800") {
+          @include text-font-light(20px, $gray-100);
+        }
+        @include break-point("1700") {
+          @include text-font-light(22px, $gray-100);
+        }
+        &[data-empty="false"] + label,
+        &:valid + label,
+        &:focus + label,
+        &:not(:placeholder-shown) + label {
+          @include text-font-regular(14px, $gray-200);
+          transform: translate3d(0, -20px, 0);
+        }
+      }
+      & > label {
+        top: 4px;
+        @include text-font-light(16px, $gray-200);
+        @include break-point("500") {
+          @include text-font-light(14px, $gray-200);
+        }
+        @include break-point("800") {
+          @include text-font-light(18px, $gray-200);
+        }
+        @include break-point("1700") {
+          @include text-font-light(20px, $gray-200);
+        }
+      }
+    }
+
+    .input__float {
+      &:nth-child(1) {
+        margin-top: 24px;
+        margin-right: 24px;
+        width: 100%;
+        @include break-point("800") {
+          width: 150px;
+        }
+      }
+      &:nth-child(2) {
+        margin-top: 24px;
+        margin-right: 24px;
+        width: 100%;
+        
+        @include break-point("800") {
+          width: 180px;
+        }
+      }
+      &:nth-child(3) {
+        margin-top: 24px;
+        margin-right: 24px;
+        width: 100%;
+
+        @include break-point("800") {
+          width: 300px;
+        }
+      }
+      &:nth-child(4) {
+        margin-top: 24px;
+        width: 100%;
+        
+        @include break-point("800") {
+          width: 150px;
+        }
+      }
+    }
+  }
+  & > .btn__outline__white {
+    margin: 32px 0 40px 0;
+    @include break-point("768") {
+      margin: 44px 30% 60px 32%;
+    }
+    &:focus {
+      outline: none !important;
+      outline: none !important;
+    }
+  }
+}
+.szBtnCob {
+  @include break-point("375") {
+    width: 272px;
+    height: 48px;
+    font-size: 20px;
+    line-height: 1;
+  }
+  @include break-point("768") {
+    width: 272px;
+    height: 48px;
+    font-size: 20px;
+  }
+  @include break-point("1024") {
+    width: 272px;
+    height: 48px;
+    font-size: 20px;
+  }
+
+  @include break-point("1700") {
+    width: 272px;
+    height: 48px;
+    font-size: 18px;
+  }
+}

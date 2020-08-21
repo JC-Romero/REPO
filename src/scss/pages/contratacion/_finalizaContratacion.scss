@@ -1,0 +1,1260 @@
+#finalizaContratacion {
+	position: relative;
+	padding-top: 30px;
+	padding-bottom: 40px;
+	background-color: $gray-100;
+
+	@include flex-box(column, center, center);
+
+	@include break-point("500") {
+		padding-top: 24px;
+		padding-bottom: 24px;
+	}
+
+	@include break-point("800") {
+		padding-top: 32px;
+		padding-bottom: 48px;
+	}
+
+	@include break-point("1100") {
+		padding-top: 40px;
+		padding-bottom: 48px;
+	}
+
+	h1 {
+		height: 27px;
+		margin-bottom: 8px;
+		@include text-font-regular(22px, $gray-400);
+
+		@include break-point("500") {
+			height: 34px;
+			font-size: 28px;
+			margin-bottom: 17px;
+		}
+
+		@include break-point("1700") {
+			height: 37px;
+			font-size: 30px;
+		}
+	}
+
+	h2 {
+		height: 19px;
+		text-align: center;
+		margin-bottom: 25px;
+		@include text-font-regular(18px, $gray-600);
+
+		@include break-point("360") {
+			@include text-font-regular(16px, $gray-600);
+		}
+
+		@include break-point("768") {
+			@include text-font-regular(18px, $gray-600);
+		}
+
+		@include break-point("1700") {
+			height: 22px;
+			font-size: 18px;
+		}
+	}
+
+	.main-summary {
+		position: relative;
+		width: 288px;
+		height: auto;
+		box-shadow: $shadow-900;
+		border-radius: 4px;
+		margin-bottom: 8px;
+		padding-left: 16px;
+		padding-right: 15px;
+		background-color: $gray-100;
+		@include flex-box(column, center, center);
+
+		@include break-point("500") {
+			width: 432px;
+			padding-left: 32px;
+			padding-right: 24px;
+		}
+
+		@include break-point("800") {
+			width: 712px;
+			padding-left: 40px;
+			padding-right: 40px;
+		}
+
+		@include break-point("1700") {
+			width: 768px;
+			padding-left: 36px;
+			padding-right: 36px;
+			margin-bottom: 9px;
+		}
+
+		&__invoice-data {
+			position: relative;
+			width: 100%;
+			height: auto;
+			@include flex-box(column, center, center);
+
+			&--title {
+				width: 100%;
+				height: 51px;
+				@include flex-box(row, space-between, center);
+
+				@include break-point("500") {
+					height: 56px;
+				}
+
+				@include break-point("1700") {
+					height: 62px;
+				}
+
+				span {
+					&:nth-child(1) {
+						@include text-font-bold(16px, $gray-400, normal);
+						font-weight: bold;
+
+						@include break-point("500") {
+							font-size: 18px;
+						}
+
+						@include break-point("800") {
+							font-size: 20px;
+						}
+
+						@include break-point("1700") {
+							font-size: 22px;
+						}
+					}
+
+					&:nth-child(2) {
+						cursor: pointer;
+						@include text-font-regular(14px, $blue-1200, normal);
+						@include break-point("1700") {
+							font-size: 16px;
+						}
+
+						&.active {
+							display: flex;
+						}
+
+						&.inactive {
+							display: none;
+						}
+					}
+				}
+			}
+
+			&--info {
+				position: relative;
+				width: 100%;
+				height: auto;
+				@include flex-box(row, flex-start, center);
+				padding-top: 24px;
+				padding-bottom: 40px;
+				transition: 0.3s;
+				border-top: solid 1px $gray-200;
+
+				.resume-titular-data {
+					width: 100%;
+					@include flex-box(column, flex-start, flex-start);
+					@include break-point("800") {
+						@include flex-box(row, flex-start, center);
+						flex-wrap: wrap;
+					}
+					div {
+						margin-bottom: 11px;
+						width: 100%;
+						@include flex-box(column, flex-start, flex-start);
+
+						@include break-point("800") {
+							&:nth-child(1),
+							&:nth-child(4) {
+								width: 50%;
+							}
+
+							&:nth-child(2),
+							&:nth-child(3),
+							&:nth-child(5),
+							&:nth-child(6) {
+								width: 25%;
+							}
+						}
+
+						& > .label-data {
+							margin-bottom: 9px;
+							@include text-font-regular(12px, $gray-600, normal);
+
+							@include break-point("1700") {
+								font-size: 14px;
+							}
+						}
+
+						& > .value-data {
+							@include text-font-regular(14px, $gray-400, normal);
+							@include break-point("1700") {
+								font-size: 18px;
+							}
+						}
+					}
+				}
+
+				.installation-map {
+					width: 100%;
+					min-width: 712px;
+					height: 100%;
+					height: 515px;
+					position: relative;
+					left: -40px;
+					@include flex-box(column, center, center);
+
+					&.active {
+						display: flex;
+					}
+
+					&.inactive {
+						display: none;
+					}
+
+					.map-container {
+						width: 100%;
+						height: 100%;
+						position: relative;
+						z-index: 1;
+						@include flex-box(column, flex-start, center);
+
+						iframe {
+							border-bottom-right-radius: 4px;
+							border-bottom-left-radius: 4px;
+						}
+					}
+
+					.form-data {
+						width: 278px;
+						height: 196px;
+						position: absolute;
+						padding-top: 38px;
+						padding-left: 12px;
+						padding-right: 12px;
+						border-radius: 4px;
+						background-color: $gray-100;
+						transition: 0.3s;
+						box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+						top: 5px;
+						z-index: 5;
+
+						@include break-point("500") {
+							width: 400px;
+							height: 208px;
+							padding-left: 24px;
+							padding-right: 24px;
+							top: 9px;
+						}
+
+						@include break-point("800") {
+							width: 632px;
+							height: 150px;
+							padding-left: 40px;
+							padding-right: 40px;
+							top: 8px;
+						}
+
+						@include break-point("1100") {
+							height: 154px;
+						}
+
+						@include break-point("1700") {
+							width: 688px;
+							height: 169px;
+							top: 7px;
+						}
+
+						.content-form-installation {
+							.input__float {
+								@include break-point("800") {
+									width: 32%;
+								}
+
+								& > label {
+									@include text-font-light(14px, $gray-600);
+								}
+							}
+						}
+					}
+
+					.btn__blue {
+						position: absolute;
+						bottom: 0;
+						z-index: 50;
+						margin-bottom: 40px;
+					}
+				}
+
+				.resume-installation-data {
+					width: 100%;
+					display: none;
+					& > .installation-direction {
+						@include text-font-regular(16px, $gray-400, 1.63);
+					}
+
+					&.active {
+						display: flex;
+					}
+
+					&.inactive {
+						display: none;
+					}
+				}
+
+				.resume-card-pay-data {
+					width: 100%;
+					position: relative;
+					@include flex-box(column, center, flex-start);
+
+					@include break-point("800") {
+						@include flex-box(row, space-between, flex-start);
+						flex-wrap: wrap;
+					}
+
+					&.active {
+						display: flex;
+					}
+
+					&.inactive {
+						display: none;
+					}
+
+					div {
+						@include flex-box(column, flex-start, flex-start);
+						& > .label-data {
+							margin-bottom: 9px;
+							@include text-font-regular(12px, $gray-600, normal);
+
+							@include break-point("1700") {
+								font-size: 14px;
+							}
+						}
+
+						& > .value-data {
+							margin-bottom: 24px;
+							@include text-font-regular(14px, $gray-400, normal);
+
+							@include break-point("1700") {
+								font-size: 18px;
+							}
+						}
+
+						& > .resume-card-content {
+							width: 100%;
+							@include flex-box(row, flex-start, center);
+							img {
+								width: 32px;
+								height: 21px;
+								object-fit: contain;
+								margin-right: 8px;
+								margin-bottom: 24px;
+								@include break-point("1700") {
+									width: 35px;
+									height: 23px;
+									margin-right: 8px;
+								}
+							}
+
+							& > .value-data {
+								@include text-font-regular(14px, $gray-400, normal);
+
+								@include break-point("1700") {
+									font-size: 18px;
+								}
+							}
+						}
+					}
+
+					.facturation-resume {
+						@include flex-box(column, flex-start flex-start);
+						& > .installation-direction {
+							@include text-font-regular(16px, $gray-400, 26px);
+						}
+
+						& > .resume-title {
+							margin-top: 16px;
+							margin-bottom: 16px;
+							@include text-font-bold(16px, $gray-400, 19px);
+						}
+					}
+
+					.btn__outline__blue_square {
+						width: 100%;
+					}
+				}
+
+				.resume-cash-pay-container {
+					width: 100%;
+					position: relative;
+					padding-top: 64px;
+					padding-bottom: 40px;
+					transition: 0.3s;
+					@include flex-box(column, flex-start, center);
+
+					&.active {
+						display: flex;
+					}
+
+					&.inactive {
+						display: none;
+					}
+
+					& > span {
+						width: 506px;
+						height: 48px;
+						text-align: center;
+						@include text-font-regular(18px, $gray-400, 27px);
+					}
+
+					.cash-pay-info {
+						margin-top: 30px;
+						@include flex-box(row, flex-start, flex-start);
+						flex-wrap: wrap;
+
+						& > span {
+							&:nth-child(1) {
+								margin-bottom: 16px;
+								text-align: left;
+								@include text-font-bold(16px, $gray-400, 27px);
+							}
+
+							&:nth-child(2) {
+								text-align: left;
+								@include text-font-regular(16px, $gray-400, 27px);
+							}
+						}
+
+						.values-container {
+							width: 100%;
+							@include flex-box(row, flex-start, flex-start);
+							flex-wrap: wrap;
+							div {
+								width: 33%;
+								margin-top: 24px;
+								@include flex-box(column, flex-start, flex-start);
+								flex-wrap: nowrap;
+								& > .label-data {
+									margin-bottom: 9px;
+									@include text-font-regular(12px, $gray-600, normal);
+								}
+
+								& > .value-data {
+									@include text-font-regular(14px, $gray-400, normal);
+
+									@include break-point("1700") {
+										font-size: 18px;
+									}
+								}
+							}
+						}
+					}
+				}
+
+				.payments-container-buttons {
+					width: 100%;
+					display: flex;
+					flex-wrap: nowrap;
+					flex-direction: column;
+					justify-content: space-around;
+					align-items: center;
+					margin-bottom: 20px;
+
+					@include break-point("500") {
+						display: inline-table;
+						margin: 20px 0px;
+						text-align: center;
+						margin-bottom: 30px;
+					}
+				}
+
+				#btnDatosFisica{
+					width: 100%;
+				}
+
+				#btnDatosMoral{
+					width: 100%;
+				}
+
+				.resume-calendar-data {
+					position: relative;
+					width: 100%;
+					@include flex-box(row, center, center);
+					flex-wrap: wrap;
+					@include break-point("800") {
+						margin-bottom: 8px;
+
+						@include break-point("1700") {
+							font-size: 26px;
+						}
+					}
+
+					.month-info {
+						position: relative;
+						margin-right: 10px;
+						margin-right: 52px;
+						@include flex-box(column, center, center);
+						.month-tabs {
+							width: 50%;
+							width: 185px;
+							height: 32px;
+							margin-bottom: 11px;
+							@include flex-box(row, space-around, center);
+							span {
+								cursor: pointer;
+								@include text-font-regular(16px, $gray-600, normal);
+
+								@include break-point("1700") {
+									font-size: 16px;
+								}
+
+								&.active {
+									font-weight: bold;
+									color: $gray-400;
+								}
+							}
+						}
+
+						.month-week {
+							position: relative;
+							margin-bottom: 11px;
+							@include flex-box(row, flex-start, center);
+							li {
+								width: 24px;
+								margin-right: 15px;
+								align-items: center;
+								@include flex-box(row, center, center);
+								@include text-font-regular(14px, $gray-600, 18px);
+
+								@include break-point("800") {
+									width: 30px;
+								}
+
+								@include break-point("1700") {
+									font-size: 14px;
+								}
+							}
+							li:last-child {
+								margin-right: 0;
+							}
+						}
+
+						.month-days {
+							position: relative;
+							@include flex-box(row, flex-start, center);
+							flex-wrap: wrap;
+							width: 260px;
+							@include break-point("800") {
+								width: 302px;
+							}
+
+							li {
+								position: relative;
+								width: 24px;
+								margin-right: 15px;
+								margin-bottom: 11px;
+								align-items: center;
+								transition: 0.3s;
+								cursor: pointer;
+								@include flex-box(row, center, center);
+								@include text-font-regular(12px, $gray-1500, 22px);
+								z-index: 2;
+
+								@include break-point("800") {
+									width: 30px;
+									font-size: 16px;
+								}
+
+								&.active {
+									color: $gray-600;
+								}
+
+								&:nth-child(7n + 0) {
+									margin-right: 0;
+								}
+
+								&.selected {
+									color: $gray-100;
+									font-weight: bold;
+								}
+							}
+
+							.selector-day {
+								width: 32px;
+								height: 32px;
+								border-radius: 50%;
+								position: absolute;
+								transition: 0.3s;
+								background-color: $blue-2100;
+								z-index: 1;
+								margin: 0;
+								left: 0px;
+								top: 0px;
+							}
+						}
+					}
+
+					.resume-select-data {
+						width: auto;
+						padding-top: 16px;
+						@include flex-box(column, center, center);
+						@include break-point("1700") {
+							width: 27%;
+						}
+						span {
+							margin-bottom: 16px;
+							@include text-font-bold(16px, $gray-400, 19px);
+						}
+
+						.btn__outline__medium-gray {
+							width: 200px;
+							height: 40px;
+							margin-bottom: 8px;
+							padding: 0 24px;
+							position: relative;
+							transition: 0.3s;
+							@include flex-box(row, center, center);
+
+							&.checked {
+								border: 1px solid $blue-400;
+								&::after {
+									content: "";
+									background: url(../img/pages/contratacion/done-24-px.svg) no-repeat;
+									background-size: contain;
+									display: block;
+									height: 19px;
+									width: 20px;
+									right: 10px;
+									top: 10px;
+
+									@include break-point("800") {
+										right: 10px;
+										top: 6px;
+									}
+								}
+							}
+						}
+					}
+
+					.select-data-info {
+						width: 100%;
+						height: 50px;
+						margin-top: 16px;
+						margin-bottom: 16px;
+						border-radius: 8px;
+						background-color: $gray-1700;
+						transition: 0.3s;
+						@include flex-box(row, center, center);
+						@include break-point("800") {
+						}
+
+						label {
+							@include text-font-bold(15px, $gray-400, 22px);
+
+							@include break-point("800") {
+								@include text-font-bold(18px, $gray-400, 22px);
+							}
+
+							&:nth-child(1) {
+								margin-right: 4px;
+							}
+						}
+					}
+
+					& > .pay-check-container {
+						@include flex-box(row, flex-start, center);
+						p {
+							width: 547px;
+							text-align: left;
+							@include text-font-regular(14px, $gray-400, 21px);
+						}
+
+						.text-blue-terms {
+							@include text-font-regular(14px, $blue-400, 21px);
+						}
+					}
+
+					.btn__blue {
+						width: 248px;
+						margin-top: 24px;
+						margin-bottom: 24px;
+					}
+				}
+
+				.form-data {
+					width: 100%;
+					position: relative;
+					padding-top: 24px;
+
+					&.active {
+						display: flex;
+					}
+
+					&.inactive {
+						display: none;
+					}
+
+					.content-form-titular {
+						padding: 24px 0;
+						@include flex-box(row, space-between, flex-start);
+						flex-wrap: wrap;
+						transition: 0.3s;
+
+						.input__float {
+							border-bottom: 1px solid $gray-400;
+							width: 100% !important;
+							margin-bottom: 22px;
+
+							&:nth-child(1),
+							&:nth-child(2),
+							&:nth-child(3),
+							&:nth-child(4),
+							&:nth-child(5),
+							&:nth-child(6) {
+								@include break-point("800") {
+									width: 30% !important;
+								}
+							}
+
+							&:nth-child(1),
+							&:nth-child(4) {
+								@include break-point("500") {
+								}
+
+								@include break-point("800") {
+								}
+							}
+
+							&:nth-child(2),
+							&:nth-child(3),
+							&:nth-child(5),
+							&:nth-child(6) {
+								@include break-point("800") {
+								}
+							}
+
+							&:nth-child(1),
+							&:nth-child(2),
+							&:nth-child(3) {
+								margin-bottom: 22px;
+							}
+
+							& > label {
+								@include text-font-light(14px, $gray-600);
+							}
+						}
+					}
+
+					.content-form-moral {
+						padding: 24px 0;
+						@include flex-box(row, space-between, flex-start);
+						flex-wrap: wrap;
+						transition: 0.3s;
+
+						.input__float {
+							border-bottom: 1px solid $gray-400;
+							//width: 100% !important;
+							margin-bottom: 22px;
+
+							&:nth-child(1){
+								width: 100%;
+							}
+
+							&:nth-child(3) {
+								width: 100%;
+								@include break-point("800") {
+									width: 40% !important;
+								}
+							}
+							&:nth-child(4) {
+								width: 100%;
+								@include break-point("800") {
+									width: 50% !important;
+								}
+							}
+
+							&:nth-child(5) {
+								width: 100%;
+								@include break-point("800") {
+									width: 45% !important;
+								}
+							}
+
+							&:nth-child(6) {
+								width: 100%;
+								@include break-point("800") {
+									width: 50% !important;
+								}
+							}
+
+							& > label {
+								@include text-font-light(14px, $gray-600);
+							}
+						}
+					}
+
+					.content-form-installation {
+						@include flex-box(row, space-between, flex-start);
+						flex-wrap: wrap;
+						.input__float {
+							width: 48%;
+							border-bottom: 1px solid $gray-400;
+							margin-bottom: 13px;
+
+							& > label {
+								@include text-font-light(14px, $gray-600);
+							}
+						}
+					}
+
+					.content-form-card {
+						@include flex-box(row, space-between, flex-start);
+						flex-wrap: wrap;
+
+						.inputs-card-container {
+							width: 100%;
+							@include flex-box(row, space-between, flex-start);
+							flex-wrap: wrap;
+
+							.input-card {
+								width: 100%;
+								@include flex-box(column-reverse, flex-start, flex-start);
+								flex-wrap: wrap;
+
+								@include break-point("500") {
+									@include flex-box(row, space-between, center);
+								}
+							}
+
+							.input__float {
+								border-bottom: 1px solid $gray-400;
+								width: 100%;
+								margin-bottom: 32px;
+								&:nth-child(1) {
+									@include break-point("500") {
+										width: 65%;
+									}
+
+									@include break-point("800") {
+										width: 65%;
+									}
+								}
+
+								&:nth-child(2) {
+									width: 100%;
+									@include break-point("800") {
+										width: 39%;
+									}
+								}
+
+								&:nth-child(3),
+								&:nth-child(4),
+								&:nth-child(5) {
+									width: 30%;
+
+									& > img {
+										right: 0;
+									}
+
+									@include break-point("500") {
+										width: 29%;
+									}
+
+									@include break-point("800") {
+										width: 16%;
+									}
+								}
+
+								& > label {
+									@include text-font-light(14px, $gray-600);
+								}
+
+								& > input {
+									text-align: center;
+								}
+
+								& > img {
+									position: absolute;
+								}
+							}
+
+							.img-content {
+								width: 100%;
+								margin-bottom: 16px;
+								@include flex-box(row, flex-start, center);
+
+								@include break-point("500") {
+									width: 25%;
+									margin-bottom: 0;
+									@include flex-box(row, space-around, center);
+								}
+
+								img {
+									width: 32px;
+									height: 21px;
+									margin-right: 9px;
+								}
+							}
+						}
+
+						.inputs-container {
+							width: 100%;
+							@include flex-box(row, space-between, flex-start);
+							flex-wrap: wrap;
+							.input__float {
+								width: 48%;
+								border-bottom: 1px solid $gray-400;
+								margin-bottom: 13px;
+
+								@include break-point("800") {
+									width: 32%;
+								}
+
+								&:nth-child(1),
+								&:nth-child(2),
+								&:nth-child(3) {
+									margin-bottom: 32px;
+								}
+
+								& > label {
+									@include text-font-light(14px, $gray-600);
+								}
+							}
+						}
+
+						.values-container {
+							width: 100%;
+							@include flex-box(row, flex-start, flex-start);
+							flex-wrap: wrap;
+							div {
+								width: 33%;
+								margin-top: 24px;
+								@include flex-box(column, flex-start, flex-start);
+								flex-wrap: nowrap;
+								& > .label-data {
+									margin-bottom: 9px;
+									@include text-font-regular(12px, $gray-600, normal);
+
+									@include break-point("1700") {
+										font-size: 14px;
+									}
+								}
+
+								& > .value-data {
+									@include text-font-regular(14px, $gray-400, normal);
+
+									@include break-point("1700") {
+										font-size: 18px;
+									}
+								}
+							}
+						}
+
+						.direction-title {
+							width: 100%;
+							@include flex-box(column, flex-start, flex-start);
+
+							@include break-point("800") {
+								@include flex-box(row, space-between, flex-end);
+							}
+
+							.resume-title {
+								margin-top: 16px;
+								margin-bottom: 8px;
+								@include text-font-regular(16px, $gray-400, normal);
+								font-weight: bold;
+
+								@include break-point("500") {
+									font-size: 18px;
+									margin-top: 24px;
+								}
+
+								@include break-point("800") {
+									width: 50%;
+									font-size: 20px;
+									margin-top: 51px;
+									margin-bottom: 25px;
+								}
+							}
+
+							& > .btn__text__simple {
+								text-align: left;
+								margin-bottom: 22px;
+								cursor: pointer;
+								@include text-font-regular(14px, $blue-400, normal);
+
+								@include break-point("800") {
+									width: 50%;
+									text-align: right;
+									margin-top: 51px;
+									margin-bottom: 25px;
+									line-height: 32px;
+								}
+
+								@include break-point("1700") {
+									font-size: 16px;
+								}
+							}
+						}
+					}
+				}
+
+				.pay-check-container {
+					position: relative;
+					width: 100%;
+					height: auto;
+					border-radius: 4px;
+					border: 1px solid $gray-200;
+					margin-top: 15px;
+					padding: 16px 16px 16px 21px;
+					@include flex-box(row, flex-start, center);
+					flex-wrap: wrap;
+					@include break-point("500") {
+						margin-top: 5px;
+					}
+
+					@include break-point("1700") {
+						margin-top: 10px;
+						border-radius: 4.4px;
+					}
+
+					& > span {
+						&:nth-child(1) {
+							width: 90%;
+							text-align: left;
+							margin-bottom: 8px;
+							@include text-font-regular(14px, $gray-600, normal);
+
+							@incude break-point("360") {
+								width: 85%;
+							}
+
+							@incude break-point("768") {
+								width: 85%;
+							}
+
+							@include break-point("1700") {
+								font-size: 16px;
+							}
+						}
+
+						&:nth-child(2) {
+							width: 90%;
+							margin-bottom: 8px;
+							@include text-font-regular(14px, $gray-400, 1.14);
+
+							@include break-point("800") {
+								width: 90%;
+							}
+
+							@include break-point("1700") {
+								font-size: 16px;
+							}
+						}
+
+						&:nth-child(3) {
+							width: 90%;
+							text-align: left;
+							@include text-font-regular(10px, $gray-400, 1.8);
+
+							// @include break-point('800'){
+							//     width: 83%;
+							//     display: inline-block;
+							//     //margin-bottom: 16px;
+							// }
+
+							@include break-point("1700") {
+								font-size: 11px;
+							}
+						}
+
+						.text-blue-terms {
+							cursor: pointer;
+							@include text-font-regular(10px, $blue-400, 1.8);
+							@include break-point("1700") {
+								font-size: 11px;
+							}
+						}
+					}
+
+					.pay-check {
+						position: absolute;
+						width: 24px;
+						height: 24px;
+						border-radius: 4px;
+						right: 24px;
+						transition: 0.3s;
+						border: 1px solid $gray-200;
+						cursor: pointer;
+						@include break-point("1700") {
+							width: 26px;
+							height: 26px;
+						}
+
+						&.active {
+							border: 1px solid $blue-400;
+							background-color: $blue-400;
+							&::after {
+								content: "";
+								background: url(../img/pages/contratacion/white_done-24-px.svg) no-repeat;
+								position: absolute;
+								background-size: contain;
+								display: block;
+								height: 18px;
+								width: 18px;
+								right: 3px;
+								top: 3px;
+
+								@include break-point("1700") {
+									right: 4px;
+									top: 4px;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			.btn__blue {
+				width: 240px;
+				height: 40px;
+				line-height: 40px;
+				margin: 0 auto;
+				position: relative;
+				@include flex-box(row, center, center);
+
+				@include break-point("500") {
+					width: 232px;
+					height: 40px;
+					font-size: 18px;
+				}
+
+				@include break-point("1700") {
+					width: 255px;
+					height: 44px;
+					line-height: 44px;
+					font-size: 20px;
+				}
+			}
+		}
+	}
+
+	#inputsInstallDirection {
+		div {
+			width: 100%;
+			margin-bottom: 32px;
+			@include break-point("800") {
+				&:nth-child(1),
+				&:nth-child(4) {
+					width: 35%;
+				}
+
+				&:nth-child(2),
+				&:nth-child(5) {
+					width: 20%;
+				}
+
+				&:nth-child(3),
+				&:nth-child(6) {
+					width: 30%;
+				}
+			}
+		}
+	}
+
+	#valuesInstallDirectionCash {
+		div {
+			width: 100%;
+
+			@include break-point("800") {
+				&:nth-child(1),
+				&:nth-child(4) {
+					width: 35%;
+				}
+
+				&:nth-child(2),
+				&:nth-child(5) {
+					width: 20%;
+				}
+
+				&:nth-child(3),
+				&:nth-child(6) {
+					width: 30%;
+				}
+			}
+		}
+	}
+
+	.content-form-agendamiento {
+		margin-top: 30px;
+		.input__float {
+			width: 100%;
+			border-bottom: 1px solid;
+			margin-bottom: 30px;
+		}
+	}
+
+	#texto-agendamiento {
+		font-family: Montserrat-Regular;
+		font-size: 14px;
+		color: #3b4559;
+		line-height: 22px;
+		margin-bottom: 30px;
+
+		@include break-point("800") {
+			margin-bottom: 15px;
+		}
+	}
+
+	#tituloConstanciaRFC{
+		display:none; 
+		font-family: Montserrat-Bold; 
+		font-size: 20px; 
+		color: #3b4559; 
+		line-height: normal;
+		//margin-left: 20px; 
+		width: 100%; 
+		margin-top: 10px; 
+		margin-bottom: 35px;
+
+		@include break-point("800") {
+			margin-bottom: 0;
+		}
+	}
+
+	#tituloComprobante{
+		font-family: Montserrat-Bold; 
+		font-size: 20px; 
+		color: #3b4559; 
+		line-height: normal; 
+		margin-left: 20px; 
+		width: 100%; 
+		margin-top: 10px; 
+		margin-bottom: 30px;
+
+		@include break-point("500") {
+			margin-bottom: 0;
+		}
+
+		@include break-point("800") {
+			margin-bottom: 0;
+		}
+	}
+
+	#btnDatosFisica{
+		font-size: 10px;
+		@include break-point("800") {
+			font-size: 14px;
+		}
+	}
+
+	#btnDatosMoral{
+		font-size: 10px;
+		@include break-point("800") {
+			font-size: 14px;
+		}
+	}
+}

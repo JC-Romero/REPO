@@ -1,0 +1,1737 @@
+.btn__blue {
+    background-color: $blue-400;
+    border-radius: 50px;
+    @include text-font-regular(16px, $gray-100, 40px);
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+
+    padding-left: 24px;
+    padding-right: 24px;
+
+
+    @include break-point ('500'){
+        @include text-font-regular(20px, $gray-100, 48px);
+        //max-width: 208px;
+        // width: 208px;
+        // height: 48px;
+    }
+    @include break-point ('800'){
+        @include text-font-regular(18px, $gray-100, 48px);
+    }
+    @include break-point ('1100'){
+        //@include text-font-regular(22px, $gray-100, 48px);cambio por datos de invision 2020-02-24
+        @include text-font-regular(22px, $gray-100, 27px);
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+    }
+    @include break-point ('1700') {
+        @include text-font-regular(22px, $gray-100, 48px);
+        //max-width: 272px;
+        // width: 272px;
+        line-height: 53px;
+        // height: 53px;
+    }
+    &:hover {
+        background-image: $gradient-100;
+        box-shadow: $main-shadow;
+        color: $gray-100;
+    }
+}
+
+.szWh247{
+    width: 247px;
+}
+.btn__blue:link{
+    color: $gray-100;
+}
+.btn__blue:visited{
+    color: $gray-100;
+}
+
+.btn__blue.disable {
+    opacity: 0.5;
+    cursor: auto;
+    &:hover {
+        background-image: none;
+        box-shadow: none;
+    }
+}
+
+.btn__outline {
+    @include text-font-regular(18px, $gray-400, 40px);
+    transition: 0.3s;
+    border: 1px solid $gray-400;
+    border-radius: 50px;
+    cursor: pointer;
+    text-align: center;
+    &:hover {
+        background-image: $gradient-100;
+        color: $gray-100;
+        box-shadow: $main-shadow;
+    }
+
+    &:focus {
+        outline: none!important; 
+        outline: none!important;
+    }
+}
+
+.btn__outline.disable {
+    opacity: 0.5;
+    cursor: auto;
+    &:hover {
+        background-image: none;
+        box-shadow: none;
+        border: 1px solid $gray-400;
+        color: $gray-400;
+    }
+}
+
+.btn__outline__blue {
+    @include text-font-regular(18px, $blue-300, 40px);
+    transition: 0.3s;
+    border: 1px solid $blue-300;
+    border-radius: 50px;
+    padding: 0 24px;
+    cursor: pointer;
+    text-align: center;
+    background-color: transparent;
+    &:hover {
+        color: $gray-100 !important;
+        background-color: $blue-300;
+        box-shadow: $main-shadow;
+    }
+
+    &:focus {
+        outline: none!important; 
+        outline: none!important;
+    }
+}
+
+.btn__outline__blue.disable {
+    opacity: 0.5;
+    cursor: auto;
+    &:hover {
+        background-color: transparent;
+        box-shadow: none;
+        color: $blue-300;
+    }
+    &:focus {
+        outline: none!important; 
+        outline: none!important;
+    }
+}
+
+.btn__outline__blue:link{
+    color: $blue-300;
+}
+
+.btn__outline__blue:visited{
+    color: $blue-300;
+    &:focus {
+        outline: none!important; 
+        outline: none!important;
+    }
+}
+
+.btn__outline__green{
+    width: auto;
+    height: 40px;
+    @include text-font-regular(18px, $green-800, 40px);
+    transition: 0.3s;
+    border: 1px solid $green-800;
+    border-radius: 50px;
+    padding: 0 24px;
+    text-align: center;
+    background-color: transparent;
+    cursor: pointer;
+    &:hover {
+        box-shadow: $main-shadow;
+    }
+}
+
+.btn__outline__green.disable {
+    cursor: auto;
+    opacity: 0.5;
+    &:hover {
+        transform: scale(1);
+        color: $green-800;
+    }
+}
+
+
+.btn__outline__orange:link{
+    color: $green-800;
+}
+
+.btn__outline__orange:visited{
+    color: $green-800;
+}
+
+
+.btn__transparent {
+    //@include text-font-regular(14px, $blue-400, 21px);
+    @include text-font-regular(20px, $blue-400, 24px);// cambio por datos de invision 2020-02-24
+    transition: 0.3s;
+    //text-align: center;
+    position: relative;
+    left: 0px;
+    margin-top: 0px;
+    margin-bottom: 35px;
+    width: 292px;
+    height: 30px;
+    @include break-point('375'){
+        @include text-font-regular(18px, $blue-400, 27px); 
+        right: -4px;
+    }
+    @include break-point('768'){
+        @include text-font-regular(18px, $blue-400, 27px); 
+        right: 0px;
+        margin-top: 0px;
+        margin-bottom: 39px;
+        //border: solid salmon 1px;
+        width: 272px;
+    }
+    @include break-point('1024'){
+        @include text-font-regular(23.7px, $blue-400, 35.6px); 
+        //border: solid brown;
+        width: 346px;
+        height: 36px;
+        margin-bottom: 53px;
+    }
+    @include break-point('1100') {
+        font-size: 20px; // cambio por datos de invision 2020-02-24
+    }
+    @include break-point('1700'){
+        @include text-font-regular(23.7px, $blue-400, 35.6px); 
+        width: 346px;
+        height: 36px;
+        margin-bottom: 0px;
+    }
+    &::before{
+        transition: 0.3s;
+        content: "";
+        background-image: url('../img/chevron-right-24-px.svg');
+        width: 21px;
+        height: 21px;
+        position: absolute;
+        right: -20px;
+        background-size: contain;
+        color: #1a76d2;
+        @include break-point('375'){ 
+            width: 24px;
+            height: 24px;
+            right: -4px;
+            top: 2px;
+        }
+        @include break-point('768'){ 
+            width: 24px;
+            height: 24px;
+            right: -20px;
+            top: 2px;
+        }
+        @include break-point('1024'){ 
+            width: 24px;
+            height: 24px;
+            right: 20px;
+            top: 6px;
+        }
+        @include break-point('1700'){
+            width: 26px;
+            height: 26px;
+            right: -40px;
+            top: 5px;
+        }
+    }
+    
+    &:hover {
+        color: $blue-400;
+        text-decoration: underline;
+        &::before{
+            content: "";
+            right: -25px;
+            @include break-point('375'){
+                right: -10px;
+            }
+            @include break-point('768'){
+                right: -25px;
+            }
+            @include break-point('1700'){
+                //right: -4px;
+                right: -70px;
+            }
+        }
+    }    
+}
+
+
+.btn__transparent.disable {
+    cursor: auto;
+    opacity: 0.5;
+    &:hover {
+        transform: scale(1);
+        color: $blue-300;
+    }
+}
+
+.btn__transparent:visited {
+    color: $blue-400;
+}
+
+.btn__transparent:link {
+    color: $blue-400;
+}
+
+/* BOTON DE VENTAJAS EN PAQUETES*/
+.btn_paq_advantages {
+    //@include text-font-regular(14px, $blue-400, 21px);
+    @include text-font-regular(20px, $blue-400, 24px);// cambio por datos de invision 2020-02-24
+    transition: 0.3s;
+    text-align: center;
+    position: relative;
+    left: 0px;
+    margin-top: 0px;
+    margin-bottom: 35px;
+    width: 292px;
+    height: 30px;
+    @include break-point('375'){
+        @include text-font-regular(18px, $blue-400, 27px); 
+        right: -4px;
+        width: 195px;
+    }
+    @include break-point('768'){
+        @include text-font-regular(20px, $blue-400, normal); 
+        right: 0px;
+        margin-top: 0px;
+        margin-bottom: 39px;
+        width: 200px;
+    }
+    @include break-point('1024'){
+        @include text-font-regular(20px, $blue-400, normal); 
+        right: 0px;
+        margin-top: 0px;
+        margin-bottom: 39px;
+        width: 210px;
+    }
+    @include break-point('1100') {
+        font-size: 20px; // cambio por datos de invision 2020-02-24
+    }
+    @include break-point('1700'){
+        @include text-font-regular(24px, $blue-400, normal); 
+        width: 220px;
+        height: 29px;
+        margin-bottom: 0px;
+    }
+    &::before{
+        transition: 0.3s;
+        content: "";
+        background-image: url('../img/chevron-right-24-px.svg');
+        width: 21px;
+        height: 21px;
+        position: absolute;
+        right: -20px;
+        background-size: contain;
+        color: #1a76d2;
+        @include break-point('375'){ 
+            width: 24px;
+            height: 24px;
+            right: -4px;
+            top: 2px;
+        }
+        @include break-point('768'){ 
+            width: 24px;
+            height: 24px;
+            right: -17px;
+            top: 2px;
+        }
+        @include break-point('1024'){ 
+            width: 24px;
+            height: 24px;
+            right: -4px;
+            top: 1px;
+        }
+        @include break-point('1700'){
+            width: 26px;
+            height: 26px;
+            right: -25px;
+            top: 2px;
+        }
+    }
+    
+    &:hover {
+        color: $blue-400;
+        text-decoration: underline;
+        &::before{
+            content: "";
+            right: -25px;
+            @include break-point('375'){
+                right: -10px;
+            }
+            @include break-point('768'){
+                right: -25px;
+            }
+            @include break-point('1700'){
+                right: -35px;
+            }
+        }
+    }    
+}
+
+.btn_paq_advantages.disable {
+    cursor: auto;
+    opacity: 0.5;
+    &:hover {
+        transform: scale(1);
+        color: $blue-300;
+    }
+}
+
+.btn_paq_advantages:visited {
+    color: $blue-400;
+}
+
+.btn_paq_advantages:link {
+    color: $blue-400;
+}
+
+
+
+.btn__transparent_premium {
+    //@include text-font-regular(20px, $blue-400, 24px);
+    transition: 0.3s;
+    text-align: center;
+    position: relative;
+    left: 0px;
+    margin-top: 0px;
+    margin-bottom: 35px;
+    width: 292px;
+    height: 30px;
+    @include break-point('375'){
+        @include text-font-regular(18px, $blue-400, 27px); 
+        right: -4px;
+    }
+    @include break-point('768'){
+        @include text-font-regular(18px, $blue-400, 27px); 
+        right: 0px;
+        margin-top: 0px;
+        margin-bottom: 39px;
+        //border: solid salmon 1px;
+        width: 272px;
+    }
+    @include break-point('1024'){
+        @include text-font-regular(23.7px, $blue-400, 35.6px); 
+        //border: solid brown;
+        width: 346px;
+        height: 36px;
+        margin-bottom: 53px;
+    }
+    @include break-point('1366'){
+        font-size: 16px !important;
+        width: 224px;
+        height: 1.27;
+        letter-spacing: normal;
+        margin-bottom:0;
+    }
+    @include break-point('1700'){
+        font-size: 18px !important;
+        width: 200px;
+        height: 22px;
+        letter-spacing: normal;
+        margin-bottom:0;
+    }
+    &::before{
+        transition: 0.3s;
+        content: "";
+        background-image: url('../img/chevron-right-24-px.svg');
+        width: 21px;
+        height: 21px;
+        position: absolute;
+        right: -20px;
+        background-size: contain;
+        color: #1a76d2;
+        @include break-point('375'){ 
+            width: 24px;
+            height: 24px;
+            right: 35px;
+            top: 2px;
+        }
+        @include break-point('768'){ // cambio por datos de chanel 2020-04-13
+            width: 24px;
+            height: 24px;
+            right: 40px;
+            top: 2px;
+        }
+        @include break-point('1024'){ // cambio por datos de chanel 2020-04-13
+            width: 24px;
+            height: 24px;
+            right: 60px;
+            top: 6px;
+        }
+        @include break-point('1366'){ 
+            width: 24px;
+            height: 24px;
+            right: -4px;
+            top: 6px;
+        }
+        @include break-point('1700'){
+            width: 24px;
+            height: 24px;
+        }
+    }
+    @include break-point('1100') {
+        font-size: 20px; // cambio por datos de invision 2020-02-24
+    }
+    &:hover {
+        color: $blue-400;
+        text-decoration: underline;
+        &::before{
+            content: "";
+            right: -25px;
+            @include break-point('375'){
+                right: 25px;
+            }
+            @include break-point('768'){// cambio por datos de chanel 2020-04-13
+                right: 25px;
+            }
+            @include break-point('1024'){// cambio por datos de chanel 2020-04-13
+                right: 35px;
+            }
+            @include break-point('1366'){
+                right: -25px;
+            }
+            @include break-point('1700'){
+                right: -13px;
+            }
+        }
+    }    
+}
+
+.btn__transparent_premium.disable {
+    cursor: auto;
+    opacity: 0.5;
+    &:hover {
+        transform: scale(1);
+        color: $blue-300;
+    }
+}
+
+.btn__transparent_premium:visited {
+    color: $blue-400;
+}
+
+.btn__transparent_premium:link {
+    color: $blue-400;
+}
+
+
+
+
+
+
+.btn__outline__white {
+    width: auto;
+    background-color: transparent;
+    border-radius: 24px;
+    border: solid 2px $gray-100;
+    padding: 12px 24px;
+    @include text-font-regular(18px, $gray-100, normal);
+    // height: 35px;
+    // line-height: 31px;
+    // width: 60%;
+    // max-width: 172px;
+    text-align: center;
+    transition: 0.3s;
+    cursor: pointer;
+    //@include break-point ('500'){
+        // max-width: 267px;
+        // height: 55px;
+        // line-height: 51px;
+    // }
+    // @include break-point ('800'){
+        // height: 40px;
+        // line-height: 36px;
+
+    // }
+    // @include break-point ('1700') {
+        // max-width: 233px;
+        // line-height: 44px;
+        // height: 48px;
+    //}
+    &:hover {
+        box-shadow: $main-shadow;
+        //transform: scale(1.1);
+        background-color: $gray-100;
+        color: $blue-400;
+    }
+}
+
+.btn-blue-cobertura {
+  
+    width: 232px;
+    height: 40px;
+    border-radius: 100px;
+    background-color: $blue-400;
+    @include text-font-regular(16px, $gray-100);
+    text-align: center;
+    
+}
+
+/* boton utilizado en detalle paquete*/
+.btn__outline__gray{
+    width: 352px;
+    height: 72px;
+    margin-top: 16px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    border: solid 2px $gray-200;
+    z-index: 10;
+    @include flex-box(column, center, center);
+    flex-wrap: wrap;
+    cursor: pointer;
+    transition: 0.3s;
+    @include break-point('1024'){
+        width: 392px;
+    }
+    @include break-point('1366'){
+        margin-top: 0px;
+    }
+    @include break-point('1700'){
+        margin-top: 0px;
+    }
+    h1{
+        height: 19px;
+        width: 226px;
+        
+        text-align: left;
+        @include flex-box(row, flex-start, center);
+        @include text-font-medium(16px, $gray-400, normal);
+        @include break-point('768'){
+            @include text-font-medium(16px, $gray-400, normal);
+            height: 19px;
+            width: 226px;
+        } 
+        @include break-point('1024'){
+            @include text-font-medium(16px, $gray-400, normal);
+            height: 19px;
+            width: 246px;
+        }
+        @include break-point('1366'){
+            @include text-font-medium(16px, $gray-400, normal);
+            height: 19px;
+            width: 246px;
+        } 
+        @include break-point('1700'){
+            @include text-font-medium(18px, $gray-400, normal); 
+            height: 22px; 
+            width: 280px;
+        }
+    }
+    h2{
+        height: 19px;
+        width: 226px;
+        text-align: left;
+        @include flex-box(row, flex-start, flex-start);
+        @include text-font-regular(16px, $orange-100, normal);
+        @include break-point('768'){
+            @include text-font-regular(16px, $orange-100, normal);
+            height: 19px;
+            width: 226px;
+            margin-top : 10px;
+        }
+        @include break-point('1024'){
+            @include text-font-regular(16px, $orange-100, normal);
+            height: 19px;
+            width: 246px;
+        }
+        @include break-point('1366'){
+            @include text-font-regular(16px, $orange-100, normal);
+            height: 19px;
+            width: 246px;
+        }
+        @include break-point('1700'){
+            @include text-font-regular(18px, $orange-100, normal);
+            height: 22px;
+            width: 280px;
+        }
+    }
+    h3{
+        width: 66.7%;
+        height: 40%;
+        text-align: left;
+        @include flex-box(row, flex-start, flex-start);
+        @include text-font-regular(16px, $gray-600, normal);
+        @include break-point('768'){
+            @include text-font-regular(16px, $gray-600, normal);
+            height: 22px;
+            width: 226px;
+            margin-top : 10px; 
+        }
+        @include break-point('1024'){
+            @include text-font-regular(16px, $gray-600, normal);
+            height: 22px;
+            width: 246px; 
+        }
+        @include break-point('1366'){
+            @include text-font-regular(16px, $gray-600, normal);
+            height: 22px;
+            width: 246px; 
+        }
+        @include break-point('1700'){
+            @include text-font-regular(18px, $gray-600, normal);
+            height: 22px;
+            width: 280px;
+        }
+    }
+    img{
+        display: block;
+        width: 52px;
+        height: 52px;
+        margin-left: 8px;
+        margin-right: 8px;
+        @include break-point('500'){
+            width: 52px;
+            height: 52px;
+            margin-left: 16px;
+            margin-right: 16px;
+        }
+        @include break-point('1366'){
+            width: 57px;
+            height: 57px;
+            margin-left: 18px;
+            margin-right: 26px;
+        }
+        @include break-point('1700'){
+            width: 57px;
+            height: 57px;
+            margin-left: 20px;
+            margin-right: 29px;
+        }
+    }
+    &::after{
+        content: "";
+        width: 19px;
+        height: 19px;
+        transform: rotate(0deg);
+        background-image: url(../img/arrow-forward-gray-ios-24-px@3x.png);
+        background-size: 21px 21px;
+        background-position: center;
+        margin-bottom: 22px;
+        margin-top: 22px;
+        margin-right: 19px;
+        @include break-point('768'){
+            width: 21px;
+            height: 21px;
+            margin-right: 18px; 
+        }
+        @include break-point('1024'){
+            width: 21px;
+            height: 21px;
+            margin-right: 18px; 
+        }
+        @include break-point('1366'){
+            width: 21px;
+            height: 21px;
+            margin-right: 18px; 
+        }
+        @include break-point('1700'){
+            width: 21px;
+            height: 21px;
+            margin-right: 18px; 
+        }
+    }
+    &:hover{
+        box-shadow: $shadow-600;
+        border: solid 2px $blue-400;
+        &::after{
+            background-image: url(../img/arrow-forward-ios-24-px@3x.png);
+        }
+    }
+}
+
+.btn__outline__orange{
+    border-radius: 2.1px;
+    border: solid 1px $orange-100;
+    @include flex-box(row, center, center);
+    @include text-font-regular(12px, $orange-100, normal);
+    @include break-point('500'){
+        font-size: 14.6px;
+        border-radius: 3.3px;
+    }
+    @include break-point('800'){
+        font-size: 16px;
+        border-radius: 4px;
+    }
+    @include break-point('1100'){
+        border-radius: 3.6px;
+    }
+    @include break-point('1400'){
+        border-radius: 4px;
+    }
+    @include break-point('1700'){
+        font-size: 18px;
+        border: solid 1.1px;
+    }
+
+    &:hover{
+        color: $orange-100;
+    }
+}
+
+.btn__outline__orange:link{
+    color: $orange-100;
+}
+
+.btn__outline__orange:visited{
+    color: $orange-100;
+}
+
+
+.btn__text__simple{
+    width: 100%;
+    height: 26px;
+    text-align: center;
+    @include text-font-regular(14px, $blue-400);
+    &:hover{
+        color: $blue-400;
+    }
+    @include break-point('500'){
+        //width: 326px;
+        font-size: 16px;
+    }
+    @include break-point('1700'){
+        //width: 338px;
+        font-size: 18px;
+    }
+}
+
+.btn__text__simple:link{
+    color: $blue-400;
+}
+
+.btn__text__simple:visited{
+    color: $blue-400;
+}
+
+.btn__outline__blue_square{
+    width: 257px;
+    height: 48px;
+    background-color: transparent;
+    border-radius: 4px;
+    border: solid 2px $blue-400;
+    color: $blue-400;
+    @include flex-box(row, center, center);
+    @include text-font-regular(14px, $blue-400, normal);
+
+    @include break-point('1700'){
+        height: 53px;
+        font-size: 16px;
+    }
+
+    &:hover{
+        background-color: transparent;
+        color: $blue-400;
+    }
+
+}
+
+.btn__outline__blue_square:link{
+    color: $blue-400;
+}
+
+.btn__outline__blue_square:visited{
+    color: $blue-400;
+}
+
+.btn__outline__medium-gray {
+    @include text-font-regular(16px, $gray-400, 40px);
+    transition: 0.3s;
+    background-color: transparent;
+    border: 1px solid $gray-300;
+    border-radius: 50px;
+    text-align: center;
+    cursor: pointer;
+    
+    &:hover {
+        color: $gray-400;
+        border: 1px solid $blue-400;
+        //box-shadow: $main-shadow;
+    }
+}
+
+.btn__outline__square-gray {
+    width: 162px;
+    height: 40px;
+    @include text-font-regular(14px, $gray-400, 40px);
+    background-color: transparent;
+    border: 1px solid $gray-300;
+    border-radius: 4px;
+    text-align: center;
+    transition: 0.3s;
+    cursor: pointer;
+    
+    &:hover {
+        color: $blue-400;
+        border: 1px solid $blue-400;
+    }
+
+    &.active{
+        color: $blue-400;
+        border: 1px solid $blue-400;
+    }
+}
+
+.btn__outline__square-gray.disable {
+    opacity: 0.5;
+    cursor: auto;
+    &:hover {
+        background-image: none;
+        box-shadow: none;
+    }
+}
+
+.btn__blue:visited{
+    color: $gray-100;
+}
+
+.btn__select__image{
+    position: relative;
+    width: 282px;
+    height: 40px;
+    border: 2px solid $gray-200;
+    background-color: transparent;	
+    border-radius: 28px;
+    cursor: pointer;
+    @include flex-box(row, space-around, center);
+    @include break-point('375'){
+        width: 232px;
+    }
+    @include break-point('768'){
+        width: 232px;
+    }
+    @include break-point('1024'){
+        width: 232px;
+    }
+    @include break-point('1366'){
+        width: 232px;
+    }
+    span{
+        height: 30px;
+        @include text-font-regular(20px, $blue-400, normal);
+        line-height: 30px;
+        @include break-point('375'){
+            @include text-font-regular(16px, $blue-400, 1.88);
+        }
+        @include break-point('1024'){
+            height: 40px;
+            line-height: 40px;
+        }
+        @include break-point('1366'){
+            @include text-font-regular(16px, $blue-400, 1.88);
+        }
+        @include break-point('1366'){
+            margin: auto 0;
+            height: 30px;
+        }
+        @include break-point('1700'){
+            @include text-font-regular(16px, $blue-400, 1.88);
+        }
+        @include break-point('1700'){
+            margin: auto 0;
+            height: 30px;
+        }
+    }
+
+    &::after,
+    &::before {
+        content: "";
+        width: 24px;
+        height: 24px;
+        background-position: center;
+        background-size: 100%;
+
+    }
+
+    &::before {
+        background-image: url(../img/header/location-gray.png);        
+    }
+
+    &::after {
+        background-image: url(../img/header/icon-down.png);
+    }
+
+}
+
+
+.btn__blue__bold{
+    height: 40px;
+    width: 192px;
+    border-radius: 24px;
+    background-color: rgba(224,224,224,0.5);
+    @include text-font-regular(20px, $gray-400, normal);
+    @include flex-box(row, center, center);
+    cursor: pointer;
+    &:hover{
+        border: solid 2px $blue-400;
+        background-color: rgba(26,118,210,0.1);
+        @include break-point('1366'){
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 1.5;
+        }
+        @include break-point('1700'){
+            font-size: 22px;
+            font-weight: bold;
+            line-height: 1.5;
+        }
+        
+    }
+}
+
+.btn__blue__transparent{
+    width: auto;
+    height: auto;
+    padding: 16px 24px;
+    border-radius: 8px;
+    transition: 0.3s;
+    background-color: transparent;
+    @include text-font-regular(18px, $blue-400, 22px);
+    cursor: pointer;
+
+    &:hover{
+        //opacity: 0.1;
+        background-color: rgba($blue-400, 0.1);
+        color: $blue-400;
+    }
+}
+
+.btn__blue__transparent:visited{
+    color: $blue-400;
+}
+
+.btn__blue__transparent:link{
+    color: $blue-400;
+}
+
+.btn__square__blue{
+    width: 207px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: rgba(26, 118, 210, 0.1);
+    color: #1a76d2;
+    @include text-font-regular(16px, #1a76d2,normal);
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+ @include break-point('768'){
+     width: 138px;
+     line-height: 40px;
+     //margin-bottom: 18px;
+     margin-bottom: 21px;
+ }
+ @include break-point('1024'){
+     width: 168px;
+ }
+
+ @include break-point('1700'){
+    width: 155px;
+    margin-bottom: 29px;
+    
+}
+    
+}
+
+.btn__square__blue:link{
+    color: $blue-400;
+}
+
+.btn__square__blue:visited{
+    color: $blue-400;
+}
+
+
+/* boton anclaje landing*/
+
+.btn_transparent_landing {
+    margin-top: 24px;
+    transition: 0.3s;
+    text-align: center;
+    position: relative;
+    @include break-point('375'){
+        width: 135px;
+        height: 19px;
+        @include text-font-regular(16px, #FFF, normal); 
+        right: -4px;
+        margin-bottom: 20px;
+        position: relative;
+    }
+    @include break-point('768'){
+        @include text-font-regular(16px, $gray-1700,normal); 
+        right: 0px;
+        margin-top: 0px;
+        margin-bottom: 34px;
+        //border: solid salmon 1px;
+        width: 135px;
+        height: 38px;
+    }
+    @include break-point('1024'){
+        @include text-font-regular(16, $gray-1700, normal); 
+        //border: solid brown;
+        width: 135px;
+        height: 38px;
+        margin-bottom: 143px;
+    }
+    @include break-point('1366'){
+        @include text-font-regular(16, $gray-1700, normal); 
+        //border: solid brown;
+        width: 135px;
+        height: 38px;
+        margin-bottom: 87px;
+    }
+
+    @include break-point('1100') {
+        font-size: 20px; // cambio por datos de invision 2020-02-24
+    }
+    @include break-point('1700'){
+        @include text-font-regular(16, $gray-1700, normal); 
+        width: 135px;
+        height: 38px;
+        margin-bottom: 73px;
+    }
+    &::before{
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        top: 15px;
+        left: 50%;
+        margin-left: -13px;
+        transition: 0.3s;
+        content: "";
+        background-image: url('../img/arrow-down.png');
+        background-size: contain;
+        color: #1a76d2;
+        
+        @include break-point('375'){ 
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+            opacity: 0.8;
+            margin-bottom: 6px;
+        }
+        @include break-point('768'){ 
+            width: 24px;
+            height: 24px;
+            right: -17px;
+            top: 2px;
+        }
+        @include break-point('1024'){ 
+            width: 24px;
+            height: 24px;
+            right: -4px;
+            top: 6px;
+        }
+        @include break-point('1700'){
+            width: 26px;
+            height: 26px;
+            right: 0px;
+            top: 2px;
+        }
+    }
+    
+    &:hover {
+        color:white;
+        text-decoration: underline;
+        &::before{
+            content: "";
+            top: 25px;
+        }
+    }    
+}
+
+
+.btn_transparentLink {
+    //@include text-font-regular(14px, $blue-400, 21px);
+    @include text-font-regular(20px, $blue-400, 24px);// cambio por datos de invision 2020-02-24
+    transition: 0.3s;
+    text-align: center;
+    position: relative;
+    left: 0px;
+    margin-top: 0px;
+    margin-bottom: 35px;
+    width: 292px;
+    height: 30px;
+    @include break-point('375'){
+        @include text-font-regular(18px, $blue-400, 27px); 
+        right: -4px;
+    }
+    @include break-point('768'){
+        @include text-font-regular(18px, $blue-400, 27px); 
+        right: 0px;
+        margin-top: 0px;
+        margin-bottom: 39px;
+        //border: solid salmon 1px;
+        width: 272px;
+    }
+    @include break-point('1024'){
+        @include text-font-regular(18px, $blue-400, normal); 
+        height: 22px;
+        margin-bottom: 30px;
+        bottom: 22px;
+    }
+    @include break-point('1366'){
+        @include text-font-regular(18px, $blue-400, normal); 
+        height: 22px;
+        margin-bottom: 15px;
+        bottom: 0px;
+    }
+    @include break-point('1700'){
+        @include text-font-regular(18px, $blue-400, normal); 
+        height: 22px;
+        margin-bottom: 30px;
+        bottom: 20px;
+    }
+    &::before{
+        transition: 0.3s;
+        content: "";
+        background-image: url('../img/chevron-right-24-px.svg');
+        width: 21px;
+        height: 21px;
+        position: absolute;
+        right: -20px;
+        background-size: contain;
+        color: #1a76d2;
+        @include break-point('375'){ 
+            width: 24px;
+            height: 24px;
+            right: -4px;
+            top: 2px;
+        }
+        @include break-point('768'){ 
+            width: 24px;
+            height: 24px;
+            right: -17px;
+            top: 2px;
+        }
+        @include break-point('1024'){ 
+            width: 26px;
+            height: 26px;
+            right: 40px; 
+            top: 0px;
+        }
+        @include break-point('1700'){
+            width: 26px;
+            height: 26px;
+            right: 40px;  
+        }
+    }
+    &:hover {
+        color: $blue-400;
+        text-decoration: underline;
+        &::before{
+            content: "";
+            right: -25px;
+            @include break-point('375'){
+                right: -10px;
+            }
+            @include break-point('768'){
+                right: -25px;
+            }
+            @include break-point('1366'){
+                right: 30px;
+            }
+            @include break-point('1700'){
+                right: 30px; 
+            }
+        }
+    }    
+}
+
+.btn_transparentLink.disable {
+    cursor: auto;
+    opacity: 0.5;
+    &:hover {
+        transform: scale(1);
+        color: $blue-300;
+    }
+}
+
+.btn_transparentLink:visited {
+    color: $blue-400;
+}
+
+.btn_transparentLink:link {
+    color: $blue-400;
+}
+
+// boton transparente link se ubica en detalle paquete, 
+// se encuentra resumen por pagar, se crea para no afectar otras 
+// secciones del maquetado
+.btn_transparentLinkDetailPaq {
+    //@include text-font-regular(14px, $blue-400, 21px);
+    @include text-font-regular(20px, $blue-400, 24px);// cambio por datos de invision 2020-02-24
+    transition: 0.3s;
+    text-align: center;
+    position: relative;
+    left: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 292px;
+    height: 30px;
+    @include text-font-regular(16px, $blue-400, 27px); 
+    @include break-point('375'){
+        right: -4px;
+        width: 170px;
+        margin-bottom: 15px;
+    }
+    @include break-point('768'){
+        width: 292px;
+        height: 22px;
+        margin-bottom: 0;
+    }
+    @include break-point('1024'){
+        width: 292px;
+        height: 22px;
+        margin-bottom: 15px;
+        bottom: 0px;
+    }
+    @include break-point('1366'){
+        height: 22px;
+        margin-bottom: 20px;
+        bottom: 0px;
+    }
+    @include break-point('1700'){
+        @include text-font-regular(18px, $blue-400, normal); 
+        height: 22px;
+        margin-bottom: 30px;
+    }
+    &.closed{
+        display: none;
+    }
+    /*&::before{
+        transition: 0.3s;
+        content: "";
+        background-image: url('../img/chevron-right-24-px.svg');
+        width: 21px;
+        height: 21px;
+        position: absolute;
+        right: -20px;
+        background-size: contain;
+        color: #1a76d2;
+        @include break-point('375'){ 
+            width: 24px;
+            height: 24px;
+            right: -4px;
+            top: 2px;
+        }
+        @include break-point('768'){ 
+            width: 26px;
+            height: 26px;
+            right: 52px;
+            top: 1px;
+        }
+        @include break-point('1024'){ 
+            width: 26px;
+            height: 26px;
+            right: 52px;
+            top: -2px;
+        }
+        @include break-point('1366'){
+            width: 26px;
+            height: 26px;
+            right: 52px;
+            top: -2px;
+        }
+        @include break-point('1700'){
+            width: 26px;
+            height: 26px;
+            right: 42px;
+            top: -2px;
+        }
+    }*/
+    &:hover {
+        color: $blue-400;
+        text-decoration: underline;
+        &::before{
+            content: "";
+            right: -25px;
+            @include break-point('375'){
+                right: -15px;
+            }
+            @include break-point('768'){
+                right: 42px;
+            }
+            @include break-point('1024'){
+                right: 42px;
+            }
+            @include break-point('1366'){
+                right: 42px;
+            }
+            @include break-point('1700'){
+                right: 32px; 
+            }
+        }
+    }    
+}
+
+.btn_transparentLinkDetailPaq.disable {
+    cursor: auto;
+    opacity: 0.5;
+    &:hover {
+        transform: scale(1);
+        color: $blue-300;
+    }
+}
+
+.btn_transparentLinkDetailPaq:visited {
+    color: $blue-400;
+}
+
+.btn_transparentLinkDetailPaq:link {
+    color: $blue-400;
+}
+
+// boton transparente link se ubica en detalle paquete, 
+// se encuentra en tarjeta tv basica, se crea para no afectar otras 
+// secciones del maquetado
+.btn_transparentLinkTagTvBasic {
+    //@include text-font-regular(14px, $blue-400, 21px);
+    @include text-font-regular(20px, $blue-400, 24px);// cambio por datos de invision 2020-02-24
+    transition: 0.3s;
+    text-align: center;
+    position: relative;
+    left: 0px;
+    margin-top: 0px;
+    margin-bottom: 35px;
+    width: 292px;
+    height: 30px;
+    cursor: pointer;
+    @include break-point('375'){
+        margin-bottom: 17px;
+        width: 130px;
+        @include text-font-regular(18px, $blue-400, 27px); 
+        right: -4px;
+    }
+    @include break-point('768'){
+        @include text-font-regular(18px, $blue-400, 27px); 
+        right: 0px;
+        margin-top: 0px;
+        margin-bottom: 17px;
+        height: 18px;
+        width: 272px;
+    }
+    @include break-point('1024'){
+        @include text-font-regular(18px, $blue-400, normal); 
+        height: 22px;
+        margin-bottom: 30px;
+        bottom: 22px;
+    }
+    @include break-point('1366'){
+        @include text-font-regular(18px, $blue-400, normal); 
+        height: 22px;
+        margin-bottom: 30px;
+        bottom: 0px;
+    }
+    @include break-point('1700'){
+        @include text-font-regular(18px, $blue-400, normal); 
+        height: 22px;
+        margin-bottom: 30px;
+        width: 200px;
+    }
+    &::before{
+        transition: 0.3s;
+        content: "";
+        background-image: url('../img/chevron-right-24-px.svg');
+        width: 21px;
+        height: 21px;
+        position: absolute;
+        right: -20px;
+        background-size: contain;
+        color: #1a76d2;
+        @include break-point('375'){ 
+            width: 24px;
+            height: 24px;
+            right: -4px;
+            top: 2px;
+        }
+        @include break-point('768'){ 
+            width: 26px;
+            height: 26px;
+            right: 62px; 
+            top: 0px;
+        }
+        @include break-point('1024'){ 
+            width: 26px;
+            height: 26px;
+            right: 55px; 
+            top: 0px;
+        }
+        @include break-point('1366'){
+            width: 26px;
+            height: 26px;
+            right: 55px;
+            top: 0px;
+        }
+        @include break-point('1700'){
+            width: 26px;
+            height: 26px;
+            right: 20px;
+            top: -2px;
+        }
+    }
+    &:hover {
+        color: $blue-400;
+        text-decoration: underline;
+        &::before{
+            content: "";
+            right: -25px;
+            @include break-point('375'){
+                right: -10px;
+            }
+            @include break-point('768'){
+                right: 52px;
+            }
+            @include break-point('1024'){
+                right: 45px;
+            }
+            @include break-point('1366'){
+                right: 45px;
+            }
+            @include break-point('1700'){
+                right: 10px; 
+            }
+        }
+    }    
+}
+
+.btn_transparentLinkTagTvBasic.disable {
+    cursor: auto;
+    opacity: 0.5;
+    &:hover {
+        transform: scale(1);
+        color: $blue-300;
+    }
+}
+
+.btn_transparentLinkTagTvBasic:visited {
+    color: $blue-400;
+}
+
+.btn_transparentLinkTagTvBasic:link {
+    color: $blue-400;
+}
+
+/* boton link servicios*/
+.btn__transparent_services {
+    @include text-font-regular(20px, $blue-400, 24px);
+    transition: 0.3s;
+    position: relative;
+    left: 0px;
+    margin-top: 0px;
+    margin-bottom: 35px;
+    width: 150px;
+    height: 30px;
+    @include break-point('375'){
+        @include text-font-regular(18px, $blue-400, 27px); 
+        right: -4px;
+    }
+    @include break-point('768'){
+        @include text-font-regular(18px, $blue-400, 27px); 
+        right: 0px;
+        margin-top: 0px;
+        margin-bottom: 39px;
+    }
+    @include break-point('1024'){
+        @include text-font-regular(23.7px, $blue-400, 35.6px); 
+        height: 36px;
+        margin-bottom: 53px;
+    }
+    @include break-point('1100') {
+        font-size: 20px;
+    }
+    @include break-point('1700'){
+        @include text-font-regular(23.7px, $blue-400, 35.6px); 
+        height: 36px;
+        margin-bottom: 0px;
+    }
+    &::before{
+        transition: 0.3s;
+        content: "";
+        background-image: url('../img/chevron-right-24-px.svg');
+        width: 21px;
+        height: 21px;
+        position: absolute;
+        right: -20px;
+        background-size: contain;
+        color: #1a76d2;
+        @include break-point('375'){ 
+            width: 24px;
+            height: 24px;
+            right: -4px;
+            top: 2px;
+        }
+        @include break-point('768'){ 
+            width: 24px;
+            height: 24px;
+            right: -17px;
+            top: 2px;
+        }
+        @include break-point('1024'){ 
+            width: 24px;
+            height: 24px;
+            right: -4px;
+            top: 6px;
+        }
+        @include break-point('1700'){
+            width: 26px;
+            height: 26px;
+            right: -40px;
+            top: 5px;
+        }
+    }
+    
+    &:hover {
+        color: $blue-400;
+        text-decoration: underline;
+        &::before{
+            content: "";
+            right: -25px;
+            @include break-point('375'){
+                right: -10px;
+            }
+            @include break-point('768'){
+                right: -25px;
+            }
+            @include break-point('1700'){
+                right: -4px;
+            }
+        }
+    }    
+}
+
+
+.btn__transparent_services.disable {
+    cursor: auto;
+    opacity: 0.5;
+    &:hover {
+        transform: scale(1);
+        color: $blue-300;
+    }
+}
+
+.btn__transparent_services:visited {
+    color: $blue-400;
+}
+
+.btn__transparent_services:link {
+    color: $blue-400;
+}
+
+/* boton link servicios*/
+.btn__transparent_questions {
+    @include text-font-regular(20px, $blue-400, 24px);
+    transition: 0.3s;
+    position: relative;
+    left: 0px;
+    margin-top: 0px;
+    margin-bottom: 35px;
+    width: 220px;
+    height: 30px;
+    @include break-point('375'){
+        @include text-font-regular(18px, $blue-400, 27px); 
+        right: -4px;
+    }
+    @include break-point('768'){
+        @include text-font-regular(18px, $blue-400, 27px); 
+        right: 0px;
+        margin-top: 0px;
+        margin-bottom: 39px;
+    }
+    @include break-point('1024'){
+        @include text-font-regular(23.7px, $blue-400, 35.6px); 
+        height: 36px;
+        margin-bottom: 53px;
+        width: 240px;
+    }
+    @include break-point('1100') {
+        font-size: 20px;
+    }
+    @include break-point('1700'){
+        //@include text-font-regular(23.7px, $blue-400, 35.6px); 
+        @include text-font-regular(20px, $blue-400, 35.6px); 
+        height: 36px;
+        margin-bottom: 0px;
+    }
+    &::before{
+        transition: 0.3s;
+        content: "";
+        background-image: url('../img/chevron-right-24-px.svg');
+        width: 21px;
+        height: 21px;
+        position: absolute;
+        right: -20px;
+        background-size: contain;
+        color: #1a76d2;
+        @include break-point('375'){ 
+            width: 24px;
+            height: 24px;
+            right: -4px;
+            top: 2px;
+        }
+        @include break-point('768'){ 
+            width: 24px;
+            height: 24px;
+            right: -17px;
+            top: 2px;
+        }
+        @include break-point('1024'){ 
+            width: 24px;
+            height: 24px;
+            right: -4px;
+            top: 6px;
+        }
+        @include break-point('1700'){
+            width: 26px;
+            height: 26px;
+            //right: 0px;
+            right: -15px;
+            top: 2px;
+        }
+    }
+    
+    &:hover {
+        color: $blue-400;
+        text-decoration: underline;
+        &::before{
+            content: "";
+            right: -25px;
+            @include break-point('375'){
+                right: -10px;
+            }
+            @include break-point('768'){
+                right: -25px;
+            }
+            @include break-point('1700'){
+                right: -4px;
+            }
+        }
+    }    
+}
+
+
+.btn__transparent_questions.disable {
+    cursor: auto;
+    opacity: 0.5;
+    &:hover {
+        transform: scale(1);
+        color: $blue-300;
+    }
+}
+
+.btn__transparent_questions:visited {
+    color: $blue-400;
+}
+
+.btn__transparent_questions:link {
+    color: $blue-400;
+}

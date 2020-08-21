@@ -1,0 +1,776 @@
+#slider {
+    // width: 100%;
+    width: 100%;
+    background-color: $black-100;
+    overflow: hidden;
+    position: relative;
+    height: 593px; //ya no 
+    height: 379px; //ya no 
+    overflow-x: hidden;
+
+    @include break-point('800') {
+        height: 672px;
+    }
+    @include break-point('1100') {
+        height: 328px; // 666
+    }
+    @include break-point('1400') {
+        height: 440px; // 666
+    }
+    @include break-point('1700') {}
+    .space {
+        width: 100%;
+        height: 0px;
+    }
+    .time {
+        width: 100%;
+        height: 6px;
+        background-color: $gray-1900;
+        z-index: 20;
+        position: absolute;
+        & > div{
+            height: 100%;
+            position: absolute;
+            background-image: $gradient-100;
+            transition: 0.1s;
+        }
+    }
+
+    .slider {
+        width: 100%;
+        @include flex-box(row, flex-start, center);
+        flex-wrap: nowrap;
+        //transition: 0.1s;
+        // height: calc(100% - 81px);
+        height: 100%;
+        position: relative;
+        //padding-top: 17px;
+        transition: 0.3s;
+        top: -12px;
+        // @include break-point('500') {  // ya no
+        //     top: -21px;
+        // }
+        @include break-point('800') {
+            // top: -11px;
+            top: 0;
+        }
+        @include break-point('1100') {
+            // padding-top: 60px;
+            top: 0px;
+            @include flex-box(row, flex-start, flex-start);
+        }
+        @include break-point('1400') {
+            // padding-top: 80px;
+        }
+        li {
+            min-width: 100%;
+            //min-width: 312px;
+            max-width: 312px;
+            height: 536px;
+            position: relative;
+            overflow: hidden;
+            margin-right: 4px;
+            // border-radius: 4px;
+            @include flex-box(column, flex-start, center);
+          //  @include break-point('500') {  // ya no
+            //    min-width: 100%;
+                // height: 461px;
+                //width: 62.4%;
+                // margin-right: 12px;
+                // margin-left: 12px;
+                // margin-right: 4.8%;
+                // margin-left: 4.8%;
+           // }
+            @include break-point('800') {
+                min-width: 100%;            
+                box-shadow: $shadow-100;
+                height: 672px;    
+            }
+            @include break-point('1100'){
+                min-width: 100%;
+                height: auto;
+                border-radius: 0px;
+                box-shadow: none;
+                flex-direction: row;
+                align-items: flex-start;
+                cursor: pointer;
+            }
+            @include break-point('1400') {
+                min-width: 100%;
+                margin-left: 10px;
+                margin-right: 80px;
+                height: 100%;
+            } 
+            @include break-point('1700') {
+                min-width: 100%;
+                height: 516px;
+                margin-right: 105px;
+            } 
+            .media {
+            
+                width: 100%;
+                height: 324px;
+                overflow: hidden;
+                // position: relative; // antes
+                position: absolute; // 666
+                border-radius: 4px;
+                // @include break-point('500'){  // ya no
+                //     height: 324px;
+                // }
+                @include break-point('800') {
+                    // height: 293px;
+                    height: 432px;
+                }
+                @include break-point('1100'){
+                    width: 50%;
+                    // @include flex-box(column, space-around, center);
+                    height: 328px; // 100%
+                    left: 50%;
+                    display: flex; // 666
+                    justify-content: center; // 66
+                    align-items: flex-start; // 66
+                }
+
+                @include break-point('1400'){
+                    height: 100%;
+                }
+                @include break-point('1700'){
+                    border-radius: 4.4px;
+                }
+
+                .banner{
+                    // width: 100%;
+                    height: 100%;
+                    //border: dashed 1px orangered;
+                    position: relative;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    z-index: 5;
+                    @include break-point('1100'){
+                        width: 100%;
+                        height: 100%;
+                        background-position-x: -70px;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        z-index: 5;
+    
+                    }
+                    @include break-point('1400'){
+                        // width: 58.4%;
+                        height: 100%;
+                        background-position-x: 0;
+                    }
+                    @include break-point('1700'){
+                        width: 53.9%;
+                        right: -3.6%;
+                        //background-position-x: 3.6%;
+                    }
+                    @include break-point('2000'){
+                        background-position-x: 16.6%;
+                    }
+                }
+
+                .layer {
+                    background-image: url(../img/slider/img-backdrop@3x.png);
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    z-index: 2;
+                }
+
+
+               video {
+                    //border: solid 1px orangered;
+                    position: relative;
+                    // width: 577px;
+                    // height: 324px;
+                    width: 200%;
+                    height: 200%;
+                    min-width: 100%;
+                    min-height: 100%;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -30%);
+                    z-index: 9;
+                    border-radius: 4px;
+                    @include break-point('800'){
+                        // width: 150%;
+                        // height: 150%;
+                        //top: 55%;
+                    }
+                    @include break-point('1100'){
+  
+                        width: 324px; // 66
+                        height: 182px; // 66
+                        min-width: 324px;
+                        min-height: 182px;
+                        position: relative;
+                        transform: none;
+                        top: 56px;
+                        left: 0;
+                    }
+                    @include break-point('1400'){
+                        width: 432px;
+                        height: 243px;
+                        min-height: 243px;
+                        min-width: 432px;
+                        position: relative;
+                        top: 95px;
+                        left: 0;
+                        transform: none;
+                    }
+                    @include break-point('1700'){
+                        position: relative;
+                        top: 95px;
+                        left:0;
+                        border-radius: 4.4px;
+                        transform: none;
+                    }
+                }
+                
+                img {
+                    min-width: 112%;
+                    position: absolute;
+                    transform: translate(-6%, -6%);
+                }
+            }
+
+            // & div.media ~ div {
+            //     border: dashed 1px red;
+            //     right: 3.4%;
+            // }
+
+            .slide-info {
+                // border: solid 1px greenyellow;
+                width: 248px;
+                // height: 283px;
+                position: absolute;
+                top: 245px;
+                z-index: 12;
+                @include flex-box(column, flex-start, center);
+                @include break-point('800'){
+                    top: 338px;
+                }
+
+                @include break-point('1100'){
+                    position: relative; // 666
+                    height: 328px;
+                    left: 108px; // 666
+                    top: 28px;
+                    width: auto;
+                }
+                @include break-point('1400'){
+                    //width: 593px;
+                    width: auto;
+                    height: 328px;
+                    top: 65px;
+                    left: 146px; // 666
+                    // right: 7.4%; // 666
+                }
+                @include break-point('1700'){
+                    //width: 652px;
+                    width: auto;
+                    height: auto;
+                    left: 313px;
+                    top: 65px;
+                }
+                @include break-point('2000'){}
+                & > div{
+                    // logo
+                    position: relative;
+                    width: 128px;
+                    height: 72px;
+                    margin-bottom: 8px;
+                    @include flex-box(column, center, center);
+                    @include break-point('1100') {
+                        margin-bottom: 22px;
+                        width: 147px;
+                        height: 86px;
+                    }
+                    @include break-point('1400') {
+                        margin-bottom: 16px;
+                    }
+                    
+                    @include break-point('1700') {
+                        width: 152px;
+                        height: 86px;
+                        margin-bottom: 18px;
+                    }
+
+                    & > img {
+                        
+                        object-fit: contain;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                } 
+                & > h1 {
+                    width: 248px;
+                    height: 54px;
+                    text-align: center;
+                    @include text-font-regular(22px, $gray-1700);
+                    @include flex-box(column, center, center);
+                    margin-bottom: 8px;
+                    font-weight: normal;    
+                    line-height: normal;
+
+                    @include break-point('800') {
+                        font-size: 36px;
+                        width: 432px;
+                        height: 88px;
+                        margin-bottom: 32px;
+                        // border: dashed 1px red;
+                    }
+                    @include break-point('1100') {
+                        width: 352px;
+                        height: 64px;
+                        margin-bottom: 12px;
+                        font-size: 28px;
+                    }
+                    @include break-point('1400') {
+                        width: 432px;
+                        height: 104px;
+                        font-size: 36px;
+                        line-height: 1.29;
+                        margin-bottom: 8px;
+                    }
+                    @include break-point('1700') {
+                        // border: dashed 1px blue;
+                        width: 432px;
+                        height: 100px;
+                        font-size: 36px;
+                        margin-bottom: 9px;
+                    }
+                }
+                & > h2 {
+                    width: 248px;
+                    height: 40px;
+                    margin-bottom: 24px;
+                    text-align: center;
+                    @include text-font-regular(17px, $gray-2800, normal);
+                    @include flex-box(column, center, center);
+                    display: none;
+                    // & > span {
+                    //     color: $red-300;
+                    // }
+                    // @include break-point('500') {
+                    //     @include text-font-regular(18px, $gray-100);
+                    //     width: 322px;
+                    // }
+                    // @include break-point('800') {
+                    //     @include text-font-regular(22px, $gray-100);
+                    //     margin-top: 3px;
+                    //     width: 403px;
+                    // }
+                    @include break-point('1100') {
+                        width: 328px;
+                        height: 60px;
+                        @include text-font-regular(20px, $gray-2600, normal);
+                        margin-bottom: 16px;
+                        display: none;
+
+                    }
+                    @include break-point('1400') {
+                        width: 593px;
+                        height: 32px;
+                        font-size: 20px;
+                        line-height: 1.6;
+                        margin-bottom: 16px;
+                        display: flex;
+                    }
+                    @include break-point('1700') {
+                        width: 652px;
+                        height: 35px;
+                        font-size: 18px;
+                        margin-bottom: 24px;
+                        
+                    }
+                }           
+                & > .btn__outline {
+                    //border: solid yellow;
+                    @include text-font-regular(16px, $gray-100, 34px);
+                    background-color: $blue-1200;
+                    //border-color: $gray-100;
+                    width: 271px;
+                    height: 40px;
+                    margin-bottom: 14px;
+                    cursor: pointer;
+                    @include flex-box(row, center, center);
+                    //@include break-point('500') {
+                        //margin-top: 7px;
+                        //@include text-font-regular(18px, $gray-100, 34px);
+                        //width: 196px;
+                    //}
+                    @include break-point('800') {
+                        line-height: 43px;
+                        width: 278px;
+                        height: 48px;
+                        margin-top: 0;
+                    }
+                    @include break-point('1100') {
+                        @include text-font-regular(18px, $gray-100);
+                        width: 279px;
+                        height: 40px;
+                        margin-bottom: 11px;
+                        line-height: 48px;
+
+                    }
+                    @include break-point('1400') {
+                        
+                        font-size: 18px;
+                        line-height: 48px;
+                        margin-bottom: 8px;
+                    }
+                    @include break-point('1700') {
+                        font-size: 20px;
+                        line-height: 53px;
+                        margin-bottom: 9px;
+                    }
+                    &:hover {
+                        color: $gray-100;
+                        border-color: transparent;
+                        line-height: 34px;
+                        box-shadow: $shadow-1200;
+                        // @include break-point('500') {
+                        //     line-height: 34px;
+                        // }
+                        // @include break-point('800') {
+                        //     line-height: 43px;
+                        // }
+                        @include break-point('1100') {
+                            line-height: 48px;
+                        }  
+                        @include break-point('1400') {
+                            line-height: 48px;
+                        }     
+                        @include break-point('1700') {
+                            line-height: 53px;
+                        }                        
+                        
+                    }
+                }
+
+                & > p {
+                    //border: solid yellow;
+                    @include flex-box(row, center, center);
+                    @include text-font-regular(9px, $gray-600);
+                    height: 22px;
+                    text-align: center;
+                    width: 192px;
+                    margin-bottom: 8px;
+                    display: none;
+                    // @include break-point('500') {
+                        //margin-top: 12px;
+                        // width: 248px;
+                    // }
+                    @include break-point('1100') {
+                        @include text-font-regular(10px, $gray-600, normal);
+                        width: 352px;
+                        height: 32px;
+                        margin-bottom: 0;
+                    }
+                    @include break-point('1400') {
+                        width: 593px;
+                        height: 32px;
+                    }
+                    @include break-point('1700') {
+                        @include text-font-regular(11px, $gray-2600, normal);
+                        width: 652px;
+                        height: 35px;
+                    }
+                }
+            }
+        }
+        li.white,
+            li.gray {
+            background-color: #fff;
+            & > .slide-info {
+                
+                & > h1 {
+                    color: $gray-400;
+                }
+                & > h2 {
+                    color: $gray-1300;
+                }
+                & > p {
+                    color: $gray-600;
+                }
+                & .btn__outline{
+                    background-color: transparent;
+                    // border: solid 1px rgba(26, 118, 210, 0.5);
+                    color: $blue-400;
+                    &:link{
+                        color: $blue-400;
+                    }
+                    &:hover {
+                        border: none;
+                        background-image: $gradient-100;
+                        box-shadow: $main-shadow;
+                        color: $gray-100;
+                    }
+                }
+                
+            }
+            &::after{
+                
+                content: "";
+                width: 100%;
+                height: 432px;
+                bottom: 0;
+                position: absolute;
+                z-index: 5;
+                background-image: linear-gradient(to bottom, rgba(250, 250, 250, 0), #fafafa 41%, #fafafa);
+                @include break-point('1100'){
+                    width: 0px;
+                    height: 0px;
+                }
+            }
+        }
+        & > li.black {
+            background-color: $black-200;
+            .media{
+                &::after{
+                    //border: solid 1px red;
+                    content: "";
+                    width: 100%;
+                    height: 162px;
+                    bottom: 0;
+                    left: 0;
+                    position: absolute;
+                    z-index: 10;
+                    background-image: linear-gradient(to bottom, rgba(12, 13, 15, 0), #0c0d0f);
+                    @include break-point('1100'){
+                        width: 0px;
+                        height: 0px;
+                    }
+                }
+            }
+        }
+
+        & > li.gray {
+            background-color: $gray-2700;
+        }
+
+        & > li:last-child {
+            margin-right: 0px;
+        }
+        & > li.remove {
+            animation: removeSlider 0.6s 1;
+            animation-fill-mode: forwards;
+        }
+        & > li.active {
+            opacity: 1;
+            @include break-point('500'){
+                animation: activeCard 0.6s 1;
+                animation-fill-mode: forwards;
+            }
+            @include break-point('1100'){
+                animation: none;
+                cursor: auto;
+            }
+            @include break-point('1400') {
+                animation: activeCard 0.6s 1;
+                animation-fill-mode: forwards;
+                height: 100%;
+            }
+        }
+        & > li.close {           
+            animation: closeCard 0.6s 1;
+            animation-fill-mode: forwards;
+        }
+        & > li.open {
+            animation: openCard 0.6s 1;
+            animation-fill-mode: forwards;
+        }  
+    }
+    
+    .indicators{
+
+        width: 100%;
+        height: 40px;
+        position: absolute;
+        bottom: 0;
+        @include flex-box(row, center, center);
+        //margin-top: 8px;
+        //margin-bottom: 3px;
+        // @include break-point('500') {
+            // height: 63px;
+            //margin-top: 40px;
+            //margin-bottom: 6px;
+        // }
+        @include break-point('800'){
+            bottom:  48px;
+        }
+        @include break-point('1100'){
+            z-index: 20;
+            height: 30px;
+            bottom: 43px;
+            //margin-top: 22px;
+            align-items: flex-end;
+        }
+        @include break-point('1400'){
+            height: auto;
+            bottom: 56px;
+        }
+        @include break-point('1700'){
+            height: auto;
+            bottom: 46px;
+        }
+        & > li {
+            width: 40px;
+            height: 100%;
+            cursor: text;
+            position: relative;
+            // @include break-point('500'){
+            //     height: 63px;
+            // }
+
+            @include break-point('1100'){
+                height: 1px;
+                width: 24px;
+                background-color: $gray-200;
+                margin-right: 10px;
+            }
+            @include break-point('1700'){
+                //margin-top: 60px;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 6px;
+                height: 6px;
+                background-color: $gray-200;
+                border-radius: 50%;
+                left: 16px;
+                top: 16px;
+                @include break-point('500') {
+                    top: 23px;
+                }
+                @include break-point('1100') {
+                    display: none;
+                }
+            }
+            &.active {
+                &::before{
+                    background-color: $blue-600;
+                }
+                @include break-point('1100'){
+                    background-color: $blue-600;
+                }  
+            }
+
+        }
+        & > li:last-child {
+            margin-right: 0px;
+        }
+    }
+}
+
+@keyframes removeSlider {
+    from {}
+    to{min-width: 0px; margin-right: 0px;}
+}
+
+@keyframes activeCard {
+    from {}
+    to {transform: scale(1); opacity: 1; cursor: auto;}
+}
+
+@keyframes closeCard {
+    from{}
+    to{transform: scale(1)}
+}
+
+@include break-point('320'){
+    @keyframes openCard {
+        from{min-width: 0; height: 536px;}
+        to{min-width: 97.5%; height: 536px;}
+    }
+}
+
+@include break-point('500'){
+    @keyframes openCard {
+        from{min-width: 0; height: 536px;}
+        to{min-width: 62.4%; height: 536px;}
+    }
+}
+
+@include break-point('800'){
+    @keyframes openCard {
+        from{min-width: 0; height: 536px;}
+        to{min-width: 352px; height: 536px;}
+    }
+}
+
+@include break-point('1100'){
+    @keyframes openCard {
+        from{min-width: 0; height: 469px;}
+        to{min-width: 100%; height: 469px;}
+    }
+}
+
+@include break-point('1700'){
+    @keyframes openCard {
+        from{min-width: 0; height: 516px;}
+        to{min-width: 100%; height: 516px;}
+    }
+}
+
+.terms-slider-conditions {
+
+    display:none;
+    @include break-point('1100') {
+        @include text-font-regular(10px, $gray-600, normal);
+        position: absolute;
+        bottom: 24px;
+        width: 100%;
+        @include flex-box(row, center, center);
+        z-index: 12;
+    }
+
+    @include break-point('1400') { bottom: 32px;}
+    @include break-point('1700') { bottom: 22px;}
+
+}
+
+// -------------------------------- FLAGS -------------------------------------------
+
+.item-slide--left,
+.item-slide--right {
+
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    z-index: 100;
+    opacity: 0.5;
+    display: none;
+    @include break-point('1100'){
+        position: absolute;
+        display: flex;
+        top: 50%;
+    }
+
+}
+
+.item-slide--left {
+    background: url('../img/iconos/flag-icon.png') no-repeat;
+    background-size: auto;
+    background-position: center;
+    left: 0;
+    
+}
+
+
+.item-slide--right {
+   background: url('../img/iconos/flag-icon.png') no-repeat;
+   transform: rotate(-180deg);
+   background-size: auto;
+   background-position: center;
+   right: 0;
+   // left: 150px;
+}

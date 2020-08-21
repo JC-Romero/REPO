@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 63 (101010) - https://sketch.com -->
+    <title>F61E7998-9786-4A7B-96F1-059756E1252D</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M0.666666667,7.75 L4,11.0833333 C12.2833333,2.8 25.7166667,2.8 34,11.0833333 L37.3333333,7.75 C27.2166667,-2.36666667 10.8,-2.36666667 0.666666667,7.75 L0.666666667,7.75 Z M14,21.0833333 L19,26.0833333 L24,21.0833333 C21.25,18.3166667 16.7666667,18.3166667 14,21.0833333 L14,21.0833333 Z M7.33333333,14.4166667 L10.6666667,17.75 C15.2666667,13.15 22.7333333,13.15 27.3333333,17.75 L30.6666667,14.4166667 C24.2333333,7.98333333 13.7833333,7.98333333 7.33333333,14.4166667 L7.33333333,14.4166667 Z" id="path-1"></path>
+    </defs>
+    <g id="Version-4" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Landing-Paquete-V3" transform="translate(-277.000000, -297.000000)">
+            <g id="Resumen" transform="translate(0.000000, 74.000000)">
+                <g id="Content" transform="translate(267.000000, 152.000000)">
+                    <g id="Services" transform="translate(0.000000, 21.000000)">
+                        <g id="internet" transform="translate(0.000000, 40.000000)">
+                            <g id="Content" transform="translate(10.000000, 7.000000)">
+                                <g id="ic-wifi" transform="translate(7.000000, 15.000000)">
+                                    <mask id="mask-2" fill="white">
+                                        <use xlink:href="#path-1"></use>
+                                    </mask>
+                                    <use id="Shape" fill="#000000" xlink:href="#path-1"></use>
+                                    <g id="Icon-Color" mask="url(#mask-2)" fill="#3B4559">
+                                        <g transform="translate(-1.000000, -6.000000)" id="Color">
+                                            <rect x="0" y="0" width="40" height="40"></rect>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

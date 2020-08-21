@@ -1,0 +1,123 @@
+.select_package{
+    width: 100%;
+    background-color: $gray-100;
+    @include flex-box(column, center, center);
+    & > span{
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        &:nth-child(1){
+            margin-top: 48px;
+            @include text-font-regular(22px, $gray-400, 26px);
+            @include break-point('500'){
+                margin-top: 64px;
+                font-size: 24px;
+            }
+            @include break-point('800'){
+                width: 91%;
+                margin-top: 64px;
+                font-size: 28px;
+            
+            }
+            @include break-point('1400'){
+                margin-top: 100px;
+                height: 52px;
+            }
+            @include break-point('1700'){
+                margin-top: 88px;
+                font-size: 30px;
+                height: 29px;
+            }
+            @include break-point('2000'){
+                margin-top: 100px;
+            }
+        }
+        &:nth-child(2){
+            margin-top: 24px;
+            @include break-point('500'){
+                width: 80%;
+                font-size: 18px;
+            }
+            @include break-point('800'){
+                width: 70%;
+            }
+            @include break-point('1100'){
+                width: 50%;
+            }
+            @include break-point('1400'){
+                flex-wrap: wrap;
+                width: 40%;
+                margin-top: 0px;
+                //height: 72px;
+                height: 58px;
+            }
+            @include break-point('1700'){
+                padding-top: 15px;
+                width: 35%;
+                height: 79px;
+                font-size: 20px;
+                margin-top: 11px;
+                font-size: 20px;
+                line-height: 28.6px;
+            }
+            @include break-point('2000'){
+                width: 30%;
+            }
+
+            @include text-font-regular(16px, $gray-400, 26px);
+            & > span{
+                @include text-font-bold(16px, $gray-400, 26px);
+                @include break-point('500'){
+                    font-size: 18px;
+                }
+                @include break-point('1700'){
+                    font-size: 20px;
+                    line-height: 28.6px;
+                }
+            }
+        }
+    }
+    & > .btn__outline__blue {
+        width: 232px;
+        height: 48px;
+        margin-top: 24px;
+        margin-bottom: 64px;
+        font-size: 20px;
+        line-height: 48px;
+        border: solid 1px rgba(26, 118, 210, 0.5);
+        @include break-point('1400'){
+            margin-top: 20px;
+            margin-bottom: 100px;
+        }
+        @include break-point('1700'){
+            margin-top: 22px;
+            margin-bottom: 88px;
+            width: 255px;
+            height: 53px;
+            font-size: 22px;
+            line-height: 53px;
+        }
+        @include break-point('1700'){
+            margin-bottom: 100px;
+        }
+        &:link{
+            color: $blue-400;
+        }
+        &:visited{
+            color: $blue-400;
+        }
+        &:hover {
+            border: none;
+            background-image: $gradient-100;
+            border: none;//solid 1px rgba(26, 118, 210, 0.5);
+            box-shadow: $main-shadow;
+            color: $gray-100;
+            line-height: 48px;
+
+            @include break-point('1700'){
+                line-height: 53px;
+            }
+        }
+    }
+}

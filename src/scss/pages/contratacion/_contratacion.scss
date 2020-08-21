@@ -1,0 +1,2717 @@
+.main-contratacion .main-header {
+	display: none;
+}
+
+.main-contratacion #footer {
+	display: none;
+}
+
+.section-contratacion {
+	position: relative;
+	@include flex-box(column, flex-start, center);
+	background-color: $gray-100;
+	min-height: calc(100vh - 211px);
+	height: auto;
+	padding-bottom: 26px;
+}
+
+.contratacion--top-bar {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 80px;
+	background-color: $gray-100;
+	z-index: 100;
+	transition: all 0.4s;
+	@include flex-box(row, center, center);
+	padding: 0 5%;
+	box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
+
+	@include break-point("500") {
+		//height: 80px;
+	}
+	@include break-point("768") {
+		// height: 100px;
+	}
+	@include break-point("1100") {
+	}
+	.main-header {
+		width: 30%;
+		display: none;
+		@include break-point("768") {
+			display: flex;
+		}
+	}
+
+	&__logo {
+		width: 180px;
+		height: 100px;
+		position: relative;
+		background: url(../img/commons/totalplay-lgo.svg) no-repeat;
+		background-size: cover;
+		cursor: pointer;
+	}
+
+	&__steps {
+		padding-bottom: 3px;
+		position: relative;
+		width: 300px;
+		@include flex-box(column, center, center);
+		@include break-point("500") {
+			width: 50%;
+			//margin-right: 20%;
+		}
+
+		&__name {
+			@include text-font-regular(14px, $gray-400);
+			margin-bottom: 9px;
+			display: flex;
+			@include break-point("500") {
+				width: 100%;
+				justify-content: center;
+			}
+
+			@include break-point("768") {
+				display: none;
+			}
+		}
+
+		&__list-names {
+			@include flex-box(row, space-around, center);
+			width: 100%;
+			display: none;
+
+			@include break-point("500") {
+				// border: dashed 1px green;
+			}
+			@include break-point("768") {
+				display: flex;
+				// border: dashed 1px blue;
+				padding: 8px;
+			}
+
+			&__item:last-child {
+				margin-right: 0;
+			}
+
+			&__item {
+				@include text-font-regular(14px, $gray-600);
+				cursor: pointer;
+				width: 50%;
+				height: 25px;
+				@include flex-box(row, center, center);
+				margin-right: 15px;
+				padding-left: 3px;
+				padding-right: 3px;
+
+				display: none;
+				background-color: transparent;
+				@include break-point("360") {
+					display: none;
+				}
+				@include break-point("768") {
+					display: flex;
+				}
+			}
+		}
+
+		&--content-items {
+			@include flex-box(row, center, center);
+			height: auto;
+			padding: 0 10px;
+			width: 100%;
+			height: 12px;
+
+			
+			&__item:last-child {
+				.point-item {
+					margin-right: 0;
+				}
+				.progress-item {
+					display: none;
+				}
+			}
+
+			&__item {
+				width: 37px;
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+
+				@include break-point("360") {
+					width: 70px;
+				}
+
+				@include break-point("768") {
+					width: 200px;
+				}
+
+				.list-names {
+					@include break-point("768") {
+						@include text-font-regular(14px, $gray-400);
+						margin-bottom: 9px;
+					}
+				}
+
+				.point-item {
+					width: 5px;
+					height: 5px;
+					border-radius: 100%;
+					background-color: #bdc0c3;
+					cursor: pointer;
+				}
+
+				.progress-item {
+					width: 60%;
+					height: 1px;
+					background-color: #e0e0e0;
+					position: relative;
+					overflow: hidden;
+					margin-left: 4px;
+
+					@include break-point("768") {
+						margin-left: 15px;
+					}
+
+					&-done {
+						width: 100%;
+						height: inherit;
+						position: relative;
+						z-index: 3;
+						background: #1a76d2;
+						left: -100%;
+						transition: all 0.3s;
+					}
+
+					@include break-point("500") {
+						width: 83%;
+					}
+				}
+			}
+		}
+	}
+}
+
+.container-steps--contratacion {
+	@include flex-box(row, flex-start, flex-start);
+	position: relative;
+	width: 100%;
+	padding: 0;
+	transition: all 0.5s ease-in;
+	position: relative;
+	padding-top: 80px;
+	@include break-point("500") {}
+
+	&__step:last-child {
+		margin-right: 0;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__step {
+		display: flex;
+		width: 99.95%;
+		margin: 0px 0 0;
+		flex: auto 1 0;
+		transition: all 0.5s;
+		justify-content: center;
+		margin-right: 2%;
+	}
+}
+
+.content-contratacion {
+	@include flex-box(column, flex-start, center);
+	padding-bottom: 65px;
+	border-radius: 8px 8px 0 0;
+
+	width: 100%;
+
+	@include break-point("500") {
+		width: 100%;
+	}
+
+	@include break-point("768") {}
+
+	@include break-point("1100") {
+		width: 100%;
+	}
+
+	&__title {
+		width: 92.3%;
+		@include text-font-regular(20px, $gray-400);
+		text-align: center;
+		margin-bottom: 15px;
+		font-weight: bold;
+		margin-top: 10px;
+
+		span {
+			@include text-font-bold(20px, rgb(79, 68, 90), 42px);
+			@include break-point("500") {
+				font-size: 20px;
+			}
+			@include break-point("1100") {
+				font-size: 28px;
+			}
+			@include break-point("1700") {
+				font-size: 30px;
+			}
+		}
+
+		@include break-point("500") {
+			font-size: 26px;
+		}
+		@include break-point("1100") {
+			font-size: 28px;
+		}
+		@include break-point("1700") {
+			font-size: 30px;
+		}
+	}
+
+	&__subTitle {
+		width: 92.3%;
+		@include text-font-regular(16px, $gray-600, 1.5);
+		text-align: center;
+		margin-bottom: 16px;
+		@include break-point("500") {
+			width: 432px;
+		}
+		@include break-point("1100") {
+			width: 700px;
+		}
+		@include break-point("1700") {
+			font-size: 18px;
+		}
+	}
+
+	&__packages {
+		width: 87.6%;
+		@include flex-box(column, flex-start, center);
+		padding: 5px;
+
+		@include break-point("800") {
+			width: 100%;
+			padding: 0;
+			@include flex-box(row, center, center);
+		}
+
+		li.card-contratacion__packages:nth-child(2) {
+			margin-right: 0;
+		}
+
+		.card-contratacion__packages {
+			margin-bottom: 16px;
+			position: relative;
+			@include flex-box(column, flex-start, center);
+			height: 328px;
+			min-width: 232px;
+
+			@include break-point("500") {
+				min-width: 222px;
+				margin-right: 0;
+			}
+
+			@include break-point("800") {
+				margin-right: 5%;
+			}
+
+			@include break-point("1100") {
+				margin-right: 5%;
+			}
+
+			@include break-point("1400") {
+				margin-right: 5%;
+			}
+
+			&__description-poster {
+				height: 272px;
+				width: 232px;
+				position: relative;
+				z-index: 0;
+				border-radius: 4px;
+				overflow: hidden;
+				background-color: black;
+
+				img {
+					min-width: 130%;
+					height: 192px;
+					transform: translate(-10%, 0%);
+				}
+
+				&::after {
+					content: "";
+					display: block;
+					background-image: linear-gradient(
+						to bottom,
+						rgba(30, 30, 40, 0),
+						#1e1e28
+					);
+					width: 100px;
+					height: 100px;
+					height: inherit;
+					position: absolute;
+					top: 0;
+					width: inherit;
+				}
+			}
+
+			&__description-content {
+				position: absolute;
+				width: 192px;
+				height: 216px;
+				border-radius: 4px;
+				box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+				top: 112px;
+				background-color: $gray-100;
+				z-index: 1;
+				@include flex-box(column, flex-start, center);
+				padding-top: 16px;
+				cursor: pointer;
+
+				&:hover::after {
+					content: "";
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					border-radius: 4px;
+					background-color: transparent;
+					border: solid 3px $blue-1200;
+					z-index: 0;
+					top: 0px;
+					animation: borderBlue 0.5s forwards;
+				}
+
+				&__logo {
+					width: 112px;
+					height: 64px;
+					margin-bottom: 8px;
+					background-size: cover;
+				}
+
+				&__name {
+					@include text-font-bold(18px, $gray-400);
+					height: 22px;
+					margin-bottom: 4px;
+					@include break-point("1700") {
+						font-size: 20px;
+					}
+				}
+
+				&__description {
+					@include text-font-regular(16px, $gray-600);
+					height: 19px;
+					margin-bottom: 0;
+					@include flex-box(row, center, center);
+					@include break-point("1700") {
+						width: 202px;
+						font-size: 17px;
+					}
+				}
+
+				&__promotion {
+					width: 150px;
+					height: 28px;
+					border-radius: 4px;
+					background-color: $gray-100;
+					@include text-font-regular(14px, #f16c00);
+					border: solid 1px;
+					@include flex-box(column, center, center);
+					margin-top: 8px;
+					margin-bottom: 12px;
+					@include break-point("1700") {
+						width: 165px;
+						font-size: 16px;
+					}
+				}
+
+				&__add {
+					width: 184px;
+					height: 19px;
+					@include text-font-regular(14px, #1a76d2);
+					@include flex-box(row, center, center);
+				}
+
+				&__separator {
+					width: 150px;
+					height: 1px;
+					background-color: #e0e0e0;
+					margin-top: 24px;
+					margin-bottom: 24px;
+				}
+				&__price {
+					width: 184px;
+					height: 19px;
+					@include text-font-regular(16px, $gray-400);
+					margin-bottom: 14px;
+					@include flex-box(row, center, center);
+					&:hover {
+						color: #1a76d2;
+					}
+				}
+			}
+		}
+	}
+
+	&__addChannels {
+		@include flex-box(column, center, center);
+
+		@include break-point("500") {
+			width: 70%;
+			@include flex-box(row, space-around, center);
+			flex-wrap: wrap;
+		}
+
+		.card-contratacion__channel {
+			border-radius: 4px;
+			box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+			background-color: $gray-100;
+			padding-top: 53px;
+			padding-bottom: 16px;
+			@include flex-box(column, center, center);
+			margin-bottom: 16px;
+			cursor: pointer;
+			width: 192px;
+			min-height: 216px;
+			max-height: 216px;
+
+			@include break-point("500") {
+				margin-bottom: 30px;
+				margin-top: 30px;
+			}
+
+			&--name {
+				height: 22px;
+				@include text-font-bold(18px, $gray-400);
+				margin-bottom: 4px;
+				@include flex-box(row, center, center);
+			}
+
+			&--description {
+				@include text-font-regular(16px, $gray-600, 24px);
+				margin-bottom: 45px;
+				@include flex-box(row, center, center);
+				text-align: center;
+				width: 90%;
+			}
+
+			&--promotion {
+				width: 150px;
+				height: 28px;
+				border-radius: 4px;
+				border: solid 1px #f16c00;
+				@include text-font-regular(14px, #f16c00);
+				@include flex-box(row, center, center);
+				margin-bottom: 10px;
+			}
+
+			&--separator {
+				width: 150px;
+				height: 1px;
+				background-color: #e0e0e0;
+				margin-bottom: 23px;
+				margin-top: 14px;
+			}
+			&--price {
+				width: 184px;
+				height: 19px;
+				@include text-font-regular(16px, $gray-400);
+				@include flex-box(row, center, center);
+			}
+		}
+	}
+
+	.container-contratacion__settopbox {
+		@include flex-box(row, center, center);
+	}
+
+	&__settopbox {
+		@include flex-box(column, center, center);
+
+		@include break-point("500") {
+			@include flex-box(row, center, center);
+			flex-wrap: wrap;
+			padding: 5px;
+			width: 445px;
+		}
+
+		@include break-point("768") {
+			width: auto;
+		}
+
+		@include break-point("1100") {
+			width: 810px;
+		}
+
+		.card-contratacion__settopbox:last-child {
+			margin-right: 0;
+		}
+
+		.card-contratacion__settopbox {
+			position: relative;
+			border-radius: 4px;
+			box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+			background-color: $gray-100;
+			cursor: pointer;
+			width: 228px;
+			@include flex-box(column, center, center);
+			padding: 25px 0 24px 0;
+			margin-bottom: 8px;
+			min-height: 331px;
+
+			@include break-point("500") {
+				width: 210px;
+				&:first-child {
+					margin-right: 8px;
+				}
+			}
+
+			@include break-point("768") {
+				margin-right: 16px;
+				width: 222px;
+				&:first-child {
+					margin-right: 16px;
+				}
+			}
+
+			@include break-point("1100") {
+				width: 232px;
+				margin-right: 48px;
+				&:first-child {
+					margin-right: 48px;
+				}
+			}
+
+			img {
+				width: 112px;
+				height: 64px;
+			}
+
+			&--img {
+				margin-bottom: 19px;
+			}
+			&--name {
+				width: 218px;
+				height: 44px;
+				@include text-font-bold(18px, $gray-400);
+				text-align: center;
+				margin-bottom: 8px;
+				@include break-point("500") {
+					width: 200px;
+				}
+			}
+
+			&--description {
+				width: 200px;
+				height: 72px;
+				@include text-font-regular(14px, $gray-600, 1.57);
+				text-align: center;
+				margin-bottom: 11px;
+			}
+
+			&--promotion {
+				width: 150px;
+				height: 28px;
+				border-radius: 4px;
+				background-color: #fafafa;
+				@include flex-box(row, center, center);
+				@include text-font-regular(14px, #f16c00);
+				margin-bottom: 14px;
+			}
+
+			&--separator {
+				width: 150px;
+				height: 1px;
+				background-color: #e0e0e0;
+				margin-bottom: 23px;
+				margin-top: 14px;
+			}
+
+			&--price {
+				width: 184px;
+				height: 19px;
+				@include text-font-regular(16px, $gray-400);
+				@include flex-box(row, center, center);
+
+				.icon {
+					content: "";
+					background: url(../img/header/icn_liveTv.svg) no-repeat;
+					background-size: contain;
+					display: inline-block;
+					height: 12px;
+					width: 12px;
+					margin-left: 8px;
+					display: none;
+				}
+			}
+
+			.selected-settopbox {
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				top: 0;
+				left: 0;
+				border-radius: 8px;
+				background-color: rgba(250, 250, 250, 0.95);
+				transition: all 0.2s;
+				z-index: 5;
+				cursor: default;
+				padding: 72px 0;
+				@include flex-box(column, space-between, center);
+
+				div {
+					width: 168px;
+					height: 19px;
+					@include text-font-regular(16px, $gray-1800);
+					text-align: center;
+				}
+
+				ul {
+					width: 127px;
+					@include flex-box(row, space-between, center);
+					height: 44px;
+
+					li:first-child {
+						width: 24px;
+						height: 24px;
+						background: url("../img/pages/contratacion/remove-24-px@2x.png")
+							no-repeat;
+						background-size: contain;
+						cursor: pointer;
+					}
+
+					li:nth-child(2) {
+						height: 44px;
+						width: 55px;
+						@include text-font-bold(36px, $gray-1800);
+						@include flex-box(row, center, center);
+					}
+
+					li:last-child {
+						width: 24px;
+						height: 24px;
+						background: url(../img/pages/contratacion/add-24-px@3x.png)
+							no-repeat;
+						background-size: contain;
+						cursor: pointer;
+					}
+				}
+
+				button {
+					width: 112px;
+					height: 32px;
+					background-color: #1a76d2;
+					border-radius: 20px;
+					@include text-font-regular(16px, $gray-100);
+					@include flex-box(row, center, center);
+				}
+			}
+		}
+	}
+
+	&__packages__content-addons {
+		@include flex-box(row, center, center);
+		width: 100%;
+	}
+	&__packages__addons {
+		width: 87.6%;
+		@include flex-box(column, center, center);
+		padding: 5px;
+
+		@include break-point("500") {
+			width: 460px;
+			padding: 1px;
+			@include flex-box(row, center, center);
+			flex-wrap: wrap;
+		}
+
+		@include break-point("768") {
+			width: 720px;
+			@include flex-box(row, center, center);
+			flex-wrap: wrap;
+		}
+
+		@include break-point("1100") {
+			width: 840px;
+			justify-content: center;
+			flex-wrap: nowrap;
+		}
+
+		@include break-point("1400") {
+			width: 890px;
+		}
+
+		@include break-point("1700") {}
+
+		.type-mainSelected {
+			opacity: 0.5;
+			cursor: text;
+		}
+
+		.type-mainSelected
+			.card-contratacion__packages__addons__description-content:hover {
+			cursor: text;
+		}
+
+		.card-contratacion__packages__addons {
+			margin-bottom: 16px;
+			position: relative;
+			@include flex-box(column, flex-start, center);
+			height: 328px;
+			min-width: 220px;
+
+			@include break-point("500") {
+				width: 220px;
+				margin-right: 0;
+				margin-bottom: 24px;
+			}
+
+			@include break-point("768") {
+				margin-top: 8px;
+				margin-right: 20px;
+			}
+			@include break-point("1100") {
+				width: 232px;
+				margin-right: 68px;
+			}
+
+			@include break-point("1400") {
+				margin-right: 4.7%;
+			}
+
+			&__description-poster {
+				height: 272px;
+				width: 100%;
+				position: relative;
+				z-index: 0;
+				border-radius: 4px;
+				overflow: hidden;
+				background-color: black;
+
+				@include break-point("500") {
+					width: 220px;
+				}
+				@include break-point("1100") {
+					width: 232pxpx;
+				}
+
+				img {
+					min-width: 130%;
+					height: 192px;
+					transform: translate(-10%, 0%);
+				}
+
+				&::after {
+					content: "";
+					display: block;
+					background-image: linear-gradient(
+						to bottom,
+						rgba(30, 30, 40, 0),
+						#1e1e28
+					);
+					width: 100px;
+					height: 100px;
+					height: inherit;
+					position: absolute;
+					top: 0;
+					width: inherit;
+				}
+			}
+
+			&__description-content {
+				position: absolute;
+				width: 192px;
+				height: 216px;
+				border-radius: 4px;
+				box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+				top: 112px;
+				background-color: $gray-100;
+				z-index: 1;
+				@include flex-box(column, flex-start, center);
+				padding-top: 16px;
+				cursor: pointer;
+
+				&:hover::after {
+					content: "";
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					border-radius: 4px;
+					background-color: transparent;
+					border: solid 3px $blue-1200;
+					z-index: 0;
+					top: 0px;
+					animation: borderBlue 0.5s forwards;
+				}
+
+				&__logo {
+					width: 112px;
+					height: 64px;
+					margin-bottom: 8px;
+					background-size: cover;
+				}
+				&__name {
+					@include text-font-bold(18px, $gray-400);
+					height: 22px;
+					margin-bottom: 4px;
+					@include break-point("1700") {
+						font-size: 20px;
+					}
+				}
+				&__description {
+					@include text-font-regular(16px, $gray-600);
+					height: 19px;
+					margin-bottom: 0;
+					@include flex-box(row, center, center);
+					@include break-point("1700") {
+						width: 202px;
+						font-size: 17px;
+					}
+				}
+				&__promotion {
+					width: 150px;
+					height: 28px;
+					border-radius: 4px;
+					background-color: $gray-100;
+					@include text-font-regular(14px, #f16c00);
+					border: solid 1px;
+					@include flex-box(column, center, center);
+					margin-top: 8px;
+					margin-bottom: 12px;
+					@include break-point("1700") {
+						width: 165px;
+						font-size: 16px;
+					}
+				}
+
+				&__separator {
+					width: 150px;
+					height: 1px;
+					background-color: #e0e0e0;
+					margin-top: 24px;
+					margin-bottom: 24px;
+				}
+				&__price {
+					width: 184px;
+					height: 25px;
+					margin-bottom: 14px;
+					@include flex-box(row, center, center);
+
+					.price-addon {
+						@include text-font-regular(16px, $gray-400);
+					}
+
+					.add-addon {
+						display: none;
+						justify-content: center;
+						align-items: center;
+						@include text-font-regular(16px, #1a76d2);
+
+						span {
+							width: 20px;
+							height: 20px;
+							background-image: url("/assets/img/pages/contratacion/mood-24-px.png");
+							margin-left: 8px;
+						}
+					}
+
+					&:hover {
+						color: #1a76d2;
+					}
+				}
+			}
+		}
+	}
+
+	.main-summary {
+		width: 288px;
+		box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.15);
+		background-color: #fafafa;
+		border-radius: 8px;
+		overflow: hidden;
+
+		@include flex-box(column, flex-start, center);
+		@include break-point("500") {
+			width: 392px;
+		}
+		@include break-point("768") {
+			width: 392px;
+		}
+		@include break-point("1100") {
+			width: 392px;
+		}
+	}
+
+	.main-summary__invoice-data {
+		width: 100%;
+		position: relative;
+		@include flex-box(column, flex-start, center);
+
+		&--header {
+			height: 40px;
+			width: 100%;
+			background-color: #3b4559;
+			@include text-font-bold(16px, $gray-100);
+			@include flex-box(row, center, center);
+			@include break-point("500") {
+				font-size: 20px;
+			}
+
+			span {
+				@include text-font-bold(16px, #c94687);
+				margin-left: 8px;
+
+				@include break-point("500") {
+					font-size: 20px;
+					margin-left: 10px;
+				}
+			}
+		}
+
+		&--data {
+			padding-top: 16px;
+			width: 256px;
+			@include break-point("500") {
+				width: 312px;
+			}
+			@include break-point("768") {
+				width: 320px;
+			}
+			@include flex-box(column, center, center);
+			overflow: hidden;
+
+			&__1 {
+				margin-bottom: 8px;
+				width: 256px;
+				@include break-point("500") {
+					width: 312px;
+				}
+				@include break-point("768") {
+					width: 320px;
+				}
+
+				div:first-child {
+					color: $gray-600;
+				}
+				div:last-child {
+					margin-bottom: 16px;
+					color: #ef6c00;
+				}
+
+				div {
+					height: 18px;
+					margin-bottom: 9px;
+					@include flex-box(row, space-between, center);
+					@include text-font-regular(14px, $gray-400);
+					padding: 0 8px;
+					@include break-point("500") {
+						font-size: 16px;
+					}
+				}
+			}
+
+			&__2 {
+				border-bottom: solid 1px #e0e0e0;
+				width: 256px;
+				margin-bottom: 16px;
+				@include break-point("500") {
+					width: 312px;
+				}
+				@include break-point("768") {
+					width: 256px;
+				}
+
+				div {
+					@include text-font-regular(14px, $gray-400);
+					@include flex-box(row, space-between, center);
+					padding: 0 8px;
+					margin-bottom: 16px;
+					height: 36px;
+					@include break-point("500") {
+						font-size: 16px;
+					}
+
+					span:first-child {
+						@include break-point("768") {
+							height: auto;
+							width: 165px;
+							line-height: initial;
+						}
+					}
+				}
+			}
+
+			&__3 {
+				width: 256px;
+				position: relative;
+				@include break-point("500") {
+					width: 312px;
+				}
+				@include break-point("768") {
+					width: 256px;
+				}
+
+				div {
+					@include text-font-regular(14px, $gray-400);
+					@include flex-box(row, space-between, center);
+					padding: 0 8px;
+					margin-bottom: 23px;
+					height: 18px;
+					@include break-point("500") {
+						font-size: 16px;
+					}
+				}
+
+				&::after {
+					content: "";
+					display: block;
+					border: dashed 1px #e0e0e0;
+					width: 236px;
+					position: absolute;
+					bottom: 0;
+				}
+			}
+		}
+	}
+
+	.content-main-summary--main-sections {
+		width: 100%;
+
+		@include break-point("1100") {
+			@include flex-box(row-reverse, center, flex-start);
+		}
+	}
+
+	.content-main-summary-sections-column-1 {
+		@include flex-box(column, flex-start, center);
+		flex-wrap: nowrap;
+
+		@include break-point("1100") {
+			@include flex-box(column, flex-start, flex-end);
+			flex-wrap: nowrap;
+			padding-right: 8px;
+			position: sticky;
+			top: 80px;
+			transition: all 0.3s ease-in;
+		}
+		@include break-point("1100") {
+			align-items: center;
+		}
+	}
+
+	.content-main-summary-sections-column-2 {
+		@include flex-box(column, flex-start, center);
+		@include break-point("1100") {
+			padding-left: 4%;
+		}
+
+		@include break-point("1366") {
+			padding-left: 10%;
+		}
+	}
+
+	.main-summary__invoice-amount {
+		height: 72px;
+		width: 90%;
+		margin-top: 15px;
+
+		@include break-point("500") {
+			width: 300px;
+		}
+
+		&-price {
+			height: 22px;
+			margin-bottom: 4px;
+			@include text-font-bold(16px, $gray-400);
+			@include flex-box(row, space-between, center);
+			@include break-point("500") {
+				font-size: 20px;
+			}
+		}
+
+		&-amount {
+			height: 15px;
+			@include text-font-regular(12px, $gray-400);
+			@include flex-box(row, space-between, center);
+			@include break-point("500") {
+				font-size: 14px;
+			}
+		}
+	}
+
+	.main-summary-internet {
+		margin-top: 16px;
+		width: 300px;
+		border: 1px solid #e0e0e0;
+		border-radius: 8px;
+		background-color: #fafafa;
+		padding: 0 20px;
+		@include flex-box(column, flex-start, center);
+
+		@include break-point("500") {
+			width: 392px;
+			align-items: flex-start;
+			padding-left: 20px;
+			margin-top: 25px;
+		}
+
+		@include break-point("768") {
+			margin-top: 25px;
+			margin-bottom: 16px;
+			width: 552px;
+			align-items: flex-start;
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+
+		@include break-point("1100") {
+			width: 552px;
+		}
+
+		&__invoice-data {
+			margin-top: 16px;
+			width: 100%;
+
+			&--title {
+				@include text-font-bold(16px, $gray-400);
+				width: 100%;
+				position: relative;
+				border-bottom: 1px solid #e0e0e0;
+				margin-bottom: 8px;
+				@include break-point("500") {
+					font-size: 20px;
+				}
+				@include break-point("768") {
+					font-size: 20px;
+					margin-bottom: 16px;
+				}
+
+				@include break-point("1100") {
+					width: 100%;
+				}
+
+				div {
+					height: 29px;
+					margin-bottom: 16px;
+					@include flex-box(row, flex-start, center);
+				}
+			}
+
+			&--info {
+				div:first-child {
+					height: 18px;
+					@include text-font-bold(14px, $gray-600);
+					margin-bottom: 4px;
+					@include break-point("500") {
+						font-size: 16px;
+					}
+				}
+				div:nth-child(2) {
+					height: 18px;
+					@include text-font-regular(14px, #ef6c00);
+					margin-bottom: 8px;
+					@include break-point("500") {
+						font-size: 16px;
+					}
+				}
+				div:last-child {
+					@include text-font-italic(12px, $gray-600);
+					height: 30px;
+					margin-bottom: 16px;
+					@include break-point("500") {
+						font-size: 14px;
+						line-height: 1.2;
+					}
+					@include break-point("1100") {
+						width: 100%;
+						line-height: unset;
+					}
+				}
+			}
+		}
+	}
+
+	.main-summary-tv {
+		margin-top: 16px;
+		width: 300px;
+		border: 1px solid #e0e0e0;
+		border-radius: 8px;
+		background-color: #fafafa;
+		padding: 0 20px;
+		@include flex-box(column, flex-start, center);
+
+		@include break-point("500") {
+			width: 392px;
+			align-items: flex-start;
+		}
+
+		@include break-point("768") {
+			margin-top: 0;
+			margin-bottom: 16px;
+			width: 552px;
+			align-items: flex-start;
+		}
+
+		@include break-point("1100") {
+			width: 552px;
+		}
+
+		&__invoice-data {
+			margin-top: 16px;
+			width: 100%;
+
+			&--title {
+				width: 100%;
+				@include text-font-bold(16px, $gray-400);
+
+				position: relative;
+				border-bottom: 1px solid #e0e0e0;
+				margin-bottom: 16px;
+				@include break-point("500") {
+					font-size: 20px;
+				}
+				@include break-point("768") {
+					font-size: 20px;
+				}
+				@include break-point("1100") {
+				}
+
+				div {
+					height: 29px;
+					margin-bottom: 16px;
+					@include flex-box(row, flex-start, center);
+				}
+			}
+
+			&--addon:last-child {
+				margin-bottom: 0;
+			}
+
+			&--addon {
+				@include flex-box(row, flex-start, center);
+				border-bottom: 1px solid #e0e0e0;
+				margin-bottom: 16px;
+				&--col2 {
+					width: 100%;
+					height: 100%;
+					@include flex-box(row, flex-end, center);
+					padding-right: 10px;
+					@include text-font-regular(14px, #0772c9);
+					cursor: pointer;
+				}
+
+				&__name {
+					@include text-font-bold(16px, $gray-600);
+					margin-bottom: 4px;
+					height: 19px;
+					@include break-point("1100") {
+						width: 296px;
+					}
+				}
+
+				&__category {
+					@include text-font-regular(16px, $gray-600);
+					margin-bottom: 16px;
+					height: 19px;
+					@include break-point("768") {
+						width: 200px;
+					}
+					@include break-point("1100") {
+						width: 296px;
+					}
+				}
+			}
+			&--detail {
+				width: 256px;
+				border-bottom: solid 1px #e0e0e0;
+				position: relative;
+				padding-bottom: 16px;
+				padding-top: 16px;
+				@include break-point("500") {
+					width: 352px;
+				}
+				@include break-point("768") {
+					width: 320px;
+				}
+				@include break-point("1100") {
+					width: 472px;
+				}
+
+				div:first-child {
+					width: 216px;
+					@include text-font-bold(14px, $gray-600);
+					margin-bottom: 4px;
+					@include break-point("500") {
+						font-size: 16px;
+						line-height: 1.1;
+					}
+					@include break-point("1100") {
+						width: 296px;
+					}
+				}
+
+				div:nth-child(2) {
+					@include text-font-regular(14px, $gray-600);
+					margin-bottom: 4px;
+					@include break-point("500") {
+						font-size: 16px;
+						line-height: 1.1;
+					}
+				}
+
+				div:nth-child(3) {
+					@include text-font-regular(14px, #ef6c00);
+					margin-bottom: 4px;
+					@include break-point("500") {
+						font-size: 16px;
+						line-height: 1.1;
+					}
+				}
+
+				div:nth-child(4) {
+					width: 216px;
+					@include text-font-italic(12px, $gray-600);
+					@include break-point("500") {
+						font-size: 14px;
+						line-height: 1.1;
+					}
+					@include break-point("1100") {
+						width: 352px;
+					}
+				}
+
+				.edit,
+				.delete {
+					position: absolute;
+					top: 30px;
+					right: 0;
+					height: 20px;
+					width: 20px;
+					background-size: cover;
+					cursor: pointer;
+					@include break-point("768") {
+						width: auto;
+					}
+				}
+
+				.edit {
+					background-image: url("../img/pages/contratacion/edit.svg");
+					@include break-point("768") {
+						background-image: none;
+						&::before {
+							content: "Cambiar";
+							display: block;
+							@include text-font-regular(14px, #0772c9);
+						}
+					}
+				}
+				.delete {
+					background-image: url("../img/pages/contratacion/eliminar.svg");
+				}
+			}
+		}
+	}
+
+	.main-summary-device__more-devices,
+	.main-summary-tv__more-channels {
+		@include text-font-regular(14px, #0772c9);
+		height: 70px;
+		width: 100%;
+		@include flex-box(row, space-between, center);
+		&__text {
+			@include text-font-medium(16px, #3b4559, 19px);
+		}
+
+		&__btn {
+			height: 40px;
+			width: 124px;
+			border: 2px solid rgba(26, 118, 210, 0.5);
+			border-radius: 20px;
+			@include flex-box(row, space-around, center);
+			font-size: 16px;
+			cursor: pointer;
+
+			&::after {
+				content: "";
+				height: 24px;
+				width: 24px;
+				background: url("../img/add_circle.png") no-repeat;
+				background-size: cover;
+			}
+		}
+
+		@include break-point("768") {
+			width: 100%;
+		}
+		@include break-point("1100") {
+			width: 100%;
+		}
+	}
+
+	.main-summary-telefono {
+		margin-top: 16px;
+		width: 300px;
+		border: 1px solid #e0e0e0;
+		border-radius: 8px;
+		background-color: #fafafa;
+		padding: 0 20px;
+		@include flex-box(column, flex-start, center);
+
+		@include break-point("500") {
+			width: 392px;
+			align-items: flex-start;
+		}
+
+		@include break-point("768") {
+			margin-top: 0;
+			width: 552px;
+			margin-bottom: 16px;
+			align-items: flex-start;
+			padding-left: 30px;
+		}
+
+		@include break-point("1100") {
+			width: 552px;
+		}
+
+		&__invoice-data {
+			margin-top: 16px;
+			width: 100%;
+
+			&--title {
+				@include text-font-bold(16px, $gray-400);
+				width: 100%;
+				position: relative;
+				border-bottom: 1px solid #e0e0e0;
+				margin-bottom: 16px;
+				@include break-point("500") {
+					font-size: 20px;
+				}
+				@include break-point("768") {
+					font-size: 20px;
+					margin-bottom: 16px;
+				}
+				div {
+					height: 29px;
+					margin-bottom: 16px;
+					@include flex-box(row, flex-start, center);
+				}
+			}
+
+			div:nth-child(3) {
+				div:last-child {
+					color: #ef6c00;
+				}
+			}
+
+			&--detail {
+				border-bottom: 1px solid #e0e0e0;
+				margin-bottom: 16px;
+				width: 100%;
+				@include break-point("500") {}
+				@include break-point("768") {}
+				@include break-point("1100") {}
+
+				div:first-child {
+					@include text-font-bold(14px, $gray-600);
+					margin-bottom: 4px;
+					height: 18px;
+					@include break-point("500") {
+						font-size: 16px;
+					}
+				}
+
+				div:last-child {
+					@include text-font-regular(14px, $gray-400);
+					margin-bottom: 16px;
+					@include break-point("500") {
+						font-size: 16px;
+					}
+				}
+			}
+		}
+	}
+
+	.main-summary-devices {
+		margin-top: 16px;
+		margin-bottom: 16px;
+		width: 300px;
+		border: 1px solid #e0e0e0;
+		border-radius: 8px;
+		background-color: #fafafa;
+		padding: 0 20px;
+
+		@include flex-box(column, flex-start, center);
+
+		@include break-point("500") {
+			width: 392px;
+			align-items: flex-start;
+		}
+
+		@include break-point("768") {
+			margin-top: 0;
+			width: 552px;
+			align-items: flex-start;
+		}
+		@include break-point("1100") {
+			width: 552px;
+		}
+
+		&__invoice-data {
+			margin-top: 16px;
+			width: 100%;
+			@include break-point("500") {
+			}
+			@include break-point("768") {
+				width: 100%;
+			}
+			@include break-point("1100") {
+				width: 100%;
+			}
+			@include break-point("1400") {
+			}
+			@include break-point("1700") {
+			}
+
+			&--title {
+				@include text-font-bold(16px, $gray-400);
+				width: 100%;
+				position: relative;
+				border-bottom: 1px solid #e0e0e0;
+				margin-bottom: 16px;
+				width: 100%;
+				@include break-point("500") {
+					font-size: 20px;
+				}
+				@include break-point("768") {
+					font-size: 20px;
+				}
+				@include break-point("1100") {
+				}
+
+				div {
+					height: 29px;
+					margin-bottom: 16px;
+					@include flex-box(row, flex-start, center);
+				}
+			}
+
+			.main-summary-devices__invoice-data--device:nth-child(5) {
+				.column-left {
+					div:last-child {
+						color: $gray-600;
+					}
+				}
+
+				.column-right {
+					.select-device {
+						width: 64px;
+						height: 28px;
+						border-radius: 24px;
+						box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+						background-color: #fafafa;
+						@include flex-box(row, flex-end, center);
+						@include text-font-regular(14px, $gray-400);
+
+						&::after {
+							content: "";
+							display: block;
+							width: 20px;
+							height: 20px;
+							background-image: url("../img/pages/contratacion/arrow-down.svg");
+							background-size: cover;
+							margin-right: 4px;
+							margin-left: 4px;
+						}
+					}
+				}
+			}
+
+			&--device {
+				@include flex-box(row, space-between, center);
+				border-bottom: 1px solid #e0e0e0;
+				padding-bottom: 16px;
+				margin-bottom: 17px;
+				width: 100%;
+				@include break-point("500") {
+					font-size: 20px;
+				}
+				@include break-point("768") {
+					font-size: 20px;
+				}
+
+				.column-left {
+					div:first-child {
+						@include text-font-bold(14px, $gray-600);
+						@include break-point("500") {
+							font-size: 16px;
+						}
+						@include break-point("768") {
+							//width: 210px;
+							font-size: 16px;
+							line-height: inherit;
+						}
+						@include break-point("1100") {
+							width: 380px;
+						}
+					}
+
+					div:nth-child(2) {
+						@include text-font-regular(14px, #ef6c00);
+						margin-bottom: 5px;
+						margin-top: 4px;
+						@include break-point("500") {
+							font-size: 16px;
+						}
+					}
+
+					div:nth-child(3) {
+						@include text-font-italic(14px, $gray-600, 18px);
+						margin-top: 10px;
+						width: auto;
+						//height: 30px;
+						//margin-bottom: 16px;
+						// @include break-point("500") {
+						//   font-size: 16px;
+						// }
+					}
+
+					& > span {
+						@include text-font-regular(14px, $gray-600);
+						margin-top: 10px;
+						width: 216px;
+						height: 30px;
+						margin-bottom: 16px;
+						@include break-point("500") {
+							font-size: 16px;
+						}
+					}
+				}
+
+				.column-right,
+				.column-right-selectDevices {
+					@include text-font-regular(14px, #3b4559);
+					@include break-point("500") {
+						font-size: 16px;
+					}
+					// div:first-child{border: dashed 1px red;}
+					// border: dashed 1px red;
+					@include flex-box(column, center, center);
+					position: relative;
+				}
+
+				.select-device {
+					width: 72px;
+					height: 32px;
+					border-radius: 24px;
+					box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+					background-color: #fafafa;
+					@include flex-box(row, center, center);
+					cursor: pointer;
+					position: relative;
+					// border: dashed 1px green;
+
+					&::after {
+						content: "";
+						display: block;
+						background-image: url("../img/pages/contratacion/arrow-down.svg");
+						background-size: cover;
+						height: 24px;
+						width: 24px;
+						margin-left: 5px;
+					}
+				}
+
+				.select-device-list {
+					display: none;
+					width: 100px;
+					border-radius: 4px;
+					box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+					background-color: #fafafa;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					// border: dashed 1px blue;
+					position: absolute;
+					top: 33px;
+					z-index: 10;
+
+					li {
+						padding: 10px;
+						width: 100%;
+						cursor: pointer;
+						@include flex-box(row, center, center);
+						&:hover {
+							background: #1a76d2;
+							color: #f5f5f5;
+						}
+					}
+				}
+			}
+
+			.main-summary-devices__invoice-data--add-device {
+				margin-bottom: 17px;
+				@include text-font-regular(14px, #0772c9);
+				@include flex-box(row, center, center);
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+.content-contratacion__buy {
+	margin-top: 16px;
+}
+
+// BARRA BOTTOM
+.contratacion-bar-costs {
+	position: sticky;
+	width: 97.4%;
+	height: 80px;
+	bottom: 8px;
+	z-index: 70;
+	border-radius: 8px;
+	box-shadow: 0 16px 32px 0 rgba(30, 30, 40, 0.3);
+	background-color: $gray-100;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	margin-bottom: 16px;
+
+	@include break-point("500") {
+		justify-content: space-between;
+		padding: 0 5.1%;
+		margin-bottom: 48px;
+		height: 72px;
+	}
+
+	@include break-point("768") {
+		margin-bottom: 96px;
+	}
+
+	@include break-point("1100") {
+		width: 832px;
+	}
+
+	@include break-point("1700") {
+		width: 912px;
+	}
+
+	&--content-data {
+		// border: dashed 1px blue;
+		width: max-content;
+		@include flex-box(column, center, flex-start);
+
+		@include break-point("1700") {
+			align-items: center;
+		}
+
+		&__name {
+			// border: dashed 1px red;
+			@include text-font-regular(16px, $gray-400);
+			// padding-left: 22px;
+			margin-bottom: 4px;
+			width: max-content;
+			@include break-point("1700") {
+				font-size: 18px;
+			}
+
+			span {
+				@include text-font-bold(16px, $pink-800);
+				font-weight: bold;
+				@include break-point("1700") {
+					font-size: 18px;
+				}
+			}
+		}
+
+		&__costs {
+			width: max-content;
+			// border: dashed 1px red;
+			// padding-left: 22px;
+			@include text-font-bold(16px, $gray-400, 1.38);
+			@include break-point("1700") {
+				font-size: 20px;
+			}
+		}
+
+		&__discont {
+			width: max-content;
+			// border: dashed 1px red;
+			@include text-font-regular(12px, #ef6c00);
+		}
+	}
+
+	&--content-button-prev {
+		// border: dashed 1px green;
+		display: none;
+
+		@include break-point("1100") {
+			@include flex-box(column, center, center);
+			cursor: pointer;
+		}
+
+		&__text {
+			width: 112px;
+			height: 32px;
+			@include text-font-medium(16px, $blue-1200);
+			@include break-point("1700") {
+				font-size: 18px;
+				font-weight: 500;
+			}
+			cursor: pointer;
+			@include flex-box(column, center, center);
+			transition: all 100ms ease-in;
+			&:hover {
+				border-radius: 100px;
+				background-color: #1a76d2;
+				color: #fafafa;
+			}
+		}
+	}
+
+	&--content-button-next {
+		@include flex-box(column, center, center);
+		opacity: 0;
+
+		&__text {
+			width: 112px;
+			height: 32px;
+			@include text-font-regular(16px, $blue-1200);
+			cursor: pointer;
+			@include flex-box(column, center, center);
+			@include break-point("1700") {
+				font-size: 18px;
+			}
+			transition: all 100ms ease-in;
+			&:hover {
+				border-radius: 100px;
+				background-color: #1a76d2;
+				color: #fafafa;
+			}
+		}
+	}
+}
+
+.content-contratacion__shopping-cupon-top {
+	position: relative;
+	margin-top: 10px;
+	margin-bottom: 16px;
+	border-bottom: 1px solid #e0e0e0;
+	padding-bottom: 16px;
+	@include break-point("768") {
+		@include flex-box(row, space-around, center);
+		flex-wrap: wrap;
+	}
+	@include break-point("1100") {
+		width: 392px;
+		align-items: center;
+	}
+	&--button-cupon {
+		width: 288px;
+		height: 48px;
+		cursor: pointer;
+		border: 1px dashed #1a76d2;
+		margin-bottom: 24px;
+		@include flex-box(row, center, center);
+		@include text-font-regular(18px, #1a76d2);
+	}
+}
+
+.content-contratacion__shopping-cart-top {
+	position: relative;
+	margin-top: 10px;
+	margin-bottom: 16px;
+	border-bottom: 1px solid #e0e0e0;
+	padding-bottom: 16px;
+	width: 300px;
+	@include flex-box(column, center, center);
+	@include break-point("768") { }
+	@include break-point("1100") {
+		@include flex-box(row, space-around, center);
+		flex-wrap: wrap;
+		width: 392px;
+		align-items: center;
+	}
+
+	&--button-buy {
+		width: 288px;
+		height: 48px;
+		background-color: #1a76d2;
+		cursor: pointer;
+		border-radius: 100px;
+		margin-bottom: 24px;
+		@include flex-box(row, center, center);
+		display: none;
+
+		@include break-point("1100") {
+			display: flex;
+		}
+		&::after {
+			content: "Contratar";
+			display: block;
+			@include text-font-regular(18px, $gray-100);
+		}
+	}
+
+	&--car {
+		@include flex-box(row, center, center);
+		cursor: pointer;
+
+		&::before {
+			content: "Agregar al carrito";
+			display: block;
+			@include text-font-regular(18px, $blue-400);
+		}
+
+		&::after {
+			content: "";
+			width: 22px;
+			height: 22px;
+			background-image: url("../img/iconos/add_shopping_cart.png");
+			background-size: cover;
+			margin-left: 6px;
+		}
+	}
+
+	&--shared {
+		@include flex-box(row, center, center);
+		cursor: pointer;
+
+		&::before {
+			content: "Compartir";
+			display: block;
+			@include text-font-regular(16px, $blue-400);
+			margin-right: 8px;
+		}
+
+		&::after {
+			content: "";
+			display: block;
+			width: 22px;
+			height: 22px;
+			background-image: url("../img/pages/contratacion/share.svg");
+			background-size: cover;
+			margin-left: 6px;
+		}
+	}
+}
+
+.content-contratacion__shopping-cart {
+	position: sticky;
+	width: 98%;
+	height: 72px;
+	border: 1px solid lightgray;
+	bottom: 0;
+	z-index: 70;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+	background-color: $gray-1700;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	margin-bottom: 16px;
+	@include flex-box(row, space-around, center);
+
+	@include break-point("500") {
+		justify-content: center;
+		height: 96px;
+	}
+
+	@include break-point("1100") {
+		display: none;
+	}
+
+	&--button-buy {
+		width: 192px;
+		height: 40px;
+		background-color: $blue-400;
+		border-radius: 100px;
+		@include flex-box(row, center, center);
+		@include text-font-regular(14px, $gray-100);
+		cursor: pointer;
+		@include break-point("500") {
+			width: 280px;
+			justify-content: center;
+			margin-right: 8px;
+			font-size: 20px;
+		}
+	}
+
+	&--car,
+	&--shared {
+		width: 40px;
+		height: 40px;
+		border-radius: 100%;
+		border: solid 2px $blue-400;
+		background-color: $gray-100;
+		@include flex-box(row, center, center);
+		cursor: pointer;
+	}
+
+	&--shared {
+		&::after {
+			content: "";
+			display: block;
+			width: 20px;
+			height: 20px;
+			background-image: url("../img/pages/contratacion/share.svg");
+			background-size: cover;
+		}
+	}
+
+	&--car {
+		@include break-point("500") {
+			margin-right: 8px;
+		}
+	}
+}
+
+.position-bottom {
+	margin-top: 16px;
+	margin-bottom: 0;
+	background-color: transparent;
+	flex-wrap: wrap;
+	border-radius: unset;
+	border: none;
+	box-shadow: none;
+	width: 290px;
+	align-items: flex-start;
+
+	@include break-point("500") {
+		width: 480px;
+	}
+
+	@include break-point("768") {
+		display: none;
+	}
+
+	.content-contratacion__shopping-cart--button-buy {
+		width: 240px;
+		height: 40px;
+		margin-right: 8px;
+		margin-bottom: 8px;
+
+		@include break-point("500") {
+			width: 328px;
+			height: 48px;
+			margin-right: 16px;
+		}
+	}
+
+	.content-contratacion__shopping-cart--car {
+		height: 40px;
+		width: 40px;
+
+		@include break-point("500") {
+			height: 48px;
+			width: 48px;
+		}
+	}
+
+	.content-contratacion__shopping-cart--shared {
+		width: 200px;
+		background-color: none;
+		border-radius: unset;
+		background-color: transparent;
+		border: none;
+		height: auto;
+
+		&::before {
+			content: "Compartir";
+			display: block;
+			@include text-font-regular(16px, #1a76d2);
+			margin-right: 10px;
+		}
+	}
+}
+
+.content-main-summary-terms {
+	display: none;
+	text-align: justify;
+	@include break-point("1100") {
+		@include text-font-regular(14px, $gray-600, 1.57);
+		display: block;
+		width: 50%;
+	}
+
+	@include break-point("1100") {
+		width: 50%;
+	}
+
+	span {
+		@include text-font-bold(14px, $gray-600);
+	}
+}
+
+.content-main-summary-terms-bottom {
+	width: 69.8%;
+	border-top: 1px solid #e0e0e0;
+	@include text-font-regular(14px, $gray-600, 1.57);
+	text-align: center;
+	display: block;
+	margin-top: 23px;
+	padding-top: 8px;
+
+	@include break-point("500") {
+		width: 84.3%;
+	}
+
+	@include break-point("768") {
+		display: none;
+	}
+
+	@include break-point("1100") {
+		width: 100%;
+	}
+
+	span {
+		@include text-font-bold(14px, $gray-600);
+	}
+}
+
+.active {
+	color: #1a76d2;
+}
+
+.more-apps {
+	.main-summary__invoice-data--data__3 {
+		height: 41px;
+		margin-top: 16px;
+	}
+}
+
+.main-summary__title {
+	@include text-font-bold(18px, #3b4559, 22px);
+	text-align: center;
+	margin-top: 30px;
+	width: 100%;
+
+	@include break-point("1100") {
+		text-align: left;
+		margin-bottom: 20px;
+		margin-top: 0px;
+	}
+}
+
+.main-summary-tv__invoice-data-block-content {
+	@include flex-box(column, center, center);
+}
+
+.main-summary-tv__invoice-data-block-content li:last-child {
+	margin-bottom: 0;
+}
+
+.main-summary-tv__invoice-data-block-content > li {
+	@include flex-box(row, space-between, center);
+	width: 100%;
+	border-bottom: 1px solid #e0e0e0;
+	padding-bottom: 16px;
+	margin-bottom: 16px;
+}
+
+.main-summary-tv__invoice-data--block {
+	@include flex-box(column, center, flex-start);
+}
+
+.main-summary-tv__invoice-data--edit {
+	@include flex-box(row, center, center);
+	@include text-font-regular(16px, #0772c9, 19px);
+	cursor: pointer;
+}
+
+.invoice-data--addon__title {
+	@include text-font-regular(16px, $gray-600, 19px);
+}
+
+.invoice-data--addon__description {
+	@include text-font-bold(16px, $gray-600, 19px);
+}
+
+.invoice-data--addon__promo {
+	@include text-font-regular(16px, #ef6c00, 19px);
+}
+
+.invoice-data--addon__terms {
+	@include text-font-italic(14px, #75787b, 18px);
+}
+
+.container-edit--addon {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+	z-index: 200;
+}
+
+.container-edit--addon__layer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.container-edit--addon__content {
+	position: absolute;
+	height: 490px;
+	width: 100%;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.05);
+	background-color: #f5f5f5;
+	bottom: -20%;
+	opacity: 0;
+	padding-top: 24px;
+}
+
+.addon--content-close {
+	background: url("../img/iconos/ic-close.png") no-repeat;
+	background-size: initial;
+	height: 24px;
+	width: 24px;
+	position: relative;
+	display: block;
+	left: 97%;
+	cursor: pointer;
+}
+
+.addon--content-description {
+	@include flex-box(column, center, center);
+	width: 100%;
+}
+
+.addon--content__title {
+	@include text-font-regular(28px, #3b4559, 42px);
+}
+
+.addon--content__description {
+	@include text-font-regular(18px, #3b4559, 24px);
+}
+
+.addon--content-dinamic {
+	width: 100%;
+	height: auto;
+	@include flex-box(column, center, center);
+}
+
+.include-pack {
+	opacity: 0.5;
+	cursor: none;
+}
+
+.card-contratacion__moreChannels {
+	width: 232px;
+	height: 40px;
+	border-radius: 100px;
+	border: 1.1px solid rgba(26, 118, 210, 0.5);
+
+	@include flex-box(column, center, center);
+	@include text-font-regular(16px, #1a76d2);
+	cursor: pointer;
+	@include break-point("500") {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.main-summary-tv__invoice-data-block-content_apps {
+	overflow: hidden;
+	transition: all 0.3s ease-in-out;
+	height: 100%;
+}
+
+.main-summary-device__invoice-data-block-content_devices__item,
+.main-summary-tv__invoice-data-block-content_apps__item {
+	@include flex-box(row, space-between, center);
+	flex-wrap: nowrap;
+	border-bottom: 1px solid #e0e0e0;
+	position: relative;
+	padding: 20px 0;
+	left: 0;
+	transition: all 0.3s ease-in-out;
+}
+
+.invoice-data-block-content_apps__devices--info,
+.invoice-data-block-content_apps__item--info {
+	@include flex-box(column, flex-start, flex-start);
+}
+
+.content_apps__item--info--title {
+	@include text-font-bold(16px, $gray-600, 19px);
+	margin-bottom: 11px;
+}
+.content_apps__item--info--description {
+	@include text-font-regular(16px, $gray-600, 19px);
+}
+.invoice-data-block-content_apps__item--delete {
+	@include flex-box(row, center, center);
+	@include text-font-regular(16px, #0772c9, 19px);
+	cursor: pointer;
+}
+
+
+.main-contratacion::-webkit-scrollbar {
+	width: 8px; 
+	height: 8px; 
+	display: none;
+}
+
+.main-contratacion::-webkit-scrollbar-thumb {
+	background: #ccc;
+	border-radius: 4px;
+}
+
+.main-contratacion::-webkit-scrollbar-thumb:hover {
+	background: #b3b3b3;
+	box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.main-contratacion::-webkit-scrollbar-thumb:active {
+	background-color: #999999;
+}
+
+.main-contratacion::-webkit-scrollbar-track {
+	background: #e1e1e1;
+	border-radius: 4px;
+}
+
+.main-contratacion::-webkit-scrollbar-track:hover,
+.main-contratacion::-webkit-scrollbar-track:active {
+	background: #d4d4d4;
+}
+
+.addon--content-barAdd {
+	position: absolute;
+	bottom: -100%;
+	height: 72px;
+	width: 100%;
+	@include flex-box(row, center, center);
+	background-color: #1a76d2;
+	box-shadow: 0 0 16px 0 rgba(30, 30, 40, 0.1);
+	transition: all 0.2s ease-in-out;
+}
+
+.addon--content-barAdd__text {
+	@include text-font-regular(20px, #f5f5f5, 24px);
+	position: relative;
+	background: url("../img/iconos/check_24px@4x.png") no-repeat;
+	background-size: contain;
+	background-position: right top;
+	padding-right: 30px;
+	cursor: pointer;
+}
+
+.invoice-data-block-content_devices__item--amount {
+	height: 40px;
+	width: 72px;
+	border: 2px solid #e0e0e0;
+	border-radius: 28px;
+	@include flex-box(row, center, center);
+	@include text-font-regular(16px, #3b4559, 30px);
+	cursor: pointer;
+}
+
+.invoice-data-block-content_devices__item--addNew {
+	width: 100px;
+	border-radius: 4px;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+	background-color: #fafafa;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 65px;
+	z-index: 10;
+	display: none;
+}
+
+.invoice-data-block-content_devices__item--addNew__item {
+	@include text-font-regular(16px, #3b4559, 30px);
+	padding: 0;
+	width: 100%;
+	cursor: pointer;
+	@include flex-box(row, center, center);
+	flex-wrap: nowrap;
+	&:hover {
+		background-color: rgba(26, 118, 210, 0.05);
+	}
+}
+
+.content-contratacion__packages__addons {
+	position: relative;
+	left: 0;
+}
+
+.modal--cupon {
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 200;
+	@include flex-box(row, center, center);
+	display: none;
+}
+.modal--cupon__layer {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	opacity: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal--cupon__content-form {
+	position: relative;
+	width: 600px;
+	height: 500px;
+	padding-bottom: 40px;
+	border-radius: 8px;
+	background-color: #fafafa;
+	padding-top: 58px;
+	opacity: 0;
+	@include flex-box(column, flex-start, center);
+}
+
+.cupon__content-form__close {
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	width: 28px;
+	height: 28px;
+	background: url("../img/iconos/close-full.png") no-repeat;
+	background-size: cover;
+	cursor: pointer;
+}
+
+.cupon__content-form__title {
+	@include text-font-bold(28px, #3b4559, 34px);
+	margin-bottom: 23px;
+}
+
+.cupon__content-form__description {
+	@include text-font-regular(18px, #75787b, 24px);
+	width: 352px;
+	text-align: center;
+}
+
+.cupon__content-form__form {
+	width: 100%;
+	@include flex-box(column, flex-start, center);
+	margin-bottom: 32px;
+	margin-top: 28px;
+	h1 {
+		font-family: Montserrat-Regular;
+		font-size: 16px;
+		color: #3b4559;
+	}
+
+	& .montomodcupon {
+		font-size: 3.8rem;
+		font-weight: 700;
+		outline: none;
+		text-align: center;
+		width: 50%;
+		color: #3b4559;
+		border-bottom: 1px solid #c0c0c0 !important;
+		border: 0;
+		border-bottom: 1px solid grey;
+
+		background-color: transparent;
+		overflow: hidden;
+		height: 71px;
+		margin-top: 10px;
+		resize: none;
+	}
+	div.cuponfind {
+		margin-top: 20px;
+		width: 500px;
+		text-align: center;
+		font-family: Montserrat-Regular;
+		font-size: 16px;
+		color: #3b4559;
+		& .tabla-cupon {
+			display: none;
+			width: 100%;
+			height: 100px;
+			border-radius: 5px;
+			border: solid 1px #c0c0c0;
+			div {
+				padding: 5%;
+			}
+			& .tabla-cupon__numero {
+				width: 40%;
+				float: left;
+				border-right: solid 1px gray;
+			}
+			& .tabla-cupon__descripcion {
+				width: 60%;
+				float: left;
+			}
+		}
+	}
+	div.loader {
+		height: 100px;
+		margin: 5%;
+		& i.loaderBtn {
+			display: none;
+			color: #3b4559;
+		}
+	}
+}
+.cupon__content-form__button {
+	display: none;
+	font-size: 18px;
+	width: 288px;
+	height: 48px;
+}
+
+.moal-direcciones-mapa {
+	@include break-point("800") {
+		width: 700px !important;
+	}
+	@include break-point("1024") {
+		width: 800px !important;
+	}
+}
+.contenedor-datos {
+	padding-top: 20px;
+}
+#step0 {
+	.container-inputs {
+		width: 100%;
+		@include flex-box(column, center, center);
+
+		@include break-point("360") {
+			width: 100px;
+			display: contents;
+			flex-wrap: unset;
+			flex-direction: unset;
+		}
+
+		@include break-point("768") {
+			@include flex-box(row, center, center);
+			width: 100%;
+		}
+
+		.input__float {
+			&:nth-child(1) {
+				margin-top: 24px;
+				margin-right: 24px;
+				width: 100%;
+
+				@include break-point("800") {
+					width: 150px;
+				}
+			}
+			&:nth-child(2) {
+				margin-top: 24px;
+				margin-right: 24px;
+				width: 100%;
+
+				@include break-point("800") {
+					width: 150px;
+				}
+			}
+			&:nth-child(3) {
+				margin-top: 24px;
+				margin-right: 24px;
+				width: 100%;
+
+				@include break-point("800") {
+					width: 300px;
+				}
+			}
+			&:nth-child(4) {
+				margin-top: 24px;
+				width: 230px;
+
+				@include break-point("800") {
+					width: 150px;
+				}
+			}
+		}
+	}
+}
+
+#formularioCobertura {
+	margin: 5%;
+}
+
+#txtCobertura {
+	font-weight: bold;
+	font-size: 14px;
+	color: #75787b;
+}
+
+#tituloCobertura {
+	font-size: 29px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+#descripcionCobertura {
+	font-size: 18px;
+	color: #75787b;
+	padding-bottom: 20px;
+	padding: 0 50px;
+	line-height: 24px;
+}
+
+#btnContinuar {
+	margin-top: 40px;
+	width: 232px;
+}
+
+.main-summary-linea__invoice-data-block-content {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+#contenedorLA {
+	margin-bottom: 16px;
+}
+
+.eliminarLineaAdicional {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	font-family: Montserrat-Regular;
+	font-size: 16px;
+	color: #0772c9;
+	line-height: 19px;
+	cursor: pointer;
+}
+
+#botonHorarioMatutino:hover {
+	color: white !important;
+}
+
+#botonHorarioVespertino:hover {
+	color: white !important;
+}
+
+.btnInstalacionActivo {
+	background-image: linear-gradient(90deg, #1a76d2, #01bcd4);
+	box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.35);
+	color: #fafafa !important;
+}
+.capa{
+	width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.tarjeta-promo-seleccion >.capa {
+    background: white;
+    opacity: .5;
+}

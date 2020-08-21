@@ -1,0 +1,56 @@
+<style>
+    .modal--contract__content-form{
+        padding-bottom: 20px !important;
+        padding-top: 20px !important;
+    }
+    .textoGracias {
+        height: 61.2px;
+        width: 492px;
+        color: #3B4559;
+        font-family: Montserrat-Regular;
+        font-size: 18px;
+        letter-spacing: 0;
+        line-height: 30.6px;
+        margin-left: 30px;
+    }
+
+    .btn_white {
+        font-family: Montserrat-Regular;
+        font-size: 22px;
+        color: #1a76d2;
+        line-height: 27px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: #fafafa;
+        border: 1px solid #1a76d2;
+        border-radius: 25px;
+        width: 200px;
+    }
+
+    #mensajeVentanaCambioCiudad{
+        flex-direction: row;
+    }
+
+    @media (max-width: 1024px) {
+        #mensajeVentanaCambioCiudad {
+            flex-direction: column;
+        }
+    }
+</style>
+<div class="modal--contract" id="ventanaCambioCiudad">
+    <div class="modal--contract__layer" id="capaVentanaCambioCiudad"></div>
+    <div class="modal--contract__content-form" id="contenidoVentanaCambioCiudad" style="width: 80%">        
+        <div class="contract__content-form__step-2" id="formVentanaCambioCiudad">
+            <div class="contract__content-form__step-1" id="mensajeVentanaCambioCiudad">
+                <div>
+                    <i class="fas fa-check-circle fa-2x" style="color:#1a76d2"></i>
+                </div>
+                <div class="textoGracias" id="textoMensaje">Tenemos el paquete perfecto para ti, has click en la siguiente liga</div> 
+                <div>
+                    <button type="button" class="btn_white" onclick="window.location='/paquetes.html'">DESCUBIR</button>
+                </div>
+            </div>
+          
+        </div>
+    </div>
+</div>

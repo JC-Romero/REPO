@@ -1,0 +1,485 @@
+.color-red-100 {
+    color: $red-100;
+}
+
+.color-red-200 {
+    color: $red-200;
+}
+
+.color-green-400 {    
+    color: $green-400;
+}
+
+
+// colores para paquetes
+//red
+.red-package{color: $red-600;} 
+.red-package-gradient-img{ background-image: linear-gradient(to bottom, rgba(245, 245, 245, 0.2), rgba(203, 41, 76, 0.7));}
+.red-package-gradient { 
+    span{
+        background: $gradient-1900;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: $red-600;
+    }
+}
+.red-item{
+    &:hover::after{
+        width: 100%;
+        height: 100%;
+        content: "";
+        position: absolute;
+        border: solid 3px $red-600;
+        //border: solid 3px rgba(203, 43, 76, 1);
+        border-radius: 16px;
+        background-color: transparent;
+        z-index: 0;
+        top: 0px;
+        animation: borderRed 0.5s forwards;
+        @include break-point('1700'){border: solid 4px $red-600;}
+    }
+}
+//pink
+.pink-package{color: $pink-500;}
+.pink-package-gradient-img{background-image: linear-gradient(to bottom, rgba(245, 245, 245, 0.2), rgba(206, 70, 139, 0.7));}
+.pink-package-gradient {
+    span {
+        background-image: $gradient-2000;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: $pink-500;
+    }
+}
+.pink-item{
+    &:hover::after{
+        width: 100%;
+        height: 100%;
+        content: "";
+        position: absolute;
+        border: solid 3px $pink-500;
+        border-radius: 16px;
+        background-color: transparent;
+        z-index: 0;
+        top: 0px;
+        animation: borderPink 0.5s forwards;
+        @include break-point('1700'){border: solid 4px $pink-500;}
+
+    }
+}
+//purple
+.purple-package {color: $purple-300;}
+.purple-package-gradient-img{background-image: linear-gradient(to bottom, rgba(245, 245, 245, 0.2), rgba(146, 96, 178, 0.7));}
+.purple-package-gradient{
+    span{
+        background-image: $gradient-2100;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: $purple-300;
+    }
+}
+.purple-item{
+    &:hover::after{
+        width: 100%;
+        height: 100%;
+        content: "";
+        position: absolute;
+        border: solid 3px $purple-300;
+        border-radius: 16px;
+        background-color: transparent;
+        z-index: 0;
+        top: 0px;
+        animation: borderPurple 0.5s forwards;
+        @include break-point('1700'){border: solid 4px $purple-300;}
+    }
+}
+//dark-blue
+.blue-package {color: $blue-1100;}
+.blue-package-gradient-img{background-image: linear-gradient(to bottom, rgba(245, 245, 245, 0.2), rgba(57, 102, 190, 0.7));}
+.blue-package-gradient{
+    span{ 
+        background-image: $gradient-2200;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: $blue-1100;
+    }
+}
+.blue-item{
+    &:hover::after{
+        width: 100%;
+        height: 100%;
+        content: "";
+        position: absolute;
+        border: solid 3px $blue-1100;
+        border-radius: 16px;
+        background-color: transparent;
+        z-index: 0;
+        top: 0px;
+        animation: borderBlue 0.5s forwards;
+        @include break-point('1700'){border: solid 4px $blue-1100;}
+    }
+}
+//green
+.green-package {color: $green-600;}
+.green-package-gradient-img{background-image: linear-gradient(to bottom, rgba(218, 220, 132, 0.2), rgba(170, 196, 102, 0.7));}
+.green-package-gradient {
+    span{
+        background-image: $gradient-2300;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: $green-600;
+    }
+}
+.green-item{
+   &:hover::after{
+    width: 100%;
+    height: 100%;
+    content: "";
+    position: absolute;
+    border: solid 3px $green-600;
+    border-radius: 16px;
+    background-color: transparent;
+    z-index: 0;
+    top: 0px;
+    animation: borderGreen 0.5s forwards;
+    @include break-point('1700'){border: solid 4px $green-600;}
+    }
+}
+//yellow
+.yellow-package{color: $yellow-100;}
+.yellow-package-gradient-img{background-image: linear-gradient(to bottom, rgba(222, 177, 95, 0.2), rgba(222, 177, 95, 0.7));}
+.yellow-package-gradient {
+    span{
+        background-image: $gradient-2400;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: $yellow-100;
+    }
+}
+.yellow-item{
+    &:hover::after{
+        width: 100%;
+        height: 100%;
+        content: "";
+        position: absolute;
+        border: solid 3px $yellow-100;
+        border-radius: 16px;
+        background-color: transparent;
+        z-index: 0;
+        top: 0px;
+        animation: borderYellow 0.5s forwards;
+        @include break-point('1700'){border: solid 4px $yellow-100;}
+    }
+}
+//blue
+.lightBlue-package{color: $blue-1300;}
+.lightBlue-package-gradient-img{background-image: linear-gradient(to bottom, rgba(112, 209, 209, 0.2), rgba(92, 201, 202, 0.7));}
+.lightBlue-package-gradient{
+    span {
+        background-image: $gradient-2500;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: $blue-1300;
+    }
+}
+.lightBlue-item {
+    &:hover::after{
+        width: 100%;
+        height: 100%;
+        content: "";
+        position: absolute;
+        border: solid 3px $blue-1300;
+        border-radius: 16px;
+        background-color: transparent;
+        z-index: 0;
+        top: 0px;
+        animation: borderLightBlue 0.5s forwards;
+        @include break-point('1700'){border: solid 4px $blue-1300;}
+    }
+}
+
+//cian
+.cian-package{color: $blue-500;}
+.cian-package-gradient-img{background-image: linear-gradient(to bottom, rgba(195, 242, 255, 0.2), #29b6eb);}
+.cian-package-gradient{
+    span {
+        background-image: $gradient-2600;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: $blue-500;
+    }
+}
+.cian-item{
+    &:hover::after{
+        width: 100%;
+        height: 100%;
+        content: "";
+        position: absolute;
+        border: solid 3px $blue-500;
+        border-radius: 16px;
+        background-color: transparent;
+        z-index: 0;
+        top: 0px;
+        animation: borderCian 0.5s forwards;
+        @include break-point('1700'){border: solid 4px $blue-500;}
+    }
+}
+
+//Nuevos colores para tarjetas de paquetes
+
+.new-purple-package{color: $purple-500;} 
+.new-purple-package-gradient-img{background-image: linear-gradient(180deg, rgba(245,245,245,0.2) 0%, rgba(125,84,170,0.7) 100%);}
+.new-purple-package-gradient { 
+    span{
+        background: $gradient-3100;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: $purple-500;
+    }
+}
+.new-purple-item{
+    &:hover::after{
+        width: 100%;
+        height: 100%;
+        content: "";
+        position: absolute;
+        border: solid 3px $purple-500;
+        border-radius: 16px;
+        background-color: transparent;
+        z-index: 0;
+        top: 0px;
+        animation: borderNewPurple 0.5s forwards;
+        @include break-point('1700'){border: solid 4px $purple-500;}
+    }
+}
+
+.new-purple-light-package{color: $purple-600;} 
+.new-purple-light-package-gradient-img{background-image: linear-gradient(180deg, rgba(245,245,245,0.2) 0%, rgba(146,116,172,0.7) 100%);}
+.new-purple-light-package-gradient { 
+    span{
+        background: $gradient-3200;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: $purple-600;
+    }
+}
+.new-purple-light-item{
+    &:hover::after{
+        width: 100%;
+        height: 100%;
+        content: "";
+        position: absolute;
+        border: solid 3px $purple-600;
+        border-radius: 16px;
+        background-color: transparent;
+        z-index: 0;
+        top: 0px;
+        animation: borderPurpleLight 0.5s forwards;
+        @include break-point('1700'){border: solid 4px $purple-600;}
+    }
+}
+
+.new-cyan-package{color: $blue-2200;} 
+.new-cyan-package-gradient-img{ background-image: linear-gradient(180deg, rgba(218,220,132,0.2) 0%, rgba(100,185,220,0.7) 100%);}
+.new-cyan-package-gradient { 
+    span{
+        //background: $gradient-2700;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        //color: $blue-2200;
+        background-image: linear-gradient(249deg, #87d5ec, #4faad5);
+    }
+}
+.new-cyan-item{
+    &:hover::after{
+        width: 100%;
+        height: 100%;
+        content: "";
+        position: absolute;
+        border: solid 3px $blue-2200;
+        border-radius: 16px;
+        background-color: transparent;
+        z-index: 0;
+        top: 0px;
+        animation: borderNewCyan 0.5s forwards;
+        @include break-point('1700'){border: solid 4px $blue-2200;}
+    }
+}
+
+.new-blue-package{color: $blue-2300;} 
+.new-blue-package-gradient-img{ background-image: linear-gradient(180deg, rgba(245,245,245,0.2) 0%, rgba(150,200,226,0.7) 100%);}
+.new-blue-package-gradient { 
+    span{
+        //background: $gradient-2800;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        //color: $blue-2300;
+        background-image: linear-gradient(247deg, #c7e6f3, #96c8e2 );
+    }
+}
+.new-blue-item{
+    &:hover::after{
+        width: 100%;
+        height: 100%;
+        content: "";
+        position: absolute;
+        border: solid 3px $blue-2300;
+        border-radius: 16px;
+        background-color: transparent;
+        z-index: 0;
+        top: 0px;
+        animation: borderNewBlue 0.5s forwards;
+        @include break-point('1700'){border: solid 4px $blue-2300;}
+    }
+}
+
+.new-yellow-package{color: $yellow-400;}  
+.new-yellow-package-gradient-img{ background-image: linear-gradient(180deg, rgba(245,245,245,0.2) 0%, rgba(146,116,172,0.7) 100%);}
+.new-yellow-package-gradient {
+    span{
+        //background: $gradient-2900;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        //color: $yellow-400;
+        //background-image: linear-gradient(to right,  #f3af00 0%,#fad800 100%);
+        //background-image: linear-gradient(241deg,  #f3af00 0%,#fad800 100%); 
+        background-image: linear-gradient(241deg, #fad800,#f3af00); 
+    }
+}
+.new-yellow-item{
+    &:hover::after{
+        width: 100%;
+        height: 100%;
+        content: "";
+        position: absolute;
+        border: solid 3px $yellow-400;
+        border-radius: 16px;
+        background-color: transparent;
+        z-index: 0;
+        top: 0px;
+        animation: borderNewYellow 0.5s forwards;
+        @include break-point('1700'){border: solid 4px $yellow-400;}
+    }
+}
+
+.new-yellow-light-package{color: $yellow-500;} 
+.new-yellow-light-package-gradient-img{ background-image: linear-gradient(180deg, rgba(218,220,132,0.2) 0%, rgba(100,185,220,0.7) 100%);}
+.new-yellow-light-package-gradient { 
+    span{
+        background: $gradient-3300;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: $yellow-500;
+    }
+}
+.new-yellow-light-item{
+    &:hover::after{
+        width: 100%;
+        height: 100%;
+        content: "";
+        position: absolute;
+        border: solid 3px $yellow-500;
+        border-radius: 16px;
+        background-color: transparent;
+        z-index: 0;
+        top: 0px;
+        animation: borderYellowLight 0.5s forwards;
+        @include break-point('1700'){border: solid 4px $yellow-500;}
+    }
+}
+
+.gray-package{color: $gray-3300;} 
+.gray-package-gradient-img{background-image: linear-gradient(180deg, rgba(245,245,245,0.2) 0%, rgba(180,180,180,0.7) 100%);}
+.gray-package-gradient { 
+    span{
+        background: $gradient-3000;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: $gray-3300;
+    }
+}
+.gray-item{
+    &:hover::after{
+        width: 100%;
+        height: 100%;
+        content: "";
+        position: absolute;
+        border: solid 3px $gray-3300;
+        border-radius: 16px;
+        background-color: transparent;
+        z-index: 0;
+        top: 0px;
+        animation: borderGray 0.5s forwards;
+        @include break-point('1700'){border: solid 4px $gray-3300;}
+    }
+}
+
+@keyframes borderRed{
+    from{border: solid 3px rgba(203, 43, 76, 0);}
+    to{border: solid 3px rgba(203, 43, 76, 1);}
+}
+@keyframes borderPink{
+    from{border: solid 3px rgba(207, 72, 139, 0);}
+    to{border: solid 3px rgba(207, 72, 139, 1);}
+}
+@keyframes borderPurple{
+    from{border: solid 3px rgba(146, 95, 178, 0);}
+    to{border: solid 3px rgba(146, 95, 178, 1);}
+}
+@keyframes borderBlue{
+    from{border: solid 3px rgba(58, 103, 190, 0);}
+    to{border: solid 3px rgba(58, 103, 190, 1);}
+}
+@keyframes borderGreen{
+    from{border: solid 3px rgba(175, 197, 100, 0);}
+    to{border: solid 3px rgba(175, 197, 100, 1);}
+}
+@keyframes borderYellow{
+    from{border: solid 3px rgba(221, 175, 92, 0);}
+    to{border: solid 3px rgba(221, 175, 92, 1);}
+}
+@keyframes borderLightBlue{
+    from{border: solid 3px rgba(89, 200, 201, 0);}
+    to{border: solid 3px rgba(89, 200, 201, 1);}
+}
+@keyframes borderCian{
+    from{border: solid 3px rgba(41, 182, 235, 0);}
+    to{border: solid 3px rgba(41, 182, 235, 1);}
+}
+
+@keyframes borderNewPurple{
+    from{border: solid 3px rgba(125, 84, 169, 0);}
+    to{border: solid 3px rgba(125, 84, 169, 1);}
+}
+
+@keyframes borderPurpleLight{
+    from{border: solid 3px rgba(146, 116, 172, 0);}
+    to{border: solid 3px rgba(146, 116, 172, 1);}
+}
+
+@keyframes borderNewCyan{
+    from{border: solid 3px rgba(79, 171, 213, 0);}
+    to{border: solid 3px rgba(79, 171, 213, 1);}
+}
+
+@keyframes borderNewBlue{
+    from{border: solid 3px rgba(150, 200, 226, 0);}
+    to{border: solid 3px rgba(150, 200, 226, 1);}
+}
+
+@keyframes borderNewYellow{
+    from{border: solid 3px rgba(243, 174, 0, 0);}
+    to{border: solid 3px rgba(243, 174, 0, 1);}
+}
+
+@keyframes borderYellowLight{
+    from{border: solid 3px rgba(243, 174, 0, 0);}
+    to{border: solid 3px rgba(243, 174, 0, 1);}
+}
+
+@keyframes borderGray{
+    from{border: solid 3px rgba(180, 180, 180, 0);}
+    to{border: solid 3px rgba(180, 180, 180, 1);}
+}
+
+
+

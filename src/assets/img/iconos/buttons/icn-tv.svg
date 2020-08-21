@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 63 (101010) - https://sketch.com -->
+    <title>D26967F8-0D3F-42C6-B152-3F7017263DB8</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M34,0 L4,0 C2.16666667,0 0.666666667,1.5 0.666666667,3.33333333 L0.666666667,23.3333333 C0.666666667,25.1666667 2.16666667,26.6666667 4,26.6666667 L12.3333333,26.6666667 L12.3333333,30 L25.6666667,30 L25.6666667,26.6666667 L34,26.6666667 C35.8333333,26.6666667 37.3166667,25.1666667 37.3166667,23.3333333 L37.3333333,3.33333333 C37.3333333,1.5 35.8333333,0 34,0 L34,0 Z M34,23.3333333 L4,23.3333333 L4,3.33333333 L34,3.33333333 L34,23.3333333 L34,23.3333333 Z" id="path-1"></path>
+    </defs>
+    <g id="Version-4" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Landing-Paquete-V3" transform="translate(-277.000000, -377.000000)">
+            <g id="Resumen" transform="translate(0.000000, 74.000000)">
+                <g id="Content" transform="translate(267.000000, 152.000000)">
+                    <g id="Services" transform="translate(0.000000, 21.000000)">
+                        <g id="Tv" transform="translate(0.000000, 120.000000)">
+                            <g id="Content" transform="translate(10.000000, 10.000000)">
+                                <g id="ic-tv" transform="translate(7.000000, 11.000000)">
+                                    <mask id="mask-2" fill="white">
+                                        <use xlink:href="#path-1"></use>
+                                    </mask>
+                                    <use id="Shape" fill="#000000" xlink:href="#path-1"></use>
+                                    <g id="GrisAzul/800(Principal)" mask="url(#mask-2)" fill="#3B4559">
+                                        <g transform="translate(19.235702, 15.000000) rotate(-45.000000) translate(-19.235702, -15.000000) translate(-9.264298, -13.500000)" id="Color">
+                                            <rect x="0" y="0" width="56.6666667" height="56.6666667"></rect>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,393 @@
+#step0 .container-inputs {
+  width: 100%;
+  display: contents;
+  flex-wrap: unset;
+  flex-direction: unset;
+}
+
+
+.ico-question{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    background-image: url(../img/iconos/icon-search.png); 
+    margin-top: -25px;
+    background-position: 50%;
+    background-size: contain;
+    right: 150px;
+}
+
+
+.tooltip-index{
+    border-radius: 8px;
+    box-shadow: 0 1px 4px 1px rgba(0,0,0,.3);
+    background-color: #fafafa;
+    font-size: 16px;
+    position: absolute;
+    width: 290px;
+    right: 35px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 1s;
+    color: #3B4559;
+    padding: 15px;
+    font-family: Montserrat-Regular;
+}
+
+
+.tooltip-index.visible{
+    opacity: 100;
+    z-index: 900;
+}
+
+.tooltip-index .toopdiv1{
+    width: 70%;
+    background-color: #fafafa;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-right: 0;
+    float: left;
+}
+.tooltip-index .toopdiv1>span{
+    text-align: left;
+}
+
+.tooltip-index .toopdiv2{
+    width: 30%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    float: right;
+}
+
+.tooltip-index .toopdiv2>span{
+    text-align: right;
+}
+
+#finalizaContratacion .main-summary__invoice-data--info .pay-check-container>span:nth-child(2) {
+    width: 90%;
+    margin-bottom: 0; 
+}
+
+#fechaConstitucion{
+  width: 33% !important; display: inline-flex !important; border-bottom: unset !important;
+}
+
+/*div#divRFCmoral{
+  width: 40% !important;
+}*/
+
+div#divApellidos{
+  width: 40% !important;
+}
+
+h1#comprobanteH1, h1#comprobanteH1 {
+    margin-bottom: 0px !important;
+}
+
+span.spanDocumentos{
+    margin-left: 20px;
+}
+
+  .contratacion--finaliza {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 80px;
+      z-index: 100;
+      transition: all .4s;
+      flex-direction: row;
+      justify-content: center;
+      padding: 0 5%;
+      box-shadow: 0 0 12px 0 rgba(0,0,0,.2);
+  }
+
+  .contratacion--finaliza  .main-header {
+      width: 100%;
+      position: relative;
+      z-index: 110;
+      background: #fafafa;
+      top: 0;
+      transition: all .4s;
+  }
+
+  .contratacion--finaliza .main-header .menu {
+    height: 72px;
+    background-color: #fafafa;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 27px;
+    padding-right: 24px;
+    position: relative;
+    z-index: 2;
+    justify-content: center;
+}
+
+.cardCenter{
+  justify-content: center !important;
+}
+
+.cardStart{
+  justify-content: flex-start !important;
+}
+
+.cardEnd{
+  justify-content: flex-end !important;
+}
+
+.cardGrande{
+  justify-content: space-around !important;
+}
+
+@media (min-width: 360px) and (max-width: 767px) {
+  #step0 .container-inputs {
+    width: 100px;
+    display: contents;
+    flex-wrap: unset;
+    flex-direction: unset;
+  }
+
+  .text-danger {
+    margin-top: 2px;
+  }
+
+  .content-contratacion {
+    padding-bottom: 40px;
+  }
+}
+
+@media (min-width: 360px) and (max-width: 767px) and (orientation: portrait) {
+  #mapaDir {
+    height: 90vh !important;
+  }
+
+  #cargador {
+    margin: 3% 35% !important;
+  }
+}
+
+@media (min-width: 360px) and (max-width: 767px) and (orientation: landscape) {
+  #mapaDir {
+    height: 135vh !important;
+  }
+}
+
+@media (min-width: 768px) {
+  #step0 .container-inputs {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+#step0 .container-inputs .input__float:nth-child(1) {
+  margin-top: 24px;
+  margin-right: 24px;
+  width: 100%;
+}
+
+@media (min-width: 360px) and (max-width: 767px) {
+  #step0 .container-inputs .input__float:nth-child(1) {
+    display: inline-block;
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  #step0 .container-inputs .input__float:nth-child(1) {
+    width: 125px;
+  }
+}
+
+#step0 .container-inputs .input__float:nth-child(2) {
+  margin-top: 24px;
+  margin-right: 24px;
+  width: 100%;
+}
+
+@media (min-width: 360px) and (max-width: 767px) {
+  #step0 .container-inputs .input__float:nth-child(2) {
+    display: inline-block;
+    width: 100%;
+  }
+}
+
+@media (min-width: 800px) {
+  #step0 .container-inputs .input__float:nth-child(2) {
+    width: 200px;
+  }
+}
+
+#step0 .container-inputs .input__float:nth-child(3) {
+  margin-top: 24px;
+  margin-right: 24px;
+  width: 100%;
+}
+
+@media (min-width: 360px) and (max-width: 767px) {
+  #step0 .container-inputs .input__float:nth-child(3) {
+    display: inline-block;
+    width: 100%;
+    margin-top: 44px;
+  }
+}
+
+@media (min-width: 800px) {
+  #step0 .container-inputs .input__float:nth-child(3) {
+    width: 300px;
+  }
+}
+
+#step0 .container-inputs .input__float:nth-child(4) {
+  margin-top: 24px;
+  width: 230px;
+}
+
+@media (min-width: 360px) and (max-width: 767px) {
+  #step0 .container-inputs .input__float:nth-child(4) {
+    display: inline-block;
+    width: 100px;
+    margin-top: 44px;
+  }
+}
+
+@media (min-width: 800px) {
+  #step0 .container-inputs .input__float:nth-child(4) {
+    width: 150px;
+  }
+}
+
+@media (min-width: 1700px) {
+  .btn__blue {
+    line-height: 30px;
+  }
+}
+
+@media (min-width: 360px) {
+  div.input__float:last-child label {
+    /*top: -10px;*/
+  }
+}
+
+@media (min-width: 768px) {
+  div.input__float:last-child label {
+    top: 0;
+  }
+}
+
+@media (max-width: 767px){    
+  .ico-question{
+      right: 50px;
+  }
+  div#fechaConstitucion{
+    justify-content: space-between !important;
+    border-bottom: none !important;
+  }
+  #btnDatosMoral, #btnDatosFisica, #btnPaymentCard, #btnPaymentCash{
+    padding: 5px 20px !important;
+  }
+  div#fechaConstitucion, div#divRFCmoral,div#divNombreMoral,div#divApellidos{
+    width: 100% !important;
+  }
+  #finalizaContratacion .main-summary__invoice-data--info #formTitularData .payments-container-buttons {
+    display: inline-table !important;
+    text-align: center;
+  }
+
+   #imgTarjeta{
+    justify-content: center !important;
+  }
+  #finalizaContratacion h2 {
+    width: 70%;
+  }
+  .contratacion--top-bar__steps {
+      margin: 0 auto;
+  }  
+}
+
+@media (max-width: 768px){  
+  #folioContent .folio-info-container {
+      display: inline-block;
+  }
+  #folioContent .folio-info-container .apps-store-info {
+      margin-top: 30px;
+  }
+
+  .contratacion--finaliza .main-header .menu--container-menu__logo {
+      cursor: pointer;
+      background: url(../img/header/totalplay-logo.svg) no-repeat;
+      background-size: contain;
+      width: 179px;
+      height: 98px;
+      padding: 34px 16px 33px;
+  }
+  .addon--content-barAdd {
+      height: 52px !important;
+  }
+  .SELECCIONADO>.capa {
+    /*opacity: 0;*/
+  }  
+}
+
+@media (max-width: 500px){  
+  .tooltip-index {
+      width: 260px;
+      right: 0px;
+  }
+
+  .ico-question{      
+      height: 15px;
+      width: 15px;
+  }
+  .mensajePago {
+    margin: 0 auto;
+  }
+  #finalizaContratacion .main-summary__invoice-data--info .pay-check-container>span:nth-child(2) {
+    width: 80%;
+    text-align: center;
+  }
+  span.txtAceptoCargo{
+    text-align: left !important;
+  }
+  h1#comprobanteH1, h1#identificacionH1, span.spanDocumentos { 
+      margin-left: 0 !important;
+  }
+
+  h1#comprobanteH1, h1#comprobanteH1 {
+      margin-bottom: 30px !important;
+  }
+
+  #finalizaContratacion .main-summary__invoice-data--info .pay-check-container>span:first-child {
+      width: 80%;
+  }
+
+  #finalizaContratacion .main-summary__invoice-data--info .pay-check-container>span:first-child {
+      width: 80%;
+  }
+
+  #contenedorSubeArchivoINE, #divArchivoComprobante{
+      margin-left: 0;
+  }
+ 
+}
+
+@media (max-width: 380px){  
+  #folioContent>span:first-child,#folioContent>span:nth-child(2) {
+      width: 80%;
+  }
+
+  #folioContent .folio-info-container .apps-store-info, #folioContent .folio-info-container .folio-installation  {
+    width: 300px;
+    margin-left: 10px;
+  }
+}

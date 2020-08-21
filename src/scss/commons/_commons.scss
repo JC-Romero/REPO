@@ -1,0 +1,101 @@
+
+/* MODAL PARA CARDS DE PAQUETES*/
+.modal-detail-promotion {
+
+    display: flex;
+    position: fixed;
+    z-index: 999991;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(rgb(50, 85, 121), .2);
+    @include flex-box(row, center, center);
+    display: none;
+    top: 0;
+}
+
+.modal-detail-promotion__content {
+
+    width: 50%;
+    background-color:#FAFAFA;
+    position: relative;
+    @include flex-box(column, center, flex-end);
+    border-radius: 8px;	
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1);
+    padding: 16px 22px;
+}
+
+
+    .modal-detail-promotion__content--close {
+        background-image: url('../img/header/close-sub-menu-mobil.svg');
+        display: flex;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        position: relative;
+        right: 0;
+        margin-bottom: 28px;
+        
+    }
+    
+    .modal-detail-promotion__content--container {padding: 1rem;}
+
+    .modal-detail-promotion__content__title {
+        @include text-font-regular(18px, #75787B, 18px);
+        text-align: center;
+        border-bottom: solid 1px#E0E0E0;
+        padding-bottom: 10px;
+    }
+
+    .modal-detail-promotion__content__text {
+        @include text-font-regular(10px, #75787B, 18px);
+        text-align: justify; 
+        padding-top: 30px;
+    }
+
+    // ---------------------------------------------------------------
+
+    .combo-citys {
+        // border: dashed 1px red;
+        position: relative;
+    }
+
+
+    // UL
+    .list-combo-city {
+        // border: dashed 2px green;
+        position: absolute;
+        width: 100%;
+        min-height: 260px;
+        border: solid 1px #E0E0E0;
+        border-radius: 10px;
+        top: 0;
+        z-index: 99;
+        opacity: 0;
+        @include flex-box(column, center, center);
+        background-color: #fafafa;
+        display: none;
+    }
+
+
+    // LI
+    .list-combo-city:last-child {
+        border-bottom: none;
+    }
+
+    // LI
+    .list-combo-city__item {
+        
+        // border: dashed 1px blue;
+        @include text-font-regular(16px, #75787B, normal);
+        height: 32px;
+        border-bottom: solid 1px #E0E0E0;
+        width: 100%;
+        @include flex-box(row, center, center);
+
+        &:hover {
+            @include text-font-bold(16px, #1E1E28, normal);
+        }
+
+    }
+
+

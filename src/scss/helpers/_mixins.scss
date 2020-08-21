@@ -1,0 +1,252 @@
+/*
+* Mixin para manejo de media queris (responsive web design)
+* Solo recibe el name del break-point que se encuentra mapeado en variables.css
+*/
+
+@mixin break-point($break-point) {
+    $raw-query: map-get($break-points, $break-point);
+    @if $raw-query {
+        $query: if( type-of($raw-query)=='string', unquote($raw-query), inspect($raw-query));
+        @media #{$query} {
+            @content;
+        }
+    }
+    @else {
+        @error 'No se ha encontrado un valor para `#{$break-point}`. '+'Por favor, asegúrate que está definido en el mapa `$breakpoints`.';
+    }
+}
+
+
+/*
+    * Flexbox por default pone estos valores (display: flex, flex-direction: row, flex-wrap: nowrap
+      justify-content: flex-start, align-items: flex-start, align-content: stretch
+
+    * este mixin basico para flexbox recibe 3 parametros (direction, justify y align items
+    * por default pone display y flex-wrap
+  */
+
+@mixin flex-box ( $direction:row, $justify:flex-start, $alignItems:flex-start) {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $alignItems;
+}
+
+
+/*
+++ Definicion de tipo de texto a usar
+*/
+
+@mixin text-font-light ($size, $color, $height: $size) {
+    font: {
+        family: 'Montserrat-Light';
+        size: $size; //12px;
+    }
+    color: $color; // #3B4559;
+    line-height: $height;
+}
+
+@mixin text-font-italic ($size, $color, $height: $size) {
+    font: {
+        family: 'Montserrat-Italic';
+        size: $size; //12px;
+    }
+    color: $color; // #3B4559;
+    line-height: $height;
+}
+
+@mixin text-font-regular ($size, $color, $height: $size) {
+    font: {
+        family: 'Montserrat-Regular';
+        size: $size; //12px;
+    }
+    color: $color; // #3B4559;
+    line-height: $height;
+}
+
+@mixin text-font-semibold ($size, $color, $height: $size) {
+    font: {
+        family: 'Montserrat-SemiBold';
+        size: $size; //12px;
+    }
+    color: $color; // #3B4559;
+    line-height: $height;
+}
+
+@mixin text-font-bold ($size, $color, $height: $size) {
+    font: {
+        family: 'Montserrat-Bold';
+        size: $size;
+    }
+    color: $color;
+    line-height: $height;
+}
+
+@mixin text-font-bold-italic ($size, $color, $height: $size) {
+    font: {
+        family: 'Bold-Italic';
+        size: $size;
+    }
+    color: $color;
+    line-height: $height;
+}
+
+@mixin text-font-medium ($size, $color, $height: $size) {
+    font: {
+        family: 'Montserrat-Medium';
+        size: $size;
+    }
+    color: $color;
+    line-height: $height;
+}
+
+@mixin button-generic ($display:block) {
+    cursor: pointer;
+    display: $display;
+    border: none;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@mixin content ($color: $gray-100) {
+    background-color: $color;
+    border-radius: 4px;
+}
+
+@mixin center {
+    display: block;
+    margin-right: auto;
+    margin-left: auto
+}
+
+@mixin white-gradient {
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+// MIXINS PARA PAQUETES
+@mixin text-font-regular-package ($size, $height: $size) {
+    font: {
+        family: 'Montserrat-Regular';
+        size: $size; //12px;
+    }
+    line-height: $height;
+}
+
+@mixin text-font-bold-package ($size, $height: $size) {
+    font: {
+        family: 'Montserrat-Bold';
+        size: $size;
+    }
+    line-height: $height;
+}
+
+//Cards packages
+@mixin colorCard ($odd, $text, $check, $hover, $color) {
+    & > span {
+        &:nth-child(odd) {
+            background-color: $odd;
+        }
+        &:nth-child(2) {
+            background: $text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            @include text-font-bold(20px, transparent, 24px);
+        }
+        &:first-child {
+            background-image: $text;
+        }
+        & .ok {
+            fill: $check;
+        }
+    }
+    &:hover {
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            background-color: transparent;
+            border: 2px solid $hover;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            border-radius: 16px;
+            animation: $color 0.5s forwards;
+        }
+    }
+    & > div > span {
+        background-image: $text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        @include text-font-bold(20px, transparent, 24px);
+        @include break-point('1700'){
+            height: 32px;
+            font-size: 23px;
+        }
+    }
+}
+
+@mixin color($color, $gradient){
+    span{
+        span{
+            &:nth-child(1){
+                background: $gradient;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                @include text-font-bold(28px, transparent, normal);
+                line-height: 52px;
+                @include break-point('500'){
+                    font-size: 32px;
+                }
+                @include break-point('800'){
+                    font-size: 52px;
+                }
+                @include break-point('1700'){
+                    font-size: 58px;
+                }
+            }
+        }
+        
+        &:nth-child(2){
+            @include text-font-regular(14px, $color, normal);
+            @include break-point('500'){
+                font-size: 15px;
+            }
+            @include break-point('800'){
+                font-size: 20px;
+            }
+            @include break-point('1700'){
+                font-size: 22px;
+            }
+        }
+    }
+}
+
+@mixin text-color($color, $gradient){
+    background-image: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    color: $color;
+
+}
+
+@mixin text-color-solid($color){
+    color: $color;
+}
+
+/**
+  * Mixin para agregar la propiedad ellipsis a un elemento de texto con más de una línea.
+  * $line, número de máximo de líneas que permite el elemento de texto. Mínimo 2 líneas | máximo n líneas.
+  * $orient, orientación de la alineación del texto. horizontal | vertical. 
+**/
+
+@mixin text-ellipsis($line, $orient) {
+    display: block;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: $orient;
+    text-overflow: ellipsis;
+}

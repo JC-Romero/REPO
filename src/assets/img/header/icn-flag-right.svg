@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="22" viewBox="0 0 22 22">
+    <defs>
+        <path id="a" d="M9.098 5.459L7.815 6.74l4.167 4.176-4.167 4.176 1.283 1.283 5.458-5.459z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <text fill="#3B4559" font-family="Montserrat-Regular, Montserrat" font-size="14" transform="translate(-191 -9)">
+            <tspan x="40" y="25">Atención y ventas</tspan>
+        </text>
+        <g>
+            <mask id="b" fill="#fff">
+                <use xlink:href="#a"/>
+            </mask>
+            <g fill="#3B4559" mask="url(#b)">
+                <path d="M0 0h21.881v21.881H0z"/>
+            </g>
+        </g>
+    </g>
+</svg>

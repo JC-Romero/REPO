@@ -1,0 +1,913 @@
+/*div de mensajes de error*/
+p.text-danger{
+	color: #dc3545!important;
+	font-size: 0.75rem!important;
+	font-family: Montserrat-Light;
+    /*margin-top: -25px;*/
+    margin-top: 10px;
+    position: absolute;
+}
+
+p.text-danger-white{
+    color: #e0e0e0 !important;
+    font-size: 0.75rem!important;
+    font-family: Montserrat-Light;
+    margin-top: 5px !important;
+    position: absolute;
+}
+/*div de mensajes de error*/
+
+/*HOME*/
+#formPersonalDataHeader.form-cobertura {
+    margin-bottom: 25px !important; 
+}
+
+/*modal cobertura*/
+.correoNC{
+    width: 50%;
+}
+
+.centrarTexto{
+    justify-content: center;
+}
+
+.step .p10{
+    padding: 20px;
+}
+
+.titleFormStep2{
+    color: #3B4559;
+    font-family: Montserrat-Regular;
+    font-size: 28px;
+    letter-spacing: 0;
+    line-height: 42px;
+    text-align: center;
+    padding-top: 10px; 
+}
+
+.subtitleFormStep2{
+    color: #75787B;
+    font-family: Montserrat-Light;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 22px;
+    text-align: center;
+    padding: 20px;
+}
+
+#confirmCorreo #titleFormMessage22 {
+    color: #3B4559;
+    font-family: Montserrat-Regular;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 22px;
+    text-align: center;
+}
+
+.input__float #headerCorreo2{
+    width: 312px;
+    border-bottom: 1px solid #3B4559 !important;
+}
+
+.iconEnviar {
+    background: url('../img/iconEnviar.svg') no-repeat;
+    position: absolute;
+    right: 0;
+    margin-right: -10%;
+    height: 20px;
+    width: 20px;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    background-color: #1A76D2;
+    border-radius: 87.5px;
+    bottom: 5px;
+}
+
+.ok-symbol{
+    width: 52px;
+    height: 32px;
+    position: relative;
+    margin-right: 8px;
+    background-image: url(../img/ic_OK.png);
+    object-fit: cover;
+    background-repeat: no-repeat;
+}
+
+.err-symbol{
+    width: 35px;
+    height: 34px;
+    position: relative;
+    margin-right: 8px;
+    background-image: url(../img/iconos/ic_err.png);
+    object-fit: cover;
+    background-repeat: no-repeat;
+}
+
+.blue-symbol{
+    width: 52px;
+    height: 32px;
+    position: relative;
+    margin-right: 8px;
+    background-image: url(../img/iconos/ic_OK.png);
+    object-fit: cover;
+    background-repeat: no-repeat;
+}
+
+.icn-direcccion {
+    background: url('../img/icn-direcccion.svg') no-repeat;
+    margin-right: 15px;
+    height: 20px;
+    width: 20px;
+    background-position: center;
+    cursor: pointer;
+}
+
+#btnCoberturaText{
+    color: #1A76D2;
+    font-family: Montserrat-Regular;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 19px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+#calleModal, #noExtModal, #cpModal, #headerCorreo2{
+    height: auto !important;
+}
+
+/*final modal cobertura*/
+
+/*Footer*/
+#footer a:hover {
+    text-decoration: none !important;
+}
+
+/*fin footer*/
+
+/*CHAT*/
+.modalDialogChat, .modalDialogPhone {
+   -webkit-transition: opacity 400ms ease-out !important;
+   -moz-transition: opacity 400ms ease-out !important;
+   transition: opacity 400ms ease-out !important;
+}
+
+/*HOME*/
+.sites #portalEmpresarial , .sites #portalNegocio{
+    /*box-shadow: 0 16px 32px 0 rgba(0,0,0,.2) !important;*/
+}
+
+.sites #portalEmpresarial:hover , .sites #portalNegocio:hover{
+    box-shadow: 0 32px 64px 0 rgba(0,0,0,.15) !important;
+}
+
+/*footer*/
+.justicia {
+   opacity:0;
+   -webkit-transition: opacity 400ms ease-out !important;
+   -moz-transition: opacity 400ms ease-out !important;
+   transition: opacity 400ms ease-out !important;
+   pointer-events: none !important;
+    display: flex !important;
+   flex-wrap: nowrap !important;
+   flex-direction: column !important;
+   justify-content: flex-start !important;
+   align-items: center !important;
+   margin: 0 0 20px !important;
+}
+
+.justicia:target {
+   opacity:1;
+   pointer-events: auto;
+}
+
+/*soporte*/
+.help-items #chatAC, .help-items #chatST {
+    cursor: pointer;
+}
+
+#motivoAyuda {
+    border: 0;
+    border-bottom: 1px solid hsla(0,0%,98%,.5);
+    background: none;
+    color: #e0e0e0;
+    margin-top: 9px;
+    font-family: Montserrat-Light;
+    font-size: 16px; 
+    width: 100%;
+    transform: translateZ(0);
+    transition: all .2s ease-in-out;
+}
+
+#motivoAyuda option{
+    background-color: white;
+    color: #3b4559;
+    outline: none!important; 
+}
+
+#motivoAyuda select:hover{
+    background-color: #1a76d2;
+    color: #e0e0e0;
+    outline: none!important; 
+}
+
+#cargadorLead.cargador{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin: auto;
+    background-image: url(../img/cargador1.gif);
+    background-size: cover;
+    display: none;
+}
+
+#cargadorCorreo.cargador, #cargadorCorreo2.cargador{
+    width: 70px;
+    height: 70px;
+    position: relative;
+    margin: 0 auto;
+    background-image: url(../img/cargador1.gif);
+    background-size: cover;
+    display: none;
+}
+
+#correoCargador2{
+    margin-top: 0px;
+    font-family: Montserrat-Regular;
+    font-size: 28px;
+    color: #4b576f;
+    line-height: 1.5;
+    justify-content: center;
+}
+/*Pone la flecha hacia abajo (Faqs)*/
+.flechitaActiva{
+    transform: rotate(-180deg); 
+    transition-delay: 0.07s; 
+    transition-duration: 0.2s;
+}
+
+.flechitaActivaMovil:after{
+    transform: rotate(-180deg) !important; 
+    transition-delay: 0.07s; 
+    transition-duration: 0.2s;
+}
+
+/*CONTRATACION*/
+.contenedor-cobretura{
+    margin-top: 60px; font-family: Montserrat-Regular;width: 100%;margin-left: 50%;transform: translateX(-50%);
+}
+.moal-direcciones-mapa {
+    font-family: Montserrat-Regular;
+    width: 90%;
+    /*height: 325px; */
+    left: 50%; 
+    transform: translateX(-50%); 
+    border-radius: 0px 0px 10px 10px; 
+    box-shadow: -1px 1px 17px 1px rgba(0,0,0,0.25);
+    background: #FAFAFA;
+    z-index: 3;
+    position: absolute;
+    /*margin-top: -50px;*/
+    
+}
+/*Muestra la respuesta cuando la flecha se baja (Faqs)*/
+.muestraRespuesta{
+    height: auto;
+    padding-top: 24px;
+    animation: 500ms ease 0s 1 normal none running answer_open;
+}
+
+#cargadorCorreo2 .cargador, #cargador.cargador {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    margin: 3% 45%;
+    background-image: url(/assets/img/cargador1.gif);
+    background-size: cover;
+    display: none;
+}
+#formularioCobertura .input__float>input {
+    border-bottom: 1px solid #75787b; 
+}
+
+/*Muestra menu movil*/
+.muestraMenuMovil{
+    display: block !important;
+    opacity: 1 !important;
+}
+
+.muestraListaMenuMovil{
+    left: 0px !important;
+    transition: all 500ms ease 0s !important;
+}
+
+.section-services .btn__blue{
+   margin-bottom: 30px; 
+}
+
+/*VENTAJAS*/
+.divVentajas{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom-style: solid;
+    border-bottom-color: #E0E0E0;
+    border-bottom-width: thin;
+    width: 70%;
+    padding-bottom: 20px;
+}
+
+.ache2{
+    color: #3B4559;
+    font-family: Montserrat-Regular;
+    font-size: 48px;
+    letter-spacing: 0;
+    line-height: 54px;
+    text-align: center;
+}
+
+.spanFirst{
+    width: 670px !important;
+    /*padding-left: 4.3% !important;
+    padding-right: 4.3% !important;*/
+    font-family: Montserrat-Regular !important;
+    font-size: 30px !important;
+    color: #3b4559 !important;
+    line-height: 36px !important;
+    margin-top: 40px !important;
+    margin-bottom: 8px !important;
+    text-align: center;
+}
+
+.spanSecond{
+    font-family: Montserrat-Regular;
+    font-size: 18px;
+    color: #75787b;
+    line-height: 1.5;
+    margin-bottom: 2px;
+    width: 472px;
+    height: 72px;
+    text-align: center;
+}
+
+
+.mensajePago{
+    background-color: rgb(255, 179, 2, .2);
+    border-radius: 4px;
+    padding: 15px;
+    width: 90%;
+}
+
+/*contratacion cards 
+.content-contratacion__addChannels .circle_indicators {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.content-contratacion__addChannels .circle_indicators li {
+    width: 12px;
+    height: 12px;
+    border-radius: 100px;
+    margin: 18px 14px;
+    background-color: hsla(0,0%,96.1%,.5);
+    cursor: pointer;
+}
+
+.content-contratacion__addChannels .circle_indicators li.active {
+    background-color: #1a76d2;
+}*/
+
+/*MEDIA QUERY*/
+@media (min-width:1700px){
+    .main-header .menu-top{
+        padding-right: 15px;
+    }
+
+    #validaCoberturaHeader{
+        /*margin-right: 7% !important;//Descomentar cuando se habilite carrito de compras*/
+        margin-right: 8% !important;
+    }
+
+    #menuListSections{
+        margin-left: 15px;
+    }
+
+    #mainNavPrincipal{
+        max-width: unset !important;
+    }
+}
+
+@media (max-width:1024px){
+    #divContentPackResume{
+        min-height: 400px;
+    }
+    #linkPromociones{
+        margin-bottom: -10px !important;
+    }
+}
+
+@media (max-width: 780px) {
+    .formularioGral-white{
+         width: 100%;
+    }
+
+    .header-cobertura>.cobertura-container {
+        /*top: 0 !important;*/
+        /*height: auto;*/
+        height: 100%;
+    }
+
+    .header-cobertura>.cobertura-container .container-close-pop {
+        display: flex !important;
+    }
+
+    .correoNC{
+        width: 100%;
+    }
+
+    #cargadorLead.cargador{
+        margin: 10% auto;
+    }
+
+    .ok-symbol, .err-symbol, .blue-symbol{
+        margin-right: 24px;
+    }
+
+    /*#modalContentForm{
+        top: -42% !important;
+    }*/
+    #motivoAyuda {
+        font-size: 14px; 
+    }
+
+    #formPersonalData{
+        margin-top: 30px;
+    }
+
+    .main-header .modal--content-form .form-label div.input__float input {
+        margin-bottom: 5px;
+    }
+
+    #botonValidarCobertura{
+        margin-top: 32px;
+    }
+
+    #confirmCorreo{
+        margin-top: 15%;
+    }
+
+
+    .header-cobertura>.cobertura-container>.step>.text-message div .text-bold .text-blue{
+        font-size: 20px !important;
+    }
+
+    #formPersonalDataHeader.form-cobertura{
+        margin-bottom: 35px !important;
+    }
+
+    .promotion_cards > h1{
+        padding-right: 0;
+    }
+}
+
+@media(max-width : 375px){
+    #lknTriplePlay{
+        margin-left: 35% !important;
+    }
+
+    #packages>.sites>div>.card>.img-pack{
+        height: 60px;
+    }
+    .ok-symbol, .err-symbol, .blue-symbol{
+        margin-right: 0;
+    }
+
+    .ok-symbol{
+        width: 75px;
+    }
+
+    .err-symbol{
+        width: 55px;
+    }
+
+    .blue-symbol{
+        width: 75px;
+    }
+
+    #titleFormMessage22, #btnConfirmMsgCorreo{
+        font-size: 12px !important;
+    }
+
+    /*#sectionChat{
+        top: 290px !important;
+    }*/
+
+    #modalMenu{
+        top: 0;
+    }
+
+    #modalMenu2{
+        top: 0;
+    }
+
+    /*#modalContentForm{
+        top: -42% !important;
+    }*/
+
+    /*CANALES*/
+    .modal-channels-content__content-new-section .content-slider-channels .slider-channels-list {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        flex-wrap: wrap;
+    }
+    .modal-channels-content__content-new-section .content-slider-channels .slider-channels-list li {
+        width: 152px;
+        margin-right: 16px;
+        margin-top: 17px;
+        height: 85px;
+    }
+    .modal-channels-content__content-new-section .content-premium-channels .title {
+        width: 312px;
+        font-size: 18px;
+        margin-bottom: 24px;
+        height: 81px;
+        line-height: 27px;
+    }
+    .modal-channels-content__content-new-section .content-premium-channels .premium-channels-list {
+        width: 312px;
+    }
+    .modal-channels-content__content-new-section .content-premium-channels .premium-channels-list .premium-channel-card:first-child {
+        height: 415px;
+        width: 312px;
+    }
+    .premium-channel-card .description-channel-card {
+        width: 312px;
+        height: 415px;
+    }
+    .premium-channel-card .description-channel-card .logo-channel-card {
+        margin-top: 16px;
+    }
+    .premium-channel-card .description-channel-card .content-channel-card {
+        margin-top: 8px;
+        width: 230px;
+        height: 37px;
+        font-family: Montserrat-Regular;
+        font-size: 16px;
+        color: #f5f5f5;
+        line-height: 1.27;
+        margin-bottom: 24px;
+    }
+
+    .premium-channel-card .description-channel-card .description-channel-text {
+        display: none;
+        width: 272px;
+        height: 72px;
+        font-family: Montserrat-Regular;
+        font-size: 18px;
+        color: #f5f5f5;
+        line-height: 1.33;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .zd_1, .zd_2  {
+        font-size: 16px;
+        margin-top: 200px!important;
+        margin-bottom: 22px;
+    }
+    .btn__transparent_premium {
+        font-family: Montserrat-Regular;
+        font-size: 18px;
+        color: #1a76d2;
+        line-height: 27px;
+        right: -4px;
+    }
+
+    .btn__transparent_premium:before {
+        right: 25px;
+    }
+
+    .premium-channel-card .banner-channel-card {
+        position: absolute;
+        width: 312px;
+        height: 182px;
+        margin-top: 0;
+    }
+
+    .premium-channel-card .banner-channel-card img:first-child {
+        position: relative;
+        top: 47px;
+    }
+    .premium-channel-card .banner-channel-card .banner-channel-text {
+        height: 20px;
+        font-size: 14px;
+        bottom: -45px;
+        margin-bottom: 22px;
+    }
+
+}
+
+@media(min-width: 768px) and (max-width: 839px){
+    .header-cobertura>.cobertura-container>.step>.form-cobertura>:first-child{
+        width: 200px;
+    }
+
+    .header-cobertura>.cobertura-container{
+        height: 355px;
+    }
+}
+
+/*@media(min-width: 768px) and (max-width: 980px){
+    #cardsPackage{
+        display: block !important;
+    }
+
+    #packages .cards>.card-package-item{
+        margin-bottom: 30px;
+    }
+}*//*PENDIENTE DE VALIDAR*/
+
+@media(min-width: 840px) and (max-width: 940px){
+    .header-cobertura>.cobertura-container>.step>.form-cobertura>:first-child{
+        width: 170px;
+    }
+}
+
+@media(min-width: 768.9px) and (max-width: 1438px){
+    #validaCoberturaHeader{
+        /*margin-right: 0 !important;//Descomentar cuando se habilite el carrito de compras*/
+        margin-right: 30px !important;
+    }
+
+
+}
+
+@media(min-width: 1024px) and (max-width: 1366px){
+    #menuListSections{
+        margin-left: 15px !important;
+    }
+}
+
+@media(max-width: 1366px){
+    #coberturaContainer{
+        /*overflow-y: scroll;*/
+    }
+}
+
+@media(min-width: 1370px) and (max-width: 1437.9px){
+    #menuListSections{
+        margin-left: -80px !important;
+    }
+}
+@media(min-width: 1367px) and (max-width: 1669px){
+    #validaCoberturaHeader{
+        /*margin-right: 0px !important;//Descomentar cuando se habilite carrito de compras*/
+        margin-right: 25px !important;
+    }
+
+    #menuListSections{
+        margin-left: 20px !important;
+    }
+}
+
+@media(min-width: 500px) and (max-width: 780.9px){
+    /*#sectionChat{
+        top: 590px !important;
+    }*/
+    
+}
+
+@media (max-width: 500px){
+    /*#modalContentForm{
+        top: -42% !important;
+    }*/
+
+    #promotionCards{
+        align-items: center;
+    }
+    
+    .promotion_cards > h1{
+        padding-right: 90px;
+    }
+
+    /*#sectionChat{
+        top: 510px !important;
+    }*/
+
+    #botonValidarCobertura{
+        margin-left: 10%;
+    }
+
+    /*ecomerce*/
+    .cupon__content-form__form .montomodcupon {
+        font-size: 2.7rem;
+        height: 50px;
+    }
+
+    .cupon__content-form__form div.cuponfind .tabla-cupon {
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    .modal--cupon__content-form {
+        width: 350px;
+    }
+    section#contenedorAdicionales .content-contratacion__packages {
+        width: 100% !important;
+    }
+    section#contenedorAdicionales .content-contratacion__packages .card-contratacion__packages {
+        margin-left: 5px !important;
+        margin-right: 5px !important
+    }
+}
+
+@media(min-width: 781px) and (max-width: 1023px){
+    /*#modalContentForm{
+        top: -42% !important;
+    }*/
+}
+
+@media(min-width: 360px){
+    .input__float #headerCorreo2{
+        width: 225px;
+    }
+}
+
+@media(min-width: 768px){
+    .input__float #headerCorreo2{
+        width: 312px;
+    }
+}
+
+@media (max-width: 767px){    
+    .addon--content-close {
+        height: 32px;
+        width: 32px;
+        left: 90%;
+    }
+
+    .addon--content__title {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .addon--content__description {
+        font-size: 16px;
+        width: 90%;
+        padding-bottom: 25px;
+        text-align: center;
+    }
+
+    .ticket_resume .package_main_info span:nth-child(2) {
+        text-align: center;
+        line-height: 1.5;
+        width: 311px !important;
+    }
+
+}
+
+@media (min-width: 768px){    
+    .mensajePago{
+        margin: 10px 30px;
+    }
+}
+
+.pac-container {
+    background-color: #fff;
+    position: absolute!important;
+    z-index: 1000;
+    border-radius: 2px;
+    border-top: 1px solid #d9d9d9;
+    font-family: Arial,sans-serif;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+}
+
+.pac-item {
+    cursor: default;
+    padding: 0 4px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    line-height: 30px;
+    text-align: left;
+    border-top: 1px solid #e6e6e6;
+    font-size: 11px;
+    color: #999;
+}
+
+.pac-item{
+    display: flex;
+    flex-direction: column;
+    font-family: Montserrat-Regular;
+}
+
+.pac-item:hover {
+    background-color: #fafafa;
+    cursor: pointer;
+}
+
+.pac-icon-marker {
+    display: none;
+}
+
+/*@media (max-width: 768px){  
+    .content-contratacion__addChannels .card-contratacion__channel,
+    .content-contratacion__packages__addons .card-contratacion__packages__addons,
+    section#contenedorAdicionales .content-contratacion__packages .card-contratacion__packages {
+        opacity: .5;
+    }
+
+    .content-contratacion__addChannels li.card-contratacion__channel.active,
+    .content-contratacion__packages__addons .card-contratacion__packages__addons,
+    section#contenedorAdicionales .content-contratacion__packages li.card-contratacion__packages.active {
+        opacity: 1;
+    }
+}*/ 
+
+@media (max-width: 1024px){    
+    .content-contratacion__addChannels,
+    section#contenedorAdicionales .content-contratacion__packages,
+    .content-contratacion__packages__addons,
+    .content-contratacion__settopbox {
+        width: 70%;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+
+    .content-contratacion__addChannels .card-contratacion__channel,
+    section#contenedorAdicionales .content-contratacion__packages .card-contratacion__packages,
+    .content-contratacion__packages__addons .card-contratacion__packages__addons ,
+    .content-contratacion__settopbox .card-contratacion__settopbox {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .content-contratacion__packages__addons .card-contratacion__packages__addons {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+.btnDeshabilitado {
+    background: gray !important;
+    opacity: .5 !important;
+    border: 1px solid gray;
+}
+
+.textWhite{
+    color: white !important;
+}
+
+@media (min-width: 500px) and (max-width: 767px){
+    #modalContentForm{
+        /*top : -263px;*/
+        overflow-y: scroll;
+        height: 100%;
+    }
+}
+/*@media (min-width: 1240px) and (max-width: 1365px){*/
+@media (min-width: 1102px) and (max-width: 1365px){
+    #tv .tv__channels img:last-child{
+        width: 141px;
+    }
+    #tv .tv__channels img{
+        margin-bottom: 60px;
+    }
+}
+
+@media (min-width: 360px) and (max-width: 767px) and (orientation: landscape) {
+  .modalDialogPhone>div{
+    width : 687px;
+    height : 722px;
+  }
+
+  .modalDialogChat{
+    position : absolute;
+    top : -95px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .modalDialogChat{
+    position : absolute;
+    top : -95px;
+  }
+}

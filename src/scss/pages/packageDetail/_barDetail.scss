@@ -1,0 +1,342 @@
+.package-bar-detail{
+    position: fixed;
+    min-width: 162px;
+    height: 72px;
+    background-color: $blue-400;
+    border-radius: 8px;
+    z-index: 99;
+    transition: 0.3s;
+    top: -72px;
+    display: none;
+    @include flex-box(column, center, center);
+    flex-wrap: wrap;
+    @include break-point('768'){
+        width: 192px;
+        @include flex-box(row, space-around, center);
+    }
+    @include break-point('1700'){
+        width: 208px;
+        height: 80px;
+        top: -80px;
+    }
+
+    &__package{
+        position: relative;
+        width: 0%;
+        height: 40%;
+        display: none;
+        opacity: 0;
+        transition: 0.2s;
+        @include flex-box(row, flex-start, center);
+        @include break-point('500'){
+            height: 61%;
+            @include flex-box(row, flex-start, center);
+            flex-wrap: wrap;
+        }
+        & > span{
+            &:nth-child(1){
+                margin-right: 4px;
+                @include text-font-regular(16px, $gray-100, normal);
+                @include break-point('500'){
+                    margin-right: 0;
+                    font-size: 18px;
+                }
+                @include break-point('800'){
+                    margin-right: 4px;
+                    font-size: 20px;
+                }
+                @include break-point('1700'){
+                    font-size: 22px;
+                }
+            }
+            &:nth-child(2){
+                @include text-font-regular(16px, $gray-100, normal);
+                font-weight: 700;
+                @include break-point('500'){
+                    font-size: 18px;
+                }
+                @include break-point('800'){
+                    font-size: 20px;
+                }
+                @include break-point('1700'){
+                    font-size: 22px;
+                }
+            }
+        }
+
+        &.active{
+            width: 55%;
+            display: flex;
+            opacity: 0;
+            @include break-point('500'){
+                width: 18.6%;
+            }
+            @include break-point('800'){
+                width: 28%;
+            }
+        }
+
+        &.normalColor{
+            & > span{
+                &:nth-child(1){
+                    color: $gray-400;
+                }
+                &:nth-child(2){
+                    &.red {
+                        color: $red-600;
+                    }
+                    &.pink {
+                        color: $pink-500;
+                    }
+                    &.purple {
+                        color: $purple-300;
+                    }
+                    &.blue {
+                        color: $blue-1100;
+                    }
+                    &.green {
+                        color: $green-600;
+                    }
+                    &.orange {
+                        color: $yellow-100;
+                    }
+                    &.lightBlue {
+                        color: $blue-1300;
+                    }
+                    &.cian {
+                        color: $blue-500;
+                    }
+                }
+            }
+        }
+    }
+           
+    &__price{
+        position: relative;
+        width: 0%;
+        height: auto;
+        display: none;
+        opacity: 0;
+        transition: 0.2s;
+        @include flex-box(row, flex-start, center);
+        flex-wrap: wrap;
+        @include break-point('500'){
+            @include flex-box(row, flex-end, center);
+            flex-wrap: wrap;
+        }
+        & > span{
+            &:nth-child(1){
+                margin-right: 4px; 
+                @include text-font-regular(14px, $gray-100, normal);
+                @include break-point('500'){
+                    font-size: 16px;
+                }
+                @include break-point('800'){
+                    font-size: 20px;
+                }
+                @include break-point('1700'){
+                    font-size: 22px;
+                }
+            }
+            &:nth-child(2){
+                @include text-font-regular(14px, $gray-100, normal);
+                font-weight: bold;
+                @include break-point('500'){
+                    font-size: 16px;
+                }
+                @include break-point('800'){
+                    font-size: 20px;
+                }
+                @include break-point('1700'){
+                    font-size: 22px;
+                }
+            }
+            &:nth-child(3){
+                @include text-font-regular(12px, $gray-100, normal);
+                @include break-point('500'){
+                    font-size: 14px;
+                }
+                @include break-point('800'){
+                    font-size: 16px;
+                }
+                @include break-point('1700'){
+                    font-size: 18px;
+                }
+            }
+        }
+
+        &.active{
+            width: 55%;
+            display: flex;
+            @include break-point('500'){
+                width: 41.8%;
+            }
+        }
+
+        &.normalColor{
+            & > span{
+                &:nth-child(1){
+                    color: $gray-400;
+                }
+                &:nth-child(2){
+                    color: $gray-400;
+                }
+                &:nth-child(3){
+                    color: $orange-100;
+                }
+            }
+        }
+    }
+    //boton
+    a{
+        position: relative;
+        min-width: 112px;
+        height: 40px;
+        border-radius: 4px;
+        background-color: $blue-400;
+        transition: 0.2s;
+        @include flex-box(column, center, center);
+        @include text-font-regular(16px, $gray-100, normal);
+        @include break-point('500'){
+            width: 140px;
+            height: 40px;
+            font-size: 18px;
+        }
+        @include break-point('1700'){
+            width: 154px;
+            height: 44px;
+            font-size: 20px;
+        }
+    }
+
+    &.active{
+        display: flex;
+        padding: 0 12px 0 16px;
+        box-shadow: $shadow-1600;
+        @include break-point('500'){
+            padding: 0 12px 0 20px;
+        }
+    }
+
+    &.grow{
+        animation: grow 0.3s forwards;
+    }
+
+    &.ingrow{
+        animation: ingrow 0.3s forwards;
+    }
+
+    // &.to-up{
+    //     top: 102px;
+    //     @include break-point('500'){
+    //         top: 118.4px;
+    //     }
+    //     @include break-point('800'){
+    //        top: 109px;
+    //     }
+    //     @include break-point('1100'){
+    //        top: 110px;
+    //     }
+    // }
+
+    &.to-up{
+        top: 15px;
+        // @include break-point('500'){
+        //     top: 118.4px;
+        // }
+        // @include break-point('800'){
+        //    top: 109px;
+        // }
+        // @include break-point('1100'){
+        //    top: 110px;
+        // }
+    }
+
+    // &.fixed-bar{
+    //     position: sticky;
+    //     top: -10px;
+    // }
+
+    &.toWhite{
+        transition: background-color 0.3s ease;
+        background-color: $gray-100;
+        box-shadow: $shadow-1700;
+    }
+}
+
+@keyframes grow {
+    from{min-width: 162px;}
+    to{width: 360px;}//304px; 95%
+}
+
+@include break-point('800'){
+    @keyframes grow {
+        from{min-width: 192px;}
+        to{width: 93.8%;}//720px;
+    }
+}
+
+@include break-point('1100'){
+    @keyframes grow {
+        from{min-width: 192px;}
+        to{width: 832px;}//75.6%;-1400 59.4%;
+    }
+}
+
+@include break-point('1700'){
+    @keyframes grow {
+        from{min-width: 192px;}
+        to{width: 912px;}//912px, 53.6%;
+    }
+}
+
+@keyframes ingrow {
+    from{width: 360px;}
+    to{min-width: 162px;}
+}
+
+
+@include break-point('800'){
+    @keyframes ingrow {
+        from{width: 93.8%;}
+        to{min-width: 192px;}
+    }
+}
+
+@include break-point('1100'){
+    @keyframes ingrow {
+        from{width: 832px;}
+        to{min-width: 192px;}
+    }
+}
+
+@include break-point('1700'){
+    @keyframes ingrow {
+        from{width: 912px;}
+        to{min-width: 192px;}
+    }
+}
+
+// @keyframes toUp{
+//     from{top: 10px;}
+//     to{top: 102px;}
+// }
+
+// @include break-point('500'){
+//     @keyframes toUp{
+//         from{top: 10px;}
+//         to{top: 118.4px;}
+//     }
+// }
+// @include break-point('800'){
+//     @keyframes toUp{
+//         from{top: 10px;}
+//         to{top: 109px;}
+//     }
+// }
+// @include break-point('1100'){
+//     @keyframes toUp{
+//         from{top: 10px;}
+//         to{top: 110px;}
+//     }
+// }

@@ -1,0 +1,110 @@
+.banner--choose-package {
+    
+    background-color: #FAFAFA;
+    @include flex-box(column, center, center);
+    padding: 40px 0;
+    @include break-point('375'){
+        padding-bottom: 68px;
+    }
+    @include break-point('768'){
+        padding-bottom: 40px;
+    }
+    @include break-point('1024'){
+        padding-top: 48px;
+    }
+
+
+}
+
+.banner--choose-package__title {
+
+    @include text-font-regular(28px, $gray-400, 26px);
+    text-align: center;
+    margin-bottom: 40px;
+    @include break-point('375'){
+        @include text-font-regular(24px, $gray-400, 1.5);
+        //margin-bottom: 16px;
+        width: 90%;
+    }
+    @include break-point('768'){
+        @include text-font-regular(28px, $gray-400, 0.93);
+        //margin-bottom: 16px;
+        width:100%;
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+    @include break-point('1024'){
+        @include text-font-regular(28px, $gray-400, 0.93);
+        //margin-bottom: 16px;
+        width:100%;
+        padding-left: 16.2%;
+        padding-right: 16.2%;
+        height: 26px;
+    }
+    @include break-point('1700'){
+        @include text-font-regular(32px, $gray-400, 0.81);
+        margin-bottom: 32px;
+        width: 58%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+}
+
+.banner--choose-package__description {
+    width: 60%;
+    margin-bottom: 42px;
+    text-align: center;
+    @include text-font-regular(18px, $gray-400, 26px);
+    span {
+        @include text-font-bold(18px, $gray-400, 26px);
+        @include break-point('375'){
+            line-height: 27px;
+        }
+    }
+    @include break-point('375'){
+        width: 90%;
+    }
+    @include break-point('768'){
+        width: 72%;
+        height: 52px;
+        line-height: 1.44;
+        margin-bottom: 38px;
+    }
+    @include break-point('1024'){
+        width: 54%;
+    }
+    @include break-point('1366'){
+        width: 40%;
+    }
+    @include break-point('1700'){
+        width: 42%;
+        margin-bottom: 32px;
+        @include text-font-regular(22px, $gray-400, 26px);
+        span {
+            @include text-font-bold(22px, $gray-400, 26px);
+        }
+    }
+}
+
+a.banner--choose-package__btn:link, 
+a.banner--choose-package__btn:visited{
+    color: #1A76D2;
+}
+
+a.banner--choose-package__btn {
+    height: 48px;
+    width: 232px;
+    border: 2px solid rgba(26,118,210,0.5);
+    border-radius: 100px;
+    @include text-font-regular(20px, #1A76D2, 20px);
+    @include flex-box(row, center, center);
+    
+    &:hover {
+        background-image: $gradient-100;
+        box-shadow: $main-shadow;
+        color: $gray-100;
+        border: none;
+    }
+
+}

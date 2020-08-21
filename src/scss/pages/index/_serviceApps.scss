@@ -1,0 +1,24 @@
+.service-apps-container{
+    //border: solid 0.5px magenta;
+    width: 100%;
+
+    height: auto;
+    padding-top: 8px;
+    transition: 0.3s;
+    overflow: hidden;
+    position: relative;
+    @include flex-box(column, center, center);
+
+    @include break-point('768'){
+        //max-width: 768px;
+        @include flex-box(row, center, center);
+
+        .card-service:first-child{
+            margin-right: 8px;
+        }
+    }
+
+    @include break-point('1400'){
+        padding-top: 16px;
+    }
+}

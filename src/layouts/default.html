@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="Disfruta de nuestra plataforma de entretenimiento y conectividad de máxima calidad y tecnología. Totalplay: Tu proveedor de internet. Contáctanos"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+
+    <link rel="stylesheet" type="text/css" href="{{root}}assets/vendor/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="{{root}}assets/vendor/slick/slick-theme.css">    
+    <link rel="stylesheet" type="text/css" href="{{root}}assets/vendor/slick/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="{{root}}assets/css/all.min.css">
+    <link href="{{root}}assets/font/">
+   
+    <!--SEO-->
+    <link rel="stylesheet" type="text/css" href="{{root}}assets/css/seo/seo.css">
+
+    {{#ifpage 'index'}}
+        <meta name="description" content="Disfruta de nuestra plataforma de entretenimiento y conectividad de máxima calidad y tecnología. Totalplay: Tu proveedor de internet. Contáctanos">
+        <title>Proveedores de Internet | Somos Totalplay: Tu Compañía de Internet</title>
+    {{/ifpage}}
+
+    {{#ifpage 'asistencia'}}
+        <meta name="description" content="Comunícate con atención a clientes Totalplay y pide asistencia por chat o teléfono. Nuestro soporte técnico te ofrecerá una solución rápida. ¡Contáctanos!"/>
+        <title>Contacta a Nuestro Soporte Técnico | Asistencia Totalplay</title>
+    {{/ifpage}}
+    
+    {{#ifpage 'paquetes'}}
+        <meta name="description" content="Con nuestros paquetes de internet, televisión y telefonía de fibra óptica descarga y navega a la maxima velocidad. ¡Contáctanos hoy mismo!"/>
+         <title>Paquetes de Internet, Televisión y Telefonía para Casa | Totalplay</title>
+    {{/ifpage}}
+
+
+    <title>Totalplay | {{page}}</title>
+    {{> cxense}}
+</head>
+
+<body class="main-{{page}}">
+    <div id="x-cover" style="background-color: #fff; width: 100%;height:100vh; position: absolute; z-index: 1000;"></div>
+        {{> header}}
+        {{> body}}
+        {{#ifpage 'index'}}
+            
+        {{/ifpage}}
+        {{> footer}}
+</body>
+<link rel="stylesheet" href="{{root}}assets/css/styles.css?v=16070001">
+<link rel="stylesheet" href="{{root}}assets/css/generales.css?v=16070001" />
+<script src="{{root}}assets/vendor/js/jquery-3.5.1.min.js"></script>
+<script src="{{root}}assets/vendor/encripcion/secBase.js"></script>
+<script src="{{root}}assets/js/scripts-min.js?v=16070001"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCD-eEQ9mY-nvizKc-jDI0SaaLnDdihJAU&libraries=places"></script>
+
+</html>

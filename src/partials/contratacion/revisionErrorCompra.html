@@ -1,0 +1,71 @@
+<style type="text/css">
+    .ligaGenerica {
+        font-family: Montserrat-Regular;
+        font-size: 18px;
+        color: #1a76d2;
+        line-height: 1.5;
+        cursor: pointer;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #txtNombre{
+        width: 100%; text-align: center; border-bottom: 1px solid #E0E0E0; padding-bottom: 30px; margin-bottom: 20px;
+    }
+</style>
+<div class="contratacion--top-bar" id="barContratacion" style="padding-right: 20%;">
+    <div class="main-header">
+        <nav class="menu" style="box-shadow: 0 0 0 0;">
+            <a class="menu--container-menu__logo" href="/" id="menuLogo">
+            </a>
+        </nav>
+            
+    </div>
+    
+</div>
+<div id="folioContent" class="folio-user-info" style="padding-top: 100px;">
+    <span>Disculpa por el inconveniente</span>
+    <span>Hemos recbido la informaci&oacute;n de tu compra, en un momento un asesor se comunicar&aacute; contigo para apoyarte.</span>
+
+    <div class="folio-info-container">
+        <div class="folio-installation" style="border: 1px solid #E0E0E0;border-radius: 10px;">
+            <span>Nombre:</span>
+            <span id="txtNombre"></span>
+            <span>Telefono de contacto:</span>
+            <span id="txtTelefonoContacto"></span>
+            <span>Correo electronico de contacto:</span>
+            <span id="txtCorreoEnvio"></span>
+            <span>Paquete seleccionado:</span>
+            <span id="txtPlan"></span>
+            <section id="packages-paq" onclick="window.location = '/';">
+                <span class="ligaGenerica">Entiendo, ir al inicio</span>
+            </section>
+        </div>
+        
+    </div>
+</div>
+
+<script type="text/javascript">
+    //$(document).ready(function () {
+
+        mostrarInformacion();
+    //});
+
+    function mostrarInformacion(){
+        
+        var txtNombre = window.localStorage.getItem('TP_CLIENTE_NOMBRE');
+        var telefonoContacto = window.localStorage.getItem('TP_CLIENTE_TELEFONO');
+        var correoFolio = window.localStorage.getItem('TP_CLIENTE_CORREO');
+        var planSeleccionado = window.localStorage.getItem('TP_CLIENTE_PLAN');
+        
+        document.getElementById('txtNombre').innerHTML = txtNombre;
+        document.getElementById('txtTelefonoContacto').innerHTML = telefonoContacto;
+        document.getElementById('txtCorreoEnvio').innerHTML = correoFolio;
+        document.getElementById('txtPlan').innerHTML = planSeleccionado;
+        
+        //localStorage.clear();
+    }
+</script>

@@ -1,0 +1,63 @@
+
+<header class="main-header" id="mainHeader">
+    <nav class="menu-top" id="navOtrosNegocios" style="display: flex !important;">
+        <div class="menu-top--section" id="menuMobileIcon2">HOGAR</div>
+        <ul class="menu-top---menu-sections" id="menuListSections" >
+            <li class="selector" id="selectorMenuListSections" ></li>
+            <li class="menu--container-menu__main-menu__item items-menu-negocios" style="font-size: 14px;" onclick="window.location='{{root}}'">HOGAR </li>
+            <li class="menu--container-menu__main-menu__item items-menu-negocios" style="font-size: 14px;" onclick="window.open('https://www.negociostotalplay.com.mx/?utm_source=sitio&utm_medium=header','_blank')">NEGOCIO</li>
+            <li class="menu--container-menu__main-menu__item items-menu-negocios" style="font-size: 14px;" onclick="window.open('https://totalplayempresarial.com.mx/?utm_source=sitio&utm_medium=header','_blank')">EMPRESA</li>
+            <li class="menu--container-menu__main-menu__item items-menu-negocios" style="font-size: 14px;" onclick="window.open('https://micuenta.totalplay.dev/landing/','_blank')">TOTALPAY</li>
+        </ul>
+        <div class="menu-top--cobertura" id="validaCoberturaHeader">
+            VALIDAR COBERTURA</span>
+        </div>
+    </nav>
+
+
+
+    <nav class="menu" id="mainNavPrincipal" style="box-shadow : 0px -12px 7px -15px rgb(0,0,0,.2)"> 
+        <div class="menu--menu-mobile" id="menuMobileIcon"></div>
+        <div class="menu--container-menu">
+            <a href="/" class="menu--container-menu__logo" id="menuLogo"></a>
+            
+            <ul class="menu--container-menu__main-menu" id="mainMenu">
+                <li class="selector" id="selectorMainMenu"></li>
+                <li class="menu--container-menu__main-menu__item items-main-menu" onclick="window.location='servicios.html'">Servicios </li>
+                <li class="menu--container-menu__main-menu__item items-main-menu" onclick="window.location='paquetes.html'">Paquetes</li>
+                <li class="menu--container-menu__main-menu__item items-main-menu" onclick="window.location='asistencia.html'">Soporte</li>
+            </ul>
+            
+        </div>
+
+        <div class="menu-container-account" id="containerMenuAccount">
+            <div class="selectorMenuUser" id="selectorMenuAccoundRight"></div>
+            <div class="menu-container-account__tv item__menu-account items-main-menu-right" id="accountTv" onclick="window.open('https://totalgo.totalplay.com.mx:444/TPW/TotalPlay.htm','_blank')">
+                <span class="tv-text"  id="spanAccountTv">Ver la Tv</span>
+            </div>
+            <div class="menu-container-account__item-user item__menu-account items-main-menu-right" id="itemUser" onclick="window.open('https://mitotalplay.com.mx/','_blank')">
+                <p>Mi cuenta</p>
+                <div class="menu-container--menu-user" id="menuLogin">
+                    <div class="menu-container--content">
+                        <div class="menu-container--content__login"></div>
+                        <div class="menu-container--content__data">
+                            Cargos recurrentes
+                            <div class="content__data__text1">4170 3285</div>
+                            <div class="content__data__text2">L-V 9:00 am a 9:00 pm
+                            S-D 9:00 am a 3:00 pm</div>
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+            <div class="menu-container-account__car item__menu-account items-main-menu-right carritoCompras" id="accountCar" >
+                <p>Carrito</p>
+                <label class="count-car">1</labe>
+            </div>
+        </div>
+    </nav> 
+    {{> cobertura}}
+    {{> menuMovil}}
+    {{> menuNegociosMovil}}
+</header>

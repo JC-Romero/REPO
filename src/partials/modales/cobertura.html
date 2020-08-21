@@ -1,0 +1,97 @@
+<div class="modal" id="modalMenu">
+    <!-- menu para REsidencial-->
+    <!--<ul class="modal---menu-sections" id="menuListSectionsMovil">
+        <li class="selector" id="selectorMenuListSectionsMovil"></li>
+        <li class="modal---menu-sections__item items-menu-negocios" style="font-size: 14px;" onclick="window.location='{{root}}index.html'">HOGAR</li>
+        <li class="modal---menu-sections__item items-menu-negocios" style="font-size: 14px;" onclick="window.open('https://www.negociostotalplay.com.mx/?utm_source=sitio&utm_medium=header','_blank')">NEGOCIOS</li>
+        <li class="modal---menu-sections__item items-menu-negocios" style="font-size: 14px;" onclick="window.open('https://totalplayempresarial.com.mx/?utm_source=sitio&utm_medium=header','_blank')">EMPRESARIAL</li>
+        <li class="modal---menu-sections__item items-menu-negocios" style="font-size: 14px;" onclick="window.open('https://micuenta.totalplay.dev/landing/','_blank')">TOTALPAY</li>
+    </ul>-->
+
+    <div class="modal--content-form" id="modalContentForm">
+        <div class="modal--content-form__cobertura" id="coberturaUser"></div>
+        
+            <!-- step 0-->
+            <div id="step0" class="step">
+                <form id="formPersonalData" class="modal--content-form__form form-label form-css-label">
+
+                    <div class="modal--content-form__title" id="titleFormStep0">Antes de comenzar tu experiencia, 
+                        <span>valida tu cobertura.</span></div>
+                    <div class="container-inputs p-3">
+
+                        <div class="input__float">
+                            <input id="cpModal" name="cpModal" type="text" autocomplete="off" maxlength="5" maxlength="5" required class="solo-numeros mb-0" placeholder=" " >
+                            <label for="cpModal">C&oacute;digo postal</label>
+                            <p class="text-danger txtdngcober" id="errorCodigoH"></p>
+                        </div>
+
+                        <div class="input__float">
+                            <input id="ciudadModal" name="ciudadModal" type="text" autocomplete="off" required class="mb-0" placeholder=" " style="height: auto;" disabled="">
+                            <label for="ciudadModal" class="labelBusqueda">Ciudad</label>
+                        </div>
+
+                        <div class="input__float">
+                            <input id="calleModal" name="calleModal" type="text" autocomplete="off" required class="direccion mb-0"   placeholder=" ">
+                            <label for="calleModal">Calle y n&uacute;mero</label>
+                            <p class="text-danger txtdngcober" id="errorCalleH"></p>
+                            <ul id="listDireccionesModal" class="pac-container"></ul>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn__outline__blue wd_hg" id="botonValidarCobertura" style="margin-top: 40px;" >Validar Cobertura</button>
+               </form>
+            </div>
+
+            <!-- step 1-->
+            <div id="step1" class="step">
+
+                <div class="modal--content-form__title" id="titleFormStep1">Validando cobertura ...</div>
+
+                <div class="cargador" id="cargadorGral"></div>
+                
+            </div>
+
+            <!-- step 2-->
+            <div id="step2" class="step">
+                <div class="correoNC">
+                    <div class="centrarTexto titleFormStep2" id="titleFormStep2"></div>
+
+                    <div class="centrarTexto subtitleFormStep2" id="subtitleFormStep2"></div>
+
+                    <form id="formCorreo" class="formularioGral p10 centrarTexto" autocomplete="off" style="display: none;">
+                        <div class="input__float">
+                            <input  name="headerCorreo2" id="headerCorreo2" type="text" autocomplete="off" required placeholder=" ">
+                            <label for="headerCorreo2">Correo</label>
+                            <div class="iconEnviar" id="iconEnviar"></div>
+                            <p class="text-danger" id="errorCorreo2" style="margin-top: 5px !important;"></p>
+                        </div>                        
+                    </form>
+                    <div class="modal--content-form__title" id="correoCargador" style="display: none; margin-top: 0; justify-content: center; margin: 0 auto;">Enviando datos ...</div>
+                    <div class="cargador" id="cargadorCorreo"></div>
+                    
+                    <div id="confirmCorreo" class="confirm-cobertura p10 centrarTexto" >
+                        <div  id="iconoMsgCoreo"></div>
+                        <div id="titleFormMessage22" class="text-message">                
+                        </div>
+                        <button id="btnConfirmMsgCorreo" style="width: 210px; outline: none!important; outline: none!important;" ></button>
+                    </div>
+                    <a id="btnCoberturaText" class="centrarTexto p20"  ><span class="icn-direcccion"></span>Probar otra dirección</a>
+                </div>
+            </div>
+    </div>
+
+    <div class="modal---close" id="closeModal"></div>
+</div>
+
+<div class="modal" id="modalMenu2">
+    <!-- menu para REsidencial-->
+    <ul class="modal---menu-sections" id="menuListSectionsMovil">
+        <li class="selector" id="selectorMenuListSectionsMovil"></li>
+        <li class="modal---menu-sections__item items-menu-negocios" style="font-size: 14px;" onclick="window.location='{{root}}index.html'">HOGAR</li>
+        <li class="modal---menu-sections__item items-menu-negocios" style="font-size: 14px;" onclick="window.open('https://www.negociostotalplay.com.mx/?utm_source=sitio&utm_medium=header','_blank')">NEGOCIOS</li>
+        <li class="modal---menu-sections__item items-menu-negocios" style="font-size: 14px;" onclick="window.open('https://totalplayempresarial.com.mx/?utm_source=sitio&utm_medium=header','_blank')">EMPRESARIAL</li>
+        <li class="modal---menu-sections__item items-menu-negocios" style="font-size: 14px;" onclick="window.open('https://micuenta.totalplay.dev/landing/','_blank')">TOTALPAY</li>
+    </ul>
+
+    <div class="modal---close" id="closeModal2"></div>
+</div>

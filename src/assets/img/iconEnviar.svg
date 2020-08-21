@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 61.2 (101010) - https://sketch.com -->
+    <title>4CE9B396-285F-43B3-A582-9B2A8F0F0A67</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <polygon id="path-1" points="1.5075 15.75 17.25 9 1.5075 2.25 1.5 7.5 12.75 9 1.5 10.5"></polygon>
+    </defs>
+    <g id="Home---Nov28" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Cobertura-Fail" transform="translate(-806.000000, -234.000000)">
+            <g id="Card" transform="translate(0.000000, 80.000000)">
+                <g id="Cobertura">
+                    <g id="Input" transform="translate(570.000000, 136.000000)">
+                        <g id="Web-Bt/-Shape-Over-Copy" transform="translate(236.000000, 18.000000)">
+                            <g id="icon" transform="translate(-0.291667, 0.000000)">
+                                <g id="icon/communication/call_24px-icon/content/send_24px" transform="translate(6.000000, 5.000000)">
+                                    <mask id="mask-2" fill="white">
+                                        <use xlink:href="#path-1"></use>
+                                    </mask>
+                                    <g id="icon/content/send_24px" fill-rule="nonzero"></g>
+                                    <g id="GrisAzul/800(Principal)-Mono/50" mask="url(#mask-2)" fill="#FAFAFA">
+                                        <rect id="Color" x="0" y="0" width="18" height="18"></rect>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

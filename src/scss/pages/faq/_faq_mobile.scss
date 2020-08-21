@@ -1,0 +1,261 @@
+.faq-main_mobile{
+    //@include break-point('768'){
+    @include break-point('360'){
+        display: block;
+    }
+    @include break-point('1024'){
+        display: none;
+    }
+    
+}
+
+.main-header .menu{
+  box-shadow: 0 0 12px 0 rgba(0,0,0,.2);
+  @include break-point('768'){
+    box-shadow:none;
+  }
+  @include break-point('1024'){
+    box-shadow: 0 0 12px 0 rgba(0,0,0,.2);
+  }
+  @include break-point('1700'){
+    box-shadow: none;
+  }
+}
+
+.faq-container_mobile{
+
+    @include flex-box(column, flex-start,flex-start);
+    width: calc(100% -280px);
+    height: 100%;
+    position: relative;
+    padding-top: 100px; 
+    padding-bottom: 5%;
+}
+.faq-tabs__links-back__content_mobile:hover .link-back__content--icon{
+    background: url('../img/arrow_back_blue.png') no-repeat;
+    background-size: 22px 22px;
+    border-radius: 100%;      
+    background-color: rgba(26,118,210,0.1);
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+    background-position: center;
+    @include break-point('1700'){//1700
+        width: 426px;
+    }
+}
+.faq-tabs__links-back__content_mobile:hover .link-back__content--label{
+    color:#1A76D2;
+    
+}
+.faq-tabs__links-back__content_mobile{
+    @include flex-box(row, flex-start, center);
+    padding: 8px;
+    padding-left: 68px;
+    cursor: pointer;
+    width: 100%;
+    height: 66px;
+    background-color: #fafafa;
+    @include break-point('375'){
+      padding-left: 49px;
+      padding-right: 0;
+    }
+    @include break-point('375'){
+      padding-left: 80px;
+    }
+}
+.wd{
+    margin: 0 auto;
+    display: block;
+    @include break-point('375'){
+      width: 95%;
+    }
+    @include break-point('768'){
+      width: 82%;
+      //border: solid 1px orange;
+    }
+}
+.accordion {
+  width: 100vw;
+  margin: 0;
+  max-width: 100%;
+}
+
+.accordion-header,
+.accordion-body {
+    background-color: #fafafa;
+}
+
+.accordion-header {
+  padding: 24px 48px 13px;
+  background-color: #fafafa;
+  @include text-font-medium(16px, #3b4559, 21px);
+  cursor: pointer;
+  transition: all .3s;
+  height: 66px;
+  @include break-point('375'){
+    @include text-font-medium(16px, $gray-400, 1.31);
+    padding: 20px 27px 12px 46px;
+  }
+  @include break-point('768'){
+    @include text-font-medium(22px, $gray-400, 0.95);
+    padding: 20px 40px 16px 68px;
+  }
+}
+.accordion__item {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    background-color: #fafafa;
+  
+
+}
+
+.accordion__item .accordion__item {
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+
+.accordion-header:hover {
+  //background: #2D3D99;
+  background-color: rgba(26,118,210,.05);
+  position: relative;
+  z-index: 5;
+}
+
+.accordion-body {
+  background: transparent;
+  color: #353535;
+  @include break-point('768'){
+    margin: 0 auto;
+  }
+}
+
+.accordion-body__contents {
+  padding: 42px 0 9px 0;
+  @include break-point('360'){
+    padding: 42px 5px 9px;
+  }
+
+  @include break-point('375'){
+    padding: 42px 0 9px 0;
+  }
+}
+.accordion-body__contents_resp {
+  width: 100%;
+  @include text-font-regular(16px, #3b4559, 1.5);
+  padding: 24px 21px 16px;
+  background: #f5f5f5;
+  @include break-point('375'){
+    padding-left: 12px; 
+    padding-right:12px;
+    padding-top: 8px;
+    //border: solid orange;
+    
+  }
+  @include break-point('768'){
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 20px;
+    //border: solid 1px red;
+  }
+  
+}
+  
+.accordion__item.active:last-child .accordion-header {
+  //border-radius: none;
+}
+
+.accordion:first-child > .accordion__item > .accordion-header {
+  //border-bottom: 1px solid red;
+}
+.accordion:first-child > .accordion__item > .accordion-header_question {
+    //border-bottom
+  }
+
+.accordion__item > .accordion-header:after {
+  content: "";
+  float: right;
+  position: relative;
+  background: url('../img/template/expand-less-24-px.svg') no-repeat;
+  transition: .3s all;
+  transform: rotate(0deg);
+  top: -7px;
+  background-color: rgba(26,118,210,.1);
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.accordion__item > .accordion-header_question:after {
+    content: "";
+    float: right;
+    position: relative;
+    background: url('../img/template/expand-less-24-px.svg') no-repeat;
+    transition: .3s all;
+    transform: rotate(0deg);
+    margin: auto 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    cursor: pointer; 
+  }
+.accordion__item.active > .accordion-header:after {
+  transform: rotate(-180deg);
+}
+.accordion__item.active > .accordion-header_question:after {
+    transform: rotate(-180deg);
+}
+.accordion__item.active .accordion-header {
+  background: rgba(#1A76D2, 0.09);
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+ 
+}
+.accordion__item.active .accordion-header_question {
+    background: rgba(#1A76D2, 0.09);
+  }
+.accordion__item .accordion__item .accordion-header {
+  background: #f1f1f1;
+  color: #353535;
+}
+.accordion__item .accordion__item .accordion-header_question {
+    padding-left: 21px;
+    background: #f5f5f5;
+    color: #353535;
+    height: auto;
+    //@extend break-point('768'){
+       // @include text-font-bold(18px, #283141, 1.33);  
+        //padding-left: 40px;
+    //}
+    @include break-point('375'){
+      @include text-font-bold(16px, #283141, 1.5);
+      padding-left: 10px;
+    }
+    @include break-point('768'){
+      @include text-font-medium(18px, #283141, 1.33);  
+      padding-left: 40px;
+  }
+}
+.accordion__item .accordion__item .accordion-header_question span{
+    width: 100%;
+    height: auto;
+    line-height: 1.5;
+    margin-right: 22px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    @include flex-box(column, center,flex-start);
+    @include break-point('768'){
+      width: 90%;
+      min-height: 56px;
+      line-height: 1.5;
+      margin-top: 8px;
+      margin-bottom: 8px;  
+    }
+}
+.accordion-header_question{
+    height: 88px;
+    @include flex-box(row, space-between, center);
+    padding-left: 40px;
+    padding-right: 28px;
+    border-radius: 4px;
+}

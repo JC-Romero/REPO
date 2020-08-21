@@ -1,0 +1,292 @@
+.video-banner{
+    width: 100%;
+    height: 595px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 4px;
+    
+    @include break-point('768'){
+        height: 595px;
+    }
+
+    @include break-point('1024'){
+        height: 595px;
+    }
+
+    @include break-point('1400'){
+        height: 73vh;
+    }
+    @include break-point('1700'){
+        height: 70vh;
+    }
+
+    .bar-banner{
+        width: 100%;
+        height: 48px;
+        position: absolute;
+        background-color: $blue-400;
+        @include flex-box(row, center, center);
+        cursor: pointer;
+        z-index: 99;
+        transition: 0.3s;
+        @include break-point('1400'){
+            //height: 40px;
+            height: 80px;
+        }
+
+        span{
+            position: relative;
+            @include flex-box(row, center, center);
+            margin-right: 5px;
+            @include text-font-bold(16px, $gray-1700, normal);
+            @include break-point('375'){
+                font-size: 18px;
+            }
+
+            @include break-point('1400'){
+                font-size: 25px;
+                &::after{
+                    @include break-point('1400'){
+                        content: '';
+                        width: 24px;
+                        height: 20px;
+                        position: relative;
+                        margin-left: 4px;
+                        background-image: url(../img/iconos/ic-arrow-forward.svg);
+                        display: block;
+                    }
+                }
+            }
+
+            i{
+                margin-left: 4px;
+                @include text-font-regular(16px, $gray-1700, normal);
+                @include break-point('375'){
+                    font-size: 18px;
+                }
+
+                @include break-point('1400'){
+                    font-size: 25px;
+                }
+            }
+        }
+
+        &__close {
+            height: 20px;
+            width: 20px;
+            position: relative;
+            cursor: pointer;
+
+            @include break-point('768'){
+                position: absolute;
+                right: 21px;
+            }
+            
+            &::before {
+                content: '';
+                background: url(../img/iconos/ic-close-white.svg) no-repeat;
+                background-size: cover;
+                display: block;
+                height: 20px;
+                width: 20px;
+            }
+        }
+    }
+
+    .content-video-banner{
+        min-width: 100%;
+        height: 100%;
+        position: relative;
+        @include flex-box(column, center, center);
+        transition: 0.3s ease-out;
+        overflow: hidden;
+
+        video{
+            position: absolute;
+            min-height: 100%;
+            height: 100%;
+            transition: 0.3s ease-out;
+            z-index: 19;
+            @include break-point('1100'){
+                min-width: 100%;
+                width: 100%;
+                height: auto;
+            }
+            
+        }
+
+        video::-webkit-media-controls {
+            display: none;
+        }
+
+        img{
+            position: absolute;
+            min-height: 100%;
+            object-fit: cover;
+            transition: 0.3s ease-out;
+            z-index: 19;
+            @include break-point('1100'){
+                min-width: 100%;
+                width: 100%;
+            }
+        }
+
+        &__banner-info{
+            //border: solid 0.5px greenyellow;
+            width: 324px;
+            height: 252px;
+            position: absolute;
+            bottom: 24px;
+            z-index: 30;
+            transition: 0.3s ease-out;
+            opacity: 1;
+            @include flex-box(column, center, center);
+
+            @include break-point('768'){
+                width: 538px;
+                height: 269px;
+            }
+
+            @include break-point('1400'){
+                width: 533px;
+                height: auto;
+                top: 90px;
+                left: 101px;
+                @include flex-box(column, flex-start, flex-start);
+            }
+
+            span{
+                width: 288px;
+                text-align: center;
+
+                @include break-point('768'){
+                    width: 450px;
+                }
+                @include break-point('1400'){
+                    width: 553px;
+                    text-align: left;
+                }
+
+                &:nth-child(1){
+                    @include text-font-medium(30px, $gray-100, normal);
+                    height: 82px;
+                    font-weight: 500;
+
+                    @include break-point('768'){
+                        height: 116px;
+                        font-size: 48px;
+                    }
+
+                    @include break-point('1400'){
+                        height: 146px;
+                        font-size: 60px;
+                        margin-bottom: 16px;
+                    }
+                }
+    
+                &:nth-child(2){
+                    height: 50px;
+                    @include text-font-regular(18px, $gray-200, normal);
+
+                    @include break-point('768'){
+                        height: 25px;
+                        line-height: 1.39;
+                        margin-top: 8px;
+                    }
+
+                    @include break-point('1400'){
+                        height: 36px;
+                        @include text-font-light(24px, $gray-200, 1.5);
+                        margin-top: 8px;
+                    }
+                }
+            }
+    
+            .btn__blue{
+                //width: 232px;
+                height: 48px;
+                margin-top: 16px;
+                margin-bottom: 24px;
+                text-decoration: none;
+                //line-height: 48px;
+                @include flex-box(row, center, center);
+
+                @include break-point('1100'){
+                    font-size: 18px;
+                }
+
+                @include break-point('1400'){
+                    height: 40px;
+                    //line-height: 40px;
+                    //font-size: 18px;
+                    margin-top: 48px;
+                    margin-bottom: 24px;
+                }
+            }
+
+            & .btn__transparent.home{
+                position: relative;
+                margin: 0;
+                color: $blue-2200;
+
+                @include break-point('768'){
+                    height: 27px;
+                }
+
+                @include break-point('1700'){
+                    position: relative;
+                    text-align: left;
+                }
+            }
+    
+        }//
+
+        &__gradient{
+            width: 367px;
+            //width: 693px;
+            height: 100%;
+            position: absolute;
+            //left: 326px;
+            background-image: linear-gradient(to left, rgba(33, 27, 42, 0), #211b2a);
+            @include break-point('1400'){
+                display: block;
+                z-index: 19;
+                left: 326px;
+                //left: 0;
+                //border: solid 0.5px gray;
+            }
+        }
+
+        &::before{
+            @include break-point('1400'){
+                content: '';
+                width: 327px;
+                height: 100%;
+                position: absolute;
+                display: block;
+                z-index: 20;
+                left: 0;
+                background-color: #211b2a;
+            }
+        }
+
+        &::after{
+            content: '';
+            width: 100%;
+            height: 296px;
+            position: absolute;
+            bottom: 0;
+            display: block;
+            z-index: 20;
+            background-image: url(../img/group.svg);
+
+            @include break-point('1400'){
+                width: 367px;
+                height: 100%;
+                position: absolute;
+                left: 326px;
+                background-image: linear-gradient(to left, rgba(33, 27, 42, 0) 100%, #211b2a 0%);
+            }
+        }
+    }
+}

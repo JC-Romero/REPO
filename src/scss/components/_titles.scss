@@ -1,0 +1,19 @@
+.main-title-section {
+
+    //@include text-font-regular (24px, #3B4559, 28px);//cambio por datos de invision 2020-02-24
+    //@include break-point('500'){font-size: 36px;}
+    @include text-font-semibold (28px, #3B4559, 34px);
+    width: 100%;
+    @include flex-box(row, center, center);
+    //margin-bottom: 23px;//cambio por datos de invision 2020-02-24
+    //margin-top: 73px;
+    margin-bottom: 23px;
+
+    div {    
+        //@include text-font-semibold (24px,#3B4559, 28px);// cambio por datos de invision 2020-02-24
+        //@include break-point('500'){font-size: 36px;}
+        @include text-font-semibold (28px,#3B4559, 34px);
+        margin-right: 8px;
+    }
+
+}

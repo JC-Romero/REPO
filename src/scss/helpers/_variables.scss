@@ -1,0 +1,206 @@
+//types the gray
+$gray-100: #FAFAFA;
+$gray-200: #E0E0E0;
+$gray-300: #EEEEEE;
+$gray-400: #3b4559;
+$gray-500: #f0f0fa;
+$gray-600: #75787B;
+$gray-700: #555F69; 
+$gray-800: #979797;
+$gray-900: #3C414B;
+$gray-1000: #4a4a4a;
+$gray-1100: rgba(250, 250, 250, 0.9);
+$gray-1200: #B1B2B4;
+$gray-1300: #616467;
+$gray-1400: #b5b6b8;
+$gray-1500: #bdc0c3;
+$gray-1600: rgba(250, 250, 250, .5);
+$gray-1700: #F5F5F5;
+$gray-1800: #4b576f;
+$gray-1900: rgba(224, 224, 224, 0.5);
+$gray-2000: #DCDCDC;
+$gray-2100: #F1F1F1;
+$gray-2200: #caccd0;
+$gray-2300: #c2c6ce;
+$gray-2400: rgba(245, 245, 245, 0.5);
+$gray-2500: #3B4559;
+$gray-2600: #9DA5B4;
+$gray-2700: #E9E9EB;
+$gray-2800: #B2BCD1;
+$gray-2900: #9E9E9E;
+$gray-3000: #3F495C;
+$gray-3100: #7D8083;
+$gray-3200: #9EA1A4;
+
+$gray-3300: #B4B4B4;
+$gray-3400: #222430;
+$gray-3500: #1E1E28;
+
+//types the blue
+$blue-100: #0288d1;
+$blue-200: #59cbe8;
+$blue-300: #0772C9;
+$blue-400: #1A76D2;
+$blue-500: #29B6EB;
+$blue-600: #01bcd4;
+$blue-700: #335DBA;
+$blue-800: #29B6EB;
+$blue-900: #039BE5;
+$blue-1000: #0E74D5;
+$blue-1100: #3A67BE;
+$blue-1200: #1a76d2;
+$blue-1300: #59c8c9;
+$blue-1400: #2079d3;
+$blue-1500: #325bb9;
+$blue-1600: rgba(50, 91, 185, 0.03);
+$blue-1700: rgba(41, 183, 235, 0.03);
+$blue-1800: #283141;
+$blue-1900: #3FC0E0;
+$blue-2000: rgba(89, 200, 201, 0.03);
+$blue-2100: #1390D4;
+$blue-2200: #64b5f6;
+
+$blue-2200: #4FAAD5;
+$blue-2300: #96C8E2;
+
+
+//types the pink
+$pink-100: #F04F98;
+$pink-200: #FD78B4;
+$pink-300: #F04E98;
+$pink-400: #CE468B;
+$pink-500: #CF488B;
+$pink-600: rgba(2, 1, 2, 0.03);
+$pink-700: rgba(206, 70, 138, 0.03);
+$pink-800: #c94687;
+//types the green
+$green-100: #AED581;
+$green-200: #dbe442;
+$green-300: #089b9a;
+$green-400: #209d99;
+$green-500: #A7C266;
+$green-600: #AFC564;
+$green-700: rgba(166, 194, 102, 0.03);
+
+$green-800: #7BB342;
+//types the red
+$red-100: #e4002b;
+$red-200: #e20227;
+$red-300: #e50914;
+$red-400: #CB294C;
+$red-500: #ff4f65;
+$red-600: #cb2b4c;
+$red-700: #D70023;
+//types the purple
+$purple-100: #8246af;
+$purple-200: #8955AD;
+$purple-300: #925fb2;
+$purple-400: rgba(136, 85, 173, 0.03);
+//$purple-500: #402B3C;
+$purple-500: #7D54A9;
+
+$purple-600: #7D54A9;
+$purple-700: #9274AC;
+
+//types the yellow
+$yellow-100: #DDAF5C;
+$yellow-200: #DEB05D;
+$yellow-300: rgba(221, 176, 92, 0.03);
+
+$yellow-400: #F3AF00;
+$yellow-500: #F5D288;
+
+//types orange
+$orange-100: #EF6C00;
+$orange-200: #EF720B;
+//types the black
+$black-100: #1e1e28;
+$black-200: #0f0f0f;
+$black-300: #000000;
+$black-400: #0C0D0F;
+$black-500: #211b2a;
+//transparency
+$transparency-100: (0, 0, 0, 0.15);
+// GRADIENT
+$gradient-100: linear-gradient(to right, #1a76d2, #01bcd4);
+$gradient-200: linear-gradient(to bottom, rgba(59, 69, 89, 0.1), #3b4559);
+$gradient-300: linear-gradient(to bottom, #eeeeee, #fafafa);
+$gradient-400: linear-gradient(299deg, rgba(238, 238, 238, 0), rgba(250, 250, 250, 0.5));
+$gradient-500: linear-gradient(to bottom, #000000, rgba(0, 0, 0, 0.1));
+$gradient-600: linear-gradient(248deg, #90e1ff, #29b6eb);
+$gradient-700: linear-gradient(255deg, #f4e181, #ddaf5c);
+$gradient-800: linear-gradient(to bottom, rgba(224, 215, 209, 0) 30%, #E20227 60%);
+$gradient-900: linear-gradient(to bottom, rgba(224, 215, 209, 0) 30%, #089B9A 60%);
+$gradient-1000: linear-gradient(to left, #F4E181, #DDAF5C);
+$gradient-1100: linear-gradient(to left, #D6D65F, #A7C266);
+$gradient-1200: linear-gradient(to left, #76C1E8, #325BB9);
+$gradient-1300: linear-gradient(to left, #C3F2FF, #29B6EB);
+$gradient-1400: linear-gradient(to left, #E8A3DD, #8955AD);
+$gradient-1500: linear-gradient(to left, #F2AEC1, #CE468B);
+$gradient-1600: linear-gradient(to left, #EFB07E, #CB294C);
+$gradient-1700: linear-gradient(to right, #fad961, #f76b1c);
+$gradient-1800: linear-gradient(to left, #d1f6f0, #59c8c9);
+$gradient-1900: linear-gradient(250deg, #da7848, #cb294c);
+$gradient-2000: linear-gradient(249deg, #e1768d, #ce468b);
+$gradient-2100: linear-gradient(249deg, #cc6ab9, #8955ad);
+$gradient-2200: linear-gradient(247deg, #76c1e8, #325bb9);
+$gradient-2300: linear-gradient(240deg, #d6d65f 1%, #a7c266);
+$gradient-2400: linear-gradient(to left, #faf2b7, #ddaf5c);
+$gradient-2500: linear-gradient(to left, #d1f6f0, #59c8c9);
+$gradient-2600: linear-gradient(252deg, #90e1ff, #29b6eb);
+//nuevo
+$gradient-2700: linear-gradient(225deg, #87D5EC 0%, #4FAAD5 100%);
+$gradient-2800: linear-gradient(225deg, #C7E6F3 0%, #96C8E2 100%);
+$gradient-2900: linear-gradient(225deg, #FAD800 0%, #F3AF00 100%);
+$gradient-3000: linear-gradient(225deg, #DBDBDB 0%, #B4B4B4 100%);//gris
+$gradient-3100: linear-gradient(225deg, #B48DD4 0%, #7D54A9 100%);//morado1
+$gradient-3200: linear-gradient(225deg, #C4ACD6 0%, #9274AC 100%);//morado2
+$gradient-3300: linear-gradient(225deg, #F9E1A2 0%, #F0C069 100%);//amarillo2
+$gradient-pink: linear-gradient(90deg, #F04E98 0%, #8246AF 100%);
+$gradient-3400: linear-gradient(to bottom, rgba(224, 215, 209, 0)60%, #FAFAFA 80%);
+
+
+
+$animationSpeed: 60s;
+// SHADOW
+$main-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.35);
+$shadow-100: 0 8px 16px 0 rgba(0, 0, 0, 0.50);
+$shadow-200: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+$shadow-300: 0 6px 12px 0 rgba(0, 0, 0, 0.8);
+$shadow-400: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+$shadow-500: 0 2px 7px 0 rgba(0, 0, 0, 0.15);
+$shadow-600: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+$shadow-700: 0 -2px 4px 0 rgba(0, 0, 0, 0.2);
+//$shadow-800: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
+$shadow-800: 0 26px 36px 0 rgba(0, 0, 0, 0.2);
+//$shadow-900: 0 8px 16px 0 rgba(0, 0, 0, 0.15);
+$shadow-900: 0 5px 25px 0 rgba(0, 0, 0, 0.15);
+$shadow-1000: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
+$shadow-1100: 0 2px 6px 0 rgba(0, 0, 0, 0.15);
+$shadow-1200: 0 6px 16px 0 rgba(0, 0, 0, 0.4);
+$shadow-1300: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+$shadow-1400: 0 2px 9px 0 rgba(0, 0, 0, 0.15);
+$shadow-1500: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+$shadow-1600: 0 16px 32px 0 rgba(30, 30, 40, 0.3);
+$shadow-1700: 0 18px 35px 0 rgba(30, 30, 40, 0.3);
+$shadow-1800: 0 2px 8px 0 rgba(0,0,0,0.1);
+$shadow-1900: 0 2px 38px 0 rgba(0, 0, 0, 0.15);
+
+$break-points: ( '320': (min-width: 320px), //mobil 1
+'360': (min-width: 360px), //mobil 1.1
+'375': (min-width: 375px), //mobil 1.1
+'500': (min-width: 500px), //mobil 2
+'501': (min-width: 400px) and (max-width : 767px),
+'768': (min-width: 768px), //tablet
+'800': (min-width: 768px), //tablet
+'815' : (min-width: 818px),
+'1024': (min-width: 1024px), //escritorio pequeño
+'1100': (min-width: 1024px), //escritorio pequeño
+'1366': (min-width: 1366px), //escritorio mediano
+'1400': (min-width: 1366px), //escritorio mediano
+'1700': (min-width: 1700px), //escritorio grande
+'1800': (min-width: 1800px), //escritorio grande
+'2000': (min-width: 2000px), //escritorio grande
+'2500': (min-width: 2500px), //escritorio grande
+'3000': (min-width: 3000px) //escritorio grande
+);

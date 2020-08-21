@@ -1,0 +1,77 @@
+<style type="text/css">
+    .ligaGenerica {
+        font-family: Montserrat-Regular;
+        font-size: 18px;
+        color: #1a76d2;
+        line-height: 1.5;
+        cursor: pointer;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+</style>
+<div class="contratacion--finaliza" id="barContratacion">
+    <div class="main-header">
+        <nav class="menu" style="box-shadow: 0 0 0 0;">
+            <a class="menu--container-menu__logo" href="/" id="menuLogo">
+            </a>
+        </nav>
+            
+    </div>
+    
+</div>
+<div id="folioContent" class="folio-user-info" style="padding-top: 100px;">
+    <span>Bienvenid@ <strong id="txtNombreUsuario"></strong></span>
+    <span>Disfruta de esta nueva experiencia de entretenimiento.</span>
+
+    <div class="folio-info-container">
+        <div class="folio-installation" style="border: 1px solid #E0E0E0;border-radius: 10px;">
+            <span>Tu n&uacute;mero de cuenta es:</span>
+            <span id="txtTicketFolio" style="width: 100%; text-align: center; border-bottom: 1px solid #E0E0E0; padding-bottom: 30px; margin-bottom: 20px;">
+            20180111STE</span>
+            <span>Dia de instalaci&oacute;n:</span>
+            <span id="txtFechaInstalacion"></span>
+            <span>Te enviamos los detalles a:</span>
+            <span id="txtCorreoEnvio"></span>
+            <span>Presentar los siguientes documentos:</span>
+            <span style="text-align: center;margin: 5px;">Identificaci&oacute;n y Comprobante de domicilio</span>
+
+            <section id="packages-paq" onclick="window.location = '/';">
+                <span class="ligaGenerica">Entiendo, ir al inicio</span>
+            </section>
+        </div>
+        <div class="apps-store-info">
+            <div class="text-store-info">
+                <span style="width: 100%">Sigue tu instalaci&oacute;n en la <i>App de Totalplay</i></span>
+                <a class="" href="https://play.google.com/store/apps/details?id=com.TotalPlay.totalplay&amp;hl=es_MX" target="_blank">
+                    <img src="assets/img/packages/addons-package/Google.png" alt="" class="listAddons__item--content__apps__item" style="width: 114px;height: 32px;">
+                </a>
+                <a class="" href="https://itunes.apple.com/mx/app/totalplay/id847892109?mt=8" target="_blank">
+                    <img src="assets/img/packages/addons-package/apple.png" alt="" class="listAddons__item--content__apps__item" style="width: 114px;height: 32px;">
+                </a>
+                <img src="assets/img/pages/contratacion/img-container@3x.png" alt="">
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    //$(document).ready(function () {
+
+        mostrarInformacion();
+    //});
+
+    function mostrarInformacion(){
+        
+
+        document.getElementById('txtNombreUsuario').innerHTML = 'USUARIO GENERICO';
+        document.getElementById('txtTicketFolio').innerHTML = '20180111STE';
+        document.getElementById('txtCorreoEnvio').innerHTML = 'informacion@totalplay.com.mx';
+        document.getElementById('txtFechaInstalacion').innerHTML = 'Viernes 28 de Agosto del 2020';
+
+        localStorage.clear();
+    }
+</script>

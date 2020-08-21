@@ -1,0 +1,813 @@
+.main-template {
+    background-color: #16161B;
+    @include flex-box(column, flex-end, center);
+    width: 100vw;
+}
+.container_icons_ {
+    background-color: transparent;
+    @include flex-box(column, flex-end, center);
+    width: 100vw;
+}
+
+#container-TV{
+    position: relative;
+    background-color: #E0E0E0;
+    width: 100%;
+}
+
+.main-container-TV {
+    @include flex-box(column, flex-end, center);
+    width: 100%;
+}
+#container-BlackCards-OnDemand{
+    
+    width: 100%; 
+    position: relative;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.main-container-BlackCards-OnDemand{
+    background-color: #16161B;
+    @include flex-box(column, flex-start, center);
+    width: 100%;
+    z-index: 2;
+}
+
+.container-detail-video-OnDemand{
+    
+    @include flex-box(column, flex-end, center);
+    width: 100%;
+    height: 826px;
+}
+.container-detail-video-Netflix{
+    
+    @include flex-box(column, flex-end, center);
+    width: 100%;
+    height: 826px;
+}
+
+.main-div-tv {
+    @include flex-box(column, center, center);
+    padding-top: 52px;
+    background-image: url('../img/template/tvVod.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    min-height: 572px;
+    min-width: 992px;
+    width: 100%;
+    height: 800px;
+    z-index: 1;
+}
+.main-div-tvAmazon {
+    @include flex-box(column, center, center);
+    padding-top: 52px;
+    background-image: url('../img/template/tvAmazon.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    min-height: 572px;
+    min-width: 992px;
+    height: 800px;
+    width: 100%;
+}
+.main-div-tvHbo {
+    @include flex-box(column, center, center);
+    padding-top: 52px;
+    background-image: url('../img/template/tvHbo.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    min-height: 572px;
+    min-width: 992px;
+    height: 800px;
+    width: 100%;
+}
+.main-div-tvNetflix {
+    @include flex-box(column, center, center);
+    padding-top: 52px;
+    background-image: url('../img/template/tvNetflix.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    min-height: 572px;
+    min-width: 992px;
+    width: 100%;
+}
+.blackCard-OnDemand {
+    @include flex-box(row, center, center);
+    height: 472px;
+}
+
+.main-div-text-BlackCards{
+    width: 832px; 
+    text-align: center;
+    padding-top: 50px;
+    @include flex-box(column, center, center);
+    p {
+        @include text-font-light(20px, #F5F5F5, 30px);
+        margin-bottom: 20px;
+        span {
+            @include text-font-light(16px, #F5F5F5, 24px);
+        }
+        i{
+            @include text-font-light(16px, #64B5F6, 24px);
+            cursor: pointer;
+        }
+    }
+}
+
+.main-div-text-Slider{
+    width: 872px; 
+    text-align: center;
+    height: 192px;
+    margin-bottom: 40px;
+    @include flex-box(column, center, center);
+    p {
+        @include text-font-regular(32px, #F5F5F5, 48px);
+        margin-bottom: 20px;
+        span {
+            @include text-font-bold(32px, #F5F5F5, 48px);
+        }
+    }
+}
+
+.div-text-Slider{
+    width: 312px; 
+    text-align: center;
+    text-transform: uppercase;
+    @include flex-box(column, center, center);
+    p {
+        @include text-font-bold(20px,#FAFAFA, 24px);
+        margin-bottom: 20px;
+    }
+}
+
+.text-tittle{
+    width: 832px; 
+    text-align: center;
+    padding-top: 50px;
+    @include flex-box(column, center, center);
+    p {
+        @include text-font-light(32px, #F5F5F5, 39px);
+    }
+}
+
+.main-div-text-BlackCards_Amazon{
+    width: 832px; 
+    text-align: center;
+    padding-top: 50px;
+    @include flex-box(column, center, center);
+    p {
+        @include text-font-light(20px, #F5F5F5, 30px);
+        margin-bottom: 20px;
+        span {
+            @include text-font-light(20px, #F5F5F5, 30px);
+        }
+        i{
+            @include text-font-light(20px, #64B5F6, 30px);
+            cursor: pointer;
+        }
+    }
+}
+
+.main-div-text-tvOnDemand{
+    width: 832px; 
+    height: 240px; 
+    text-align: center;
+    @include flex-box(column, center, center);
+    p {
+        @include text-font-regular(20px, #3B4559, 30px);
+        margin-bottom: 20px;
+        span {
+            @include text-font-semibold(28px, #3B4559, 42px);
+        }
+    }
+}
+
+.main-div-text-tvNetflix{
+    width: 512px; 
+    height: 270px; 
+    text-align: center;
+    margin-top: -40px;
+    @include flex-box(column, center, center);
+    p {
+        @include text-font-regular(20px, #3B4559, 30px);
+        margin-bottom: 20px;
+        span {
+            @include text-font-semibold(28px, #3B4559, 42px);
+        }
+    }
+}
+
+.main-div-text-tvHbo{
+    width: 592px; 
+    height: 270px; 
+    text-align: center;
+    margin-top: -40px;
+    @include flex-box(column, center, center);
+    p {
+        @include text-font-regular(20px, #3B4559, 30px);
+        margin-bottom: 20px;
+        span {
+            @include text-font-semibold(28px, #3B4559, 42px);
+        }
+    }
+}
+
+.div-container-text-title{
+    width: 360px;
+}
+
+.div-container-black-title{
+    width: 100%;
+}
+
+.div-container-text-subTitle{
+    width: 100%;
+}
+
+.div-container-text-subTitle-card{
+    width: 100%;
+}
+
+.div-container-btnOnDemand{
+    background: $gradient-pink;
+    height: 48px;	
+    width: 287px;  
+    cursor: pointer;
+    @include flex-box(row, center, center);
+    @include text-font-bold(20px, #F5F5F5, normal);
+    border-radius: 30px;
+}
+
+.div-container-btnAmazon{
+    background: linear-gradient(90deg, #1A76D2 0%, #01BCD4 100%);
+    height: 48px;	
+    width: 394px;  
+    cursor: pointer;
+    @include flex-box(row, center, center);
+    @include text-font-bold(20px, #F5F5F5, normal);
+    border-radius: 30px;
+}
+
+.div-container-btnHbo{
+    background: linear-gradient(90deg, #1A76D2 0%, #01BCD4 100%);
+    height: 48px;	
+    width: 304px;  
+    cursor: pointer;
+    @include flex-box(row, center, center);
+    @include text-font-bold(20px, #F5F5F5, normal);
+    border-radius: 30px;
+}
+
+.div-container-btnNetflix{
+    background: linear-gradient(90deg, #1A76D2 0%,#01BCD4 100% );
+    height: 48px;	
+    width: 344px;  
+    cursor: pointer;
+    @include flex-box(row, center, center);
+    @include text-font-bold(20px, #F5F5F5, 24px);
+    border-radius: 30px;
+}
+
+.div-container-btnAmazon{
+    background: linear-gradient(90deg, #1A76D2 0%,#01BCD4 100% );
+    height: 48px;	
+    width: 394px;  
+    cursor: pointer;
+    @include flex-box(row, center, center);
+    @include text-font-bold(20px, #F5F5F5, 24px);
+    border-radius: 30px;
+}
+
+.div-buttom-tv{
+    height: 50px;
+}
+
+.main-div-ctb {
+    margin-top: -67px;
+    width: 472px; 
+    height: 266px;
+    @include flex-box(column, flex-end, center);
+    padding-top: 52px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    background-image: url('../img/template/DIW362.png');
+    transition: all 0.5s;
+}
+
+.main-div-Logo {
+    width: 312px; 
+    height: 176px;
+    margin-bottom: -60px;
+    @include flex-box(column, flex-end, center);
+    & img{
+        width: 100%;
+    }
+}
+
+.main-div-Logo-Netflix {
+    width: 312px; 
+    height: 176px;
+    margin-bottom: 20px;
+    @include flex-box(column, flex-end, center);
+    & img{
+        width: 100%;
+    }
+}
+
+.main-div-MiniLogo {
+    width: 112px; 
+    height: 63px;
+    margin-bottom: -65px;
+    @include flex-box(column, flex-end, center);
+    & img{
+        width: 100%;
+    }
+}
+
+.main-div-MiniLogoVid {
+    width: 112px; 
+    height: 63px;
+    margin-bottom: -65px;
+    @include flex-box(column, flex-end, center);
+    & img{
+        width: 100%;
+    }
+}
+
+.main-div-bannerOnDemand {
+    width: 752px; 
+    height: 423px;
+    @include flex-box(column, flex-start, center);
+    padding-top: 52px;
+    & img{
+        width: 100%;
+    }
+}
+
+.main-template--video {
+
+    background-color: black;
+    height: 70vh;
+    width: 90%;
+    position: relative;
+    border: dashed 1px yellowgreen;
+    @include flex-box(column, flex-end, center);
+    border-radius: 20px;
+    margin-top: 16px;
+}
+
+.main-template--video__logo{
+    width: 312px;
+    border: dashed 1px green;
+    position: relative;
+    bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 1; // cambiar a 0
+}
+
+.template--video__logo-img-1 {
+    height: 63px; 
+    width: 112px;
+    // border: dashed 1px white;
+}
+
+.template--video__logo-img-2 {
+    height: 40px;	
+    width: 255px;
+    // border: dashed 1px white;
+    margin-bottom: 15px;
+}
+
+.template--video__logo-text {
+    height: 24px;	
+    color: #FAFAFA;	
+    font-family: Regular;	
+    font-size: 20px;	
+    font-weight: bold;	
+    line-height: 24px;	
+    text-align: center;
+    // border: dashed 1px white;
+}
+
+.main-template--video__btn {
+    position: relative;
+    height: 48px;	
+    width: 287px;
+    border-radius: 25px;	
+    background: linear-gradient(90deg, #F04E98 0%, #8246AF 100%);
+    color: #F5F5F5;	
+    font-family: Regular;	
+    font-size: 20px;	
+    line-height: 24px;	
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: dashed 1px red;
+    opacity: .5;
+    bottom: 10px;
+    cursor: pointer;
+    // display: none;
+
+}
+
+.main-template--video__more-info{
+    height: 19px;
+    width: max-content;
+    color: #F5F5F5;
+    font-family: Montserrat; 
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    border: dashed 1px red;
+
+}
+
+// ------------------------------------------------------ 
+.section-template-description-video {
+    border:dashed 1px red;
+    width: 100%;
+    height: 300px;
+    background-color: black;
+    @include flex-box(column, center, center);
+    p{
+        width: 872px;
+        @include text-font-light(32px, #F5F5F5, normal);
+        span{
+            @include text-font-bold(32px, #F5F5F5, normal);
+        }
+    }
+}
+
+.section-template-description-video__btn{
+    background: $gradient-pink;
+    height: 48px;	
+    width: 287px;  
+    cursor: pointer;
+    @include flex-box(row, center, center);
+    @include text-font-bold(20px, #F5F5F5, normal);
+    border-radius: 20px;
+    margin-top: 32px;
+}
+
+//seccion preguntas y respuestas
+.accordion {
+  max-width: 914px;
+  margin: 50px auto;
+  line-height: 1.6;
+}
+
+.accordion__item {
+  padding-bottom: 16px;
+}
+
+.accordion__title {
+    padding: 13px 40px 13px 16px;
+    display: block;
+    position: relative;
+    font-weight: 400;
+    background-color: rgba(224, 224, 224, 0.5);
+    border-radius: 4px;
+}
+
+.accordion__title:before {
+    background-image: url('../img/template/ic-down.png');
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 11px;
+    top: 16px;
+    content: "";
+    margin-bottom: 0px;
+    border-radius: 0px;
+    
+}
+
+.accordion__title h5 {
+    @include text-font-semibold(20px, #3B4559, 30px);
+    display:inline-block;
+    text-align: left;
+}
+
+.accordion__title:hover, .accordion__title:focus {
+  cursor: pointer;
+  outline: none;
+}
+
+.accordion__title:hover h5, .accordion__title:focus h5 {
+  border-bottom-color: #a8bdc4;
+  display: inline-block;
+}
+
+.is-expanded .accordion__title:before {
+    background-image: url('../img/template/ic-up.png');
+    margin-bottom: 30px;
+}
+
+.accordion__content-inner { 
+    padding: 16px 40px 30px 16px;
+    @include text-font-regular(18px, #3B4559, 27px);
+    margin-bottom: 16px;
+    border-radius: 4px;	
+    background-color: rgba(224, 224, 224, 0.5);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    text-align: justify;
+    position: static;
+}
+
+.accordion__content {
+  transition: height 0.3s ease-out;
+  height: 0;
+  overflow: hidden;
+}
+
+.accordion__content:before{
+    margin-bottom: 16px;
+}
+
+//seccion tarjetas otras apps disponibles
+.banner--other-apps {
+    
+    background-color: #FAFAFA;
+    @include flex-box(column, center, center);
+    padding: 82px 0;
+    width: 100%;
+    
+}
+
+.banner--other-apps__title {
+
+    @include text-font-regular(28px, #3B4559, 26px);
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.banner--questions__title {
+
+    @include text-font-regular(28px, #3B4559, 34px);
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+#otherApps{
+    #otherApps{
+    position: relative;
+    @include flex-box (column, center, center);
+    width: 100%;
+}
+
+#channelsHbo{
+    position: relative;
+    @include flex-box (column, center, center);
+    width: 100%;
+}
+    position: relative;
+    @include flex-box (column, center, center);
+    width: 100%;
+}
+
+.contentLanding{
+    position: relative;
+    @include flex-box (row, center, center);    
+    height: 176px;	
+    width: 855px;
+}
+
+.videoLanding{
+    position: relative;
+    @include flex-box (column, center, center);
+    width: 100%;
+    height: 176px;	
+    width: 312px;	
+    border-radius: 5px;	
+    background-color: rgba(30,30,40,0.2);
+    margin-right: 24px;
+}
+
+.other__apps {
+    height: 131px;
+    position: relative;
+    @include flex-box(row, space-around, flex-start);
+    flex-wrap: wrap;
+    align-content: flex-start;
+    overflow: hidden;
+    transition: all .3s ease-in-out; 
+    margin: 20px 0px 0 0px; 
+    img {
+        width: 232px; 
+        object-fit: contain;
+        cursor: pointer;
+        margin-bottom: 17px;
+        margin-right: 36px;
+        border-radius: 4px;
+    }
+}
+
+.container {
+    display: grid;
+    width: 1152px;
+    margin: 20px;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(352px, 1fr));
+    grid-template-rows: repeat(3, 267px);
+    div {
+        width: 352px;
+        height: 257px;
+        text-align: center;
+        p {
+            @include text-font-regular(20px, #F5F5F5, 30px);
+            span {
+                @include text-font-bold(20px, #F5F5F5, 30px);
+                width: 100%;
+                img{
+                    width: 352px;
+                    height: 199px;
+                    margin-top: 13px;
+                    background-size: cover;
+                    border-radius: 9px;
+                    background-color:white;
+                    border-radius: 9px;
+                }
+            }
+        }
+      }
+  }
+
+#img_back_channels{
+    width: 352px;
+    height: 199px;
+    margin-top: 13px;
+    background-size: cover;
+    border-radius: 9px;
+    background-color:white;
+    border-radius: 9px;
+}
+
+#img_logo_channels{
+    position: absolute; 
+    margin-left: 120px; 
+    margin-top: 68px;
+}
+
+.black_cards_OnDemand {
+    position: relative;
+    @include flex-box(column, flex-end, center);
+    overflow: hidden;
+    transition: all .3s ease-in-out; 
+    margin: 0 15px 0 15px;
+    background-color: #222430;
+    height: 472px;
+    width: 392px;
+    border-radius: 8px;
+    div {
+        width: 392px; 
+        height: 221px;
+        text-align: center;
+        @include flex-box(column, center, center);
+        img{
+            object-fit: cover;
+            img:hover {
+                transform: scale(1.1);
+                transition: all .3s;
+                box-shadow: $main-shadow;
+            }
+        }
+		p {
+            @include text-font-medium(32px, #F5F5F5, 39px);
+            margin-left: 16px;
+            margin-right: 16px;
+            span {
+                @include text-font-light(18px, #F5F5F5, 27px);
+                width: 100%;
+                i{
+                    @include text-font-light(16px, #1A76D2, 24px);
+                    cursor: pointer;
+                    width: 100%;
+                }
+                img{
+                    position: absolute;
+                    margin-top: 13px;
+                }
+            }
+        }
+    } 
+}
+
+.white_cards_OnDemand {
+    position: relative;
+    @include flex-box(column, flex-end, center);
+    overflow: hidden;
+    transition: all .3s ease-in-out; 
+    margin: 0 15px 0 15px;
+    background-color: #F5F5F5;
+    height: 472px;
+    width: 392px;
+    border-radius: 8px;
+    div {
+        width: 392px; 
+        height: 221px;
+        text-align: center;
+        @include flex-box(column, center, center);
+        img{
+            object-fit: cover;
+        }
+        p {
+            @include text-font-medium(32px, #3B4559, 39px);
+            margin-left: 16px;
+            margin-right: 16px;
+            span {
+                @include text-font-light(18px, #3B4559, 27px);
+                width: 100%;
+                i{
+                    @include text-font-light(16px, #1A76D2, 24px);
+                    cursor: pointer;
+                    width: 100%;
+                    
+                }
+                img{
+                    position: absolute;
+                    margin-top: 13px;
+                }
+            }
+        }
+    }
+}
+
+text-select_white_card{
+    @include text-font-light(16px, #1A76D2, 24px);
+    cursor: pointer;
+    width: 100%;
+}
+
+#sliderLandings {
+    .slider {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        display: flex;
+        height: 312px;
+        .slide-track {
+            animation: scroll $animationSpeed linear infinite;
+            display: flex;
+            width: calc(559px * 12);//6
+        }
+        .slide {
+            width: 555px;
+            margin-left: 8px;
+            position: relative;
+            div.content-image {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            .mask-image{
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                z-index: 999;
+                background-color: rgba(#1e1e28, 0.2);
+                
+            }
+        }
+    } // Animation
+    
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-267px * 3))
+        }
+    }
+
+    @include break-point('500') {
+        @keyframes scroll {
+            0% {transform: translateX(0);}
+            100% {transform: translateX(calc(-343px * 3))}
+        }
+    }
+
+    @include break-point('800') {
+        @keyframes scroll {
+            0% {transform: translateX(0);}
+            100% {transform: translateX(calc(-559px * 3))}
+        }
+    }
+}

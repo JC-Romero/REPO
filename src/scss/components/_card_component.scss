@@ -1,0 +1,149 @@
+//card component
+.card_component {
+    //min-width: 288px;
+    width: 312px;
+    //height: 420px;
+    height: 494px;
+    margin-right: 48px;
+    @include flex-box(column, flex-start, center);
+    border-radius: 4px;
+    box-shadow: $shadow-500;
+    transition: 0.2s;
+    position: relative;
+    // opacity: 0.5;
+    background-color: $gray-100;
+    // @include break-point('500') {
+    //     min-width: 352px;
+    //     height: 512px;
+    //     margin-right: 32px;
+    // }
+    // @include break-point('1700') {
+    //     min-width: 343.2px;
+    //     height: 466.4px;
+    // }
+    & > .header {
+        width: 312px;
+        height: 312px;
+        position: relative;
+        //margin-bottom: 23px;
+        overflow: hidden;
+        border-radius: 4px 4px 0 0;
+        // @include break-point('500') {
+        //     height: 198px;
+        //     margin-bottom: 26px;
+        // }
+        &>img {
+            width: 312px;
+            height: 312px;
+            //min-width: 119%;
+            //transform: translateX(-10%) translateY(-8%);
+            //transform: translate(-8%, -8%);
+        }
+    }
+    &>.body {
+        position: relative;
+        //top: -7px;
+        max-width: 229px;
+        @include flex-box(column, flex-start, flex-start);
+        text-align: left;
+        overflow: hidden;
+        width: 100%;
+        @include break-point('500') {
+            min-width: 280px;
+            max-width: 280px;
+            top: -6px;
+        }
+        &>.title {
+            height: 72px;
+            // margin-bottom: 6px;
+            overflow: hidden;
+            //@include flex-box(row, center, center);
+            // @include break-point('500') {
+            //     height: 80px;
+            // }
+            &>p {
+                
+                height: 100%;
+                @include flex-box(row, center, center);
+                @include text-font-bold(24px, $black-100, 24px);
+                line-height: 36px;
+                // @include break-point('500') {
+                //     @include text-font-bold(20px, $gray-400, 29px);
+                // }
+            }
+        }
+        &>.body {
+            height: 27px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            text-align: left;
+            @include flex-box(row, center, center);
+            // @include break-point('500') {
+            //     height: 118px;
+            //     margin-bottom: 19px;
+            // }
+            & > p {
+                text-align: left;
+                @include text-ellipsis(2, vertical);
+                @include flex-box(row, center, center);
+                @include text-font-regular(18px, $black-100, 27px);
+                font-weight: 500;
+                // @include break-point('500') {
+                //     @include text-font-regular(18px, $gray-600, 29px);
+                // }
+            }
+        }
+        // .more-info-promo-card {
+        //     height: 30px;
+        //     //margin-bottom: 22px;
+        //     @include flex-box(row, center, center);
+        //     @include text-font-regular(13px, $blue-400, 24px);
+        //     cursor: pointer;
+        //     @include break-point('500') {
+        //         height: 36px;
+        //         margin-bottom: 29px;
+        //         @include text-font-regular(16px, $blue-400, 29px);
+        //     }
+        // }
+    }
+    &.active {
+        opacity: 1;
+    }
+    &.close {
+        animation: closeComponentCard 0.2s 1;
+        animation-fill-mode: forwards;
+    }
+    &.open {
+        animation: openComponentCard 0.2s 1;
+        animation-fill-mode: forwards;
+    }
+}
+
+@keyframes closeComponentCard {
+    from {}
+    to {
+        @include break-point('1100'){
+            min-width: 0px;
+            width: 0px;
+        }
+        margin: 0px;
+    }
+}
+
+@keyframes openComponentCard {
+    from {
+        @include break-point('1100'){
+            min-width: 0px;
+            width: 0px;
+        }
+        margin: 0px;
+    }
+    to {
+        @include break-point('1100'){
+            min-width: 288px;
+        }
+        margin-right: 8px;
+        width: auto;
+    }
+}
+

@@ -1,0 +1,320 @@
+<style type="text/css">
+    .txtCargo {
+        width: 100%;
+        color: #75787B;
+        font-family: Montserrat-Regular;
+        font-size: 14px;
+        letter-spacing: 0;
+        line-height: 21px;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .textoAdicional{
+        font-family: Montserrat-Medium !important;
+        font-size: 16px !important;
+        color: #3b4559 !important;
+        line-height: 19px !important;
+    }
+
+    .eliminarParrila, .eliminarEquipo {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-family: Montserrat-Regular;
+        font-size: 16px;
+        color: #0772c9;
+        line-height: 19px;
+        cursor: pointer;
+    }
+</style>
+
+<section class="content-contratacion" style="display: none;" id="seccionResumen">
+    <p class="text-normal" id="txtCobertura" style="color: #3b4559;margin-top: 15px;">
+        <i style="font-size: 14px;color: #75787B;font-weight: bold;" id="txtCobertura3">
+            Paso 3 de 4
+        </i>
+    </p>
+
+    <div class="content-contratacion__title">
+        Mi paquete
+        <span id="textoNombrePaquete">
+            
+        </span>
+    </div>
+    <div class="content-contratacion__subTitle">
+        Aseg&uacute;rate de que no te falte nada agregando lo que necesites.
+    </div>
+    <div class="content-main-summary--main-sections">
+        <!-- PRECIOS RESUMEN PAQUETE -->
+        <div class="content-main-summary-sections-column-1">
+            <div class="main-summary">
+                <!-- TARJETA RESUMEN PRECIOS -->
+                <div class="main-summary__invoice-data">
+                    <div class="main-summary__invoice-data--header">
+                        Resumen del paquete
+                    </div>
+                    <div class="main-summary__invoice-data--data">
+                        <div class="main-summary__invoice-data--data__1">
+                            <div>
+                                <span style="color: #3B4559">Precio de lista</span>
+                                <span id="precioLista" style="color: #3B4559">$0.00</span>
+                            </div>
+                            <div>
+                                <span style="color: #3B4559">Pronto pago</span>
+                                <span id="precioProntoPago1" style="color: #3B4559">$0</span>
+                            </div>
+                            <div>
+                                <span>Descuento aplicados</span>
+                                <span id="totalDescuento">$0</span>
+                            </div>
+                        </div>
+                        <div class="list-setTopBox">
+                            <div class="main-summary__invoice-data--data__1" style="border-bottom: 1px dashed #E0E0E0;">
+                                <div>
+                                    <span style="color: #3B4559">Adicionales</span>
+                                    <span id="totalAdicionales" style="color: #3B4559">$0.00</span>
+                                </div>
+                                
+                            </div>
+                                
+                        </div>
+                        <div class="more-apps">
+                        </div>
+                    </div>
+                </div>
+                <!-- SECCION TOTAL -->
+                <div class="main-summary__invoice-amount">
+                    <div class="main-summary__invoice-amount-price">
+                        <span>Total pronto pago *</span>
+                        <span id="precioProntoPago2">$0</span>
+                    </div>
+                    <div class="main-summary__invoice-amount-amount">
+                        <span></span>
+                        <span>al mes</span>
+                    </div>
+                </div>
+            </div>
+            <!-- BOTON CONTRATAR / AGREGAR CARRITO / COMPARTIR -->
+            <div class="content-contratacion__shopping-cart-top" id="shoppingCartContratacionTop">
+
+                <div class="txtCargo">Cargo por instalaci&oacute;n <span id="cargoInstalacion"></span> adicional al pronto pago</div>
+                <div class="main-summary__invoice-data--data__1">
+                    <div>
+                        <span>Descuento de por vida</span>
+                        <span id="totalDescuentoPorVida"> $0</span>
+                    </div>
+                </div>
+                <div class="txtCargo" style="color: #3B4559">a partir del 6to mes se aplicar&aacute; este descuento</div>
+                <div class="content-contratacion__shopping-cart-top--button-buy">
+                </div>
+
+                <div class="content-contratacion__shopping-cupon-top" id="shopingCartCupon" style="border-bottom:0;margin-bottom:0;">
+                    <div class="content-contratacion__shopping-cupon-top--button-cupon shopingCartCuponT" style="margin-bottom:0;">Agregar Cup&oacute;n</div>
+                </div>
+                <div class="content-contratacion__shopping-cart-top--car" style="display: none;">
+                </div>
+                <div class="content-contratacion__shopping-cart-top--shared" style="display: none;">
+                </div>
+            </div>
+            <!-- ANOTACION PRONTO PAGO -->
+            <div class="content-main-summary-terms">
+                *El precio
+                <span>
+                    “pronto pago”
+                </span>
+                es un descuento ofrecido a nuestros clientes aplicado mensualmente al momento de pagar puntualmente, generalmente 10 d&iacute;as antes de la fecha l&iacute;mite de pago.
+            </div>
+        </div>
+        <!-- INFORMACION RESUMEN PAQUETE -->
+        <div class="content-main-summary-sections-column-2">
+            <div class="main-summary__title">
+                Revisa tu paquete
+            </div>
+            <!-- INFORMACION INTERNET -->
+            <div class="main-summary-internet">
+                <div class="main-summary-internet__invoice-data">
+                    <div class="main-summary-internet__invoice-data--title">
+                        <div>
+                            Internet
+                        </div>
+                    </div>
+                    <div class="main-summary-internet__invoice-data--info">
+                        <div id="totalMegasBase"></div>
+                        <div id="totalMegasPromo" style="color: #ef6c00;"></div>
+                        <div id="totalMegasPaqueteTexto" style="display: block;">*A partir del 7º mes recibir&aacute;s hasta <span id="totalMegasPaquete"></span></div>
+                    </div>
+                </div>
+            </div>
+            <!-- INFORMACION TELEVISION Y CANALES PREMIUM -->
+            <div class="main-summary-tv">
+                <div class="main-summary-tv__invoice-data">
+                    <div class="main-summary-tv__invoice-data--title">
+                        <div>
+                            Televisi&oacute;n
+                        </div>
+                    </div>
+                    <ul class="main-summary-tv__invoice-data-block-content">
+                        <li id="mejorarTelevision">
+                            <div class="main-summary-tv__invoice-data--block">
+                                <div class="invoice-data--addon__description">
+                                    TV Inicial
+                                </div>
+                                <div class="invoice-data--addon__title">
+                                    80 canales (35 en HD)
+                                </div>
+                                <div class="invoice-data--addon__promo">
+                                   
+                                </div>
+                            </div>
+                            <span class="main-summary-tv__invoice-data--edit" id="MejorarTv" style="display: none;">
+                                Mejorar
+                            </span>
+                        </li>
+                        
+                        <li id="seleccionPromocion">
+                            <div class="main-summary-tv__invoice-data--block">
+                                <div class="invoice-data--addon__description" id="txtPromoSeleccionada">
+                                </div>
+
+                                <div class="invoice-data--addon__title">
+                                    Elige entre HBO o Fox Premium
+                                </div>
+                                
+
+                                <div class="invoice-data--addon__promo">
+                                    Sin costo x 6 meses*
+                                </div>
+                                <div class="invoice-data--addon__terms">
+                                    *A partir del 7º mes cancelará de forma autom&aacute;tica.
+                                </div>
+                            </div>
+                            <span class="main-summary-tv__invoice-data--edit" id="CambiarPromo">
+                                Cambiar
+                            </span>
+                        </li>
+
+                        <li id="contenedorParrilla" style="display: none;">
+                            <div class="invoice-data-block-content_apps__item--info">
+                                <div class="invoice-data--addon__description" id="parrillaNombre">
+                                    
+                                </div>
+                                <div class="invoice-data--addon__title" id="parrillaDetalle">
+                                    
+                                </div>
+                                <div class="invoice-data--addon__promo" style="color: #75787b;">
+                                    Adicional a tu paquete
+                                </div>
+                            </div>
+                            <label class="eliminarParrila" id="eliminarParrilla" data-id="">Quitar</label>
+                        </li>
+                    </ul>
+                    <ul class="main-summary-tv__invoice-data-block-content_apps">
+                    </ul>
+                </div>
+                <div class="main-summary-tv__more-channels" id="seleccionCanalPremium">
+                    <span class="main-summary-tv__more-channels__text">
+                        Canales premium
+                    </span>
+                    <span class="main-summary-tv__more-channels__btn">
+                        Agregar
+                    </span>
+                </div>
+            </div>
+            <!-- INFORMACION EQUIPO ADICIONAL -->
+            <div class="main-summary-devices">
+                <div class="main-summary-devices__invoice-data">
+                    <div class="main-summary-devices__invoice-data--title">
+                        <div>
+                            Equipos
+                        </div>
+                    </div>
+                    <div class="main-summary-devices__invoice-data--device">
+                        <div class="column-left">
+                            <div>
+                                M&oacute;dem principal
+                            </div>
+                            <span>
+                                Incluido
+                            </span>
+                        </div>
+                        <div class="column-right">
+                            <div>
+                                1
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="main-summary-device__invoice-data-block-content_devices">
+                    </div>
+                    
+                    <div class="main-summary-device__more-devices" id="agregarEquipos">
+                        <span class="main-summary-device__more-devices__text">
+                            Equipos adicionales
+                        </span>
+                        <span class="main-summary-device__more-devices__btn" id="botonAgregarEquipo">
+                            Agregar
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- INFORMACION TELEFONO -->
+            <div class="main-summary-telefono">
+                <div class="main-summary-telefono__invoice-data">
+                    <div class="main-summary-telefono__invoice-data--title">
+                        <div>
+                            Tel&eacute;fono
+                        </div>
+                    </div>
+                    <div class="main-summary-telefono__invoice-data--detail">
+                        <div id="totalLineas">
+                            
+                        </div>
+                        <div>
+                            Con llamadas ilimitadas
+                        </div>
+                    </div>
+                    <div class="main-summary-telefono__invoice-data--detail">
+                        <div>
+                            App Tel&eacute;fono
+                        </div>
+                        <div>
+                            Sin costo
+                        </div>
+                    </div>
+                    <div class="main-summary-linea__invoice-data-block-content" id="contenedorLineaAdicional">
+                        
+                    </div>
+
+                    <div class="main-summary-device__more-devices" id="agregarLineaAdicional" style="padding-right: 0;">
+                        <span class="main-summary-device__more-devices__text">
+                            <strong id="textoAdicional" style="font-family: Montserrat-Bold;font-size: 16px;color: #75787b;">L&iacute;nea Adicional</strong>
+                            
+                        </span>
+                        <span class="main-summary-tv__more-channels__btn" id="botonAgregarLinea">
+                            Agregar
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- BOTON CONTRATAR / AGREGAR CARRITO / COMPARTIR -->
+    <div class="content-contratacion__shopping-cart" id="shoppingCartContratacion">
+        <div class="content-contratacion__shopping-cart--button-buy">
+            Contratar
+        </div>
+        <!--div class="content-contratacion__shopping-cupon-top--button-cupon shopingCartCuponT" style="margin-bottom:0;">Agregar Cupón</div-->
+    </div>
+    <!-- ANOTACION PRONTO PAGO -->
+    <div class="content-main-summary-terms-bottom">
+        *El precio
+        <span>
+            “pronto pago”
+        </span>
+        es un descuento ofrecido a nuestros clientes aplicado mensualmente al momento de pagar puntualmente, generalmente 10 d&iacute;as antes de la fecha l&iacute;mite de pago.
+    </div>
+</section>
+

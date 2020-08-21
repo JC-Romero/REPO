@@ -1,0 +1,321 @@
+//card.scss
+.card-package-item {
+    position: relative;
+    width: 312px;
+    height: 494px;
+    border-radius: 16px;
+    box-shadow: $shadow-900;
+    background-color: $gray-100;
+    margin-top: 2px;
+    cursor: pointer;
+    transition: 0.5s ease-out;
+    @include flex-box(column, flex-start, center);
+    @include break-point('375'){
+        width: 272px;
+    }
+    @include break-point('1024'){
+        width: 312px;
+    }
+    @include break-point('1366'){
+        width: 312px;
+        height: 494px;
+    }
+    @include break-point('1700'){
+        width: 343px;
+        height: 543px;
+    }
+    &:hover {
+        margin-top:1px;
+        box-shadow: $shadow-800;
+        transition: 0.5s ease-out;
+    }
+    &__banner {
+        width: 100%;
+        position: relative;
+        height: 112px;
+        margin-bottom: 8px;
+        @include break-point('1700'){
+          height: 123px;
+          margin-bottom: 10px;
+        }
+        .gradient-image {
+            height: inherit;
+            width: 100%;
+            position: absolute;
+            z-index: 2;
+            border-radius: 16px 16px 0 0;
+        }
+        img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+            border-radius: 16px 16px 0 0;
+        }
+    }
+    &__title {
+        width: 100%;
+        height: 32px;
+        @include text-font-bold-package(26px);
+        margin-bottom: 8px;
+        @include flex-box(row, center, center);
+        @include break-point('375'){
+            width: 80%;
+            font-size: 26px;
+            margin-bottom: 10px;
+            line-height: normal; 
+        }
+        @include break-point('1700'){
+            height: 34px;
+            font-size: 28px;
+            margin-bottom: 10px;
+            line-height: normal;
+        }
+    }
+    &__speed {
+        width: 100%;
+        @include text-font-bold-package(102px);
+        font-weight: bold;
+        margin-bottom: 10px;
+        height: 72px;
+        @include break-point('375'){
+            @include text-font-bold-package(102px);
+            font-weight: bold;
+            margin-bottom: 10px;
+            height: 72px; 
+        }
+        
+        @include flex-box(row, center, center);
+        @include break-point('1700'){
+            height: 79px;
+        }
+    }
+    &__megas {
+        width: 100%;
+        height: 32px;
+        @include text-font-regular-package(26px);
+        text-align: center;
+        margin-bottom: 12px;
+        @include flex-box(row, center, center);
+        @include break-point('375'){
+            height: 32px; width: 103px; font-size: 26px;  
+        }
+        
+        @include break-point('768'){
+            margin-bottom: 14px; 
+        }
+        @include break-point('1024'){
+            margin-bottom: 12px; 
+        }
+        @include break-point('1024'){
+            margin-bottom: 14px; 
+        }
+        @include break-point('1700'){
+            height: 34px; 
+            font-size: 28px; 
+            margin-bottom: 14px;
+        }
+    }
+    &__include{
+        width: 100%;
+        height: 22px;
+        @include flex-box(row, center, center);
+        @include text-font-regular-package(18px);
+        text-align: center;
+        margin-bottom: 12px;
+        @include break-point('375'){
+            font-size: 18px; 
+            height: 22px; 
+            margin-bottom: 16px; 
+            /*padding-left: 21px;
+            padding-right: 21px;*/ 
+            line-height: normal; 
+        }
+        @include break-point('768'){ 
+            margin-bottom: 24px;  
+        }
+        @include break-point('1024'){ 
+            margin-bottom: 14px;  
+        }
+        @include break-point('1366'){ 
+            margin-bottom: 14px;  
+        }
+        @include break-point('1700'){
+            font-size: 20px;
+            height: 24px; 
+            margin-bottom: 13px;
+        }
+    }
+    &__description{
+        width: 290px;
+        min-height: 72px;
+        max-height: 78px;
+        @include flex-box(row, center, center);
+        flex-wrap: nowrap;
+        margin-left: auto;
+        margin-right: auto;
+        div{
+          text-align: center;
+          max-height: 78px;
+          margin-top: auto;
+          margin-bottom: auto;
+          @include text-font-regular(16px, $gray-400, 1.63);
+          @include text-ellipsis(3, vertical);
+            span{
+                &:nth-child(1){
+                    font-weight: bold;
+                }
+            }
+        }
+        @include break-point('500'){
+            width: 352px;
+        }
+        @include break-point('800'){
+            width: 290px;
+        }
+        display: none;
+    }
+    &__separator {
+        width: 218px;
+        height: 1px;
+        opacity: 0.2;
+        background-color: $gray-600;
+        margin-top: 24px;
+        margin-bottom: 33px;
+        @include break-point('375'){
+            width: 218px;
+            margin-top: 16px;
+            margin-bottom: 37px;
+          }
+        @include break-point('768'){
+          width: 218px;
+        }
+        @include break-point('1700'){
+            margin-top: 33px;
+            width: 240px;
+        }
+    }
+    &__separatorcard-fullcard{
+        @include break-point('768'){
+            @include flex-box(column, center, center);
+        }
+    }
+
+    &__promotion{
+        width: 218px;
+        height: 28px;
+        border-radius: 4px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        background-image: rgba(239, 108, 0, 0.5);
+        background-color: rgba(239, 108, 0, 0.15);
+        color: #ef6c00;
+        @include text-font-bold-package(14px, $orange-100);
+        line-height: 1.8;
+        text-align: center;
+        @include flex-box(row, center, center);
+        @include break-point('375'){
+            @include text-font-bold(14px,$orange-100,1.86); 
+        } 
+        @include break-point('768'){
+            margin-top: 0px;
+            margin-bottom: 23px;
+        }
+        @include break-point('1700'){width: 240px; height:31px; font-size: 15.4px;line-height: 1.86; margin-top: 12px; margin-bottom: 25px;}
+    }
+    &__price { 
+        height: 22px;
+        text-align: center;
+        margin-bottom: 16px;
+        @include flex-box(row, center, center);
+        @include text-font-regular(18px, $gray-600);
+        span {
+            @include text-font-regular(18px, #75787b);
+            span{
+                color: $gray-400;
+                font-weight: bolder;
+            }
+        }
+        @include break-point('500'){
+            font-size: 20px;
+        }
+        @include break-point('800'){
+            font-size: 18px;
+          }
+        @include break-point('1700'){
+            font-size: 20px;
+            margin-bottom: 20px;
+            span {
+               font-size: 20px;
+                span{
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    &__button {
+        width: auto;
+        height: 40px;
+        padding: 6px;
+        border-radius: 100px;
+        background-color: $gradient-100;
+        @include text-font-regular(16px, $blue-1200);  
+        text-align: center;
+        margin-bottom: 24px;
+        padding: 12px 24px;
+        border: 1.1px solid rgba(26,118,210,0.5);
+        @include break-point('375'){
+            @include text-font-regular(18px, $blue-1200);
+            width: 137px;
+            height: 40px;
+            line-height: 40px; 
+            margin-bottom: 0;
+            padding: 0 0;
+        }
+        @include break-point('768'){
+            line-height: 40px;
+            margin: 0;
+            padding: 0;
+        }
+        @include break-point('1024'){
+            line-height: 40px;
+            margin: 0;
+            padding: 0;
+        }
+        @include break-point('1366'){
+            line-height: 40px;
+            margin: 0;
+            padding: 0;
+        }
+        @include break-point('1700'){
+            @include flex-box(row, center, center);
+            width: 167px; 
+            height: 44px; 
+            font-size: 19px; 
+            margin-bottom: 0;
+            line-height: 44px;
+            padding: 0;
+            font-size: 19.8px;
+        }
+    } 
+
+    &:link{
+        color: $blue-400;
+    }
+    &:hover > div > a,
+    &:hover > a{
+        border: none;
+        background-image: $gradient-100;
+        box-shadow: $main-shadow;
+        color: $gray-100;
+    }
+    &:hover > div {
+        &:nth-child(6) {
+            background-image: linear-gradient(to right, #fad961 -88%, #f76b1c 100%);
+            color: #FAFAFA;
+            @include break-point('1700'){
+                line-height: 44px;
+            }
+        }
+    }
+}

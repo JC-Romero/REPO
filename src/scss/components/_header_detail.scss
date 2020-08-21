@@ -1,0 +1,31 @@
+.header__detail{
+    position: relative;
+    width: 221px;
+    height: 24px;
+    top: 0;
+    margin-bottom: 24px;
+    img{
+        width: 100%;
+        transform: translateY(-41%);
+        //height: 24px;
+    }
+    @include break-point('500'){
+        width: 286px;
+        height: 28px;
+    }
+    @include break-point('800'){
+        width: 327px;
+        height: 32px;
+        margin-bottom: 32px;
+    }
+    @include break-point('1400'){
+        width: 352px;
+        height: 34px;
+        margin-bottom: 40px;
+    }
+    @include break-point('1700'){
+        width: 387px;
+        height: 37px;
+        margin-bottom: 44.4px;
+    }
+}

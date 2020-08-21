@@ -1,0 +1,428 @@
+#internet {
+    background-color: $gray-1700;
+    position: relative;
+    @include flex-box (column, center, center);
+    padding-top: 48px;//+620px;
+    @include break-point ('500') {
+        padding-top: 45px;//+690px;
+    }
+    @include break-point('800') {
+        padding-top: 45px;//+180px;
+    }
+    @include break-point('1100') {
+        padding-top: 60px;//+200px;
+    }
+    // @include break-point('1400') {
+    //     padding-top: 148px;//+190px;
+    // }
+    // @include break-point('1700') {
+    //     padding-top: 152px;//+165px;
+    // }
+    & > #headerInternet {
+        width: 100%;
+        background-color: transparent;           
+        position: sticky;
+        height: 56px;
+        top: 0px;
+        @include flex-box (column, flex-start, center);
+        @include break-point('500') {
+            height: 69px;
+        }
+        @include break-point('800') {
+            height: 78px;
+        }      
+        @include break-point('1100'){
+            height: 80px;
+        }
+        @include break-point('1700') {
+            height: 93px;
+        }
+        & > div {
+            width: 96%;
+            max-width: 1034px;
+            background-color: transparent;
+            @include flex-box (column, center, center);
+            & > img {
+                width: auto;
+                transition: 0.3s;
+                margin-bottom: 16px;
+                height: 24px;
+                @include break-point('500'){
+                    margin-bottom: 28px;
+                    height: 37px;
+                }
+                @include break-point('800'){
+                    height: 44px;                    
+                }
+                @include break-point('1700') {
+                    margin-bottom: 40px;
+                    height: 48px;
+                }
+            }
+            & > span {
+                width: 90%;
+                max-width: 1034px;
+                background-color: $green-200;
+                height: 4px;
+                position: relative;
+                transition: 0.3s;
+                @include break-point('500'){
+                    height: 6px;
+                }
+                @include break-point('800'){
+                    height: 4px;
+                }
+                @include break-point('1700'){
+                    height: 6px;
+                }
+            }
+        }   
+    }
+    & > #headerInternet.active {        
+        z-index: 10;    
+        & > div {
+            max-width: 100%;        
+            width: 100%;            
+            background-color: $gray-1100;
+            padding-top: 18px;
+            @include break-point('500') {
+                padding-top: 23px;
+            }
+            @include break-point('800') {
+                padding-top: 16px;
+            }
+            @include break-point('1700') {
+                padding-top: 17px;
+            }
+            & > img {
+                transition: 0.3s;
+                height: 20px;
+                margin-bottom: 14px;
+                @include break-point('500') {
+                    margin-bottom: 19px;
+                    height: 30px;
+                }
+                @include break-point('800') {
+                    margin-bottom: 14px;
+                }
+                @include break-point('1700') {
+                    height: 34px;
+                }
+            }
+            & > span {
+                width: 100%;
+                max-width: 100%;
+                transition: 0.3s;            
+            }
+        }   
+    }
+    & > h2 {
+        text-align: center;
+        max-width: 324px;
+        @include text-font-light (22px, $gray-400, normal);
+        margin-bottom: 28px;
+        @include break-point('768') {
+            font-size: 44px;
+            max-width: 700px;
+            margin-bottom: 40px;
+        }
+        @include  break-point('1024'){
+            margin-bottom: 36px;
+            max-width: 754px;
+        }
+        @include  break-point('1366'){
+            margin-bottom: 32px;
+            font-size: 36px;
+        }
+        @include break-point('1700') {
+            font-size: 48px;
+        }
+        & > span {
+            @include text-font-medium(22px, $gray-400, normal);
+            @include break-point('768') {
+                font-size: 44px;
+            }
+            @include break-point('1366') {
+                font-size: 36px;
+            }
+            @include break-point('1700') {
+                font-size: 48px;
+            }
+        }
+    }
+    & > .laptop {
+        text-align: center;
+        position: relative;
+        display: block;        
+        @include center;
+        //border: dashed 1px red;
+        & > img:nth-child(1) {
+            width: 214px;
+            position: relative;
+            @include center;            
+            transition: 0.3s;
+            @include break-point('500') {
+                width: 331px;
+            }
+            @include break-point('800') {
+                width: 487px;
+            }
+            @include break-point('1100') {
+                width: 697px;
+            }
+            @include break-point('1700') {
+                width: 766px;
+            }
+        }
+        & > .facetime {
+            width: 162px;
+            height: 102px;
+            position: absolute;
+            top: 7px;
+            left: 50%;
+            overflow: hidden;
+            transform: translateX(-50%);
+            max-width: 100%;
+            transition: 0.3s;
+            @include break-point('500') {
+                top: 12px;
+                width: 249px;
+                height: 159px;
+            }
+            @include break-point('800') {
+                top: 18px;
+                height: 229px;
+                width: 365px;
+            }
+            @include break-point('1100') {
+                top: 24px;
+                height: 330px;
+                width: 525px;
+            }
+            @include break-point('1700') {
+                top: 27px;
+                height: 364px;
+                width: 578px;
+            }
+            & > video {
+                position: relative;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                height: 100%;
+            }
+        }
+        & > .icon,
+        & > .picture {
+            position: absolute;
+            z-index: 1;
+            & > img {
+                width: 100%;
+            }
+        }
+        & > .icon {
+            max-width: 100px;
+            width: 30px;
+            position: absolute;
+            @include break-point('500') {
+                width: 47px;
+            }
+            @include break-point('800') {
+                width: 70px;
+            }
+            @include break-point('1100') {
+                width: 100px;
+            }
+            @include break-point('1700') {
+                width: 110px;
+            }
+            &::before {
+                width: 44%;
+                height: 40%;
+                background-color: $red-100;
+                position: absolute;
+                border-radius: 50%;
+                @include text-font-light(7px, $gray-100, 14px);
+                right: -10%;
+                top: -12%;
+                @include break-point('500') {
+                    @include text-font-light(12px, $gray-100, 17px);
+                }
+                @include break-point('800') {
+                    @include text-font-light(14px, $gray-100, 28px);
+                }
+                @include break-point('1100') {
+                    @include text-font-light(22px, $gray-100, 39px);
+                }
+            }
+        }
+        & >.icon.small {
+            width: 24px;
+            @include break-point('500') {
+                width: 38px;
+            }
+            @include break-point('800') {
+                width: 56px;
+            }
+            @include break-point('1100') {
+                width: 80px;
+            }
+            @include break-point('1700') {
+                width: 88px;
+            }
+            &::before {
+                @include text-font-light(7px, $gray-100, 12px);
+                right: -10%;
+                top: -12%;
+                @include break-point('500'){
+                    @include text-font-light(12px, $gray-100, 15px);
+                }
+                @include break-point('800') {
+                    @include text-font-light(14px, $gray-100, 25px);
+                }
+                @include break-point('1100') {
+                    @include text-font-light(16px, $gray-100, 35px);
+                }
+            }
+        }
+        //corazon
+        & > #icon1 {
+            top: 0px;
+            left: 0%;
+            @include break-point('500') {
+                left: -1%
+            }
+            @include break-point('800') {
+                top: 10px;
+            }
+            @include break-point('1100') {
+                top: 20px;
+            }
+            &::before {
+                content: "22";
+            }
+        }
+        //carta
+        & > #icon2 {
+            top: 35px;
+            right: -8%;
+            &::before {
+                content: "6";
+            }
+            @include break-point('500') {
+                top: 55px;
+                right: -10%;
+            }
+            @include break-point('800') {
+                top: 100px;
+                right: -10%;
+            }
+            @include break-point('1100') {
+                top: 150px;
+            }
+        }
+        //control
+        & > #icon3 {
+            top: -30px;
+            right: -20%;
+            @include break-point('500') {
+                top: -50px;
+                right: -22%;
+            }
+            @include break-point('800') {
+                top: -60px;
+                right: -22%;
+            }
+            @include break-point('1100') {
+                top: -70px;
+            }
+        }
+        //tv
+        & > #icon4 {
+            top: 70px;
+            left: -20%;
+            @include break-point('500') {
+                top: 110px;
+                left: -22%;
+            }
+            @include break-point('800') {
+                top: 160px;
+            }
+            @include break-point('1100') {
+                top: 230px;
+            }
+        }
+        & > .picture {            
+            border: 2px solid $gray-100;
+            top: 55px;
+            right: 6%;
+            overflow: hidden;           
+            box-shadow: $shadow-300;
+            width: 70px;
+            height: 35px;
+            @include break-point('500'){
+                width: 109px;
+                height: 54px;
+                top: 85px;
+            }
+            @include break-point('800'){
+                width: 180px;
+                height: 80px;
+                top: 140px;
+            }
+            @include break-point('1100'){
+                width: 230px;
+                height: 115px;
+                top: 210px;
+            }
+            @include break-point('1700') {
+                width: 253px;
+                height: 126px;
+            }
+            & > video {
+                position: relative;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                min-width: 100%;
+                min-height: 100%;
+                width: 100%;
+            }
+        }
+    }
+    & > h3 {
+        @include text-font-regular(18px, $gray-400, 26px);
+        text-align: center;
+        margin-top: 30px;
+        max-width: 278px;
+        margin-bottom: 40px;
+        @include break-point('768') {
+            max-width: 432px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            @include text-font-regular(30px, $gray-400, 44px);
+        }
+        @include break-point('1024') {
+            max-width: 672px;
+            @include text-font-regular(28px, $gray-400, normal);
+        }
+        @include break-point('1366') {
+            margin-top: 6px;
+            margin-bottom: 32px;
+            max-width: 672px;
+        }
+        & > span {
+            @include text-font-medium (18px, $gray-400, 26px);
+
+            @include break-point('768'){
+                @include text-font-medium (30px, $gray-400, 44px);
+            }
+            @include break-point('1024') {
+                @include text-font-bold (28px, $gray-400, normal);
+            }
+        }
+    }
+    & > .btn__blue {
+        margin-top: 0;
+    }
+}

@@ -1,0 +1,227 @@
+{
+    "codigoRespuesta": 0,
+    "mensaje": "Proceso completado",
+    "datos": {
+        "result": "0",
+        "resultDescription": "Petición realizada con éxito",
+        "infoAddons": {
+            "promocionesAdd": {
+                "promociones": [
+                    {
+                        "requiereOpp": null,
+                        "aplicaDescEmpleado": false,
+                        "imagen": null,
+                        "montoDescuento": 0.0,
+                        "esAutomatica": false,
+                        "nombre": "doble de megas",
+                        "bloqueaEfectivo": null,
+                        "aplicaCodigo": true,
+                        "tipoReferencia": null,
+                        "Id": "",
+                        "adicionalProductoNombre": null,
+                        "adicionalProductoId": null,
+                        "mesesPagoAnt": null
+                    },
+                    {
+                        "requiereOpp": null,
+                        "aplicaDescEmpleado": false,
+                        "imagen": null,
+                        "montoDescuento": 0.0,
+                        "esAutomatica": false,
+                        "nombre": "doble de canales",
+                        "bloqueaEfectivo": null,
+                        "aplicaCodigo": true,
+                        "tipoReferencia": null,
+                        "Id": "",
+                        "adicionalProductoNombre": null,
+                        "adicionalProductoId": null,
+                        "mesesPagoAnt": null
+                    },
+                    {
+                        "requiereOpp": null,
+                        "aplicaDescEmpleado": false,
+                        "imagen": null,
+                        "montoDescuento": 0.0,
+                        "esAutomatica": false,
+                        "nombre": "doble de internet",
+                        "bloqueaEfectivo": null,
+                        "aplicaCodigo": true,
+                        "tipoReferencia": null,
+                        "Id": "",
+                        "adicionalProductoNombre": null,
+                        "adicionalProductoId": null,
+                        "mesesPagoAnt": null
+                    }
+                ]
+            },
+            "productosAdd": {
+                "productos": [
+                    {
+                        "Index": 3,
+                        "adicional": [
+                            {
+                                "precio": 175.0,
+                                "tipoProducto": "Producto adicional",
+                                "idPlanParrilla": null,
+                                "maximoAgregar": 1,
+                                "imagen": null,
+                                "Id": "",
+                                "nombre": "FOX PREMIUM."
+                            },
+                            {
+                                "precio": 45.00321,
+                                "tipoProducto": "Producto adicional",
+                                "idPlanParrilla": null,
+                                "maximoAgregar": 1,
+                                "imagen": null,
+                                "Id": "",
+                                "nombre": "GOLDEN PREMIER TP"
+                            },
+                            {
+                                "precio": 168.9962672,
+                                "tipoProducto": "Producto adicional",
+                                "idPlanParrilla": null,
+                                "maximoAgregar": 1,
+                                "imagen": null,
+                                "Id": "",
+                                "nombre": "HBO MAX"
+                            },
+                            {
+                                "precio": 168.99627,
+                                "tipoProducto": "Producto adicional",
+                                "idPlanParrilla": null,
+                                "maximoAgregar": 1,
+                                "imagen": null,
+                                "Id": "",
+                                "nombre": "HOT PACK"
+                            },
+                            {
+                                "precio": 108.99865752,
+                                "tipoProducto": "Producto adicional",
+                                "idPlanParrilla": null,
+                                "maximoAgregar": 1,
+                                "imagen": null,
+                                "Id": "",
+                                "nombre": "NOGGIN PARAMOUNT +"
+                            },
+                            {
+                                "precio": 49.0010479,
+                                "tipoProducto": "Producto adicional",
+                                "idPlanParrilla": null,
+                                "maximoAgregar": 1,
+                                "imagen": null,
+                                "Id": "",
+                                "nombre": "NOGGIN TP"
+                            },
+                            {
+                                "precio": 78.9998527,
+                                "tipoProducto": "Producto adicional",
+                                "idPlanParrilla": null,
+                                "maximoAgregar": 1,
+                                "imagen": null,
+                                "Id": "",
+                                "nombre": "PARAMOUNT +"
+                            }
+                        ],
+                        "Agrupacion": "Canales"
+                    },
+                    {
+                        "Index": 7,
+                        "adicional": [
+                            {
+                                "precio": 130.00482,
+                                "tipoProducto": "Producto adicional",
+                                "idPlanParrilla": "11203",
+                                "maximoAgregar": 1,
+                                "imagen": null,
+                                "Id": "1",
+                                "nombre": "TV AVANZADA"
+                            },
+                            {
+                                "precio": 49.998008,
+                                "tipoProducto": "Producto adicional",
+                                "idPlanParrilla": "11235",
+                                "maximoAgregar": 1,
+                                "imagen": null,
+                                "Id": "2",
+                                "nombre": "TV BASICA"
+                            },
+                            {
+                                "precio": 420.003267,
+                                "tipoProducto": "Producto adicional",
+                                "idPlanParrilla": "11259",
+                                "maximoAgregar": 1,
+                                "imagen": null,
+                                "Id": "3",
+                                "nombre": "TV PREMIUM"
+                            }
+                        ],
+                        "Agrupacion": "Parrillas"
+                    }
+                ]
+            },
+            "costoGarantiaAdd": {
+                "productos": [
+                    {
+                        "Index": 1,
+                        "adicional": [
+                            {
+                                "precio": 220.0,
+                                "tipoProducto": null,
+                                "idPlanParrilla": null,
+                                "maximoAgregar": 1,
+                                "imagen": null,
+                                "Id": "",
+                                "nombre": "Cargo de activación - ip"
+                            },
+                            {
+                                "precio": 130.0,
+                                "tipoProducto": null,
+                                "idPlanParrilla": null,
+                                "maximoAgregar": 1,
+                                "imagen": null,
+                                "Id": "",
+                                "nombre": "Cargo de garantía - ip"
+                            }
+                        ],
+                        "Agrupacion": "Costo y Garantia"
+                    }
+                ]
+            },
+            "serviciosAdd": {
+                "servicios": [
+                    {
+                        "precio": 108.98129,
+                        "maximoAgregar": 5,
+                        "imagen": "http://www.totalplay.com.mx/newsletter/imagenes-nuevo-cotizador/adicionales-tv-adicional.png",
+                        "mostrarAddon": true,
+                        "llevaATA": null,
+                        "Id": "a0TQ00000043eCxMAI",
+                        "nombre": "TV ADICIONAL.",
+                        "id_DP_PlanServicioEquipo": null
+                    },
+                    {
+                        "precio": 48.99875,
+                        "maximoAgregar": 1,
+                        "imagen": "http://www.totalplay.com.mx/newsletter/imagenes-nuevo-cotizador/adicionales-telefono-adicional.png",
+                        "mostrarAddon": true,
+                        "llevaATA": null,
+                        "Id": "a0TQ00000043eD1MAI",
+                        "nombre": "LINEA TELEFONICA ADICIONAL",
+                        "id_DP_PlanServicioEquipo": null
+                    },
+                    {
+                        "precio": 148.0,
+                        "maximoAgregar": 4,
+                        "imagen": "http://www.totalplay.com.mx/newsletter/imagenes-nuevo-cotizador/adicionales-punto-wifi-y-tv-en-4-k.png",
+                        "mostrarAddon": true,
+                        "llevaATA": null,
+                        "Id": "a0TQ00000043eD4MAI",
+                        "nombre": "WIFI EXTENDER",
+                        "id_DP_PlanServicioEquipo": null
+                    }
+                ]
+            }
+        }
+    }
+}

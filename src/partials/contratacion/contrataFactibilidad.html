@@ -1,0 +1,96 @@
+<section id="headerCobertura" class="header-cobertura" style="display: none;">
+    <div id="coberturaContainer" class="cobertura-container" style="height: 95px;">       
+        
+        <div class="step">
+            <div id="confirmCobertura" class="confirm">
+                <div  id="iconoMsg"></div>
+                <div id="titleFormMessage2" class="text-message">
+                    <span class="text-normal" id="mensaje">
+                        <i class='text-bold'>Estaremos trabajando para llegar prontamente a tu ciudad.</i>
+                    </span>                   
+                </div>
+                <a href="/" class="btn__outline__green">Ok, gracias</a>
+            </div>
+        </div>
+    </div>    
+</section>
+
+<section class="content-contratacion">
+    <div id="mapaDir" style="position: relative;width: 100%; height: 115vh;  z-index: 3;">
+    </div>
+    <div class="moal-direcciones-mapa" id="modalPaso1" style="text-align: center;">
+        <div class="contenedor-datos">
+            <p class="text-normal">
+                <i id="txtCobertura" >
+                    Paso 1 de 4
+                </i>
+            </p>
+            <p class="text-bold" id="tituloCobertura">
+                Valida tu cobertura
+            </p>
+            <p id="descripcionCobertura">
+                Usa el mapa para ubicar tu domicilio y/o ajusta la información en los campos correspondientes.
+            </p>
+            <div id="step0" class="">
+                <form id="formularioCobertura" class="modal--content-form__form form-label form-css-label" >                    
+                    <div class="container-inputs p-3">
+
+                        <div class="input__float">
+                            <input id="txtCodigoPostal" name="txtCodigoPostal" type="text" autocomplete="off" maxlength="5" maxlength="5" required class="solo-numeros mb-0" placeholder=" " style="height: auto;">
+                            <label for="txtCodigoPostal">C&oacute;digo postal</label>
+                            <p class="text-danger" id="errorCodigoPostal" style="margin-top: 5px;"></p>
+                        </div>
+
+                        <div class="input__float">
+                            <input id="txtCiudad" name="txtCiudad" type="text" autocomplete="off" required class="mb-0" placeholder=" " style="height: auto;" disabled="">
+                            <label for="txtCiudad" id="labelBusqueda">Ciudad</label>
+                        </div>
+                        
+                        <div class="input__float">
+                            <input id="txtCalle" name="txtCalle" type="text" autocomplete="off" required class="direccion mb-0"  placeholder=" " style="height: auto;">
+                            <label for="txtCalle">Calle y Numero</label>
+                            <p class="text-danger" id="errortxtCalle" style="margin-top: 5px;"></p>
+
+                            <ul id="listDirecciones" class="pac-container"></ul>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn__blue wd_hg mt-3" id="btnContinuar">Continuar</button>
+               </form>
+                <div class="cargador" id="cargador">
+                </div>
+            </div>
+            <!-- step 2-->
+            <div id="step2" class="step">
+                <div class="correoNC" style="width: 80%">
+                    <div class="centrarTexto titleFormStep2" id="titleFormStep2"></div>
+
+                    <div class="centrarTexto subtitleFormStep2" id="subtitleFormStep2"></div>
+
+                    <form id="formCorreo" class="formularioGral p10 centrarTexto" autocomplete="off" style="display: none;">
+                        <div class="input__float">
+                            <input  name="headerCorreo2" id="headerCorreo2" type="text" autocomplete="off" required placeholder=" ">
+                            <label for="headerCorreo2">Correo</label>
+                            <div class="iconEnviar" id="iconEnviar"></div>
+                            
+                            <p class="text-danger" id="errorCorreo2" style="margin-top: 5px !important;" ></p>
+                        </div>
+                        <div id="iconoEnviando" style="display: none;padding-top: 15px;">
+                            <i class="fas fa-circle-notch fa-spin" style="color:#1a76d2"></i>
+                        </div>
+                    </form>
+                    <!--div class="modal--content-form__title" id="correoCargador2" style="display: none; margin-top: 0;">Enviando datos ...</div>
+                    <div class="cargador" id="cargadorCorreo2"></div-->
+                    
+                    <div id="confirmCorreo" class="confirm-cobertura p10 centrarTexto" style="display: none;">
+                        <div  id="iconoMsgCoreo"></div>
+                        <div id="titleFormMessage22" class="text-message">                
+                        </div>
+                        <button id="btnConfirmMsgCorreo2"  style="width: 220px; outline: none!important; outline: none!important;" ></button>
+                    </div>
+                    <a id="btnCoberturaText" class="centrarTexto" style=" padding-bottom: 30px;padding-top: 30px;" ><span class="icn-direcccion"></span>Probar otra dirección</a>
+                </div>
+            </div>            
+        </div>
+    </div>
+</section>

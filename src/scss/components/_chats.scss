@@ -1,0 +1,179 @@
+.chats {
+    top: 590px;
+    left: 0px;
+    width: 100%;
+    position: absolute;
+    @include flex-box(column, center, center);
+    @include break-point('500') {
+        top: 700px;
+    }
+    @include break-point('800') {
+        flex-direction: row-reverse;
+        top: 750px;
+    }
+    @include break-point('1100') {
+        top: 540px;
+        align-items: flex-start;
+    }
+    @include break-point('1400') {
+        top: 550px;
+    }
+    @include break-point('1700') {
+        top: 550px;
+    }
+    & > div{
+        background-color: $gray-100;
+        border-radius: 4px;
+        margin-top: 10px;
+        @include flex-box(column, center, center);
+        width: 302px;
+        box-shadow: $shadow-400;
+        text-align: center;
+        padding-bottom: 24px;
+        @include break-point('500'){
+            width: 432px;
+            margin-top: 19px;
+            padding-bottom: 36px;
+        }
+        @include break-point('800') {
+            width: 328px;
+            margin-right: 16px;
+        }
+        @include break-point('1100') {
+            width: 532px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            padding-bottom: 24px;
+            margin-right: 8px;
+        }
+        @include break-point('1400') {
+            margin-right: 16px;
+            widows: 548px;
+        }
+        @include break-point('1700') {
+            width: 568px;
+            height: 262px;
+            margin-right: 16px;
+        }
+        & > h1 {
+            @include text-font-regular(18px, $gray-400, 24px);
+            width: 302px;
+            margin-top: 24px;
+            font-weight: bold;              
+            @include break-point('500') {
+                font-size: 20px;
+                margin-top: 36px;
+                width: 306px;
+            }
+            @include break-point('800') {
+                width: 232px;
+                margin-top: 24px;
+            }
+            @include break-point('1100'){
+                width: 400px;
+                margin-top: 26px;
+            }
+            @include break-point('1700'){
+                @include text-font-regular(22px, $gray-400, 24px);
+                width: 480px;
+                margin-top: 32px;
+            }
+            & > span {
+                @include text-font-bold(18px, $gray-400, 24px);
+                font-weight: bold;
+                @include break-point('1700'){
+                    @include text-font-bold(22px, $gray-400, 24px);
+                }
+            }
+        }
+        & > h2 {
+            @include text-font-regular(28px, $blue-400, 34px);
+            margin-top: 8px;
+            font-weight: bold;
+            @include break-point('500') {
+                font-size: 32px;
+                line-height: 39px;
+            }
+            @include break-point('1100') {
+                font-size: 34px;
+                line-height: 42px;
+                margin-top: 16px;
+            }
+            @include break-point('1700') {
+                font-size: 36px;
+                line-height: 42px;
+                margin-top: 8px;
+            }
+        }
+        & > p {
+            @include text-font-regular(16px, $gray-400, 19px);
+            width: 191px;
+            margin-top: 8px;
+            font-weight: bold;
+            @include break-point('500'){
+                width: 281px;
+            }
+            @include break-point('800') {
+                width: 216px;
+            }
+            @include break-point('1100') {
+                width: 80%;
+                margin-top: 16px;
+                font-size: 18px;
+            }  
+            @include break-point('1700') {
+                margin-top: 10px;
+            }                       
+        }   
+        & > .chat.btn__blue{
+            max-width: 100%;
+        }
+        & > a {
+            margin-top: 8px;
+            width: 272px;
+            border: 1px solid $gray-200;
+            @include text-font-regular(16px, $gray-400, 38px);
+            border-radius: 4px;
+            position: relative;
+            background-color: transparent;
+            font-weight: bold;
+            @include break-point('500') {
+                line-height: 48px;
+                width: 306px;
+            }
+            @include break-point('800') {
+                width: 272px;
+            }
+            @include break-point('1100') {
+                width: 232px;
+                margin-top: 22px;
+                font-size: 18px;
+            }
+            @include break-point('1700') {
+                width: 248px;
+                line-height: 52px;
+                margin-bottom: 7px;
+                font-size: 20px;
+            }
+            &:hover {
+                color: $gray-100;
+                border: 0px;
+                //line-height: 48px;
+            }
+        }
+    }
+    & > div:last-child {
+        & > h1 {
+            line-height: 48px;  
+            @include break-point('1100') {
+                line-height: 24px;                    
+            }    
+        }
+    }
+    & > div:nth-child(1) {
+        @include break-point('800') {
+            margin-right: 0px;
+        }
+    }
+}

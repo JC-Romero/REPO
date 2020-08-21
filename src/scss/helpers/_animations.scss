@@ -1,0 +1,164 @@
+.fade-in {
+animation: fadeIn .5s;
+}
+
+.fade-out {
+animation: fadeOut .5s;
+}
+
+@keyframes fadeIn {
+
+from {
+    opacity: 0;
+}
+
+to {
+    opacity: 1;
+}
+
+}
+
+@keyframes fadeOut {
+
+
+from {
+    opacity: 1;
+}
+
+to {
+    opacity: 0;
+}
+
+}
+
+/*
+    animaciones para el submenu 
+*/
+
+.effectSubMenuEnter {
+animation: enter .3s;
+}
+
+
+.effectSubMenuExit {
+animation: exit .8s;
+}
+
+
+@keyframes enter {
+    from { 
+        top: 35px; 
+        opacity: .5;
+    }
+    to { 
+        top: 12px; 
+        opacity: 1;
+    }
+}
+
+@keyframes exit {
+    from {
+        top: 12px; 
+        opacity: 1;
+    }
+    to {
+        top: 30px; 
+        opacity: 0;
+    }
+}
+
+.fadeIn {
+    opacity: 1;
+    transition: opacity .25s ease-in-out;
+}
+
+.fadeOut {
+    opacity: 0;
+    transition: opacity .25s ease-in-out;
+}
+
+.show-modal {
+    animation: upEffect 500ms;
+}
+
+@keyframes upEffect {
+    from { opacity: 0; transform: translateY(100vh);}
+    to {opacity: 1; transform: translateY(0vh);}
+} 
+
+.hide-modal {
+    animation: downEffect 500ms;
+}
+
+@keyframes downEffect {
+    from { opacity: 1; transform: translateY(0vh);}
+    to {opacity: 0; transform: translateY(80vh);}
+} 
+
+.active-tab {
+    animation: dissolve .7s;
+}
+
+@keyframes dissolve {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+.blob.blue:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3);
+    animation: pulse-blue 1.5s infinite;
+}
+
+@keyframes pulse-blue {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.3);
+    }
+    25% {
+        transform: scale(1);
+        box-shadow: 0 0 0 15px rgba(128, 211, 249, 0.6);
+    }
+    50% {
+        transform: scale(1);
+        box-shadow: 0 0 0 3px rgba(128, 211, 249, 0.2);
+    }
+    75% {
+        transform: scale(1);
+        box-shadow: 0 0 0 15px rgba(128, 211, 249, 0.3);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.3);
+    }
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes answer_open {
+    from {
+        padding-top:0;
+        height: 0;
+    }
+    to {
+        padding-top: 24px;
+        height: auto;
+    }
+}
+@keyframes answer_open {
+    from {
+        padding-top:0;
+        height: 0;
+    }
+    to {
+        padding-top: 24px;
+        height: auto;
+    }
+}
+@keyframes answer_close {
+    from {
+        padding-top: 24px;
+        height: auto;
+    }
+    to {
+        padding-top:0;
+        height: 0;
+    }
+}
