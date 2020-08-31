@@ -318,7 +318,7 @@ header .mainNav .mobileCart a img {
 /*Main Video Banner*/
 .mainVideoBanner {
     position: relative;
-    background: url(../img/nuevos/backVideoMobile.png) top center no-repeat;
+    background: url(../assets/img/nuevos/backVideoMobile.png) top center no-repeat;
     background-size: cover;
     margin-bottom: 3px;
     height: 100vh;
@@ -505,7 +505,7 @@ header .mainNav .mobileCart a img {
 /**/
 .mainVideoBannerSecond {
     position: relative;
-    background: url(../img/nuevos/backVideoMobile.png) top center no-repeat;
+    background: url(../assets/img/nuevos/backVideoMobile.png) top center no-repeat;
     background-size: cover;
 }
 
@@ -2337,7 +2337,7 @@ footer .legalAdvice p {
 /*Packages View*/
 .headerPackages {
     height: auto;
-    background: url(../img/nuevos/backVideoMobile.png) top center no-repeat;
+    background: url(../assets/img/nuevos/backVideoMobile.png) top center no-repeat;
     background-size: 100% 70%;
     padding-top: 10rem;
     padding-bottom: 3rem;
