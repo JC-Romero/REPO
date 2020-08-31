@@ -318,7 +318,7 @@ header .mainNav .mobileCart a img {
 /*Main Video Banner*/
 .mainVideoBanner {
     position: relative;
-    background: url(../img/nuevos/backVideoMobile.png) top center no-repeat;
+    /*background: url(../img/nuevos/backVideoMobile.png) top center no-repeat;*/
     background-size: cover;
     margin-bottom: 3px;
     height: 100vh;
@@ -505,7 +505,7 @@ header .mainNav .mobileCart a img {
 /**/
 .mainVideoBannerSecond {
     position: relative;
-    background: url(../img/nuevos/backVideoMobile.png) top center no-repeat;
+    /*background: url(./img/nuevos/backVideoMobile.png) top center no-repeat;*/
     background-size: cover;
 }
 
@@ -2337,7 +2337,7 @@ footer .legalAdvice p {
 /*Packages View*/
 .headerPackages {
     height: auto;
-    background: url(../img/nuevos/backVideoMobile.png) top center no-repeat;
+    /*background: url(../img/nuevos/backVideoMobile.png) top center no-repeat;*/
     background-size: 100% 70%;
     padding-top: 10rem;
     padding-bottom: 3rem;
@@ -2471,7 +2471,7 @@ footer .legalAdvice p {
 
 .bestPackageImageContainer {
     width: 100%;
-    background-image: url(../img/nuevos/gettyimages-1194473556-2048x2048.png), linear-gradient(90deg, rgba(255, 0, 207, 1) 0.06%, rgba(120, 58, 106, 1) 100%);
+    background-image: url(./img/nuevos/gettyimages-1194473556-2048x2048.png), linear-gradient(90deg, rgba(255, 0, 207, 1) 0.06%, rgba(120, 58, 106, 1) 100%);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;

@@ -12,7 +12,7 @@ export class Paquetes {
 	init() {
 		this.revisarDireccion();
 		this.cargarPaquetes("Todos");
-		this.eventoTipoPaquete()
+		this.eventoTipoPaquete();
 	}
 
 	resize() {
@@ -262,7 +262,7 @@ export class Paquetes {
 								"url":"detallePaquete.html"
 							}
 						};
-						localStorage.setItem("TP_STR_PAQUETE_SELECCION", JSON.stringify(objetoInicial));
+						 localStorage.setItem("TP_STR_PAQUETE_SELECCION", JSON.stringify(objetoInicial));
 						Constantes.paqueteSeleccion = objetoInicial;
 					}
 				});
