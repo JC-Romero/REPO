@@ -1,0 +1,2544 @@
+html,
+body,
+* {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Montserrat", sans-serif;
+}
+
+.card-deck {
+    height: auto;
+}
+
+.card {
+    height: auto;
+}
+
+.modal {
+    height: auto;
+    overflow-y: visible;
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+.modal-open {
+    overflow: visible;
+}
+
+.modal-open .modal {
+    overflow-y: visible;
+}
+
+
+body {
+    background: rgba(255, 255, 255, 1);
+}
+
+a {
+    color: rgba(25, 136, 255, 1);
+    background: none;
+    font-size: 18px;
+}
+
+a:after {
+    content: "\f105";
+    position: relative;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    left: 10px;
+    top: 2px;
+    transition: 300ms;
+}
+
+a:hover {
+    color: rgba(25, 136, 255, 1);
+    text-decoration: none;
+}
+
+a:hover:after {
+    left: 20px;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+.generalButton {
+    background: rgba(25, 136, 255, 1);
+    color: rgba(255, 255, 255, 1);
+    padding: 15px 20px !important;
+    -webkit-border-radius: 24vw;
+    -moz-border-radius: 24vw;
+    border-radius: 24vw;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.generalButton:hover {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 1);
+}
+
+.generalButton:after {
+    display: none;
+}
+
+header {
+    height: auto;
+    position: absolute;
+    width: 100%;
+    background: rgba(30, 30, 40, 0.85);
+    z-index: 100;
+}
+
+header a:after {
+    display: none;
+}
+
+header .topMenu {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: auto;
+}
+
+header .topMenu a {
+    font-weight: 700;
+    color: rgba(255, 255, 255, 1);
+    font-size: 14px;
+}
+
+header .topMenu a:hover {
+    text-decoration: none;
+}
+
+header .topMenu .activeItem a {
+    font-weight: 700;
+    color: rgba(55, 194, 234, 1);
+    background: #1e1e28;
+    padding: 13px 12px 12px 12px;
+}
+
+header .topMenu .locationButton {
+    text-align: right;
+}
+
+header .topMenu .locationButton a {
+    background: rgba(224, 224, 224, 0.1);
+    padding: 5px 10px;
+    font-weight: 500;
+    font-size: 14px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+header .topMenu .locationButton a::before {
+    content: "\f3c5";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: relative;
+    right: 10px;
+    margin-left: 10px;
+}
+
+header .mainNav {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    background: rgba(30, 30, 40, 0.05);
+}
+
+header .mainNav img {
+    width: 132px;
+    margin: 0 auto;
+    height: auto;
+}
+
+header .mainNav ul.desktopNav {
+    list-style: none;
+}
+
+header .mainNav ul.desktopNav li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+header .mainNav ul.desktopNav li:first-child {
+    margin-left: 55px;
+}
+
+header .mainNav ul.desktopNav li a {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(246, 246, 246, 1);
+}
+
+header .mainNav ul.desktopNav li a:hover {
+    text-decoration: none;
+}
+
+header .mainNav ul.userMenu {
+    list-style: none;
+}
+
+header .mainNav ul.userMenu li {
+    display: inline-block !important;
+    margin: 0 10px;
+}
+
+header .mainNav ul.userMenu li a {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(246, 246, 246, 1);
+}
+
+header .mainNav ul.userMenu li a img {
+    width: 28px;
+    margin-right: 5px;
+}
+
+header .mainNav ul.userMenu li:first-child a span {
+    color: rgba(240, 78, 151, 1);
+}
+
+header .mainNav .mobileToggle a i {
+    color: rgba(255, 255, 255, 1);
+}
+
+header .mainNav .mobileToggle {
+    text-align: center;
+}
+
+header .mainNav .mobileCart {
+    text-align: center;
+}
+
+header .mainNav .mobileCart a img {
+    width: 28px;
+    margin: 0 auto;
+}
+
+.mobileMenuContainer {
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+    height: auto;
+    left: 0;
+    top: 0;
+    display: none;
+}
+
+.mobileMenuContainer .mobileMenu {
+    width: 100%;
+    background: rgba(30, 30, 40, 1);
+    height: 100vh;
+    -webkit-box-shadow: inset 0px 105px 10px 2px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: inset 0px 115px 10px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0px 115px 10px 2px rgba(0, 0, 0, 0.5);
+}
+
+.mobileMenu ul {
+    position: relative;
+    list-style: none;
+    padding-top: 8em;
+}
+
+.mobileMenu ul li {
+    display: block;
+    height: auto;
+    border-bottom: solid 1px rgba(75, 87, 111);
+}
+
+.mobileMenu ul li:first-child a {
+    color: rgba(240, 78, 151, 1)
+}
+
+.mobileMenu ul li a {
+    color: rgba(255, 255, 255, 1);
+    display: block;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.mobileMenu ul li:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.mobileMenu ul li a:after {
+    display: none;
+}
+
+.mobileMenu ul li a img {
+    width: 28px;
+    margin-right: 10px;
+}
+
+.mobileMenu .bottomMobileMenu {
+    bottom: 9%;
+    left: 15px;
+    position: relative;
+    background: rgba(22, 22, 27, 0.85);
+    width: 100%;
+    padding: 0;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    text-align: center;
+    box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5),
+        0 0 0 0 rgba(0, 0, 0, 0.5);
+
+}
+
+.mobileMenu .bottomMobileMenuItem {
+    padding: 0;
+    font-weight: 600;
+}
+
+.mobileMenu .bottomMobileMenuItem.activeItem a {
+    color: rgba(55, 194, 234, 1);
+}
+
+.mobileMenu .bottomMobileMenuItem a {
+    color: rgba(255, 255, 255, 1);
+}
+
+.mobileMenu .bottomMobileMenuItem a:after {
+    display: none;
+}
+
+/*Main Video Banner*/
+.mainVideoBanner {
+    position: relative;
+    background: url(../img/nuevos/backVideoMobile.png) top center no-repeat;
+    background-size: cover;
+    margin-bottom: 3px;
+    height: 100vh;
+}
+
+.videoContainer {
+    position: absolute;
+    padding: 0;
+    z-index: 9;
+}
+
+.videoContainer video {
+    width: 85% !important;
+    object-fit: cover;
+    position: relative;
+    left: 15%;
+}
+
+.videoContainer video::-webkit-media-controls {
+    display: none;
+}
+
+.videoContainer:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: block;
+    z-index: 9;
+    left: 0;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#16161b+0,16161b+15,16161b+15,16161b+100&1+1,1+15,0+100 */
+    background: -moz-linear-gradient(left,
+            rgba(22, 22, 27, 1) 0%,
+            rgba(22, 22, 27, 1) 1%,
+            rgba(22, 22, 27, 1) 15%,
+            rgba(22, 22, 27, 0) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,
+            rgba(22, 22, 27, 1) 0%,
+            rgba(22, 22, 27, 1) 1%,
+            rgba(22, 22, 27, 1) 15%,
+            rgba(22, 22, 27, 0) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,
+            rgba(22, 22, 27, 1) 0%,
+            rgba(22, 22, 27, 1) 1%,
+            rgba(22, 22, 27, 1) 15%,
+            rgba(22, 22, 27, 0) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#16161b', endColorstr='#0016161b', GradientType=1);
+    /* IE6-9 */
+}
+
+.bannersContainers {
+    position: absolute;
+    text-align: center;
+    top: 7.4rem;
+    width: 100%;
+    z-index: 11;
+    height: auto;
+}
+
+.bannersContainers .headerBanner {
+    color: rgba(255, 255, 255, 1);
+    font-size: 20px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e1e28+0,1e1e28+100&0.85+0,0+100 */
+    background: -moz-linear-gradient(top, rgba(30, 30, 40, 0.85) 0%, rgba(30, 30, 40, 0) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(30, 30, 40, 0.85) 0%, rgba(30, 30, 40, 0) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(30, 30, 40, 0.85) 0%, rgba(30, 30, 40, 0) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d91e1e28', endColorstr='#001e1e28', GradientType=0);
+    /* IE6-9 */
+    padding-top: 1rem;
+}
+
+.bannersContainers .headerBanner p {
+    font-size: 20px
+}
+
+.bannersContainers .headerBanner span a {
+    font-weight: 700;
+    color: rgba(255, 255, 255, 1);
+}
+
+.bannersContainers .headerBanner span a:hover {
+    text-decoration: none;
+}
+
+.bannersContainers .headerBanner span a:after {
+    display: none;
+}
+
+.bannersContainers .headerBanner a {
+    color: rgba(25, 136, 255, 1);
+    font-weight: 700;
+}
+
+.bannersContainers .headerBanner a:hover {
+    text-decoration: none;
+}
+
+.bannersContainers .headerBanner a:after {
+    content: "\f061";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: relative;
+    left: 20px;
+    top: 1px;
+}
+
+.bannersContainers .headerBanner hr {
+    width: 60%;
+    margin: 0 auto;
+    border: solid 1px rgba(240, 240, 240, 0.2);
+}
+
+.videoTextContainer {
+    width: 100%;
+    padding-top: 15%;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    height: auto;
+    color: rgba(255, 255, 255, 1);
+}
+
+.videoTextContainer .videoTextContent {
+    padding-top: 7%;
+}
+
+.videoTextContainer h1 {
+    font-size: 60px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.videoTextContainer h2 {
+    font-weight: 200;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    margin-bottom: 2rem;
+}
+
+.videoTextContainer h2 span {
+    color: rgba(255, 191, 63, 1);
+}
+
+.videoTextContainer .row h2 {
+    margin-bottom: 2rem;
+}
+
+.videoTextContainer .row a:after {
+    content: "\f105";
+    position: relative;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    left: 10px;
+    transition: 300ms;
+}
+
+.videoTextContainer .row a:hover {
+    text-decoration: none;
+}
+
+.videoTextContainer .row a:hover:after {
+    left: 15px;
+    text-decoration: none;
+}
+
+.videoTextContainer .row:nth-child(4) {
+    margin-bottom: 2rem;
+}
+
+.videoTextContainer .onDemandButton a:after {
+    display: none;
+}
+
+.videoTextContainer .onDemandButton a img {
+    max-width: 150px;
+}
+
+/**/
+.mainVideoBannerSecond {
+    position: relative;
+    background: url(../img/nuevos/backVideoMobile.png) top center no-repeat;
+    background-size: cover;
+}
+
+.videoContainerSecond {
+    position: absolute;
+    padding: 0;
+    z-index: 9;
+}
+
+.videoContainerSecond video {
+    width: 100% !important;
+    height: 50vh;
+    object-fit: cover;
+    position: relative;
+}
+
+.videoContainerSecond video::-webkit-media-controls {
+    display: none;
+}
+
+.videoContainerSecond:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: block;
+    z-index: 9;
+    left: 0;
+    top: 0;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e1e28+0,1e1e28+50&0+0,1+50 */
+    background: -moz-linear-gradient(top, rgba(30, 30, 40, 0) 0%, rgba(30, 30, 40, 1) 40%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(30, 30, 40, 0) 0%, rgba(30, 30, 40, 1) 40%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(30, 30, 40, 0) 0%, rgba(30, 30, 40, 1) 40%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#001e1e28', endColorstr='#1e1e28', GradientType=0);
+    /* IE6-9 */
+}
+
+.videoTextContainerSecond {
+    width: 100%;
+    padding-top: 8%;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    height: auto;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+}
+
+.videoTextContainerSecond .videoTextContentSecond {
+    padding-top: 4%;
+}
+
+.videoTextContainerSecond .videoTextContentSecond img {
+    width: 100%;
+    max-width: 128px;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+}
+
+.videoTextContainerSecond h1 {
+    font-size: 60px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.videoTextContainerSecond h2 {
+    font-weight: 200;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+}
+
+.videoTextContainerSecond h2 span {
+    color: rgba(255, 191, 63, 1);
+}
+
+.videoTextContainerSecond .row h2 img {
+    max-width: 128px;
+    margin-left: 10px;
+    height: auto;
+    position: relative;
+    top: 30px;
+}
+
+.videoTextContainerSecond .row a:after {
+    content: "\f105";
+    position: relative;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    left: 10px;
+    transition: 300ms;
+}
+
+.videoTextContainerSecond .row a:hover {
+    text-decoration: none;
+}
+
+.videoTextContainerSecond .row a:hover:after {
+    left: 15px;
+    text-decoration: none;
+}
+
+}
+
+.videoTextContainerSecond .onDemandButton a:after {
+    display: none;
+}
+
+.videoTextContainerSecond .onDemandButton a img {
+    max-width: 150px;
+}
+
+/**/
+/*Materialize Inputs*/
+
+.mat-input {
+    margin: 2% auto;
+    width: 100%;
+}
+
+.mat-input-outer {
+    display: table;
+    width: 100%;
+    position: relative;
+    background: transparent;
+}
+
+.mat-input-outer input {
+    height: 50px;
+    border-radius: 0;
+    border: none;
+    width: 100%;
+    padding: 0 5px;
+    font-size: 16px;
+    background: transparent;
+}
+
+.mat-input-outer input:focus {
+    border: none;
+    outline: none;
+}
+
+.mat-input-outer label {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    left: 15px;
+    position: absolute;
+    top: 18px;
+    transition: .2s;
+    color: rgba(117, 120, 123, 1);
+    cursor: text;
+    font-weight: normal;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+}
+
+.mat-input-outer .border {
+    height: 1px;
+    background: #000;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -ms-transition: .3s;
+}
+
+.mat-input-outer .border::before {
+    content: " ";
+    display: table;
+    height: 3px;
+    width: 0%;
+    background: transparent;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -ms-transition: .3s;
+    margin: 0 auto;
+}
+
+.mat-input-outer input:focus ~ .border {
+    background: transparent;
+}
+
+.mat-input-outer input:focus ~ .border::before {
+    width: 100%;
+    background: transparent;
+}
+
+.mat-input-outer input + label.active {
+    left: 5px;
+    top: -10px;
+    color: rgba(117, 120, 123, 1);
+    opacity: 1;
+    font-size: 14px;
+    filter: alpha(opacity=100);
+}
+
+/*Materialize Inputs*/
+
+.callUsModalContainer .modal-header p:first-child {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: rgba(117, 120, 123, 1);
+
+}
+
+.callUsModalContainer .modal-header p:nth-child(2) {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: rgba(117, 120, 123, 1);
+
+}
+
+.cardsRow {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    height: auto;
+    background: rgba(250, 250, 251, 1);
+}
+
+.cardsRow .card {
+    background: rgba(245, 245, 245, 1);
+    border: none;
+    height: auto;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.cardsRow .card img {
+    margin: 0 auto;
+    height: auto;
+    max-width: 650px;
+}
+
+.cardsRow .card .card-body .card-title {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    margin-bottom: 3rem !important;
+    height: auto;
+}
+
+.cardsRow .card .card-body .appImage {
+    text-align: center;
+    height: auto;
+    margin-bottom: 0;
+}
+
+.cardsRow .card .card-body .appImage a:after {
+    display: none;
+}
+
+.cardsRow .card .card-body .appImage a img {
+    width: 150px;
+    margin: 0 auto;
+}
+
+/*Package Colors */
+.packagesContainer {
+    background: rgba(250, 250, 250, 1);
+    height: auto;
+    padding-top: 3rem;
+}
+
+.packagesContainer .titlePackages {
+    margin-top: 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+.packagesContainer .titlePackages h1 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+}
+
+.packagesContainer .titlePackages h1 span {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+.packagesContainer .locationLink {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.packagesContainer .locationLink a:after {
+    display: none;
+}
+
+.packagesContainer .locationLink a:before {
+    content: "\f3c5";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: relative;
+    right: 10px;
+
+}
+
+.hiddenText {
+    visibility: hidden;
+}
+
+.mainContainerpackage {
+    height: auto;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.05);
+    margin-bottom: 3rem;
+    float: left;
+    cursor: pointer;
+}
+
+.mainContainerpackage.unbox {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fafafa+0,02a8e1+100&0+0,0.05+100 */
+    background: -moz-linear-gradient(45deg, rgba(250, 250, 250, 0) 0%, rgba(2, 168, 225, 0.05) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg,
+            rgba(250, 250, 250, 0) 0%,
+            rgba(2, 168, 225, 0.05) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg,
+            rgba(250, 250, 250, 0) 0%,
+            rgba(2, 168, 225, 0.05) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00fafafa', endColorstr='#0d02a8e1', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    height: auto;
+}
+
+.mainContainerpackage.match {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fafafa+0,3b4559+100&0+0,0.05+100 */
+    background: -moz-linear-gradient(45deg, rgba(250, 250, 250, 0) 0%, rgba(59, 69, 89, 0.05) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg,
+            rgba(250, 250, 250, 0) 0%,
+            rgba(59, 69, 89, 0.05) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg,
+            rgba(250, 250, 250, 0) 0%,
+            rgba(59, 69, 89, 0.05) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00fafafa', endColorstr='#0d3b4559', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+}
+
+.mainContainerpackage.surprisePlus {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fafafa+0,7d54a9+100&0+0,0.05+100 */
+    background: -moz-linear-gradient(45deg, rgba(250, 250, 250, 0) 0%, rgba(125, 84, 169, 0.05) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg,
+            rgba(250, 250, 250, 0) 0%,
+            rgba(125, 84, 169, 0.05) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg,
+            rgba(250, 250, 250, 0) 0%,
+            rgba(125, 84, 169, 0.05) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00fafafa', endColorstr='#0d7d54a9', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+}
+
+.mainContainerpackage.emotionPlus {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fafafa+0,62c3e6+100&0+0,0.05+100 */
+    background: -moz-linear-gradient(45deg, rgba(250, 250, 250, 0) 0%, rgba(98, 195, 230, 0.05) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg,
+            rgba(250, 250, 250, 0) 0%,
+            rgba(98, 195, 230, 0.05) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg,
+            rgba(250, 250, 250, 0) 0%,
+            rgba(98, 195, 230, 0.05) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00fafafa', endColorstr='#0d62c3e6', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+}
+
+.mainContainerpackage.emotion {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fafafa+0,8cc8e6+100&0+0,0.05+100 */
+    background: -moz-linear-gradient(45deg, rgba(250, 250, 250, 0) 0%, rgba(140, 200, 230, 0.05) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg,
+            rgba(250, 250, 250, 0) 0%,
+            rgba(140, 200, 230, 0.05) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg,
+            rgba(250, 250, 250, 0) 0%,
+            rgba(140, 200, 230, 0.05) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00fafafa', endColorstr='#0d8cc8e6', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+}
+
+.mainContainerpackage.funPlus {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fafafa+0,fcb100+100&0+0,0.05+100 */
+    background: -moz-linear-gradient(45deg, rgba(250, 250, 250, 0) 0%, rgba(252, 177, 0, 0.05) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg,
+            rgba(250, 250, 250, 0) 0%,
+            rgba(252, 177, 0, 0.05) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg,
+            rgba(250, 250, 250, 0) 0%,
+            rgba(252, 177, 0, 0.05) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00fafafa', endColorstr='#0dfcb100', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+}
+
+.mainContainerpackage.fun {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fafafa+0,f6c255+100&0+0,0.05+100 */
+    background: -moz-linear-gradient(45deg, rgba(250, 250, 250, 0) 0%, rgba(246, 194, 85, 0.05) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg,
+            rgba(250, 250, 250, 0) 0%,
+            rgba(246, 194, 85, 0.05) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg,
+            rgba(250, 250, 250, 0) 0%,
+            rgba(246, 194, 85, 0.05) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00fafafa', endColorstr='#0df6c255', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+}
+
+.mainContainerpackage.starter {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fafafa+0,b4b4b4+100&0+0,0.05+100 */
+    background: -moz-linear-gradient(45deg, rgba(250, 250, 250, 0) 0%, rgba(180, 180, 180, 0.05) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg,
+            rgba(250, 250, 250, 0) 0%,
+            rgba(180, 180, 180, 0.05) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg,
+            rgba(250, 250, 250, 0) 0%,
+            rgba(180, 180, 180, 0.05) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00fafafa', endColorstr='#0db4b4b4', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+}
+
+.mainContainerpackage:first-child {
+    margin-left: 0;
+}
+
+.mainContainerpackage .imagePackage {
+    width: 125px;
+    margin: 0 auto;
+    text-align: center;
+    height: auto;
+}
+
+.mainContainerpackage .imagePackage img {
+    margin: 8px 0 0 0;
+    max-width: 100%;
+    height: auto;
+}
+
+.mainContainerpackage,
+.mainContainerpackage .row,
+.mainContainerpackage .packageInfoContainer,
+.mainContainerpackage .titlePackage,
+.mainContainerpackage .velocityPackage,
+.mainContainerpackage .descriptionPackage,
+.mainContainerpackage .imagePackage,
+.mainContainerpackage .descriptionApp,
+.mainContainerpackage .packageDiscount,
+.mainContainerpackage .packagePrice,
+.mainContainerpackage .packagePrice {
+    height: auto;
+}
+
+.mainContainerpackage hr {
+    width: 60%;
+    border: #e0e0e0 solid 1px;
+    margin: 0 auto;
+    height: auto;
+}
+
+.mainContainerpackage .packageInfoContainer {
+    position: relative;
+    top: -1.5rem;
+}
+
+/*Unbox*/
+.unbox .titlePackage {
+    margin-bottom: 1.5rem;
+    height: auto;
+}
+
+.unbox .titlePackage p {
+    color: rgba(255, 255, 255, 1);
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#00aae3+0,59cbe8+100&0.8+0,0.8+100 */
+    background: -moz-linear-gradient(45deg, rgba(0, 170, 227, 0.8) 0%, rgba(89, 203, 232, 0.8) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg,
+            rgba(0, 170, 227, 0.8) 0%,
+            rgba(89, 203, 232, 0.8) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg,
+            rgba(0, 170, 227, 0.8) 0%,
+            rgba(89, 203, 232, 0.8) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cc00aae3', endColorstr='#cc59cbe8', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    padding: 6px 10px;
+    display: inline;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.05);
+    height: auto;
+}
+
+.unbox .velocityPackage {
+    color: #33bbe8;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    margin: 0.5rem 0;
+    height: auto;
+}
+
+.unbox .descriptionPackage {
+    height: auto;
+}
+
+.unbox .descriptionPackage p {
+    color: #3b4559;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    height: auto;
+}
+
+.unbox .descriptionPackage p span {
+    color: #3b4559;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    height: auto;
+}
+
+.unbox .imagePackage {
+    width: 125px;
+    margin: 0 auto;
+    text-align: center;
+    height: auto;
+}
+
+.unbox .imagePackage img {
+    margin: 8px 0 0 0;
+    max-width: 100%;
+    height: auto;
+}
+
+.unbox .descriptionApp {
+    margin-bottom: 0.5rem;
+    height: auto;
+}
+
+.unbox .descriptionApp p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #3b4559;
+    line-height: 28px;
+    height: auto;
+}
+
+.unbox .descriptionApp p span {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 32px;
+    height: auto;
+}
+
+.unbox .packageDiscount {
+    height: auto;
+}
+
+.unbox .packageDiscount p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 32px;
+    background: rgba(239, 138, 0, 0.15);
+    color: rgba(239, 108, 0, 1);
+    text-transform: uppercase;
+    text-align: center;
+    padding: 5px 16px;
+    display: inline;
+    height: auto;
+    white-space: nowrap;
+}
+
+.unbox .packagePrice {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    height: auto;
+}
+
+.unbox .packagePrice p a {
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: rgba(25, 138, 255, 1);
+    height: auto;
+}
+
+/*Unbox*/
+/*Match*/
+.match .titlePackage {
+    margin-bottom: 1.5rem;
+}
+
+.match .titlePackage p {
+    color: rgba(255, 255, 255, 1);
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e4002b+0,e02d1d+100&0.8+0,0.8+100 */
+    background: -moz-linear-gradient(45deg, rgba(228, 0, 43, 0.8) 0%, rgba(224, 45, 29, 0.8) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg,
+            rgba(228, 0, 43, 0.8) 0%,
+            rgba(224, 45, 29, 0.8) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg,
+            rgba(228, 0, 43, 0.8) 0%,
+            rgba(224, 45, 29, 0.8) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cce4002b', endColorstr='#cce02d1d', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    padding: 6px 10px;
+    display: inline;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.match .velocityPackage {
+    color: rgba(59, 69, 89, 1);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    margin: 0.5rem 0;
+}
+
+.match .descriptionPackage p {
+    color: #3b4559;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.match .descriptionPackage p span {
+    color: #3b4559;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+.match .imagePackage {
+    width: 125px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.match .imagePackage img {
+    margin: 8px 0 0 0;
+}
+
+.match .descriptionApp {
+    margin-bottom: 0.5rem;
+}
+
+.match .descriptionApp p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #3b4559;
+    line-height: 28px;
+}
+
+.match .descriptionApp p span {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 32px;
+}
+
+.match .packageDiscount {
+    height: auto;
+}
+
+.match .packageDiscount p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 32px;
+    background: rgba(239, 138, 0, 0.15);
+    color: rgba(239, 108, 0, 1);
+    text-transform: uppercase;
+    text-align: center;
+    padding: 5px 16px;
+    display: inline;
+    white-space: nowrap;
+}
+
+.match .packagePrice {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.match .packagePrice p a {
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: rgba(117, 120, 123, 1);
+}
+
+.match .packagePrice p a span {
+    color: rgba(59, 69, 89, 1);
+}
+
+/*Match*/
+/*Surprise Plus*/
+.surprisePlus .titlePackage {
+    margin-bottom: 1.5rem;
+}
+
+.surprisePlus .titlePackage p {
+    color: rgba(255, 255, 255, 1);
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#7d54a9+0,b28ad1+100 */
+    background: rgb(125, 84, 169);
+    /* Old browsers */
+    background: -moz-linear-gradient(45deg, rgba(125, 84, 169, 1) 0%, rgba(178, 138, 209, 1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg,
+            rgba(125, 84, 169, 1) 0%,
+            rgba(178, 138, 209, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg,
+            rgba(125, 84, 169, 1) 0%,
+            rgba(178, 138, 209, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7d54a9', endColorstr='#b28ad1', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    padding: 6px 10px;
+    display: inline;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.surprisePlus .velocityPackage {
+    color: rgba(125, 84, 169, 1);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    margin: 0.5rem 0;
+}
+
+.surprisePlus .descriptionPackage p {
+    color: rgba(125, 84, 169, 1);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.surprisePlus .descriptionPackage p span {
+    color: rgba(125, 84, 169, 1);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+.surprisePlus .imagePackage {
+    width: 125px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.surprisePlus .imagePackage img {
+    margin: 8px 0 0 0;
+}
+
+.surprisePlus .descriptionApp {
+    margin-bottom: 0.5rem;
+}
+
+.surprisePlus .descriptionApp p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #3b4559;
+    line-height: 28px;
+    visibility: hidden;
+}
+
+.surprisePlus .descriptionApp p span {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 32px;
+}
+
+.surprisePlus .packageDiscount p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 32px;
+    background: rgba(239, 138, 0, 0.15);
+    color: rgba(239, 108, 0, 1);
+    text-transform: uppercase;
+    text-align: center;
+    padding: 5px 16px;
+    display: inline;
+}
+
+.surprisePlus .packagePrice {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.surprisePlus .packagePrice p a {
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: rgba(117, 120, 123, 1);
+}
+
+.surprisePlus .packagePrice p a span {
+    color: rgba(59, 69, 89, 1);
+}
+
+/*Surprise Plus*/
+
+/*Emotion Plus*/
+.emotionPlus .titlePackage {
+    margin-bottom: 1.5rem;
+}
+
+.emotionPlus .titlePackage p {
+    color: rgba(255, 255, 255, 1);
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#62c3e6+0,99e7ff+100 */
+    background: rgb(98, 195, 230);
+    /* Old browsers */
+    background: -moz-linear-gradient(45deg, rgba(98, 195, 230, 1) 0%, rgba(153, 231, 255, 1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg,
+            rgba(98, 195, 230, 1) 0%,
+            rgba(153, 231, 255, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg,
+            rgba(98, 195, 230, 1) 0%,
+            rgba(153, 231, 255, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#62c3e6', endColorstr='#99e7ff', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    padding: 6px 10px;
+    display: inline;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.emotionPlus .velocityPackage {
+    color: rgba(98, 195, 230, 1);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    margin: 0.5rem 0;
+}
+
+.emotionPlus .descriptionPackage p {
+    color: rgba(98, 195, 230, 1);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.emotionPlus .descriptionPackage p span {
+    color: rgba(98, 195, 230, 1);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+.emotionPlus .imagePackage {
+    width: 125px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.emotionPlus .imagePackage img {
+    margin: 8px 0 0 0;
+}
+
+.emotionPlus .descriptionApp {
+    margin-bottom: 0.5rem;
+}
+
+.emotionPlus .descriptionApp p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #3b4559;
+    line-height: 28px;
+    visibility: hidden;
+}
+
+.emotionPlus .descriptionApp p span {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 32px;
+}
+
+.emotionPlus .packageDiscount p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 32px;
+    background: rgba(239, 138, 0, 0.15);
+    color: rgba(239, 108, 0, 1);
+    text-transform: uppercase;
+    text-align: center;
+    padding: 5px 16px;
+    display: inline;
+}
+
+.emotionPlus .packagePrice {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.emotionPlus .packagePrice p a {
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: rgba(117, 120, 123, 1);
+}
+
+.emotionPlus .packagePrice p a span {
+    color: rgba(59, 69, 89, 1);
+}
+
+/*Emotion Plus*/
+/*Emotion*/
+.emotion .titlePackage {
+    margin-bottom: 1.5rem;
+}
+
+.emotion .titlePackage p {
+    color: rgba(255, 255, 255, 1);
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#8cc8e6+0,b1e5f6+100 */
+    background: rgb(140, 200, 230);
+    /* Old browsers */
+    background: -moz-linear-gradient(45deg, rgba(140, 200, 230, 1) 0%, rgba(177, 229, 246, 1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg,
+            rgba(140, 200, 230, 1) 0%,
+            rgba(177, 229, 246, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg,
+            rgba(140, 200, 230, 1) 0%,
+            rgba(177, 229, 246, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8cc8e6', endColorstr='#b1e5f6', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    padding: 6px 10px;
+    display: inline;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.emotion .velocityPackage {
+    color: rgba(98, 195, 230, 1);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    margin: 0.5rem 0;
+}
+
+.emotion .descriptionPackage p {
+    color: rgba(98, 195, 230, 1);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.emotion .descriptionPackage p span {
+    color: rgba(98, 195, 230, 1);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+.emotion .imagePackage {
+    width: 125px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.emotion .imagePackage img {
+    margin: 8px 0 0 0;
+}
+
+.emotion .descriptionApp {
+    margin-bottom: 0.5rem;
+}
+
+.emotion .descriptionApp p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #3b4559;
+    line-height: 28px;
+    visibility: hidden;
+}
+
+.emotion .descriptionApp p span {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 32px;
+}
+
+.emotion .packageDiscount p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 32px;
+    background: rgba(239, 138, 0, 0.15);
+    color: rgba(239, 108, 0, 1);
+    text-transform: uppercase;
+    text-align: center;
+    padding: 5px 16px;
+    display: inline;
+}
+
+.emotion .packagePrice {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.emotion .packagePrice p a {
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: rgba(117, 120, 123, 1);
+}
+
+.emotion .packagePrice p a span {
+    color: rgba(59, 69, 89, 1);
+}
+
+/*Emotion*/
+/*Fun Plus*/
+.funPlus .titlePackage {
+    margin-bottom: 1.5rem;
+}
+
+.funPlus .titlePackage p {
+    color: rgba(255, 255, 255, 1);
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fcb100+0,f6e9b1+100 */
+    background: rgb(252, 177, 0);
+    /* Old browsers */
+    background: -moz-linear-gradient(45deg, rgba(252, 177, 0, 1) 0%, rgba(246, 233, 177, 1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg,
+            rgba(252, 177, 0, 1) 0%,
+            rgba(246, 233, 177, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg,
+            rgba(252, 177, 0, 1) 0%,
+            rgba(246, 233, 177, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcb100', endColorstr='#f6e9b1', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    padding: 6px 10px;
+    display: inline;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.funPlus .velocityPackage {
+    color: rgba(252, 177, 0, 1);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    margin: 0.5rem 0;
+}
+
+.funPlus .descriptionPackage p {
+    color: rgba(252, 177, 0, 1);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.funPlus .descriptionPackage p span {
+    color: rgba(252, 177, 0, 1);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+.funPlus .imagePackage {
+    width: 125px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.funPlus .imagePackage img {
+    margin: 8px 0 0 0;
+}
+
+.funPlus .descriptionApp {
+    margin-bottom: 0.5rem;
+}
+
+.funPlus .descriptionApp p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #3b4559;
+    line-height: 28px;
+    visibility: hidden;
+}
+
+.funPlus .descriptionApp p span {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 32px;
+}
+
+.funPlus .packageDiscount p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 32px;
+    background: rgba(239, 138, 0, 0.15);
+    color: rgba(239, 108, 0, 1);
+    text-transform: uppercase;
+    text-align: center;
+    padding: 5px 16px;
+    display: inline;
+}
+
+.funPlus .packagePrice {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.funPlus .packagePrice p a {
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: rgba(117, 120, 123, 1);
+}
+
+.funPlus .packagePrice p a span {
+    color: rgba(59, 69, 89, 1);
+}
+
+/*Fun Plus*/
+/*Fun*/
+.fun .titlePackage {
+    margin-bottom: 1.5rem;
+}
+
+.fun .titlePackage p {
+    color: rgba(255, 255, 255, 1);
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f6c255+0,f6e6af+100 */
+    background: rgb(246, 194, 85);
+    /* Old browsers */
+    background: -moz-linear-gradient(45deg, rgba(246, 194, 85, 1) 0%, rgba(246, 230, 175, 1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg,
+            rgba(246, 194, 85, 1) 0%,
+            rgba(246, 230, 175, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg,
+            rgba(246, 194, 85, 1) 0%,
+            rgba(246, 230, 175, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6c255', endColorstr='#f6e6af', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    padding: 6px 10px;
+    display: inline;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.fun .velocityPackage {
+    color: rgba(246, 194, 85, 1);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    margin: 0.5rem 0;
+}
+
+.fun .descriptionPackage p {
+    color: rgba(246, 194, 85, 1);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.fun .descriptionPackage p span {
+    color: rgba(246, 194, 85, 1);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+.fun .imagePackage {
+    width: 125px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.fun .imagePackage img {
+    margin: 8px 0 0 0;
+}
+
+.fun .descriptionApp {
+    margin-bottom: 0.5rem;
+}
+
+.fun .descriptionApp p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #3b4559;
+    line-height: 28px;
+    visibility: hidden;
+}
+
+.fun .descriptionApp p span {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 32px;
+}
+
+.fun .packageDiscount p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 32px;
+    background: rgba(239, 138, 0, 0.15);
+    color: rgba(239, 108, 0, 1);
+    text-transform: uppercase;
+    text-align: center;
+    padding: 5px 16px;
+    display: inline;
+}
+
+.fun .packagePrice {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.fun .packagePrice p a {
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: rgba(117, 120, 123, 1);
+}
+
+.fun .packagePrice p a span {
+    color: rgba(59, 69, 89, 1);
+}
+
+/*Fun*/
+/*Starter*/
+.starter .titlePackage {
+    margin-bottom: 1.5rem;
+}
+
+.starter .titlePackage p {
+    color: rgba(255, 255, 255, 1);
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#b4b4b4+0,dddddd+100 */
+    background: rgb(180, 180, 180);
+    /* Old browsers */
+    background: -moz-linear-gradient(45deg, rgba(180, 180, 180, 1) 0%, rgba(221, 221, 221, 1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg,
+            rgba(180, 180, 180, 1) 0%,
+            rgba(221, 221, 221, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg,
+            rgba(180, 180, 180, 1) 0%,
+            rgba(221, 221, 221, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b4b4b4', endColorstr='#dddddd', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    padding: 6px 10px;
+    display: inline;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.starter .velocityPackage {
+    color: rgba(180, 180, 180, 1);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    margin: 0.5rem 0;
+}
+
+.starter .descriptionPackage p {
+    color: rgba(180, 180, 180, 1);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.starter .descriptionPackage p span {
+    color: rgba(180, 180, 180, 1);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+.starter .imagePackage {
+    width: 125px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.starter .imagePackage img {
+    margin: 8px 0 0 0;
+}
+
+.starter .descriptionApp {
+    margin-bottom: 0.5rem;
+}
+
+.starter .descriptionApp p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #3b4559;
+    line-height: 28px;
+    visibility: hidden;
+}
+
+.starter .descriptionApp p span {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 32px;
+}
+
+.starter .packageDiscount p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 32px;
+    background: rgba(239, 138, 0, 0.15);
+    color: rgba(239, 108, 0, 1);
+    text-transform: uppercase;
+    text-align: center;
+    padding: 5px 16px;
+    display: inline;
+}
+
+.starter .packagePrice {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.starter .packagePrice p a {
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: rgba(117, 120, 123, 1);
+}
+
+.starter .packagePrice p a span {
+    color: rgba(59, 69, 89, 1);
+}
+
+/*Fun*/
+/*Business*/
+.bussinesBranches {
+    height: auto;
+    padding-bottom: 10rem;
+    padding-top: 2rem;
+}
+
+/*Companies*/
+.bussinesBranches .companies {
+    padding-top: 10px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: rgba(226, 2, 39, 1);
+    position: relative;
+    max-height: 300px;
+    box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+.bussinesBranches .companies .branchImage,
+.bussinesBranches .companies .branchImage div {
+    text-align: center;
+    padding: 0;
+}
+
+.bussinesBranches .companies .branchImage:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: block;
+    z-index: 9;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e0d7d1+0,e20227+50&0+0,1+50 */
+    background: -moz-linear-gradient(top, rgba(224, 215, 209, 0) 0%, rgba(226, 2, 39, 1) 65%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(224, 215, 209, 0) 0%, rgba(226, 2, 39, 1) 65%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(224, 215, 209, 0) 0%, rgba(226, 2, 39, 1) 65%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00e0d7d1', endColorstr='#e20227', GradientType=0);
+    /* IE6-9 */
+}
+
+.bussinesBranches .companies .branchImage div img {
+    width: 100%;
+}
+
+.bussinesBranches .companies .branchDescription {
+    background: rgba(255, 255, 255, 1);
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    position: relative;
+    z-index: 10;
+    top: -5rem;
+    text-align: center;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+.bussinesBranches .companies .branchDescription img {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.bussinesBranches .companies .branchDescription p {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-size: 16px;
+}
+
+.bussinesBranches .companies .branchDescription a {
+    background: rgba(26, 118, 210, 0.2);
+    padding: 5px 15px;
+}
+
+.bussinesBranches .companies .branchDescription a:after {
+    display: none;
+}
+
+/*Companies*/
+/*Entrepreneur*/
+.bussinesBranches .entrepreneur {
+    padding-top: 10px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: rgba(8, 155, 154, 1);
+    position: relative;
+    max-height: 300px;
+    box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+.bussinesBranches .entrepreneur .branchImage,
+.bussinesBranches .entrepreneur .branchImage div {
+    text-align: center;
+    padding: 0;
+}
+
+.bussinesBranches .entrepreneur .branchImage:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: block;
+    z-index: 9;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e0d7d1+0,089b9a+50&0+0,1+50 */
+    background: -moz-linear-gradient(top, rgba(224, 215, 209, 0) 0%, rgba(8, 155, 154, 1) 65%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(224, 215, 209, 0) 0%, rgba(8, 155, 154, 1) 65%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(224, 215, 209, 0) 0%, rgba(8, 155, 154, 1) 65%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00e0d7d1', endColorstr='#089b9a', GradientType=0);
+    /* IE6-9 */
+}
+
+.bussinesBranches .entrepreneur .branchImage div img {
+    width: 100%;
+}
+
+.bussinesBranches .entrepreneur .branchDescription {
+    background: rgba(255, 255, 255, 1);
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    position: relative;
+    z-index: 10;
+    top: -5rem;
+    text-align: center;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+.bussinesBranches .entrepreneur .branchDescription img {
+    max-width: 156px;
+    height: auto;
+}
+
+.bussinesBranches .entrepreneur .branchDescription p {
+    margin-bottom: 2.5rem;
+    font-size: 16px;
+}
+
+.bussinesBranches .entrepreneur .branchDescription a {
+    background: rgba(26, 118, 210, 0.2);
+    padding: 5px 15px;
+}
+
+.bussinesBranches .entrepreneur .branchDescription a:after {
+    display: none;
+}
+
+/*Entrepreneur*/
+
+
+/*Business*/
+/*Location Footer*/
+.locationSharing {
+    background: rgba(26, 118, 210, 1);
+    height: auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+}
+
+.locationSharing .locationIcon i {
+    font-size: 72px;
+    margin-bottom: 2rem;
+}
+
+.locationSharing .locationTitle h1 {
+    font-size: 24px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+}
+
+.locationSharing .locationTitle h1 span {
+    font-weight: 700;
+}
+
+/*Materialize Inputs*/
+
+.locationSharing .mat-input {
+    margin: 2% auto;
+    width: 100%;
+}
+
+.locationSharing .mat-input-outer {
+    display: table;
+    width: 100%;
+    position: relative;
+    background: transparent;
+    margin-bottom: 30px;
+}
+
+.locationSharing .mat-input-outer input {
+    height: 50px;
+    border-radius: 0;
+    border: none;
+    width: 100%;
+    padding: 0 5px;
+    font-size: 16px;
+    background: transparent;
+    color: rgba(255, 255, 255, 1);
+}
+
+.locationSharing .mat-input-outer input:focus {
+    border: none;
+    outline: none;
+}
+
+.locationSharing .mat-input-outer label {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    left: 15px;
+    position: absolute;
+    top: 18px;
+    transition: .2s;
+    color: rgba(255, 255, 255, 1);
+    cursor: text;
+    font-weight: normal;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+    white-space: nowrap;
+}
+
+.locationSharing .mat-input-outer .border {
+    height: 1px;
+    background: #ffffff;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -ms-transition: .3s;
+    border: none !important;
+}
+
+.locationSharing .mat-input-outer .border::before {
+    content: " ";
+    display: table;
+    height: 3px;
+    width: 0%;
+    background: transparent;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -ms-transition: .3s;
+    margin: 0 auto;
+}
+
+.locationSharing .mat-input-outer input:focus ~ .border {
+    border-bottom: solid 1px rgba(255, 255, 255, 1) !important;
+}
+
+.locationSharing .mat-input-outer input:focus ~ .border::before {
+    width: 100%;
+    background: transparent;
+}
+
+.locationSharing .mat-input-outer input + label.active {
+    left: 5px;
+    top: -10px;
+    color: rgba(255, 255, 255, 1);
+    opacity: 1;
+    font-size: 14px;
+    filter: alpha(opacity=100);
+}
+
+.locationSharing .locationButton {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.locationSharing .locationButton .generalButton {
+    border: rgba(255, 255, 255, 1) solid 1px;
+    background: rgba(26, 118, 210, 1);
+}
+
+/*Materialize Inputs*/
+/*Location Footer*/
+/*Footer*/
+footer {
+    height: auto;
+    font-size: 14px;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+}
+
+footer a {
+    display: block;
+}
+
+footer a:after {
+    display: none;
+}
+
+footer p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    color: rgba(117, 120, 123, 1);
+    text-transform: uppercase;
+}
+
+footer .footerColumn:nth-child(4) li a {
+    color: rgba(25, 136, 255, 1);
+}
+
+footer .footerColumn p {
+    margin-bottom: 1rem;
+}
+
+footer .footerColumn:nth-child(6) p:first-child {
+    margin-bottom: 0;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li a {
+    color: rgba(117, 120, 123, 1);
+    font-size: 14px;
+}
+
+footer ul li a:hover {
+    color: rgba(117, 120, 123, 1);
+}
+
+footer ul.footerSocials li {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+footer .footerLegals ul li {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+footer .footerLegals ul li a {
+    font-size: 14px;
+}
+
+footer .footerLegals ul li a:after {
+    content: "\f111";
+    display: inline;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 2px;
+    position: relative;
+    top: -3px;
+    margin-right: 10px;
+}
+
+footer .footerLegals ul li a:hover:after {
+    left: 10px;
+}
+
+footer .footerLegals ul li:last-child a:after {
+    display: none;
+}
+
+footer .footerLegals ul li:first-child {
+    margin-left: 0;
+}
+
+footer .footerLegals ul li:last-child {
+    margin-left: 0;
+}
+
+footer .footerLegals p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    text-transform: none;
+}
+
+footer .legalAdvice {
+    margin-top: 2rem;
+}
+
+footer .legalAdvice p {
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 9px;
+    text-transform: none;
+}
+
+/*Footer*/
+/*Packages View*/
+.headerPackages {
+    height: auto;
+    background: url(../img/nuevos/backVideoMobile.png) top center no-repeat;
+    background-size: 100% 70%;
+    padding-top: 10rem;
+    padding-bottom: 3rem;
+    background-color: rgba(246, 246, 246, 1);
+}
+
+.headerPackages .titleRowPackages {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.headerPackages .titleRowPackages h1 {
+    font-size: 57px;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 600;
+}
+
+.headerPackagesContainer {}
+
+.generalPackage {
+    background: rgba(250, 250, 250, 1);
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    border-radius: 16px;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    box-shadow: 0 9px 18px 0 rgba(0, 0, 0, 0.1);
+    height: 340px;
+    margin-bottom: 2rem;
+}
+
+.generalPackage .row {
+    height: auto;
+}
+
+.generalPackage .paragraphRow {
+    margin-bottom: 1rem;
+}
+
+.generalPackage p {
+    color: rgba(59, 69, 89, 1);
+    font-weight: 400;
+    font-size: 26px;
+    height: auto;
+}
+
+.generalPackage p span {
+    font-weight: 800;
+}
+
+.generalPackage .titleRow {
+    margin-bottom: 4rem;
+}
+
+.generalPackage h1 {
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.generalPackage .iconsRow {
+    text-align: right;
+    font-size: 36px;
+    margin-bottom: 1rem;
+    position: absolute;
+    top: 80%;
+}
+
+.generalPackage .iconsRow p i {
+    margin-right: 10px;
+}
+
+.generalPackage .iconsRow p i:last-child {
+    margin-right: 0;
+}
+
+.generalPackage .iconsRow p i.fa-plus {
+    font-size: 10px;
+    position: relative;
+    top: -6px;
+    color: rgba(117, 120, 123, 1);
+}
+
+.generalPackage .iconsRow p i.fa-wifi {
+    background: linear-gradient(213.73deg, rgba(255, 191, 63, 1) 0%, rgba(219, 228, 66, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.generalPackage .iconsRow p i.fa-tv {
+    background: linear-gradient(215.84deg, rgba(228, 0, 43, 1) 0%, rgba(240, 78, 152, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.generalPackage .iconsRow p i.fa-phone-alt {
+    background: linear-gradient(215.02deg, rgba(240, 78, 152, 1) 0%, rgba(130, 70, 175, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.locationPackagesContainer {
+    height: auto;
+}
+
+.locationPackagesContainer {
+    background-color: rgba(246, 246, 246, 1);
+    padding-bottom: 4rem;
+    padding-top: 4rem;
+}
+
+.locationPackages {
+    margin-bottom: 2rem;
+    height: auto;
+}
+
+.locationPackages p {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.bestPackageContainer {
+    height: auto;
+    background-color: rgba(246, 246, 246, 1);
+    padding-bottom: 6rem;
+}
+
+.bestPackageContainer .bestPackageTitle p {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.bestPackageImageContainer {
+    width: 100%;
+    background-image: url(../img/nuevos/gettyimages-1194473556-2048x2048.png), linear-gradient(90deg, rgba(255, 0, 207, 1) 0.06%, rgba(120, 58, 106, 1) 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding-bottom: 2.5rem;
+    padding-top: 1.5rem;
+    z-index: 200;
+    -webkit-border-radius: 32px;
+    -moz-border-radius: 32px;
+    border-radius: 32px;
+}
+
+.bestPackageImageContainer p {
+    color: rgba(255, 169, 169, 1);
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.bestPackageImageContainer p.bestPackageName span {
+    background: linear-gradient(270deg, rgba(250, 119, 102, 1) 0%, rgba(244, 66, 54, 1) 100%);
+    font-size: 32px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+
+.bestPackageImageContainer h1 {
+    font-weight: 700;
+    font-size: 48px;
+    color: rgba(245, 245, 245, 1);
+    margin-bottom: 2rem;
+}
+
+.bestPackageImageContainer .bestPackageDescription {
+    font-weight: 500;
+    font-size: 20px;
+    color: rgba(245, 245, 245, 1);
+}
+
+.bestPackageImageContainer p.bestPackageDescription {
+    margin-bottom: 2rem;
+}
+
+.bestPackageImageContainer p.bestPackageDescription span {
+    color: rgba(255, 191, 63, 1) !important;
+}
+
+.packageAdvantages {
+    height: auto;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    text-align: center;
+}
+
+.packageAdvantages .advantagesTitle {
+    margin-bottom: 2rem;
+}
+
+.packageAdvantages .advantagesTitle h1 {
+    font-weight: 700;
+}
+
+.packageAdvantages .advantagesTiles .advantageDescription {
+    margin-bottom: 2rem;
+}
+
+.packageAdvantages .advantagesTiles .advantageDescription h2 {
+    font-weight: 700;
+    font-size: 20px;
+}
