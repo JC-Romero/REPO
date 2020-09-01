@@ -2,7 +2,7 @@
     <div class="col-12 col-sm-12 col-md-11 col-lg-11 col-xl-11 mx-auto">
         <div class="row topMenu">
             <div class="col-md-2 col-lg-1 col-xl-1 activeItem d-none d-sm-none d-md-block">
-                <a href="index.html">Hogar</a>
+                <a href="{{root}}">Hogar</a>
             </div>
             <div class="col-md-2 col-lg-1 col-xl-1 d-none d-sm-none d-md-block">
                 <a href="https://www.negociostotalplay.com.mx/?utm_source=sitio&utm_medium=header" target="_blank">Negocio</a>
@@ -10,8 +10,8 @@
             <div class="col-md-2 col-lg-1 col-xl-1 d-none d-sm-none d-md-block">
                 <a href="https://totalplayempresarial.com.mx/?utm_source=sitio&utm_medium=header" target="_blank">Empresa</a>
             </div>
-            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 ml-md-auto locationButton" id="validaCoberturaHeader">
-                <a href="#">Validar ubicación</a>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 ml-md-auto locationButton">
+                <a href="#" id="cd-cobertura-index">Validar ubicación</a>
             </div>
         </div>
         <nav id="menuTopBar" class="row mainNav">
@@ -23,7 +23,7 @@
                 <a href="index.html"><img src="{{root}}assets/img/nuevos/totalplay-logoWhite.svg" alt="Totalplay"></a>
             </div>
             <div class="col-2 col-sm-2 d-block d-sm-block d-md-none mobileCart">
-                <a href="#"><img src="{{root}}assets/img/nuevos/icons/account.svg"></a>
+                <a href="/"><img src="{{root}}assets/img/nuevos/icons/account.svg"></a>
             </div>
             <ul class="desktopNav d-none d-sm-none d-md-block">
                 <li><a href="servicios.html">Servicios</a></li>
@@ -38,4 +38,26 @@
         </nav>
     </div>
     {{> cobertura}}
+    <div id="mobile" class="mobileMenuContainer">
+        <div class="mobileMenu d-block d-sm-block d-md-none">
+            <ul>
+                <li><a href="https://totalgo.totalplay.com.mx:444/TPW/TotalPlay.htm" target="_blank"><img src="{{root}}assets/img/nuevos/icons/liveTv.svg"><span>Ver la Tv</span></a></li>
+                <li><a href="paquetes.html"><img src="{{root}}assets/img/nuevos/icons/cart.svg">Carrito</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="paquetes.html">Paquetes</a></li>
+                <li><a href="soporte.html">Ayuda y soporte</a></li>
+            </ul>
+            <div class="row bottomMobileMenu">
+                <div class="col-4 bottomMobileMenuItem activeItem">
+                    <a href="index.html">Hogar</a>
+                </div>
+                <div class="col-4 bottomMobileMenuItem">
+                    <a href="https://www.negociostotalplay.com.mx/?utm_source=sitio&utm_medium=header" target="_blank">Negocio</a>
+                </div>
+                <div class="col-4 bottomMobileMenuItem">
+                    <a href="https://totalplayempresarial.com.mx/?utm_source=sitio&utm_medium=header" target="_blank">Empresa</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </header>
