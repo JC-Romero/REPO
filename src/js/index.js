@@ -35,8 +35,8 @@ import {Ondemand} from './pages/landings/Ondemand'
 import {Youtube} from './pages/landings/Youtube'
 import {DiscoveryKids} from './pages/landings/DiscoveryKids'
 import {Tunein} from './pages/landings/Tunein'
-//import {CarritoCompras} from './pages/carrito/CarritoCompras'
-//import {Maquetado} from './pages/maquetado/Maquetado'
+import {CarritoCompras} from './pages/carrito/CarritoCompras'
+import {Maquetado} from './pages/maquetado/Maquetado'
 
 
 let xcov=document.getElementById("x-cover")
@@ -50,8 +50,8 @@ const url = Rutas(Constantes.sitioBase);
 const validacobertura=new ClaseCobertura();
 //const experiencia = new Experiencia(  'qualify', '.footer-menu' );
 
-//const carrito =new CarritoCompras();
-//new Maquetado();
+const carrito =new CarritoCompras();
+new Maquetado();
 
 if (RutasMatch(path, url.index)) {
 	const home=new Indexprincipal();
