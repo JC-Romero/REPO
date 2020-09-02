@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>F6D7C0B8-B42D-4A66-8FFA-05D32211D304</title>
+    <defs>
+        <filter x="-7.3%" y="-13.1%" width="114.6%" height="126.1%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="8" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="8" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <filter id="filter-2">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.298039 0 0 0 0 0.850980 0 0 0 0 0.392157 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+        <path d="M10,0 C4.48,0 0,4.48 0,10 C0,15.52 4.48,20 10,20 C15.52,20 20,15.52 20,10 C20,4.48 15.52,0 10,0 Z M8,15 L3,10 L4.41,8.59 L8,12.17 L15.59,4.58 L17,6 L8,15 Z" id="path-3"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="window" transform="translate(-56.000000, -13.000000)" filter="url(#filter-1)">
+            <g id="ic-cerrar-copy" transform="translate(80.000000, 41.000000)" filter="url(#filter-2)">
+                <g transform="translate(10.000000, 6.000000)">
+                    <mask id="mask-4" fill="white">
+                        <use xlink:href="#path-3"></use>
+                    </mask>
+                    <g id="icon/action/check_circle_24px" fill-rule="nonzero"></g>
+                    <g id="GrisAzul/800(Principal)" mask="url(#mask-4)" fill="#3B4559">
+                        <g transform="translate(-2.000000, -2.000000)" id="Color">
+                            <rect x="0" y="0" width="24" height="24"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
