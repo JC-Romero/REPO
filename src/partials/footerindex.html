@@ -1,7 +1,8 @@
-<footer class="row" id="footer">
+<footer class="row">
     <div class="col-11 col-sm-11 col-md-12 col-lg-10 col-xl-10 mx-auto">
         <div class="row">
-            <div class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-2 offset-md-2 offset-lg-1 offsetxl-1 footerColumn">
+            <div
+                class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-2 offset-md-2 offset-lg-1 offsetxl-1 footerColumn d-none d-sm-none d-md-block">
                 <p>Servicios</p>
                 <ul>
                     <li><a href="">Internet</a></li>
@@ -10,7 +11,18 @@
                     <li><a href="">App móvil</a></li>
                 </ul>
             </div>
-            <div class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-2 footerColumn">
+            <div
+                class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-2 offset-md-2 offset-lg-1 offsetxl-1 footerColumn d-block d-sm-block d-md-none">
+                <p>Servicios<i class="fas fa-chevron-down chevronServices"
+                        onclick="showCollapsible('servicesList, chevronServices')"></i></p>
+                <ul id="servicesList" class="servicesCollapsible">
+                    <li><a href="">Internet</a></li>
+                    <li><a href="">Television y apps</a></li>
+                    <li><a href="">Telefonía Digital</a></li>
+                    <li><a href="">App móvil</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-2 footerColumn d-none d-sm-none d-md-block">
                 <p>Productos</p>
                 <ul>
                     <li><a href="">Residencial</a></li>
@@ -18,7 +30,16 @@
                     <li><a href="">Empresas</a></li>
                 </ul>
             </div>
-            <div class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-2 footerColumn">
+            <div class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-2 footerColumn d-block d-sm-block d-md-none">
+                <p>Productos <i class="fas fa-chevron-down chevronProducts"
+                        onclick="showCollapsible('productsList, chevronProducts')"></i></p>
+                <ul id="productsList" class="productsCollapsible">
+                    <li><a href="">Residencial</a></li>
+                    <li><a href="">Negocios</a></li>
+                    <li><a href="">Empresas</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-2 footerColumn d-none d-sm-none d-md-block">
                 <p>Soporte</p>
                 <ul>
                     <li><a href="">Manuales</a></li>
@@ -26,7 +47,17 @@
                     <li><a href="">Mi cuenta</a></li>
                 </ul>
             </div>
-            <div class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-2 footerColumn">
+            <div class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-2 footerColumn d-block d-sm-block d-md-none">
+                <p>Soporte <i class="fas fa-chevron-down chevronSupport"
+                        onclick="showCollapsible('supportList, chevronSupport')"></i></p>
+                <ul id="supportList" class="supportCollapsible">
+                    <li><a href="">Manuales</a></li>
+                    <li><a href="">@TotalplayAyuda</a></li>
+                    <li><a href="">Mi cuenta</a></li>
+                </ul>
+            </div>
+            <div
+                class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-2 footerColumn d-none d-sm-none d-md-block contactColumn">
                 <p>Contáctanos</p>
                 <ul>
                     <li>Contrataciones<a href="tel: 800 330 1111">800 330 1111</a></li>
@@ -34,13 +65,28 @@
                     <li>Soporte técnico<a href="tel:55 1579 8000">55 1579 8000</a></li>
                 </ul>
             </div>
-            <div class="col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 footerColumn">
+            <div
+                class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-2 footerColumn d-block d-sm-block d-md-none contactColumn">
+                <p>Contáctanos <i class="fas fa-chevron-down chevronContact"
+                        onclick="showCollapsible('contactsList, chevronContact')"></i></p>
+                <ul id="contactsList" class="contactsCollapsible">
+                    <li>Contrataciones<a href="tel: 800 330 1111">800 330 1111</a></li>
+                    <li>Atención a clientes<a href="tel: 55 1579 80000">55 1579 80000</a></li>
+                    <li>Soporte técnico<a href="tel:55 1579 8000">55 1579 8000</a></li>
+                </ul>
+            </div>
+            <div
+                class="col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 footerColumn text-center text-sm-center text-md-center text-lg-left">
                 <p>Síguenos</p>
                 <ul class="footerSocials">
-                    <li><a href=""><i class="fab fa-facebook-square"></i></a></li>
-                    <li><a href=""><i class="fab fa-twitter"></i></a></li>
-                    <li><a href=""><i class="fab fa-youtube"></i></a></li>
-                    <li><a href=""><i class="fab fa-whatsapp"></i></a></li>
+                    <li><a href="https://www.facebook.com/totalplay" target="_blank"><i
+                                class="fab fa-facebook-square"></i></a></li>
+                    <li><a href="http://twitter.com/#!/TotalplayAyuda" target="_blank"><i
+                                class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://www.youtube.com/totalplaymx" target="_blank"><i
+                                class="fab fa-youtube"></i></a></li>
+                    <li><a href="https://api.whatsapp.com/send?l=pt_br&phone=5215515798000&text=Hola%2C+Asistente+Virtual+Totalplay&lang=es"
+                            target="_blank"><i class="fab fa-whatsapp"></i></a></li>
                 </ul>
                 <p>Convenios</p>
                 <p>Buzón al Director</p>
@@ -60,12 +106,18 @@
                 <p>Todos los derechos reservados Total Play Telecomunicaciones S.A. de C.V. 2020.</p>
             </div>
             <div class="col-s12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
-                <img src="{{root}}assets/img/logo-esr-1.png" alt="Totalplay Empresa Socialmente Responsable">
+                <img src="{{root}}/assets/img/nuevos/logo-esr-1.png"
+                    alt="Totalplay Empresa Socialmente Responsable">
             </div>
         </div>
         <div class="row legalAdvice">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                <p>Totalplay no se hace responsable por errores en la información ocasionados por la conexión de internet o versión de navegador. Para garantizar la correcta visualización y certeza de la información aquí mostrada, te recomendamos utilizar los siguientes navegadores: Internet Explorer 11, Microsoft edge 25, Google Chrome 48, Firefox 44, Opera 35, Safari 9 o versiones superiores a las mencionadas. Para ver la oferta actualizada, te recomendamos actualizar la ventana de tu navegador.</p>
+                <p>Totalplay no se hace responsable por errores en la información ocasionados por la conexión de
+                    internet o versión de navegador. Para garantizar la correcta visualización y certeza de la
+                    información aquí mostrada, te recomendamos utilizar los siguientes navegadores: Internet
+                    Explorer 11, Microsoft edge 25, Google Chrome 48, Firefox 44, Opera 35, Safari 9 o versiones
+                    superiores a las mencionadas. Para ver la oferta actualizada, te recomendamos actualizar la
+                    ventana de tu navegador.</p>
             </div>
         </div>
     </div>
