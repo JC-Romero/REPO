@@ -74,12 +74,18 @@ $(document).ready(function () {
         }
     });
 
-    /*AKHM*/
-    $('#cd-cobertura-index').on('click',function(){
-        $('#cityPicker').modal('show');
+    $('#cityPicker').on('hidden.bs.modal', function () {
+        $('body').css({
+            'overflow': 'auto'
+        });
     });
-});
-$(document).ready(function () {
+
+    $('#cityPicker').on('show.bs.modal', function () {
+        $('body').css({
+            'overflow': 'auto'
+        });
+    });
+
     var $mainVideo = $("#mainVideo");
     var $secondaryVideo = $("#secondaryVideo");
     var $window = $(window);
@@ -95,8 +101,7 @@ $(document).ready(function () {
             $secondaryVideo[0].pause();
         }
     });
-});
-$(document).ready(function () {
+
     $(window).scroll(function () {
         var scrollMain = $('.titleSecondVideo').offset().top,
             heightMain = $('.titleSecondVideo').outerHeight(),
@@ -106,6 +111,7 @@ $(document).ready(function () {
             $("#secondaryVideo")[0].play();
         }
     });
+
     $(window).scroll(function () {
         var scrollMain2 = $('.imagesAppsContainer').offset().top,
             heightMain2 = $('.imagesAppsContainer').outerHeight(),
@@ -115,6 +121,7 @@ $(document).ready(function () {
             $("#mainVideo")[0].pause();
         }
     });
+
     $(window).scroll(function () {
         var scrollMain3 = $('.cardsRow').offset().top,
             heightMain3 = $('.cardsRow').outerHeight(),

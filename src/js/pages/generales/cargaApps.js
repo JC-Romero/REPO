@@ -25,48 +25,48 @@ export function cargaapps(opt) {
               contador++;
               contadorGeneral++;
 
-              
+
               if (opt == 1) {
                 var estilo = "";
 
                 if (contador == 1) {
-                  if(opt !== 1)
-                    htmlimg += "<li class='section-apps__container--apps--list'>";                  
+                  if (opt !== 1)
+                    htmlimg += "<li class='section-apps__container--apps--list'>";
                 }
 
                 if (elem.pagina != "") {
-                  if(opt == 1 && contador == 1){
-                    htmlimg = htmlimg + '<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 offset-xl-1 offset-lg-1"><img src="' + elem.urlimg + '" alt="' + elem.nombre + '" onclick="window.open(\''+elem.pagina+'\',\'_blank\')"></div>';
-                  }else{
-                    htmlimg = htmlimg + '<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2"><img src="' + elem.urlimg + '" alt="' + elem.nombre + '" onclick="window.open(\''+elem.pagina+'\',\'_blank\')"></div>';
+                  if (opt == 1 && contador == 1) {
+                    htmlimg = htmlimg + '<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 offset-xl-1 offset-lg-1"><img src="' + elem.urlimg + '" alt="' + elem.nombre + '" onclick="window.open(\'' + elem.pagina + '\',\'_blank\')"></div>';
+                  } else {
+                    htmlimg = htmlimg + '<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2"><img src="' + elem.urlimg + '" alt="' + elem.nombre + '" onclick="window.open(\'' + elem.pagina + '\',\'_blank\')"></div>';
                   }
                 } else {
-                  if(opt == 1){
+                  if (opt == 1) {
                     htmlimg = htmlimg + '<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 offset-xl-1 offset-lg-1"><img src="' + elem.urlimg + '" alt="' + elem.nombre + '"></div>';
-                  }else{
+                  } else {
                     htmlimg = htmlimg + '<div><img src="' + elem.urlimg + '" alt="' + elem.nombre + '"></div>';
                   }
 
                 }
 
                 if (contador == 5) {
-                  if(opt !== 1)
+                  if (opt !== 1)
                     htmlimg += "</li>";
                   contador = 0;
                 }
               } else if (opt == 2) {
                 var estilo = "";
-                htmlimg = htmlimg + '<img src="' + elem.urlimg + '"' + estilo + ' alt="" onclick="window.open(\''+elem.pagina+'\',\'_blank\');">';
+                htmlimg = htmlimg + '<img src="' + elem.urlimg + '"' + estilo + ' alt="" onclick="window.open(\'' + elem.pagina + '\',\'_blank\');">';
               }
-            
-          });
 
-          if (opt == 1) {
-            $("#appHome").html(htmlimg);
-          } else if (opt == 2) {
-            $("#servicioAppsImg").html(htmlimg);
-            const eventosmas = new AppsEventos("tv");
-          }
+            });
+
+            if (opt == 1) {
+              $("#appHome").html(htmlimg);
+            } else if (opt == 2) {
+              $("#servicioAppsImg").html(htmlimg);
+              const eventosmas = new AppsEventos("tv");
+            }
           }
         }
       } catch (e) {
