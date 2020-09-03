@@ -125,7 +125,7 @@ gulp.task('scripts-dev', () =>
 )
 
 gulp.task('scripts-nuevo-maquetado', () => {
-  gulp.src('./src/assets/js/nuevos/*.css')
+  gulp.src('./src/assets/js/nuevos/*.js')
   .pipe(gulp.dest('./public/assets/js/nuevos/'))
 })
 
