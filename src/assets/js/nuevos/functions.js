@@ -73,6 +73,11 @@ $(document).ready(function () {
             x.style.display = 'block';
         }
     });
+
+    /*AKHM*/
+    $('#cd-cobertura-index').on('click',function(){
+        $('#cityPicker').modal('show');
+    });
 });
 $(document).ready(function () {
     var $mainVideo = $("#mainVideo");

@@ -7,7 +7,7 @@ export class ClaseCobertura {
 	init(){
         console.group('ClaseCobertura.js FUNCION init()');
 		this.validarPermisosUbicacion();
-		this.revisarcobertura();
+		//this.revisarcobertura();
         this.setListeners();
         console.groupEnd();
 	}
