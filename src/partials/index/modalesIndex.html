@@ -1,320 +1,334 @@
 
 <div class="modal callUsModalContainer" id="callUsModal" tabindex="-1" role="dialog" aria-labelledby="callUsModal"
 aria-hidden="true">
-<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-    <div class="modal-content">
-        <div class="modal-header">
-            <div class="row">
-                <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 offset-xl-1 offset-lg-1 offset-md-1 ">
-                    <p>Ingresa tus datos</p>
-                    <p>Nosotros te llamámos</p>
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 offset-xl-1 offset-lg-1 offset-md-1 ">
+                        <p>Ingresa tus datos</p>
+                        <p>Nosotros te llamámos</p>
+                    </div>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img src="{{root}}/assets/img/nuevos/icons/closeIconSVGDark.svg">
+                </button>
+            </div>
+            <div class="modal-body" id="formPersonalDataHeader">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 offset-xl-1 offset-lg-1 offset-md-1">
+                        <div class="mat-input">
+                            <div class="mat-input-outer">
+                                <input name="headerNombre" id="headerNombre" type="text" autocomplete="off" required class="letras" placeholder=" " tabindex="1">
+                                <label for="headerNombre">Nombre</label>
+                                <div class="border"></div>
+                                <p class="text-danger" id="errorNombre" style="margin-top: 5px !important;"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+                        <div class="mat-input">
+                            <div class="mat-input-outer">
+                                <input name="headerTel" id="headerTel" type="text" autocomplete="off" required class="solo-numeros" maxlength="10" placeholder=" " tabindex="3">
+                                <label for="headerTel">Teléfono</label>
+                                <div class="border"></div>
+                                 <p class="text-danger" id="errorTel" style="margin-top: 5px !important;"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 offset-xl-1 offset-lg-1 offset-md-1">
+                        <div class="mat-input">
+                            <div class="mat-input-outer">
+                                <input  name="headerCorreo" id="headerCorreo" type="text" autocomplete="off" required placeholder=" " tabindex="2">
+                                <label for="headerCorreo">Correo</label>
+                                <div class="border"></div>
+                                <p class="text-danger" id="errorCorreo" style="margin-top: 5px !important;"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+                        <div class="mat-input">
+                            <div class="mat-input-outer">
+                                <input name="headerCP" id="headerCP" type="text" autocomplete="off" maxlength="5" required class="solo-numeros" placeholder=" " tabindex="4">
+                                <label for="headerCP">Código postal</label>
+                                <div class="border"></div>
+                                <p class="text-danger" id="errorCP" style="margin-top: 5px !important;"></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <img src="{{root}}/assets/img/nuevos/icons/closeIconSVGDark.svg">
-            </button>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 offset-xl-1 offset-lg-1 offset-md-1 ">
+                        <div  id="iconoMsg"></div>
+                        <p id="mensaje"></p>
+                    </div>
+                </div>                
+            </div>
+            <div class="cargador" id="cargadorLead"></div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 d-flex">
+                        <input type="submit" value="Quiero que me llamen" class="generalButton ml-auto" id="btnCoberturaHeader">
+                        <input type="submit" value="Ok, gracias" class="generalButton ml-auto" id="btnConfirmCobertura" style="display: none;">
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 offset-xl-1 offset-lg-1 offset-md-1">
-                    <div class="mat-input">
-                        <div class="mat-input-outer">
-                            <input type="text" autocomplete="off" />
-                            <label class="">Nombre</label>
-                            <div class="border"></div>
-                        </div>
+    </div>
+</div>
+<div class="modal modalMainVideoContainer" id="modalMainVideo" tabindex="-1" role="dialog"
+aria-labelledby="videoMainContainer" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12 col sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <video src="{{root}}assets/media/FibraVideoLow.mp4" type="video/mp4" class="embed-responsive"
+                            autoplay muted loop controls="true"></video>
                     </div>
                 </div>
-                <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
-                    <div class="mat-input">
-                        <div class="mat-input-outer">
-                            <input type="text" autocomplete="off" />
-                            <label class="">Teléfono</label>
-                            <div class="border"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="userLocationModal" class="modalLocationTop">
+    <div class="row backLocationModal">
+        <div class="col-11 col-sm-12 col-md-12 col-lg-12 col-xl-12 mx-auto">
+            <div class="row closeModal">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mx-auto">
+                    <a href="#" onclick="hideModal('userLocationModal');"><img
+                            src="{{root}}/assets/img/nuevos/icons/close_24px@4x.png"></a>
+                </div>
+            </div>
+            <div class="row titleModalLocation">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mx-auto;">
+                    <h1>Antes de comenzar tu experiencia, <span>valida tu cobertura.</span></h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-11 col-md-10 col-lg-8 col-xl-6 mx-auto">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                            <div class="mat-input">
+                                <div class="mat-input-outer">
+                                    <input type="text" autocomplete="off" />
+                                    <label class="">Calle</label>
+                                    <div class="border"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                            <div class="mat-input">
+                                <div class="mat-input-outer">
+                                    <input type="text" autocomplete="off" />
+                                    <label class="">No. Exterior</label>
+                                    <div class="border"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                            <div class="mat-input">
+                                <div class="mat-input-outer">
+                                    <input type="text" autocomplete="off" />
+                                    <label class="">Código Postal</label>
+                                    <div class="border"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row buttonModal">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            <input type="submit" value="Validar cobertura" class="generalButton">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 offset-xl-1 offset-lg-1 offset-md-1">
-                    <div class="mat-input">
-                        <div class="mat-input-outer">
-                            <input type="text" autocomplete="off" />
-                            <label class="">Correo</label>
-                            <div class="border"></div>
+        </div>
+    </div>
+</div>
+<div class="modal modalCityPicker" id="cityPicker" tabindex="-1" role="dialog" aria-labelledby="modalCityPicker"
+aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img src="{{root}}/assets/img/nuevos/icons/closeIconSVG.svg">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 mx-auto">
+                        <div class="row citySearchBar">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="citySearch">
+                                    <div id="cityAutocomplete" class="autocompleteList">
+                                        <ul class="row">
+                                            <li class="col-12"><a href="#">Ciudad de México</a></li>
+                                            <li class="col-12"><a href="#">Ciudad de México</a></li>
+                                            <li class="col-12"><a href="#">Ciudad de México</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row cityList">
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
+                                <p><a href="#">Ciudad de México</a></p>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
+                                <p><a href="#">Ciudad de México</a></p>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
+                                <p><a href="#">Ciudad de México</a></p>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
+                                <p><a href="#">Ciudad de México</a></p>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
+                                <p><a href="#">Ciudad de México</a></p>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
+                                <p><a href="#">Ciudad de México</a></p>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
+                                <p><a href="#">Ciudad de México</a></p>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
+                                <p><a href="#">Ciudad de México</a></p>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
+                                <p><a href="#">Ciudad de México</a></p>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
+                                <p><a href="#">Ciudad de México</a></p>
+                            </div>
+                        </div>
+                        <div id="noService" class="row noServiceCity" style="display: none;">
+                            <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 mx-auto">
+                                <div class="row">
+                                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                        <h1>Totalplay aún no está disponible en <span>Ciudad no disponible</span></h1>
+                                        <p>¡Pero pronto estaremos cerca!<br>Ingresa tu correo para mantenerte informado.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-6 mx-auto">
+                                        <div class="mat-input-outer">
+                                            <input type="text" autocomplete="off" />
+                                            <label class="">Correo electrónico</label>
+                                            <div class="border"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-6 mx-auto">
+                                        <input type="submit" value="Enviar" class="generalButton">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
-                    <div class="mat-input">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal callUsModalContainer" id="installLocation" tabindex="-1" role="dialog" aria-labelledby="callUsModal"
+aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 offset-xl-1 offset-lg-1 offset-md-1 ">
+                        <p>Para continuar dinos…</p>
+                        <p>¿En dónde quieres que instalemos Totalplay?</p>
+                    </div>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img src="{{root}}/assets/img/nuevos/icons/closeIconSVGDark.svg">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 offset-xl-1 offset-lg-1 offset-md-1">
                         <div class="mat-input-outer">
                             <input type="text" autocomplete="off" />
                             <label class="">Código postal</label>
                             <div class="border"></div>
                         </div>
                     </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                        <div class="mat-input-outer">
+                            <input type="text" autocomplete="off" />
+                            <label class="">Calle y número exterior</label>
+                            <div class="border"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="modal-footer">
-            <div class="row">
-                <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 d-flex">
-                    <input type="submit" value="Quiero que me llamen" class="generalButton ml-auto">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-<div class="modal modalMainVideoContainer" id="modalMainVideo" tabindex="-1" role="dialog"
-aria-labelledby="videoMainContainer" aria-hidden="true">
-<div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body">
-            <div class="row">
-                <div class="col-12 col sm-12 col-md-12 col-lg-12 col-xl-12">
-                    <video src="{{root}}assets/media/FibraVideoLow.mp4" type="video/mp4" class="embed-responsive"
-                        autoplay muted loop controls="true"></video>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-<div id="userLocationModal" class="modalLocationTop">
-<div class="row backLocationModal">
-    <div class="col-11 col-sm-12 col-md-12 col-lg-12 col-xl-12 mx-auto">
-        <div class="row closeModal">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mx-auto">
-                <a href="#" onclick="hideModal('userLocationModal');"><img
-                        src="{{root}}/assets/img/nuevos/icons/close_24px@4x.png"></a>
-            </div>
-        </div>
-        <div class="row titleModalLocation">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mx-auto;">
-                <h1>Antes de comenzar tu experiencia, <span>valida tu cobertura.</span></h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-sm-11 col-md-10 col-lg-8 col-xl-6 mx-auto">
+            <div class="modal-footer">
                 <div class="row">
-                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                        <div class="mat-input">
-                            <div class="mat-input-outer">
-                                <input type="text" autocomplete="off" />
-                                <label class="">Calle</label>
-                                <div class="border"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                        <div class="mat-input">
-                            <div class="mat-input-outer">
-                                <input type="text" autocomplete="off" />
-                                <label class="">No. Exterior</label>
-                                <div class="border"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                        <div class="mat-input">
-                            <div class="mat-input-outer">
-                                <input type="text" autocomplete="off" />
-                                <label class="">Código Postal</label>
-                                <div class="border"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row buttonModal">
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                        <input type="submit" value="Validar cobertura" class="generalButton">
+                    <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 d-flex">
+                        <a class="generalButton ml-auto" href="#continueLocation" data-toggle="modal"
+                            data-dismiss="modal">Quiero que me llamen</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-</div>
-<div class="modal modalCityPicker" id="cityPicker" tabindex="-1" role="dialog" aria-labelledby="modalCityPicker"
-aria-hidden="true">
-<div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
-    <div class="modal-content">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <img src="{{root}}/assets/img/nuevos/icons/closeIconSVG.svg">
-            </button>
-        </div>
-        <div class="modal-body">
-            <div class="row">
-                <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 mx-auto">
-                    <div class="row citySearchBar">
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="citySearch">
-                                <div id="cityAutocomplete" class="autocompleteList">
-                                    <ul class="row">
-                                        <li class="col-12"><a href="#">Ciudad de México</a></li>
-                                        <li class="col-12"><a href="#">Ciudad de México</a></li>
-                                        <li class="col-12"><a href="#">Ciudad de México</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row cityList">
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
-                            <p><a href="#">Ciudad de México</a></p>
-                        </div>
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
-                            <p><a href="#">Ciudad de México</a></p>
-                        </div>
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
-                            <p><a href="#">Ciudad de México</a></p>
-                        </div>
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
-                            <p><a href="#">Ciudad de México</a></p>
-                        </div>
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
-                            <p><a href="#">Ciudad de México</a></p>
-                        </div>
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
-                            <p><a href="#">Ciudad de México</a></p>
-                        </div>
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
-                            <p><a href="#">Ciudad de México</a></p>
-                        </div>
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
-                            <p><a href="#">Ciudad de México</a></p>
-                        </div>
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
-                            <p><a href="#">Ciudad de México</a></p>
-                        </div>
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
-                            <p><a href="#">Ciudad de México</a></p>
-                        </div>
-                    </div>
-                    <div id="noService" class="row noServiceCity" style="display: none;">
-                        <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 mx-auto">
-                            <div class="row">
-                                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                    <h1>Totalplay aún no está disponible en <span>Ciudad no disponible</span></h1>
-                                    <p>¡Pero pronto estaremos cerca!<br>Ingresa tu correo para mantenerte informado.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-6 mx-auto">
-                                    <div class="mat-input-outer">
-                                        <input type="text" autocomplete="off" />
-                                        <label class="">Correo electrónico</label>
-                                        <div class="border"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-6 mx-auto">
-                                    <input type="submit" value="Enviar" class="generalButton">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-<div class="modal callUsModalContainer" id="installLocation" tabindex="-1" role="dialog" aria-labelledby="callUsModal"
-aria-hidden="true">
-<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-    <div class="modal-content">
-        <div class="modal-header">
-            <div class="row">
-                <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 offset-xl-1 offset-lg-1 offset-md-1 ">
-                    <p>Para continuar dinos…</p>
-                    <p>¿En dónde quieres que instalemos Totalplay?</p>
-                </div>
-            </div>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <img src="{{root}}/assets/img/nuevos/icons/closeIconSVGDark.svg">
-            </button>
-        </div>
-        <div class="modal-body">
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 offset-xl-1 offset-lg-1 offset-md-1">
-                    <div class="mat-input-outer">
-                        <input type="text" autocomplete="off" />
-                        <label class="">Código postal</label>
-                        <div class="border"></div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                    <div class="mat-input-outer">
-                        <input type="text" autocomplete="off" />
-                        <label class="">Calle y número exterior</label>
-                        <div class="border"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="modal-footer">
-            <div class="row">
-                <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 d-flex">
-                    <a class="generalButton ml-auto" href="#continueLocation" data-toggle="modal"
-                        data-dismiss="modal">Quiero que me llamen</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 </div>
 <div class="modal callUsModalContainer" id="continueLocation" tabindex="-1" role="dialog"
 aria-labelledby="continueLocation" aria-hidden="true">
-<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-    <div class="modal-content">
-        <div class="modal-header">
-            <div class="row">
-                <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 offset-xl-1 offset-lg-1 offset-md-1 ">
-                    <p class="successNotification">Calle No, Colonia, Delegacion, Ciudad.</p>
-                    <p>Complementa los datos de tu domicilio:</p>
-                </div>
-            </div>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <img src="{{root}}/assets/img/nuevos/icons/closeIconSVGDark.svg">
-            </button>
-        </div>
-        <div class="modal-body">
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 offset-xl-1 offset-lg-1 offset-md-1">
-                    <div class="mat-input-outer">
-                        <input type="text" autocomplete="off" />
-                        <label class="">No. Interior/Depto</label>
-                        <div class="border"></div>
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 offset-xl-1 offset-lg-1 offset-md-1 ">
+                        <p class="successNotification">Calle No, Colonia, Delegacion, Ciudad.</p>
+                        <p>Complementa los datos de tu domicilio:</p>
                     </div>
                 </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                    <div class="mat-input-outer">
-                        <input type="text" autocomplete="off" />
-                        <label class="">Entre calle y calle</label>
-                        <div class="border"></div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img src="{{root}}/assets/img/nuevos/icons/closeIconSVGDark.svg">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 offset-xl-1 offset-lg-1 offset-md-1">
+                        <div class="mat-input-outer">
+                            <input type="text" autocomplete="off" />
+                            <label class="">No. Interior/Depto</label>
+                            <div class="border"></div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                        <div class="mat-input-outer">
+                            <input type="text" autocomplete="off" />
+                            <label class="">Entre calle y calle</label>
+                            <div class="border"></div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="modal-footer">
-            <div class="row modalPackagesButton">
-                <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 d-flex">
-                    <a class="generalButton ml-auto" disabled data-dismiss="modal">Ver paquetes <img
-                            src="{{root}}/assets/img/nuevos/icons/arrowForwardWhite.svg"></a>
+            <div class="modal-footer">
+                <div class="row modalPackagesButton">
+                    <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 d-flex">
+                        <a class="generalButton ml-auto" disabled data-dismiss="modal">Ver paquetes <img
+                                src="{{root}}/assets/img/nuevos/icons/arrowForwardWhite.svg"></a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </div>

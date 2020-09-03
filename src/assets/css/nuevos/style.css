@@ -3075,3 +3075,14 @@ footer .legalAdvice p {
 }
 
 /*Modal ity Picker*/
+
+/*modal loader index akhm*/
+#cargadorLead{
+    display: none;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin: auto;
+    background-image: url(http://localhost:3000/assets/img/cargador1.gif);
+    background-size: cover;
+}
