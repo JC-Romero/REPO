@@ -1,118 +1,136 @@
 ---
 layout: home
 ---
-
 <section class="row mainVideoBanner">
-        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-            <div class="row">
-                <div class="col-12 col sm-12 col-md-12 col-lg-12 col-xl-12 videoContainer d-none d-sm-none d-md-block">
-                    <video src="{{root}}assets/media/FibraVideoLow.mp4" type="video/mp4" class="embed-responsive embed-responsive-21by9" autoplay muted loop controls="false"></video>
-                </div>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="row">
+            <div class="col-12 col sm-12 col-md-12 col-lg-12 col-xl-12 videoContainer">
+                <video id="mainVideo" src="{{root}}assets/media/FibraVideoLow.mp4" type="video/mp4"
+                    class="embed-responsive embed-responsive-21by9" autoplay muted loop controls="false"></video>
             </div>
-            <div class="row bannersContainers">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                    <div class="row headerBanner">
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                            <p>¡Cámbiate ya! Llámanos sin costo al <span><a href=" tel: 800 330 1111">800 330 1111</a></span> o <a href="callUsModal" data-toggle="modal" data-target="#callUsModal">nosotros te llamamos</a></p>
-                            <hr>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row videoTextContainer">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10 offfset-md-1 offset-lg-1 offset-xl-1 videoTextContent">
-                    <div class="row onDemandButton">
-                        <div class="col-6 col-sm-6 col-md-6 d-block d-sm-block d-md-none d-lg-none mx-auto">
-                            <a href="#" data-toggle="modal" data-target="#modalMainVideo"><img src="{{root}}/assets/img/nuevos/icons/play-button.svg"></a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <h1>Te conectamos<br>con lo que amas.</h1>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <h2>El internet que necesitas desde <span>$499 al mes.</span></h2>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <a class="generalButton">Ver paquetes <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <a href="#">Conoce nuestro internet</a>
-                        </div>
+        </div>
+        <div class="row bannersContainers">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <div class="row headerBanner">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <p>¡Cámbiate ya! Llámanos sin costo al <span><a href=" tel: 800 330 1111">800 330
+                                    1111</a></span> o <a href="callUsModal" class="desktopHidden" data-toggle="modal"
+                                data-target="#callUsModal">nosotros te llamamos</a><br><a href="callUsModal"
+                                class="mobileHidden" data-toggle="modal" data-target="#callUsModal">nosotros te
+                                llamamos</a></p>
+                        <hr>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="row videoTextContainer">
+            <div
+                class="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10 offfset-md-1 offset-lg-1 offset-xl-1 videoTextContent">
+                <div class="row onDemandButton">
+                    <div class="col-6 col-sm-6 col-md-6 d-block d-sm-block d-md-none d-lg-none mx-auto">
+                        <a href="#" data-toggle="modal" data-target="#modalMainVideo"><img
+                                src="{{root}}/assets/img/nuevos/icons/play-button.svg"></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <h1>Te conectamos<br>con lo que amas.</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <h2>El internet que necesitas desde <span>$499 al mes.</span></h2>
+                    </div>
+                </div>
+                <div class="row buttonRow">
+                    <div class="col-12">
+                        <a class="generalButton">Ver paquetes <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <a href="#">Conoce nuestro internet</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <section class="row mainVideoBannerSecond">
     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
         <div class="row">
-            <div class="col-12 col sm-12 col-md-12 col-lg-12 col-xl-12 videoContainerSecond d-none d-sm-none d-md-block">
-                <video src="{{root}}assets/media/FibraVideoLow.mp4" type="video/mp4" class="embed-responsive embed-responsive-21by9" autoplay muted loop controls="false"></video>
+            <div class="col-12 col sm-12 col-md-12 col-lg-12 col-xl-12 videoContainerSecond">
+                <video id="secondaryVideo" src="{{root}}assets/media/FibraVideoLow.mp4" type="video/mp4"
+                    class="embed-responsive embed-responsive-21by9" muted paused loop controls="false"></video>
             </div>
         </div>
         <div class="row videoTextContainerSecond">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10 offfset-md-1 offset-lg-1 offset-xl-1 videoTextContentSecond">
-                <div class="row onDemandButton">
-                    <div class="col-6 col-sm-6 col-md-6 d-block d-sm-block d-md-block d-lg-none mx-auto">
-                        <a href="#" data-toggle="modal" data-target="#modalMainVideo"><img src="{{root}}/assets/img/nuevos/icons/play-button.svg"></a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <h1>Más streaming,<br>más diversión.</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <h2>Bienvenido a casa <img src="{{root}}/assets/img/nuevos/amazon_prime_video_logoWhite.svg" alt="Prime Video"></h2>
-                    </div>
-                </div>
-                <div class="row imagesAppsContainer">
-                    <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-11 mx-auto">
+            <div
+                class="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10 offfset-md-1 offset-lg-1 offset-xl-1 videoTextContentSecond">
+                <div class="row titleSecondVideo">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="row onDemandButton">
+                            <div class="col-6 col-sm-6 col-md-6 d-block d-sm-block d-md-none d-lg-none mx-auto">
+                                <a href="#" data-toggle="modal" data-target="#modalMainVideo"><img
+                                        src="{{root}}/assets/img/nuevos/icons/play-button.svg"></a>
+                            </div>
+                        </div>
                         <div class="row">
-                            <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 offset-xl-1 offset-lg-1">
-                                <img src="{{root}}/assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
+                            <div class="col-12">
+                                <h1>Más streaming,<br>más diversión.</h1>
                             </div>
-                            <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                                <img src="{{root}}/assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
-                            </div>
-                            <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                                <img src="{{root}}/assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
-                            </div>
-                            <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                                <img src="{{root}}/assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
-                            </div>
-                            <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                                <img src="{{root}}/assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
-                            </div>
-                            <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 offset-xl-1 offset-lg-1">
-                                <img src="{{root}}/assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
-                            </div>
-                            <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                                <img src="{{root}}/assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
-                            </div>
-                            <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                                <img src="{{root}}/assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
-                            </div>
-                            <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 d-block d-sm-block d-md-none d-lg-block">
-                                <img src="{{root}}/assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
-                            </div>
-                            <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 d-none d-sm-none d-md-none d-lg-block">
-                                <img src="{{root}}/assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <h2>Bienvenido a casa <img
+                                        src="{{root}}/assets/img/nuevos/amazon_prime_video_logoWhite.svg"
+                                        alt="Prime Video">
+                                </h2>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12">
-                        <a href="#">Conoce las ventajas Totalplay</a>
+                <div class="row imagesAppsContainer">
+                    <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-11 mx-auto">
+                        <div class="row" id="appHome">
+                            <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 offset-xl-1 offset-lg-1">
+                                <img src="{{root}}/assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
+                            </div>
+                            <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
+                                <img src="{{root}}/assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
+                            </div>
+                            <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
+                                <img src="{{root}}/assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
+                            </div>
+                            <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
+                                <img src="{{root}}/assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
+                            </div>
+                            <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
+                                <img src="{{root}}/assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
+                            </div>
+                            <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 offset-xl-1 offset-lg-1">
+                                <img src="{{root}}/assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
+                            </div>
+                            <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 d-none d-sm-none d-md-block">
+                                <img src="{{root}}/assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
+                            </div>
+                            <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 d-none d-sm-none d-md-block">
+                                <img src="{{root}}/assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
+                            </div>
+                            <div
+                                class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 d-none d-sm-none d-md-none d-lg-block">
+                                <img src="{{root}}/assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
+                            </div>
+                            <div
+                                class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 d-none d-sm-none d-md-none d-lg-block">
+                                <img src="{{root}}/assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <a href="#">Conoce las ventajas Totalplay</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -124,7 +142,8 @@ layout: home
         <div class="card-body">
             <div class="row">
                 <div class="col-10 mx-auto">
-                    <h5 class="card-title">Mantén cada rincón de tu hogar conectado con nuestros decodificadores 4k + Wi-Fi.</h5>
+                    <h5 class="card-title">Mantén cada rincón de tu hogar conectado con nuestros decodificadores 4k +
+                        Wi-Fi.</h5>
                     <a href="#" class="card-link">Conoce las ventajas Totalplay</a>
                 </div>
             </div>
@@ -138,10 +157,12 @@ layout: home
                     <h5 class="card-title">Descarga ahora lo mejor de Totalplay en la palma de tu mano.</h5>
                     <div class="row">
                         <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 appImage">
-                            <a href="#"><img src="{{root}}/assets/img/nuevos/icons/badge-GooglePlay.svg" class="img-fluid" alt="Google Play"></a>
+                            <a href="#"><img src="{{root}}/assets/img/nuevos/icons/badge-GooglePlay.svg"
+                                    class="img-fluid" alt="Google Play"></a>
                         </div>
                         <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 appImage">
-                            <a href="#"><img src="{{root}}/assets/img/nuevos/icons/badge-AppStore.svg" class="img-fluid" alt="Google Play"></a>
+                            <a href="#"><img src="{{root}}/assets/img/nuevos/icons/badge-AppStore.svg" class="img-fluid"
+                                    alt="Google Play"></a>
                         </div>
                     </div>
                 </div>
@@ -163,9 +184,10 @@ layout: home
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-sm-6 mx-sm-auto col-md-6 col-lg-4 col-xl-4">
+            <div class="col-12 col-sm-6 mx-sm-auto col-md-6 col-lg-4 col-xl-3">
                 <div class="row">
-                    <div class="col-10 col-sm-11 col-md-11 col-lg-11 col-xl-9 mx-auto mainContainerpackage unbox">
+                    <div class="col-10 col-sm-11 col-md-11 col-lg-11 col-xl-11 mx-auto mainContainerpackage unbox"
+                        onclick="showBootstrapModalFirst('installLocation');">
                         <div class="packageInfoContainer">
                             <div class="titlePackage">
                                 <p>UNBOX 500</p>
@@ -188,15 +210,15 @@ layout: home
                                 <p>Descuento de por vida</p>
                             </div>
                             <div class="packagePrice">
-                                <p><a href="detallePaquete.html">Revisa disponibilidad</a></p>
+                                <p><a href="#">Revisa disponibilidad</a></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-6 mx-sm-auto col-md-6 col-lg-4 col-xl-4">
+            <div class="col-12 col-sm-6 mx-sm-auto col-md-6 col-lg-4 col-xl-3">
                 <div class="row">
-                    <div class="col-10 col-sm-11 col-md-11 col-lg-11 col-xl-9 mx-auto mainContainerpackage match">
+                    <div class="col-10 col-sm-11 col-md-11 col-lg-11 col-xl-11 mx-auto mainContainerpackage match">
                         <div class="packageInfoContainer">
                             <div class="titlePackage">
                                 <p>Match 500 +</p>
@@ -210,7 +232,8 @@ layout: home
                             </div>
                             <hr>
                             <div class="imagePackage">
-                                <img src="{{root}}/assets/img/nuevos/1200px-Netflix_2015_logo.svg.png" alt="Image Paquete">
+                                <img src="{{root}}/assets/img/nuevos/1200px-Netflix_2015_logo.svg.png"
+                                    alt="Image Paquete">
                             </div>
                             <div class="descriptionApp">
                                 <p>4 pantallas <span>Premium UHD</span></p>
@@ -219,173 +242,19 @@ layout: home
                                 <p>Descuento de por vida</p>
                             </div>
                             <div class="packagePrice">
-                                <p><!--a href="#"-->Desde: <span>$ 1,679 al mes</span><!--/a--></p>
+                                <p><a href="#">Desde: <span>$ 1,679 al mes</span></a></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-6 mx-sm-auto col-md-6 col-lg-4 col-xl-4">
+            <div class="col-12 col-sm-6 mx-sm-auto col-md-6 col-lg-4 col-xl-3">
                 <div class="row">
-                    <div class="col-10 col-sm-11 col-md-11 col-lg-11 col-xl-9 mx-auto mainContainerpackage surprisePlus">
+                    <div
+                        class="col-10 col-sm-11 col-md-11 col-lg-11 col-xl-11 mx-auto mainContainerpackage surprisePlus">
                         <div class="packageInfoContainer">
                             <div class="titlePackage">
                                 <p>Sorprendete +</p>
-                            </div>
-                            <div class="velocityPackage">
-                                <p>500 Megas</p>
-                            </div>
-                            <div class="descriptionPackage">
-                                <p><span>3 equipos</span> de TV con Apps</p>
-                                <p><span>1 línea</span> de teléfono</p>
-                            </div>
-                            <hr>
-                            <div class="imagePackage">
-                                <img src="{{root}}/assets/img/nuevos/emptyApp.png" alt="Image Paquete">
-                            </div>
-                            <div class="descriptionApp">
-                                <p>App description</p>
-                            </div>
-                            <div class="packageDiscount">
-                                <p>20% de descuento</p>
-                            </div>
-                            <div class="packagePrice">
-                                <p><a href="#">Desde: <span>$ 1,649 al mes</span></a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 mx-sm-auto col-md-6 col-lg-4 col-xl-4">
-                <div class="row">
-                    <div class="col-10 col-sm-11 col-md-11 col-lg-11 col-xl-9 mx-auto mainContainerpackage emotionPlus">
-                        <div class="packageInfoContainer">
-                            <div class="titlePackage">
-                                <p>Emocionate +</p>
-                            </div>
-                            <div class="velocityPackage">
-                                <p>500 Megas</p>
-                            </div>
-                            <div class="descriptionPackage">
-                                <p><span>3 equipos</span> de TV con Apps</p>
-                                <p><span>1 línea</span> de teléfono</p>
-                            </div>
-                            <hr>
-                            <div class="imagePackage">
-                                <img src="{{root}}/assets/img/nuevos/emptyApp.png" alt="Image Paquete">
-                            </div>
-                            <div class="descriptionApp">
-                                <p>App description</p>
-                            </div>
-                            <div class="packageDiscount">
-                                <p>20% de descuento</p>
-                            </div>
-                            <div class="packagePrice">
-                                <p><a href="#">Desde: <span>$ 1,649 al mes</span></a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 mx-sm-auto col-md-6 col-lg-4 col-xl-4">
-                <div class="row">
-                    <div class="col-10 col-sm-11 col-md-11 col-lg-11 col-xl-9 mx-auto mainContainerpackage emotion">
-                        <div class="packageInfoContainer">
-                            <div class="titlePackage">
-                                <p>Emocionate</p>
-                            </div>
-                            <div class="velocityPackage">
-                                <p>500 Megas</p>
-                            </div>
-                            <div class="descriptionPackage">
-                                <p><span>3 equipos</span> de TV con Apps</p>
-                                <p><span>1 línea</span> de teléfono</p>
-                            </div>
-                            <hr>
-                            <div class="imagePackage">
-                                <img src="{{root}}/assets/img/nuevos/emptyApp.png" alt="Image Paquete">
-                            </div>
-                            <div class="descriptionApp">
-                                <p>App description</p>
-                            </div>
-                            <div class="packageDiscount">
-                                <p>20% de descuento</p>
-                            </div>
-                            <div class="packagePrice">
-                                <p><a href="#">Desde: <span>$ 1,649 al mes</span></a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 mx-sm-auto col-md-6 col-lg-4 col-xl-4">
-                <div class="row">
-                    <div class="col-10 col-sm-11 col-md-11 col-lg-11 col-xl-9 mx-auto mainContainerpackage funPlus">
-                        <div class="packageInfoContainer">
-                            <div class="titlePackage">
-                                <p>Diviertete +</p>
-                            </div>
-                            <div class="velocityPackage">
-                                <p>500 Megas</p>
-                            </div>
-                            <div class="descriptionPackage">
-                                <p><span>3 equipos</span> de TV con Apps</p>
-                                <p><span>1 línea</span> de teléfono</p>
-                            </div>
-                            <hr>
-                            <div class="imagePackage">
-                                <img src="{{root}}/assets/img/nuevos/emptyApp.png" alt="Image Paquete">
-                            </div>
-                            <div class="descriptionApp">
-                                <p>App description</p>
-                            </div>
-                            <div class="packageDiscount">
-                                <p>20% de descuento</p>
-                            </div>
-                            <div class="packagePrice">
-                                <p><a href="#">Desde: <span>$ 1,649 al mes</span></a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 mx-sm-auto col-md-6 col-lg-4 col-xl-4 offset-lg-2 offset-xl-2">
-                <div class="row">
-                    <div class="col-10 col-sm-11 col-md-11 col-lg-11 col-xl-9 mx-auto mainContainerpackage fun">
-                        <div class="packageInfoContainer">
-                            <div class="titlePackage">
-                                <p>Diviertete</p>
-                            </div>
-                            <div class="velocityPackage">
-                                <p>500 Megas</p>
-                            </div>
-                            <div class="descriptionPackage">
-                                <p><span>3 equipos</span> de TV con Apps</p>
-                                <p><span>1 línea</span> de teléfono</p>
-                            </div>
-                            <hr>
-                            <div class="imagePackage">
-                                <img src="{{root}}/assets/img/nuevos/emptyApp.png" alt="Image Paquete">
-                            </div>
-                            <div class="descriptionApp">
-                                <p>App description</p>
-                            </div>
-                            <div class="packageDiscount">
-                                <p>20% de descuento</p>
-                            </div>
-                            <div class="packagePrice">
-                                <p><a href="#">Desde: <span>$ 1,649 al mes</span></a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 mx-sm-auto col-md-6 col-lg-4 col-xl-4">
-                <div class="row">
-                    <div class="col-10 col-sm-11 col-md-11 col-lg-11 col-xl-9 mx-auto mainContainerpackage starter">
-                        <div class="packageInfoContainer">
-                            <div class="titlePackage">
-                                <p>Inicial</p>
                             </div>
                             <div class="velocityPackage">
                                 <p>500 Megas</p>
@@ -419,17 +288,19 @@ layout: home
         <div class="row">
             <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 offset-lg-2 offset-xl-3">
                 <div class="row">
-                    <div class="col-11 col-sm-6 col-md-11 col-lg-11 col-xl-11 mx-auto companies">
+                    <div class="col-11 col-sm-8 col-md-11 col-lg-11 col-xl-11 mx-auto companies">
                         <div class="row branchImage">
                             <div class="col-12">
-                                <img src="{{root}}/assets/img/nuevos/package-tp-empresarial.png" alt="Totalplay Empresarial">
+                                <img src="{{root}}/assets/img/nuevos/package-tp-empresarial.png"
+                                    alt="Totalplay Empresarial">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-11  mx-auto branchDescription">
                                 <div class="row">
                                     <div class="col-12">
-                                        <img src="{{root}}/assets/img/nuevos/logo-tp-empresarial.png" alt="Totalplay Empresarial">
+                                        <img src="{{root}}/assets/img/nuevos/logo-tp-empresarial.png"
+                                            alt="Totalplay Empresarial">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -449,7 +320,7 @@ layout: home
             </div>
             <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
                 <div class="row">
-                    <div class="col-11 col-sm-6 col-md-11 col-lg-11 col-xl-11 mx-auto entrepreneur">
+                    <div class="col-11 col-sm-8 col-md-11 col-lg-11 col-xl-11 mx-auto entrepreneur">
                         <div class="row branchImage">
                             <div class="col-12">
                                 <img src="{{root}}/assets/img/nuevos/package-tp-negocios.png" alt="Totalplay Negocio">
@@ -459,7 +330,8 @@ layout: home
                             <div class="col-11 mx-auto branchDescription">
                                 <div class="row">
                                     <div class="col-12">
-                                        <img src="{{root}}/assets/img/nuevos/logo-negocios@3x.png" alt="Totalplay Negocio">
+                                        <img src="{{root}}/assets/img/nuevos/logo-negocios@3x.png"
+                                            alt="Totalplay Negocio">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -522,4 +394,60 @@ layout: home
         </div>
     </div>
 </section>
-    
+<div id="mobile" class="mobileMenuContainer d-md-none">
+    <div class="mobileMenu">
+        <div class="row mobileHeader">
+            <div class="col-12 col-sm-12">
+                <div class="row">
+                    <div class="col-12 col-sm-12 mx-auto locationButton">
+                        <a href="#" onclick="showModal('userLocationModal');">Validar ubicación</a>
+                    </div>
+                </div>
+                <div class="row headerTopMenu">
+                    <div class="col-2 col-sm-2 mobileToggle">
+                        <a id="closeIcon" href="#" onclick="closeMenu();"><i class="fas fa-times"></i></a>
+                    </div>
+                    <div class="col-8 col-sm-8 col-md-2 col-lg-2 col-xl-1 logoContainer">
+                        <a href="index.html"><img src="{{root}}/assets/img/nuevos/totalplay-logoWhite.svg"
+                                alt="Totalplay"></a>
+                    </div>
+                    <div class="col-2 col-sm-2 d-block d-sm-block d-md-none mobileCart">
+                        <a href="#"><img src="{{root}}/assets/img/nuevos/icons/account.svg"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul>
+            <li><a href="https://totalgo.totalplay.com.mx:444/TPW/TotalPlay.htm" target="_blank"><img
+                        src="{{root}}/assets/img/nuevos/icons/liveTv.svg"><span>Ver la Tv</span></a></li>
+            <li><a href="#"><img src="{{root}}/assets/img/nuevos/icons/cart.svg">Carrito</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="paquetes.html">Paquetes</a></li>
+            <li><a href="soporte.html">Ayuda y soporte</a></li>
+        </ul>
+        <div class="row bottomMobileMenu">
+            <div class="col-4 bottomMobileMenuItem activeItem">
+                <a href="index.html">Hogar</a>
+            </div>
+            <div class="col-4 bottomMobileMenuItem">
+                <a href="https://www.negociostotalplay.com.mx/?utm_source=sitio&utm_medium=header"
+                    target="_blank">Negocio</a>
+            </div>
+            <div class="col-4 bottomMobileMenuItem">
+                <a href="https://totalplayempresarial.com.mx/?utm_source=sitio&utm_medium=header"
+                    target="_blank">Empresa</a>
+            </div>
+        </div>
+    </div>
+</div>
+ {{> modalesIndex}}
+<!--<div class="modalsButons">
+    <div class="row">
+        <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+            <button class="generalButton" data-toggle="modal" data-target="#phoneList">Modal telefonos</button>
+        </div>
+        <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+            <button class="generalButton" data-toggle="modal" data-target="#chatsModal">Modal chats</button>
+        </div>
+    </div>
+</div>-->

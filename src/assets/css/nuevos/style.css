@@ -15,9 +15,8 @@ body,
     height: auto;
 }
 
-.modal {
+.modal.show .modal-dialog {
     height: auto;
-    overflow-y: visible;
 }
 
 .modal-header {
@@ -36,6 +35,29 @@ body,
     overflow-y: visible;
 }
 
+.modal-header .close {
+    margin: -1rem -1rem -1rem auto !important;
+}
+
+.callUsModalContainer .modal-header .close {
+    margin: 0 !important;
+}
+
+.modal-header .row,
+.modal-footer .row {
+    width: 100%;
+}
+
+.callUsModalContainer .modal-content {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.callUsModalContainer .modal-content .modal-header .close {
+    position: relative;
+    top: -3rem;
+    right: -1rem;
+}
 
 body {
     background: rgba(255, 255, 255, 1);
@@ -48,13 +70,13 @@ a {
 }
 
 a:after {
-    content: "\f105";
+    content: "\e808";
     position: relative;
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
+    font-family: "fontello";
     left: 10px;
-    top: 2px;
+    top: -1px;
     transition: 300ms;
+    font-size: 12px;
 }
 
 a:hover {
@@ -88,6 +110,11 @@ p {
     color: rgba(255, 255, 255, 1);
 }
 
+.generalButton:disabled {
+    color: rgba(255, 255, 255, 1);
+    background: rgba(224, 224, 224, 1);
+}
+
 .generalButton:after {
     display: none;
 }
@@ -96,8 +123,8 @@ header {
     height: auto;
     position: absolute;
     width: 100%;
-    background: rgba(30, 30, 40, 0.85);
     z-index: 100;
+    background: rgba(30, 30, 40, 0.85);
 }
 
 header a:after {
@@ -123,7 +150,7 @@ header .topMenu a:hover {
 header .topMenu .activeItem a {
     font-weight: 700;
     color: rgba(55, 194, 234, 1);
-    background: #1e1e28;
+    background: rgba(30, 30, 40, 1);
     padding: 13px 12px 12px 12px;
 }
 
@@ -153,7 +180,7 @@ header .topMenu .locationButton a::before {
 header .mainNav {
     padding-top: 20px;
     padding-bottom: 10px;
-    background: rgba(30, 30, 40, 0.05);
+    background: rgba(30, 30, 40, 1);
 }
 
 header .mainNav img {
@@ -226,29 +253,97 @@ header .mainNav .mobileCart a img {
     margin: 0 auto;
 }
 
+/*mobile header*/
+.mobileHeader {
+    height: auto;
+    text-align: center;
+    -webkit-box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+.mobileHeader a {
+    color: rgba(255, 255, 255, 1);
+}
+
+.mobileHeader a:after {
+    display: none;
+}
+
+.mobileHeader .locationButton {
+    padding: 10px 30px;
+}
+
+.mobileHeader .locationButton a {
+    background: rgba(224, 224, 224, 0.1);
+    padding: 5px 30px;
+    display: block;
+    font-weight: 500;
+    font-size: 14px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.mobileHeader .locationButton a::before {
+    content: "\f3c5";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: relative;
+    right: 10px;
+    margin-left: 10px;
+}
+
+.mobileHeader .headerTopMenu {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    background: rgba(30, 30, 40, 1);
+}
+
+.mobileHeader .headerTopMenu .mobileToggle {
+    padding-left: 40px;
+}
+
+.mobileHeader .headerTopMenu .logoContainer img {
+    width: 132px;
+    margin: 0 auto;
+    height: auto;
+}
+
+.mobileHeader .headerTopMenu .mobileCart {
+    padding-right: 40px;
+}
+
+.mobileHeader .headerTopMenu .mobileCart a img {
+    width: 28px;
+    margin: 0 auto;
+}
+
+/*mobile header*/
 .mobileMenuContainer {
     width: 100%;
     position: fixed;
-    z-index: 99;
+    z-index: 100;
     height: auto;
     left: 0;
     top: 0;
     display: none;
 }
 
+.mobileMenuHeader {
+    height: auto;
+}
+
 .mobileMenuContainer .mobileMenu {
     width: 100%;
     background: rgba(30, 30, 40, 1);
     height: 100vh;
-    -webkit-box-shadow: inset 0px 105px 10px 2px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: inset 0px 115px 10px 2px rgba(0, 0, 0, 0.5);
-    box-shadow: inset 0px 115px 10px 2px rgba(0, 0, 0, 0.5);
 }
 
 .mobileMenu ul {
     position: relative;
     list-style: none;
-    padding-top: 8em;
 }
 
 .mobileMenu ul li {
@@ -258,7 +353,7 @@ header .mainNav .mobileCart a img {
 }
 
 .mobileMenu ul li:first-child a {
-    color: rgba(240, 78, 151, 1)
+    color: rgba(240, 78, 151, 1);
 }
 
 .mobileMenu ul li a {
@@ -284,18 +379,17 @@ header .mainNav .mobileCart a img {
 }
 
 .mobileMenu .bottomMobileMenu {
-    bottom: 9%;
+    bottom: 0;
     left: 15px;
-    position: relative;
+    position: absolute;
     background: rgba(22, 22, 27, 0.85);
     width: 100%;
     padding: 0;
     padding-bottom: 1rem;
     padding-top: 1rem;
     text-align: center;
-    box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5),
-        0 0 0 0 rgba(0, 0, 0, 0.5);
-
+    box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5), 0 0 0 0 rgba(0, 0, 0, 0.5);
+    height: auto;
 }
 
 .mobileMenu .bottomMobileMenuItem {
@@ -305,6 +399,7 @@ header .mainNav .mobileCart a img {
 
 .mobileMenu .bottomMobileMenuItem.activeItem a {
     color: rgba(55, 194, 234, 1);
+    pointer-events: none;
 }
 
 .mobileMenu .bottomMobileMenuItem a {
@@ -318,10 +413,10 @@ header .mainNav .mobileCart a img {
 /*Main Video Banner*/
 .mainVideoBanner {
     position: relative;
-    background: url(../assets/img/nuevos/backVideoMobile.png) top center no-repeat;
+    background: url(../../../assets/img/nuevos/backVideoMobile.png) top center no-repeat;
     background-size: cover;
     margin-bottom: 3px;
-    height: 100vh;
+    height: 90vh;
 }
 
 .videoContainer {
@@ -350,23 +445,29 @@ header .mainNav .mobileCart a img {
     z-index: 9;
     left: 0;
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#16161b+0,16161b+15,16161b+15,16161b+100&1+1,1+15,0+100 */
-    background: -moz-linear-gradient(left,
-            rgba(22, 22, 27, 1) 0%,
-            rgba(22, 22, 27, 1) 1%,
-            rgba(22, 22, 27, 1) 15%,
-            rgba(22, 22, 27, 0) 100%);
+    background: -moz-linear-gradient(
+        left,
+        rgba(22, 22, 27, 1) 0%,
+        rgba(22, 22, 27, 1) 1%,
+        rgba(22, 22, 27, 1) 15%,
+        rgba(22, 22, 27, 0) 100%
+    );
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(left,
-            rgba(22, 22, 27, 1) 0%,
-            rgba(22, 22, 27, 1) 1%,
-            rgba(22, 22, 27, 1) 15%,
-            rgba(22, 22, 27, 0) 100%);
+    background: -webkit-linear-gradient(
+        left,
+        rgba(22, 22, 27, 1) 0%,
+        rgba(22, 22, 27, 1) 1%,
+        rgba(22, 22, 27, 1) 15%,
+        rgba(22, 22, 27, 0) 100%
+    );
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right,
-            rgba(22, 22, 27, 1) 0%,
-            rgba(22, 22, 27, 1) 1%,
-            rgba(22, 22, 27, 1) 15%,
-            rgba(22, 22, 27, 0) 100%);
+    background: linear-gradient(
+        to right,
+        rgba(22, 22, 27, 1) 0%,
+        rgba(22, 22, 27, 1) 1%,
+        rgba(22, 22, 27, 1) 15%,
+        rgba(22, 22, 27, 0) 100%
+    );
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#16161b', endColorstr='#0016161b', GradientType=1);
     /* IE6-9 */
@@ -397,7 +498,7 @@ header .mainNav .mobileCart a img {
 }
 
 .bannersContainers .headerBanner p {
-    font-size: 20px
+    font-size: 20px;
 }
 
 .bannersContainers .headerBanner span a {
@@ -418,28 +519,42 @@ header .mainNav .mobileCart a img {
     font-weight: 700;
 }
 
+.bannersContainers .headerBanner a:after {
+    content: "\e800";
+    font-family: "fontello";
+    font-size: 13px;
+}
+
+.headerBanner p a.mobileHidden {
+    display: none !important;
+}
+
 .bannersContainers .headerBanner a:hover {
     text-decoration: none;
 }
 
-.bannersContainers .headerBanner a:after {
-    content: "\f061";
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
+.bannersContainers .headerBanner .linkHeader img {
+    display: inline-block;
+    margin-left: 8px;
+    width: 16px;
+    height: auto;
     position: relative;
-    left: 20px;
-    top: 1px;
+    top: -1px;
+}
+
+.bannersContainers .headerBanner .linkHeader a:after {
+    display: none;
 }
 
 .bannersContainers .headerBanner hr {
     width: 60%;
     margin: 0 auto;
     border: solid 1px rgba(240, 240, 240, 0.2);
+    margin-top: 1rem;
 }
 
 .videoTextContainer {
     width: 100%;
-    padding-top: 15%;
     position: absolute;
     top: 0;
     z-index: 10;
@@ -448,18 +563,18 @@ header .mainNav .mobileCart a img {
 }
 
 .videoTextContainer .videoTextContent {
-    padding-top: 7%;
+    top: 35vh;
 }
 
 .videoTextContainer h1 {
     font-size: 60px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 600;
 }
 
 .videoTextContainer h2 {
     font-weight: 200;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 24px;
     margin-bottom: 2rem;
 }
@@ -473,25 +588,18 @@ header .mainNav .mobileCart a img {
 }
 
 .videoTextContainer .row a:after {
-    content: "\f105";
-    position: relative;
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    left: 10px;
-    transition: 300ms;
 }
 
 .videoTextContainer .row a:hover {
     text-decoration: none;
 }
 
-.videoTextContainer .row a:hover:after {
-    left: 15px;
-    text-decoration: none;
-}
-
 .videoTextContainer .row:nth-child(4) {
     margin-bottom: 2rem;
+}
+
+.videoTextContainer .onDemandButton {
+    height: auto;
 }
 
 .videoTextContainer .onDemandButton a:after {
@@ -505,8 +613,9 @@ header .mainNav .mobileCart a img {
 /**/
 .mainVideoBannerSecond {
     position: relative;
-    background: url(../assets/img/nuevos/backVideoMobile.png) top center no-repeat;
+    background: url(../../../assets/img/nuevos/backVideoMobile.png) top center no-repeat;
     background-size: cover;
+    height: 80vh;
 }
 
 .videoContainerSecond {
@@ -530,7 +639,7 @@ header .mainNav .mobileCart a img {
     content: "";
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: absolute;686
     display: block;
     z-index: 9;
     left: 0;
@@ -548,35 +657,55 @@ header .mainNav .mobileCart a img {
 
 .videoTextContainerSecond {
     width: 100%;
-    padding-top: 8%;
     position: absolute;
     top: 0;
     z-index: 10;
-    height: auto;
+    height: 100%;
     color: rgba(255, 255, 255, 1);
     text-align: center;
 }
 
-.videoTextContainerSecond .videoTextContentSecond {
-    padding-top: 4%;
+.videoTextContainerSecond .videoTextContentSecond .row,
+.videoTextContainerSecond .videoTextContentSecond .row .div {
+    height: auto;
 }
 
-.videoTextContainerSecond .videoTextContentSecond img {
+.videoTextContainerSecond .videoTextContentSecond {
+    height: 100%;
+}
+
+.videoTextContainerSecond .videoTextContentSecond .onDemandButton img {
+    width: 100px;
+    margin-bottom: 1rem;
+}
+
+.videoTextContainerSecond .videoTextContentSecond .imagesAppsContainer {
+    position: relative;
+    height: 50%;
+}
+
+.videoTextContainerSecond .videoTextContentSecond .titleSecondVideo {
+    position: relative;
+    height: 50%;
+    padding-top: 9vh;
+}
+
+.videoTextContainerSecond .videoTextContentSecond .imagesAppsContainer img {
     width: 100%;
     max-width: 128px;
     margin: 0 auto;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .videoTextContainerSecond h1 {
     font-size: 60px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 600;
 }
 
 .videoTextContainerSecond h2 {
     font-weight: 200;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 24px;
 }
 
@@ -589,35 +718,15 @@ header .mainNav .mobileCart a img {
     margin-left: 10px;
     height: auto;
     position: relative;
-    top: 30px;
-}
-
-.videoTextContainerSecond .row a:after {
-    content: "\f105";
-    position: relative;
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    left: 10px;
-    transition: 300ms;
+    top: 7px;
 }
 
 .videoTextContainerSecond .row a:hover {
     text-decoration: none;
 }
 
-.videoTextContainerSecond .row a:hover:after {
-    left: 15px;
-    text-decoration: none;
-}
-
-}
-
 .videoTextContainerSecond .onDemandButton a:after {
     display: none;
-}
-
-.videoTextContainerSecond .onDemandButton a img {
-    max-width: 150px;
 }
 
 /**/
@@ -656,31 +765,29 @@ header .mainNav .mobileCart a img {
     left: 15px;
     position: absolute;
     top: 18px;
-    transition: .2s;
-    color: rgba(117, 120, 123, 1);
+    transition: 0.2s;
+    color: rgba(59, 69, 89, 1);
     cursor: text;
     font-weight: normal;
-    opacity: 0.4;
-    filter: alpha(opacity=40);
 }
 
 .mat-input-outer .border {
     height: 1px;
-    background: #000;
-    transition: .3s;
-    -webkit-transition: .3s;
-    -ms-transition: .3s;
+    background: rgba(59, 69, 89, 1);
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -ms-transition: 0.3s;
 }
 
 .mat-input-outer .border::before {
     content: " ";
     display: table;
-    height: 3px;
+    height: 1px;
     width: 0%;
     background: transparent;
-    transition: .3s;
-    -webkit-transition: .3s;
-    -ms-transition: .3s;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -ms-transition: 0.3s;
     margin: 0 auto;
 }
 
@@ -709,15 +816,18 @@ header .mainNav .mobileCart a img {
     font-weight: 500;
     font-size: 16px;
     color: rgba(117, 120, 123, 1);
+}
 
+.callUsModalContainer .modal-header .close img {
+    max-width: 24px;
+    max-height: 24px;
 }
 
 .callUsModalContainer .modal-header p:nth-child(2) {
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
     font-size: 24px;
-    color: rgba(117, 120, 123, 1);
-
+    color: rgba(59, 69, 89, 1);
 }
 
 .cardsRow {
@@ -734,6 +844,7 @@ header .mainNav .mobileCart a img {
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
+    padding-top: 1.5rem;
 }
 
 .cardsRow .card img {
@@ -802,11 +913,10 @@ header .mainNav .mobileCart a img {
 
 .packagesContainer .locationLink a:before {
     content: "\f3c5";
-    font-family: 'Font Awesome 5 Free';
+    font-family: "Font Awesome 5 Free";
     font-weight: 900;
     position: relative;
     right: 10px;
-
 }
 
 .hiddenText {
@@ -822,22 +932,26 @@ header .mainNav .mobileCart a img {
     border-radius: 16px;
     text-align: center;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.05);
-    margin-bottom: 3rem;
+    margin-bottom: 4.5rem;
     float: left;
     cursor: pointer;
+    max-width: 380px;
+    max-height: 380px;
+    transition: 300ms;
+}
+
+.mainContainerpackage:hover {
+    box-shadow: 0 32px 32px 0 rgba(0, 0, 0, 0.05);
+    transition: 300ms;
 }
 
 .mainContainerpackage.unbox {
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fafafa+0,02a8e1+100&0+0,0.05+100 */
     background: -moz-linear-gradient(45deg, rgba(250, 250, 250, 0) 0%, rgba(2, 168, 225, 0.05) 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg,
-            rgba(250, 250, 250, 0) 0%,
-            rgba(2, 168, 225, 0.05) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(250, 250, 250, 0) 0%, rgba(2, 168, 225, 0.05) 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(45deg,
-            rgba(250, 250, 250, 0) 0%,
-            rgba(2, 168, 225, 0.05) 100%);
+    background: linear-gradient(45deg, rgba(250, 250, 250, 0) 0%, rgba(2, 168, 225, 0.05) 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00fafafa', endColorstr='#0d02a8e1', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */
@@ -848,13 +962,9 @@ header .mainNav .mobileCart a img {
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fafafa+0,3b4559+100&0+0,0.05+100 */
     background: -moz-linear-gradient(45deg, rgba(250, 250, 250, 0) 0%, rgba(59, 69, 89, 0.05) 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg,
-            rgba(250, 250, 250, 0) 0%,
-            rgba(59, 69, 89, 0.05) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(250, 250, 250, 0) 0%, rgba(59, 69, 89, 0.05) 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(45deg,
-            rgba(250, 250, 250, 0) 0%,
-            rgba(59, 69, 89, 0.05) 100%);
+    background: linear-gradient(45deg, rgba(250, 250, 250, 0) 0%, rgba(59, 69, 89, 0.05) 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00fafafa', endColorstr='#0d3b4559', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */
@@ -864,13 +974,9 @@ header .mainNav .mobileCart a img {
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fafafa+0,7d54a9+100&0+0,0.05+100 */
     background: -moz-linear-gradient(45deg, rgba(250, 250, 250, 0) 0%, rgba(125, 84, 169, 0.05) 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg,
-            rgba(250, 250, 250, 0) 0%,
-            rgba(125, 84, 169, 0.05) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(250, 250, 250, 0) 0%, rgba(125, 84, 169, 0.05) 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(45deg,
-            rgba(250, 250, 250, 0) 0%,
-            rgba(125, 84, 169, 0.05) 100%);
+    background: linear-gradient(45deg, rgba(250, 250, 250, 0) 0%, rgba(125, 84, 169, 0.05) 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00fafafa', endColorstr='#0d7d54a9', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */
@@ -880,13 +986,9 @@ header .mainNav .mobileCart a img {
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fafafa+0,62c3e6+100&0+0,0.05+100 */
     background: -moz-linear-gradient(45deg, rgba(250, 250, 250, 0) 0%, rgba(98, 195, 230, 0.05) 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg,
-            rgba(250, 250, 250, 0) 0%,
-            rgba(98, 195, 230, 0.05) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(250, 250, 250, 0) 0%, rgba(98, 195, 230, 0.05) 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(45deg,
-            rgba(250, 250, 250, 0) 0%,
-            rgba(98, 195, 230, 0.05) 100%);
+    background: linear-gradient(45deg, rgba(250, 250, 250, 0) 0%, rgba(98, 195, 230, 0.05) 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00fafafa', endColorstr='#0d62c3e6', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */
@@ -896,13 +998,9 @@ header .mainNav .mobileCart a img {
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fafafa+0,8cc8e6+100&0+0,0.05+100 */
     background: -moz-linear-gradient(45deg, rgba(250, 250, 250, 0) 0%, rgba(140, 200, 230, 0.05) 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg,
-            rgba(250, 250, 250, 0) 0%,
-            rgba(140, 200, 230, 0.05) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(250, 250, 250, 0) 0%, rgba(140, 200, 230, 0.05) 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(45deg,
-            rgba(250, 250, 250, 0) 0%,
-            rgba(140, 200, 230, 0.05) 100%);
+    background: linear-gradient(45deg, rgba(250, 250, 250, 0) 0%, rgba(140, 200, 230, 0.05) 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00fafafa', endColorstr='#0d8cc8e6', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */
@@ -912,13 +1010,9 @@ header .mainNav .mobileCart a img {
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fafafa+0,fcb100+100&0+0,0.05+100 */
     background: -moz-linear-gradient(45deg, rgba(250, 250, 250, 0) 0%, rgba(252, 177, 0, 0.05) 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg,
-            rgba(250, 250, 250, 0) 0%,
-            rgba(252, 177, 0, 0.05) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(250, 250, 250, 0) 0%, rgba(252, 177, 0, 0.05) 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(45deg,
-            rgba(250, 250, 250, 0) 0%,
-            rgba(252, 177, 0, 0.05) 100%);
+    background: linear-gradient(45deg, rgba(250, 250, 250, 0) 0%, rgba(252, 177, 0, 0.05) 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00fafafa', endColorstr='#0dfcb100', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */
@@ -928,13 +1022,9 @@ header .mainNav .mobileCart a img {
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fafafa+0,f6c255+100&0+0,0.05+100 */
     background: -moz-linear-gradient(45deg, rgba(250, 250, 250, 0) 0%, rgba(246, 194, 85, 0.05) 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg,
-            rgba(250, 250, 250, 0) 0%,
-            rgba(246, 194, 85, 0.05) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(250, 250, 250, 0) 0%, rgba(246, 194, 85, 0.05) 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(45deg,
-            rgba(250, 250, 250, 0) 0%,
-            rgba(246, 194, 85, 0.05) 100%);
+    background: linear-gradient(45deg, rgba(250, 250, 250, 0) 0%, rgba(246, 194, 85, 0.05) 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00fafafa', endColorstr='#0df6c255', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */
@@ -944,20 +1034,12 @@ header .mainNav .mobileCart a img {
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fafafa+0,b4b4b4+100&0+0,0.05+100 */
     background: -moz-linear-gradient(45deg, rgba(250, 250, 250, 0) 0%, rgba(180, 180, 180, 0.05) 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg,
-            rgba(250, 250, 250, 0) 0%,
-            rgba(180, 180, 180, 0.05) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(250, 250, 250, 0) 0%, rgba(180, 180, 180, 0.05) 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(45deg,
-            rgba(250, 250, 250, 0) 0%,
-            rgba(180, 180, 180, 0.05) 100%);
+    background: linear-gradient(45deg, rgba(250, 250, 250, 0) 0%, rgba(180, 180, 180, 0.05) 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00fafafa', endColorstr='#0db4b4b4', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */
-}
-
-.mainContainerpackage:first-child {
-    margin-left: 0;
 }
 
 .mainContainerpackage .imagePackage {
@@ -992,6 +1074,12 @@ header .mainNav .mobileCart a img {
     border: #e0e0e0 solid 1px;
     margin: 0 auto;
     height: auto;
+    margin-bottom: 16px;
+    margin-top: 24px;
+}
+
+.mainContainerpackage a:after {
+    display: none;
 }
 
 .mainContainerpackage .packageInfoContainer {
@@ -1010,13 +1098,9 @@ header .mainNav .mobileCart a img {
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#00aae3+0,59cbe8+100&0.8+0,0.8+100 */
     background: -moz-linear-gradient(45deg, rgba(0, 170, 227, 0.8) 0%, rgba(89, 203, 232, 0.8) 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg,
-            rgba(0, 170, 227, 0.8) 0%,
-            rgba(89, 203, 232, 0.8) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(0, 170, 227, 0.8) 0%, rgba(89, 203, 232, 0.8) 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(45deg,
-            rgba(0, 170, 227, 0.8) 0%,
-            rgba(89, 203, 232, 0.8) 100%);
+    background: linear-gradient(45deg, rgba(0, 170, 227, 0.8) 0%, rgba(89, 203, 232, 0.8) 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cc00aae3', endColorstr='#cc59cbe8', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */
@@ -1141,13 +1225,9 @@ header .mainNav .mobileCart a img {
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e4002b+0,e02d1d+100&0.8+0,0.8+100 */
     background: -moz-linear-gradient(45deg, rgba(228, 0, 43, 0.8) 0%, rgba(224, 45, 29, 0.8) 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg,
-            rgba(228, 0, 43, 0.8) 0%,
-            rgba(224, 45, 29, 0.8) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(228, 0, 43, 0.8) 0%, rgba(224, 45, 29, 0.8) 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(45deg,
-            rgba(228, 0, 43, 0.8) 0%,
-            rgba(224, 45, 29, 0.8) 100%);
+    background: linear-gradient(45deg, rgba(228, 0, 43, 0.8) 0%, rgba(224, 45, 29, 0.8) 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cce4002b', endColorstr='#cce02d1d', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */
@@ -1260,13 +1340,9 @@ header .mainNav .mobileCart a img {
     /* Old browsers */
     background: -moz-linear-gradient(45deg, rgba(125, 84, 169, 1) 0%, rgba(178, 138, 209, 1) 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg,
-            rgba(125, 84, 169, 1) 0%,
-            rgba(178, 138, 209, 1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(125, 84, 169, 1) 0%, rgba(178, 138, 209, 1) 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(45deg,
-            rgba(125, 84, 169, 1) 0%,
-            rgba(178, 138, 209, 1) 100%);
+    background: linear-gradient(45deg, rgba(125, 84, 169, 1) 0%, rgba(178, 138, 209, 1) 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7d54a9', endColorstr='#b28ad1', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */
@@ -1376,13 +1452,9 @@ header .mainNav .mobileCart a img {
     /* Old browsers */
     background: -moz-linear-gradient(45deg, rgba(98, 195, 230, 1) 0%, rgba(153, 231, 255, 1) 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg,
-            rgba(98, 195, 230, 1) 0%,
-            rgba(153, 231, 255, 1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(98, 195, 230, 1) 0%, rgba(153, 231, 255, 1) 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(45deg,
-            rgba(98, 195, 230, 1) 0%,
-            rgba(153, 231, 255, 1) 100%);
+    background: linear-gradient(45deg, rgba(98, 195, 230, 1) 0%, rgba(153, 231, 255, 1) 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#62c3e6', endColorstr='#99e7ff', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */
@@ -1410,6 +1482,14 @@ header .mainNav .mobileCart a img {
     font-weight: 400;
     font-size: 16px;
     line-height: 28px;
+}
+
+.mainContainerpackage .descriptionPackage p {
+    white-space: nowrap;
+}
+
+.mainContainerpackage .descriptionApp p {
+    white-space: nowrap;
 }
 
 .emotionPlus .descriptionPackage p span {
@@ -1491,13 +1571,9 @@ header .mainNav .mobileCart a img {
     /* Old browsers */
     background: -moz-linear-gradient(45deg, rgba(140, 200, 230, 1) 0%, rgba(177, 229, 246, 1) 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg,
-            rgba(140, 200, 230, 1) 0%,
-            rgba(177, 229, 246, 1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(140, 200, 230, 1) 0%, rgba(177, 229, 246, 1) 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(45deg,
-            rgba(140, 200, 230, 1) 0%,
-            rgba(177, 229, 246, 1) 100%);
+    background: linear-gradient(45deg, rgba(140, 200, 230, 1) 0%, rgba(177, 229, 246, 1) 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8cc8e6', endColorstr='#b1e5f6', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */
@@ -1606,13 +1682,9 @@ header .mainNav .mobileCart a img {
     /* Old browsers */
     background: -moz-linear-gradient(45deg, rgba(252, 177, 0, 1) 0%, rgba(246, 233, 177, 1) 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg,
-            rgba(252, 177, 0, 1) 0%,
-            rgba(246, 233, 177, 1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(252, 177, 0, 1) 0%, rgba(246, 233, 177, 1) 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(45deg,
-            rgba(252, 177, 0, 1) 0%,
-            rgba(246, 233, 177, 1) 100%);
+    background: linear-gradient(45deg, rgba(252, 177, 0, 1) 0%, rgba(246, 233, 177, 1) 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcb100', endColorstr='#f6e9b1', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */
@@ -1721,13 +1793,9 @@ header .mainNav .mobileCart a img {
     /* Old browsers */
     background: -moz-linear-gradient(45deg, rgba(246, 194, 85, 1) 0%, rgba(246, 230, 175, 1) 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg,
-            rgba(246, 194, 85, 1) 0%,
-            rgba(246, 230, 175, 1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(246, 194, 85, 1) 0%, rgba(246, 230, 175, 1) 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(45deg,
-            rgba(246, 194, 85, 1) 0%,
-            rgba(246, 230, 175, 1) 100%);
+    background: linear-gradient(45deg, rgba(246, 194, 85, 1) 0%, rgba(246, 230, 175, 1) 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6c255', endColorstr='#f6e6af', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */
@@ -1836,13 +1904,9 @@ header .mainNav .mobileCart a img {
     /* Old browsers */
     background: -moz-linear-gradient(45deg, rgba(180, 180, 180, 1) 0%, rgba(221, 221, 221, 1) 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg,
-            rgba(180, 180, 180, 1) 0%,
-            rgba(221, 221, 221, 1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(180, 180, 180, 1) 0%, rgba(221, 221, 221, 1) 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(45deg,
-            rgba(180, 180, 180, 1) 0%,
-            rgba(221, 221, 221, 1) 100%);
+    background: linear-gradient(45deg, rgba(180, 180, 180, 1) 0%, rgba(221, 221, 221, 1) 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b4b4b4', endColorstr='#dddddd', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */
@@ -1944,6 +2008,7 @@ header .mainNav .mobileCart a img {
     height: auto;
     padding-bottom: 10rem;
     padding-top: 2rem;
+    margin-bottom: 5rem;
 }
 
 /*Companies*/
@@ -1962,6 +2027,7 @@ header .mainNav .mobileCart a img {
 .bussinesBranches .companies .branchImage div {
     text-align: center;
     padding: 0;
+    overflow: hidden;
 }
 
 .bussinesBranches .companies .branchImage:after {
@@ -1986,7 +2052,9 @@ header .mainNav .mobileCart a img {
 }
 
 .bussinesBranches .companies .branchImage div img {
-    width: 100%;
+    width: auto;
+    max-height: 300px;
+    min-height: 300px;
 }
 
 .bussinesBranches .companies .branchDescription {
@@ -2001,6 +2069,8 @@ header .mainNav .mobileCart a img {
     -moz-border-radius: 4px;
     border-radius: 4px;
     box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
+    max-height: 305px;
+    min-height: 257px;
 }
 
 .bussinesBranches .companies .branchDescription img {
@@ -2015,6 +2085,10 @@ header .mainNav .mobileCart a img {
 }
 
 .bussinesBranches .companies .branchDescription a {
+    padding: 5px 15px;
+}
+
+.bussinesBranches .companies .branchDescription a:hover {
     background: rgba(26, 118, 210, 0.2);
     padding: 5px 15px;
 }
@@ -2040,6 +2114,7 @@ header .mainNav .mobileCart a img {
 .bussinesBranches .entrepreneur .branchImage div {
     text-align: center;
     padding: 0;
+    overflow: hidden;
 }
 
 .bussinesBranches .entrepreneur .branchImage:after {
@@ -2064,7 +2139,9 @@ header .mainNav .mobileCart a img {
 }
 
 .bussinesBranches .entrepreneur .branchImage div img {
-    width: 100%;
+    width: auto;
+    max-height: 300px;
+    min-height: 300px;
 }
 
 .bussinesBranches .entrepreneur .branchDescription {
@@ -2079,6 +2156,8 @@ header .mainNav .mobileCart a img {
     -moz-border-radius: 4px;
     border-radius: 4px;
     box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
+    max-height: 305px;
+    min-height: 257px;
 }
 
 .bussinesBranches .entrepreneur .branchDescription img {
@@ -2092,6 +2171,10 @@ header .mainNav .mobileCart a img {
 }
 
 .bussinesBranches .entrepreneur .branchDescription a {
+    padding: 5px 15px;
+}
+
+.bussinesBranches .entrepreneur .branchDescription a:hover {
     background: rgba(26, 118, 210, 0.2);
     padding: 5px 15px;
 }
@@ -2101,7 +2184,6 @@ header .mainNav .mobileCart a img {
 }
 
 /*Entrepreneur*/
-
 
 /*Business*/
 /*Location Footer*/
@@ -2117,6 +2199,10 @@ header .mainNav .mobileCart a img {
 .locationSharing .locationIcon i {
     font-size: 72px;
     margin-bottom: 2rem;
+}
+
+.locationSharing .locationTitle {
+    margin-bottom: 1.2rem;
 }
 
 .locationSharing .locationTitle h1 {
@@ -2166,7 +2252,7 @@ header .mainNav .mobileCart a img {
     left: 15px;
     position: absolute;
     top: 18px;
-    transition: .2s;
+    transition: 0.2s;
     color: rgba(255, 255, 255, 1);
     cursor: text;
     font-weight: normal;
@@ -2178,9 +2264,9 @@ header .mainNav .mobileCart a img {
 .locationSharing .mat-input-outer .border {
     height: 1px;
     background: #ffffff;
-    transition: .3s;
-    -webkit-transition: .3s;
-    -ms-transition: .3s;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -ms-transition: 0.3s;
     border: none !important;
 }
 
@@ -2190,9 +2276,9 @@ header .mainNav .mobileCart a img {
     height: 3px;
     width: 0%;
     background: transparent;
-    transition: .3s;
-    -webkit-transition: .3s;
-    -ms-transition: .3s;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -ms-transition: 0.3s;
     margin: 0 auto;
 }
 
@@ -2215,7 +2301,7 @@ header .mainNav .mobileCart a img {
 }
 
 .locationSharing .locationButton {
-    margin-top: 2rem;
+    margin-top: 2.5rem;
     text-align: center;
 }
 
@@ -2257,8 +2343,26 @@ footer .footerColumn p {
     margin-bottom: 1rem;
 }
 
+footer .footerColumn p i {
+    margin-left: 5px;
+}
+
 footer .footerColumn:nth-child(6) p:first-child {
     margin-bottom: 0;
+}
+
+.servicesCollapsible,
+.productsCollapsible,
+.supportCollapsible,
+.contactsCollapsible {
+    display: block;
+}
+
+.chevronServices,
+.chevronProducts,
+.chevronSupport,
+.chevronContact {
+    display: none;
 }
 
 footer ul {
@@ -2268,15 +2372,23 @@ footer ul {
 footer ul li a {
     color: rgba(117, 120, 123, 1);
     font-size: 14px;
+    line-height: 32px;
 }
 
 footer ul li a:hover {
     color: rgba(117, 120, 123, 1);
 }
 
+.footerColumn.contactColumn ul li a {
+    color: rgba(25, 136, 255, 1);
+}
 footer ul.footerSocials li {
     display: inline-block;
     margin-left: 10px;
+}
+
+footer ul.footerSocials li a i {
+    font-size: 19px;
 }
 
 footer .footerLegals ul li {
@@ -2291,7 +2403,7 @@ footer .footerLegals ul li a {
 footer .footerLegals ul li a:after {
     content: "\f111";
     display: inline;
-    font-family: 'Font Awesome 5 Free';
+    font-family: "Font Awesome 5 Free";
     font-weight: 900;
     font-size: 2px;
     position: relative;
@@ -2337,7 +2449,7 @@ footer .legalAdvice p {
 /*Packages View*/
 .headerPackages {
     height: auto;
-    background: url(../assets/img/nuevos/backVideoMobile.png) top center no-repeat;
+    background: url(../img/backVideoMobile.png) top center no-repeat;
     background-size: 100% 70%;
     padding-top: 10rem;
     padding-bottom: 3rem;
@@ -2355,7 +2467,8 @@ footer .legalAdvice p {
     font-weight: 600;
 }
 
-.headerPackagesContainer {}
+.headerPackagesContainer {
+}
 
 .generalPackage {
     background: rgba(250, 250, 250, 1);
@@ -2471,7 +2584,8 @@ footer .legalAdvice p {
 
 .bestPackageImageContainer {
     width: 100%;
-    background-image: url(../img/nuevos/gettyimages-1194473556-2048x2048.png), linear-gradient(90deg, rgba(255, 0, 207, 1) 0.06%, rgba(120, 58, 106, 1) 100%);
+    background-image: url(../img/gettyimages-1194473556-2048x2048.png),
+        linear-gradient(90deg, rgba(255, 0, 207, 1) 0.06%, rgba(120, 58, 106, 1) 100%);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -2496,7 +2610,6 @@ footer .legalAdvice p {
     -webkit-text-fill-color: transparent;
     font-weight: 700;
 }
-
 
 .bestPackageImageContainer h1 {
     font-weight: 700;
@@ -2542,3 +2655,423 @@ footer .legalAdvice p {
     font-weight: 700;
     font-size: 20px;
 }
+
+/*Modal Cobertura Top*/
+.modalLocationTop {
+    position: fixed;
+    z-index: 1001;
+    background: rgba(30, 30, 40, 0.85);
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: none;
+}
+
+.modalLocationTop .backLocationModal {
+    background: rgba(255, 255, 255, 1);
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+    height: auto;
+    text-align: center;
+    box-shadow: 0 32px 32px 0 rgba(0, 0, 0, 0.2);
+    color: rgba(59, 69, 89, 1);
+}
+
+.modalLocationTop .titleModalLocation {
+    text-align: center;
+}
+
+.modalLocationTop .closeModal {
+    text-align: right;
+}
+
+.modalLocationTop .closeModal a img {
+    max-width: 24px;
+    max-height: 24px;
+    margin-right: 2rem;
+}
+
+.modalLocationTop .closeModal a:after {
+    display: none;
+}
+
+.modalLocationTop .backLocationModal h1 {
+    color: rgba(59, 69, 89, 1);
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.modalLocationTop .backLocationModal h1 span {
+    font-weight: 700;
+}
+
+.modalLocationTop .buttonModal {
+    margin-top: 2rem;
+}
+
+.modalLocationTop .buttonModal .generalButton {
+    background: rgba(255, 255, 255, 1);
+    color: rgba(25, 136, 255, 1);
+    border: solid 1px rgba(25, 136, 255, 1);
+}
+
+/*Modal Cobertura Top*/
+/*Modal ity Picker*/
+.modalCityPicker {
+    color: rgba(245, 245, 245, 1);
+}
+
+.modalCityPicker .modal-content {
+    background: rgba(30, 30, 40, 1);
+}
+
+.modalCityPicker .modal-content .close img {
+    max-width: 18px;
+    max-height: 18px;
+    margin-right: 2rem;
+    opacity: 1;
+}
+
+.modalCityPicker .citySearchBar {
+    margin-bottom: 2rem;
+}
+
+.modalCityPicker .citySearchBar input {
+    border: none;
+    -webkit-border-radius: 24vw;
+    -moz-border-radius: 24vw;
+    border-radius: 24vw;
+    color: rgba(245, 245, 245, 1);
+    padding-left: 55px;
+    background: rgba(245, 245, 245, 0.1);
+}
+
+.modalCityPicker .citySearchBar .autocompleteList {
+    position: absolute;
+    top: 42px;
+    left: 39px;
+    z-index: 10000;
+    background: rgba(30, 30, 40, 1);
+    width: 93%;
+    display: none;
+}
+
+.modalCityPicker .citySearchBar .autocompleteList ul {
+    list-style: none;
+}
+
+.modalCityPicker .citySearchBar .autocompleteList ul li:last-child a {
+    -webkit-border-bottom-right-radius: 24px;
+    -webkit-border-bottom-left-radius: 24px;
+    -moz-border-radius-bottomright: 24px;
+    -moz-border-radius-bottomleft: 24px;
+    border-bottom-right-radius: 24px;
+    border-bottom-left-radius: 24px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.modalCityPicker .citySearchBar .autocompleteList ul li a {
+    background: rgba(30, 30, 40, 1);
+    display: block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 31px;
+    color: rgba(245, 245, 245, 1);
+    height: auto;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.modalCityPicker .citySearchBar .autocompleteList ul li a:after {
+    display: none;
+}
+
+.modalCityPicker .citySearchBar .autocompleteList ul li a:hover {
+    background: rgba(75, 87, 111, 1);
+}
+
+.modalCityPicker .citySearchBar:after {
+    content: url(../img/icons/searchIcon.svg);
+    position: absolute;
+    left: 27px;
+    top: 9px;
+    width: 24px;
+    height: 24px;
+}
+
+.modalCityPicker .cityList {
+    margin-bottom: 2rem;
+}
+
+.modalCityPicker .cityList .cityListItem {
+    margin-bottom: 2rem;
+}
+
+.modalCityPicker .cityList .cityListItem a {
+    display: block;
+    color: rgba(245, 245, 245, 1);
+    padding: 15px 0 15px 16px;
+}
+
+.modalCityPicker .cityList .cityListItem a:hover {
+    background: rgba(75, 87, 111, 1);
+}
+
+.modalCityPicker .cityList .cityListItem a:after {
+    display: none;
+}
+
+.modalCityPicker .noServiceCity {
+    text-align: center;
+}
+
+.modalCityPicker .noServiceCity h1 {
+    font-weight: 700;
+    font-size: 44px;
+    margin-bottom: 2rem;
+}
+
+.modalCityPicker .noServiceCity p {
+    font-weight: 400;
+    font-size: 24px;
+    margin-bottom: 2rem;
+}
+
+.modalCityPicker .noServiceCity .mat-input-outer {
+    margin-bottom: 2rem;
+}
+
+/*Materialize Inputs*/
+
+.noServiceCity .mat-input {
+    margin: 2% auto;
+    width: 100%;
+}
+
+.noServiceCity .mat-input-outer {
+    display: table;
+    width: 100%;
+    position: relative;
+    background: transparent;
+}
+
+.noServiceCity .mat-input-outer input {
+    height: 50px;
+    border-radius: 0;
+    border: none;
+    width: 100%;
+    padding: 0 5px;
+    font-size: 16px;
+    background: transparent;
+    color: rgba(255, 255, 255, 1);
+}
+
+.noServiceCity .mat-input-outer input:focus {
+    border: none;
+    outline: none;
+}
+
+.noServiceCity .mat-input-outer label {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    left: 15px;
+    position: absolute;
+    top: 18px;
+    transition: 0.2s;
+    color: rgba(255, 255, 255, 1);
+    cursor: text;
+    font-weight: normal;
+}
+
+.noServiceCity .mat-input-outer .border {
+    height: 1px;
+    background: rgba(59, 69, 89, 1);
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -ms-transition: 0.3s;
+}
+
+.noServiceCity .mat-input-outer .border::before {
+    content: " ";
+    display: table;
+    height: 2px;
+    width: 0%;
+    background: transparent;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -ms-transition: 0.3s;
+    margin: 0 auto;
+}
+
+.noServiceCity .mat-input-outer input:focus ~ .border {
+    background: transparent;
+}
+
+.noServiceCity .mat-input-outer input:focus ~ .border::before {
+    width: 100%;
+    background: transparent;
+}
+
+.noServiceCity .mat-input-outer input + label.active {
+    left: 5px;
+    top: -10px;
+    color: rgba(255, 255, 255, 1);
+    opacity: 1;
+    font-size: 14px;
+    filter: alpha(opacity=100);
+}
+
+.noServiceCity .generalButton {
+    border: solid 1px rgba(25, 136, 255, 1);
+    color: rgba(25, 136, 255, 1);
+    background: rgba(255, 255, 255, 0);
+}
+
+/*Materialize Inputs*/
+.modalPhoneList .close img {
+    max-width: 18px;
+    max-height: 18px;
+    opacity: 1;
+}
+
+.modalPhoneList .modal-content {
+    padding-bottom: 1rem;
+}
+
+.modalPhoneList .modalTitle hr {
+    border-bottom: rgba(224, 224, 224, 1) solid 1px;
+}
+
+.modalPhoneList .modalTitle h1 {
+    font-weight: 400;
+    font-size: 28px;
+    text-align: center;
+}
+
+.modalPhoneList h1 img {
+    margin-right: 10px;
+}
+
+.modalPhoneList h1 span {
+    font-weight: 600;
+}
+
+.modalPhoneList .listColumn {
+    border-right: solid 1px rgba(224, 224, 224, 1);
+}
+
+.modalPhoneList .lastColumnPhone {
+    border-right: none;
+}
+
+.modalPhoneList .phoneListTitle h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: rgba(59, 69, 89, 1);
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.modalPhoneList .phoneListTitle p {
+    font-weight: 500 !important;
+    margin-bottom: 5px;
+}
+
+.modalPhoneList .phoneListTitle p,
+.modalPhoneList .phoneListTitle a,
+.modalPhoneList .phoneListTitle .schedule {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.modalPhoneList .phoneListTitle .schedule {
+    font-weight: 400 !important;
+    color: rgba(117, 120, 123, 1);
+}
+
+.modalPhoneList .firstNumber {
+    margin-bottom: 2rem;
+}
+
+.modalPhoneList .modal-content .modal-header .close {
+    position: relative;
+    top: 0;
+    right: 1rem;
+}
+
+.modalChats .modal-content {
+    max-height: 385px;
+    min-height: 385px;
+}
+
+.modalChats .close img {
+    max-width: 18px;
+    max-height: 18px;
+    opacity: 1;
+}
+
+.modalChats .modalTitle h1 {
+    margin-top: 1rem;
+    font-weight: 400;
+    font-size: 28px;
+    text-align: center;
+}
+
+.modalChats .chatsLinks a {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    font-size: 20px;
+    font-weight: 500;
+    color: rgba(26, 118, 210, 1);
+    display: block;
+    transition-duration: 0.4s;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.modalChats .chatsLinks a:after {
+    display: none;
+}
+
+.modalChats .chatsLinks a:hover {
+    font-weight: 500;
+    text-align: center;
+    background-color: #fafafa;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
+    font-size: 24px;
+    color: #3b4559;
+}
+
+.modalsButons {
+    height: auto;
+}
+
+.callUsModalContainer .modal-footer .modalPackagesButton a img {
+    max-height: 18px;
+    max-width: 18px;
+}
+
+.callUsModalContainer .successNotification {
+    background: rgba(76, 217, 100, 0.05);
+    display: inline-block;
+    border: 1px solid rgba(76, 217, 100, 1);
+    padding-left: 10px;
+    padding-right: 10px;
+    -webkit-border-radius: 24vw;
+    -moz-border-radius: 24vw;
+    border-radius: 24vw;
+    margin-bottom: 1rem;
+}
+
+.callUsModalContainer .successNotification:before {
+    content: "\f058";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: rgba(76, 217, 100, 1);
+    margin-right: 5px;
+}
+
+/*Modal ity Picker*/

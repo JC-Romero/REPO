@@ -779,5 +779,44 @@
                 "telefono": "1 Línea + Softphone"
             }
         }
+    ],
+    "TripleUnbox":[
+        {
+            "precioProntoPago": 1929,
+            "precioLista": 2009,
+            "clase":"unbox",
+            "color": "new-purple",
+            "detalleServicio": "-Servicio de  internet de 500 Mbps de descarga. -Servicio para 2 TV 80 Canales (21 HD). -Televisión interactiva (Donde Sea y Cuando Sea). -Servicio de telefonía con llamadas a números fijos, minutos a Estados Unidos y Canadá y celulares de México. -Incluy",
+            "imagen": "/assets/img/nuevos/amazon-prime-logoMain.png",
+            "incluye": "1 línea de teléfono",
+            "tipoPlan": "Residencial",
+            "id": "17",
+            "nombre": "Sorpréndete +",
+            "tipoOferta": "3P",
+            "familiaPaquete": "TriplePlay 4.0",
+            "detalle": {
+                "descriMegasDetalle": "Para lo que necesites, manten a tu familia conectada sin problemas.",
+                "promoMegasDetalle": "Máxima conectividad",
+                "tipo": "3P",
+                "canales": "4 TVs con 80 Canales",
+                "promoTelDetalle": "Con llamadas ilimitadas",
+                "descuento": "$ 80",
+                "idPaquete": "17",
+                "promoMegas": "Máxima conectividad",
+                "desc6ProntoPago": "$ 1,849",
+                "promoCanales": "275 Canales por 6 meses",
+                "megas": "500 Megas↓",
+                "promoTelefono": "Con llamadas ilimitadas",
+                "nombrePaquete": "Sorpréndete +",
+                "precioProntoPago": "$ 1,929",
+                "precioLista": "$ 2,009",
+                "desc6PrecioLista": "$ 1,929",
+                "promoCanalesDetalle": "275 Canales por 6 meses",
+                "descripcionDetalleTel": "Con llamadas ilimitadas",
+                "nombreComercial": "SORPRENDETE MAS TRIPLE PLAY",
+                "promoMegasN": "Máxima conectividad",
+                "telefono": "1 Línea + Softphone"
+            }
+        }
     ]
 }

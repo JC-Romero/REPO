@@ -1,22 +1,25 @@
 /*Minimals*/
 /*Small devices (landscape phones, 576px and up)*/
-@media (min-width: 576px) {}
+@media (min-width: 576px) {
+}
 
 /*Medium devices (tablets, 768px and up)*/
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+}
 
 /* Large devices (desktops, 992px and up)*/
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+}
 
 /* Extra large devices (large desktops, 1200px and up)*/
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+}
 
 /*Maximals*/
 /* Extra small devices (portrait phones, less than 576px)*/
 @media (max-width: 575.98px) {
-
     .mainVideoBanner {
-        height: 110%;
+        height: 110vh;
     }
 
     .mainVideoBannerSecond {
@@ -34,19 +37,70 @@
 
 /* Small devices (landscape phones, less than 768px)*/
 @media (max-width: 767.98px) {
+    .headerBanner a.mobileHidden {
+        display: block;
+    }
+
+    .headerBanner a.desktopHidden {
+        display: none;
+    }
+
     header .topMenu .locationButton a {
         display: block;
         text-align: center;
     }
 
-    header .mainNav {}
-
-    .bannersContainers {
-        top: 6.8rem;
+    .bannersContainers .headerBanner hr {
+        margin-top: 0;
+        position: relative;
+        top: -1rem;
+        width: 90%;
     }
 
-    .videoTextContainer {
-        padding-top: 30%;
+    .bannersContainers {
+        top: 6.4rem;
+    }
+
+    .videoContainer video {
+        width: 100% !important;
+        left: 0;
+    }
+
+    .videoContainer:before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: block;
+        z-index: 9;
+        left: 0;
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#211b2a+0,211b2a+70,211b2a+98&0+0,1+70,1+100 */
+        background: -moz-linear-gradient(
+            top,
+            rgba(33, 27, 42, 0) 0%,
+            rgba(33, 27, 42, 1) 70%,
+            rgba(33, 27, 42, 1) 98%,
+            rgba(33, 27, 42, 1) 100%
+        );
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(
+            top,
+            rgba(33, 27, 42, 0) 0%,
+            rgba(33, 27, 42, 1) 70%,
+            rgba(33, 27, 42, 1) 98%,
+            rgba(33, 27, 42, 1) 100%
+        );
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(
+            to bottom,
+            rgba(33, 27, 42, 0) 0%,
+            rgba(33, 27, 42, 1) 70%,
+            rgba(33, 27, 42, 1) 98%,
+            rgba(33, 27, 42, 1) 100%
+        );
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00211b2a', endColorstr='#211b2a', GradientType=0);
+        /* IE6-9 */
     }
 
     .videoTextContainer .row h2 {
@@ -64,14 +118,13 @@
     }
 
     .videoTextContainer .row:nth-child(4) {
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
         height: auto;
     }
 
     .videoTextContainer .videoTextContent {
-        padding-top: 15%;
         position: absolute;
-        top: 50vh;
+        top: 40vh;
     }
 
     .videoTextContainer h1 {
@@ -91,12 +144,8 @@
         top: 10%;
     }
 
-    .videoTextContainerSecond {
-        padding-top: 30%;
-    }
-
-    .videoTextContainerSecond .videoTextContentSecond {
-        padding-top: 15%;
+    .videoTextContainerSecond .videoTextContentSecond .imagesAppsContainer {
+        background: transparent;
     }
 
     .cardsRow .card .card-body .card-title {
@@ -113,38 +162,44 @@
     }
 
     .entrepreneur {
-        margin-top: 10rem;
+        margin-top: 15rem;
     }
 
+    .servicesCollapsible,
+    .productsCollapsible,
+    .supportCollapsible,
+    .contactsCollapsible {
+        display: none;
+    }
 
-
+    .chevronServices,
+    .chevronProducts,
+    .chevronSupport,
+    .chevronContact {
+        display: inline-block !important;
+    }
 }
 
-@media (max-width: 767.98px) and (orientation : landscape) {
+@media (max-width: 767.98px) and (orientation: landscape) {
     .mainVideoBanner {
         height: 170vh;
     }
 
     .mainVideoBannerSecond {
-        height: 260%;
+        height: 230vh;
+    }
+
+    .videoContainerSecond video {
+        height: 100vh;
     }
 
     .videoTextContainer {
-        padding-top: 16%;
+        padding-top: 16vh;
     }
 
     .videoTextContainer .videoTextContent {
         padding-top: 8%;
     }
-
-    .videoTextContainerSecond {
-        padding-top: 16%;
-    }
-
-    .videoTextContainerSecond .videoTextContentSecond {
-        padding-top: 8%;
-    }
-
 }
 
 /*Medium devices (tablets, less than 992px)*/
@@ -152,6 +207,21 @@
     header .mainNav .logoContainer {
         text-align: center;
         margin: 0 auto;
+    }
+
+    .headerBanner p a.mobileHidden {
+        display: none;
+    }
+
+    .headerBanner p a.desktopHidden {
+        display: block;
+    }
+
+    .bannersContainers .headerBanner hr {
+        margin-top: 0;
+        position: relative;
+        top: -1rem;
+        width: 90%;
     }
 
     header .mainNav ul.userMenu {
@@ -185,13 +255,9 @@
         margin-bottom: 0.5rem;
     }
 
-
     .videoTextContainer h2 {
         margin-bottom: 1rem;
     }
-
-    .videoTextContainer .generalButton {}
-
 
     .videoTextContainerSecond h1 {
         font-size: 30px;
@@ -201,8 +267,8 @@
         font-size: 18px;
     }
 
-    .videoTextContainerSecond .onDemandButton a img {
-        max-width: 75px;
+    .mainContainerpackage {
+        margin-bottom: 2rem;
     }
 
     footer .footerColumn:nth-child(4) {
@@ -218,14 +284,24 @@
         margin-top: 2rem;
     }
 
-}
+    footer .footerLegals ul li a {
+        line-height: normal;
+    }
 
-@media (max-width: 1200px) {
-    .videoTextContainerSecond .onDemandButton a img {
-        max-width: 50px;
+    .modalCityPicker .citySearchBar .autocompleteList {
+        width: 84%;
     }
 }
 
+@media (max-width: 1200px) {
+    .headerBanner p a.mobileHidden {
+        display: none !important;
+    }
+
+    .modalCityPicker .citySearchBar .autocompleteList {
+        width: 84%;
+    }
+}
 
 /* Galaxy S10 ----------- */
 @media only screen and (min-device-height: 412px) and (min-device-width: 869px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3.5) {
@@ -249,7 +325,7 @@
 }
 
 /* iPhone 4 ----------- */
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
     .mainVideoBanner {
         height: 180%;
     }
@@ -264,39 +340,40 @@
     }
 }
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
     .mainVideoBanner {
-        height: 110vh;
+        height: 115vh;
     }
 
     .mainVideoBannerSecond {
-        height: 120vh;
+        height: 117vh;
     }
 
     .videoTextContainer {
         text-align: center;
-        top: 0%;
+        top: 15vh;
     }
 
     .videoTextContainer .videoTextContent {
-        padding-top: 10%;
     }
 
     .videoTextContainerSecond .videoTextContentSecond img {
         width: 70px;
     }
-
 }
 
 /* iPhone 6, 7, 8 ----------- */
-@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2) {}
+@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+}
 
-@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2) {}
+@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+}
 
 /* ----------- iPhone 6+, 7+ and 8+ ----------- */
 
 /* Portrait and Landscape */
-@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {}
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+}
 
 /* Portrait */
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
@@ -310,17 +387,14 @@
 }
 
 /* Landscape */
-@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {}
-
-/* iPhone X ----------- */
-@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3) {}
-
-@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3) {}
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+}
 
 /* ----------- iPhone X ----------- */
 
 /* Portrait and Landscape */
-@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {}
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+}
 
 /* Portrait */
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
@@ -331,21 +405,20 @@
     .mainVideoBannerSecond {
         height: 110%;
     }
-
 }
 
 /* Landscape */
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
     .mainVideoBanner {
-        height: 150%;
+        height: 160vh;
     }
 
     .mainVideoBannerSecond {
-        height: 230%;
+        height: 230vh;
     }
 
     .videoTextContainer {
-        padding-top: 30%;
+        top: 45vh !important;
     }
 
     .videoTextContainer .videoTextContent {
@@ -370,7 +443,6 @@
     }
 
     .videoTextContainerSecond .videoTextContentSecond {
-        padding-top: 8%;
     }
 }
 
@@ -380,11 +452,10 @@
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
     .videoTextContainer {
         text-align: center;
-        padding-top: 25%;
+        top: 9vh;
     }
 
     .videoTextContainer .videoTextContent {
-        padding-top: 12%;
     }
 }
 
@@ -400,17 +471,16 @@
 }
 
 /* Landscape */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {}
-
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+}
 
 /* ----------- iPad Pro 12.9" ----------- */
 
 /* Portrait and Landscape */
-@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {}
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {
+}
 
 /* Portrait */
-/* Declare the same value for min- and max-width to avoid colliding with desktops */
-/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
     .mainVideoBanner {
         height: 65%;
@@ -419,11 +489,13 @@
     .mainVideoBannerSecond {
         height: 55%;
     }
+
+    .videoTextContainer {
+        top: 5vh;
+    }
 }
 
 /* Landscape */
-/* Declare the same value for min- and max-width to avoid colliding with desktops */
-/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
 @media only screen and (min-device-width: 1366px) and (max-device-width: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
     .mainVideoBannerSecond {
         height: 80%;
