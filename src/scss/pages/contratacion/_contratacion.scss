@@ -122,7 +122,6 @@
 			width: 100%;
 			height: 12px;
 
-			
 			&__item:last-child {
 				.point-item {
 					margin-right: 0;
@@ -200,7 +199,8 @@
 	transition: all 0.5s ease-in;
 	position: relative;
 	padding-top: 80px;
-	@include break-point("500") {}
+	@include break-point("500") {
+	}
 
 	&__step:last-child {
 		margin-right: 0;
@@ -230,7 +230,8 @@
 		width: 100%;
 	}
 
-	@include break-point("768") {}
+	@include break-point("768") {
+	}
 
 	@include break-point("1100") {
 		width: 100%;
@@ -341,11 +342,7 @@
 				&::after {
 					content: "";
 					display: block;
-					background-image: linear-gradient(
-						to bottom,
-						rgba(30, 30, 40, 0),
-						#1e1e28
-					);
+					background-image: linear-gradient(to bottom, rgba(30, 30, 40, 0), #1e1e28);
 					width: 100px;
 					height: 100px;
 					height: inherit;
@@ -673,8 +670,7 @@
 					li:first-child {
 						width: 24px;
 						height: 24px;
-						background: url("../img/pages/contratacion/remove-24-px@2x.png")
-							no-repeat;
+						background: url("../img/pages/contratacion/remove-24-px@2x.png") no-repeat;
 						background-size: contain;
 						cursor: pointer;
 					}
@@ -689,8 +685,7 @@
 					li:last-child {
 						width: 24px;
 						height: 24px;
-						background: url(../img/pages/contratacion/add-24-px@3x.png)
-							no-repeat;
+						background: url(../img/pages/contratacion/add-24-px@3x.png) no-repeat;
 						background-size: contain;
 						cursor: pointer;
 					}
@@ -740,15 +735,15 @@
 			width: 890px;
 		}
 
-		@include break-point("1700") {}
+		@include break-point("1700") {
+		}
 
 		.type-mainSelected {
 			opacity: 0.5;
 			cursor: text;
 		}
 
-		.type-mainSelected
-			.card-contratacion__packages__addons__description-content:hover {
+		.type-mainSelected .card-contratacion__packages__addons__description-content:hover {
 			cursor: text;
 		}
 
@@ -803,11 +798,7 @@
 				&::after {
 					content: "";
 					display: block;
-					background-image: linear-gradient(
-						to bottom,
-						rgba(30, 30, 40, 0),
-						#1e1e28
-					);
+					background-image: linear-gradient(to bottom, rgba(30, 30, 40, 0), #1e1e28);
 					width: 100px;
 					height: 100px;
 					height: inherit;
@@ -1507,9 +1498,12 @@
 				border-bottom: 1px solid #e0e0e0;
 				margin-bottom: 16px;
 				width: 100%;
-				@include break-point("500") {}
-				@include break-point("768") {}
-				@include break-point("1100") {}
+				@include break-point("500") {
+				}
+				@include break-point("768") {
+				}
+				@include break-point("1100") {
+				}
 
 				div:first-child {
 					@include text-font-bold(14px, $gray-600);
@@ -1925,7 +1919,8 @@
 	padding-bottom: 16px;
 	width: 300px;
 	@include flex-box(column, center, center);
-	@include break-point("768") { }
+	@include break-point("768") {
+	}
 	@include break-point("1100") {
 		@include flex-box(row, space-around, center);
 		flex-wrap: wrap;
@@ -2351,10 +2346,9 @@
 	cursor: pointer;
 }
 
-
 .main-contratacion::-webkit-scrollbar {
-	width: 8px; 
-	height: 8px; 
+	width: 8px;
+	height: 8px;
 	display: none;
 }
 
@@ -2705,13 +2699,165 @@
 	box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.35);
 	color: #fafafa !important;
 }
-.capa{
+.capa {
 	width: 100%;
-    height: 100%;
-    position: absolute;
+	height: 100%;
+	position: absolute;
 }
 
-.tarjeta-promo-seleccion >.capa {
-    background: white;
-    opacity: .5;
+.tarjeta-promo-seleccion > .capa {
+	background: white;
+	opacity: 0.5;
 }
+/*Nuevos estilos E-commerce*/
+.barraEcommerce {
+	position: relative;
+	bottom: 1vh;
+	background: rgba(250, 250, 250, 0.96);
+	width: 832px;
+	height: 72px;
+	box-shadow: 0 16px 32px 0 rgba(30, 30, 40, 0.3);
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	margin-top: 39px;
+}
+.barraEcommerce .botonRegreso {
+	float: left;
+}
+.barraEcommerce .barDescription {
+	margin: 0 auto;
+	width: 280px;
+	height: 52px;
+	margin-top: 6px;
+	font-family: Montserrat-SemiBold;
+	text-align: center;
+}
+.barraEcommerce .barDescription p {
+	font-family: Montserrat-SemiBold;
+	font-size: 18px;
+	color: rgba(59, 69, 89, 1);
+	line-height: 30px;
+}
+.barraEcommerce .barDescription p span {
+	color: rgba(125, 84, 169, 1);
+}
+.barraEcommerce .barDescription h1 {
+	font-family: Montserrat-Bold;
+	font-size: 24px;
+	line-height: 30px;
+	color: rgba(59, 69, 89, 1);
+}
+.barraEcommerce .botonAvance {
+	float: right;
+	width: 134px;
+	height: 40px;
+	background: rgba(25, 138, 255, 1);
+	text-align: center;
+	font-family: Montserrat-Regular;
+	font-size: 16px;
+	border-radius: 24vw;
+	padding: 12px 41px 12px 15px;
+	color: rgba(255, 255, 255, 1);
+	position: relative;
+	top: -42px;
+	right: 16px;
+}
+.barraEcommerce .botonAvanceMobile a {
+	left: 674px;
+	display: block;
+	line-height: 16px;
+	background: #198aff;
+	width: 134px;
+	height: 40px;
+	border-radius: 24vw;
+	text-align: center;
+	position: relative;
+	top: -45px;
+	padding-top: 2px;
+}
+.barraEcommerce .botonAvanceMobile a span {
+	font-family: Montserrat-Regular;
+	font-size: 16px;
+	color: rgba(255, 255, 255, 1);
+}
+.barraEcommerce .botonAvanceMobile a img {
+	width: 24px;
+	height: 24px;
+	position: relative;
+	top: 5px;
+	left: 3px;
+}
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+	.barraEcommerce {
+		width: 100% !important;
+		height: 72px !important;
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+		border-radius: 0;
+		bottom: 0;
+	}
+	.barraEcommerce .barDescription p {
+		font-size: 14px;
+	}
+	.barraEcommerce .barDescription h1 {
+		font-size: 18px;
+	}
+	.barraEcommerce .botonAvanceMobile a {
+		left: 390px !important;
+		width: 47px;
+		height: 47px;
+	}
+	.barraEcommerce .botonAvanceMobile a span {
+		display: none;
+	}
+	.barraEcommerce .botonAvanceMobile a img {
+		top: 10px;
+		left: 0;
+	}
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+	.barraEcommerce {
+		width: 674px;
+		height: 72px;
+		margin: 0 auto;
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+		border-radius: 0;
+		bottom: 0;
+	}
+	.barraEcommerce .botonAvanceMobile a {
+		width: 47px;
+		height: 47px;
+	}
+	.barraEcommerce .botonAvanceMobile a span {
+		display: none;
+	}
+	.barraEcommerce .botonAvanceMobile a img {
+		top: 10px;
+		left: 0;
+	}
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+	.barraEcommerce {
+		width: 674px;
+		height: 72px;
+	}
+	.barraEcommerce .botonAvanceMobile a {
+		left: 525px;
+	}
+}
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) {
+}
+
+// Extra large devices (large desktops)
+// No media query since the extra-large breakpoint has no upper bound on its width
+
+/*Nuevos estilos E-commerce*/
