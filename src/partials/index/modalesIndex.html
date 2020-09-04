@@ -1,5 +1,5 @@
 <div class="modal callUsModalContainer" id="callUsModal" tabindex="-1" role="dialog" aria-labelledby="callUsModal"
-    aria-hidden="true">
+aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -13,23 +13,25 @@
                     <img src="{{root}}/assets/img/nuevos/icons/closeIconSVGDark.svg">
                 </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" id="formPersonalDataHeader">
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 offset-xl-1 offset-lg-1 offset-md-1">
                         <div class="mat-input">
                             <div class="mat-input-outer">
-                                <input type="text" autocomplete="off" />
-                                <label class="">Nombre</label>
+                                <input name="headerNombre" id="headerNombre" type="text" autocomplete="off" required class="letras" placeholder=" " tabindex="1">
+                                <label for="headerNombre">Nombre</label>
                                 <div class="border"></div>
+                                <p class="text-danger" id="errorNombre" style="margin-top: 5px !important;"></p>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
                         <div class="mat-input">
                             <div class="mat-input-outer">
-                                <input type="text" autocomplete="off" />
-                                <label class="">Teléfono</label>
+                                <input name="headerTel" id="headerTel" type="text" autocomplete="off" required class="solo-numeros" maxlength="10" placeholder=" " tabindex="3">
+                                <label for="headerTel">Teléfono</label>
                                 <div class="border"></div>
+                                 <p class="text-danger" id="errorTel" style="margin-top: 5px !important;"></p>
                             </div>
                         </div>
                     </div>
@@ -38,27 +40,39 @@
                     <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 offset-xl-1 offset-lg-1 offset-md-1">
                         <div class="mat-input">
                             <div class="mat-input-outer">
-                                <input type="text" autocomplete="off" />
-                                <label class="">Correo</label>
+                                <input  name="headerCorreo" id="headerCorreo" type="text" autocomplete="off" required placeholder=" " tabindex="2">
+                                <label for="headerCorreo">Correo</label>
                                 <div class="border"></div>
+                                <p class="text-danger" id="errorCorreo" style="margin-top: 5px !important;"></p>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
                         <div class="mat-input">
                             <div class="mat-input-outer">
-                                <input type="text" autocomplete="off" />
-                                <label class="">Código postal</label>
+                                <input name="headerCP" id="headerCP" type="text" autocomplete="off" maxlength="5" required class="solo-numeros" placeholder=" " tabindex="4">
+                                <label for="headerCP">Código postal</label>
                                 <div class="border"></div>
+                                <p class="text-danger" id="errorCP" style="margin-top: 5px !important;"></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 offset-xl-1 offset-lg-1 offset-md-1 ">
+                        <div  id="iconoMsg"></div>
+                        <p id="mensaje"></p>
+                    </div>
+                </div>                
+            </div>
+            <div class="cargador" id="cargadorLead"></div>
             <div class="modal-footer">
                 <div class="row">
                     <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 d-flex">
-                        <input type="submit" value="Quiero que me llamen" class="generalButton ml-auto">
+                        <input type="submit" value="Quiero que me llamen" class="generalButton ml-auto" id="btnCoberturaHeader">
+                        <input type="submit" value="Ok, gracias" class="generalButton ml-auto" id="btnConfirmCobertura" style="display: none;">
                     </div>
                 </div>
             </div>
