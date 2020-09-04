@@ -20,40 +20,51 @@ export function cargaapps(opt) {
             var htmlimg = "";
             var contador = 0;
             var contadorGeneral = 0;
-
+            
             arrayimgs.forEach(function (elem) {
               contador++;
               contadorGeneral++;
 
-
               if (opt == 1) {
-                var estilo = "";
-
-                if (contador == 1) {
-                  if (opt !== 1)
-                    htmlimg += "<li class='section-apps__container--apps--list'>";
+                if(contador == 1 && contadorGeneral < 11){
+                  htmlimg += "<div class='row'>";
                 }
 
                 if (elem.pagina != "") {
-                  if (opt == 1 && contador == 1) {
+                  if(contador == 1 && contadorGeneral < 11){
                     htmlimg = htmlimg + '<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 offset-xl-1 offset-lg-1"><img src="' + elem.urlimg + '" alt="' + elem.nombre + '" onclick="window.open(\'' + elem.pagina + '\',\'_blank\')"></div>';
-                  } else {
-                    htmlimg = htmlimg + '<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2"><img src="' + elem.urlimg + '" alt="' + elem.nombre + '" onclick="window.open(\'' + elem.pagina + '\',\'_blank\')"></div>';
+                  }else{
+                    if(contadorGeneral < 11){
+                      if(contadorGeneral == 4){
+                        htmlimg = htmlimg + '<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 d-none d-sm-none d-md-block"><img src="' + elem.urlimg + '" alt="' + elem.nombre + '" onclick="window.open(\'' + elem.pagina + '\',\'_blank\')"></div>';
+                      }else if(contadorGeneral == 10 || contadorGeneral == 5){
+                        htmlimg = htmlimg + '<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 d-none d-sm-none d-md-none d-lg-block"><img src="' + elem.urlimg + '" alt="' + elem.nombre + '" onclick="window.open(\'' + elem.pagina + '\',\'_blank\')"></div>';
+                      }else{
+                        htmlimg = htmlimg + '<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2"><img src="' + elem.urlimg + '" alt="' + elem.nombre + '" onclick="window.open(\'' + elem.pagina + '\',\'_blank\')"></div>';
+                      }
+                    }
                   }
-                } else {
-                  if (opt == 1) {
+                }else{
+                  if(contador == 1 && contadorGeneral < 11){
                     htmlimg = htmlimg + '<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 offset-xl-1 offset-lg-1"><img src="' + elem.urlimg + '" alt="' + elem.nombre + '"></div>';
-                  } else {
-                    htmlimg = htmlimg + '<div><img src="' + elem.urlimg + '" alt="' + elem.nombre + '"></div>';
+                  }else{
+                    if(contadorGeneral < 11){
+                      if(contadorGeneral == 4){
+                        htmlimg = htmlimg + '<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 d-none d-sm-none d-md-block"><img src="' + elem.urlimg + '" alt="' + elem.nombre + '"></div>';
+                      }else if(contadorGeneral == 10 || contadorGeneral == 5){
+                        htmlimg = htmlimg + '<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 d-none d-sm-none d-md-none d-lg-block"><img src="' + elem.urlimg + '" alt="' + elem.nombre + '"></div>';
+                      }else{
+                        htmlimg = htmlimg + '<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2"><img src="' + elem.urlimg + '" alt="' + elem.nombre + '"></div>';
+                      }
+                    }
                   }
-
                 }
 
-                if (contador == 5) {
-                  if (opt !== 1)
-                    htmlimg += "</li>";
+                if (contador == 5 && contadorGeneral < 11) {
+                  htmlimg += "</div>";
                   contador = 0;
                 }
+
               } else if (opt == 2) {
                 var estilo = "";
                 htmlimg = htmlimg + '<img src="' + elem.urlimg + '"' + estilo + ' alt="" onclick="window.open(\'' + elem.pagina + '\',\'_blank\');">';
@@ -62,7 +73,7 @@ export function cargaapps(opt) {
             });
 
             if (opt == 1) {
-              $("#appHome").html(htmlimg);
+              $("#appHome").prepend(htmlimg);
             } else if (opt == 2) {
               $("#servicioAppsImg").html(htmlimg);
               const eventosmas = new AppsEventos("tv");
