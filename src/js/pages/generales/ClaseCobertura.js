@@ -7,28 +7,46 @@ export class ClaseCobertura {
 	init(){
         console.group('ClaseCobertura.js FUNCION init()');
 		this.validarPermisosUbicacion();
-		this.revisarcobertura();
+		//this.revisarcobertura();
         this.setListeners();
         console.groupEnd();
 	}
 
 	validarPermisosUbicacion(){
-		console.group('ClaseCobertura.js FUNCION validarPermisosUbicacion()');
-        if(localStorage.getItem('TP_STR_DIRECCION')==null){
-            console.log("PERMITIR UBICACION***************");
-            if ("geolocation" in navigator) {
-                navigator.geolocation.getCurrentPosition(this.obtenerDireccionNavegador, this.permisoDenegado, {
-                    enableHighAccuracy: true,
-                    timeout: Infinity,
-                    maximumAge: 0
-                });
-            } else {
-                console.error('NAVEGADOR NO SOPORTA GEOLOCALIZACION');
-            }
+        if(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME')==null){
+            var cabeceraMC = new Headers();
+            cabeceraMC.append("Content-type", "application/json;charset=utf-8");
+
+            fetch("https://5ui1bow6gf.execute-api.us-east-1.amazonaws.com/Desarrollo/ip-geolocalizacion-ciudad", {
+                method: 'POST',
+                headers: cabeceraMC
+            }).then(function (data) {
+                if (data.ok) {
+                    return data.json();
+                } else {
+                    throw "Error en la llamada Ajax fetch con parametros " + URL2LOAD;
+                }
+            }).then(function (texto) {
+                try {
+                    var respuesta = texto;
+
+                    if (respuesta !== null || respuesta !== "") {
+                        $('#cd-cobertura-index').html(respuesta);
+                        localStorage.setItem('TP_STR_DIRECCION_CIUDAD_HOME', respuesta);
+                    }
+                } catch (e) {
+                    $('#cd-cobertura-index').html("Ciudad de México");
+                    console.log("ERROR EN TRAER LA CIUDAD:", e);
+                }
+            }).catch(function (err) {
+                $('#cd-cobertura-index').html("Ciudad de México");
+                console.log("err=>", err);
+            });
+
         }else{
-            //console.error('YA TIENE UNA UBICACION PREDETERMINADA');
+            console.log('YA TIENE UNA CIUDAD PREDETERMINADA');
+            $('#cd-cobertura-index').html(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME'));
         }
-        console.groupEnd();
 	}
 
 	obtenerDireccionNavegador(pos) {

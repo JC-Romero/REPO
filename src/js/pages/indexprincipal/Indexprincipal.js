@@ -21,7 +21,7 @@ export class Indexprincipal {
     }
     
     init(){
-        console.log("++++++++++++++++++++++++");
+        this.setKeyupInput();
         this.evento();
         localStorage.setItem('SUGERENCIA_SELECCIONADA', 0);
         if(localStorage.getItem('TP_ESTIMULO_CIUDAD') == undefined || localStorage.getItem('TP_ESTIMULO_CIUDAD') == null || localStorage.getItem('TP_ESTIMULO_CIUDAD') == ''  ){
@@ -933,7 +933,7 @@ export class Indexprincipal {
             }
 
             if(procesa){
-                $("#btnCoberturaHeader").html('Enviando datos...');
+                $("#btnCoberturaHeader").val('Enviando datos...');
                 $("#formPersonalDataHeader").css("display", "none");
                 $("#cargadorLead").css("display", "block");
                
@@ -1009,31 +1009,31 @@ export class Indexprincipal {
 
     setKeyupInput(){
         $('#headerNombre').on("keyup", function() {
-            $("#errorNombre").css("display","none");
+          $("#errorNombre").css("display","none");
         });
 
         $('#headerCorreo').on("keyup", function() {
-            $("#errorCorreo").css("display","none");
+          $("#errorCorreo").css("display","none");
         });
         
         $('#headerTel').on("keyup", function() {
-            $("#errorTel").css("display","none");
+          $("#errorTel").css("display","none");
         });
 
         $('#headerCP').on("keyup", function() {
-            $("#errorCP").css("display","none");
+          $("#errorCP").css("display","none");
         });
 
         $('#calleSection').on("keyup", function() {
-            $("#errorCalle").css("display","none");
+          $("#errorCalle").css("display","none");
         });
 
         $('#numeroSection').on("keyup", function() {
-            $("#errorNum").css("display","none");
+          $("#errorNum").css("display","none");
         });
 
         $('#cpSection').on("keyup", function() {
-            $("#errorcp").css("display","none");
+          $("#errorcp").css("display","none");
         });
     }
 
@@ -1058,13 +1058,11 @@ export class Indexprincipal {
                 apuntador.confirmacionLead();
                 $("#iconoMsg").addClass("ok-symbol");
                 $("#mensaje").html("En breve recibirás una llamada de nuestros asesores,  <i class='text-bold'>gracias por elegir Totalplay.</i>");  
-                $("#btnConfirmCobertura").addClass("btn__outline__green");              
-                $("#btnConfirmCobertura").html("Ok, gracias");              
+                $("#btnConfirmCobertura").css("display","block");           
             }else{
                 apuntador.confirmacionLead();
                 $("#iconoMsg").addClass("err-symbol");
-                $("#btnConfirmCobertura").addClass("btn__outline__blue");
-                $("#btnConfirmCobertura").html("Ok, gracias");   
+                $("#btnConfirmCobertura").css("display","block"); 
                 $("#mensaje").html("Ocurrió un error al mandar tus datos,  <i class='text-bold'> por favor, intenta más tarde.</i>");
             }            
             apuntador.limpiarDatos();            
@@ -1097,7 +1095,9 @@ export class Indexprincipal {
          $("#cargadorLead").css("display", "none");
         $("#confirmCobertura").removeClass("active");
         $("#coberturaContainer").removeAttr("style");
-        $("#btnCoberturaHeader").html('Quiero que me llamen');
+        $("#btnConfirmCobertura").css("display","none");
+        $("#mensaje").html("");
+        $("#btnCoberturaHeader").val('Quiero que me llamen');
     }
 
     ordenarObjeto(objetoInicial){

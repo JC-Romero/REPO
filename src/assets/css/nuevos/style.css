@@ -28,7 +28,7 @@ body,
 }
 
 .modal-open {
-    overflow: visible;
+    overflow: scroll !important;
 }
 
 .modal-open .modal {
@@ -166,8 +166,12 @@ header .topMenu .locationButton a {
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
+    color: rgba(255, 255, 255, 1);
+    cursor: pointer;
 }
-
+header .topMenu .locationButton a:hover {
+    color: rgba(255, 255, 255, 1);
+}
 header .topMenu .locationButton a::before {
     content: "\f3c5";
     font-family: "Font Awesome 5 Free";
@@ -639,7 +643,7 @@ header .mainNav .mobileCart a img {
     content: "";
     width: 100%;
     height: 100%;
-    position: absolute;686
+    position: absolute;
     display: block;
     z-index: 9;
     left: 0;
@@ -2049,12 +2053,13 @@ header .mainNav .mobileCart a img {
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00e0d7d1', endColorstr='#e20227', GradientType=0);
     /* IE6-9 */
+    min-height: 322px;
+    max-height: 322px;
 }
 
 .bussinesBranches .companies .branchImage div img {
-    width: auto;
-    max-height: 300px;
-    min-height: 300px;
+    width: 100%;
+    height: auto;
 }
 
 .bussinesBranches .companies .branchDescription {
@@ -2136,12 +2141,13 @@ header .mainNav .mobileCart a img {
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00e0d7d1', endColorstr='#089b9a', GradientType=0);
     /* IE6-9 */
+    min-height: 322px;
+    max-height: 322px;
 }
 
 .bussinesBranches .entrepreneur .branchImage div img {
-    width: auto;
-    max-height: 300px;
-    min-height: 300px;
+    width: 100%;
+    height: auto;
 }
 
 .bussinesBranches .entrepreneur .branchDescription {
@@ -2792,7 +2798,7 @@ footer .legalAdvice p {
 }
 
 .modalCityPicker .citySearchBar:after {
-    content: url(../img/icons/searchIcon.svg);
+    content: url(../../../assets/img/nuevos/icons/searchIcon.svg);
     position: absolute;
     left: 27px;
     top: 9px;
@@ -3075,3 +3081,14 @@ footer .legalAdvice p {
 }
 
 /*Modal ity Picker*/
+
+/*modal loader index akhm*/
+#cargadorLead{
+    display: none;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin: auto;
+    background-image: url(http://localhost:3000/assets/img/cargador1.gif);
+    background-size: cover;
+}
