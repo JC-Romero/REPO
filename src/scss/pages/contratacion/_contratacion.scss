@@ -241,7 +241,7 @@
 		width: 92.3%;
 		@include text-font-regular(20px, $gray-400);
 		text-align: center;
-		margin-bottom: 15px;
+		margin-bottom: 4px;
 		font-weight: bold;
 		margin-top: 10px;
 
@@ -273,7 +273,7 @@
 		width: 92.3%;
 		@include text-font-regular(16px, $gray-600, 1.5);
 		text-align: center;
-		margin-bottom: 16px;
+		margin-bottom: 40px;
 		@include break-point("500") {
 			width: 432px;
 		}
@@ -1130,7 +1130,6 @@
 	}
 
 	.main-summary-internet {
-		margin-top: 16px;
 		width: 300px;
 		border: 1px solid #e0e0e0;
 		border-radius: 8px;
@@ -1142,11 +1141,9 @@
 			width: 392px;
 			align-items: flex-start;
 			padding-left: 20px;
-			margin-top: 25px;
 		}
 
 		@include break-point("768") {
-			margin-top: 25px;
 			margin-bottom: 16px;
 			width: 552px;
 			align-items: flex-start;
@@ -2183,7 +2180,7 @@
 
 	@include break-point("1100") {
 		text-align: left;
-		margin-bottom: 20px;
+		margin-bottom: 16px;
 		margin-top: 0px;
 	}
 }
@@ -2224,6 +2221,9 @@
 
 .invoice-data--addon__promo {
 	@include text-font-regular(16px, #ef6c00, 19px);
+}
+.invoice-data--addon__leyenda {
+	@include text-font-regular(14px, rgba(117, 120, 123, 1), 18px);
 }
 
 .invoice-data--addon__terms {
@@ -2753,11 +2753,31 @@
 	line-height: 30px;
 	color: rgba(59, 69, 89, 1);
 }
-.barraEcommerce .botonAvanceMobile {
+.barraEcommerce .botonAvance {
 	position: relative;
 	top: -42px;
 }
-.barraEcommerce .botonAvanceMobile a {
+.barraEcommerce .botonRegreso {
+	position: relative;
+	top: 29px;
+	left: 24px;
+}
+.barraEcommerce .botonRegreso a {
+	position: relative;
+	top: -7px;
+}
+.barraEcommerce .botonRegreso img {
+	width: 26px;
+	position: relative;
+	top: 7px;
+	display: none;
+}
+.barraEcommerce .botonRegreso a {
+	font-family: Montserrat-Regular;
+	color: rgba(25, 138, 255, 1);
+	line-height: 19px;
+}
+.barraEcommerce .botonAvance a {
 	width: 134px;
 	height: 40px;
 	font-family: Montserrat-Regular;
@@ -2770,12 +2790,12 @@
 	border-radius: 24vw;
 	background: rgba(25, 138, 255, 1);
 }
-.barraEcommerce .botonAvanceMobile a span {
+.barraEcommerce .botonAvance a span {
 	font-family: Montserrat-Regular;
 	font-size: 16px;
 	color: rgba(255, 255, 255, 1);
 }
-.barraEcommerce .botonAvanceMobile a img {
+.barraEcommerce .botonAvance a img {
 	width: 24px;
 	height: 24px;
 	position: relative;
@@ -2810,137 +2830,224 @@
 	color: rgba(117, 120, 123, 1);
 	line-height: 24px;
 }
-.complementosContainer .complementosColumns {
-	width: 840px;
-	height: 350px;
-	margin: 0 auto;
-	padding-top: 1vh;
-	margin-bottom: 1vh;
-}
-.complementosContainer .complementosColumns .listaComplementos {
+.complementosContainer .flex-container {
+	max-width: 840px;
 	width: 100%;
-	padding-left: 44px;
-}
-.complementosContainer .complementosColumns .listaComplementos .complementoItemContainer {
-	width: 232px;
-	height: 328px;
-	text-align: center;
-	border-radius: 8px;
-	background-color: rgba(250, 250, 250, 1);
-	box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
-	margin-right: 24px;
-	float: left;
-}
-
-.complementosContainer .complementosColumns ul {
-	list-style: none;
-	clear: both;
-}
-.complementosContainer .complementosColumns ul li {
-	padding: 28px 5px 24px 5px;
-}
-.complementosContainer .complementosColumns ul li:nth-child(2) {
+	list-style-type: none;
+	margin: 20px auto;
 	padding: 0;
-	background: rgba(255, 255, 255, 0);
-	box-shadow: none !important;
-	overflow: hidden;
-	border-radius: 4px;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
 }
-.complementosContainer .complementosColumns ul li:nth-child(2) .imageComplement {
-	height: 272px;
-	min-width: 100%;
-	border-radius: 4px;
-	overflow: hidden;
-}
-.complementosContainer .complementosColumns ul li:nth-child(2) .imageComplement img {
-	height: 273px;
-	min-width: 200%;
-	border-radius: 4px;
-	position: relative;
-	left: -110px;
-}
-.complementosContainer .complementosColumns ul li:nth-child(2) .overlapComplement {
+.complementosContainer .flex-container .item {
+	height: 328px;
+	width: 232px;
+	line-height: 200px;
+	font-size: 20px;
+	color: #fff;
+	text-align: center;
+	margin: 5px 16px;
+	box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
 	background: rgba(255, 255, 255, 1);
-	padding: 16px 21px 45px 21px;
-	width: 192px;
-	height: 216px;
+	text-align: center;
+	overflow: hidden;
+	cursor: pointer;
+	transition: 300ms;
+}
+.complementosContainer .flex-container .item:hover {
+	box-shadow: 0 22px 22px 0 rgba(0, 0, 0, 0.05);
+	transition: 300ms;
+}
+.complementosContainer .flex-container .item:nth-child(2) .overlapComplement:hover {
+	box-shadow: 0 22px 22px 0 rgba(0, 0, 0, 0.05);
+	transition: 300ms;
+}
+.complementosContainer .flex-container .item:nth-child(1) img,
+.complementosContainer .flex-container .item:nth-child(1) h1,
+.complementosContainer .flex-container .item:nth-child(1) p {
+	height: auto;
+}
+.complementosContainer .flex-container .item:nth-child(1) img {
+	max-width: 102px;
 	margin: 0 auto;
 	position: relative;
-	top: -161px;
-	box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
-	border-radius: 8px;
+	top: -20px;
 }
-.complementosContainer .complementosColumns ul li:nth-child(2) .overlapComplement img {
-	height: 62px;
-	width: auto;
-	margin-bottom: 8px;
-}
-.complementosContainer .complementosColumns ul li:nth-child(2) .overlapComplement h1 {
+.complementosContainer .flex-container .item:nth-child(1) h1 {
+	color: rgba(59, 69, 89, 1);
 	font-family: Montserrat-Bold;
 	font-size: 18px;
 	line-height: 22px;
-	color: rgba(59, 69, 89, 1);
-	margin-bottom: 4px;
+	position: relative;
+	top: -92px;
 }
-.complementosContainer .complementosColumns ul li:nth-child(2) .overlapComplement p {
+.complementosContainer .flex-container .item:nth-child(1) p {
 	font-family: Montserrat-Regular;
-	font-size: 16px;
+	font-size: 14px;
+	width: 200px;
+	line-height: 25px;
 	color: rgba(117, 120, 123, 1);
-	line-height: 19px;
-	margin-top: 0;
-	margin-bottom: 10px;
+	position: relative;
+	top: -89px;
+	margin: 0 auto;
 }
-.complementosContainer .complementosColumns ul li:nth-child(2) .overlapComplement p.price {
-	font-family: Montserrat-Regular;
-	font-size: 14px;
-	line-height: 18px;
-	color: rgba(241, 108, 0, 1);
-	border: solid 1px rgba(241, 108, 0, 1);
-	border-radius: 4px;
-	padding: 4px 7px 6px 7px;
-}
-.complementosContainer .complementosColumns ul li:nth-child(3) {
-}
-.complementosContainer .complementosColumns ul li h1 {
-	font-family: Montserrat-Bold;
-	font-size: 18px;
-	line-height: 22px;
-	color: rgba(59, 69, 89, 1);
-	margin-top: 0;
-	margin-bottom: 8px;
-}
-.complementosContainer .complementosColumns ul li img {
-	margin-bottom: 19px;
-}
-.complementosContainer .complementosColumns ul li p {
-	font-family: Montserrat-Regular;
-	font-size: 14px;
-	color: rgba(117, 120, 123, 1);
-	line-height: 22px;
-	margin-top: 0;
-	margin-bottom: 11px;
-}
-.complementosContainer .complementosColumns ul li p.promotion {
-	font-family: Montserrat-Regular;
-	font-size: 14px;
-	color: rgba(241, 108, 0, 1);
-	line-height: 18px;
-	border: solid 1px rgba(241, 108, 0, 1);
+.complementosContainer .flex-container .item:nth-child(1) p.promotion {
 	display: inline-block;
 	padding: 4px 7px 6px 7px;
-	margin-bottom: 14px;
-	margin-top: 0;
+	font-family: Montserrat-Regular;
+	font-size: 14px;
+	line-height: 18px;
+	color: rgba(241, 108, 0, 1);
+	border: solid 1px rgba(241, 108, 0, 1);
+	position: relative;
+	top: -166px;
+	width: 160px;
+	margin: 0 auto;
 }
-.complementosContainer .complementosColumns ul li p.price {
+.complementosContainer .flex-container .item:nth-child(1) p.price {
 	font-family: Montserrat-Regular;
 	font-size: 16px;
-	line-height: 31px;
-	margin-bottom: 24px;
+	line-height: 19px;
 	color: rgba(59, 69, 89, 1);
+	position: relative;
+	top: -234px;
 }
-.complementosContainer .complementosColumns ul li hr {
-	max-width: 150px;
-	margin: 24px auto 28px;
+.complementosContainer .flex-container .item:nth-child(2) {
+	box-shadow: none;
+	background: rgba(255, 255, 255, 0);
+}
+.complementosContainer .flex-container .item:nth-child(2) .imageComplement {
+	height: 272px;
+	border-radius: 4px;
+	overflow: hidden;
+}
+.complementosContainer .flex-container .item:nth-child(2) .imageComplement:after {
+	border-radius: 4px;
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: relative;
+	display: block;
+	left: 0;
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e5799+0,1e1e28+50,1e1e28+100&0+0,1+50,1+100 */
+	background: -moz-linear-gradient(
+		top,
+		rgba(30, 87, 153, 0) 0%,
+		rgba(30, 30, 40, 1) 50%,
+		rgba(30, 30, 40, 1) 100%
+	); /* FF3.6-15 */
+	background: -webkit-linear-gradient(
+		top,
+		rgba(30, 87, 153, 0) 0%,
+		rgba(30, 30, 40, 1) 50%,
+		rgba(30, 30, 40, 1) 100%
+	); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(
+		to bottom,
+		rgba(30, 87, 153, 0) 0%,
+		rgba(30, 30, 40, 1) 50%,
+		rgba(30, 30, 40, 1) 100%
+	); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e5799', endColorstr='#1e1e28',GradientType=0 ); /* IE6-9 */
+	z-index: 10;
+	top: -230px;
+}
+.complementosContainer .flex-container .item:nth-child(2) .imageComplement img {
+	height: auto;
+	min-width: 150%;
+	position: relative;
+	top: 0;
+	z-index: 0;
+	left: -48px;
+}
+.complementosContainer .flex-container .item:nth-child(2) .overlapComplement {
+	height: 219px;
+	width: 192px;
+	margin: 0 auto;
+	background: #fff;
+	position: relative;
+	top: -165px;
+	box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+	z-index: 11;
+	border-radius: 8px;
+}
+.complementosContainer .flex-container .item:nth-child(2) .overlapComplement img {
+	height: auto;
+	width: 124px;
+	margin: 0 auto;
+	position: relative;
+	top: -16px;
+}
+.complementosContainer .flex-container .item:nth-child(2) .overlapComplement h1 {
+	font-family: Montserrat-Bold;
+	font-size: 18px;
+	line-height: 22px;
+	color: rgba(59, 69, 89, 1);
+	position: relative;
+	top: -104px;
+}
+.complementosContainer .flex-container .item:nth-child(2) .overlapComplement p {
+	font-family: Montserrat-Regular;
+	font-size: 16px;
+	line-height: 19px;
+	color: rgba(117, 120, 123, 1);
+	position: relative;
+	top: -105px;
+}
+.complementosContainer .flex-container .item:nth-child(2) .overlapComplement p.price {
+	font-family: Montserrat-Regular;
+	font-size: 14px;
+	line-height: 18px;
+	color: rgba(241, 108, 0, 1);
+	border: rgba(241, 108, 0, 1) solid 1px;
+	position: relative;
+	top: -180px;
+	display: inline-block;
+	padding: 4px 7px 6px 7px;
+	border-radius: 4px;
+}
+.complementosContainer .flex-container .item:nth-child(3) img {
+	width: 72px;
+	height: 58px;
+	margin: 0 auto;
+	position: relative;
+	top: -20px;
+}
+.complementosContainer .flex-container .item:nth-child(3) h1 {
+	color: rgba(59, 69, 89, 1);
+	font-family: Montserrat-Bold;
+	font-size: 18px;
+	line-height: 22px;
+	position: relative;
+	top: -92px;
+}
+.complementosContainer .flex-container .item:nth-child(3) p {
+	font-family: Montserrat-Regular;
+	font-size: 14px;
+	width: 100%;
+	line-height: 25px;
+	color: rgba(117, 120, 123, 1);
+	position: relative;
+	top: -89px;
+	margin: 0 auto;
+}
+.complementosContainer .flex-container .item:nth-child(3) hr {
+	width: 150px;
+	border: rgba(224, 224, 224, 1) solid 1px;
+	margin: 0 auto;
+	width: 150px;
+	border: 1px solid #e0e0e0;
+	margin: 0 auto;
+	position: relative;
+	top: -15px;
+}
+.complementosContainer .flex-container .item:nth-child(3) p.price {
+	position: relative;
+	top: 11px;
+	font-size: 16px;
+	color: rgba(59, 69, 89, 1);
 }
 /*Vista Complementos*/
 // Extra small devices (portrait phones, less than 576px)
@@ -2957,27 +3064,13 @@
 	.barraEcommerce .barDescription h1 {
 		font-size: 18px;
 	}
-	.barraEcommerce .botonAvanceMobile a {
+	.barraEcommerce .botonAvance a {
 		margin-right: 24px !important;
 		width: 47px !important;
 		height: 47px !important;
 	}
-	.barraEcommerce .botonAvanceMobile a span {
+	.barraEcommerce .botonAvance a span {
 		display: none;
-	}
-	.complementosContainer .complementosColumns {
-		width: 100%;
-		height: auto;
-	}
-	.complementosContainer .complementosColumns .listaComplementos {
-		width: 100%;
-		height: auto;
-		padding-bottom: 6vh;
-	}
-	.complementosContainer .complementosColumns ul li {
-		float: none !important;
-		clear: both !important;
-		margin: 2rem auto !important;
 	}
 }
 
@@ -2990,55 +3083,25 @@
 		border-radius: 0;
 		bottom: 16px;
 	}
-	.barraEcommerce .botonAvanceMobile a {
+	.barraEcommerce .botonRegreso a span {
+		display: none !important;
+	}
+	.barraEcommerce .botonRegreso img {
+		display: block;
+		top: 0;
+	}
+	.barraEcommerce .botonAvance a {
 		width: 47px;
 		height: 47px;
 		margin-right: 24px;
 	}
-	.barraEcommerce .botonAvanceMobile a span {
+	.barraEcommerce .botonAvance a span {
 		display: none;
 	}
-	.barraEcommerce .botonAvanceMobile a img {
+	.barraEcommerce .botonAvance a img {
 		top: 10px !important;
 		left: 0 !important;
 	}
-	.complementosContainer .complementosColumns .listaComplementos {
-		padding-left: 0;
-		padding-bottom: 12vh;
-	}
-	.complementosContainer .complementosColumns ul li:nth-child(1),
-	.complementosContainer .complementosColumns ul li:nth-child(2),
-	.complementosContainer .complementosColumns ul li:nth-child(3) {
-		float: none !important;
-		clear: both;
-		margin: 0 auto !important;
-		margin-bottom: 2rem !important;
-	}
-}
-
-// Medium devices (tablets, less than 992px)
-@media (max-width: 991.98px) {
-	.complementosContainer .complementosColumns ul li:nth-child(1) {
-		margin-left: 22vw;
-		margin-right: 24px;
-	}
-	.complementosContainer .complementosColumns {
-		width: 100%;
-	}
-	.complementosContainer .complementosColumns ul li:nth-child(3) {
-		float: none !important;
-		clear: both;
-		margin: 0 auto !important;
-		position: relative;
-		top: 2rem;
-	}
-	.complementosContainer .complementosColumns .listaComplementos {
-		padding-left: 0;
-	}
-}
-
-// Large devices (desktops, less than 1200px)
-@media (max-width: 1199.98px) {
 	.barraEcommerce {
 		width: calc(100% - 32px);
 		height: 72px;
@@ -3048,9 +3111,19 @@
 		bottom: 16px;
 		position: fixed;
 		left: 16px;
-		bottom: 16px;
 		margin: 0 auto;
 	}
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+	.flex-container {
+		padding-bottom: 8vh !important;
+	}
+}
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) {
 }
 
 // Extra large devices (large desktops)
