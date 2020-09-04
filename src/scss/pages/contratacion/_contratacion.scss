@@ -2712,22 +2712,27 @@
 /*Nuevos estilos E-commerce*/
 .barraEcommerce {
 	position: relative;
-	bottom: 1vh;
+	bottom: 0;
 	background: rgba(250, 250, 250, 0.96);
-	width: 832px;
+	width: 792px;
 	height: 72px;
+	margin: auto;
 	box-shadow: 0 16px 32px 0 rgba(30, 30, 40, 0.3);
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	border-radius: 8px;
 	margin-top: 39px;
+	z-index: 10000;
+}
+.barraEcommerce .barraEcommerceContainer {
+	width: 100%;
 }
 .barraEcommerce .botonRegreso {
 	float: left;
 }
 .barraEcommerce .barDescription {
 	margin: 0 auto;
-	width: 280px;
+	width: 330px;
 	height: 52px;
 	margin-top: 6px;
 	font-family: Montserrat-SemiBold;
@@ -2748,33 +2753,22 @@
 	line-height: 30px;
 	color: rgba(59, 69, 89, 1);
 }
-.barraEcommerce .botonAvance {
-	float: right;
-	width: 134px;
-	height: 40px;
-	background: rgba(25, 138, 255, 1);
-	text-align: center;
-	font-family: Montserrat-Regular;
-	font-size: 16px;
-	border-radius: 24vw;
-	padding: 12px 41px 12px 15px;
-	color: rgba(255, 255, 255, 1);
+.barraEcommerce .botonAvanceMobile {
 	position: relative;
 	top: -42px;
-	right: 16px;
 }
 .barraEcommerce .botonAvanceMobile a {
-	left: 674px;
-	display: block;
-	line-height: 16px;
-	background: #198aff;
 	width: 134px;
 	height: 40px;
-	border-radius: 24vw;
+	font-family: Montserrat-Regular;
+	font-size: 16px;
 	text-align: center;
-	position: relative;
-	top: -45px;
+	display: block;
+	float: right;
 	padding-top: 2px;
+	margin-right: 24px;
+	border-radius: 24vw;
+	background: rgba(25, 138, 255, 1);
 }
 .barraEcommerce .botonAvanceMobile a span {
 	font-family: Montserrat-Regular;
@@ -2787,16 +2781,175 @@
 	position: relative;
 	top: 5px;
 	left: 3px;
+} /*Vista Complementos*/
+.complementosContainer {
+	width: 100%;
+	margin: 0 auto;
 }
+.complementosContainer .complementosTextContent {
+	width: 100%;
+	padding-top: 1vh;
+	text-align: center;
+	margin-bottom: 2vh;
+}
+.complementosContainer .complementosTextContent small {
+	font-family: Montserrat-Medium;
+	font-size: 14px;
+	color: rgba(117, 120, 123, 1);
+	line-height: 16px;
+}
+.complementosContainer .complementosTextContent h1 {
+	font-family: Montserrat-Regular;
+	font-size: 28px;
+	color: rgba(59, 69, 89, 1);
+	line-height: 42px;
+}
+.complementosContainer .complementosTextContent p {
+	font-family: Montserrat-Regular;
+	font-size: 18px;
+	color: rgba(117, 120, 123, 1);
+	line-height: 24px;
+}
+.complementosContainer .complementosColumns {
+	width: 840px;
+	height: 350px;
+	margin: 0 auto;
+	padding-top: 1vh;
+	margin-bottom: 1vh;
+}
+.complementosContainer .complementosColumns .listaComplementos {
+	width: 100%;
+	padding-left: 44px;
+}
+.complementosContainer .complementosColumns .listaComplementos .complementoItemContainer {
+	width: 232px;
+	height: 328px;
+	text-align: center;
+	border-radius: 8px;
+	background-color: rgba(250, 250, 250, 1);
+	box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+	margin-right: 24px;
+	float: left;
+}
+
+.complementosContainer .complementosColumns ul {
+	list-style: none;
+	clear: both;
+}
+.complementosContainer .complementosColumns ul li {
+	padding: 28px 5px 24px 5px;
+}
+.complementosContainer .complementosColumns ul li:nth-child(2) {
+	padding: 0;
+	background: rgba(255, 255, 255, 0);
+	box-shadow: none !important;
+	overflow: hidden;
+	border-radius: 4px;
+}
+.complementosContainer .complementosColumns ul li:nth-child(2) .imageComplement {
+	height: 272px;
+	min-width: 100%;
+	border-radius: 4px;
+	overflow: hidden;
+}
+.complementosContainer .complementosColumns ul li:nth-child(2) .imageComplement img {
+	height: 273px;
+	min-width: 200%;
+	border-radius: 4px;
+	position: relative;
+	left: -110px;
+}
+.complementosContainer .complementosColumns ul li:nth-child(2) .overlapComplement {
+	background: rgba(255, 255, 255, 1);
+	padding: 16px 21px 45px 21px;
+	width: 192px;
+	height: 216px;
+	margin: 0 auto;
+	position: relative;
+	top: -161px;
+	box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+}
+.complementosContainer .complementosColumns ul li:nth-child(2) .overlapComplement img {
+	height: 62px;
+	width: auto;
+	margin-bottom: 8px;
+}
+.complementosContainer .complementosColumns ul li:nth-child(2) .overlapComplement h1 {
+	font-family: Montserrat-Bold;
+	font-size: 18px;
+	line-height: 22px;
+	color: rgba(59, 69, 89, 1);
+	margin-bottom: 4px;
+}
+.complementosContainer .complementosColumns ul li:nth-child(2) .overlapComplement p {
+	font-family: Montserrat-Regular;
+	font-size: 16px;
+	color: rgba(117, 120, 123, 1);
+	line-height: 19px;
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+.complementosContainer .complementosColumns ul li:nth-child(2) .overlapComplement p.price {
+	font-family: Montserrat-Regular;
+	font-size: 14px;
+	line-height: 18px;
+	color: rgba(241, 108, 0, 1);
+	border: solid 1px rgba(241, 108, 0, 1);
+	border-radius: 4px;
+	padding: 4px 7px 6px 7px;
+}
+.complementosContainer .complementosColumns ul li:nth-child(3) {
+}
+.complementosContainer .complementosColumns ul li h1 {
+	font-family: Montserrat-Bold;
+	font-size: 18px;
+	line-height: 22px;
+	color: rgba(59, 69, 89, 1);
+	margin-top: 0;
+	margin-bottom: 8px;
+}
+.complementosContainer .complementosColumns ul li img {
+	margin-bottom: 19px;
+}
+.complementosContainer .complementosColumns ul li p {
+	font-family: Montserrat-Regular;
+	font-size: 14px;
+	color: rgba(117, 120, 123, 1);
+	line-height: 22px;
+	margin-top: 0;
+	margin-bottom: 11px;
+}
+.complementosContainer .complementosColumns ul li p.promotion {
+	font-family: Montserrat-Regular;
+	font-size: 14px;
+	color: rgba(241, 108, 0, 1);
+	line-height: 18px;
+	border: solid 1px rgba(241, 108, 0, 1);
+	display: inline-block;
+	padding: 4px 7px 6px 7px;
+	margin-bottom: 14px;
+	margin-top: 0;
+}
+.complementosContainer .complementosColumns ul li p.price {
+	font-family: Montserrat-Regular;
+	font-size: 16px;
+	line-height: 31px;
+	margin-bottom: 24px;
+	color: rgba(59, 69, 89, 1);
+}
+.complementosContainer .complementosColumns ul li hr {
+	max-width: 150px;
+	margin: 24px auto 28px;
+}
+/*Vista Complementos*/
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) {
 	.barraEcommerce {
-		width: 100% !important;
-		height: 72px !important;
 		-webkit-border-radius: 0;
 		-moz-border-radius: 0;
 		border-radius: 0;
-		bottom: 0;
+		bottom: 16px;
 	}
 	.barraEcommerce .barDescription p {
 		font-size: 14px;
@@ -2805,56 +2958,99 @@
 		font-size: 18px;
 	}
 	.barraEcommerce .botonAvanceMobile a {
-		left: 390px !important;
-		width: 47px;
-		height: 47px;
+		margin-right: 24px !important;
+		width: 47px !important;
+		height: 47px !important;
 	}
 	.barraEcommerce .botonAvanceMobile a span {
 		display: none;
 	}
-	.barraEcommerce .botonAvanceMobile a img {
-		top: 10px;
-		left: 0;
+	.complementosContainer .complementosColumns {
+		width: 100%;
+		height: auto;
+	}
+	.complementosContainer .complementosColumns .listaComplementos {
+		width: 100%;
+		height: auto;
+		padding-bottom: 6vh;
+	}
+	.complementosContainer .complementosColumns ul li {
+		float: none !important;
+		clear: both !important;
+		margin: 2rem auto !important;
 	}
 }
 
 // Small devices (landscape phones, less than 768px)
 @media (max-width: 767.98px) {
 	.barraEcommerce {
-		width: 674px;
-		height: 72px;
 		margin: 0 auto;
 		-webkit-border-radius: 0;
 		-moz-border-radius: 0;
 		border-radius: 0;
-		bottom: 0;
+		bottom: 16px;
 	}
 	.barraEcommerce .botonAvanceMobile a {
 		width: 47px;
 		height: 47px;
+		margin-right: 24px;
 	}
 	.barraEcommerce .botonAvanceMobile a span {
 		display: none;
 	}
 	.barraEcommerce .botonAvanceMobile a img {
-		top: 10px;
-		left: 0;
+		top: 10px !important;
+		left: 0 !important;
+	}
+	.complementosContainer .complementosColumns .listaComplementos {
+		padding-left: 0;
+		padding-bottom: 12vh;
+	}
+	.complementosContainer .complementosColumns ul li:nth-child(1),
+	.complementosContainer .complementosColumns ul li:nth-child(2),
+	.complementosContainer .complementosColumns ul li:nth-child(3) {
+		float: none !important;
+		clear: both;
+		margin: 0 auto !important;
+		margin-bottom: 2rem !important;
 	}
 }
 
 // Medium devices (tablets, less than 992px)
 @media (max-width: 991.98px) {
-	.barraEcommerce {
-		width: 674px;
-		height: 72px;
+	.complementosContainer .complementosColumns ul li:nth-child(1) {
+		margin-left: 22vw;
+		margin-right: 24px;
 	}
-	.barraEcommerce .botonAvanceMobile a {
-		left: 525px;
+	.complementosContainer .complementosColumns {
+		width: 100%;
+	}
+	.complementosContainer .complementosColumns ul li:nth-child(3) {
+		float: none !important;
+		clear: both;
+		margin: 0 auto !important;
+		position: relative;
+		top: 2rem;
+	}
+	.complementosContainer .complementosColumns .listaComplementos {
+		padding-left: 0;
 	}
 }
 
 // Large devices (desktops, less than 1200px)
 @media (max-width: 1199.98px) {
+	.barraEcommerce {
+		width: calc(100% - 32px);
+		height: 72px;
+		-webkit-border-radius: 8px;
+		-moz-border-radius: 8px;
+		border-radius: 8px;
+		bottom: 16px;
+		position: fixed;
+		left: 16px;
+		bottom: 16px;
+		margin: 0 auto;
+	}
 }
 
 // Extra large devices (large desktops)
