@@ -32,8 +32,8 @@ export class Indexprincipal {
         this.validaciones();
         cargaapps(1);
         const chat = new Chat('sectionChat');
-        this.props.packCards = [...document.getElementsByClassName('card-package-item')];
-        this.props.indicators = [...document.getElementById('detailPackageIndicatorsIndex').children];
+        //this.props.packCards = [...document.getElementsByClassName('card-package-item')];
+        //this.props.indicators = [...document.getElementById('detailPackageIndicatorsIndex').children];
         //this.validarPermisosUbicacion();
         
     }
@@ -1161,12 +1161,15 @@ export class Indexprincipal {
                 }else{
                     $("#ciudadHome").html('Ciudad de México');
                 }
-                const paq = new Paquetes();
-                paq.cargarPaquetes("home");
+                /*const paq = new Paquetes();
+                paq.cargarPaquetes("home");*/
             }
         }catch(error){
             $("#ciudadHome").html('Ciudad de México');
             console.log("NO PUDE TRAER LOCALSTORAGE")
+        }finally{
+          const paq = new Paquetes();
+          paq.cargarPaquetes("home");
         }
     }
 
