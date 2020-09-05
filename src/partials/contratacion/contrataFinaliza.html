@@ -353,9 +353,22 @@
                             style="font-family: Montserrat-SemiBold; font-size: 16px; color:rgba(59,69,89,1); line-height: normal; width: 100%; margin-bottom: 0 !important">
                             Identificaci&oacute;n oficial:</h1>
                         <div class="radioButtonsContainer" style="width: 100%; margin-bottom: 16px">
-                            <div class="radioButtonItem">1</div>
-                            <div class="radioButtonItem">2</div>
-                            <div class="radioButtonItem">3</div>
+                            <div class="radioButtonItem">
+                                <label class="container">
+                                    <input type="radio" checked="checked" name="radio" id="">
+                                    <span class="checkmark"></span>INE
+                                </label>
+                            </div>
+                            <div class="radioButtonItem">
+                                <label class="container">
+                                    <input type="radio" checked="checked" name="radio">
+                                    <span class="checkmark"></span>Pasaporte
+                                </label>
+                            </div>
+                            <div class="radioButtonItem"><label class="container">
+                                <input type="radio" checked="checked" name="radio">
+                                <span class="checkmark"></span>Cedula Profesional
+                            </label></div>
                         </div>
                         <span class=""
                             style="text-align: left; margin-bottom: 10px; font-family: Montserrat-Regular;  font-size: 14px; color: #75787b; line-height: normal; ">INE
@@ -378,9 +391,26 @@
                             <i class="fas fa-trash-alt" id="eliminarIdentificacion"
                                 style="display: none;cursor: pointer;color: #1A76D2;"></i>
                         </div>
+                        <input type="file" id="inputFileINE" style="display:none" accept="image/jpeg,application/pdf" />
+                        <div class="pay-check-container" id="contenedorSubeArchivoINE"
+                            style="margin-top: 0; margin-bottom: 5px; border: 1px dashed #1A76D2; cursor: pointer;">
+                            <i class="fas fa-upload"
+                                style="color: #1A76D2;display: inline;margin-right: 10px; cursor: pointer;"
+                                id="iconoSubeINE"></i>
+                            <span class="textoLegales" id="divArchivoIdentificacion"
+                                style="color: #1A76D2;cursor: pointer;">
+                                Agrega tu documento adicional pdf o jpg. M&aacute;x. 5Mb.
+                            </span>
+                            <p class="text-danger" style="margin-top: 15px; margin-left: 32px; display: none;"
+                                id="errorArchivoINE">
+                                *Archivo no válido
+                            </p>
+                            <i class="fas fa-trash-alt" id="eliminarIdentificacion"
+                                style="display: none;cursor: pointer;color: #1A76D2;"></i>
+                        </div>
 
                         <!--COMPROBANTE DE DOMICILIO-->
-                        <h1 id="tituloComprobante" style="font-size: 16px;">Comprobante de domicilio:</h1>
+                        <h1 id="tituloComprobante" style="font-family: Montserrat-SemiBold; font-size: 16px; color:rgba(59,69,89,1); line-height: normal; width: 100%; margin-bottom: 0 !important">Comprobante de domicilio:</h1>
 
                         <span class=""
                             style="text-align: left; margin-bottom: 10px; font-family: Montserrat-Regular;  font-size: 14px; color: #75787b; line-height: normal;">Recibo

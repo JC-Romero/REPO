@@ -1044,7 +1044,7 @@
 						&:nth-child(2) {
 							width: 90%;
 							margin-bottom: 8px;
-							@include text-font-regular(14px, $gray-400, 1.14);
+							@include text-font-regular(14px, $gray-400, 18px);
 
 							@include break-point("800") {
 								width: 90%;
@@ -1230,7 +1230,6 @@
 		font-size: 20px;
 		color: #3b4559;
 		line-height: normal;
-		margin-left: 20px;
 		width: 100%;
 		margin-top: 10px;
 		margin-bottom: 30px;
@@ -1270,12 +1269,14 @@
 }
 .radioButtonsContainer .radioButtonItem {
 	height: 20px;
-	width: 74px;
-	line-height: 200px;
-	font-size: 20px;
-	color: #fff;
-	text-align: center;
-	margin: 5px 2px;
+	width: 168px;
+	color: rgba(59,69,89,1);
+	text-align: left;
+	margin: 5px 0;
+	font-family: Montserrat-Regular;
+	font-size: 16px;
+	line-height: 19px;
+	white-space: nowrap;	
 }
 /*Nuevos estilos*/
 /*Breakpoints*/
@@ -1283,6 +1284,9 @@
 }
 @media (max-width: 767.98px) {
 	#finalizaContratacion .main-summary__invoice-data--info .form-data {
+		width: 100%;
+	}
+	.radioButtonsContainer .radioButtonItem {
 		width: 100%;
 	}
 }
