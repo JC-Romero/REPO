@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 392 68" style="enable-background:new 0 0 392 68;" xml:space="preserve">
+<style type="text/css">
+	.st0{filter:url(#filter-2);}
+	.st1{fill-rule:evenodd;clip-rule:evenodd;}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#FAFAFA;}
+	.st3{fill:none;stroke:#E0E0E0;stroke-linecap:square;stroke-dasharray:6,6;}
+</style>
+<filter  filterUnits="objectBoundingBox" height="182.4%" id="filter-2" width="114.3%" x="-7.1%" y="-29.4%">
+	<feOffset  dx="0" dy="8" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+	<feGaussianBlur  in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="8"></feGaussianBlur>
+	<feColorMatrix  in="shadowBlurOuter1" type="matrix" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.15 0"></feColorMatrix>
+</filter>
+<g id="Commerce---Sep-25">
+	<g id="Artboard" transform="translate(-368.000000, -472.000000)">
+		<g id="Group" transform="translate(384.000000, 480.000000)">
+			<g id="Combined-Shape">
+				<g class="st0">
+					<path id="path-1_2_" class="st1" d="M376-8v18c-8.8,0-16,7.2-16,16s7.2,16,16,16v18H-16V42c8.8,0,16-7.2,16-16s-7.2-16-16-16
+						V-8H376z"/>
+				</g>
+				<g>
+					<path id="path-1_1_" class="st2" d="M376-8v18c-8.8,0-16,7.2-16,16s7.2,16,16,16v18H-16V42c8.8,0,16-7.2,16-16s-7.2-16-16-16
+						V-8H376z"/>
+				</g>
+			</g>
+			<line id="Line" class="st3" x1="24" y1="25.5" x2="336" y2="25.5"/>
+		</g>
+	</g>
+</g>
+</svg>

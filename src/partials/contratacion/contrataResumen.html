@@ -68,19 +68,21 @@
                                 <span id="precioProntoPago1" style="color: #3B4559">$0</span>
                             </div>
                             <div>
-                                <span>Descuento aplicados</span>
+                                <span>Descuentos incluidos</span>
                                 <span id="totalDescuento">$0</span>
                             </div>
                         </div>
-                        <div class="list-setTopBox">
-                            <div class="main-summary__invoice-data--data__1" style="border-bottom: 1px dashed #E0E0E0;">
+                        <hr class="ticketDivider">
+                        <div class="list-setTopBox" style="margin-top: 16px; margin-bottom: 45px;">
+                            <div class="main-summary__invoice-data--data__1">
                                 <div>
-                                    <span style="color: #3B4559">Adicionales</span>
+                                    <span style="color: #3B4559;">Adicionales</span>
                                     <span id="totalAdicionales" style="color: #3B4559">$0.00</span>
                                 </div>
-
                             </div>
-
+                        </div>
+                        <div class="ticketImage">
+                            <img src="../../assets/img/nuevos/pleca2Shadow.svg">
                         </div>
                         <div class="more-apps">
                         </div>
@@ -136,7 +138,7 @@
         </div>
         <!-- INFORMACION RESUMEN PAQUETE -->
         <div class="content-main-summary-sections-column-2">
-            <div class="main-summary__title">
+            <div class="main-summary__title" style="margin-bottom: 16px;">
                 Revisa tu paquete
             </div>
             <!-- INFORMACION INTERNET -->
@@ -166,16 +168,16 @@
                     <ul class="main-summary-tv__invoice-data-block-content">
                         <li id="mejorarTelevision">
                             <div class="main-summary-tv__invoice-data--block">
-                                <div class="invoice-data--addon__description">
+                                <div class="invoice-data--addon__description" style="margin-bottom: 4px">
                                     TV Inicial
                                 </div>
-                                <div class="invoice-data--addon__title">
+                                <div class="invoice-data--addon__title" style="margin-bottom: 4px">
                                     80 canales (35 en HD)
                                 </div>
-                                <div class="invoice-data--addon__promo">
+                                <div class="invoice-data--addon__promo" style="margin-bottom: 4px">
 
                                 </div>
-                                <div class="invoice-data--addon__leyenda">
+                                <div class="invoice-data--addon__leyenda" style="margin-bottom: 8px">
 
                                 </div>
                             </div>
@@ -186,18 +188,19 @@
 
                         <li id="seleccionPromocion">
                             <div class="main-summary-tv__invoice-data--block">
-                                <div class="invoice-data--addon__description" id="txtPromoSeleccionada">
+                                <div class="invoice-data--addon__description" id="txtPromoSeleccionada"
+                                    style="margin-bottom: 4px">
                                 </div>
 
-                                <div class="invoice-data--addon__title">
+                                <div class="invoice-data--addon__title" style="margin-bottom: 4px">
                                     Elige entre HBO o Fox Premium
                                 </div>
 
 
-                                <div class="invoice-data--addon__promo">
+                                <div class="invoice-data--addon__promo" style="margin-bottom: 4px">
                                     Sin costo x 6 meses*
                                 </div>
-                                <div class="invoice-data--addon__terms">
+                                <div class="invoice-data--addon__terms" style="margin-bottom: 8px">
                                     *A partir del 7º mes cancelará de forma autom&aacute;tica.
                                 </div>
                             </div>
@@ -314,9 +317,29 @@
         </div>
     </div>
     <!-- BOTON CONTRATAR / AGREGAR CARRITO / COMPARTIR -->
-    <div class="content-contratacion__shopping-cart" id="shoppingCartContratacion">
-        <div class="content-contratacion__shopping-cart--button-buy">
-            Contratar
+    <div class="content-contratacion__shopping-cart barraEcommerce" id="shoppingCartContratacion"
+        style="position: sticky; left: 0; top: 20px; margin-top: 16px;">
+        <div class="barraEcommerceContainer">
+            <div class="botonRegreso" style="top: 65px;">
+                <a href="#"><img src="../../assets/img/nuevos/icons/chevronLeftBlue.svg"><span>Regresar</span></a>
+            </div>
+            <div class="content-contratacion__shopping-cart--button-buy" style="visibility: hidden;">
+                Contratar
+            </div>
+            <div class="barDescription" style="position: relative;
+            top: -10px; text-align: left;">
+                <p>Paquete <span>Nombre de paquete</span></p>
+                <h1><span>$ 0,000</span> al mes</h1>
+            </div>
+            <div class=""
+                style="top: -50px; width: 134px;
+            height: 40px; background: rgba(25, 138, 255, 1); color: rgba(255, 255, 255, 1); padding-top: 2px;
+    margin-right: 24px; text-align: left; position: relative; float: right; border-radius: 24vw; text-align: center; font-family: Montserrat-Regular;">
+                <a href="#"><span style="display: block; position: relative;
+                    top: 10px; left: -10px;">Contrata</span><img
+                        src="../../assets/img/nuevos/icons/arrowForwardWhite.svg" style="width: 24px; height: 24px; position: relative; top: -10px;
+                        left: 40px;"></a>
+            </div>
         </div>
         <!--div class="content-contratacion__shopping-cupon-top--button-cupon shopingCartCuponT" style="margin-bottom:0;">Agregar Cupón</div-->
     </div>

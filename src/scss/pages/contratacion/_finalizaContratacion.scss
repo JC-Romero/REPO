@@ -62,7 +62,6 @@
 		position: relative;
 		width: 288px;
 		height: auto;
-		box-shadow: $shadow-900;
 		border-radius: 4px;
 		margin-bottom: 8px;
 		padding-left: 16px;
@@ -78,8 +77,8 @@
 
 		@include break-point("800") {
 			width: 712px;
-			padding-left: 40px;
-			padding-right: 40px;
+			padding-left: 20px;
+			padding-right: 20px;
 		}
 
 		@include break-point("1700") {
@@ -471,11 +470,11 @@
 					}
 				}
 
-				#btnDatosFisica{
+				#btnDatosFisica {
 					width: 100%;
 				}
 
-				#btnDatosMoral{
+				#btnDatosMoral {
 					width: 100%;
 				}
 
@@ -685,9 +684,10 @@
 				}
 
 				.form-data {
-					width: 100%;
+					width: 77%;
 					position: relative;
 					padding-top: 24px;
+					margin: 0 auto;
 
 					&.active {
 						display: flex;
@@ -715,7 +715,7 @@
 							&:nth-child(5),
 							&:nth-child(6) {
 								@include break-point("800") {
-									width: 30% !important;
+									width: 45% !important;
 								}
 							}
 
@@ -759,7 +759,7 @@
 							//width: 100% !important;
 							margin-bottom: 22px;
 
-							&:nth-child(1){
+							&:nth-child(1) {
 								width: 100%;
 							}
 
@@ -1209,15 +1209,15 @@
 		}
 	}
 
-	#tituloConstanciaRFC{
-		display:none; 
-		font-family: Montserrat-Bold; 
-		font-size: 20px; 
-		color: #3b4559; 
+	#tituloConstanciaRFC {
+		display: none;
+		font-family: Montserrat-Bold;
+		font-size: 20px;
+		color: #3b4559;
 		line-height: normal;
-		//margin-left: 20px; 
-		width: 100%; 
-		margin-top: 10px; 
+		//margin-left: 20px;
+		width: 100%;
+		margin-top: 10px;
 		margin-bottom: 35px;
 
 		@include break-point("800") {
@@ -1225,14 +1225,14 @@
 		}
 	}
 
-	#tituloComprobante{
-		font-family: Montserrat-Bold; 
-		font-size: 20px; 
-		color: #3b4559; 
-		line-height: normal; 
-		margin-left: 20px; 
-		width: 100%; 
-		margin-top: 10px; 
+	#tituloComprobante {
+		font-family: Montserrat-Bold;
+		font-size: 20px;
+		color: #3b4559;
+		line-height: normal;
+		margin-left: 20px;
+		width: 100%;
+		margin-top: 10px;
 		margin-bottom: 30px;
 
 		@include break-point("500") {
@@ -1244,17 +1244,50 @@
 		}
 	}
 
-	#btnDatosFisica{
+	#btnDatosFisica {
 		font-size: 10px;
 		@include break-point("800") {
 			font-size: 14px;
 		}
 	}
 
-	#btnDatosMoral{
+	#btnDatosMoral {
 		font-size: 10px;
 		@include break-point("800") {
 			font-size: 14px;
 		}
 	}
 }
+/*Nuevos estilos*/
+.radioButtonsContainer {
+	width: 100%;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+.radioButtonsContainer .radioButtonItem {
+	height: 20px;
+	width: 74px;
+	line-height: 200px;
+	font-size: 20px;
+	color: #fff;
+	text-align: center;
+	margin: 5px 2px;
+}
+/*Nuevos estilos*/
+/*Breakpoints*/
+@media (max-width: 575.98px) {
+}
+@media (max-width: 767.98px) {
+	#finalizaContratacion .main-summary__invoice-data--info .form-data {
+		width: 100%;
+	}
+}
+@media (max-width: 991.98px) {
+}
+@media (max-width: 1199.98px) {
+}
+/*Breakpoints*/

@@ -32,7 +32,7 @@ export class ModalContrata {
         this.onkeypress();
     }
 
-    mostrarVentana(){
+    mostrarVentana() {
         this.setText('Comienza tu contratación', 'Ingresa tus datos de contacto para continuar.');
 
         this.props.modalContract.style.display = 'flex';
@@ -44,6 +44,7 @@ export class ModalContrata {
             opacity: 1,
             ease: "power4.out"
         })
+        this.nextStep();
     }
 
     mostrarVentanaContratacion() {
@@ -53,12 +54,12 @@ export class ModalContrata {
     }
 
     onkeypress() {
-        $('#email').on('change',function(e){
-            $("#errorEmailContratacion").css("display","none");
+        $('#email').on('change', function (e) {
+            $("#errorEmailContratacion").css("display", "none");
         });
 
-        $('#mobile').on('change',function(e){
-            $("#errorMovilContratacion").css("display","none");
+        $('#mobile').on('change', function (e) {
+            $("#errorMovilContratacion").css("display", "none");
         });
 
         var referenciaClase = this;
@@ -79,38 +80,38 @@ export class ModalContrata {
             let mobileUser = document.getElementById('mobile');
             var procesa = true;
 
-            if(referenciaClase.esVacio(emailUser.value)){
-                $("#errorEmailContratacion").css("display","block");
+            if (referenciaClase.esVacio(emailUser.value)) {
+                $("#errorEmailContratacion").css("display", "block");
                 $("#errorEmailContratacion").html("*Campo obligatorio");
                 procesa = false;
-            }else{
-                if(!referenciaClase.validaEmail(emailUser.value)){
-                    $("#errorEmailContratacion").css("display","block");
+            } else {
+                if (!referenciaClase.validaEmail(emailUser.value)) {
+                    $("#errorEmailContratacion").css("display", "block");
                     $("#errorEmailContratacion").html("*Campo no v&aacute;lido");
                     procesa = false;
                 }
             }
 
-            if(referenciaClase.esVacio(mobileUser.value)){
-                $("#errorMovilContratacion").css("display","block");
+            if (referenciaClase.esVacio(mobileUser.value)) {
+                $("#errorMovilContratacion").css("display", "block");
                 $("#errorMovilContratacion").html("*Campo obligatorio");
                 procesa = false;
-            }else{
-                if(!referenciaClase.validaTelefono(mobileUser.value)){
-                    $("#errorMovilContratacion").css("display","block");
+            } else {
+                if (!referenciaClase.validaTelefono(mobileUser.value)) {
+                    $("#errorMovilContratacion").css("display", "block");
                     $("#errorMovilContratacion").html("*Campo no v&aacute;lido");
                     procesa = false;
                 }
             }
 
-            if(procesa){
-                
+            if (procesa) {
+
                 referenciaClase.iniciarObjetoPersona($('#email').val().trim(), $('#mobile').val().trim())
 
                 $('#titularCelular').val($('#mobile').val().trim());
                 $('#botonContinuar').attr('disabled', 'disabled');
                 $('.iconoContinuar').show();
-                
+
                 referenciaClase.mostrarVentanaContratacion();
                 $('#botonContinuar').removeAttr('disabled');
                 $('.iconoContinuar').hide();
@@ -121,18 +122,18 @@ export class ModalContrata {
     listenerInputs() {
         var referenciaClase = this;
 
-        $("body").on('keyup', '.campoCodigo', function() {
+        $("body").on('keyup', '.campoCodigo', function () {
             var campoNumero = parseInt($(this).attr('data-num'));
-            if(campoNumero == 6){
+            if (campoNumero == 6) {
                 referenciaClase.endAnimation();
-                
-            }else{
+
+            } else {
                 campoNumero++;
-                $('#nip_'+campoNumero).focus();
+                $('#nip_' + campoNumero).focus();
             }
         });
 
-        $("body").on('click', '#botonReenviarCodigo', function() {
+        $("body").on('click', '#botonReenviarCodigo', function () {
             $('#nip_1').val('');
             $('#nip_2').val('');
             $('#nip_3').val('');
@@ -183,7 +184,7 @@ export class ModalContrata {
     nextStep() {
         this.props.contStep++;
         let totalLI = $('ul.contratacion--top-bar__steps__list-names li').length;
-        if ( totalLI == 4 ) {
+        if (totalLI == 4) {
             this.props.contStep++;
         }
 
@@ -192,53 +193,53 @@ export class ModalContrata {
         this.props.direction = 'right';
         this.changeStep(this.props.contStep);
     }
-    
+
     changeStep(_index) {
         let totalLI = $('ul.contratacion--top-bar__steps__list-names li').length;
         console.log('totalLI=>', totalLI);
 
         this.props.contStep++;
-        
+
         this.props.listPointsStepItems[2].children[1].children[0].style.cssText = `left:0; transition: all .4s`;
         setTimeout(() => {
-            if ( totalLI == 4 ) {
+            if (totalLI == 4) {
                 this.props.listPointsStepItems[2].children[0].style.cssText = `background-color: #1a76d2;`;
                 this.props.listPointsStepItems[3].children[0].style.cssText = `background-color: #1a76d2; transition: all .1s; height:7px; width:7px;`;
             }
-            if ( totalLI == 3 ) {
+            if (totalLI == 3) {
                 this.props.listPointsStepItems[1].children[0].style.cssText = `background-color: #1a76d2;`;
                 this.props.listPointsStepItems[2].children[0].style.cssText = `background-color: #1a76d2; transition: all .1s; height:7px; width:7px;`;
             }
         }, 300);
-        
-        if ( totalLI == 4 ) {
+
+        if (totalLI == 4) {
             this.props.itemsNamesSteps[3].style.color = '#1a76d2';
             this.props.itemsNamesSteps[3].style.color = '#1a76d2';
             this.props.stepItem[3].removeAttribute('style');
         }
 
-        if ( totalLI == 3 ) {
+        if (totalLI == 3) {
             this.props.itemsNamesSteps[2].style.color = '#1a76d2';
             this.props.itemsNamesSteps[2].style.color = '#1a76d2';
             this.props.stepItem[2].removeAttribute('style');
         }
-        
+
         const finalizaContratacion = new FinalizaContratacion();
     }
 
-    esVacio(valor){
-        try{
-            if(valor!='undefined' && valor!=null){
-                var value = $.trim(valor);            
-                if(value=== null || value.length===0){
+    esVacio(valor) {
+        try {
+            if (valor != 'undefined' && valor != null) {
+                var value = $.trim(valor);
+                if (value === null || value.length === 0) {
                     return true;
-                }else{
+                } else {
                     return false;
                 }
-            }else{
+            } else {
                 return true;
-            }            
-        }catch(e){
+            }
+        } catch (e) {
             return true;
         }
     }
@@ -255,21 +256,21 @@ export class ModalContrata {
         return response;
     }
 
-    validaTelefono(telefono){
+    validaTelefono(telefono) {
         var response = false;
-        var reTelefono = /^\d{10}$/;    
-        if(telefono.length>0){
-            if(telefono.match(reTelefono)){
+        var reTelefono = /^\d{10}$/;
+        if (telefono.length > 0) {
+            if (telefono.match(reTelefono)) {
                 response = true;
             }
         }
         return response;
     }
 
-    iniciarObjetoPersona(correoElectronico, numeroTelefonico){
-        let objetoCliente ={
-            "correoElectronico":correoElectronico,
-            "numeroTelefonico":numeroTelefonico,
+    iniciarObjetoPersona(correoElectronico, numeroTelefonico) {
+        let objetoCliente = {
+            "correoElectronico": correoElectronico,
+            "numeroTelefonico": numeroTelefonico,
         }
 
         localStorage.setItem('TP_STR_CLIENTE', JSON.stringify(objetoCliente));
