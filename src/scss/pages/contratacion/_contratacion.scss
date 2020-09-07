@@ -3104,6 +3104,12 @@
 		bottom: 16px;
 		margin: 0 auto;
 	}
+	.specialBar {
+		position: relative !important;
+		width: calc(100% - 16px);
+		left: 0;
+		bottom: 0;
+	}
 }
 
 // Medium devices (tablets, less than 992px)

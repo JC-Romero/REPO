@@ -271,19 +271,8 @@
         margin-top: 48px;
     }
 } //
-.instalationDayDiv::after {
-    content: "";
-    width: 30px;
-    height: 30px;
-    background-image: url(../../../assets/img/nuevos/icons/calendar-regular.svg);
-    background-size: 20px;
-    background-repeat: no-repeat;
-    background-position: top center;
-    display: inline-block;
-    position: relative;
-    top: -35px;
-    left: -35px;
-}
+
+/*Nuevos estilos Final Ecommerce*/
 .instalationDayDiv::after {
     content: "";
     width: 30px;
@@ -310,3 +299,29 @@
     top: -35px;
     left: -40px;
 }
+.apps-store-info {
+    max-height: 368px;
+    min-height: 368px;
+    position: relative;
+    top: 38px;
+}
+.apps-store-info .text-store-info > span {
+    margin-top: 0 !important;
+    position: relative;
+    top: -25px;
+}
+.totalIcon::after {
+    content: "";
+    width: 80px;
+    height: 80px;
+    background-image: url(../../../assets/img/nuevos/icons/totalplay_24px-1.svg);
+    background-size: 80px;
+    background-repeat: no-repeat;
+    background-position: top center;
+    display: inline-block;
+    position: relative;
+    top: -35px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 13.33px;
+}
+/*Nuevos estilos Final Ecommerce*/

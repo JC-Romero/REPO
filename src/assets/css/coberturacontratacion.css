@@ -14,7 +14,7 @@
   background-position: top center;
   background-size: contain;
   display: inline-block;
-  color: rgba(216,109,0,1);
+  color: rgba(216, 109, 0, 1);
 }
 
 .tooltip-index {
@@ -312,6 +312,7 @@ span.spanDocumentos {
   }
   #finalizaContratacion h2 {
     width: 70%;
+    margin-bottom: 3rem;
   }
   .contratacion--top-bar__steps {
     margin: 0 auto;
