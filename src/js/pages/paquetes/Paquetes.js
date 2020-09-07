@@ -140,8 +140,15 @@ export class Paquetes {
 				apuntador.pintarPaquetes(respuesta["DoblePlay"], "paquetes_dobleplay", paqueteList);
 				apuntador.pintarPaquetes(respuesta["DoblePlayNetFlix"], "paquetes_match2P", paqueteList);//*/
 			} else {
-				var arreglo = apuntador.ordenarObjeto(respuesta["TriplePlay"]).slice(0, 3);
-				apuntador.pintarPaquetes(arreglo, "cardsPackage", paqueteList, opt);
+				var arreglo = apuntador.ordenarObjeto(respuesta["TriplePlay"]).slice(0, 1);
+
+				var arregloUnbox = apuntador.ordenarObjeto(respuesta["TripleAmazon"]).slice(0,1);
+
+				var arregloNetflix = apuntador.ordenarObjeto(respuesta["TripleNetFlix"]).slice(0,1)
+
+				var arrelgoApintar = "["+JSON.stringify(arregloUnbox[0]).concat(",").concat(JSON.stringify(arregloNetflix[0])).concat(",").concat(JSON.stringify(arreglo[0]))+"]";
+
+				apuntador.pintarPaquetes(arrelgoApintar, "cardsPackage", paqueteList, opt);
 			}
 		});
 		console.groupEnd();
@@ -150,17 +157,45 @@ export class Paquetes {
 	pintarPaquetes(arregloPaquetes, idContenedor, listaImagenesCms, opt) {
 		let clase = this;
 		var plantillaHTML = "";
-		var arreglo = clase.ordenarObjeto(arregloPaquetes);
+		if(opt == "home"){
+			var arreglo = JSON.parse(arregloPaquetes);
+		}else{
+			var arreglo = clase.ordenarObjeto(arregloPaquetes);
+		}
+		
 		var arregloRecomendacion = new Array();
 		var contador = 1;
+		console.log("iré hacer each");
+
 		$.each(arreglo, function (key, objPaquete) {
-			if (contador <= 3) {
-				contador++;
-				arregloRecomendacion.push(objPaquete);
+
+			if(opt !== "home"){
+				if (contador <= 3) {
+					contador++;
+					arregloRecomendacion.push(objPaquete);
+				}
 			}
+			
 			var regex = /\s(\d{1,3})\sMbps/;
 			var result = regex.exec(objPaquete.detalleServicio);
 			var color = objPaquete.color;
+			var claseTipoPaquete;
+			var imagenPaquete;
+			var descriptionApp;
+
+			if(objPaquete.nombre.includes("unbox") || objPaquete.nombre.includes("UNBOX")){
+				claseTipoPaquete = "unbox";
+				imagenPaquete = "/assets/img/nuevos/amazon-prime-logoMain.png";
+				descriptionApp = "Envíos, música y <span>prime video.</span>";
+			}else if(objPaquete.nombre.includes("match") || objPaquete.nombre.includes("MATCH")){
+				claseTipoPaquete = "match";
+				imagenPaquete = "/assets/img/nuevos/1200px-Netflix_2015_logo.svg.png";
+				descriptionApp = "4 pantallas <span>Premium UHD</span>";
+			}else{
+				claseTipoPaquete = "surprisePlus";
+				imagenPaquete = "/assets/img/nuevos/emptyApp.png";
+				descriptionApp = objPaquete.detalle.canales;
+			}
 
 			if (listaImagenesCms.length > 0) {
 				listaImagenesCms.forEach((element) => {
@@ -171,7 +206,42 @@ export class Paquetes {
 				});
 			}
 			if (opt == "home") {
-				plantillaHTML += '<div class="card-package-item ' + color + '-item" id="' + objPaquete.id + '" style="margin-bottom:15px !important;">' + '<div class="card-package-item__banner szCrd">' + '<div class="gradient-image ' + color + '-package-gradient-img"></div>' + '<img src="' + objPaquete.imagen + '" alt="">' + "</div>" + '<div class="card-package-item__title ' + color + '-package szCrdTitle" >' + objPaquete.nombre + "</div>" + '<div class="card-package-item__speed ' + color + '-package-gradient szNumMb">' + '<span>' + result[1] + "</span>" + "</div>" + '<div class="card-package-item__megas ' + color + '-package szMoreMb">Megas↓</div>' + '<div class="card-package-item__include ' + color + '-package szPromoTxt">' + objPaquete.incluye + "</div>" + '<div class="card-package-item__promotion szBtnProm">INCLUYE 1 PROMOCIÓN</div>' + '<div class="card-package-item__price">' + '<span class="colorTxt1">' + 'Desde: <span class="colorTxt2">$ ' + clase.formatoMonedad(objPaquete.precioLista, 0, ".", ",") + " al mes</span></span>" + "</div>" + '<a class="card-package-item__button szBtnTrns">Descubrir</a>' + "</div>";
+				//plantillaHTML += '<div class="card-package-item ' + color + '-item" id="' + objPaquete.id + '" style="margin-bottom:15px !important;">' + '<div class="card-package-item__banner szCrd">' + '<div class="gradient-image ' + color + '-package-gradient-img"></div>' + '<img src="' + objPaquete.imagen + '" alt="">' + "</div>" + '<div class="card-package-item__title ' + color + '-package szCrdTitle" >' + objPaquete.nombre + "</div>" + '<div class="card-package-item__speed ' + color + '-package-gradient szNumMb">' + '<span>' + result[1] + "</span>" + "</div>" + '<div class="card-package-item__megas ' + color + '-package szMoreMb">Megas↓</div>' + '<div class="card-package-item__include ' + color + '-package szPromoTxt">' + objPaquete.incluye + "</div>" + '<div class="card-package-item__promotion szBtnProm">INCLUYE 1 PROMOCIÓN</div>' + '<div class="card-package-item__price">' + '<span class="colorTxt1">' + 'Desde: <span class="colorTxt2">$ ' + clase.formatoMonedad(objPaquete.precioLista, 0, ".", ",") + " al mes</span></span>" + "</div>" + '<a class="card-package-item__button szBtnTrns">Descubrir</a>' + "</div>";
+
+				plantillaHTML += 
+				'<div class="col-12 col-sm-6 mx-sm-auto col-md-6 col-lg-4 col-xl-3">'+
+                	'<div class="row">'+
+	                    '<div class="col-10 col-sm-11 col-md-11 col-lg-11 col-xl-11 mx-auto mainContainerpackage '+claseTipoPaquete+'"'+
+	                        'onclick="showBootstrapModalFirst(\'installLocation\');">'+
+	                        '<div class="packageInfoContainer">'+
+	                            '<div class="titlePackage">'+
+	                                '<p>'+objPaquete.nombre+'</p>'+
+	                            '</div>'+
+	                            '<div class="velocityPackage">'+
+	                                '<p>'+objPaquete.detalle.megas+'</p>'+
+	                            '</div>'+
+	                            '<div class="descriptionPackage">'+
+	                                '<p><span>1 línea</span> de teléfono</p>'+
+	                                '<p class="hiddenText"><span>3 equipos</span> de TV con Apps</p>'+
+	                            '</div>'+
+	                            '<hr>'+
+	                            '<div class="imagePackage">'+
+	                                '<img src="'+imagenPaquete+'" alt="Image Paquete">'+
+	                            '</div>'+
+	                            '<div class="descriptionApp">'+
+	                                '<p>'+descriptionApp+'</p>'+
+	                            '</div>'+
+	                            '<div class="packageDiscount">'+
+	                                '<p>Descuento de por vida</p>'+
+	                            '</div>'+
+	                            '<div class="packagePrice">'+
+	                                '<p><a href="#">Revisa disponibilidad</a></p>'+
+	                            '</div>'+
+	                        '</div>'+
+	                    '</div>'+
+	                '</div>'+
+	            '</div>';
+
 			} else {
 				plantillaHTML += '<div class="card-package-item ' + color + '-item" id="' + objPaquete.id + '">' + '<div class="card-package-item__banner">' + '<div class="gradient-image ' + color + '-package-gradient-img"></div>' + '<img src="' + objPaquete.imagen + '" alt="">' + "</div>" + '<div class="card-package-item__title ' + color + '-package">' + objPaquete.nombre + "</div>" + '<div class="card-package-item__speed ' + color + '-package-gradient">' + '<span>' + result[1] + "</span>" + "</div>" + '<div class="card-package-item__megas ' + color + '-package">Megas↓</div>' + '<div class="card-package-item__include ' + color + '-package">' + objPaquete.incluye + "</div>" + '<div class="card-package-item__promotion">INCLUYE 1 PROMOCIÓN</div>' + '<div class="card-package-item__price">' + '<span>Desde: <span>$ ' + clase.formatoMonedad(objPaquete.precioLista, 0, ".", ",") + " al mes</span></span>" + "</div>" + '<a class="card-package-item__button">Descubrir</a>' + "</div>";
 			}
@@ -179,11 +249,11 @@ export class Paquetes {
 
 		$("#" + idContenedor).html(plantillaHTML);
 		if (opt == "home") {
-			this.props.packCards = [...document.getElementsByClassName("card-package-item")];
+			/*this.props.packCards = [...document.getElementsByClassName("card-package-item")];
 			this.props.packCards[1].classList.add("active");
 			this.props.indicators = [...document.getElementById("detailPackageIndicatorsIndex").children];
 			this.props.indicators[1].classList.add("active");
-			clase.clickCards();
+			*/clase.clickCards();
 		}
 		clase.setListener();
 		localStorage.setItem("TP_PAQUETES_RECOMENDACION", JSON.stringify(arregloRecomendacion));
