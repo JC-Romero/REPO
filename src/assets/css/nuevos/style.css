@@ -1274,7 +1274,7 @@ header .mainNav .mobileCart a img {
 }
 
 .match .imagePackage img {
-    margin: 8px 0 0 0;
+    margin: 8px 0 8px 0;
 }
 
 .match .descriptionApp {
@@ -2817,6 +2817,11 @@ footer .legalAdvice p {
 .modalCityPicker .cityList .cityListItem a {
     display: block;
     color: rgba(245, 245, 245, 1);
+    padding: 15px 0 15px 16px;
+}
+.modalCityPicker .cityList .cityListItem a.active {
+    display: block;
+    color: rgba(130, 194, 220, 1);
     padding: 15px 0 15px 16px;
 }
 
