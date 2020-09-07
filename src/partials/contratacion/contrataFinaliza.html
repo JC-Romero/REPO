@@ -28,8 +28,8 @@
 
     .botonSeleccionado {
         color: white !important;
-        border: 1px solid #1a76d2;
-        background: #1a76d2 !important;
+        border: 1px solid #198aff;
+        background: #198aff !important;
     }
 
     .btnDeshabilitado {
@@ -97,40 +97,42 @@
     </div>
     <!-- TITULAR DE LA CUENTA -->
     <div id="titularCuenta" class="main-summary" style="box-shadow: 0 2px 8px 0 rgba(0,0,0,0.1); 
-    border-radius: 4px;">
+    border-radius: 4px; ">
         <div class="main-summary__invoice-data">
             <!-- TITULAR HEADER -->
             <div class="main-summary__invoice-data--title">
                 <span>Titular de la cuenta</span>
-                <span id="editTitularData" class="botonEditar">Editar</span>
+                <span id="editTitularData" class="botonEditar">Cambiar titular</span>
             </div>
             <!-- TITULAR BODY -->
-            <div class="main-summary__invoice-data--info">
+            <div class="main-summary__invoice-data--info" style="">
                 <!-- TITULAR DATOS -->
-                <div id="resumeTitularData" class="resume-titular-data">
+                <div id="resumeTitularData" class="resume-titular-data"
+                    style="padding-left: 40px !important; padding-right: 40px !important;">
                     <div>
-                        <span class="label-data">Nombre</span>
-                        <span class="value-data" id="titularNombreTarjeta"></span>
+                        <span class="label-data">NOMBRE(S)</span>
+                        <span class="value-data" id="titularNombreTarjeta" style="font-size: 16px"></span>
                     </div>
                     <div>
                         <span class="label-data">RFC</span>
-                        <span class="value-data" id="titularRFCTarjeta" style="text-transform: uppercase;"></span>
+                        <span class="value-data" id="titularRFCTarjeta"
+                            style="text-transform: uppercase; font-size: 16px"></span>
                     </div>
                     <div>
-                        <span class="label-data">Identificaci&oacute;n</span>
-                        <span class="value-data" id="titularIdentificacionTarjeta"></span>
+                        <span class="label-data">IDENTIFICAC&Oacute;N</span>
+                        <span class="value-data" id="titularIdentificacionTarjeta" style="font-size: 16px"></span>
                     </div>
                     <div>
-                        <span class="label-data">Correo electr&oacute;nico</span>
-                        <span class="value-data" id="titularCorreoTarjeta"></span>
+                        <span class="label-data">CORREO ELECTR&Oacute;NICO</span>
+                        <span class="value-data" id="titularCorreoTarjeta" style="font-size: 16px"></span>
                     </div>
                     <div>
-                        <span class="label-data">Tel&eacute;fono</span>
-                        <span class="value-data" id="titularTelefonoTarjeta"></span>
+                        <span class="label-data">TEL&Eacute;FONO</span>
+                        <span class="value-data" id="titularTelefonoTarjeta" style="font-size: 16px"></span>
                     </div>
                     <div>
-                        <span class="label-data">Celular</span>
-                        <span class="value-data" id="titularCelularTarjeta"></span>
+                        <span class="label-data">CELULAR</span>
+                        <span class="value-data" id="titularCelularTarjeta" style="font-size: 16px"></span>
                     </div>
                 </div>
                 <!-- TITULAR DATOS EDITABLE-->
@@ -174,7 +176,7 @@
                         <div class="input__float">
                             <input id="titularTelefono" name="titularTelefono" type="text" placeholder=" "
                                 autocomplete="off" required minlength="10" maxlength="10">
-                            <label for="titularTelefono">TEL&Eacute;FONO</label>
+                            <label for="titularTelefono">TEL&Eacute;FONO FIJO</label>
                             <p class="text-danger" style="margin-top: 5px !important;" id="errorTelContratacion"></p>
                         </div>
                         <div class="input__float">
@@ -355,20 +357,22 @@
                         <div class="radioButtonsContainer" style="width: 100%; margin-bottom: 16px">
                             <div class="radioButtonItem">
                                 <label class="container">
-                                    <input type="radio" checked="checked" name="radio" id="">
+                                    <input type="radio" name="radio">
                                     <span class="checkmark"></span>INE
                                 </label>
                             </div>
                             <div class="radioButtonItem">
                                 <label class="container">
-                                    <input type="radio" checked="checked" name="radio">
+                                    <input type="radio" name="radio">
                                     <span class="checkmark"></span>Pasaporte
                                 </label>
                             </div>
-                            <div class="radioButtonItem"><label class="container">
-                                <input type="radio" checked="checked" name="radio">
-                                <span class="checkmark"></span>Cedula Profesional
-                            </label></div>
+                            <div class="radioButtonItem">
+                                <label class="container">
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>Cedula Profesional
+                                </label>
+                            </div>
                         </div>
                         <span class=""
                             style="text-align: left; margin-bottom: 10px; font-family: Montserrat-Regular;  font-size: 14px; color: #75787b; line-height: normal; ">INE
@@ -410,7 +414,9 @@
                         </div>
 
                         <!--COMPROBANTE DE DOMICILIO-->
-                        <h1 id="tituloComprobante" style="font-family: Montserrat-SemiBold; font-size: 16px; color:rgba(59,69,89,1); line-height: normal; width: 100%; margin-bottom: 0 !important">Comprobante de domicilio:</h1>
+                        <h1 id="tituloComprobante"
+                            style="font-family: Montserrat-SemiBold; font-size: 16px; color:rgba(59,69,89,1); line-height: normal; width: 100%; margin-bottom: 0 !important">
+                            Comprobante de domicilio:</h1>
 
                         <span class=""
                             style="text-align: left; margin-bottom: 10px; font-family: Montserrat-Regular;  font-size: 14px; color: #75787b; line-height: normal;">Recibo
@@ -534,9 +540,7 @@
                         <span class="label-data">Vigencia</span>
                         <span class="value-data" id="vigenciaTarjetaResumen"></span>
                     </div>
-
                     <a class="btn__outline__blue_square">PAGO&nbsp;&nbsp;<span id="tipoPago"></span></a>
-
                     <div class="facturation-resume">
                         <span class="resume-title">Direcci&oacute;n de facturaci&oacute;n</span>
                         <span id="direccionResumen" class="installation-direction"></span>
@@ -553,16 +557,19 @@
                             style="border-radius: 0px 4px 4px 0px;padding: 5px 40px;">EFECTIVO</span>
                     </div>
                     <!-- TIPO DE PAGO [TARJETA] -->
-                    <div id="caseCardPayment" class="form-data" style="padding-top:0;">
+                    <div id="caseCardPayment" class="form-data" style="padding-top:0; width: 100% !important;">
                         <!-- MENSAJE IMPORTANTE -->
                         <div style="width: 100%">
                             <div class="mensajePago">
                                 <div
-                                    style="text-align: center;font-size: 16px;color: #D86D00;font-family: Montserrat-Regular;letter-spacing: 0;line-height: 30px;">
-                                    Agrega tu tarjeta para agilizar el pago <label style="font-weight: bold;">el
-                                        d&iacute;a de la instalaci&oacute;n.</label><br><label
-                                        style="font-weight: bold;">El monto a pagar es de <strong
-                                            class="txtMontoTotal"></strong> </label>
+                                    style="text-align: center;font-size: 18px;color: #D86D00;font-family: Montserrat-Regular;letter-spacing: 0;line-height: 30px;">
+                                    Agrega tu tarjeta para agilizar el pago
+                                    <label style="font-family: Montserrat-Bold;">el d&iacute;a de la
+                                        instalaci&oacute;n.</label>
+                                    <br>
+                                    <label style="font-family: Montserrat-Bold !important;">El monto a pagar es de
+                                        <strong class="txtMontoTotal"></strong> </label>
+                                    <div class="ico-question" title=""></div>
                                     <div class="tooltip-index" id="tooltip-index">
                                         <div class="toopdiv1">
                                             <span>Total pronto pago</span>
@@ -575,7 +582,6 @@
                                             <span style="font-family: Montserrat-Bold;" class="toolPrecioTotal"></span>
                                         </div>
                                     </div>
-                                    <div class="ico-question" title=""></div>
                                 </div>
                             </div>
                         </div>
@@ -698,8 +704,8 @@
                             </div>
                             <!-- TARJETA DIR FACTURACION -->
                             <div class="direction-title">
-                                <span class="resume-title" style="margin-top: 40px;">Dirección de facturación</span>
-                                <span id="btnDirectionCopy" class="btn__text__simple" style="margin-top: 40px;">Copiar
+                                <span class="resume-title" style="margin-top: 20px;">Dirección de facturación</span>
+                                <span id="btnDirectionCopy" class="btn__text__simple" style="margin-top: 20px;">Usar
                                     dirección de instalación</span>
                             </div>
                             <!-- TARJETA DIR FACTURACION CAMPOS -->
@@ -781,9 +787,11 @@
                         <div style="width: 100%">
                             <div class="mensajePago">
                                 <div
-                                    style="text-align: center;font-size: 16px;color: #D86D00;font-family: Montserrat-Regular;letter-spacing: 0;line-height: 30px;">
-                                    El pago en efectivo se realiza <label style="font-weight: bold;">el d&iacute;a de la
-                                        instalaci&oacute;n.</label><br><label style="font-weight: bold;">El monto a
+                                    style="text-align: center;font-size: 18px; color: #D86D00;font-family: Montserrat-Regular;letter-spacing: 0;line-height: 30px;">
+                                    El pago en efectivo se realiza <label style="font-family: Montserrat-Bold;">el
+                                        d&iacute;a de la
+                                        instalaci&oacute;n.</label><br><label style="font-family: Montserrat-Bold;">El
+                                        monto a
                                         pagar es de <strong class="txtMontoTotal"></strong></label>
                                     <div class="tooltip-index" id="tooltip-indexE">
                                         <div class="toopdiv1">
@@ -876,28 +884,34 @@
                         </div>
                     </div>
 
-                    <div class="select-data-info">
-                        <label id="fechaInstalacionInfo">Selecciona fecha&nbsp;
+                    <div class="select-data-info"
+                        style="width: 360px; margin: 0 auto; display: block; text-align: center; padding-bottom: 16px;">
+                        <p
+                            style="font-family: Montserrat-Regular; font-size: 14px; color: rgba(59,69,89,1); margin-top: 16px; margin-bottom: 4px;">
+                            Confirma tu instalación para el día:</p>
+                        <label id="fechaInstalacionInfo"
+                            style="font-family: Montserrat-Bold; font-size: 16px; color: rgba(59,69,89,1); font-size: 18px;">Selecciona
+                            fecha&nbsp;
                             <strong id="horarioInstalacionInfo">y horario</strong>
                         </label>
                     </div>
 
                     <div class="form-data">
-                        <h4 id="texto-agendamiento">
+                        <h1 style="font-family: Montserrat-SemiBold; font-size: 16px; color: rgba(59,69,89,1)">Referencias para llegar a tu hogar:</h1>
+                        <!--<h4 id="texto-agendamiento">
                             Para brindarte un mejor servicio, proporci&oacute;nanos la siguiente informarci&oacute;n
-                        </h4>
+                        </h4>-->
                         <div class="content-form-agendamiento">
-
                             <div class="input__float">
                                 <input id="domicilioReferencia" name="domicilioReferencia" type="text" placeholder=" "
                                     autocomplete="off" required>
-                                <label for="domicilioReferencia">Referencia del domicilio:</label>
+                                <label for="domicilioReferencia" style="text-transform: uppercase;">Entre calles, color de tu puerta, etc:</label>
                             </div>
-                            <div class="input__float">
+                            <!--<div class="input__float">
                                 <input id="domicilioEntreCalles" name="domicilioEntreCalles" type="text" placeholder=" "
                                     autocomplete="off" required>
                                 <label for="domicilioEntreCalles">Entre Calles:</label>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
 
