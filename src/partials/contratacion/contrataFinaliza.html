@@ -28,53 +28,56 @@
 
     .botonSeleccionado {
         color: white !important;
-        border: 1px solid #1a76d2;
-        background: #1a76d2 !important;
+        border: 1px solid #198aff;
+        background: #198aff !important;
     }
 
     .btnDeshabilitado {
         background: gray !important;
         opacity: .5 !important;
     }
-    
+
     .datepicker {
         font-family: Montserrat-Regular;
         font-size: 14px;
     }
 
-    .horarioDisponible{
+    .horarioDisponible {
         border: 1px solid green !important;
         cursor: pointer;
     }
 
-    .horarioNoDisponible{
+    .horarioNoDisponible {
         border: 1px solid red !important;
         cursor: no-drop;
     }
 
-    .container-documento{
+    .container-documento {
         display: inline-flex;
         width: 100%;
         margin-top: 20px;
         margin-bottom: 20px;
     }
 
-    .seleccionRadio{
+    .seleccionRadio {
         width: 33%;
     }
 
-    .textoNormal{
-        width: 100%;font-family: Montserrat-Regular;color: #75787B;
+    .textoNormal {
+        width: 100%;
+        font-family: Montserrat-Regular;
+        color: #75787B;
     }
 
     @media (max-width: 800px) {
-        .container-documento{
+        .container-documento {
             display: block;
             width: 100%;
             margin-top: 20px;
             margin-bottom: 40px;
         }
-        .seleccionRadio{
+
+        .seleccionRadio {
             width: 100%;
         }
     }
@@ -83,84 +86,103 @@
     <h1>Finaliza tu contratación</h1>
     <h2>Ingresa tus datos, forma de pago y elige el día de instalación.</h2>
 
-    <div class="main-summary contenedorDireccion">
-        <i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;<label id="etiquetaDireccion"></label>
+    <div class="main-summary contenedorDireccion" style="padding: 10px;">
+        <div style="width: 40px; height: 60px; float: left; text-align: center; padding-top: 17px; 
+        margin-right: 15px;">
+            <i class="fas fa-map-marker-alt" style="font-size: 20px;"></i>
+        </div>
+        <div>
+            <label id="etiquetaDireccion" style="font-size: 16px;"></label>
+        </div>
     </div>
     <!-- TITULAR DE LA CUENTA -->
-    <div id="titularCuenta" class="main-summary">
+    <div id="titularCuenta" class="main-summary" style="box-shadow: 0 2px 8px 0 rgba(0,0,0,0.1); 
+    border-radius: 4px; ">
         <div class="main-summary__invoice-data">
             <!-- TITULAR HEADER -->
             <div class="main-summary__invoice-data--title">
-                <span>Titular de la cuenta</span> 
-                <span id="editTitularData" class="botonEditar">Editar</span>
+                <span>Titular de la cuenta</span>
+                <span id="editTitularData" class="botonEditar">Cambiar titular</span>
             </div>
             <!-- TITULAR BODY -->
-            <div class="main-summary__invoice-data--info">
+            <div class="main-summary__invoice-data--info" style="">
                 <!-- TITULAR DATOS -->
-                <div id="resumeTitularData" class="resume-titular-data">
+                <div id="resumeTitularData" class="resume-titular-data"
+                    style="padding-left: 40px !important; padding-right: 40px !important;">
                     <div>
-                        <span class="label-data">Nombre</span>
-                        <span class="value-data" id="titularNombreTarjeta"></span>
+                        <span class="label-data">NOMBRE(S)</span>
+                        <span class="value-data" id="titularNombreTarjeta" style="font-size: 16px"></span>
                     </div>
                     <div>
                         <span class="label-data">RFC</span>
-                        <span class="value-data" id="titularRFCTarjeta" style="text-transform: uppercase;"></span>
+                        <span class="value-data" id="titularRFCTarjeta"
+                            style="text-transform: uppercase; font-size: 16px"></span>
                     </div>
                     <div>
-                        <span class="label-data">Identificaci&oacute;n</span>
-                        <span class="value-data" id="titularIdentificacionTarjeta"></span>
+                        <span class="label-data">IDENTIFICAC&Oacute;N</span>
+                        <span class="value-data" id="titularIdentificacionTarjeta" style="font-size: 16px"></span>
                     </div>
                     <div>
-                        <span class="label-data">Correo electr&oacute;nico</span>
-                        <span class="value-data" id="titularCorreoTarjeta"></span>
+                        <span class="label-data">CORREO ELECTR&Oacute;NICO</span>
+                        <span class="value-data" id="titularCorreoTarjeta" style="font-size: 16px"></span>
                     </div>
                     <div>
-                        <span class="label-data">Tel&eacute;fono</span>
-                        <span class="value-data" id="titularTelefonoTarjeta"></span>
+                        <span class="label-data">TEL&Eacute;FONO</span>
+                        <span class="value-data" id="titularTelefonoTarjeta" style="font-size: 16px"></span>
                     </div>
                     <div>
-                        <span class="label-data">Celular</span>
-                        <span class="value-data" id="titularCelularTarjeta"></span>
+                        <span class="label-data">CELULAR</span>
+                        <span class="value-data" id="titularCelularTarjeta" style="font-size: 16px"></span>
                     </div>
                 </div>
                 <!-- TITULAR DATOS EDITABLE-->
                 <div id="formTitularData" class="form-data" style="padding-top: 0;">
                     <div class="payments-container-buttons" style="">
-                        <span id="btnDatosFisica" class="btn__outline__square-gray botonSeleccionado" style="border-radius: 4px 0px 0px 4px;padding: 5px 40px;">PERSONA F&Iacute;SICA</span>
-                        <span id="btnDatosMoral" class="btn__outline__square-gray" style="border-radius: 0px 4px 4px 0px;padding: 5px 40px;">PERSONA MORAL</span>
+                        <span id="btnDatosFisica" class="btn__outline__square-gray botonSeleccionado"
+                            style="border-radius: 4px 0px 0px 4px;padding: 5px 40px;">PERSONA F&Iacute;SICA</span>
+                        <span id="btnDatosMoral" class="btn__outline__square-gray"
+                            style="border-radius: 0px 4px 4px 0px;padding: 5px 40px;">PERSONA MORAL</span>
                     </div>
 
                     <!--INICIA PERSONA FISICA-->
                     <div class="content-form-titular" style="padding-top: 0;" id="divPersonaFisica">
                         <!-- TITULAR CAMPOS-->
-                        <div class ="input__float">
-                            <input id="titularNombre" name="titularNombre" type="text" placeholder=" " autocomplete="off" required>
-                            <label for="titularNombre">Nombre(s)</label>
+                        <div class="input__float">
+                            <input id="titularNombre" name="titularNombre" type="text" placeholder=" "
+                                autocomplete="off" required>
+                            <label for="titularNombre">NOMBRE(S)</label>
                             <p class="text-danger" style="margin-top: 5px !important;" id="errorNombreContratacion"></p>
                         </div>
-                        <div class ="input__float">
-                            <input id="titularApellidoPaterno" name="titularApellidoPaterno" type="text" placeholder=" " autocomplete="off" required>
-                            <label for="titularApellidoPaterno">Apellido Paterno</label>
-                            <p class="text-danger" style="margin-top: 5px !important;" id="errorPaternoContratacion"></p>
+                        <div class="input__float">
+                            <input id="titularApellidoPaterno" name="titularApellidoPaterno" type="text" placeholder=" "
+                                autocomplete="off" required>
+                            <label for="titularApellidoPaterno">APELLIDO PATERNO</label>
+                            <p class="text-danger" style="margin-top: 5px !important;" id="errorPaternoContratacion">
+                            </p>
                         </div>
-                        <div class ="input__float">
-                            <input id="titularApellidoMaterno" name="titularApellidoMaterno" type="text" placeholder=" " autocomplete="off" required >
-                            <label for="titularApellidoMaterno">Apellido Materno</label>
-                            <p class="text-danger" style="margin-top: 5px !important;" id="errorMaternoContratacion"></p>
+                        <div class="input__float">
+                            <input id="titularApellidoMaterno" name="titularApellidoMaterno" type="text" placeholder=" "
+                                autocomplete="off" required>
+                            <label for="titularApellidoMaterno">APELLIDO MATERNO</label>
+                            <p class="text-danger" style="margin-top: 5px !important;" id="errorMaternoContratacion">
+                            </p>
                         </div>
-                        <div class ="input__float">
-                            <input id="titularRFC" name="titularRFC" type="text" autocomplete="off" placeholder=" " required style="text-transform: uppercase;">
+                        <div class="input__float">
+                            <input id="titularRFC" name="titularRFC" type="text" autocomplete="off" placeholder=" "
+                                required style="text-transform: uppercase;">
                             <label for="titularRFC">RFC</label>
                             <p class="text-danger" style="margin-top: 5px !important;" id="errorRFCContratacion"></p>
                         </div>
-                        <div class ="input__float">
-                            <input id="titularTelefono" name="titularTelefono" type="text" placeholder=" " autocomplete="off" required minlength="10" maxlength="10">
-                            <label for="titularTelefono">Tel&eacute;fono</label>
+                        <div class="input__float">
+                            <input id="titularTelefono" name="titularTelefono" type="text" placeholder=" "
+                                autocomplete="off" required minlength="10" maxlength="10">
+                            <label for="titularTelefono">TEL&Eacute;FONO FIJO</label>
                             <p class="text-danger" style="margin-top: 5px !important;" id="errorTelContratacion"></p>
                         </div>
-                        <div class ="input__float">
-                            <input id="titularCelular" name="titularCelular" type="text" placeholder=" "  autocomplete="off" required minlength="10" maxlength="10">
-                            <label for="titularCelular">Celular</label>
+                        <div class="input__float">
+                            <input id="titularCelular" name="titularCelular" type="text" placeholder=" "
+                                autocomplete="off" required minlength="10" maxlength="10">
+                            <label for="titularCelular">CELULAR</label>
                             <p class="text-danger" style="margin-top: 5px !important;" id="errorMovilContratacion2"></p>
                         </div>
                     </div>
@@ -169,18 +191,20 @@
                     <!--INICIA PERSONA MORAL-->
                     <div class="content-form-moral" style="padding-top: 0; display: none;" id="divPersonaMoral">
                         <!-- TITULAR CAMPOS-->
-                        <div class ="input__float" style="">
-                            <input id="razonSocial" name="razonSocial" type="text" placeholder=" " autocomplete="off" required>
-                            <label for="razonSocial">Raz&oacute;n social</label>
+                        <div class="input__float" style="">
+                            <input id="razonSocial" name="razonSocial" type="text" placeholder=" " autocomplete="off"
+                                required>
+                            <label for="razonSocial">RAZ&Oacute;N SOCIAL</label>
                             <p class="text-danger" style="margin-top: 5px !important;" id="errorRazonSocial"></p>
                         </div>
 
                         <div class="input__float" style="width: 100%;border-bottom: unset;">
-                            <label>Fecha de constituci&oacute;n</label>
+                            <label>FECHA DE CONSTITUCI&Oacute;N</label>
                         </div>
                         <div class="input__float" style="display: inline-flex; border-bottom: unset;">
                             <div style="border-bottom: 1px solid #3b4559;">
-                                <select data-vld="tooltip-faño" id="anioMoral" name="anioMoral" placeholder="" style="border: none; font-family: Montserrat-Light;font-size: 16px;width: 100%;padding-top: 1px;background: none;">
+                                <select data-vld="tooltip-faño" id="anioMoral" name="anioMoral" placeholder=""
+                                    style="border: none; font-family: Montserrat-Light;font-size: 16px;width: 100%;padding-top: 1px;background: none;">
                                     <option value="0">
                                         AAAA
                                     </option>
@@ -190,9 +214,11 @@
                                     <span class="font-weight-bold">
                                     </span>
                                 </div>
-                            </div>                            
+                            </div>
                             <div style="border-bottom: 1px solid #3b4559; margin-left: 20px;">
-                                <select autocomplete="off" data-vld="tooltip-fmes" id="mesMoral" name="mesMoral" placeholder=" " required="" style="border: none; font-family: Montserrat-Light;font-size: 16px;width: 100%;padding-top: 1px;background: none;">
+                                <select autocomplete="off" data-vld="tooltip-fmes" id="mesMoral" name="mesMoral"
+                                    placeholder=" " required=""
+                                    style="border: none; font-family: Montserrat-Light;font-size: 16px;width: 100%;padding-top: 1px;background: none;">
                                     <option value="0">
                                         MM
                                     </option>
@@ -241,7 +267,9 @@
                                 </div>
                             </div>
                             <div style="border-bottom: 1px solid #3b4559; margin-left: 20px;">
-                                <select autocomplete="off" data-vld="tooltip-fmes" id="diaMoral" name="diaMoral" placeholder=" " required="" style="border: none; font-family: Montserrat-Light;font-size: 16px;width: 100%;padding-top: 1px;background: none;">
+                                <select autocomplete="off" data-vld="tooltip-fmes" id="diaMoral" name="diaMoral"
+                                    placeholder=" " required=""
+                                    style="border: none; font-family: Montserrat-Light;font-size: 16px;width: 100%;padding-top: 1px;background: none;">
                                     <option value="0">
                                         DD
                                     </option>
@@ -284,112 +312,213 @@
                                     </span>
                                 </div>
                             </div>
-                            
+
                         </div>
 
-                        <div class ="input__float" id="divRFCmoral">
-                            <input id="rfcMoral" name="rfcMoral" type="text" placeholder=" " autocomplete="off" required  style="text-transform: uppercase;">
+                        <div class="input__float" id="divRFCmoral">
+                            <input id="rfcMoral" name="rfcMoral" type="text" placeholder=" " autocomplete="off" required
+                                style="text-transform: uppercase;">
                             <label for="rfcMoral">RFC</label>
                             <p class="text-danger" style="margin-top: 5px !important;" id="errorRfcMoral"></p>
                         </div>
-
-                        <div class ="input__float" id="divNombreMoral">
-                            <input id="nombreMoral" name="nombreMoral" type="text" placeholder=" " autocomplete="off" required >
-                            <label for="nombreMoral">Nombre(s)</label>
+                        <div style="width: 100%; margin-top: 10px; margin-bottom: 16px;">
+                            <p style="font-size: 16px; font-family: Montserrat-Regular; color: rgba(59,69,89,1)">Datos
+                                del representante legal:
+                            </p>
+                        </div>
+                        <div class="input__float" id="divNombreMoral">
+                            <input id="nombreMoral" name="nombreMoral" type="text" placeholder=" " autocomplete="off"
+                                required>
+                            <label for="nombreMoral">NOMBRE(S)</label>
                             <p class="text-danger" style="margin-top: 5px !important;" id="errorNombreMoral"></p>
                         </div>
-                        <div class ="input__float" id="divApellidos">
-                            <input id="apellidosMoral" name="apellidosMoral" type="text" autocomplete="off" placeholder=" " required>
+                        <div class="input__float" id="divApellidos">
+                            <input id="apellidosMoral" name="apellidosMoral" type="text" autocomplete="off"
+                                placeholder=" " required>
                             <label for="apellidosMoral">Apellidos</label>
                             <p class="text-danger" style="margin-top: 5px !important;" id="errorApellidosMoral"></p>
-                        </div>                       
+                        </div>
                     </div>
                     <!--TERMINA PERSONA MORAL-->
 
                     <!--INICIA DOCUMENTOS-->
                     <div class="content-form-titular" style="padding-top: 0;">
                         <!-- TITULAR DOCUMENTO IDENTIFICACION -->
-                        
+                        <div style="width: 100%;">
+                            <h1
+                                style="font-family: Montserrat-Bold; font-size: 16px; line-height: 24px; color: rgba(59,69,89,1) ">
+                                Agrega tus documentos para generar tu contrato.
+                            </h1>
+                        </div>
                         <!--INE/PASAPORTE/CEDULA-->
-                        <h1 id="identificacionH1" style="font-family: Montserrat-Bold; font-size: 20px; color: #3b4559; line-height: normal; width: 100%; margin-bottom: 0 !important">Identificaci&oacute;n oficial:</h1>
-
-                        <span class="" style="text-align: left; margin-bottom: 10px; font-family: Montserrat-Regular;  font-size: 14px; color: #75787b; line-height: normal; ">INE por ambos lados, pasaporte o c&eacute;dula profesional.</span>
+                        <h1 id="identificacionH1"
+                            style="font-family: Montserrat-SemiBold; font-size: 16px; color:rgba(59,69,89,1); line-height: normal; width: 100%; margin-bottom: 0 !important">
+                            Identificaci&oacute;n oficial:</h1>
+                        <div class="radioButtonsContainer" style="width: 100%; margin-bottom: 16px">
+                            <div class="radioButtonItem">
+                                <label class="container">
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>INE
+                                </label>
+                            </div>
+                            <div class="radioButtonItem">
+                                <label class="container">
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>Pasaporte
+                                </label>
+                            </div>
+                            <div class="radioButtonItem">
+                                <label class="container">
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>Cedula Profesional
+                                </label>
+                            </div>
+                        </div>
+                        <span class=""
+                            style="text-align: left; margin-bottom: 10px; font-family: Montserrat-Regular;  font-size: 14px; color: #75787b; line-height: normal; ">INE
+                            por ambos lados, pasaporte o c&eacute;dula profesional.</span>
 
                         <input type="file" id="inputFileINE" style="display:none" accept="image/jpeg,application/pdf" />
-                        <div class="pay-check-container" id="contenedorSubeArchivoINE" style="margin-top: 0; margin-bottom: 5px; border: 1px dashed #1A76D2; cursor: pointer;">
-                            <i class="fas fa-upload" style="color: #1A76D2;display: inline;margin-right: 10px; cursor: pointer;" id="iconoSubeINE"></i>
-                            <span class="textoLegales" id="divArchivoIdentificacion" style="color: #1A76D2;cursor: pointer;">
-                               Agrega tu documento adicional pdf o jpg. M&aacute;x. 5Mb.
+                        <div class="pay-check-container" id="contenedorSubeArchivoINE"
+                            style="margin-top: 0; margin-bottom: 5px; border: 1px dashed #1A76D2; cursor: pointer;">
+                            <i class="fas fa-upload"
+                                style="color: #1A76D2;display: inline;margin-right: 10px; cursor: pointer;"
+                                id="iconoSubeINE"></i>
+                            <span class="textoLegales" id="divArchivoIdentificacion"
+                                style="color: #1A76D2;cursor: pointer;">
+                                Agrega tu documento adicional pdf o jpg. M&aacute;x. 5Mb.
                             </span>
-                            <p class="text-danger" style="margin-top: 15px; margin-left: 32px; display: none;" id="errorArchivoINE">
+                            <p class="text-danger" style="margin-top: 15px; margin-left: 32px; display: none;"
+                                id="errorArchivoINE">
                                 *Archivo no válido
                             </p>
-                            <i class="fas fa-trash-alt" id="eliminarIdentificacion" style="display: none;cursor: pointer;color: #1A76D2;"></i>
+                            <i class="fas fa-trash-alt" id="eliminarIdentificacion"
+                                style="display: none;cursor: pointer;color: #1A76D2;"></i>
+                        </div>
+                        <input type="file" id="inputFileINE" style="display:none" accept="image/jpeg,application/pdf" />
+                        <div class="pay-check-container" id="contenedorSubeArchivoINE"
+                            style="margin-top: 0; margin-bottom: 5px; border: 1px dashed #1A76D2; cursor: pointer;">
+                            <i class="fas fa-upload"
+                                style="color: #1A76D2;display: inline;margin-right: 10px; cursor: pointer;"
+                                id="iconoSubeINE"></i>
+                            <span class="textoLegales" id="divArchivoIdentificacion"
+                                style="color: #1A76D2;cursor: pointer;">
+                                Agrega tu documento adicional pdf o jpg. M&aacute;x. 5Mb.
+                            </span>
+                            <p class="text-danger" style="margin-top: 15px; margin-left: 32px; display: none;"
+                                id="errorArchivoINE">
+                                *Archivo no válido
+                            </p>
+                            <i class="fas fa-trash-alt" id="eliminarIdentificacion"
+                                style="display: none;cursor: pointer;color: #1A76D2;"></i>
                         </div>
 
                         <!--COMPROBANTE DE DOMICILIO-->
-                        <h1 id="tituloComprobante">Comprobante de domicilio:</h1>
+                        <h1 id="tituloComprobante"
+                            style="font-family: Montserrat-SemiBold; font-size: 16px; color:rgba(59,69,89,1); line-height: normal; width: 100%; margin-bottom: 0 !important">
+                            Comprobante de domicilio:</h1>
 
-                        <span class="" style="text-align: left; margin-bottom: 10px; font-family: Montserrat-Regular;  font-size: 14px; color: #75787b; line-height: normal;">Recibo de luz, agua, etc. y de no m&aacute;s de 4 meses de antigüedad.</span>
+                        <span class=""
+                            style="text-align: left; margin-bottom: 10px; font-family: Montserrat-Regular;  font-size: 14px; color: #75787b; line-height: normal;">Recibo
+                            de luz, agua, etc. y de no m&aacute;s de 4 meses de antigüedad.</span>
 
-                        <input type="file" id="inputFileComprobante" style="display:none" accept="image/jpeg,application/pdf" />
-                        <div class="pay-check-container" id="contenedorSubeArchivoComprobante" style="margin-top: 0; margin-bottom: 5px; border: 1px dashed #1A76D2; cursor: pointer;">
-                            <i class="fas fa-upload" style="color: #1A76D2;display: inline;margin-right: 10px; cursor: pointer;" id="iconoSubeComprobante"></i>
-                            <span class="textoLegales" id="divArchivoComprobante" style="color: #1A76D2;cursor: pointer;">
+                        <input type="file" id="inputFileComprobante" style="display:none"
+                            accept="image/jpeg,application/pdf" />
+                        <div class="pay-check-container" id="contenedorSubeArchivoComprobante"
+                            style="margin-top: 0; margin-bottom: 32px; border: 1px dashed #1A76D2; cursor: pointer;">
+                            <i class="fas fa-upload"
+                                style="color: #1A76D2;display: inline;margin-right: 10px; cursor: pointer;"
+                                id="iconoSubeComprobante"></i>
+                            <span class="textoLegales" id="divArchivoComprobante"
+                                style="color: #1A76D2;cursor: pointer;">
                                 Agrega tu documento adicional pdf o jpg. M&aacute;x. 5Mb.
                             </span>
-                            <p class="text-danger" style="margin-top: 15px; margin-left: 32px; display: none;" id="errorArchivoComprobante">
+                            <p class="text-danger" style="margin-top: 15px; margin-left: 32px; display: none;"
+                                id="errorArchivoComprobante">
                                 *Archivo no válido
                             </p>
-                            <i class="fas fa-trash-alt" id="eliminarComprobante" style="display: none;cursor: pointer;color: #1A76D2;"></i>
+                            <i class="fas fa-trash-alt" id="eliminarComprobante"
+                                style="display: none;cursor: pointer;color: #1A76D2;"></i>
                         </div>
 
                         <!--CONSTANCIA DE SITUACION FISCAR Y RFC-->
                         <h1 id="tituloConstanciaRFC">Constancia de situaci&oacute;n fiscal y RFC:</h1>
-
-                        <span class="" style="display:none; text-align: left; margin-bottom: 10px; font-family: Montserrat-Regular;  font-size: 14px; color: #75787b; line-height: normal; " id="subtituloConstanciaRFC">Car&aacute;tula legible donde se muestre nombre del representante legal y domicilio fiscal.</span>
+                        <span class=""
+                            style="display:none; text-align: left; margin-bottom: 10px; font-family: Montserrat-Regular;  font-size: 14px; color: #75787b; line-height: normal; "
+                            id="subtituloConstanciaRFC">Car&aacute;tula legible donde se muestre nombre del
+                            representante legal y domicilio fiscal.</span>
 
                         <input type="file" id="inputFileRFC" style="display:none" accept="image/jpeg,application/pdf" />
-                        <div class="pay-check-container" id="contenedorSubeArchivoRFC" style="display:none; margin-top: 0; margin-bottom: 30px; border: 1px dashed #1A76D2; cursor: pointer;">
-                            <i class="fas fa-upload" style="color: #1A76D2;display: inline;margin-right: 10px; cursor: pointer;" id="iconoSubeRFC"></i>
+                        <div class="pay-check-container" id="contenedorSubeArchivoRFC"
+                            style="display:none; margin-top: 0; margin-bottom: 30px; border: 1px dashed #1A76D2; cursor: pointer;">
+                            <i class="fas fa-upload"
+                                style="color: #1A76D2;display: inline;margin-right: 10px; cursor: pointer;"
+                                id="iconoSubeRFC"></i>
 
                             <span class="textoLegales" id="divArchivoRFC" style="color: #1A76D2;cursor: pointer;">
                                 Agrega tu documento adicional pdf o jpg. M&aacute;x. 5Mb.
                             </span>
-                            <p class="text-danger" style="margin-top: 15px; margin-left: 32px; display: none;" id="errorArchivoRFC">
+                            <p class="text-danger" style="margin-top: 15px; margin-left: 32px; display: none;"
+                                id="errorArchivoRFC">
                                 *Archivo no válido
                             </p>
-                            <i class="fas fa-trash-alt" id="eliminarConstancia" style="display: none;cursor: pointer;color: #1A76D2;"></i>
-                        </div>
-
-                        <!-- TITULAR CHECK BURO CREDITO -->
-                        <div class="pay-check-container" id="contenedorCheckBuro" style="margin-top: 0">
-                            <span class="textoLegales">He le&iacute;do, entiendo a la perfecci&oacute;n y estoy de acuerdo con la&nbsp;
-                                <a href="#" class="text-blue-terms" style="font-size: 14px;">revisi&oacute;n de bur&oacute; de cr&eacute;dito</a></span>                                
-                            <div id="checkBuroCredito" class="pay-check"></div>
+                            <i class="fas fa-trash-alt" id="eliminarConstancia"
+                                style="display: none;cursor: pointer;color: #1A76D2;"></i>
                         </div>
                         <!-- TITULAR CHECK TYC -->
-                        <div class="pay-check-container" id="contenedorCheckTYC" style="">                                
-                            <span class="textoLegales">He le&iacute;do, entiendo a la perfecci&oacute;n y estoy de acuerdo con el&nbsp;
-                                <a href="#" class="text-blue-terms" style="font-size: 14px;">Contrato de confidencial</a>&nbsp;y los&nbsp;
-                                <a href="#" class="text-blue-terms" style="font-size: 14px;">T&eacute;rminos y condiciones</a>
-                                de uso de Totalplay Telecomunicaciones.
+                        <div class="pay-check-container" id="contenedorCheckTYC" style="">
+                            <span class="textoLegales" style="font-size: 14px;">He le&iacute;do y acepto <a href="#"
+                                    class="text-blue-terms" style="font-size: 14px;">T&eacute;rminos y
+                                    condiciones del contrato</a>, el <a href="#" class="text-blue-terms"
+                                    style="font-size: 14px;">Aviso de Privacidad</a> y estoy de acuerdo con la <a
+                                    href="#" class="text-blue-terms" style="font-size: 14px;">revisi&oacute;n de
+                                    bur&oacute; de cr&eacute;dito</a>
+                                <!--<a href="#" class="text-blue-terms" style="font-size: 14px;">Contrato de
+                                    confidencial</a>&nbsp;y los&nbsp;
+                                de uso de Totalplay Telecomunicaciones.-->
+                            </span>
+                            <div id="checkLegales" class="pay-check"></div>
+                        </div>
+                        <!-- TITULAR CHECK BURO CREDITO -->
+                        <div class="pay-check-container" id="contenedorCheckBuro" style="margin-top: 10px">
+                            <span class="textoLegales" style="font-size: 14px;">He le&iacute;do, entiendo a la
+                                perfecci&oacute;n y estoy de
+                                acuerdo con el <a href="#" class="text-blue-terms" style="font-size: 14px;">Pagaré en
+                                    caso de cancelación y no devolución del equipo*.</a>
+                            </span>
+                            <div id="checkBuroCredito" class="pay-check"></div>
+                        </div>
+                        <!-- TITULAR INFO-->
+                        <div class="pay-check-container" id="">
+                            <span class="textoLegalesInfoNew" style="font-size: 14px;">Autorizo el uso de mi
+                                información y datos personales para:
+                                <ul style="list-style: disc; padding-left: 15px; margin-top: 8px;">
+                                    <li style="margin-bottom: 8px;">Recibir mi estado de cuenta, carta de Derechos
+                                        Mínimos, avisos e información
+                                        relacionada con mi servicio al e-mail proporcionado*</li>
+                                    <li style="margin-bottom: 8px;">Mi información sea utilizada con fines
+                                        mercadológicos o publicitarios.</li>
+                                    <li style="margin-bottom: 8px;">Mis datos personales podrán ser transferidos a
+                                        terceros para fines
+                                        publicitarios.</li>
+                                </ul>
                             </span>
                             <div id="checkLegales" class="pay-check"></div>
                         </div>
                     </div>
                     <!--FIN DOCUMENTOS-->
-                    <a id="botonTitularContinuar" class="btn__blue">Continuar</a>
+                    <a id="botonTitularContinuar" class="btn__blue"
+                        style="background: rgba(25,138,255,1);">Continuar</a>
                 </div>
             </div>
         </div>
     </div>
     <!-- FORMA DE PAGO -->
-    <div id="formaPago" class="main-summary">
+    <div id="formaPago" class="main-summary" style="border: 1px solid rgba(224,224,224,1); border-radius: 4px;">
         <div class="main-summary__invoice-data">
             <!-- FORMA DE PAGO HEADER -->
             <div class="main-summary__invoice-data--title">
-                <span>Forma de pago</span>
+                <span style="color: rgba(59,69,89,0.5);">Forma de pago</span>
                 <span id="editPaymentData" class="botonEditar">Editar</span>
             </div>
             <!-- FORMA DE PAGO BODY -->
@@ -411,9 +540,7 @@
                         <span class="label-data">Vigencia</span>
                         <span class="value-data" id="vigenciaTarjetaResumen"></span>
                     </div>
-
                     <a class="btn__outline__blue_square">PAGO&nbsp;&nbsp;<span id="tipoPago"></span></a>
-
                     <div class="facturation-resume">
                         <span class="resume-title">Direcci&oacute;n de facturaci&oacute;n</span>
                         <span id="direccionResumen" class="installation-direction"></span>
@@ -422,22 +549,32 @@
                 <!-- FORMA DE PAGO CAMPOS -->
                 <div id="casePayments" class="payments-container">
                     <!-- TIPO DE PAGO -->
-                    <div class="payments-container-buttons" style="display: inline-table;margin: 20px 0px;text-align: center;">
-                        <span id="btnPaymentCard" class="btn__outline__square-gray botonSeleccionado" style="border-radius: 4px 0px 0px 4px;padding: 5px 40px;">TARJETA</span>
-                        <span id="btnPaymentCash" class="btn__outline__square-gray" style="border-radius: 0px 4px 4px 0px;padding: 5px 40px;">EFECTIVO</span>
+                    <div class="payments-container-buttons"
+                        style="display: inline-table;margin: 20px 0px;text-align: center;">
+                        <span id="btnPaymentCard" class="btn__outline__square-gray botonSeleccionado"
+                            style="border-radius: 4px 0px 0px 4px;padding: 5px 40px;">TARJETA</span>
+                        <span id="btnPaymentCash" class="btn__outline__square-gray"
+                            style="border-radius: 0px 4px 4px 0px;padding: 5px 40px;">EFECTIVO</span>
                     </div>
                     <!-- TIPO DE PAGO [TARJETA] -->
-                    <div id="caseCardPayment" class="form-data" style="padding-top:0;">
+                    <div id="caseCardPayment" class="form-data" style="padding-top:0; width: 100% !important;">
                         <!-- MENSAJE IMPORTANTE -->
                         <div style="width: 100%">
-                            <div class="mensajePago" >
-                                <div style="text-align: center;font-size: 16px;color: #D86D00;font-family: Montserrat-Regular;letter-spacing: 0;line-height: 30px;">
-                                    Agrega tu tarjeta para agilizar el pago <label style="font-weight: bold;">el d&iacute;a de la instalaci&oacute;n.</label><br><label style="font-weight: bold;">El monto a pagar es de <strong class="txtMontoTotal"></strong> </label>                                    
+                            <div class="mensajePago">
+                                <div
+                                    style="text-align: center;font-size: 18px;color: #D86D00;font-family: Montserrat-Regular;letter-spacing: 0;line-height: 30px;">
+                                    Agrega tu tarjeta para agilizar el pago
+                                    <label style="font-family: Montserrat-Bold;">el d&iacute;a de la
+                                        instalaci&oacute;n.</label>
+                                    <br>
+                                    <label style="font-family: Montserrat-Bold !important;">El monto a pagar es de
+                                        <strong class="txtMontoTotal"></strong> </label>
+                                    <div class="ico-question" title=""></div>
                                     <div class="tooltip-index" id="tooltip-index">
-                                        <div  class="toopdiv1">
+                                        <div class="toopdiv1">
                                             <span>Total pronto pago</span>
                                             <span>Cargo Instalaci&oacute;n</span>
-                                            <span  style="font-family: Montserrat-Bold;">Total a pagar</span>
+                                            <span style="font-family: Montserrat-Bold;">Total a pagar</span>
                                         </div>
                                         <div class="toopdiv2">
                                             <span class="toolPrecioPP"></span>
@@ -445,7 +582,6 @@
                                             <span style="font-family: Montserrat-Bold;" class="toolPrecioTotal"></span>
                                         </div>
                                     </div>
-                                    <div class="ico-question" title=""></div>
                                 </div>
                             </div>
                         </div>
@@ -454,24 +590,33 @@
                             <!-- TARJETA CAPTURA -->
                             <div class="inputs-card-container">
                                 <div class="input-card">
-                                    <div class ="input__float" style="margin-left: 0;">
-                                        <input id="nombreTarjeta" name="nombreTarjeta" type="text" placeholder=" " autocomplete="off" required>
+                                    <div class="input__float" style="margin-left: 0;">
+                                        <input id="nombreTarjeta" name="nombreTarjeta" type="text" placeholder=" "
+                                            autocomplete="off" required>
                                         <label for="nombreTarjeta">Nombre en la tarjeta</label>
-                                        <p class="text-danger" style="margin-top: 5px !important;" id="errorNombreTarjeta"></p>
+                                        <p class="text-danger" style="margin-top: 5px !important;"
+                                            id="errorNombreTarjeta"></p>
                                     </div>
                                     <div class="img-content" style="margin-bottom: 35px;" id="imgTarjeta">
-                                        <img src="/assets/img/pages/contratacion/visa.svg" alt="" id="visasvg" style="opacity: 10%;">
-                                        <img src="/assets/img/pages/contratacion/mastercard.svg" alt="" id="mastersvg" style="opacity: 10%;">
-                                        <img src="/assets/img/pages/contratacion/amex.svg" alt="" id="amexsvg" style="opacity: 10%;">
+                                        <img src="/assets/img/pages/contratacion/visa.svg" alt="" id="visasvg"
+                                            style="opacity: 10%;">
+                                        <img src="/assets/img/pages/contratacion/mastercard.svg" alt="" id="mastersvg"
+                                            style="opacity: 10%;">
+                                        <img src="/assets/img/pages/contratacion/amex.svg" alt="" id="amexsvg"
+                                            style="opacity: 10%;">
                                     </div>
                                 </div>
-                                <div class ="input__float" style="margin-left: 0;">
-                                    <input id="numeroTarjetaCaptura" name="numeroTarjetaCaptura" type="text" placeholder=" " autocomplete="off" required maxlength="16">
+                                <div class="input__float" style="margin-left: 0;">
+                                    <input id="numeroTarjetaCaptura" name="numeroTarjetaCaptura" type="text"
+                                        placeholder=" " autocomplete="off" required maxlength="16">
                                     <label for="numeroTarjetaCaptura">N&uacute;mero de tarjeta</label>
-                                    <p class="text-danger" style="margin-top: 5px !important;" id="errorNumeroTarjeta"></p>
+                                    <p class="text-danger" style="margin-top: 5px !important;" id="errorNumeroTarjeta">
+                                    </p>
                                 </div>
                                 <div class="input__float">
-                                    <select autocomplete="off" data-vld="tooltip-fmes" id="mesTarjetaCaptura" name="mesTarjetaCaptura" placeholder=" " required="" style="border: none; font-family: Montserrat-Light;font-size: 16px;width: 100%;padding-top: 1px;background: none;">
+                                    <select autocomplete="off" data-vld="tooltip-fmes" id="mesTarjetaCaptura"
+                                        name="mesTarjetaCaptura" placeholder=" " required=""
+                                        style="border: none; font-family: Montserrat-Light;font-size: 16px;width: 100%;padding-top: 1px;background: none;">
                                         <option value="01">
                                             01
                                         </option>
@@ -519,7 +664,9 @@
                                     </div>
                                 </div>
                                 <div class="input__float">
-                                    <select data-vld="tooltip-faño" id="anioTarjetaCaptura" name="anioTarjetaCaptura" placeholder="" style="border: none; font-family: Montserrat-Light;font-size: 16px;width: 100%;padding-top: 1px;background: none;">
+                                    <select data-vld="tooltip-faño" id="anioTarjetaCaptura" name="anioTarjetaCaptura"
+                                        placeholder=""
+                                        style="border: none; font-family: Montserrat-Light;font-size: 16px;width: 100%;padding-top: 1px;background: none;">
                                         <option value="20">
                                             20
                                         </option>
@@ -533,14 +680,16 @@
                                     <label for="anio" style="top: -20px; font-size: 16px;">
                                         Año
                                     </label>
-                                    <p class="text-danger" style="margin-top: 5px !important;" id="errorAnioTarjeta"></p>
+                                    <p class="text-danger" style="margin-top: 5px !important;" id="errorAnioTarjeta">
+                                    </p>
                                     <div class="tooltip-index" id="tooltip-faño" style="top: 1.6rem;">
                                         <span class="font-weight-bold">
                                         </span>
                                     </div>
                                 </div>
-                                <div class ="input__float" style="display: none;">
-                                    <input id="cvvTarjetaCaptura" name="cvvTarjetaCaptura" type="password" placeholder=" " autocomplete="off" required maxlength="4">
+                                <div class="input__float" style="display: none;">
+                                    <input id="cvvTarjetaCaptura" name="cvvTarjetaCaptura" type="password"
+                                        placeholder=" " autocomplete="off" required maxlength="4">
                                     <label for="cvvTarjetaCaptura">CVV</label>
                                     <p class="text-danger" style="margin-top: 5px !important;" id="errorCVVTarjeta"></p>
                                 </div>
@@ -549,47 +698,59 @@
                             <div class="pay-check-container" id="contenedorPagoDomiciliado">
                                 <span class="check-title">PAGO DOMICILIADO</span>
                                 <span class="txtAceptoCargo">Acepto registro de tarjeta para cargos automáticos</span>
-                                <span>Al agregar esta tarjeta, aceptas las&nbsp;<i class="text-blue-terms">Condiciones para cargos automáticos </i>sólo si es que así lo indicaste.</span>
+                                <span>Al agregar esta tarjeta, aceptas las&nbsp;<i class="text-blue-terms">Condiciones
+                                        para cargos automáticos </i>sólo si es que así lo indicaste.</span>
                                 <div id="checkPagoDomiciliado" class="pay-check"></div>
                             </div>
                             <!-- TARJETA DIR FACTURACION -->
                             <div class="direction-title">
-                                <span class="resume-title" style="margin-top: 40px;">Dirección de facturación</span>
-                                <span id="btnDirectionCopy" class="btn__text__simple" style="margin-top: 40px;">Copiar dirección de instalación</span>
+                                <span class="resume-title" style="margin-top: 20px;">Dirección de facturación</span>
+                                <span id="btnDirectionCopy" class="btn__text__simple" style="margin-top: 20px;">Usar
+                                    dirección de instalación</span>
                             </div>
                             <!-- TARJETA DIR FACTURACION CAMPOS -->
                             <div class="inputs-container" id="inputsInstallDirection">
-                                <div class ="input__float">
-                                    <input id="facturacionCalle" name="facturacionCalle" type="text" placeholder=" " autocomplete="off" required>
+                                <div class="input__float">
+                                    <input id="facturacionCalle" name="facturacionCalle" type="text" placeholder=" "
+                                        autocomplete="off" required>
                                     <label for="facturacionCalle">Calle</label>
-                                    <p class="text-danger" style="margin-top: 5px !important;" id="errorCalleTarjeta"></p>
+                                    <p class="text-danger" style="margin-top: 5px !important;" id="errorCalleTarjeta">
+                                    </p>
                                 </div>
-                                <div class ="input__float">
-                                    <input id="facturacionNumero" name="facturacionNumero" type="text" placeholder=" " autocomplete="off" required>
+                                <div class="input__float">
+                                    <input id="facturacionNumero" name="facturacionNumero" type="text" placeholder=" "
+                                        autocomplete="off" required>
                                     <label for="facturacionNumero">N&uacute;mero</label>
-                                    <p class="text-danger" style="margin-top: 5px !important;" id="errorNumeroDirTarjeta"></p>
+                                    <p class="text-danger" style="margin-top: 5px !important;"
+                                        id="errorNumeroDirTarjeta"></p>
                                 </div>
-                                <div class ="input__float">
-                                    <input id="facturacionColonia" name="facturacionColonia" type="text" placeholder=" " autocomplete="off" required>
+                                <div class="input__float">
+                                    <input id="facturacionColonia" name="facturacionColonia" type="text" placeholder=" "
+                                        autocomplete="off" required>
                                     <label for="facturacionColonia">Colonia</label>
-                                    <p class="text-danger" style="margin-top: 5px !important;" id="errorColoniaTarjeta"></p>
+                                    <p class="text-danger" style="margin-top: 5px !important;" id="errorColoniaTarjeta">
+                                    </p>
                                 </div>
-                                <div class ="input__float">
-                                    <input id="facturacionMunicipio" name="facturacionMunicipio" type="text" placeholder=" " autocomplete="off" required>
+                                <div class="input__float">
+                                    <input id="facturacionMunicipio" name="facturacionMunicipio" type="text"
+                                        placeholder=" " autocomplete="off" required>
                                     <label for="facturacionMunicipio">Municipio / Alcald&iacute;a</label>
-                                    <p class="text-danger" style="margin-top: 5px !important;" id="errorMunicipioTarjeta"></p>
+                                    <p class="text-danger" style="margin-top: 5px !important;"
+                                        id="errorMunicipioTarjeta"></p>
                                 </div>
-                                <div class ="input__float">
-                                    <input id="facturacionCP" name="facturacionCP" type="text" placeholder=" " autocomplete="off" required  minlength="5" maxlength="5">
+                                <div class="input__float">
+                                    <input id="facturacionCP" name="facturacionCP" type="text" placeholder=" "
+                                        autocomplete="off" required minlength="5" maxlength="5">
                                     <label for="facturacionCP">C&oacute;digo postal</label>
                                     <p class="text-danger" style="margin-top: 5px !important;" id="errorCPTarjeta"></p>
                                 </div>
-                                <div class ="input__float">
-                                    <input id="facturacionEstado" name="facturacionEstado" type="text" placeholder=" " autocomplete="off" required>
+                                <div class="input__float">
+                                    <input id="facturacionEstado" name="facturacionEstado" type="text" placeholder=" "
+                                        autocomplete="off" required>
                                     <label for="facturacionEstado">Estado</label>
                                     <p class="text-danger" style="margin-top: 5px !important;" id="errorEdoTarjeta"></p>
                                 </div>
-                                
+
                             </div>
                             <!-- TARJETA DIR FACTURACION DATOS -->
                             <div class="values-container" id="valuesInstallDirectionCard">
@@ -624,14 +785,19 @@
                     <div id="caseCashPayment" class="resume-cash-pay-container">
                         <!-- MENSAJE IMPORTANTE -->
                         <div style="width: 100%">
-                            <div class="mensajePago" >
-                                <div style="text-align: center;font-size: 16px;color: #D86D00;font-family: Montserrat-Regular;letter-spacing: 0;line-height: 30px;">
-                                    El pago en efectivo se realiza <label style="font-weight: bold;">el d&iacute;a de la instalaci&oacute;n.</label><br><label style="font-weight: bold;">El monto a pagar es de <strong class="txtMontoTotal"></strong></label>                                    
+                            <div class="mensajePago">
+                                <div
+                                    style="text-align: center;font-size: 18px; color: #D86D00;font-family: Montserrat-Regular;letter-spacing: 0;line-height: 30px;">
+                                    El pago en efectivo se realiza <label style="font-family: Montserrat-Bold;">el
+                                        d&iacute;a de la
+                                        instalaci&oacute;n.</label><br><label style="font-family: Montserrat-Bold;">El
+                                        monto a
+                                        pagar es de <strong class="txtMontoTotal"></strong></label>
                                     <div class="tooltip-index" id="tooltip-indexE">
-                                        <div  class="toopdiv1">
+                                        <div class="toopdiv1">
                                             <span>Total pronto pago</span>
                                             <span>Cargo Instalaci&oacute;n</span>
-                                            <span  style="font-family: Montserrat-Bold;">Total a pagar</span>
+                                            <span style="font-family: Montserrat-Bold;">Total a pagar</span>
                                         </div>
                                         <div class="toopdiv2">
                                             <span class="toolPrecioPP"></span>
@@ -646,7 +812,8 @@
 
                         <div id="resumeCashPayment" class="cash-pay-info">
                             <span>Dirección de facturación</span>
-                            <span>En pagos en efectivo la dirección de facturación es la misma que la de instalación.</span>
+                            <span>En pagos en efectivo la dirección de facturación es la misma que la de
+                                instalación.</span>
                             <!-- DIR FACTURACION DATOS [EFECTIVO] -->
                             <div class="values-container" id="valuesInstallDirectionCash">
                                 <div>
@@ -677,18 +844,20 @@
                         </div>
                     </div>
 
-                    <button type="button" class="btn__blue" id="btnPaymentData" style="margin-top: 10%;margin-bottom: 5%;">
-                        Continuar&nbsp;&nbsp;<i class="fas fa-circle-notch fa-spin iconoPrevencion" style="color: white;display: none;"></i>
+                    <button type="button" class="btn__blue" id="btnPaymentData"
+                        style="margin-top: 10%;margin-bottom: 5%;">
+                        Continuar&nbsp;&nbsp;<i class="fas fa-circle-notch fa-spin iconoPrevencion"
+                            style="color: white;display: none;"></i>
                     </button>
                 </div>
             </div>
         </div>
     </div>
     <!-- FECHA DE INSTALACION-->
-    <div id="fechaInstalacion" class="main-summary">
+    <div id="fechaInstalacion" class="main-summary" style="border: 1px solid rgba(224,224,224,1); border-radius: 4px;">
         <div class="main-summary__invoice-data">
             <div class="main-summary__invoice-data--title">
-                <span>Agenda tu instalaci&oacute;n</span>
+                <span style="color: rgba(59,69,89,0.5);">Agenda tu instalaci&oacute;n</span>
             </div>
 
             <div class="main-summary__invoice-data--info">
@@ -696,15 +865,17 @@
                     <div id="contenedor-calendario">
                         <div id="datepicker" data-date="01/06/2020"></div>
                     </div>
-                    
+
                     <div class="resume-select-data" style="width: 200px;">
                         <div class="input__float" style="width: 100%">
 
-                            <button type="button" class="btn__blue btnDeshabilitado" id="botonHorarioMatutino" disabled="" style="width: 100%;">
+                            <button type="button" class="btn__blue btnDeshabilitado" id="botonHorarioMatutino"
+                                disabled="" style="width: 100%;">
                                 De 10 a 14 hrs.
                             </button>
 
-                            <button type="button" class="btn__blue btnDeshabilitado" id="botonHorarioVespertino" disabled="" style="width: 100%;">
+                            <button type="button" class="btn__blue btnDeshabilitado" id="botonHorarioVespertino"
+                                disabled="" style="width: 100%;">
                                 De 16 a 19 hrs.
                             </button>
                             <label style="top: -20px; font-size: 16px;" id="labelHorario">
@@ -713,33 +884,43 @@
                         </div>
                     </div>
 
-                    <div class="select-data-info">
-                        <label id="fechaInstalacionInfo">Selecciona fecha&nbsp;
+                    <div class="select-data-info"
+                        style="width: 360px; margin: 0 auto; display: block; text-align: center; padding-bottom: 16px;">
+                        <p
+                            style="font-family: Montserrat-Regular; font-size: 14px; color: rgba(59,69,89,1); margin-top: 16px; margin-bottom: 4px;">
+                            Confirma tu instalación para el día:</p>
+                        <label id="fechaInstalacionInfo"
+                            style="font-family: Montserrat-Bold; font-size: 16px; color: rgba(59,69,89,1); font-size: 18px;">Selecciona
+                            fecha&nbsp;
                             <strong id="horarioInstalacionInfo">y horario</strong>
                         </label>
                     </div>
 
                     <div class="form-data">
-                        <h4 id="texto-agendamiento">
+                        <h1 style="font-family: Montserrat-SemiBold; font-size: 16px; color: rgba(59,69,89,1)">Referencias para llegar a tu hogar:</h1>
+                        <!--<h4 id="texto-agendamiento">
                             Para brindarte un mejor servicio, proporci&oacute;nanos la siguiente informarci&oacute;n
-                        </h4>
+                        </h4>-->
                         <div class="content-form-agendamiento">
-                            
-                            <div class ="input__float">
-                                <input id="domicilioReferencia" name="domicilioReferencia" type="text" placeholder=" " autocomplete="off" required>
-                                <label for="domicilioReferencia">Referencia del domicilio:</label>
+                            <div class="input__float">
+                                <input id="domicilioReferencia" name="domicilioReferencia" type="text" placeholder=" "
+                                    autocomplete="off" required>
+                                <label for="domicilioReferencia" style="text-transform: uppercase;">Entre calles, color de tu puerta, etc:</label>
                             </div>
-                            <div class ="input__float">
-                                <input id="domicilioEntreCalles" name="domicilioEntreCalles" type="text" placeholder=" " autocomplete="off" required>
+                            <!--<div class="input__float">
+                                <input id="domicilioEntreCalles" name="domicilioEntreCalles" type="text" placeholder=" "
+                                    autocomplete="off" required>
                                 <label for="domicilioEntreCalles">Entre Calles:</label>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
-                    
-                    <button type="button" class="btn__blue btnDeshabilitado" id="botonFinaliza" disabled="" style="width: 280px">
-                        Finalizar contratación&nbsp;&nbsp;<i class="fas fa-circle-notch fa-spin iconoFinalizar" style="color: white;display: none;"></i>
+
+                    <button type="button" class="btn__blue btnDeshabilitado" id="botonFinaliza" disabled=""
+                        style="width: 280px">
+                        Finalizar contratación&nbsp;&nbsp;<i class="fas fa-circle-notch fa-spin iconoFinalizar"
+                            style="color: white;display: none;"></i>
                     </button>
-                    
+
                 </div>
             </div>
         </div>

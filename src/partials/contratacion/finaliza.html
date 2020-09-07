@@ -27,18 +27,25 @@
     <span>Disfruta de esta nueva experiencia de entretenimiento.</span>
 
     <div class="folio-info-container">
-        <div class="folio-installation" style="border: 1px solid #E0E0E0;border-radius: 10px;">
-            <span>Tu n&uacute;mero de cuenta es:</span>
-            <span id="txtTicketFolio" style="width: 100%; text-align: center; border-bottom: 1px solid #E0E0E0; padding-bottom: 30px; margin-bottom: 20px;">
+        <div class="folio-installation" style="border: 1px solid #E0E0E0;border-radius: 10px; text-align: left;">
+            <span style="text-align: center;">Tu n&uacute;mero de cuenta es:</span>
+            <span id="txtTicketFolio" style="width: 100%; border-bottom: 1px solid #E0E0E0; padding-bottom: 30px; margin-bottom: 20px; text-align: center; width: 100%;">
             20180111STE</span>
-            <span>Dia de instalaci&oacute;n:</span>
-            <span id="txtFechaInstalacion"></span>
-            <span>Te enviamos los detalles a:</span>
-            <span id="txtCorreoEnvio"></span>
-            <span>Presentar los siguientes documentos:</span>
-            <span style="text-align: center;margin: 5px;">Identificaci&oacute;n y Comprobante de domicilio</span>
-
-            <section id="packages-paq" onclick="window.location = '/';">
+            <div class="instalationDayDiv" style="margin-bottom: 30px; margin-top: 24px; position: relative; left: 13px;">
+                <div>
+                    <span style="text-align: left; display: block; font-family: Montserrat-Regular; font-size: 16px; color: rgba(117,120,123,1); line-height: 19px;">Dia de instalaci&oacute;n:</span>
+                <span id="txtFechaInstalacion" style="text-align: left; display: block; font-family: Montserrat-Bold; font-size: 16px; color: rgba(59,69,89,1); line-height: 24px;"></span>
+                </div>
+            </div>
+            <div class="detailsMailDiv" style="margin-bottom: 24px; text-align: left; position: relative; left: 19px;">
+                <div>
+                    <span style="text-align: left; font-family: Montserrat-Regular; font-size: 16px; color: rgba(117,120,123,1); line-height: 19px;">Te enviamos los detalles a:</span>
+                    <span id="txtCorreoEnvio" style="text-align: left; font-family: Montserrat-Bold; font-size: 16px; color: rgba(59,69,89,1); line-height: 24px;"></span>
+                </div>
+            </div>
+            <span style="display: none;">Presentar los siguientes documentos:</span>
+            <span style="text-align: center;margin: 5px; display: none;">Identificaci&oacute;n y Comprobante de domicilio</span>
+            <section id="packages-paq" onclick="window.location = '/';" style="padding: 13px 24px; position: relative; top: -15px;">
                 <span class="ligaGenerica">Entiendo, ir al inicio</span>
             </section>
         </div>

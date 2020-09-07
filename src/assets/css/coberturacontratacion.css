@@ -5,144 +5,144 @@
   flex-direction: unset;
 }
 
-
-.ico-question{
-    position: absolute;
-    height: 20px;
-    width: 20px;
-    cursor: pointer;
-    background-image: url(../img/iconos/icon-search.png); 
-    margin-top: -25px;
-    background-position: 50%;
-    background-size: contain;
-    right: 150px;
+.ico-question {
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+  background-image: url(../img/iconos/icon-search.png);
+  margin-top: 6px;
+  background-position: top center;
+  background-size: contain;
+  display: inline-block;
+  color: rgba(216,109,0,1);
 }
 
-
-.tooltip-index{
-    border-radius: 8px;
-    box-shadow: 0 1px 4px 1px rgba(0,0,0,.3);
-    background-color: #fafafa;
-    font-size: 16px;
-    position: absolute;
-    width: 290px;
-    right: 35px;
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 1s;
-    color: #3B4559;
-    padding: 15px;
-    font-family: Montserrat-Regular;
+.tooltip-index {
+  border-radius: 8px;
+  box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.3);
+  background-color: #fafafa;
+  font-size: 16px;
+  position: absolute;
+  width: 290px;
+  right: 35px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 1s;
+  color: #3b4559;
+  padding: 15px;
+  font-family: Montserrat-Regular;
 }
 
-
-.tooltip-index.visible{
-    opacity: 100;
-    z-index: 900;
+.tooltip-index.visible {
+  opacity: 100;
+  z-index: 900;
 }
 
-.tooltip-index .toopdiv1{
-    width: 70%;
-    background-color: #fafafa;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-right: 0;
-    float: left;
+.tooltip-index .toopdiv1 {
+  width: 70%;
+  background-color: #fafafa;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-right: 0;
+  float: left;
 }
-.tooltip-index .toopdiv1>span{
-    text-align: left;
-}
-
-.tooltip-index .toopdiv2{
-    width: 30%;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    justify-content: flex-start;
-    float: right;
+.tooltip-index .toopdiv1 > span {
+  text-align: left;
 }
 
-.tooltip-index .toopdiv2>span{
-    text-align: right;
+.tooltip-index .toopdiv2 {
+  width: 30%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  float: right;
 }
 
-#finalizaContratacion .main-summary__invoice-data--info .pay-check-container>span:nth-child(2) {
-    width: 90%;
-    margin-bottom: 0; 
+.tooltip-index .toopdiv2 > span {
+  text-align: right;
 }
 
-#fechaConstitucion{
-  width: 33% !important; display: inline-flex !important; border-bottom: unset !important;
+#finalizaContratacion .main-summary__invoice-data--info .pay-check-container > span:nth-child(2) {
+  width: 90%;
+  margin-bottom: 0;
+}
+
+#fechaConstitucion {
+  width: 33% !important;
+  display: inline-flex !important;
+  border-bottom: unset !important;
 }
 
 /*div#divRFCmoral{
   width: 40% !important;
 }*/
 
-div#divApellidos{
+div#divApellidos {
   width: 40% !important;
 }
 
-h1#comprobanteH1, h1#comprobanteH1 {
-    margin-bottom: 0px !important;
+h1#comprobanteH1,
+h1#comprobanteH1 {
+  margin-bottom: 0px !important;
 }
 
-span.spanDocumentos{
-    margin-left: 20px;
+span.spanDocumentos {
+  margin-left: 20px;
 }
 
-  .contratacion--finaliza {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 80px;
-      z-index: 100;
-      transition: all .4s;
-      flex-direction: row;
-      justify-content: center;
-      padding: 0 5%;
-      box-shadow: 0 0 12px 0 rgba(0,0,0,.2);
-  }
-
-  .contratacion--finaliza  .main-header {
-      width: 100%;
-      position: relative;
-      z-index: 110;
-      background: #fafafa;
-      top: 0;
-      transition: all .4s;
-  }
-
-  .contratacion--finaliza .main-header .menu {
-    height: 72px;
-    background-color: #fafafa;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 27px;
-    padding-right: 24px;
-    position: relative;
-    z-index: 2;
-    justify-content: center;
+.contratacion--finaliza {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 100;
+  transition: all 0.4s;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 5%;
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
 }
 
-.cardCenter{
+.contratacion--finaliza .main-header {
+  width: 100%;
+  position: relative;
+  z-index: 110;
+  background: #fafafa;
+  top: 0;
+  transition: all 0.4s;
+}
+
+.contratacion--finaliza .main-header .menu {
+  height: 72px;
+  background-color: #fafafa;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 27px;
+  padding-right: 24px;
+  position: relative;
+  z-index: 2;
+  justify-content: center;
+}
+
+.cardCenter {
   justify-content: center !important;
 }
 
-.cardStart{
+.cardStart {
   justify-content: flex-start !important;
 }
 
-.cardEnd{
+.cardEnd {
   justify-content: flex-end !important;
 }
 
-.cardGrande{
+.cardGrande {
   justify-content: space-around !important;
 }
 
@@ -285,18 +285,21 @@ span.spanDocumentos{
   }
 }
 
-@media (max-width: 767px){    
-  .ico-question{
-      right: 50px;
-  }
-  div#fechaConstitucion{
+@media (max-width: 767px) {
+  div#fechaConstitucion {
     justify-content: space-between !important;
     border-bottom: none !important;
   }
-  #btnDatosMoral, #btnDatosFisica, #btnPaymentCard, #btnPaymentCash{
+  #btnDatosMoral,
+  #btnDatosFisica,
+  #btnPaymentCard,
+  #btnPaymentCash {
     padding: 5px 20px !important;
   }
-  div#fechaConstitucion, div#divRFCmoral,div#divNombreMoral,div#divApellidos{
+  div#fechaConstitucion,
+  div#divRFCmoral,
+  div#divNombreMoral,
+  div#divApellidos {
     width: 100% !important;
   }
   #finalizaContratacion .main-summary__invoice-data--info #formTitularData .payments-container-buttons {
@@ -304,89 +307,89 @@ span.spanDocumentos{
     text-align: center;
   }
 
-   #imgTarjeta{
+  #imgTarjeta {
     justify-content: center !important;
   }
   #finalizaContratacion h2 {
     width: 70%;
   }
   .contratacion--top-bar__steps {
-      margin: 0 auto;
-  }  
+    margin: 0 auto;
+  }
 }
 
-@media (max-width: 768px){  
+@media (max-width: 768px) {
   #folioContent .folio-info-container {
-      display: inline-block;
+    display: inline-block;
   }
   #folioContent .folio-info-container .apps-store-info {
-      margin-top: 30px;
+    margin-top: 30px;
   }
 
   .contratacion--finaliza .main-header .menu--container-menu__logo {
-      cursor: pointer;
-      background: url(../img/header/totalplay-logo.svg) no-repeat;
-      background-size: contain;
-      width: 179px;
-      height: 98px;
-      padding: 34px 16px 33px;
+    cursor: pointer;
+    background: url(../img/header/totalplay-logo.svg) no-repeat;
+    background-size: contain;
+    width: 179px;
+    height: 98px;
+    padding: 34px 16px 33px;
   }
   .addon--content-barAdd {
-      height: 52px !important;
+    height: 52px !important;
   }
-  .SELECCIONADO>.capa {
+  .SELECCIONADO > .capa {
     /*opacity: 0;*/
-  }  
+  }
 }
 
-@media (max-width: 500px){  
+@media (max-width: 500px) {
   .tooltip-index {
-      width: 260px;
-      right: 0px;
-  }
-
-  .ico-question{      
-      height: 15px;
-      width: 15px;
+    width: 260px;
+    right: 0px;
   }
   .mensajePago {
     margin: 0 auto;
   }
-  #finalizaContratacion .main-summary__invoice-data--info .pay-check-container>span:nth-child(2) {
+  #finalizaContratacion .main-summary__invoice-data--info .pay-check-container > span:nth-child(2) {
     width: 80%;
     text-align: center;
   }
-  span.txtAceptoCargo{
+  span.txtAceptoCargo {
     text-align: left !important;
   }
-  h1#comprobanteH1, h1#identificacionH1, span.spanDocumentos { 
-      margin-left: 0 !important;
+  h1#comprobanteH1,
+  h1#identificacionH1,
+  span.spanDocumentos {
+    margin-left: 0 !important;
   }
 
-  h1#comprobanteH1, h1#comprobanteH1 {
-      margin-bottom: 30px !important;
+  h1#comprobanteH1,
+  h1#comprobanteH1 {
+    margin-bottom: 30px !important;
   }
 
-  #finalizaContratacion .main-summary__invoice-data--info .pay-check-container>span:first-child {
-      width: 80%;
+  #finalizaContratacion .main-summary__invoice-data--info .pay-check-container > span:first-child {
+    width: 80%;
   }
 
-  #finalizaContratacion .main-summary__invoice-data--info .pay-check-container>span:first-child {
-      width: 80%;
+  #finalizaContratacion .main-summary__invoice-data--info .pay-check-container > span:first-child {
+    width: 80%;
   }
 
-  #contenedorSubeArchivoINE, #divArchivoComprobante{
-      margin-left: 0;
+  #contenedorSubeArchivoINE,
+  #divArchivoComprobante {
+    margin-left: 0;
   }
- 
 }
 
-@media (max-width: 380px){  
-  #folioContent>span:first-child,#folioContent>span:nth-child(2) {
-      width: 80%;
+@media (max-width: 380px) {
+  #folioContent > span:first-child,
+  #folioContent > span:nth-child(2) {
+    width: 80%;
   }
 
-  #folioContent .folio-info-container .apps-store-info, #folioContent .folio-info-container .folio-installation  {
+  #folioContent .folio-info-container .apps-store-info,
+  #folioContent .folio-info-container .folio-installation {
     width: 300px;
     margin-left: 10px;
   }
