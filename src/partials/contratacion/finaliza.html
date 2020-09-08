@@ -18,9 +18,9 @@
             <a class="menu--container-menu__logo" href="/" id="menuLogo">
             </a>
         </nav>
-            
+
     </div>
-    
+
 </div>
 <div id="folioContent" class="folio-user-info" style="padding-top: 100px;">
     <span>Bienvenid@ <strong id="txtNombreUsuario"></strong></span>
@@ -29,38 +29,44 @@
     <div class="folio-info-container">
         <div class="folio-installation" style="border: 1px solid #E0E0E0;border-radius: 10px; text-align: left;">
             <span style="text-align: center;">Tu n&uacute;mero de cuenta es:</span>
-            <span id="txtTicketFolio" style="width: 100%; border-bottom: 1px solid #E0E0E0; padding-bottom: 30px; margin-bottom: 20px; text-align: center; width: 100%;">
-            20180111STE</span>
-            <div class="instalationDayDiv" style="margin-bottom: 30px; margin-top: 24px; position: relative; left: 13px;">
+            <span id="txtTicketFolio"
+                style="width: 100%; border-bottom: 1px solid #E0E0E0; padding-bottom: 30px; margin-bottom: 20px; text-align: center; width: 100%;">
+                20180111STE</span>
+            <div class="instalationDayDiv"
+                style="margin-bottom: 30px; margin-top: 24px; position: relative; left: 13px;">
                 <div>
-                    <span style="text-align: left; display: block; font-family: Montserrat-Regular; font-size: 16px; color: rgba(117,120,123,1); line-height: 19px;">Dia de instalaci&oacute;n:</span>
-                <span id="txtFechaInstalacion" style="text-align: left; display: block; font-family: Montserrat-Bold; font-size: 16px; color: rgba(59,69,89,1); line-height: 24px;"></span>
+                    <span
+                        style="text-align: left; display: block; font-family: Montserrat-Regular; font-size: 16px; color: rgba(117,120,123,1); line-height: 19px;">Dia
+                        de instalaci&oacute;n:</span>
+                    <span id="txtFechaInstalacion"
+                        style="text-align: left; display: block; font-family: Montserrat-Bold; font-size: 16px; color: rgba(59,69,89,1); line-height: 24px;"></span>
                 </div>
             </div>
             <div class="detailsMailDiv" style="margin-bottom: 24px; text-align: left; position: relative; left: 19px;">
                 <div>
-                    <span style="text-align: left; font-family: Montserrat-Regular; font-size: 16px; color: rgba(117,120,123,1); line-height: 19px;">Te enviamos los detalles a:</span>
-                    <span id="txtCorreoEnvio" style="text-align: left; font-family: Montserrat-Bold; font-size: 16px; color: rgba(59,69,89,1); line-height: 24px;"></span>
+                    <span
+                        style="text-align: left; font-family: Montserrat-Regular; font-size: 16px; color: rgba(117,120,123,1); line-height: 19px;">Detalles
+                        en tu correo:</span>
+                    <span id="txtCorreoEnvio"
+                        style="text-align: left; font-family: Montserrat-Bold; font-size: 16px; color: rgba(59,69,89,1); line-height: 24px;"></span>
                 </div>
             </div>
             <span style="display: none;">Presentar los siguientes documentos:</span>
-            <span style="text-align: center;margin: 5px; display: none;">Identificaci&oacute;n y Comprobante de domicilio</span>
-            <section id="packages-paq" onclick="window.location = '/';" style="padding: 13px 24px; position: relative; top: -15px;">
+            <span style="text-align: center;margin: 5px; display: none;">Identificaci&oacute;n y Comprobante de
+                domicilio</span>
+            <section id="packages-paq" onclick="window.location = '/';"
+                style="padding: 13px 24px; position: relative; top: -15px;">
                 <span class="ligaGenerica">Entiendo, ir al inicio</span>
             </section>
         </div>
         <div class="apps-store-info">
             <div class="text-store-info">
+                <div class="totalIcon"></div>
                 <span style="width: 100%">Sigue tu instalaci&oacute;n en la <i>App de Totalplay</i></span>
-                <a class="" href="https://play.google.com/store/apps/details?id=com.TotalPlay.totalplay&amp;hl=es_MX" target="_blank">
-                    <img src="assets/img/packages/addons-package/Google.png" alt="" class="listAddons__item--content__apps__item" style="width: 114px;height: 32px;">
-                </a>
-                <a class="" href="https://itunes.apple.com/mx/app/totalplay/id847892109?mt=8" target="_blank">
-                    <img src="assets/img/packages/addons-package/apple.png" alt="" class="listAddons__item--content__apps__item" style="width: 114px;height: 32px;">
-                </a>
-                <img src="assets/img/pages/contratacion/img-container@3x.png" alt="">
+                <img src="../../assets/img/nuevos/qrCode.jpg"
+                    style="width: 200px; height: auto; margin-bottom: 20px; position: relative; top: -85px;" alt="">
             </div>
-            
+
         </div>
     </div>
 </div>
@@ -68,11 +74,11 @@
 <script type="text/javascript">
     //$(document).ready(function () {
 
-        mostrarInformacion();
+    mostrarInformacion();
     //});
 
-    function mostrarInformacion(){
-        
+    function mostrarInformacion() {
+
 
         document.getElementById('txtNombreUsuario').innerHTML = 'USUARIO GENERICO';
         document.getElementById('txtTicketFolio').innerHTML = '20180111STE';
