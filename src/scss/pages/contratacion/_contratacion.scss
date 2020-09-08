@@ -122,7 +122,6 @@
 			width: 100%;
 			height: 12px;
 
-			
 			&__item:last-child {
 				.point-item {
 					margin-right: 0;
@@ -200,7 +199,8 @@
 	transition: all 0.5s ease-in;
 	position: relative;
 	padding-top: 80px;
-	@include break-point("500") {}
+	@include break-point("500") {
+	}
 
 	&__step:last-child {
 		margin-right: 0;
@@ -230,7 +230,8 @@
 		width: 100%;
 	}
 
-	@include break-point("768") {}
+	@include break-point("768") {
+	}
 
 	@include break-point("1100") {
 		width: 100%;
@@ -240,14 +241,13 @@
 		width: 92.3%;
 		@include text-font-regular(20px, $gray-400);
 		text-align: center;
-		margin-bottom: 15px;
+		margin-bottom: 4px;
 		font-weight: bold;
-		margin-top: 10px;
 
 		span {
 			@include text-font-bold(20px, rgb(79, 68, 90), 42px);
 			@include break-point("500") {
-				font-size: 20px;
+				font-size: 28px;
 			}
 			@include break-point("1100") {
 				font-size: 28px;
@@ -272,7 +272,7 @@
 		width: 92.3%;
 		@include text-font-regular(16px, $gray-600, 1.5);
 		text-align: center;
-		margin-bottom: 16px;
+		margin-bottom: 40px;
 		@include break-point("500") {
 			width: 432px;
 		}
@@ -341,11 +341,7 @@
 				&::after {
 					content: "";
 					display: block;
-					background-image: linear-gradient(
-						to bottom,
-						rgba(30, 30, 40, 0),
-						#1e1e28
-					);
+					background-image: linear-gradient(to bottom, rgba(30, 30, 40, 0), #1e1e28);
 					width: 100px;
 					height: 100px;
 					height: inherit;
@@ -582,8 +578,8 @@
 			}
 
 			img {
-				width: 112px;
-				height: 64px;
+				max-width: 112px;
+				max-height: 64px;
 			}
 
 			&--img {
@@ -673,8 +669,7 @@
 					li:first-child {
 						width: 24px;
 						height: 24px;
-						background: url("../img/pages/contratacion/remove-24-px@2x.png")
-							no-repeat;
+						background: url("../img/pages/contratacion/remove-24-px@2x.png") no-repeat;
 						background-size: contain;
 						cursor: pointer;
 					}
@@ -689,8 +684,7 @@
 					li:last-child {
 						width: 24px;
 						height: 24px;
-						background: url(../img/pages/contratacion/add-24-px@3x.png)
-							no-repeat;
+						background: url(../img/pages/contratacion/add-24-px@3x.png) no-repeat;
 						background-size: contain;
 						cursor: pointer;
 					}
@@ -740,15 +734,15 @@
 			width: 890px;
 		}
 
-		@include break-point("1700") {}
+		@include break-point("1700") {
+		}
 
 		.type-mainSelected {
 			opacity: 0.5;
 			cursor: text;
 		}
 
-		.type-mainSelected
-			.card-contratacion__packages__addons__description-content:hover {
+		.type-mainSelected .card-contratacion__packages__addons__description-content:hover {
 			cursor: text;
 		}
 
@@ -803,11 +797,7 @@
 				&::after {
 					content: "";
 					display: block;
-					background-image: linear-gradient(
-						to bottom,
-						rgba(30, 30, 40, 0),
-						#1e1e28
-					);
+					background-image: linear-gradient(to bottom, rgba(30, 30, 40, 0), #1e1e28);
 					width: 100px;
 					height: 100px;
 					height: inherit;
@@ -925,9 +915,9 @@
 	.main-summary {
 		width: 288px;
 		box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.15);
-		background-color: #fafafa;
 		border-radius: 8px;
 		overflow: hidden;
+		position: relative;
 
 		@include flex-box(column, flex-start, center);
 		@include break-point("500") {
@@ -940,7 +930,6 @@
 			width: 392px;
 		}
 	}
-
 	.main-summary__invoice-data {
 		width: 100%;
 		position: relative;
@@ -949,6 +938,7 @@
 		&--header {
 			height: 40px;
 			width: 100%;
+			font-family: Montserrat-Regular !important;
 			background-color: #3b4559;
 			@include text-font-bold(16px, $gray-100);
 			@include flex-box(row, center, center);
@@ -980,7 +970,6 @@
 			overflow: hidden;
 
 			&__1 {
-				margin-bottom: 8px;
 				width: 256px;
 				@include break-point("500") {
 					width: 312px;
@@ -993,13 +982,13 @@
 					color: $gray-600;
 				}
 				div:last-child {
-					margin-bottom: 16px;
+					margin-bottom: 4px;
 					color: #ef6c00;
 				}
 
 				div {
 					height: 18px;
-					margin-bottom: 9px;
+					margin-bottom: 8px;
 					@include flex-box(row, space-between, center);
 					@include text-font-regular(14px, $gray-400);
 					padding: 0 8px;
@@ -1139,28 +1128,22 @@
 	}
 
 	.main-summary-internet {
-		margin-top: 16px;
 		width: 300px;
 		border: 1px solid #e0e0e0;
 		border-radius: 8px;
 		background-color: #fafafa;
-		padding: 0 20px;
+		padding: 16px;
 		@include flex-box(column, flex-start, center);
 
 		@include break-point("500") {
 			width: 392px;
 			align-items: flex-start;
-			padding-left: 20px;
-			margin-top: 25px;
 		}
 
 		@include break-point("768") {
-			margin-top: 25px;
 			margin-bottom: 16px;
 			width: 552px;
 			align-items: flex-start;
-			padding-left: 30px;
-			padding-right: 30px;
 		}
 
 		@include break-point("1100") {
@@ -1168,7 +1151,6 @@
 		}
 
 		&__invoice-data {
-			margin-top: 16px;
 			width: 100%;
 
 			&--title {
@@ -1507,9 +1489,12 @@
 				border-bottom: 1px solid #e0e0e0;
 				margin-bottom: 16px;
 				width: 100%;
-				@include break-point("500") {}
-				@include break-point("768") {}
-				@include break-point("1100") {}
+				@include break-point("500") {
+				}
+				@include break-point("768") {
+				}
+				@include break-point("1100") {
+				}
 
 				div:first-child {
 					@include text-font-bold(14px, $gray-600);
@@ -1894,10 +1879,8 @@
 
 .content-contratacion__shopping-cupon-top {
 	position: relative;
-	margin-top: 10px;
 	margin-bottom: 16px;
 	border-bottom: 1px solid #e0e0e0;
-	padding-bottom: 16px;
 	@include break-point("768") {
 		@include flex-box(row, space-around, center);
 		flex-wrap: wrap;
@@ -1907,11 +1890,12 @@
 		align-items: center;
 	}
 	&--button-cupon {
-		width: 288px;
-		height: 48px;
+		width: 312px;
+		height: 44px;
 		cursor: pointer;
 		border: 1px dashed #1a76d2;
 		margin-bottom: 24px;
+		background: rgba(25, 138, 255, 0.05);
 		@include flex-box(row, center, center);
 		@include text-font-regular(18px, #1a76d2);
 	}
@@ -1925,7 +1909,8 @@
 	padding-bottom: 16px;
 	width: 300px;
 	@include flex-box(column, center, center);
-	@include break-point("768") { }
+	@include break-point("768") {
+	}
 	@include break-point("1100") {
 		@include flex-box(row, space-around, center);
 		flex-wrap: wrap;
@@ -1934,12 +1919,12 @@
 	}
 
 	&--button-buy {
-		width: 288px;
+		width: 312px;
 		height: 48px;
-		background-color: #1a76d2;
+		background-color: rgba(25, 138, 255, 1);
 		cursor: pointer;
 		border-radius: 100px;
-		margin-bottom: 24px;
+		margin-bottom: 16px;
 		@include flex-box(row, center, center);
 		display: none;
 
@@ -2000,7 +1985,7 @@
 	position: sticky;
 	width: 98%;
 	height: 72px;
-	border: 1px solid lightgray;
+	border: none;
 	bottom: 0;
 	z-index: 70;
 	border-radius: 8px;
@@ -2127,7 +2112,7 @@
 
 .content-main-summary-terms {
 	display: none;
-	text-align: justify;
+	text-align: center;
 	@include break-point("1100") {
 		@include text-font-regular(14px, $gray-600, 1.57);
 		display: block;
@@ -2157,11 +2142,12 @@
 	}
 
 	@include break-point("768") {
-		display: none;
+		display: block;
 	}
 
 	@include break-point("1100") {
 		width: 100%;
+		display: none;
 	}
 
 	span {
@@ -2188,7 +2174,7 @@
 
 	@include break-point("1100") {
 		text-align: left;
-		margin-bottom: 20px;
+		margin-bottom: 16px;
 		margin-top: 0px;
 	}
 }
@@ -2229,6 +2215,9 @@
 
 .invoice-data--addon__promo {
 	@include text-font-regular(16px, #ef6c00, 19px);
+}
+.invoice-data--addon__leyenda {
+	@include text-font-regular(14px, rgba(117, 120, 123, 1), 18px);
 }
 
 .invoice-data--addon__terms {
@@ -2351,10 +2340,9 @@
 	cursor: pointer;
 }
 
-
 .main-contratacion::-webkit-scrollbar {
-	width: 8px; 
-	height: 8px; 
+	width: 8px;
+	height: 8px;
 	display: none;
 }
 
@@ -2705,13 +2693,452 @@
 	box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.35);
 	color: #fafafa !important;
 }
-.capa{
+.capa {
 	width: 100%;
-    height: 100%;
-    position: absolute;
+	height: 100%;
+	position: absolute;
 }
 
-.tarjeta-promo-seleccion >.capa {
-    background: white;
-    opacity: .5;
+.tarjeta-promo-seleccion > .capa {
+	background: white;
+	opacity: 0.5;
 }
+/*Nuevos estilos E-commerce*/
+.barraEcommerce {
+	position: relative;
+	bottom: 0;
+	background: rgba(250, 250, 250, 0.96);
+	width: 792px;
+	height: 72px;
+	margin: auto;
+	box-shadow: 0 16px 32px 0 rgba(30, 30, 40, 0.3);
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	margin-top: 39px;
+	z-index: 10000;
+}
+.barraEcommerce .barraEcommerceContainer {
+	width: 100%;
+}
+.barraEcommerce .botonRegreso {
+	float: left;
+}
+.barraEcommerce .barDescription {
+	margin: 0 auto;
+	width: 330px;
+	height: 52px;
+	margin-top: 6px;
+	font-family: Montserrat-SemiBold;
+	text-align: center;
+}
+.barraEcommerce .barDescription p {
+	font-family: Montserrat-SemiBold;
+	font-size: 18px;
+	color: rgba(59, 69, 89, 1);
+	line-height: 30px;
+}
+.barraEcommerce .barDescription p span {
+	color: rgba(125, 84, 169, 1);
+}
+.barraEcommerce .barDescription h1 {
+	font-family: Montserrat-Bold;
+	font-size: 24px;
+	line-height: 30px;
+	color: rgba(59, 69, 89, 1);
+}
+.barraEcommerce .botonAvance {
+	position: relative;
+	top: -50px;
+}
+.barraEcommerce .botonRegreso {
+	position: relative;
+	top: 29px;
+	left: 0;
+}
+.barraEcommerce .botonRegreso a {
+	position: relative;
+	top: -7px;
+	left: 10px;
+}
+.barraEcommerce .botonRegreso img {
+	width: 26px;
+	position: relative;
+	top: 7px;
+	display: none;
+}
+.barraEcommerce .botonRegreso a {
+	font-family: Montserrat-Regular;
+	color: rgba(25, 138, 255, 1);
+	line-height: 19px;
+}
+.barraEcommerce .botonAvance a {
+	width: 134px;
+	height: 40px;
+	font-family: Montserrat-Regular;
+	font-size: 16px;
+	text-align: center;
+	display: block;
+	float: right;
+	padding-top: 2px;
+	margin-right: 24px;
+	border-radius: 24vw;
+	background: rgba(25, 138, 255, 1);
+}
+.barraEcommerce .botonAvance a span {
+	font-family: Montserrat-Regular;
+	font-size: 16px;
+	color: rgba(255, 255, 255, 1);
+}
+.barraEcommerce .botonAvance a img {
+	width: 24px;
+	height: 24px;
+	position: relative;
+	top: 5px;
+	left: 3px;
+} /*Vista Complementos*/
+.complementosContainer {
+	width: 100%;
+	margin: 0 auto;
+}
+.complementosContainer .complementosTextContent {
+	width: 100%;
+	padding-top: 1vh;
+	text-align: center;
+	margin-bottom: 2vh;
+}
+.complementosContainer .complementosTextContent small {
+	font-family: Montserrat-Medium;
+	font-size: 14px;
+	color: rgba(117, 120, 123, 1);
+	line-height: 16px;
+}
+.complementosContainer .complementosTextContent h1 {
+	font-family: Montserrat-Regular;
+	font-size: 28px;
+	color: rgba(59, 69, 89, 1);
+	line-height: 42px;
+}
+.complementosContainer .complementosTextContent p {
+	font-family: Montserrat-Regular;
+	font-size: 18px;
+	color: rgba(117, 120, 123, 1);
+	line-height: 24px;
+}
+.complementosContainer .flex-container {
+	max-width: 840px;
+	width: 100%;
+	list-style-type: none;
+	margin: 20px auto;
+	padding: 0;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+.complementosContainer .flex-container .item {
+	height: 328px;
+	width: 232px;
+	line-height: 200px;
+	font-size: 20px;
+	color: #fff;
+	text-align: center;
+	margin: 5px 16px;
+	box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+	background: rgba(255, 255, 255, 1);
+	text-align: center;
+	overflow: hidden;
+}
+.complementosContainer .flex-container .item:nth-child(1) img,
+.complementosContainer .flex-container .item:nth-child(1) h1,
+.complementosContainer .flex-container .item:nth-child(1) p {
+	height: auto;
+}
+.complementosContainer .flex-container .item:nth-child(1) img {
+	width: 72px;
+	height: 58px;
+	margin: 0 auto;
+	position: relative;
+	top: -20px;
+}
+.complementosContainer .flex-container .item:nth-child(1) h1 {
+	color: rgba(59, 69, 89, 1);
+	font-family: Montserrat-Bold;
+	font-size: 18px;
+	line-height: 22px;
+	position: relative;
+	top: -92px;
+}
+.complementosContainer .flex-container .item:nth-child(1) p {
+	font-family: Montserrat-Regular;
+	font-size: 14px;
+	width: 200px;
+	line-height: 25px;
+	color: rgba(117, 120, 123, 1);
+	position: relative;
+	top: -89px;
+	margin: 0 auto;
+}
+.complementosContainer .flex-container .item:nth-child(1) p.promotion {
+	display: inline-block;
+	padding: 4px 7px 6px 7px;
+	font-family: Montserrat-Regular;
+	font-size: 14px;
+	line-height: 18px;
+	color: rgba(241, 108, 0, 1);
+	border: solid 1px rgba(241, 108, 0, 1);
+	position: relative;
+	top: -166px;
+	width: 160px;
+	margin: 0 auto;
+}
+.complementosContainer .flex-container .item:nth-child(1) p.price {
+	font-family: Montserrat-Regular;
+	font-size: 16px;
+	line-height: 19px;
+	color: rgba(59, 69, 89, 1);
+	position: relative;
+	top: -234px;
+}
+.complementosContainer .flex-container .item:nth-child(2) {
+	box-shadow: none;
+	background: rgba(255, 255, 255, 0);
+}
+.complementosContainer .flex-container .item:nth-child(2) .imageComplement {
+	height: 272px;
+	border-radius: 4px;
+	overflow: hidden;
+}
+.complementosContainer .flex-container .item:nth-child(2) .imageComplement:after {
+	border-radius: 4px;
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: relative;
+	display: block;
+	left: 0;
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e5799+0,1e1e28+50,1e1e28+100&0+0,1+50,1+100 */
+	background: -moz-linear-gradient(
+		top,
+		rgba(30, 87, 153, 0) 0%,
+		rgba(30, 30, 40, 1) 50%,
+		rgba(30, 30, 40, 1) 100%
+	); /* FF3.6-15 */
+	background: -webkit-linear-gradient(
+		top,
+		rgba(30, 87, 153, 0) 0%,
+		rgba(30, 30, 40, 1) 50%,
+		rgba(30, 30, 40, 1) 100%
+	); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(
+		to bottom,
+		rgba(30, 87, 153, 0) 0%,
+		rgba(30, 30, 40, 1) 50%,
+		rgba(30, 30, 40, 1) 100%
+	); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e5799', endColorstr='#1e1e28',GradientType=0 ); /* IE6-9 */
+	z-index: 10;
+	top: -230px;
+}
+.complementosContainer .flex-container .item:nth-child(2) .imageComplement img {
+	height: auto;
+	min-width: 150%;
+	position: relative;
+	top: 0;
+	z-index: 0;
+	left: -48px;
+}
+.complementosContainer .flex-container .item:nth-child(2) .overlapComplement {
+	height: 219px;
+	width: 192px;
+	margin: 0 auto;
+	background: #fff;
+	position: relative;
+	top: -165px;
+	box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+	z-index: 11;
+	border-radius: 8px;
+}
+.complementosContainer .flex-container .item:nth-child(2) .overlapComplement img {
+	height: auto;
+	width: 124px;
+	margin: 0 auto;
+	position: relative;
+	top: -16px;
+}
+.complementosContainer .flex-container .item:nth-child(2) .overlapComplement h1 {
+	font-family: Montserrat-Bold;
+	font-size: 18px;
+	line-height: 22px;
+	color: rgba(59, 69, 89, 1);
+	position: relative;
+	top: -104px;
+}
+.complementosContainer .flex-container .item:nth-child(2) .overlapComplement p {
+	font-family: Montserrat-Regular;
+	font-size: 16px;
+	line-height: 19px;
+	color: rgba(117, 120, 123, 1);
+	position: relative;
+	top: -105px;
+}
+.complementosContainer .flex-container .item:nth-child(2) .overlapComplement p.price {
+	font-family: Montserrat-Regular;
+	font-size: 14px;
+	line-height: 18px;
+	color: rgba(241, 108, 0, 1);
+	border: rgba(241, 108, 0, 1) solid 1px;
+	position: relative;
+	top: -180px;
+	display: inline-block;
+	padding: 4px 7px 6px 7px;
+	border-radius: 4px;
+}
+.complementosContainer .flex-container .item:nth-child(3) img {
+	width: 72px;
+	height: 58px;
+	margin: 0 auto;
+	position: relative;
+	top: -20px;
+}
+.complementosContainer .flex-container .item:nth-child(3) h1 {
+	color: rgba(59, 69, 89, 1);
+	font-family: Montserrat-Bold;
+	font-size: 18px;
+	line-height: 22px;
+	position: relative;
+	top: -92px;
+}
+.complementosContainer .flex-container .item:nth-child(3) p {
+	font-family: Montserrat-Regular;
+	font-size: 14px;
+	width: 100%;
+	line-height: 25px;
+	color: rgba(117, 120, 123, 1);
+	position: relative;
+	top: -89px;
+	margin: 0 auto;
+}
+.complementosContainer .flex-container .item:nth-child(3) hr {
+	width: 150px;
+	border: rgba(224, 224, 224, 1) solid 1px;
+	margin: 0 auto;
+	width: 150px;
+	border: 1px solid #e0e0e0;
+	margin: 0 auto;
+	position: relative;
+	top: -15px;
+}
+.complementosContainer .flex-container .item:nth-child(3) p.price {
+	position: relative;
+	top: 11px;
+	font-size: 16px;
+	color: rgba(59, 69, 89, 1);
+}
+/*Vista Complementos*/
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+	.barraEcommerce {
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+		border-radius: 0;
+		bottom: 16px;
+	}
+	.barraEcommerce .barDescription p {
+		font-size: 14px;
+	}
+	.barraEcommerce .barDescription h1 {
+		font-size: 18px;
+	}
+	.barraEcommerce .botonAvance a {
+		margin-right: 24px !important;
+		width: 47px !important;
+		height: 47px !important;
+	}
+	.barraEcommerce .botonAvance a span {
+		display: none;
+	}
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+	.barraEcommerce {
+		margin: 0 auto;
+		bottom: 16px;
+		width: calc(100% - 32px);
+		height: 72px;
+		-webkit-border-radius: 8px;
+		-moz-border-radius: 8px;
+		border-radius: 8px;
+		position: sticky;
+		left: 16px;
+		margin: 0 auto;
+	}
+	.barraEcommerce .botonRegreso a span {
+		display: none !important;
+	}
+	.barraEcommerce .botonRegreso img {
+		display: block;
+		top: 0;
+	}
+	.barraEcommerce .botonAvance a {
+		width: 47px;
+		height: 47px;
+		margin-right: 24px;
+	}
+	.barraEcommerce .botonAvance a span {
+		display: none;
+	}
+	.barraEcommerce .botonAvance a img {
+		top: 10px !important;
+		left: 0 !important;
+	}
+	.barraEcommerce {
+		width: calc(100% - 32px);
+		height: 72px;
+		-webkit-border-radius: 8px;
+		-moz-border-radius: 8px;
+		border-radius: 8px;
+		bottom: 16px;
+		position: fixed;
+		left: 16px;
+		bottom: 16px;
+		margin: 0 auto;
+	}
+	.specialBar {
+		position: relative !important;
+		width: calc(100% - 16px);
+		left: 0;
+		bottom: 0;
+	}
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+	.flex-container {
+		padding-bottom: 12vh !important;
+	}
+}
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) {
+}
+
+// Extra large devices (large desktops)
+// No media query since the extra-large breakpoint has no upper bound on its width
+
+.ticketDivider {
+	width: 312px;
+	border: solid 1px rgba(224, 224, 224, 1);
+	margin: 0 auto;
+	margin-top: 16px;
+}
+.ticketImage {
+	width: 100%;
+	position: absolute;
+	top: 179px;
+}
+.ticketImage img {
+	width: 100%;
+}
+/*Nuevos estilos E-commerce*/

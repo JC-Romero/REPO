@@ -159,7 +159,7 @@ export class Contratacion {
         this.step_1();
         this.eventosModal();
         this.showStep();
-        this.iniciarMapa();
+        //this.iniciarMapa();
         this.iniciarIdPromocion();
         this.eventoEliminarCanalPremium();
         this.habilitarBotonDireccion();
@@ -452,6 +452,12 @@ export class Contratacion {
             let cadenaDesencriptada = desencriptar(cadenaEncriptada);
         });
 
+        $('#nextComplementos').on('click',function(){
+            console.log("currentStep "+apuntador.props.currentStep);
+            if (apuntador.props.currentStep === 1) {
+                apuntador.nextStep();
+            }
+        })
         console.groupEnd();
     }
 
@@ -1008,7 +1014,7 @@ export class Contratacion {
                 console.log('PROMOCION SELECCIONADA=>', idPromocionCanalPremium);
                 let classParent = 'card-contratacion__packages__description-content';
                 if ( (e.target.classList.contains(classParent) || e.target.offsetParent.classList.contains(classParent) ) && !$(e.target).hasClass('tarjeta-promo-seleccion') ) {
-                    
+                    console.log("dentro del primer if");
                     referenciaClase.agregarPromocionSeleccionada(idPromocionCanalPremium);
 
                     let objProceso = {
@@ -1038,6 +1044,7 @@ export class Contratacion {
                     }
                     
                     if(agregado == 'Agregado'){
+                        console.log("agregado***");
                         this.props.cardPositionPromo = [...document.getElementsByClassName('content-contratacion__packages')];   
                         this.props.windowW = window.innerWidth;
                         if (this.props.windowW < 769) {
@@ -1056,7 +1063,7 @@ export class Contratacion {
                         }                      
                     }
                     
-                    if (this.props.currentStep === 1) {
+                    if (this.props.currentStep === 0) {
                         this.nextStep();
                     }
                     this.invoice();

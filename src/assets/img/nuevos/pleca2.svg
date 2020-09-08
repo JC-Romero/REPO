@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="424px" height="100px" viewBox="0 0 424 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <defs>
+        <path d="M392,0 L392,18 C383.163444,18 376,25.163444 376,34 C376,42.836556 383.163444,50 392,50 L392,68 L0,68 L0,50 C8.836556,50 16,42.836556 16,34 C16,25.163444 8.836556,18 0,18 L0,0 L392,0 Z" id="path-1"></path>
+        <filter x="-7.1%" y="-29.4%" width="114.3%" height="182.4%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="8" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="8" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.15 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Commerce---Sep-25" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-368.000000, -472.000000)">
+            <g id="Group" transform="translate(384.000000, 480.000000)">
+                <g id="Combined-Shape">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FAFAFA" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <line x1="40" y1="33.5" x2="352" y2="33.5" id="Line" stroke="#E0E0E0" stroke-linecap="square" stroke-dasharray="6,6"></line>
+            </g>
+        </g>
+    </g>
+</svg>

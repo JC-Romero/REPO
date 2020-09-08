@@ -166,7 +166,7 @@ header .topMenu .locationButton a {
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
-    color: rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, 1) !important;
     cursor: pointer;
 }
 header .topMenu .locationButton a:hover {
@@ -691,7 +691,7 @@ header .mainNav .mobileCart a img {
 .videoTextContainerSecond .videoTextContentSecond .titleSecondVideo {
     position: relative;
     height: 50%;
-    padding-top: 9vh;
+    padding-top: 7vh;
 }
 
 .videoTextContainerSecond .videoTextContentSecond .imagesAppsContainer img {
@@ -3083,7 +3083,7 @@ footer .legalAdvice p {
 /*Modal ity Picker*/
 
 /*modal loader index akhm*/
-#cargadorLead{
+#cargadorLead {
     display: none;
     width: 100px;
     height: 100px;
