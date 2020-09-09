@@ -183,7 +183,6 @@ export class Contratacion {
         setTimeout(function () { window.scrollTo(0, 0); }, 1000);
 
         //this.simularPasosCompra()
-
         this.props.mainBody[0].style.cssText = 'overflow-Y: scroll;';
     }
 
@@ -1664,24 +1663,28 @@ export class Contratacion {
                 $("#channelsSelection").show();
                 $("#complementsSelection").hide();
                 $("#boxesSelection").hide();
+                $("#premiumSelection").hide();
                 break;
             case 1:
                 //this.addPromotion();
                 $("#channelsSelection").hide();
                 $("#complementsSelection").show();
                 $("#boxesSelection").hide();
+                $("#premiumSelection").hide();
                 break;
             case 2:
-                this.addApps();
+                //this.addApps();
                 $("#channelsSelection").hide();
                 $("#complementsSelection").hide();
                 $("#boxesSelection").hide();
+                $("#premiumSelection").show();
                 break;
             case 3:
                 //this.addDevices();
                 $("#channelsSelection").hide();
                 $("#complementsSelection").hide();
                 $("#boxesSelection").show();
+                $("#premiumSelection").hide();
                 break;
         }
         console.groupEnd();
@@ -2968,5 +2971,3 @@ $(window).keydown(function (event) {
         event.preventDefault();
     }
 });
-//Carruseles Modal Bottom
-
