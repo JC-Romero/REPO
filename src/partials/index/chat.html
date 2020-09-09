@@ -10,18 +10,20 @@
             </a>
         </li>
         <li class='menu-item-help'>
-            <a class='messageChat' id="messageChat" href='#openModalChat'>
+            <a class='messageChat' id="messageChat" href='' data-toggle="modal" data-target="#chatsModal">
                 <img src="assets/img/header/forum_24px.png" style="width: 30px; height: 30px;" alt="">
             </a>
         </li>
         <li class='menu-item-help'>
-            <a class='phoneChat' id='phoneChat' href='#openModalPhone'>
+            <a class='phoneChat' id='phoneChat' data-toggle="modal" data-target="#phoneList">
                 <img src="assets/img/header/phone_in_talk_24px.png" style="width: 30px; height: 30px;" alt="">
             </a>
         </li>
     </ul>
 </div>
-<div id="openModalChat" class="modalDialogChat">
+
+<div id="openModalChat" class="modal callUsModalContainer" tabindex="-1" role="dialog" aria-labelledby="callUsModal"
+    aria-modal="true">
     <div>
 
         <a href="#close" title="Close" class="close">
@@ -44,19 +46,20 @@
             </div>
         </div>
         <div class="div_button-modalDialog">
-            <a class="modalChat-item__button" id="chatVentas">Ventas</a>
+            <a class="modalChat-item__button">Ventas</a>
         </div>
         <div class="div_button-modalDialog">
-            <a class="modalChat-item__button" id="chatAC">Atención a clientes</a>
+            <a class="modalChat-item__button">Atención a clientes</a>
         </div>
         <div class="div_button-modalDialog">
-            <a class="modalChat-item__button" id="chatST">Soporte Técnico</a>
+            <a class="modalChat-item__button">Soporte Técnico</a>
         </div>
     </div>
 </div>
 
 
-<div id="openModalPhone" class="modalDialogPhone">
+<div id="openModalPhone" class="modalDialogPhone modal callUsModalContainer" tabindex="-1" role="dialog" aria-labelledby="callUsModal"
+    aria-hidden="true">
     <div>
         <a href="#close" title="Close" class="close">
             <img src="assets/img/header/close-24-px.svg">
@@ -184,7 +187,7 @@
     </div>
 </div>
 <!--modal Telefonos Chat-->
-<div class="modal modalPhoneList" id="phoneList" tabindex="-1" role="dialog" aria-labelledby="phoneList"
+<div class="modalPhoneList modal callUsModalContainer" id="phoneList" tabindex="-1" role="dialog" aria-labelledby="phoneList"
     aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -259,7 +262,7 @@
 </div>
 <!--modal Telefonos Chat-->
 <!--modal Telefonos Soporte Chat-->
-<div class="modal modalChats" id="chatsModal" tabindex="-1" role="dialog" aria-labelledby="chatModal"
+<div class="modal callUsModalContainer modalChats" id="chatsModal" tabindex="-1" role="dialog" aria-labelledby="chatModal"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -280,17 +283,17 @@
                     <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 mx-auto">
                         <div class="row">
                             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                <a href="#">Ventas</a>
+                                <a id="chatVentas">Ventas</a>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                <a href="#">Atención a clientes</a>
+                                <a id="chatAC">Atención a clientes</a>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                <a href="#">Soporte técnico</a>
+                                <a id="chatST">Soporte técnico</a>
                             </div>
                         </div>
                     </div>
