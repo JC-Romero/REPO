@@ -180,6 +180,8 @@ export class Contratacion {
         this.eventoBuscarCP();
         this.eventoQuitarEquipo();//*/
 
+        this.eventoCanales();
+
         setTimeout(function () { window.scrollTo(0, 0); }, 1000);
 
         //this.simularPasosCompra()
@@ -2939,6 +2941,12 @@ export class Contratacion {
             console.log("OCURRIO UN ERROR EN LA FUNCION actualizarMemoriaCarrito():", err);
         }
         console.groupEnd();
+    }
+
+    eventoCanales(){
+        $("body").on('click', '.cntCanales', function () {
+            console.log('EVENTO DE CAJAS DE CANALES');
+        });
     }
 }
 
