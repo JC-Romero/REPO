@@ -1,9 +1,9 @@
-import {TimelineMax,TweenMax } from "gsap";
+import { TimelineMax, TweenMax } from "gsap";
 import { ModalContrata } from './ModalContrata';
 import * as Constantes from "../../utils/Constantes";
 import { FinalizaContratacion } from './FinalizaContratacion';
 import { Canales } from '../detallePaquete/Canales';
-import {ClaseCobertura} from "../generales/ClaseCobertura";
+import { ClaseCobertura } from "../generales/ClaseCobertura";
 
 export class Contratacion {
     constructor(carrito) {
@@ -11,8 +11,8 @@ export class Contratacion {
         const claseCobertura = new ClaseCobertura();
 
         let strPaqueteSeleccionado = localStorage.getItem('TP_STR_PAQUETE_SELECCION');
-        let strComplementos =localStorage.getItem('TP_STR_COMPLEMENTOS');
-        
+        let strComplementos = localStorage.getItem('TP_STR_COMPLEMENTOS');
+
         let objPaquete;
         let objComplementos;
         try {
@@ -109,16 +109,16 @@ export class Contratacion {
                     name: '',
                     amount: '',
                     total: '',
-                    price: 0, 
-                    cantidad : 0
-                },{
+                    price: 0,
+                    cantidad: 0
+                }, {
                     id: '',
                     show: false,
                     name: '',
                     amount: '',
                     total: '',
                     price: 0,
-                    cantidad : 0
+                    cantidad: 0
                 }
             ],
             addonsDeleted: [],
@@ -133,13 +133,13 @@ export class Contratacion {
             importeDescuentoCupon: 0,
             totalProntoPago: 0,
             totalCanalesPremium: 0,
-            arregloAdicionales : [],
-            modalContrata : null,
+            arregloAdicionales: [],
+            modalContrata: null,
             mainBody: document.getElementsByTagName('body'),
             windowW: window.innerWidth,
-            infoPaquete:objPaquete,
+            infoPaquete: objPaquete,
             infoComplementos: objComplementos,
-            infoCupon :{},
+            infoCupon: {},
             refCobertura: claseCobertura,
             refCarrito: carrito,
         }
@@ -179,23 +179,23 @@ export class Contratacion {
         this.eventoQuitarParrilla();
         this.eventoBuscarCP();
         this.eventoQuitarEquipo();//*/
-        
-        setTimeout(function() {window.scrollTo(0, 0);}, 1000);
+
+        setTimeout(function () { window.scrollTo(0, 0); }, 1000);
 
         //this.simularPasosCompra()
-        
+
         this.props.mainBody[0].style.cssText = 'overflow-Y: scroll;';
     }
 
-    simularPasosCompra(){
+    simularPasosCompra() {
         let apuntador = this;
-        setTimeout(function() {
+        setTimeout(function () {
             apuntador.nextStep();
         }, 1000);
-        setTimeout(function() {
+        setTimeout(function () {
             //apuntador.nextStep();
         }, 2000);
-        setTimeout(function() {
+        setTimeout(function () {
             /*apuntador.nextStep();
             $.each($('.container-steps--contratacion__step'), function(key, objHtml) {
                 if(key == 3){
@@ -206,12 +206,12 @@ export class Contratacion {
         }, 3000);
     }
 
-    verificarNumeroPasos(){
+    verificarNumeroPasos() {
         console.group('FUNCIONverificarNumeroPasos()');
-        let listaPasos = '<li class="contratacion--top-bar__steps__list-names__item active" style="display:flex">Cobertura</li>'+
-        '<li class="contratacion--top-bar__steps__list-names__item" >Promoción</li>'+
-        '<li class="contratacion--top-bar__steps__list-names__item" >Resumen</li>'+
-        '<li class="contratacion--top-bar__steps__list-names__item">Contrata</li>';
+        let listaPasos = '<li class="contratacion--top-bar__steps__list-names__item active" style="display:flex">Cobertura</li>' +
+            '<li class="contratacion--top-bar__steps__list-names__item" >Promoción</li>' +
+            '<li class="contratacion--top-bar__steps__list-names__item" >Resumen</li>' +
+            '<li class="contratacion--top-bar__steps__list-names__item">Contrata</li>';
 
         let iconoPasos = `<li class="contratacion--top-bar__steps--content-items__item">
                     <div class="point-item" style="background-color: rgb(26, 118, 210); height: 7px; width: 7px;">
@@ -247,7 +247,7 @@ export class Contratacion {
                 </li>`;
 
         let strPaqueteSeleccionado = localStorage.getItem('TP_STR_PAQUETE_SELECCION');
-        let strComplementos =localStorage.getItem('TP_STR_COMPLEMENTOS');
+        let strComplementos = localStorage.getItem('TP_STR_COMPLEMENTOS');
         let megasPaquete = 0;
         let objPaquete;
         let objComplementos;
@@ -264,11 +264,11 @@ export class Contratacion {
 
         console.log('MEGAS PAQUETE:', megasPaquete);
 
-        if(megasPaquete < 150 ){
+        if (megasPaquete < 150) {
 
-            listaPasos = '<li class="contratacion--top-bar__steps__list-names__item active" style="display:flex">Cobertura</li>'+
-            '<li class="contratacion--top-bar__steps__list-names__item" >Resumen</li>'+
-            '<li class="contratacion--top-bar__steps__list-names__item">Contrata</li>';
+            listaPasos = '<li class="contratacion--top-bar__steps__list-names__item active" style="display:flex">Cobertura</li>' +
+                '<li class="contratacion--top-bar__steps__list-names__item" >Resumen</li>' +
+                '<li class="contratacion--top-bar__steps__list-names__item">Contrata</li>';
 
             iconoPasos = `<li class="contratacion--top-bar__steps--content-items__item">
                     <div class="point-item" style="background-color: rgb(26, 118, 210); height: 7px; width: 7px;">
@@ -296,20 +296,20 @@ export class Contratacion {
                     </div>
                 </li>`;
 
-            $( ".container-steps--contratacion li:nth-child(2)" ).remove();
+            $(".container-steps--contratacion li:nth-child(2)").remove();
             $('#txtCobertura').html(' Paso 1 de 3');
             $('#txtCobertura3').html(' Paso 2 de 3');
 
             $('.main-summary-tv').hide();
         }
-        
+
         $('.contratacion--top-bar__steps__list-names').html(listaPasos);
         $('.contratacion--top-bar__steps--content-items').html(iconoPasos);
 
         console.groupEnd();
     }
 
-    validacionExistePaquete(){
+    validacionExistePaquete() {
         console.group('validacionExistePaquete()');
         let referenciaClase = this;
         let objetoPaquete;
@@ -318,31 +318,31 @@ export class Contratacion {
             objetoPaquete = JSON.parse(paqueteCadena);
             let validarId = objetoPaquete.idPaquete;
 
-            if(validarId == undefined || validarId == null || validarId == ''){
+            if (validarId == undefined || validarId == null || validarId == '') {
                 console.log('ID DE PAQUETE SIN VALOR VALIDO');
                 $('#textoMensaje').html('Para contratar un paquete Totalplay, selecciona alguna de nuestras ofertas');
-                $('#ventanaCambioCiudad').css('display','flex');
-                $('#capaVentanaCambioCiudad').css('opacity','1');
-                $('#contenidoVentanaCambioCiudad').css('opacity','1');
-                $('#formVentanaCambioCiudad').css('display','block');
-                $('#mensajeVentanaCambioCiudad').css('display','flex');
+                $('#ventanaCambioCiudad').css('display', 'flex');
+                $('#capaVentanaCambioCiudad').css('opacity', '1');
+                $('#contenidoVentanaCambioCiudad').css('opacity', '1');
+                $('#formVentanaCambioCiudad').css('display', 'block');
+                $('#mensajeVentanaCambioCiudad').css('display', 'flex');
             } else {
-                console.log('ID DE PAQUETE ENCONTRADO['+validarId+']');
+                console.log('ID DE PAQUETE ENCONTRADO[' + validarId + ']');
             }
         } catch (error) {
             console.log('ERROR validacionExistePaquete=>', error);
             $('#textoMensaje').html('Para contratar un paquete Totalplay, selecciona alguna de nuestras ofertas');
-            $('#ventanaCambioCiudad').css('display','flex');
-            $('#capaVentanaCambioCiudad').css('opacity','1');
-            $('#contenidoVentanaCambioCiudad').css('opacity','1');
-            $('#formVentanaCambioCiudad').css('display','block');
-            $('#mensajeVentanaCambioCiudad').css('display','flex');
+            $('#ventanaCambioCiudad').css('display', 'flex');
+            $('#capaVentanaCambioCiudad').css('opacity', '1');
+            $('#contenidoVentanaCambioCiudad').css('opacity', '1');
+            $('#formVentanaCambioCiudad').css('display', 'block');
+            $('#mensajeVentanaCambioCiudad').css('display', 'flex');
         }
 
         console.groupEnd();
     }
 
-    validarExistenciaAdicionales(){
+    validarExistenciaAdicionales() {
         console.group('validarExistenciaAdicionales()');
         /*  [MejorarTv]     [agregarEquipos]    [seleccionCanalPremium]     [agregarLineaAdicional]*/
         let referenciaClase = this;
@@ -351,55 +351,55 @@ export class Contratacion {
 
         let banderaTVParrilla = false;
         $.each(objetoTelevisionMemoria, function (key, objTelevision) {
-            console.log('objTelevision.Agrupacion=>',objTelevision.Agrupacion);
-            console.log('objTelevision.adicional.length=>',objTelevision.adicional.length);
+            console.log('objTelevision.Agrupacion=>', objTelevision.Agrupacion);
+            console.log('objTelevision.adicional.length=>', objTelevision.adicional.length);
 
-            if(objTelevision.Agrupacion == 'Parrillas' && objTelevision.adicional.length > 0){
+            if (objTelevision.Agrupacion == 'Parrillas' && objTelevision.adicional.length > 0) {
                 banderaTVParrilla = true;
             }
         });
 
         /* ----------------- VALIDACION DE BANDERAS ----------------- */
-        console.log('BANDERA TV PARRILLA ['+banderaTVParrilla+']');
-        if(banderaTVParrilla){
+        console.log('BANDERA TV PARRILLA [' + banderaTVParrilla + ']');
+        if (banderaTVParrilla) {
             $('#MejorarTv').show();
         }
 
-        $('#totalMegasBase').html(referenciaClase.props.infoPaquete.detallePaquete.detalle.megas);        
+        $('#totalMegasBase').html(referenciaClase.props.infoPaquete.detallePaquete.detalle.megas);
         $('#totalMegasPromo').html(referenciaClase.props.infoPaquete.detallePaquete.detalle.promoMegas);
 
         var parsearPaquete = referenciaClase.props.infoPaquete.detallePaquete.detalle;
         var paqueteTipo = parsearPaquete.megas;
         var megas = paqueteTipo.split(' ');
-        if(megas[0] >= 250){
-            $('#totalMegasPaqueteTexto').css('display','none');
-        }else{
-            $('#totalMegasPaqueteTexto').css('display','block');
+        if (megas[0] >= 250) {
+            $('#totalMegasPaqueteTexto').css('display', 'none');
+        } else {
+            $('#totalMegasPaqueteTexto').css('display', 'block');
             $('#totalMegasPaquete').html(referenciaClase.props.infoPaquete.detallePaquete.detalle.megas);
         }
 
         console.groupEnd();
     }
 
-    iniciarEventos(){
+    iniciarEventos() {
         console.group('iniciarEventos()');
         let apuntador = this;
 
         $("#btnContinuar").click((e) => {
-            
+
             e.preventDefault();
             var calle = $.trim($('#txtCalle').val());
             var codigoPostal = $.trim($('#txtCodigoPostal').val());
             var idPaquete = apuntador.props.infoPaquete.idPaquete;
-            if(idPaquete== undefined || idPaquete == null || idPaquete == ''){
+            if (idPaquete == undefined || idPaquete == null || idPaquete == '') {
                 $('#textoMensaje').html('Para contratar un paquete Totalplay, selecciona alguna de nuestras ofertas');
-                $('#ventanaCambioCiudad').css('display','flex');
-                $('#capaVentanaCambioCiudad').css('opacity','1');
-                $('#contenidoVentanaCambioCiudad').css('opacity','1');
-                $('#formVentanaCambioCiudad').css('display','block');
-                $('#mensajeVentanaCambioCiudad').css('display','flex');
+                $('#ventanaCambioCiudad').css('display', 'flex');
+                $('#capaVentanaCambioCiudad').css('opacity', '1');
+                $('#contenidoVentanaCambioCiudad').css('opacity', '1');
+                $('#formVentanaCambioCiudad').css('display', 'block');
+                $('#mensajeVentanaCambioCiudad').css('display', 'flex');
             } else {
-                var procesa = apuntador.props.refCobertura.validarFormulario(calle,  codigoPostal, 'errortxtCalle', 'errorCodigoPostal');
+                var procesa = apuntador.props.refCobertura.validarFormulario(calle, codigoPostal, 'errortxtCalle', 'errorCodigoPostal');
                 if (procesa) {
                     $('#tituloCobertura').html('Validando cobertura ...');
                     $('#descripcionCobertura').hide();
@@ -409,10 +409,10 @@ export class Contratacion {
                     $("#step2").css("display", "none");
 
                     var objetoDireccionFormulario = {
-                        "direccionFormulario":{
-                            "codigoPostal":$('#txtCodigoPostal').val(),
-                            "ciudad":$('#txtCiudad').val(),
-                            "direccion":$('#txtCalle').val()
+                        "direccionFormulario": {
+                            "codigoPostal": $('#txtCodigoPostal').val(),
+                            "ciudad": $('#txtCiudad').val(),
+                            "direccion": $('#txtCalle').val()
                         }
                     };
                     localStorage.setItem('TP_STR_DIRECCION', JSON.stringify(objetoDireccionFormulario));
@@ -441,11 +441,11 @@ export class Contratacion {
             this.props.barAdd.removeAttribute('style');
         });
 
-        $("body").on('click', '.content-contratacion__shopping-cart-top--car', function() {
+        $("body").on('click', '.content-contratacion__shopping-cart-top--car', function () {
             localStorage.setItem('TP_CONTADOR_CARRITO', '1');
         });
 
-        $("body").on('click', '.content-contratacion__shopping-cart-top--shared', function() {
+        $("body").on('click', '.content-contratacion__shopping-cart-top--shared', function () {
             let cadenaPaquete = localStorage.getItem('TP_OF_OBJ_PAQUETE_DETALLE');
             let objetoPaquete = JSON.parse(cadenaPaquete);
             let cadenaEncriptada = encriptar(JSON.stringify(objetoPaquete));
@@ -455,29 +455,29 @@ export class Contratacion {
         console.groupEnd();
     }
 
-    resizeCards(){
+    resizeCards() {
         addEventListener('resize', () => {
-            this.props.cardPosition = [...document.getElementsByClassName('content-contratacion__addChannels')];                
+            this.props.cardPosition = [...document.getElementsByClassName('content-contratacion__addChannels')];
 
-            this.props.cardPositionPromo = [...document.getElementsByClassName('content-contratacion__packages')];      
+            this.props.cardPositionPromo = [...document.getElementsByClassName('content-contratacion__packages')];
 
             this.props.windowW = window.innerWidth;
             if (this.props.windowW < 769) {
-                if(this.props.cardPosition != null){
-                    if(this.props.cardPosition[0] != undefined){ 
+                if (this.props.cardPosition != null) {
+                    if (this.props.cardPosition[0] != undefined) {
                         this.props.cardPosition[0].style = `justify-content: flex-start !important;`;
                     }
                 }
-                if(this.props.cardPositionPromo != null){
-                    if(this.props.cardPositionPromo[1] != undefined) this.props.cardPositionPromo[1].style = `justify-content: center !important;`;
+                if (this.props.cardPositionPromo != null) {
+                    if (this.props.cardPositionPromo[1] != undefined) this.props.cardPositionPromo[1].style = `justify-content: center !important;`;
                 }
-            }else{
-                if(this.props.cardPosition != null){
-                    if(this.props.cardPosition[0] != undefined) this.props.cardPosition[0].style = `justify-content: space-around !important;`;
+            } else {
+                if (this.props.cardPosition != null) {
+                    if (this.props.cardPosition[0] != undefined) this.props.cardPosition[0].style = `justify-content: space-around !important;`;
                 }
-                if(this.props.cardPositionPromo != null){
-                   if(this.props.cardPositionPromo[1] != undefined) this.props.cardPositionPromo[1].style = `justify-content: center !important;`;
-                }                
+                if (this.props.cardPositionPromo != null) {
+                    if (this.props.cardPositionPromo[1] != undefined) this.props.cardPositionPromo[1].style = `justify-content: center !important;`;
+                }
             }
         });
     }
@@ -505,8 +505,8 @@ export class Contratacion {
             var idSeleccionado = localStorage.getItem('TP_ID_PAQUETE_SELECCION');
             var cadenaOfertaActual = localStorage.getItem('TP_INFO_PAQUETES');
             var jsonOferta = JSON.parse(cadenaOfertaActual);
-            $.each(jsonOferta, function(familiaPaquete, arrayOferta) {
-                $.each(arrayOferta, function(key, objPaquete) {
+            $.each(jsonOferta, function (familiaPaquete, arrayOferta) {
+                $.each(arrayOferta, function (key, objPaquete) {
                     if (idSeleccionado == objPaquete.id) {
                         if (objPaquete.tipoOferta == '2P') {
                             $('#ligaTelevision').hide();
@@ -552,29 +552,29 @@ export class Contratacion {
 
         var strDireccion_LS_TMP = '';
         strDireccion_LS_TMP = localStorage.getItem('TP_STR_DIRECCION');
-        if(strDireccion_LS_TMP !== '' || strDireccion_LS_TMP !== null){
+        if (strDireccion_LS_TMP !== '' || strDireccion_LS_TMP !== null) {
             strDireccion_LS_TMP = JSON.parse(strDireccion_LS_TMP);
 
             try {
                 latitud = strDireccion_LS_TMP.coordenadas.latitud;
                 longitud = strDireccion_LS_TMP.coordenadas.longitud;
 
-                if(!this.validarCampoVacio(strDireccion_LS_TMP.direccionFormulario.codigoPostal)){
+                if (!this.validarCampoVacio(strDireccion_LS_TMP.direccionFormulario.codigoPostal)) {
                     $('#txtCodigoPostal').val(strDireccion_LS_TMP.direccionFormulario.codigoPostal);
                 }
-    
-                if(!this.validarCampoVacio(strDireccion_LS_TMP.direccionFormulario.ciudad)){
+
+                if (!this.validarCampoVacio(strDireccion_LS_TMP.direccionFormulario.ciudad)) {
                     $('#txtCiudad').val(strDireccion_LS_TMP.direccionFormulario.ciudad);
-                }else{
-                    if(!this.validarCampoVacio(localStorage.getItem('TP_CIUDAD_CONSULTA'))){
+                } else {
+                    if (!this.validarCampoVacio(localStorage.getItem('TP_CIUDAD_CONSULTA'))) {
                         $('#txtCiudad').val(localStorage.getItem('TP_CIUDAD_CONSULTA'));
                     }
                 }
-    
+
                 let calleNumero = '';
                 var strDireccion_LS = strDireccion_LS_TMP.direccionFormulario.direccion;
                 let calleNumeroTmp = strDireccion_LS.split(',');
-                if(!this.validarCampoVacio(calleNumeroTmp[0])){
+                if (!this.validarCampoVacio(calleNumeroTmp[0])) {
                     calleNumero = calleNumeroTmp[0];
                     $('#txtCalle').val(calleNumero);
                 }
@@ -583,9 +583,9 @@ export class Contratacion {
                 longitud = -99.133438;
             }
 
-            
+
         }
-        
+
         setTimeout(() => {
             var mapaUbicacion = new google.maps.Map(document.getElementById('mapaDir'), {
                 streetViewControl: false,
@@ -606,33 +606,33 @@ export class Contratacion {
                 icon: image,
                 draggable: true,
             });
-            google.maps.event.addListener(marcadorSitio, 'dragend', function(evt) {
+            google.maps.event.addListener(marcadorSitio, 'dragend', function (evt) {
                 $('#iconoMovimientoMarcador').show();
                 apuntador.buscarCoordenadas(evt.latLng.lat().toFixed(5), evt.latLng.lng().toFixed(5));
             });
         }, 1500);
     }
 
-    validarMemoriaDireccion(){
+    validarMemoriaDireccion() {
         console.group('validarMemoriaDireccion()');
-        if(!this.validarCampoVacio(localStorage.getItem('TP_OF_STR_CP'))){
+        if (!this.validarCampoVacio(localStorage.getItem('TP_OF_STR_CP'))) {
             $('#txtCodigoPostal').val(localStorage.getItem('TP_OF_STR_CP'));
         }
 
-        if(!this.validarCampoVacio(localStorage.getItem('TP_OF_STR_DELEGACION_MUNICIPIO'))){
+        if (!this.validarCampoVacio(localStorage.getItem('TP_OF_STR_DELEGACION_MUNICIPIO'))) {
             $('#txtCiudad').val(localStorage.getItem('TP_OF_STR_DELEGACION_MUNICIPIO'));
-        }else{
-            if(!this.validarCampoVacio(localStorage.getItem('TP_CIUDAD_CONSULTA'))){
+        } else {
+            if (!this.validarCampoVacio(localStorage.getItem('TP_CIUDAD_CONSULTA'))) {
                 $('#txtCiudad').val(localStorage.getItem('TP_CIUDAD_CONSULTA'));
             }
         }
 
         let calleNumero = '';
-        if(!this.validarCampoVacio(localStorage.getItem('TP_OF_STR_CALLE'))){
+        if (!this.validarCampoVacio(localStorage.getItem('TP_OF_STR_CALLE'))) {
             calleNumero = localStorage.getItem('TP_OF_STR_CALLE');
 
-            if(!this.validarCampoVacio(localStorage.getItem('TP_OF_STR_NUMERO_DIR'))){
-                calleNumero = localStorage.getItem('TP_OF_STR_CALLE') + ' '+ localStorage.getItem('TP_OF_STR_NUMERO_DIR');
+            if (!this.validarCampoVacio(localStorage.getItem('TP_OF_STR_NUMERO_DIR'))) {
+                calleNumero = localStorage.getItem('TP_OF_STR_CALLE') + ' ' + localStorage.getItem('TP_OF_STR_NUMERO_DIR');
             }
 
             $('#txtCalle').val(calleNumero);
@@ -646,15 +646,15 @@ export class Contratacion {
             "latitud": latitud,
             "longitud": longitud
         };
-        apuntador.consultarCoordenada(objeto, 'COORDENADAS').then(function(infoCoordenas) {
+        apuntador.consultarCoordenada(objeto, 'COORDENADAS').then(function (infoCoordenas) {
             //console.log('', 'DATOS DEL PARAMETRO [infoCoordenas]', infoCoordenas);
             if (infoCoordenas != undefined && infoCoordenas != null && infoCoordenas != '') {
-                
+
                 let obj = {
                     latitud: infoCoordenas.coordenadas.lat,
                     longitud: infoCoordenas.coordenadas.lng
                 };
-                
+
                 $('#iconoMovimientoMarcador').hide();
                 $('#txtCalle').val(infoCoordenas.direccionDatos.nombreCalle + ' ' + infoCoordenas.direccionDatos.numeroDireccion)
                 //$("#txtNoExterior").val(infoCoordenas.direccionDatos.numeroDireccion);
@@ -668,10 +668,10 @@ export class Contratacion {
     buscarDireccion(direccion) {
         console.group('buscarDireccion()');
         let apuntador = this;
-        console.log('CONSULTANDO LA DIRECCION ['+direccion+'] CON REVERSE CODE');
-        var objeto = {"direccion": direccion};
+        console.log('CONSULTANDO LA DIRECCION [' + direccion + '] CON REVERSE CODE');
+        var objeto = { "direccion": direccion };
 
-        apuntador.consultarCoordenada(objeto, 'DIRECCION').then(function(infoCoordenas) {
+        apuntador.consultarCoordenada(objeto, 'DIRECCION').then(function (infoCoordenas) {
 
             if (infoCoordenas != undefined && infoCoordenas != null && infoCoordenas != '') {
                 apuntador.validarFactibilidad({
@@ -682,7 +682,7 @@ export class Contratacion {
                     colonia: infoCoordenas.colonia
                 }, direccion);
             } else {
-                
+
                 $('#tituloCobertura').hide();
                 $('#cargador').hide();
                 $("#step2").css("display", "flex");
@@ -693,27 +693,27 @@ export class Contratacion {
                 $("#titleFormStep2").css("display", "flex");
                 $("#subtitleFormStep2").css("display", "none");
                 apuntador.limpiarDatos();
-                apuntador.removerCoordenadas();                
+                apuntador.removerCoordenadas();
             }
         });
         console.log('TERMINADO');
         console.groupEnd();
     }
 
-    removerCoordenadas(){
+    removerCoordenadas() {
         let obetoDireccion;
         let cadenaDireccion = localStorage.getItem('TP_STR_DIRECCION');
         let objetoMemoria;
         try {
             objetoMemoria = JSON.parse(cadenaDireccion);
-        } catch (error) {}
+        } catch (error) { }
 
         obetoDireccion = {
-            "direccionFormulario":objetoMemoria.direccionFormulario
+            "direccionFormulario": objetoMemoria.direccionFormulario
         }
 
         localStorage.setItem('TP_STR_DIRECCION', JSON.stringify(obetoDireccion));
-    }    
+    }
 
     async consultarCoordenada(parametro, tipo) {
         console.group('consultarCoordenada()');
@@ -732,17 +732,17 @@ export class Contratacion {
             });
         }
         let response = await fetch(url, {
-            
-        }).then(function(respuestaServicio) {
+
+        }).then(function (respuestaServicio) {
             return respuestaServicio.json();
-        }).then(function(respuesta) {
+        }).then(function (respuesta) {
             localStorage.setItem("DEBUG.MAPS.PAYLOAD", JSON.stringify(respuesta.payload));
             var objDir;
             var objCoordenadas;
             var objDireccionSeleccion;
-            
-            $.each(respuesta.payload, function(index, objDireccion) {
-                
+
+            $.each(respuesta.payload, function (index, objDireccion) {
+
                 objCoordenadas = {
                     latitud: objDireccion.geometry.location.lat,
                     longitud: objDireccion.geometry.location.lng
@@ -808,7 +808,7 @@ export class Contratacion {
                     });
                 }
             }
-            
+
             if (estado == 'Ciudad de México' || estado == 'CDMX' || estado == 'México D.F.') {
                 delegacionMunicipio = $('#txtCiudad').val();
             }
@@ -827,15 +827,15 @@ export class Contratacion {
             objDir.codigoPostal = codigoPostal;
             objDir.colonia = colonia;
 
-            let objeto = {"coordenadas": objCoordenadas, "infoDireccion":infoDireccion}
+            let objeto = { "coordenadas": objCoordenadas, "infoDireccion": infoDireccion }
             referenciaClase.actualizarObjetoDireccion('DIR_CALCULADA', objeto);
 
             return objDir;
-        }).catch(function(err) {
+        }).catch(function (err) {
             //console.log('WR', 'OCURRIO ALGO INESPERADO EN LA FUNCION [consultarCoordenada] ERROR[' + err + ']');
             return null;
         });
-        console.log('RESPONSE:',response);
+        console.log('RESPONSE:', response);
         console.groupEnd();
         return response;
     }
@@ -845,48 +845,48 @@ export class Contratacion {
         let apuntador = this;
         $.ajax({
             url: '/assets/media/factibilidad.json',
-            
+
             dataType: "json",
-            
-        }).done(function(respuesta) {
+
+        }).done(function (respuesta) {
             console.log('RESPUESTA DE SERVICIO [obtener-factibilidad]', respuesta.bean);
             if (respuesta.status == 0) {
 
-                let objeto = {"factibilidad": respuesta.bean}
+                let objeto = { "factibilidad": respuesta.bean }
                 apuntador.actualizarObjetoDireccion('DIR_FACTIBILIDAD', objeto);
 
                 if (respuesta.bean.factibilidad == '1') {
                     /*  SE DETECTA EL CAMBIO DE FACTIBILIDA */
-                    if(respuesta.bean.estimulofiscal != localStorage.getItem('TP_ESTIMULO_CIUDAD') ){
-                        localStorage.setItem('TP_ESTIMULO_CIUDAD', respuesta.bean.estimulofiscal);                        
-                        $('#modalPaso1').hide();
-                        
-                        $('#textoMensaje').html('Tenemos el paquete perfecto para ti, has click en la siguiente liga');
-                        $('#ventanaCambioCiudad').css('display','flex');
-                        $('#capaVentanaCambioCiudad').css('opacity','1');
-                        $('#contenidoVentanaCambioCiudad').css('opacity','1');
-                        $('#formVentanaCambioCiudad').css('display','block');
-                        $('#mensajeVentanaCambioCiudad').css('display','flex');
-                    } else{
+                    if (respuesta.bean.estimulofiscal != localStorage.getItem('TP_ESTIMULO_CIUDAD')) {
                         localStorage.setItem('TP_ESTIMULO_CIUDAD', respuesta.bean.estimulofiscal);
-                        
+                        $('#modalPaso1').hide();
+
+                        $('#textoMensaje').html('Tenemos el paquete perfecto para ti, has click en la siguiente liga');
+                        $('#ventanaCambioCiudad').css('display', 'flex');
+                        $('#capaVentanaCambioCiudad').css('opacity', '1');
+                        $('#contenidoVentanaCambioCiudad').css('opacity', '1');
+                        $('#formVentanaCambioCiudad').css('display', 'block');
+                        $('#mensajeVentanaCambioCiudad').css('display', 'flex');
+                    } else {
+                        localStorage.setItem('TP_ESTIMULO_CIUDAD', respuesta.bean.estimulofiscal);
+
                         $('#descripcionCobertura').html('Valida tu cobertura.');
                         $('#mapaDir').css('height', ' 0');
                         $('#modalPaso1').hide();
 
                         let objetoProcesoActual = apuntador.props.refCarrito.obtenerObjetoPasos();
 
-                        if(objetoProcesoActual.numeroPaso < 2){
+                        if (objetoProcesoActual.numeroPaso < 2) {
                             let objProceso = {
-                                "numeroPaso":2,
-                                "url":"contratacion.html",
-                                "accion":"VALIDAR_COBERTURA"
+                                "numeroPaso": 2,
+                                "url": "contratacion.html",
+                                "accion": "VALIDAR_COBERTURA"
                             };
                             apuntador.actualizarMemoriaCarrito(objProceso);
                         }
 
                         apuntador.nextStep();
-                    }                    
+                    }
                 } else {
                     //console.log("-------------- NO HAY FACTIBILIDAD ------------------");
                     $('#cargador').hide();
@@ -911,7 +911,7 @@ export class Contratacion {
                 $('#formularioCobertura').show();
                 $('#btnContinuar').show();
             }
-        }).fail(function(jqXHR, textStatus) {
+        }).fail(function (jqXHR, textStatus) {
             console.log('ER', 'OCURRIO UN ERROR EN EL API [obtener-factibilidad]', jqXHR);
             $('#descripcionCobertura').html('Valida tu cobertura.');
             $('#cargador').hide();
@@ -923,7 +923,7 @@ export class Contratacion {
     }
 
     eventoEnviarDatosSinFactibilidad() {
-        $("#botonEnvio").on('click', function() {
+        $("#botonEnvio").on('click', function () {
             $(this).html('<i class="fas fa-spinner fa-pulse"></i>');
             var parametros = {
                 "correo": $('#txtCorreo').val(),
@@ -934,11 +934,11 @@ export class Contratacion {
                 data: JSON.stringify(parametros),
                 dataType: "json",
                 type: 'POST'
-            }).done(function(respuesta) {
-                
+            }).done(function (respuesta) {
+
                 $("#botonEnvio").html('<i class="fas fa-arrow-alt-circle-right" style="color: #1A76D2;"></i>');
                 $('#headerCobertura').css('display', 'flex');
-            }).fail(function(jqXHR, textStatus) {
+            }).fail(function (jqXHR, textStatus) {
                 console.log('OCURRIO ALGO INESPERADO EN EL SERVICIO DE ENVIO DE DATOS');
                 console.log(jqXHR);
             });
@@ -949,17 +949,17 @@ export class Contratacion {
         let referenciaClase = this;
 
         $.each(referenciaClase.props.infoComplementos.promocion, function (key, objPromocion) {
-            if(objPromocion.tipo =='PROMO_HBO'){
+            if (objPromocion.tipo == 'PROMO_HBO') {
                 $('#contenedorHBO').attr('data-id', objPromocion.Id);
             }
-            if(objPromocion.tipo =='PROMO_FOX'){
+            if (objPromocion.tipo == 'PROMO_FOX') {
                 $('#contenedorFOX').attr('data-id', objPromocion.Id);
             }
         });
     }
 
     seListenersBoton() {
-        $("#btnConfirmMsgCorreo2").on("click", function() {
+        $("#btnConfirmMsgCorreo2").on("click", function () {
             $('#tituloCobertura').html('Valida tu cobertura.');
             $('#tituloCobertura').show();
             $('#descripcionCobertura').html('Usa el mapa para ubicar tu domicilio y/o ajusta la información en los campos correspondientes.');
@@ -974,7 +974,7 @@ export class Contratacion {
     }
 
     habilitarBotonDireccion() {
-        $("body").on('click', '#btnCoberturaText', function() {
+        $("body").on('click', '#btnCoberturaText', function () {
             $('#tituloCobertura').html('Valida tu cobertura.');
             $('#tituloCobertura').show();
             $('#descripcionCobertura').html('Usa el mapa para ubicar tu domicilio y/o ajusta la información en los campos correspondientes.');
@@ -993,7 +993,7 @@ export class Contratacion {
             this.props.stepItem[1].style.cssText = 'display: none';
             this.props.stepItem[2].style.cssText = 'display: none';
             try {
-                this.props.stepItem[3].style.cssText = 'display: none';    
+                this.props.stepItem[3].style.cssText = 'display: none';
             } catch (error) {
                 console.log('OCURRIO UN ERROR EN LA VALIDACION CURRENT STEP:', error);
             }
@@ -1007,14 +1007,14 @@ export class Contratacion {
 
                 console.log('PROMOCION SELECCIONADA=>', idPromocionCanalPremium);
                 let classParent = 'card-contratacion__packages__description-content';
-                if ( (e.target.classList.contains(classParent) || e.target.offsetParent.classList.contains(classParent) ) && !$(e.target).hasClass('tarjeta-promo-seleccion') ) {
-                    
+                if ((e.target.classList.contains(classParent) || e.target.offsetParent.classList.contains(classParent)) && !$(e.target).hasClass('tarjeta-promo-seleccion')) {
+
                     referenciaClase.agregarPromocionSeleccionada(idPromocionCanalPremium);
 
                     let objProceso = {
-                        "numeroPaso":3,
-                        "url":"contratacion.html",
-                        "accion":"PROMOCION_SELECCIONADA"
+                        "numeroPaso": 3,
+                        "url": "contratacion.html",
+                        "accion": "PROMOCION_SELECCIONADA"
                     };
                     referenciaClase.actualizarMemoriaCarrito(objProceso);
 
@@ -1024,48 +1024,48 @@ export class Contratacion {
                     this.props.packages.map(item => item.add = false);
                     this.props.textAddPromo[indexHover].textContent = 'Agregado';
                     this.props.packages[indexHover].add = true;
-                    this.props.options.namePackage = this.props.packages[indexHover];                    
+                    this.props.options.namePackage = this.props.packages[indexHover];
                     this.props.promocionSeleccionada = this.props.packages[indexHover].name;
                     var agregado = this.props.textAddPromo[indexHover].innerHTML;
                     $(e.target).addClass('tarjeta-promo-seleccion');
 
-                    if(idHTML == 'contenedorHBO'){
+                    if (idHTML == 'contenedorHBO') {
                         $('#contenedorFOX').removeClass('tarjeta-promo-seleccion');
                     }
 
-                    if(idHTML == 'contenedorFOX'){
+                    if (idHTML == 'contenedorFOX') {
                         $('#contenedorHBO').removeClass('tarjeta-promo-seleccion');
                     }
-                    
-                    if(agregado == 'Agregado'){
-                        this.props.cardPositionPromo = [...document.getElementsByClassName('content-contratacion__packages')];   
+
+                    if (agregado == 'Agregado') {
+                        this.props.cardPositionPromo = [...document.getElementsByClassName('content-contratacion__packages')];
                         this.props.windowW = window.innerWidth;
                         if (this.props.windowW < 769) {
                             if (this.props.packages[indexHover].name === 'FOX') {
                                 this.props.cardPositionPromo[0].style = `justify-content: flex-end !important;`;
-                                $('#contenedorFOX').parent( ".card-contratacion__packages" ).addClass('active');
-                                $('#contenedorHBO').parent( ".card-contratacion__packages" ).removeClass('active');
-                            }            
-                            if (this.props.packages[indexHover].name === 'HBO') {                             
-                                this.props.cardPositionPromo[0].style = `justify-content: flex-start !important;`;
-                                $('#contenedorHBO').parent( ".card-contratacion__packages" ).addClass('active');
-                                $('#contenedorFOX').parent( ".card-contratacion__packages" ).removeClass('active');
+                                $('#contenedorFOX').parent(".card-contratacion__packages").addClass('active');
+                                $('#contenedorHBO').parent(".card-contratacion__packages").removeClass('active');
                             }
-                        }else{
+                            if (this.props.packages[indexHover].name === 'HBO') {
+                                this.props.cardPositionPromo[0].style = `justify-content: flex-start !important;`;
+                                $('#contenedorHBO').parent(".card-contratacion__packages").addClass('active');
+                                $('#contenedorFOX').parent(".card-contratacion__packages").removeClass('active');
+                            }
+                        } else {
                             this.props.cardPositionPromo[0].style = `justify-content: center !important;`;
-                        }                      
+                        }
                     }
-                    
+
                     if (this.props.currentStep === 1) {
                         this.nextStep();
                     }
                     this.invoice();
                     $('.addon--content-close').trigger('click');
                 }
-                
+
                 console.groupEnd();
             });
-            
+
         } catch (error) {
             console.log('OCURRIO UN ERROR EN EL EVENTO PROMOCION PREMIUM CLICK:', error);
         }
@@ -1083,7 +1083,7 @@ export class Contratacion {
                 try {
                     let objetoParrila = referenciaClase.buscarObjetoParrilla();
                     objetoParrila = referenciaClase.ordenarObjeto(objetoParrila);
-                    $.each(objetoParrila, function(key, objetoParrila) {
+                    $.each(objetoParrila, function (key, objetoParrila) {
                         if (indexHover == key) {
                             $('.addon--content-barAdd__text').attr('data-id', objetoParrila.Id);
                             referenciaClase.props.section = 'parrilla'
@@ -1094,8 +1094,8 @@ export class Contratacion {
                 }
 
                 this.props.packCards = [...document.getElementsByClassName('card-contratacion__channel')];
-                this.props.cardPosition = [...document.getElementsByClassName('content-contratacion__addChannels')];                
-                
+                this.props.cardPosition = [...document.getElementsByClassName('content-contratacion__addChannels')];
+
                 this.props.windowW = window.innerWidth;
                 if (this.props.windowW < 769) {
                     if (target == this.props.packCards[0]) {
@@ -1114,7 +1114,7 @@ export class Contratacion {
                         this.props.packCards[2].classList.remove('active');
                         this.props.packCards[1].classList.add('active');
                     }
-                }else{
+                } else {
                     this.props.cardPosition[0].style = `justify-content: space-around !important;`;
                 }
 
@@ -1131,7 +1131,7 @@ export class Contratacion {
                     amount[indexHover].innerText = `Seleccionado`;
                     amount[indexHover].style.color = "#1a76d2";
                     this.props.options.pricePackage = this.props.options.pricePackage + this.props.options.television[indexHover].price;
-                    $('.addon--content-barAdd').attr('style', 'bottom:0;');
+                    //$('.addon--content-barAdd').attr('style', 'bottom:0;');
                 } else {
                     this.props.options.television[indexHover].add = false;
                     amount[indexHover].innerHTML = '';
@@ -1147,15 +1147,15 @@ export class Contratacion {
     }
 
     step_3() {
-        
+
         let referenciaClase = this;
 
         //this.props.listSetTopBox.unbind('click');
 
         this.props.listSetTopBox.addEventListener('click', (e) => {
-            
+
             let target = (e.target.parentElement.localName === 'li') ? e.target.parentNode : e.target;
-            if (e.target.nodeName === 'LI' || e.target.parentNode.nodeName === 'LI' ) {
+            if (e.target.nodeName === 'LI' || e.target.parentNode.nodeName === 'LI') {
 
                 let idEquipo = $(target).attr('data-id');
                 localStorage.setItem('TP_ID_EQUIPO', idEquipo);
@@ -1175,8 +1175,8 @@ export class Contratacion {
             if (e.target.classList.contains(classParent) || e.target.offsetParent.classList.contains(classParent)) {
                 var idCanalPremiumSeleccion = $(e.target).attr('data-id');
                 console.log('idCanalPremiumSeleccion=>', idCanalPremiumSeleccion);
-                
-                $('.addon--content-barAdd').attr('style', 'bottom:0;');
+
+                //$('.addon--content-barAdd').attr('style', 'bottom:0;');
                 $('.addon--content-barAdd__text').attr('data-id', idCanalPremiumSeleccion);
             }
             console.groupEnd();
@@ -1185,7 +1185,7 @@ export class Contratacion {
 
     actualizarInformacionResumen() {
         var referenciaClase = this;
-        
+
         try {
             var objetoDetallePaquete = referenciaClase.props.infoPaquete.detallePaquete.detalle;
             var cadenaTotal = objetoDetallePaquete.precioProntoPago;
@@ -1198,17 +1198,17 @@ export class Contratacion {
             $('#precioLista').html(objetoDetallePaquete.precioLista);
             $('#precioProntoPago1').html(objetoDetallePaquete.precioProntoPago);
             $('#precioProntoPago2').html(objetoDetallePaquete.precioProntoPago);
-            $('#totalDescuentoPorVida').html(" -"+ objetoDetallePaquete.descuento);
+            $('#totalDescuentoPorVida').html(" -" + objetoDetallePaquete.descuento);
             $('#totalMegasBase').html(objetoDetallePaquete.megas);
             $('#totalMegasSecundario').html(objetoDetallePaquete.megas);
             $('#informacionTelevision').html(objetoDetallePaquete.canales);
             $('#totalLineas').html(objetoDetallePaquete.telefono);
 
-            if(objetoDetallePaquete.tipo=="2P" || objetoDetallePaquete.tipo=="M2P"){
+            if (objetoDetallePaquete.tipo == "2P" || objetoDetallePaquete.tipo == "M2P") {
                 $('#mejorarTelevision').hide();
                 $('#contenedorParrilla').hide();
                 $('#seleccionCanalPremium').hide();
-            }else {
+            } else {
                 let megasPaquete = 0;
                 let objPaquete = referenciaClase.props.infoPaquete.detallePaquete.detalle;
                 let megasTexto = objPaquete.megas;
@@ -1216,7 +1216,7 @@ export class Contratacion {
                 let resultado = regex.exec(megasTexto);
                 megasPaquete = parseInt(resultado[0]);
 
-                if(megasPaquete < 150 ){
+                if (megasPaquete < 150) {
                     $('.main-summary-tv').show();
                     $('#seleccionPromocion').hide();
                     $('#seleccionCanalPremium').hide();
@@ -1239,7 +1239,7 @@ export class Contratacion {
         try {
             let jsonParrilla = referenciaClase.props.infoComplementos.television[1].adicional;
             jsonParrilla = referenciaClase.ordenarObjeto(jsonParrilla);
-            $.each(jsonParrilla, function(key, objetoParrila) {
+            $.each(jsonParrilla, function (key, objetoParrila) {
                 var objeto = {
                     name: objetoParrila.nombre,
                     label: objetoParrila.nombre,
@@ -1266,11 +1266,11 @@ export class Contratacion {
         let objetoTVAdicional;
 
         $.each(referenciaClase.props.infoComplementos.equipoAdicional, function (key, objetoAdicional) {
-            if(objetoAdicional.tipo == 'ADDON_WIFI'){
+            if (objetoAdicional.tipo == 'ADDON_WIFI') {
                 objetoWIfiExtender = objetoAdicional;
             }
 
-            if(objetoAdicional.tipo == 'ADDON_TV_ADCIONAL'){
+            if (objetoAdicional.tipo == 'ADDON_TV_ADCIONAL') {
                 objetoTVAdicional = objetoAdicional;
             }
         });
@@ -1291,18 +1291,18 @@ export class Contratacion {
                 img: '/assets/img/pages/contratacion/extender@2x.png',
                 description: 'Disfruta tu conexi\u00F3n en cada espacio de tu hogar',
                 idProducto: objetoEquipo.Id,
-                tipo : 'WIFI'
+                tipo: 'WIFI'
             };
             arregloEquipo.push(objeto);
-            
+
         } catch (e) {
             referenciaClase.props.options.equipos = [];
         }
 
-        if(arregloEquipo.length > 0 ){
+        if (arregloEquipo.length > 0) {
             referenciaClase.props.options.equipos = arregloEquipo;
         }
-        
+
         try {
             let objetoAdicional = objetoTVAdicional;
             let precio = parseFloat(objetoAdicional.precio);
@@ -1319,10 +1319,10 @@ export class Contratacion {
                 img: 'https://www.totalplay.com.mx/newsletter/imagenes-nuevo-cotizador/adicionales-tv-adicional.png',
                 description: 'Disfruta de los mejores canales donde mas desees',
                 idProducto: objetoAdicional.Id,
-                tipo : 'TV'
+                tipo: 'TV'
             };
             arregloEquipo.push(objeto);
-            
+
         } catch (e) {
             referenciaClase.props.options.equipos = [];
         }
@@ -1334,7 +1334,7 @@ export class Contratacion {
 
     eventoEliminarCanalPremium() {
         let referenciaClase = this;
-        $("body").on('click', '.invoice-data-block-content_apps__item--delete', function() {
+        $("body").on('click', '.invoice-data-block-content_apps__item--delete', function () {
             var idEliminar = $(this).attr('data-id');
 
             referenciaClase.eliminarCanalPremiumSeleccion(idEliminar);
@@ -1465,17 +1465,17 @@ export class Contratacion {
                     this.agregarParrillaHTML(idProducto);
                     break;
                 case 'apps':
-                    this.agregarCanalPremiun(idProducto);
+                    //this.agregarCanalPremiun(idProducto);
                     break;
                 case 'devices':
-                    this.agregarEquipoHTML(idProducto);
+                    //this.agregarEquipoHTML(idProducto);
                     break;
-                default:{
-                        this.endAnimation();
-                    }
+                default: {
+                    this.endAnimation();
+                }
             }
             this.props.confirmAddons = true;
-            this.props.barAdd.removeAttribute('style');
+            //this.props.barAdd.removeAttribute('style');
             console.groupEnd();
         });
 
@@ -1485,21 +1485,21 @@ export class Contratacion {
         })
 
         document.querySelector('#botonAgregarEquipo').addEventListener('click', (e) => {
-            if(this.props.options.equipos.length>0){
+            if (this.props.options.equipos.length > 0) {
                 this.openModalAddon(3);
             }
         })
 
         document.querySelector('.content-contratacion__shopping-cart-top--button-buy').addEventListener('click', (e) => {
             var tpp = $('#precioProntoPago2').html().trim();
-            if(tpp !== null){
+            if (tpp !== null) {
                 tpp = tpp.split("$");
-                if(parseInt(tpp[1]) > 0){
+                if (parseInt(tpp[1]) > 0) {
                     this.endContract();
-                }else{
+                } else {
                     location.reload();
                 }
-            }else{
+            } else {
                 location.reload();
             }
             //this.endContract();
@@ -1511,7 +1511,7 @@ export class Contratacion {
         });
     }
 
-    agregarParrillaHTML(idProducto){
+    agregarParrillaHTML(idProducto) {
         console.group('agregarParrillaHTML()');
         let referenciaClase = this;
 
@@ -1523,26 +1523,26 @@ export class Contratacion {
             }
 
             let objetoNombreHTML = {
-                'TV BASICA':' TV B&aacute;sica',
-                'TV AVANZADA':'TV Avanzada',
-                'TV PREMIUM':'TV Premium',
+                'TV BASICA': ' TV B&aacute;sica',
+                'TV AVANZADA': 'TV Avanzada',
+                'TV PREMIUM': 'TV Premium',
             }
 
             let objetoParrila = referenciaClase.buscarObjetoParrilla();
             console.log('ACTUALIZANDO PARRILLA');
             $.each(objetoParrila, function (key, objParrila) {
-                if(objParrila.Id == idProducto){
+                if (objParrila.Id == idProducto) {
                     referenciaClase.agregarParrilaSeleccionada(objParrila);
 
                     $('#eliminarParrilla').attr('data-id', objParrila.Id);
-                    $('#parrillaNombre').html(objetoNombreHTML[objParrila.nombre] + ' $ '+ parseFloat(objParrila.precio).toFixed(0));
+                    $('#parrillaNombre').html(objetoNombreHTML[objParrila.nombre] + ' $ ' + parseFloat(objParrila.precio).toFixed(0));
                     $('#parrillaDetalle').html(objetoDescripcion[objParrila.nombre]);
                     $('#contenedorParrilla').show();
                 }
             });
             //referenciaClase.actualizarPrecioTotal();
             this.endAnimation();
-        }catch(e){
+        } catch (e) {
             console.log('OCURRIO UN ERROR EN LA FUNCION agregarParrillaHTML():', e);
         }
         console.groupEnd();
@@ -1564,21 +1564,21 @@ export class Contratacion {
 
     actualizaSeccionCanalesPremiun(idProducto) {
         console.group('FUNCION actualizaSeccionCanalesPremiun()');
-        
+
         let referenciaClase = this;
 
         let arregloCanales = referenciaClase.buscarCanalesPremium();
         let htmlCanales = '';
-        $.each(arregloCanales, function(key, objetoCanal) {
-            if(objetoCanal.Id == idProducto){
+        $.each(arregloCanales, function (key, objetoCanal) {
+            if (objetoCanal.Id == idProducto) {
                 let precio = objetoCanal.precio.toFixed(2);
-                htmlCanales = 
-                '<li class="main-summary-tv__invoice-data-block-content_apps__item" id="CanalPremium' + objetoCanal.Id + '">' + 
-                    '<div class="invoice-data-block-content_apps__item--info">' + 
-                        '<span class="content_apps__item--info--title">' + objetoCanal.nombre + ' $' + precio + '</span>' + 
-                        '<span class="content_apps__item--info--description">Adicional a tu paquete</span>' + 
-                    '</div>' + '<span class="invoice-data-block-content_apps__item--delete" data-id="' + objetoCanal.Id + '">Quitar</span>' + 
-                '</li>';
+                htmlCanales =
+                    '<li class="main-summary-tv__invoice-data-block-content_apps__item" id="CanalPremium' + objetoCanal.Id + '">' +
+                    '<div class="invoice-data-block-content_apps__item--info">' +
+                    '<span class="content_apps__item--info--title">' + objetoCanal.nombre + ' $' + precio + '</span>' +
+                    '<span class="content_apps__item--info--description">Adicional a tu paquete</span>' +
+                    '</div>' + '<span class="invoice-data-block-content_apps__item--delete" data-id="' + objetoCanal.Id + '">Quitar</span>' +
+                    '</li>';
 
                 referenciaClase.agregarCanalPremiumSeleccion(objetoCanal);
             }
@@ -1595,12 +1595,12 @@ export class Contratacion {
             }
         });
         this.props.contentDevicesInvoice = document.querySelector('.main-summary-device__invoice-data-block-content_devices');
-        
+
         var items = '';
         console.log('this.props.setopboxSelected=>', this.props.setopboxSelected);
         //let totalMemoria = 1;
         this.props.setopboxSelected.forEach((item, index) => {
-            if(parseInt(item.cantidad) > 0){
+            if (parseInt(item.cantidad) > 0) {
                 let precioTotal = parseInt(item.cantidad) * item.price;
                 precioTotal = precioTotal.toFixed(0);
                 items += `
@@ -1632,12 +1632,12 @@ export class Contratacion {
         ////console.log('MODAL-CONTRATA', this.props.modalContrata);
         //const modalContract = new ModalContrata();
 
-        if(this.props.modalContrata == null){
+        if (this.props.modalContrata == null) {
             this.props.modalContrata = new ModalContrata();
             this.props.modalContrata.mostrarVentana();
 
             ////console.log('modalContract', this.props.modalContrata.props.modalContract);
-        }else{
+        } else {
             //console.log('EJECUTANDO MOSTRAR VENTANA');
             ////console.log('modalContract', this.props.modalContrata.props.modalContract);
             this.props.modalContrata.mostrarVentana();
@@ -1645,7 +1645,7 @@ export class Contratacion {
     }
 
     openModalAddon(_index) {
-        console.group('FUNCION openModalAddon('+_index+')');
+        console.group('FUNCION openModalAddon(' + _index + ')');
         this.props.containerEditAddon.style.cssText = `display: flex`;
         this.props.containerEditAddon.id = `contenedorAdicionales`;
 
@@ -1660,16 +1660,28 @@ export class Contratacion {
 
         switch (_index) {
             case 0:
-                this.addChannels();
+                //this.addChannels();
+                $("#channelsSelection").show();
+                $("#complementsSelection").hide();
+                $("#boxesSelection").hide();
                 break;
             case 1:
-                this.addPromotion();
+                //this.addPromotion();
+                $("#channelsSelection").hide();
+                $("#complementsSelection").show();
+                $("#boxesSelection").hide();
                 break;
             case 2:
                 this.addApps();
+                $("#channelsSelection").hide();
+                $("#complementsSelection").hide();
+                $("#boxesSelection").hide();
                 break;
             case 3:
-                this.addDevices();
+                //this.addDevices();
+                $("#channelsSelection").hide();
+                $("#complementsSelection").hide();
+                $("#boxesSelection").show();
                 break;
         }
         console.groupEnd();
@@ -1707,7 +1719,7 @@ export class Contratacion {
         this.props.options.television.forEach(item => {
             let isAdd = (item.add) ? 'Agregado' : item.labelPrice;
             agregadoC += item.add;
-            if(item.label == 'TV BASICA'){
+            if (item.label == 'TV BASICA') {
                 item.label = 'TV BÁSICA';
             }
             let color = (item.classAdd === 'include-pack') ? `color: rgb(26, 118, 210); background:url(/assets/img/iconos/check_circle_24px@4x.png) no-repeat;
@@ -1728,37 +1740,37 @@ export class Contratacion {
         btnMoreChannels.classList.add('card-contratacion__moreChannels');
         btnMoreChannels.id = 'openChannels';
         btnMoreChannels.textContent = 'Ver canales por paquete';
-        
-        this.props.dinamicContent.appendChild(contentAddChannels);
-        this.props.dinamicContent.id = 'addon--content-dinamic'; 
+
+        //this.props.dinamicContent.appendChild(contentAddChannels);
+        this.props.dinamicContent.id = 'addon--content-dinamic';
         //this.props.dinamicContent.appendChild(btnMoreChannels);
 
         //const modalChannelsContrata  = new Canales('modalChannels', 'openChannels', false);
         //const modalChannelsContrata  = new Canales('modalChannels', 'openChannels', true);
         //console.log('agregadoC ? ', agregadoC);
         this.props.listAddchannels = document.querySelector('.content-contratacion__addChannels');
-        this.props.itemschannels = [...document.querySelectorAll('.card-contratacion__channel')];        
+        this.props.itemschannels = [...document.querySelectorAll('.card-contratacion__channel')];
         this.props.windowW = window.innerWidth;
         if (this.props.windowW < 769) {
-            if(this.props.itemschannels[0].innerHTML.includes('BASICA')){
+            if (this.props.itemschannels[0].innerHTML.includes('BASICA')) {
                 this.props.listAddchannels.classList.add('cardStart');
                 this.props.itemschannels[0].classList.add('active');
                 this.props.itemschannels[1].classList.remove('active');
                 this.props.itemschannels[2].classList.remove('active');
             }
-            else if(this.props.itemschannels[1].innerHTML.includes('AVANZADA')){
-                this.props.listAddchannels.classList.add('cardCenter');            
+            else if (this.props.itemschannels[1].innerHTML.includes('AVANZADA')) {
+                this.props.listAddchannels.classList.add('cardCenter');
                 this.props.itemschannels[1].classList.add('active');
                 this.props.itemschannels[0].classList.remove('active');
                 this.props.itemschannels[2].classList.remove('active');
             }
-            else if(this.props.itemschannels[2].innerHTML.includes('PREMIUM')){
+            else if (this.props.itemschannels[2].innerHTML.includes('PREMIUM')) {
                 this.props.listAddchannels.classList.add('cardEnd');
                 this.props.itemschannels[2].classList.add('active');
                 this.props.itemschannels[0].classList.remove('active');
                 this.props.itemschannels[1].classList.remove('active');
             }
-        }else{
+        } else {
             this.props.listAddchannels.classList.add('cardGrande');
         }
 
@@ -1788,7 +1800,7 @@ export class Contratacion {
         this.props.contentItemsApps.classList.add('content-contratacion__packages__addons');
         this.props.contentItemsApps.id = 'contentContListItemsAddons';
         this.props.contentEditAddon.style.height = '562px';
-        
+
         try {
             let promocionPremiumSeleccion = referenciaClase.props.infoPaquete.promocionPremium.tipo;
             // PROMO_HBO | PROMO_FOX
@@ -1798,21 +1810,21 @@ export class Contratacion {
             let poster = '';
             let iconoCanal = '';
             let vistaPrecio = 'block';
-	        let vistaEtiqueta = 'none';
-	        let banderaSeleccion = false;
-                        
+            let vistaEtiqueta = 'none';
+            let banderaSeleccion = false;
+
             let listaCanales = referenciaClase.buscarCanalesPremium();
 
-            $.each(listaCanales, function(key, objetoCanal) {
-                if(promocionPremiumSeleccion == 'PROMO_HBO' && objetoCanal.nombre.toLocaleLowerCase().includes("fox")){
+            $.each(listaCanales, function (key, objetoCanal) {
+                if (promocionPremiumSeleccion == 'PROMO_HBO' && objetoCanal.nombre.toLocaleLowerCase().includes("fox")) {
                     objCanal = objetoCanal;
                     poster = '/assets/img/pages/contratacion/Canales_2.png';
-	                iconoCanal = '/assets/img/pages/contratacion/LogoFox.png';
+                    iconoCanal = '/assets/img/pages/contratacion/LogoFox.png';
                 }
-                if(promocionPremiumSeleccion == 'PROMO_FOX' && objetoCanal.nombre.toLocaleLowerCase().includes("hbo")){
+                if (promocionPremiumSeleccion == 'PROMO_FOX' && objetoCanal.nombre.toLocaleLowerCase().includes("hbo")) {
                     objCanal = objetoCanal;
                     poster = '/assets/img/pages/contratacion/Canales_1.png';
-	                iconoCanal = '/assets/img/pages/contratacion/hbo-holding.png'
+                    iconoCanal = '/assets/img/pages/contratacion/hbo-holding.png'
                 }
             });
 
@@ -1837,8 +1849,8 @@ export class Contratacion {
                                 <p class="add-addon" data-id="${objCanal.Id}" style="display: ${vistaEtiqueta};">Agregado <span class="icon-add"></span> </p>
                             </div>
                         </div>
-                    </li>`;	
-            
+                    </li>`;
+
         } catch (e) {
             console.log('OCURRIO ALGO INESPERADO EN LA FUNCION [addApps]', e);
         }
@@ -1846,9 +1858,9 @@ export class Contratacion {
         this.props.contentItemsApps.innerHTML = items;
         let tipoPaquete = referenciaClase.props.infoPaquete.detallePaquete.tipoOferta;
 
-        if(tipoPaquete == '3P' || tipoPaquete == 'M3P'){
+        if (tipoPaquete == '3P' || tipoPaquete == 'M3P') {
             this.props.dinamicContent.appendChild(this.props.contentItemsApps);
-        }else{
+        } else {
             var texto = '';
             texto += `
             <li class="card-contratacion__packages__addons">
@@ -1858,7 +1870,7 @@ export class Contratacion {
               El paquete no cuenta con canales adicionales
             </li>`;
             this.props.contentItemsApps.innerHTML = texto;
-            this.props.dinamicContent.appendChild(this.props.contentItemsApps );
+            this.props.dinamicContent.appendChild(this.props.contentItemsApps);
         }
 
         this.props.listItemsPackagesAddons = document.getElementById('contentContListItemsAddons');
@@ -1867,15 +1879,15 @@ export class Contratacion {
         console.groupEnd();
     }
 
-    buscarCanalesPremium(){
+    buscarCanalesPremium() {
         console.group('FUNCION buscarCanalPremium');
         let referenciaClase = this;
         let arregloTelevision = referenciaClase.props.infoComplementos.television;
         let arregloTelevisionRespuesta;
 
-        $.each(arregloTelevision, function(key, objeto) {
-            if(objeto.Agrupacion == 'Canales'){
-                arregloTelevisionRespuesta= objeto.adicional;
+        $.each(arregloTelevision, function (key, objeto) {
+            if (objeto.Agrupacion == 'Canales') {
+                arregloTelevisionRespuesta = objeto.adicional;
             }
         });
         console.log('arregloTelevisionRespuesta=>', arregloTelevisionRespuesta);
@@ -1927,7 +1939,7 @@ export class Contratacion {
                 <li id="addSetopBox" max-data="${this.props.options.equipos[_index].amount}"></li>
             </ul>
             <button class="btn-addst" type="button">Aceptar</button>`;
-        
+
         this.props.itemsListSetTopBox[_index].append(document.createElement('div'));
         this.props.el = this.props.itemsListSetTopBox[_index].lastChild;
         this.props.el.classList.add('selected-settopbox');
@@ -1976,9 +1988,9 @@ export class Contratacion {
 
             if (parseInt(cantidadEquipo) > 0) {
                 amount[_index].innerText = '';
-                amount[_index].innerText = `${cantidadEquipo} Agregado${(this.props.options.equipos[_index].amount > 1)?'s':''}`;
+                amount[_index].innerText = `${cantidadEquipo} Agregado${(this.props.options.equipos[_index].amount > 1) ? 's' : ''}`;
                 amount[_index].style.color = "#1a76d2";
-                
+
                 this.props.setopboxSelected[_index].id = localStorage.getItem('TP_ID_EQUIPO');
                 this.props.setopboxSelected[_index].cantidad = localStorage.getItem('TP_CANTIDAD_EQUIPO');
                 this.props.setopboxSelected[_index].show = true;
@@ -2004,12 +2016,12 @@ export class Contratacion {
             console.log('this.props.setopboxSelected=>', this.props.setopboxSelected);
 
             $.each(this.props.setopboxSelected, function (key, objEquipo) {
-                if(parseInt(objEquipo.cantidad) > 0){
+                if (parseInt(objEquipo.cantidad) > 0) {
                     var objAdicional = {
-                        id : objEquipo.id,
-                        precio : objEquipo.price,
-                        cantidad : parseInt(objEquipo.cantidad) ,
-                        tipo : 'EQUIPO',
+                        id: objEquipo.id,
+                        precio: objEquipo.price,
+                        cantidad: parseInt(objEquipo.cantidad),
+                        tipo: 'EQUIPO',
                         nombre: objEquipo.name,
                         descripcion: 'Adicional a tu paquete'
                     }
@@ -2034,7 +2046,7 @@ export class Contratacion {
                 this.props.options.amountDevicesTemp = amountDevices;
                 this.props.options.pricePackage = this.props.options.pricePackage + amountDevices;
             }
-            
+
             $('.addon--content-barAdd__text').attr('data-id', idProducto);
             console.groupEnd();
         });
@@ -2052,7 +2064,7 @@ export class Contratacion {
     }
 
     invoice() {
-        
+
         $('#txtPromoSeleccionada').html('Elegiste:' + this.props.options.namePackage.name);
     }
 
@@ -2080,18 +2092,18 @@ export class Contratacion {
         let referenciaClase = this;
         if (window.innerWidth > 500 && window.innerWidth < 768) {
             try {
-                this.props.containerName.innerText = this.props.options.steps[_index].name;    
+                this.props.containerName.innerText = this.props.options.steps[_index].name;
             } catch (error) {
-                console.log("OCURRIO ALGO INESPERADO:", error);   
+                console.log("OCURRIO ALGO INESPERADO:", error);
             }
         }
 
-        var cuanto=this.props.itemsNamesSteps.length;
+        var cuanto = this.props.itemsNamesSteps.length;
         if (window.innerWidth > 260 && window.innerWidth < 768) {
-            for(var a=0;a<cuanto;a++){
-                this.props.itemsNamesSteps[a].style.display="none";
+            for (var a = 0; a < cuanto; a++) {
+                this.props.itemsNamesSteps[a].style.display = "none";
             }
-            this.props.itemsNamesSteps[_index].style.display="flex";
+            this.props.itemsNamesSteps[_index].style.display = "flex";
         }
 
         this.props.itemsNamesSteps.map(item => item.classList.remove('active'));
@@ -2114,14 +2126,14 @@ export class Contratacion {
         }
 
         let objeto = referenciaClase.props.refCarrito.validarContratacionPromo();
-        if(objeto != null){
-            if(objeto.hasOwnProperty('tipoPromo')){
+        if (objeto != null) {
+            if (objeto.hasOwnProperty('tipoPromo')) {
                 let promoSeleccion = objeto.tipoPromo;
-                setTimeout(function() {
-                    if(promoSeleccion == 'PROMO_FOX'){
+                setTimeout(function () {
+                    if (promoSeleccion == 'PROMO_FOX') {
                         //$('#contenedorFOX').trigger('click');
                     }
-                    if(promoSeleccion == 'PROMO_HBO'){
+                    if (promoSeleccion == 'PROMO_HBO') {
                         //$('#contenedorHBO').trigger('click');
                     }
                 }, 1200);
@@ -2146,21 +2158,21 @@ export class Contratacion {
 
     eventoAbrirVentanaCupon() {
         let referenciaClase = this;
-        $("body").on('click', '.shopingCartCuponT', function() {
+        $("body").on('click', '.shopingCartCuponT', function () {
             referenciaClase.abrirVentanaCupon()
         });
     }
 
     eventoCerrarVentanaCupon() {
         let referenciaClase = this;
-        $("body").on('click', '#btncloseModalC', function() {
+        $("body").on('click', '#btncloseModalC', function () {
             referenciaClase.cerrarVentanaCupon();
         });
     }
 
     eventoValidarCupon() {
         let referenciaClase = this;
-        $("body").on('click', '#botonValidarCupon', function() {
+        $("body").on('click', '#botonValidarCupon', function () {
             if ($('#cuponNum').val().trim() != '') {
                 $('#mensajeCuponInvalido').hide();
                 $('#idbotonAplicarCupon').hide();
@@ -2175,14 +2187,14 @@ export class Contratacion {
 
     validarCupon(idCupon) {
         let referenciaClase = this;
-        
+
         $.ajax({
             url: '/assets/media/infoCupon.json',
-            
+
             dataType: "json",
-            
-        }).done(function(respuesta) {
-            
+
+        }).done(function (respuesta) {
+
             if (respuesta.codigo == 0) {
                 $('#cargadorCupon').hide();
                 $('#idbotonAplicarCupon').show();
@@ -2196,7 +2208,7 @@ export class Contratacion {
                 $('#cargadorCupon').hide();
                 $('#mensajeCuponInvalido').show();
             }
-        }).fail(function(jqXHR, textStatus) {
+        }).fail(function (jqXHR, textStatus) {
             $('#cargadorCupon').hide();
             //console.log('OCURRIO ALGO INESPERADO EN EL SERVICIO DE VALIDACION DE CUPON');
             //console.log(jqXHR);
@@ -2205,7 +2217,7 @@ export class Contratacion {
 
     eventoAplicarCupon() {
         let referenciaClase = this;
-        $("body").on('click', '#idbotonAplicarCupon', function() {
+        $("body").on('click', '#idbotonAplicarCupon', function () {
             $('#shopingCartCuponT').html($('#cuponNum').val());
             $('.shopingCartCuponT').html($('#cuponNum').val());
             $('#totalDescuento').html('$ - ' + referenciaClase.props.importeDescuentoCupon);
@@ -2224,7 +2236,7 @@ export class Contratacion {
 
     ordenarObjeto(objetoInicial) {
         var objetoOrdenado = objetoInicial.slice(0);
-        objetoOrdenado.sort(function(a, b) {
+        objetoOrdenado.sort(function (a, b) {
             return a.precio - b.precio; //MENOR A MAYOR
             //return b.precioLista - a.precioLista; //MAYOR A MENOR
         });
@@ -2241,7 +2253,7 @@ export class Contratacion {
             }),
             dataType: "json",
             type: 'POST'
-        }).done(function(respuesta) {
+        }).done(function (respuesta) {
             localStorage.setItem("DEBUG.SALESFORCE.CP", JSON.stringify(respuesta));
             if (respuesta.datos.informacion.ArrColonias != undefined) {
                 var arrayColoniaServicio = respuesta.datos.informacion.ArrColonias;
@@ -2252,7 +2264,7 @@ export class Contratacion {
                     var clusterStorage = localStorage.getItem('TP_OF_STR_CLUSTER_FACTIBLE');
                     var clusterEncontrado = false;
                     var ojbCP;
-                    $.each(respuesta.datos.informacion.ArrColonias, function(key, objCodigoPostal) {
+                    $.each(respuesta.datos.informacion.ArrColonias, function (key, objCodigoPostal) {
                         if (objCodigoPostal.Cluster == clusterStorage) {
                             clusterEncontrado = true;
                             localStorage.setItem('TP_OF_STR_ID_CP', objCodigoPostal['Id']);
@@ -2271,7 +2283,7 @@ export class Contratacion {
             } else {
                 //DEFINIR QUE HACER 
             }
-        }).fail(function(jqXHR, textStatus) {
+        }).fail(function (jqXHR, textStatus) {
             //console.log('ER', 'OCURRIO UN ERROR EN EL API [obtener-info-cp-venta]', jqXHR);
         });
     }
@@ -2286,8 +2298,8 @@ export class Contratacion {
             arrayCanalesPremium = JSON.parse(strCanalesPremium);
             arrayCanalesSeleccionados = JSON.parse(strCanalesSeleccionados);
             var sumaTotalCanales = 0;
-            $.each(arrayCanalesPremium, function(key, objCanales) {
-                $.each(arrayCanalesSeleccionados, function(index, idCanales) {
+            $.each(arrayCanalesPremium, function (key, objCanales) {
+                $.each(arrayCanalesSeleccionados, function (index, idCanales) {
                     if (objCanales.Id == idCanales) {
                         //console.log('SUMANDO=>' + objCanales.precio);
                         var precio = parseFloat(objCanales.precio).toFixed(2);
@@ -2303,16 +2315,16 @@ export class Contratacion {
     }
 
     setKeyupInput() {
-        $('#txtCalle').on("keyup", function() {
+        $('#txtCalle').on("keyup", function () {
             $("#errortxtCalle").css("display", "none");
         });
-        $('#txtNoExterior').on("keyup", function() {
+        $('#txtNoExterior').on("keyup", function () {
             $("#errorNoExterior").css("display", "none");
         });
-        $('#txtCodigoPostal').on("keyup", function() {
+        $('#txtCodigoPostal').on("keyup", function () {
             $("#errorCodigoPostal").css("display", "none");
         });
-        $('#headerCorreo2').on("keyup", function() {
+        $('#headerCorreo2').on("keyup", function () {
             $("#errorCorreo2").css("display", "none");
         });
     }
@@ -2339,9 +2351,9 @@ export class Contratacion {
 
         let paqueteTipo = referenciaClase.props.infoPaquete.detallePaquete.tipoOferta;
         let costoInstalacion = 0; //TEMA PENDIENTE DESDE EL SERVICIO
-        if(paqueteTipo == '3P' || paqueteTipo == 'M3P'){
+        if (paqueteTipo == '3P' || paqueteTipo == 'M3P') {
             costoInstalacion = 450;
-        }else{
+        } else {
             costoInstalacion = 350;
         }
 
@@ -2349,44 +2361,44 @@ export class Contratacion {
         try {
             let objPaquete = JSON.parse(cadenaPaquete);
 
-            $.each(objPaquete.adicionales, function(key, objetoAdicionales) {
+            $.each(objPaquete.adicionales, function (key, objetoAdicionales) {
 
-                if(objetoAdicionales != null){
-                    if(objetoAdicionales.parrilla != undefined){
-                        if(objetoAdicionales.parrilla.precio != undefined){
-                            console.log('SUMANDO[PARRILLA]',objetoAdicionales.parrilla.precio);
+                if (objetoAdicionales != null) {
+                    if (objetoAdicionales.parrilla != undefined) {
+                        if (objetoAdicionales.parrilla.precio != undefined) {
+                            console.log('SUMANDO[PARRILLA]', objetoAdicionales.parrilla.precio);
                             sumaAdicionales += objetoAdicionales.parrilla.precio;
                         }
                     }
-                
-                    if(objetoAdicionales.canales != undefined){
-                        if(objetoAdicionales.canales.precio != undefined){
-                            console.log('SUMANDO[CANALES]',objetoAdicionales.canales.precio);
+
+                    if (objetoAdicionales.canales != undefined) {
+                        if (objetoAdicionales.canales.precio != undefined) {
+                            console.log('SUMANDO[CANALES]', objetoAdicionales.canales.precio);
                             sumaAdicionales += objetoAdicionales.canales.precio;
                         }
                     }
 
-                    if(objetoAdicionales.equipo != undefined){
-                        $.each(objetoAdicionales.equipo, function(i, objEquipo) {
+                    if (objetoAdicionales.equipo != undefined) {
+                        $.each(objetoAdicionales.equipo, function (i, objEquipo) {
                             console.log('objEquipo=>', objEquipo);
-                            if(parseInt(objEquipo.cantidad) > 0){
-                                console.log('SUMANDO[EQUIPOS]',objEquipo.price);
+                            if (parseInt(objEquipo.cantidad) > 0) {
+                                console.log('SUMANDO[EQUIPOS]', objEquipo.price);
                                 sumaAdicionales += objEquipo.price * parseInt(objEquipo.cantidad);
                             }
                         });
                     }
 
-                    if(objetoAdicionales.telefonia != undefined){
-                        if(objetoAdicionales.telefonia.precio != undefined){
-                            console.log('SUMANDO[TELEFONIA]',objetoAdicionales.telefonia.precio);
+                    if (objetoAdicionales.telefonia != undefined) {
+                        if (objetoAdicionales.telefonia.precio != undefined) {
+                            console.log('SUMANDO[TELEFONIA]', objetoAdicionales.telefonia.precio);
                             sumaAdicionales += objetoAdicionales.telefonia.precio;
                         }
                     }
                 }
             });
 
-            if(objPaquete.infoCupon != undefined){
-                if(objPaquete.infoCupon.descuento != undefined){
+            if (objPaquete.infoCupon != undefined) {
+                if (objPaquete.infoCupon.descuento != undefined) {
                     console.log('CUPON AGREGADO=>', objPaquete.infoCupon.descuento);
                     totalCupon = objPaquete.infoCupon.descuento;
                 }
@@ -2394,7 +2406,7 @@ export class Contratacion {
         } catch (error) {
             console.log('ERROR EN LA FUNCION ACTUALIZAR PRECIO:', error);
         }
-        
+
         console.log('totalProntPago=>', totalProntPago);
         console.log('sumaAdicionales=>', sumaAdicionales);
         console.log('totalCupon=>', totalCupon);
@@ -2403,7 +2415,7 @@ export class Contratacion {
 
         let total = (totalProntPago + sumaAdicionales) - totalCupon;
         totalInstalacion = total + costoInstalacion;
-        
+
         $('#totalAdicionales').html('$ ' + sumaAdicionales.toFixed(0));
         $('#precioProntoPago2').html('$ ' + total.toFixed(0));
         $('.toolPrecioPP').html('$ ' + total.toFixed(0));
@@ -2415,7 +2427,7 @@ export class Contratacion {
         console.groupEnd();
     }
 
-    revisarExistencia(){
+    revisarExistencia() {
         //let referenciaClase = this;
         let strAdicionalesMemoria = localStorage.getItem('TP_ADICIONALES');
         let htmlEquipos = '';
@@ -2423,26 +2435,26 @@ export class Contratacion {
         try {
             let arregloAdicionalMemoria = JSON.parse(strAdicionalesMemoria);
             $.each(arregloAdicionalMemoria, function (key, objAdicionalMemoria) {
-                if(objAdicionalMemoria.tipo == 'PARRILLA'){
+                if (objAdicionalMemoria.tipo == 'PARRILLA') {
                     $('#eliminarParrilla').attr('data-id', objAdicionalMemoria.id);
-                    $('#parrillaNombre').html(objAdicionalMemoria.nombre + ' $ '+ parseFloat(objAdicionalMemoria.precio).toFixed(0));
+                    $('#parrillaNombre').html(objAdicionalMemoria.nombre + ' $ ' + parseFloat(objAdicionalMemoria.precio).toFixed(0));
                     $('#parrillaDetalle').html(objAdicionalMemoria.descripcion);
                     $('#contenedorParrilla').show();
                 }
 
-                if(objAdicionalMemoria.tipo == 'EQUIPO' && objAdicionalMemoria.cantidad > 0){
+                if (objAdicionalMemoria.tipo == 'EQUIPO' && objAdicionalMemoria.cantidad > 0) {
                     //console.log('AGREGANDO:', objAdicionalMemoria.nombre);
-                    htmlEquipos += '<li class="main-summary-device__invoice-data-block-content_devices__item">'+
-                        '<div class="invoice-data-block-content_apps__devices--info">'+
-                            '<span class="content_apps__item--info--title">'+objAdicionalMemoria.nombre+' $ '+parseFloat(objAdicionalMemoria.precio).toFixed(0)+'</span>'+
-                            '<span class="content_apps__item--info--description">Adicional a tu paquete</span>'+
-                        '</div>'+
-                        '<div class="invoice-data-block-content_devices__item--amount">'+
-                            //'<ul class="invoice-data-block-content_devices__item--addNew combo-device-0">'+
-                                objAdicionalMemoria.cantidad+
-                            //'</ul>'+
-                        '</div>'+
-                    '</li>';
+                    htmlEquipos += '<li class="main-summary-device__invoice-data-block-content_devices__item">' +
+                        '<div class="invoice-data-block-content_apps__devices--info">' +
+                        '<span class="content_apps__item--info--title">' + objAdicionalMemoria.nombre + ' $ ' + parseFloat(objAdicionalMemoria.precio).toFixed(0) + '</span>' +
+                        '<span class="content_apps__item--info--description">Adicional a tu paquete</span>' +
+                        '</div>' +
+                        '<div class="invoice-data-block-content_devices__item--amount">' +
+                        //'<ul class="invoice-data-block-content_devices__item--addNew combo-device-0">'+
+                        objAdicionalMemoria.cantidad +
+                        //'</ul>'+
+                        '</div>' +
+                        '</li>';
                 }
             });
 
@@ -2454,8 +2466,8 @@ export class Contratacion {
 
     eventoModificarLineaAdicional() {
         let referenciaClase = this;
-        
-        $("body").on('click', '#botonAgregarLinea', function() {
+
+        $("body").on('click', '#botonAgregarLinea', function () {
             console.group('EVENTO botonAgregarLinea');
 
             let cadenaLinea = localStorage.getItem('TP_STR_COMPLEMENTOS');
@@ -2483,27 +2495,27 @@ export class Contratacion {
             console.groupEnd();
         });
 
-        $("body").on('click', '#eliminarLineaAdicional', function() {
+        $("body").on('click', '#eliminarLineaAdicional', function () {
             console.group('EVENTO eliminarLineaAdicional');
             referenciaClase.eliminarLineaAdicional();
             console.groupEnd();
         });
     }
 
-    eventoQuitarParrilla(){
+    eventoQuitarParrilla() {
         let referenciaClase = this;
 
-        $("body").on('click', '#eliminarParrilla', function() {
+        $("body").on('click', '#eliminarParrilla', function () {
             console.group('EVENTO eliminarParrilla');
             referenciaClase.eliminarParrilaSeleccionada();
             console.groupEnd();
         });
     }
 
-    eventoQuitarEquipo(){
+    eventoQuitarEquipo() {
         let referenciaClase = this;
 
-        $("body").on('click', '.eliminarEquipo', function() {
+        $("body").on('click', '.eliminarEquipo', function () {
             console.group('EVENTO eliminarEquipo');
             let idEliminar = $(this).attr('data-id');
             referenciaClase.eliminarEquipoSeleccionado(idEliminar);
@@ -2511,12 +2523,12 @@ export class Contratacion {
         });
     }
 
-    eventoBuscarCP(){
+    eventoBuscarCP() {
         let referenciaClase = this;
 
-        $('#txtCodigoPostal').on("keyup", function() {
+        $('#txtCodigoPostal').on("keyup", function () {
             var codigoPostal = $('#txtCodigoPostal').val();
-            if(codigoPostal.length == 5){
+            if (codigoPostal.length == 5) {
                 $('#txtCiudad').val('');
                 $("#txtCalle").val('');
                 referenciaClase.buscarCiudadCP(codigoPostal);
@@ -2524,22 +2536,22 @@ export class Contratacion {
         });
     }
 
-    buscarCiudadCP(codigoPostal){
+    buscarCiudadCP(codigoPostal) {
         $('#labelBusqueda').html('Buscando...<i class="fas fa-circle-notch fa-spin"></i>');
-        
+
         $.ajax({
             url: '/assets/media/infoCiudad.json',
-            
+
             dataType: "json",
-            
-        }).done(function(respuesta) {
+
+        }).done(function (respuesta) {
             //console.log(respuesta);
             try {
                 $.each(respuesta.datos.informacion.ArrColonias, function (key, infoColonias) {
-                    if(infoColonias.DelegacionMunicipio != null && infoColonias.DelegacionMunicipio != ''){
+                    if (infoColonias.DelegacionMunicipio != null && infoColonias.DelegacionMunicipio != '') {
                         let nombreCiudad = infoColonias.DelegacionMunicipio;
                         $('#txtCiudad').val(nombreCiudad);
-                        
+
                     }
                 });
 
@@ -2548,14 +2560,14 @@ export class Contratacion {
             } catch (error) {
                 $('#txtCiudad').val('');
             }
-        }).fail(function(jqXHR, textStatus) {
+        }).fail(function (jqXHR, textStatus) {
             //console.log('ER', 'OCURRIO UN ERROR EN EL API [obtener-info-cp-venta]', jqXHR);
             $('#txtCiudad').val('');
             $('#labelBusqueda').html('Ciudad');
         });
     }
 
-    secData(){
+    secData() {
         let obj = {
             "cuenta": "0101200375",
             "cctype": "123",
@@ -2569,7 +2581,7 @@ export class Contratacion {
             "estado": "Ciudad de Mexico",
             "ciudad": "Ciudad de Mexico",
             "segundoNombre": ""
-          };
+        };
 
         let parametros = {
             "secdata": otpyrc2(JSON.stringify(obj))
@@ -2578,37 +2590,37 @@ export class Contratacion {
         //console.log(otpyrc2(JSON.stringify(obj)));
     }
 
-    validarCampoVacio(valor){
+    validarCampoVacio(valor) {
         let bandera = false;
-        if(valor == undefined || valor == null || valor == ''|| valor == 'null'|| valor == 'undefined'){
+        if (valor == undefined || valor == null || valor == '' || valor == 'null' || valor == 'undefined') {
             bandera = true;
         }
         return bandera;
     }
 
-    actualizarObjetoDireccion(tipo, objeto){
+    actualizarObjetoDireccion(tipo, objeto) {
 
         let obetoDireccion;
         let cadenaDireccion = localStorage.getItem('TP_STR_DIRECCION');
         let objetoMemoria;
         try {
             objetoMemoria = JSON.parse(cadenaDireccion);
-        } catch (error) {}
+        } catch (error) { }
 
-        if(tipo == 'DIR_CALCULADA'){
+        if (tipo == 'DIR_CALCULADA') {
             obetoDireccion = {
-                "direccionFormulario":objetoMemoria.direccionFormulario,
-                "direccionCalculada":objeto.infoDireccion,
+                "direccionFormulario": objetoMemoria.direccionFormulario,
+                "direccionCalculada": objeto.infoDireccion,
                 "coordenadas": objeto.coordenadas
             }
 
             localStorage.setItem('TP_STR_DIRECCION', JSON.stringify(obetoDireccion));
         }
 
-        if(tipo == 'DIR_FACTIBILIDAD'){
+        if (tipo == 'DIR_FACTIBILIDAD') {
             obetoDireccion = {
-                "direccionFormulario":objetoMemoria.direccionFormulario,
-                "direccionCalculada":objetoMemoria.direccionCalculada,
+                "direccionFormulario": objetoMemoria.direccionFormulario,
+                "direccionCalculada": objetoMemoria.direccionCalculada,
                 "coordenadas": objetoMemoria.coordenadas,
                 "factibilidad": objeto.factibilidad
             }
@@ -2617,7 +2629,7 @@ export class Contratacion {
         }
     }
 
-    agregarPromocionSeleccionada(idPromocion){
+    agregarPromocionSeleccionada(idPromocion) {
         console.group('agregarPromocionSeleccionada()');
         let referenciaClase = this;
         let cadenaPaquete = localStorage.getItem('TP_STR_PAQUETE_SELECCION');
@@ -2628,15 +2640,15 @@ export class Contratacion {
 
             let objetoPromoSeleccion;
             $.each(objComplementos.promocion, function (key, objPromocion) {
-                if(objPromocion.Id == idPromocion){
+                if (objPromocion.Id == idPromocion) {
                     objetoPromoSeleccion = objPromocion;
                     referenciaClase.props.infoPaquete.promocionPremium = objPromocion;
                 }
             });
-            
+
             objPaquete.promocionPremium = objetoPromoSeleccion;
 
-            localStorage.setItem('TP_STR_PAQUETE_SELECCION',JSON.stringify(objPaquete));
+            localStorage.setItem('TP_STR_PAQUETE_SELECCION', JSON.stringify(objPaquete));
             console.log('OBJETO PAQUETE SELECCION ACTUALIZADO');
         } catch (error) {
             console.log('NO SE PUEDO AGREGAR LA PROMOCION PREMIUM POR:', error);
@@ -2644,33 +2656,33 @@ export class Contratacion {
         console.groupEnd();
     }
 
-    buscarObjetoParrilla(){
+    buscarObjetoParrilla() {
         let referenciaClase = this;
         let objetoTelevisionMemoria = referenciaClase.props.infoComplementos.television;
         let objetoParrilla;
         $.each(objetoTelevisionMemoria, function (key, objTelevision) {
-            if(objTelevision.Agrupacion == 'Parrillas' && objTelevision.adicional.length > 0){
+            if (objTelevision.Agrupacion == 'Parrillas' && objTelevision.adicional.length > 0) {
                 objetoParrilla = objTelevision.adicional;
             }
         });
         return objetoParrilla;
     }
 
-    reiniciarInfoObjeto(){
+    reiniciarInfoObjeto() {
         console.group('FUNCION iniciarCupon()');
         let cadenaPaquete = localStorage.getItem('TP_STR_PAQUETE_SELECCION');
-        
+
         try {
             let objPaquete = JSON.parse(cadenaPaquete);
-            if(objPaquete.adicionales != undefined){
-                objPaquete.adicionales ={}
+            if (objPaquete.adicionales != undefined) {
+                objPaquete.adicionales = {}
             }
 
-            if(objPaquete.infoCupon != undefined){
-                objPaquete.infoCupon ={}
+            if (objPaquete.infoCupon != undefined) {
+                objPaquete.infoCupon = {}
             }
 
-            localStorage.setItem('TP_STR_PAQUETE_SELECCION',JSON.stringify(objPaquete));
+            localStorage.setItem('TP_STR_PAQUETE_SELECCION', JSON.stringify(objPaquete));
             console.log('OBJETO PAQUETE SELECCION ACTUALIZADO');
         } catch (error) {
             console.log('NO SE PUEDO REINICIAR EL CUPON POR:', error);
@@ -2678,15 +2690,15 @@ export class Contratacion {
         console.groupEnd();
     }
 
-    agregarParrilaSeleccionada(objetoParrilla){
+    agregarParrilaSeleccionada(objetoParrilla) {
         console.group('FUNCION agregarParrilaSeleccionada()');
         let referenciaClase = this;
         let cadenaPaquete = localStorage.getItem('TP_STR_PAQUETE_SELECCION');
-        
+
         try {
             let objPaquete = JSON.parse(cadenaPaquete);
-            let nuevoObjeto = {'parrilla': objetoParrilla};
-            if(objPaquete.adicionales == undefined){
+            let nuevoObjeto = { 'parrilla': objetoParrilla };
+            if (objPaquete.adicionales == undefined) {
                 let arregloInfo = new Array();
                 arregloInfo[0] = nuevoObjeto
                 objPaquete.adicionales = arregloInfo
@@ -2694,7 +2706,7 @@ export class Contratacion {
                 objPaquete.adicionales[0] = nuevoObjeto
             }
 
-            localStorage.setItem('TP_STR_PAQUETE_SELECCION',JSON.stringify(objPaquete));
+            localStorage.setItem('TP_STR_PAQUETE_SELECCION', JSON.stringify(objPaquete));
             console.log('OBJETO PAQUETE SELECCION ACTUALIZADO');
 
             referenciaClase.actualizarPrecioTotal();
@@ -2704,16 +2716,16 @@ export class Contratacion {
         console.groupEnd();
     }
 
-    eliminarParrilaSeleccionada(){
+    eliminarParrilaSeleccionada() {
         console.group('FUNCION eliminarParrilaSeleccionada()');
         let referenciaClase = this;
         let cadenaPaquete = localStorage.getItem('TP_STR_PAQUETE_SELECCION');
-        
+
         try {
             let objPaquete = JSON.parse(cadenaPaquete);
             objPaquete.adicionales[0].parrilla = {};
             $('#contenedorParrilla').remove();
-            localStorage.setItem('TP_STR_PAQUETE_SELECCION',JSON.stringify(objPaquete));
+            localStorage.setItem('TP_STR_PAQUETE_SELECCION', JSON.stringify(objPaquete));
             console.log('OBJETO PAQUETE SELECCION ACTUALIZADO');
             referenciaClase.actualizarPrecioTotal();
         } catch (error) {
@@ -2722,15 +2734,15 @@ export class Contratacion {
         console.groupEnd();
     }
 
-    agregarCanalPremiumSeleccion(objetoCanal){
+    agregarCanalPremiumSeleccion(objetoCanal) {
         console.group('FUNCION agregarCanalPremiumSeleccion()');
         let referenciaClase = this;
         let cadenaPaquete = localStorage.getItem('TP_STR_PAQUETE_SELECCION');
-        
+
         try {
             let objPaquete = JSON.parse(cadenaPaquete);
-            let nuevoObjeto = {'canales': objetoCanal};
-            if(objPaquete.adicionales == undefined){
+            let nuevoObjeto = { 'canales': objetoCanal };
+            if (objPaquete.adicionales == undefined) {
                 let arregloInfo = new Array();
                 arregloInfo[1] = nuevoObjeto
                 objPaquete.adicionales = arregloInfo
@@ -2738,7 +2750,7 @@ export class Contratacion {
                 objPaquete.adicionales[1] = nuevoObjeto
             }
 
-            localStorage.setItem('TP_STR_PAQUETE_SELECCION',JSON.stringify(objPaquete));
+            localStorage.setItem('TP_STR_PAQUETE_SELECCION', JSON.stringify(objPaquete));
             console.log('OBJETO PAQUETE SELECCION ACTUALIZADO');
             referenciaClase.actualizarPrecioTotal();
         } catch (error) {
@@ -2747,16 +2759,16 @@ export class Contratacion {
         console.groupEnd();
     }
 
-    eliminarCanalPremiumSeleccion(idCanal){
+    eliminarCanalPremiumSeleccion(idCanal) {
         console.group('FUNCION eliminarCanalPremiumSeleccion()');
         let referenciaClase = this;
         let cadenaPaquete = localStorage.getItem('TP_STR_PAQUETE_SELECCION');
-        
+
         try {
             let objPaquete = JSON.parse(cadenaPaquete);
             objPaquete.adicionales[1].canales = {};
-            $('#CanalPremium'+ idCanal).remove();
-            localStorage.setItem('TP_STR_PAQUETE_SELECCION',JSON.stringify(objPaquete));
+            $('#CanalPremium' + idCanal).remove();
+            localStorage.setItem('TP_STR_PAQUETE_SELECCION', JSON.stringify(objPaquete));
             console.log('OBJETO PAQUETE SELECCION ACTUALIZADO');
             referenciaClase.actualizarPrecioTotal();
         } catch (error) {
@@ -2765,16 +2777,16 @@ export class Contratacion {
         console.groupEnd();
     }
 
-    agregarLineaAdicional(objetoLinea){
+    agregarLineaAdicional(objetoLinea) {
         console.group('FUNCION agregarLineaAdicional()');
         let referenciaClase = this;
         let cadenaPaquete = localStorage.getItem('TP_STR_PAQUETE_SELECCION');
-        
+
         try {
             let objPaquete = JSON.parse(cadenaPaquete);
-            let nuevoObjeto = {'telefonia': objetoLinea};
-            
-            if(objPaquete.adicionales == undefined){
+            let nuevoObjeto = { 'telefonia': objetoLinea };
+
+            if (objPaquete.adicionales == undefined) {
                 let arregloInfo = new Array();
                 arregloInfo[3] = nuevoObjeto;
                 objPaquete.adicionales = arregloInfo;
@@ -2782,7 +2794,7 @@ export class Contratacion {
                 objPaquete.adicionales[3] = nuevoObjeto;
             }
 
-            localStorage.setItem('TP_STR_PAQUETE_SELECCION',JSON.stringify(objPaquete));
+            localStorage.setItem('TP_STR_PAQUETE_SELECCION', JSON.stringify(objPaquete));
             console.log('OBJETO PAQUETE SELECCION ACTUALIZADO');
             referenciaClase.actualizarPrecioTotal();
         } catch (error) {
@@ -2791,17 +2803,17 @@ export class Contratacion {
         console.groupEnd();
     }
 
-    eliminarLineaAdicional(){
+    eliminarLineaAdicional() {
         console.group('FUNCION eliminarLineaAdicional()');
         let referenciaClase = this;
         let cadenaPaquete = localStorage.getItem('TP_STR_PAQUETE_SELECCION');
-        
+
         try {
             let objPaquete = JSON.parse(cadenaPaquete);
             objPaquete.adicionales[3].telefonia = {};
             $('#contenedorLineaAdicional').html('');
             $('#agregarLineaAdicional').show();
-            localStorage.setItem('TP_STR_PAQUETE_SELECCION',JSON.stringify(objPaquete));
+            localStorage.setItem('TP_STR_PAQUETE_SELECCION', JSON.stringify(objPaquete));
             console.log('OBJETO PAQUETE SELECCION ACTUALIZADO');
             referenciaClase.actualizarPrecioTotal();
         } catch (error) {
@@ -2810,16 +2822,16 @@ export class Contratacion {
         console.groupEnd();
     }
 
-    agregarEquipoAdicional(objetoEquipo){
+    agregarEquipoAdicional(objetoEquipo) {
         console.group('FUNCION agregarEquipoAdicional()');
         let referenciaClase = this;
         let cadenaPaquete = localStorage.getItem('TP_STR_PAQUETE_SELECCION');
-        
+
         try {
             let objPaquete = JSON.parse(cadenaPaquete);
-            let nuevoObjeto = {'equipo': objetoEquipo};
-            
-            if(objPaquete.adicionales == undefined){
+            let nuevoObjeto = { 'equipo': objetoEquipo };
+
+            if (objPaquete.adicionales == undefined) {
                 let arregloInfo = new Array();
                 arregloInfo[2] = nuevoObjeto;
                 objPaquete.adicionales = arregloInfo;
@@ -2827,7 +2839,7 @@ export class Contratacion {
                 objPaquete.adicionales[2] = nuevoObjeto;
             }
 
-            localStorage.setItem('TP_STR_PAQUETE_SELECCION',JSON.stringify(objPaquete));
+            localStorage.setItem('TP_STR_PAQUETE_SELECCION', JSON.stringify(objPaquete));
             console.log('OBJETO PAQUETE SELECCION ACTUALIZADO');
             referenciaClase.actualizarPrecioTotal();
         } catch (error) {
@@ -2836,8 +2848,8 @@ export class Contratacion {
         console.groupEnd();
     }
 
-    eliminarEquipoSeleccionado(idEliminar){
-        console.group('FUNCION eliminarEquipoSeleccionado('+idEliminar+')');
+    eliminarEquipoSeleccionado(idEliminar) {
+        console.group('FUNCION eliminarEquipoSeleccionado(' + idEliminar + ')');
         let referenciaClase = this;
         let cadenaPaquete = localStorage.getItem('TP_STR_PAQUETE_SELECCION');
         let cadenaEquipos = localStorage.getItem('TP_EQUIPO_ADICIONAL');
@@ -2845,30 +2857,30 @@ export class Contratacion {
             let objPaquete = JSON.parse(cadenaPaquete);
             let objEquipo = JSON.parse(cadenaEquipos);
             let indice = -1;
-            $.each(objPaquete.adicionales[2].equipo, function(key, objeto) {
-                console.log('objeto['+key+']=>', objeto);
-                if(objeto.id == idEliminar){
+            $.each(objPaquete.adicionales[2].equipo, function (key, objeto) {
+                console.log('objeto[' + key + ']=>', objeto);
+                if (objeto.id == idEliminar) {
                     indice = key;
                 }
             });
 
-            $.each(referenciaClase.props.setopboxSelected, function(key, objeto) {
-                console.log('setopboxSelected=>objeto['+key+']=>', objeto);
+            $.each(referenciaClase.props.setopboxSelected, function (key, objeto) {
+                console.log('setopboxSelected=>objeto[' + key + ']=>', objeto);
 
-                if(objeto.id == idEliminar){
+                if (objeto.id == idEliminar) {
                     referenciaClase.props.setopboxSelected[key] = {
                         id: '',
                         show: false,
                         name: '',
                         amount: '',
                         total: '',
-                        price: 0, 
-                        cantidad : 0
+                        price: 0,
+                        cantidad: 0
                     }
                 }
             });
 
-            if(indice >= 0){
+            if (indice >= 0) {
                 let objetoRespaldo = objEquipo[indice];
                 objEquipo[indice] = {
                     "amount": objetoRespaldo.amount,
@@ -2883,8 +2895,8 @@ export class Contratacion {
                 localStorage.setItem('TP_EQUIPO_ADICIONAL', JSON.stringify(objEquipo));
 
                 objPaquete.adicionales[2].equipo.splice(indice, 1);
-                $('#contenedorEquipo_'+ idEliminar).remove();
-                localStorage.setItem('TP_STR_PAQUETE_SELECCION',JSON.stringify(objPaquete));
+                $('#contenedorEquipo_' + idEliminar).remove();
+                localStorage.setItem('TP_STR_PAQUETE_SELECCION', JSON.stringify(objPaquete));
                 console.log('OBJETO PAQUETE SELECCION ACTUALIZADO');
                 referenciaClase.actualizarPrecioTotal();
             }
@@ -2894,16 +2906,16 @@ export class Contratacion {
         console.groupEnd();
     }
 
-    agregarCupon(objetoCupon){
+    agregarCupon(objetoCupon) {
         console.group('FUNCION agregarCupon()');
         let referenciaClase = this;
         let cadenaPaquete = localStorage.getItem('TP_STR_PAQUETE_SELECCION');
-        
+
         try {
             let objPaquete = JSON.parse(cadenaPaquete);
             objPaquete.infoCupon = objetoCupon;
 
-            localStorage.setItem('TP_STR_PAQUETE_SELECCION',JSON.stringify(objPaquete));
+            localStorage.setItem('TP_STR_PAQUETE_SELECCION', JSON.stringify(objPaquete));
             console.log('OBJETO PAQUETE SELECCION ACTUALIZADO');
             referenciaClase.actualizarPrecioTotal();
         } catch (error) {
@@ -2912,7 +2924,7 @@ export class Contratacion {
         console.groupEnd();
     }
 
-    actualizarMemoriaCarrito(objProceso){
+    actualizarMemoriaCarrito(objProceso) {
         console.group('Contratacion.js FUNCION actualizarMemoriaCarrito()');
         let cadenaPaquete = localStorage.getItem('TP_STR_PAQUETE_SELECCION');
         try {
@@ -2935,8 +2947,8 @@ function desencriptar(str) {
     return decodeURIComponent(escape(window.atob(str)));
 }
 
-$(window).keydown(function(event) {
-    if(event.ctrlKey && event.keyCode == 65) {
+$(window).keydown(function (event) {
+    if (event.ctrlKey && event.keyCode == 65) {
         //console.log("CTRL+A");
 
         $('#txtCalle').val('Panoramica del fortin');
@@ -2949,10 +2961,12 @@ $(window).keydown(function(event) {
         $('#formVentanaGracias').css('display','block');
         $('#mensajeVentanaGracias').css('display','flex');
         $('#mensajeVentanaGracias').css('flex-direction','row');//*/
-        event.preventDefault(); 
+        event.preventDefault();
     }
-    if(event.ctrlKey && event.keyCode == 90) {
+    if (event.ctrlKey && event.keyCode == 90) {
         //console.log("CTRL+Z");
-        event.preventDefault(); 
+        event.preventDefault();
     }
 });
+//Carruseles Modal Bottom
+

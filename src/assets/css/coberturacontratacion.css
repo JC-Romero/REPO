@@ -145,6 +145,9 @@ span.spanDocumentos {
 
 .cardGrande {
   justify-content: space-around !important;
+  position: relative;
+  z-index: 1;
+  top: 7vh;
 }
 
 @media (min-width: 360px) and (max-width: 767px) {
@@ -220,6 +223,18 @@ span.spanDocumentos {
   #step0 .container-inputs .input__float:nth-child(2) {
     display: inline-block;
     width: 100%;
+  }
+  .addon--content-close {
+    position: sticky;
+    top: -3vh;
+    z-index: 100000;
+  }
+  .addon--content-description {
+    position: sticky;
+    top: -4vh;
+    padding-top: 1rem;
+    background: rgba(245, 245, 245, 1);
+    z-index: 100000;
   }
 }
 
@@ -337,20 +352,27 @@ span.spanDocumentos {
     padding: 34px 16px 33px;
   }
   .addon--content-barAdd {
-    height: 52px !important;
+    position: sticky;
+    bottom: 0;
   }
   .SELECCIONADO > .capa {
     /*opacity: 0;*/
   }
   .content-contratacion__addChannels {
     display: block;
+    width: 45%;
+    margin: 0 auto;
+    margin-top: 0;
+    top: 0;
   }
   .cardCenter {
     width: 230px !important;
   }
   #contentContListItems {
-    display: block !important;
     width: 240px !important;
+    display: block !important;
+    position: relative;
+    top: -5vh;
   }
 }
 
