@@ -32,14 +32,17 @@ export class ClaseCobertura {
 
                     if (respuesta !== null || respuesta !== "") {
                         $('#cd-cobertura-index').html(respuesta);
+                        $('#cd-cobertura-index-seccion').html(respuesta);
                         localStorage.setItem('TP_STR_DIRECCION_CIUDAD_HOME', respuesta);
                     }
                 } catch (e) {
                     $('#cd-cobertura-index').html("Ciudad de México");
+                    $('#cd-cobertura-index-seccion').html("Ciudad de México");
                     console.log("ERROR EN TRAER LA CIUDAD:", e);
                 }
             }).catch(function (err) {
                 $('#cd-cobertura-index').html("Ciudad de México");
+                $('#cd-cobertura-index-seccion').html("Ciudad de México");
                 console.log("err=>", err);
             });
 

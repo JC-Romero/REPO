@@ -13,15 +13,15 @@ export class Chat {
     }
 
     init() {    
-/*        
-        this.props.sliderBottom = this.props.slider.getBoundingClientRect().bottom;
+        
+        /*this.props.sliderBottom = this.props.slider.getBoundingClientRect().bottom;
         setTimeout( () => {
             this.props.sliderBottom = this.props.slider.getBoundingClientRect().bottom;
             this.setPosition();
             this.getAttributes();
-        }, 30 );
+        }, 30 );*/
         this.scroll();
-*/
+
         $("#chatVentas").on("click", function() {
             window.open(
                 "https://www.totalplay.online/totalplaytelemarketing/chatbeacon/content/windows/chat.html?accountid=3&siteid=3&queueid=3&theme=blue&popout=true",
