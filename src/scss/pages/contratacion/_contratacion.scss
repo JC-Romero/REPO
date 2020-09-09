@@ -2751,7 +2751,7 @@
 }
 .barraEcommerce .botonAvance {
 	position: relative;
-	top: -50px;
+	top: -35px;
 }
 .barraEcommerce .botonRegreso {
 	position: relative;
@@ -2760,7 +2760,7 @@
 }
 .barraEcommerce .botonRegreso a {
 	position: relative;
-	top: -7px;
+	top: 0;
 	left: 10px;
 }
 .barraEcommerce .botonRegreso img {
@@ -3108,9 +3108,9 @@
 		margin: 0 auto;
 	}
 	.specialBar {
-		position: relative !important;
+		position: absolute !important;
 		width: calc(100% - 16px);
-		left: 0;
+		left: 103vw;
 		bottom: 0;
 	}
 }

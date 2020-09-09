@@ -159,7 +159,7 @@ export class Contratacion {
         this.step_1();
         this.eventosModal();
         this.showStep();
-        this.iniciarMapa();
+        //this.iniciarMapa();
         this.iniciarIdPromocion();
         this.eventoEliminarCanalPremium();
         this.habilitarBotonDireccion();
@@ -209,8 +209,8 @@ export class Contratacion {
 
     verificarNumeroPasos() {
         console.group('FUNCIONverificarNumeroPasos()');
-        let listaPasos = '<li class="contratacion--top-bar__steps__list-names__item active" style="display:flex">Cobertura</li>' +
-            '<li class="contratacion--top-bar__steps__list-names__item" >Promoción</li>' +
+        let listaPasos = '<li class="contratacion--top-bar__steps__list-names__item active" style="display:flex">Promocion</li>' +
+            '<li class="contratacion--top-bar__steps__list-names__item" >Complementos</li>' +
             '<li class="contratacion--top-bar__steps__list-names__item" >Resumen</li>' +
             '<li class="contratacion--top-bar__steps__list-names__item">Contrata</li>';
 
@@ -452,7 +452,12 @@ export class Contratacion {
             let cadenaEncriptada = encriptar(JSON.stringify(objetoPaquete));
             let cadenaDesencriptada = desencriptar(cadenaEncriptada);
         });
-
+        $('#nextComplementos').on('click', function () {
+            console.log("currentStep " + apuntador.props.currentStep);
+            if (apuntador.props.currentStep === 1) {
+                apuntador.nextStep();
+            }
+        })
         console.groupEnd();
     }
 
@@ -1057,7 +1062,7 @@ export class Contratacion {
                         }
                     }
 
-                    if (this.props.currentStep === 1) {
+                    if (this.props.currentStep === 0) {
                         this.nextStep();
                     }
                     this.invoice();
@@ -2943,7 +2948,7 @@ export class Contratacion {
         console.groupEnd();
     }
 
-    eventoCanales(){
+    eventoCanales() {
         $("body").on('click', '.cntCanales', function () {
             console.log('EVENTO DE CAJAS DE CANALES');
         });
