@@ -403,7 +403,7 @@ export class FinalizaContratacion {
                     "calleNombre":objetoDireccion.direccionCalculada.nombreCalle,
                     "calleNumero":objetoDireccion.direccionCalculada.numeroDireccion,
                     "colonia":objetoDireccion.direccionCalculada.colonia,
-                    "municipio":objetoDireccion.direccionFormulario.ciudad,
+                    "municipio":objetoDireccion.direccionCalculada.localidad,
                     "codigoPostal":objetoDireccion.direccionFormulario.codigoPostal,
                     "estado":objetoDireccion.direccionCalculada.estado,
                 }

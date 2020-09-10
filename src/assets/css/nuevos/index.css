@@ -41,3 +41,7 @@
 .pac-icon-marker {
     display: none;
 }
+
+div#appHome img {
+    cursor: pointer;
+}
