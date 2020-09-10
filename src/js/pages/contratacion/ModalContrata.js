@@ -44,7 +44,7 @@ export class ModalContrata {
             opacity: 1,
             ease: "power4.out"
         })
-        this.nextStep();
+        //this.nextStep();
     }
 
     mostrarVentanaContratacion() {
@@ -112,9 +112,10 @@ export class ModalContrata {
                 $('#botonContinuar').attr('disabled', 'disabled');
                 $('.iconoContinuar').show();
 
-                referenciaClase.mostrarVentanaContratacion();
+                referenciaClase.generarCodigo($('#email').val().trim(), $('#mobile').val().trim());
+                /*referenciaClase.mostrarVentanaContratacion();
                 $('#botonContinuar').removeAttr('disabled');
-                $('.iconoContinuar').hide();
+                $('.iconoContinuar').hide();//*/
             }
         });
     }
@@ -275,5 +276,39 @@ export class ModalContrata {
 
         localStorage.setItem('TP_STR_CLIENTE', JSON.stringify(objetoCliente));
 
+    }
+
+    generarCodigo(correoElectronico, numeroTelefonico){
+        var referenciaClase = this;
+
+        var parametros = {
+            "correoElectronico": correoElectronico,
+            "numeroTelefonico": numeroTelefonico,
+        };
+
+        $.ajax({
+            url: Constantes.endpoints.generarCodigoC,
+            data: JSON.stringify(parametros),
+            dataType: "json",
+            type: 'POST'
+        }).done(function(respuesta) {
+            console.log('RESPUESTA DE COMPLEMENTOS');
+            console.log(respuesta);
+            $('.contract__content-form__text').html('Enviar de nuevo');
+
+            $('#botonContinuar').removeAttr('disabled');
+            $('.iconoContinuar').hide();
+
+            if(respuesta.codigo == 0){
+                localStorage.setItem('TP_EMAIL_CONTRATO', correoElectronico);
+                referenciaClase.mostrarVentanaContratacion();
+            }
+        }).fail(function(jqXHR, textStatus) {
+            console.log('OCURRIO ALGO INESPERADO EN EL SERVICIO DE GENERAR CODIGO');
+            console.log(jqXHR);
+            $('#botonContinuar').removeAttr('disabled');
+            $('.iconoContinuar').hide();
+            $('.contract__content-form__text').html('Enviar de nuevo');
+        });
     }
 }

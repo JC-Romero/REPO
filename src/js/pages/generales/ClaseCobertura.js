@@ -567,6 +567,7 @@ export class ClaseCobertura {
     }
 
     async consultarCoordenada(direccion) {
+        let referenciaClase = this;
         var url = Constantes.endpoints.consultarCoordenadas;
         var data = JSON.stringify({ "direccion": direccion });
 
@@ -653,15 +654,22 @@ export class ClaseCobertura {
                 delegacionMunicipio = $('#ciudadModal').val();
             }
 
-            localStorage.setItem("TP_OF_STR_ESTADO", estado);
-            localStorage.setItem("TP_OF_STR_COLONIA", colonia);
-            localStorage.setItem("TP_OF_STR_CP", codigoPostal);
-            localStorage.setItem("TP_OF_STR_NUMERO_DIR", numeroDireccion);
-            localStorage.setItem("TP_OF_STR_CALLE", nombreCalle);
-            localStorage.setItem("TP_OF_STR_LOCALIDAD", localidad);
-            localStorage.setItem("TP_OF_STR_DELEGACION_MUNICIPIO", delegacionMunicipio);
+            var infoDireccion = {
+                "direccionAproximada": direccionAproximada,
+                "estado": estado,
+                "colonia": colonia,
+                "codigoPostal": codigoPostal,
+                "numeroDireccion": numeroDireccion,
+                "nombreCalle": nombreCalle,
+                "localidad": localidad,
+                "delegacionMunicipio": delegacionMunicipio,
+            };
 
-            localStorage.setItem("TP_OF_OBJ_COORDENADAS", JSON.stringify(objCoordenadas));
+            objDir.codigoPostal = codigoPostal;
+            objDir.colonia = colonia;
+
+            let objeto = {"coordenadas": objCoordenadas, "infoDireccion":infoDireccion}
+            referenciaClase.actualizarObjetoDireccion('DIR_CALCULADA', objeto);
             return objDir;
         }).catch(function (err) {
             console.log('OCURRIO ALGO INESPERADO EN LA FUNCION [consultarCoordenada] ERROR', err);
