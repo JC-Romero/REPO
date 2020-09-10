@@ -8,6 +8,7 @@ export const endpoints = {
 	guardaLead:`${_baseTP}tp-guardar-lead`,
 	consultarCoordenadas: `${_base}obtener-direccion-coordenadas`,
 	validarFactibilidad: `${_base}consultar-factibilidad`,
+	obtenerCiudades : `https://totalplay.dev/archivos/coberturatotalplay.json`,
 }
 
 export const sitioBase = "/";
