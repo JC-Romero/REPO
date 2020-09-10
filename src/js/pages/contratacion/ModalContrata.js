@@ -126,8 +126,10 @@ export class ModalContrata {
         $("body").on('keyup', '.campoCodigo', function () {
             var campoNumero = parseInt($(this).attr('data-num'));
             if (campoNumero == 6) {
-                referenciaClase.endAnimation();
-
+                //referenciaClase.endAnimation();
+                let codigoContratacion = $('#nip_1').val()+$('#nip_2').val()+$('#nip_3').val()+$('#nip_4').val()+$('#nip_5').val()+$('#nip_6').val();
+                $('.contract__content-form__text').html('<i class="fas fa-circle-notch fa-spin"></i>');
+                referenciaClase.validarCodigo(codigoContratacion);//*/
             } else {
                 campoNumero++;
                 $('#nip_' + campoNumero).focus();
@@ -300,7 +302,7 @@ export class ModalContrata {
             $('.iconoContinuar').hide();
 
             if(respuesta.codigo == 0){
-                localStorage.setItem('TP_EMAIL_CONTRATO', correoElectronico);
+                //localStorage.setItem('TP_EMAIL_CONTRATO', correoElectronico);
                 referenciaClase.mostrarVentanaContratacion();
             }
         }).fail(function(jqXHR, textStatus) {
@@ -309,6 +311,52 @@ export class ModalContrata {
             $('#botonContinuar').removeAttr('disabled');
             $('.iconoContinuar').hide();
             $('.contract__content-form__text').html('Enviar de nuevo');
+        });
+    }
+
+    validarCodigo(codigoContratacion){
+        var referenciaClase = this;
+
+        var parametros = {
+            "codigoContratacion": codigoContratacion
+        };
+
+        $.ajax({
+            url: Constantes.endpoints.validarCodigoC,
+            data: JSON.stringify(parametros),
+            dataType: "json",
+            type: 'POST'
+        }).done(function(respuesta) {
+            console.log('RESPUESTA DE COMPLEMENTOS');
+            console.log(respuesta);
+
+            if(respuesta.codigo == 0){
+
+                referenciaClase.endAnimation();
+            }else{
+                $('.contract__content-form__text').html('Enviar de nuevo');
+                
+                referenciaClase.props.cont = 0;
+                $('#nip_1').val('');
+                $('#nip_2').val('');
+                $('#nip_3').val('');
+                $('#nip_4').val('');
+                $('#nip_5').val('');
+                $('#nip_6').val('');
+                $('#nip_1').focus();
+            }
+        }).fail(function(jqXHR, textStatus) {
+            console.log('OCURRIO ALGO INESPERADO EN EL SERVICIO DE COMPLEMENTOS');
+            console.log(jqXHR);
+            $('.contract__content-form__text').html('Enviar de nuevo');
+            referenciaClase.props.cont = 0;
+            $('#nip_1').val('');
+            $('#nip_2').val('');
+            $('#nip_3').val('');
+            $('#nip_4').val('');
+            $('#nip_5').val('');
+            $('#nip_6').val('');
+            $('#nip_1').focus();
         });
     }
 }

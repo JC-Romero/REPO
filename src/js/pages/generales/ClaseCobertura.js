@@ -278,6 +278,7 @@ export class ClaseCobertura {
                     direccion = calle + ' '+ codigoPostal + ' '+ ciudad;
                 }
                 
+                $("#botonValidarCobertura").html('Validando <i class="fas fa-circle-notch fa-spin" style="color: white;"></i>');
                 apuntador.buscarDireccion(direccion);
             }
         });
@@ -558,6 +559,7 @@ export class ClaseCobertura {
                 $("#titleFormStep2").html("Totalplay a&uacute;n no est&aacute; disponible en " + direccion);
                 $("#titleFormStep2").css("display", "flex");
                 $("#subtitleFormStep2").css("display", "none");
+                $("#botonValidarCobertura").html('Quiero que me llamen');
 
                 apuntador.limpiarDatos();
                 apuntador.removerCoordenadas();
@@ -729,17 +731,20 @@ export class ClaseCobertura {
                     apuntador.limpiarDatos();
                     apuntador.removerCoordenadas();
                     $("#validaCoberturaHeader").html("VALIDAR COBERTURA");
+                    $("#botonValidarCobertura").html('Quiero que me llamen');
                 }
             } else {
                 console.log('WR', 'RESPUESTA DE FACTIBILIDAD: STATUS[' + respuesta.status + '] DESCRIPCION[' + respuesta.descripcion + ']');
                 //$("#modalMenu").css("display", "none");
                 //apuntador.mostrarModalCobertura();
+                $("#botonValidarCobertura").html('Quiero que me llamen');
             }
 
         }).catch(err => {
             console.log("error" + err);
             //$("#modalMenu").css("display", "none");
             //apuntador.mostrarModalCobertura();
+            $("#botonValidarCobertura").html('Quiero que me llamen');
         });
     }
 
@@ -822,7 +827,7 @@ export class ClaseCobertura {
 
         //$("#modalMenu").css("display", "none");
         //$("#step1").css("display", "none");
-        window.location = 'detallePaquete.html';
+        window.location = 'paquetes.html';
     }
 
     resize() {

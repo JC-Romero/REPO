@@ -2946,9 +2946,9 @@ $(window).keydown(function(event) {
     if(event.ctrlKey && event.keyCode == 65) {
         //console.log("CTRL+A");
 
-        $('#txtCalle').val('Panoramica del fortin');
-        $('#txtNoExterior').val('636');
-        $('#txtCodigoPostal').val('68030');
+        //$('#txtCalle').val('Panoramica del fortin');
+        //$('#txtNoExterior').val('636');
+        //$('#txtCodigoPostal').val('68030');
 
         /*$('#ventanaGracias').css('display','flex');
         $('#capaVentanaGracias').css('opacity','1');
@@ -2960,6 +2960,8 @@ $(window).keydown(function(event) {
     }
     if(event.ctrlKey && event.keyCode == 90) {
         //console.log("CTRL+Z");
+        $('#email').val('mfhernandez@totalplay.com.mx');
+        $('#mobile').val('5583073337');
         event.preventDefault(); 
     }
 });

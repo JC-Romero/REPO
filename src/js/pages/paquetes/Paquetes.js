@@ -119,7 +119,13 @@ export class Paquetes {
 		console.group('Paquetes.js FUNCION cargarPaquetes('+opt+')');
 		let apuntador = this;
 		var tipopaquetes = "totalplay_paquetes.json";
-		
+		if (localStorage.getItem("TP_OF_OBJ_FACTIBILIDAD") != null) {
+			var datosfactibilidad = JSON.parse(localStorage.getItem("TP_OF_OBJ_FACTIBILIDAD"));
+			if (datosfactibilidad.estimulofiscal == "true") {
+				tipopaquetes = "totalplay_paquetes_fronterizo.json";
+			}
+		}
+		console.log(tipopaquetes);
 		var url = Constantes.endpoints.obtenerPaquetes + tipopaquetes;
 		console.log('URL ARCHIVO:',url);
 		fetch(url, {
