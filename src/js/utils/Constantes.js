@@ -17,6 +17,7 @@ export const endpoints = {
 	guardarTarjeta:`${_base}guardar-tarjeta`,
 	noCompra:`${_base}enviar-compra-noexitosa`,
 	guardaArchivosEcommerce: `${_base}guarda-archivos`,
+	obtenerCiudades : `https://totalplay.dev/archivos/coberturatotalplay.json`,
 }
 
 export const sitioBase = "/";
