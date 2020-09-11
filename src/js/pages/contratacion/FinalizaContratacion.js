@@ -441,11 +441,11 @@ export class FinalizaContratacion {
                 let turno = '';
                 let horaInstalacion = 0;
                 if($('#botonHorarioMatutino').hasClass('btnInstalacionActivo')){
-                    turno = 'matutino';
+                    turno = 'Matutino';
                     horaInstalacion = 11;
                 }
                 if($('#botonHorarioVespertino').hasClass('btnInstalacionActivo')){
-                    turno = 'verpertino';
+                    turno = 'Vespertino';
                     horaInstalacion = 4;
                 }                
                 referenciaClase.generarAgendamiento(turno, horaInstalacion, $('#domicilioReferencia').val(), $('#domicilioEntreCalles').val());
@@ -1755,14 +1755,14 @@ export class FinalizaContratacion {
             "numeroTelefono": numeroTelefono,
             "numeroCeluar": numeroCelular,
             
-            "direccionCalle": objetoCliente.pago.calleNombre,
-            "direccionNumero": objetoCliente.pago.calleNumero,
+            "direccionCalle": objDireccion.direccionCalculada.nombreCalle,
+            "direccionNumero": objDireccion.direccionCalculada.numeroDireccion,
             "direccionNumeroInterior": '',
-            "colonia": objetoCliente.pago.colonia,
-            "direccionCiudad": objetoCliente.pago.municipio,
-            "direccionCodigoPostal": objetoCliente.pago.codigoPostal,
-            "direccionDM": objetoCliente.pago.municipio,
-            "direccionEstado": objetoCliente.pago.estado,
+            "colonia": objDireccion.direccionCalculada.colonia,
+            "direccionCiudad": objDireccion.direccionCalculada.localidad,
+            "direccionCodigoPostal": objDireccion.direccionCalculada.codigoPostal,
+            "direccionDM": objDireccion.direccionCalculada.delegacionMunicipio,
+            "direccionEstado": objDireccion.direccionCalculada.estado,
 
             "sitioCategoryService": objFactibilidad.CategoryService,
             "sitioCluster": objFactibilidad.nombre_cluster,
@@ -1930,7 +1930,7 @@ export class FinalizaContratacion {
         let mesTarjeta = $('#mesTarjetaCaptura').val().trim();
         let anioTarjeta = $('#anioTarjetaCaptura').val().trim();
         //let cvvTarjeta = $('#cvvTarjetaCaptura').val().trim();
-        let cvvTarjeta = "123";
+        let cvvTarjeta = "";
 
         let informacion = {
             "cuenta": cuenta,
@@ -2051,6 +2051,10 @@ export class FinalizaContratacion {
         let referenciaClase = this;
         var fechaInstalacion= $('#datepicker').datepicker("getDate");
 
+        var horaInstalacionEnvio = '09:00';
+        if(horaInstalacion == 11) horaInstalacionEnvio = '11:00';
+        if(horaInstalacion == 4) horaInstalacionEnvio = '16:00';
+
         var strDireccion = localStorage.getItem('TP_STR_DIRECCION');
         var objDireccion = null;
         var objFactibilidad = null;
@@ -2108,7 +2112,7 @@ export class FinalizaContratacion {
             "clusterInstalacion": objFactibilidad.nombre_cluster,
             "turno": turno,
             "fechaInstalacion": new Date(fechaInstalacion).toISOString().slice(0,10),
-            "horaInstalacion": horaInstalacion,
+            "horaInstalacion": horaInstalacionEnvio,
             "paquete": nombrePaquete
         };
 

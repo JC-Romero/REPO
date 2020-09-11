@@ -151,6 +151,7 @@ export class Contratacion {
         window.scrollTo(0, 0);
         const heightItem = this.getHeightItem();
 
+        this.actualizarInfoBarra();
         this.reiniciarInfoObjeto();
         this.validacionExistePaquete();
         this.validarExistenciaAdicionales();
@@ -185,6 +186,24 @@ export class Contratacion {
         //this.simularPasosCompra()
         
         this.props.mainBody[0].style.cssText = 'overflow-Y: scroll;';
+    }
+
+    actualizarInfoBarra(){
+        //nombrePaquetePromocion
+        //precioPromocion
+        //nombrePaqueteComplemento
+        //precioComplemento
+        var strPaqueteSeleccion = localStorage.getItem('TP_STR_PAQUETE_SELECCION');
+        try {
+            var objetoPaqueteSeleccion = JSON.parse(strPaqueteSeleccion);
+            $('#nombrePaquetePromocion').html(objetoPaqueteSeleccion.detallePaquete.detalle.nombrePaquete);
+            $('#nombrePaqueteComplemento').html(objetoPaqueteSeleccion.detallePaquete.detalle.nombrePaquete);
+
+            $('#precioPromocion').html(objetoPaqueteSeleccion.detallePaquete.detalle.precioLista);
+            $('#precioComplemento').html(objetoPaqueteSeleccion.detallePaquete.detalle.precioLista);
+        } catch (error) {
+            console.log('ERROR EN LA FUNCION DE ACTUALIZACION DE LA BARRA:', error)
+        }
     }
 
     simularPasosCompra(){
