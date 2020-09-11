@@ -85,7 +85,12 @@ export class CargaCiudades{
 		var l = value.length; 
 		//input query length 
 		for (var i = 0; i<n; i++) { 
-			if(((apuntador.props.tags[i].toLowerCase()).indexOf(value.toLowerCase()))>-1) 
+			var str = apuntador.props.tags[i].toLowerCase();
+			str = apuntador.removeAccents(str);
+			
+
+			//if(((apuntador.props.tags[i].toLowerCase()).indexOf(value.toLowerCase()))>-1)
+			if(((str).indexOf(value.toLowerCase()))>-1)
 			{ 
 			//comparing if input string is existing in tags[i] string 
 			
@@ -95,6 +100,10 @@ export class CargaCiudades{
 		}
 		$("#cityAutocompleteList").html(htmlAutocompletado);
 		apuntador.eventoCambiaCiudad(); 
+	}
+
+	removeAccents(str){
+	  return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");   
 	}
 
 	eventoCambiaCiudad(){
