@@ -54,7 +54,9 @@ export class FinalizaContratacion {
             extensionRFC : '',
             banderaGuardoArchivos : false, 
             tipoCliente: 0,
-            aniobisiesto : false
+            aniobisiesto : false,
+            archivosInfo : [],
+            tipoArchivo : {"jpg":"image\/jpeg","pdf":"application\/pdf"}
         }
         this.init();
     }
@@ -552,9 +554,16 @@ export class FinalizaContratacion {
                 arrayPromesas.push(referenciaClase.getFileB64(filIdeOfi,"filIdeOfi"));
 
                 Promise.all(arrayPromesas).then(function(result){
-                        console.log("extension ... "+referenciaClase.props.extensionINE);
                         referenciaClase.props.jsonparams.fileINE = result[0].b64;
                         referenciaClase.props.jsonparams.extINE = referenciaClase.props.extensionINE;
+                        console.log("TIPO ARCHIVO=>"+referenciaClase.props.tipoArchivo[referenciaClase.props.extensionINE]);
+
+                        referenciaClase.props.archivosInfo[0] = {
+                            "tipoDocumento": "Identificación",
+                            "nombreArchivo": "identificacion",
+                            "archivoB64": result[0].b64,
+                            "tipoArchivo": referenciaClase.props.tipoArchivo[referenciaClase.props.extensionINE],
+                        }
 
                         //console.log("JSON PARAMS "+JSON.stringify(referenciaClase.props.jsonparams));
                 }).catch(err=>{
@@ -598,6 +607,14 @@ export class FinalizaContratacion {
                 Promise.all(arrayPromesas).then(function(result){
                         referenciaClase.props.jsonparams.fileComprobante = result[0].b64;
                         referenciaClase.props.jsonparams.extCOMPROBANTE = referenciaClase.props.extensionCOMPROBANTE;
+                        console.log("TIPO ARCHIVO=>"+referenciaClase.props.tipoArchivo[referenciaClase.props.extensionCOMPROBANTE]);
+                        referenciaClase.props.archivosInfo[1] = {
+                            "tipoDocumento": "Comprobante de domicilio",
+                            "nombreArchivo": "comprobante_domicilio",
+                            "archivoB64": result[0].b64,
+                            "tipoArchivo": referenciaClase.props.tipoArchivo[referenciaClase.props.extensionCOMPROBANTE],
+                            
+                        }
 
                         //console.log("JSON PARAMS "+JSON.stringify(referenciaClase.props.jsonparams));
                 }).catch(err=>{
@@ -639,8 +656,15 @@ export class FinalizaContratacion {
                 Promise.all(arrayPromesas).then(function(result){
                         referenciaClase.props.jsonparams.fileRFC = result[0].b64;
                         referenciaClase.props.jsonparams.extRFC = referenciaClase.props.extensionRFC;
+                        console.log("TIPO ARCHIVO=>"+referenciaClase.props.tipoArchivo[referenciaClase.props.extensionRFC]);
 
-                        console.log("JSON PARAMS "+JSON.stringify(referenciaClase.props.jsonparams));
+                        referenciaClase.props.archivosInfo[2] = {
+                            "tipoDocumento": "Acta constitutiva",
+                            "nombreArchivo": "acta_constitutiva",
+                            "archivoB64": result[0].b64,
+                            "tipoArchivo": referenciaClase.props.tipoArchivo[referenciaClase.props.extensionRFC]
+                        }
+
                 }).catch(err=>{
                     console.error("Error en promesa base64:" + err);
                 });
@@ -2037,6 +2061,11 @@ export class FinalizaContratacion {
         var numeroCuenta = '';
         var idOportunidad = '';
 
+        var straPaquete = localStorage.getItem('TP_STR_PAQUETE_SELECCION');
+        var objPaquete = null;
+        var nombrePaquete = '';
+        
+
         try{
             objDireccion = JSON.parse(strDireccion);
             objFactibilidad = objDireccion.factibilidad;
@@ -2046,13 +2075,16 @@ export class FinalizaContratacion {
 
             numeroCuenta = objVenta.numeroCuenta;
             idOportunidad = objVenta.idOportunidad;
+
+            objPaquete = JSON.parse(straPaquete);
+            nombrePaquete = objPaquete.detallePaquete.detalle.nombreComercial;
         }catch(e){}
 
         let objCliente = referenciaClase.obtenerObjetoCliente();
 
         var parametros = {
-            "idCuenta": numeroCuenta,//TODO:PENDIENTE
-            "numeroCuenta": numeroCuenta,//TODO:PENDIENTE
+            "idCuenta": numeroCuenta,
+            "numeroCuenta": numeroCuenta,
             "idOportunidad": idOportunidad,
             "cliente": objCliente.titular.nombreCompleto,
             "calleInstalacion": objDireccion.direccionCalculada.nombreCalle,
@@ -2076,7 +2108,8 @@ export class FinalizaContratacion {
             "clusterInstalacion": objFactibilidad.nombre_cluster,
             "turno": turno,
             "fechaInstalacion": new Date(fechaInstalacion).toISOString().slice(0,10),
-            "horaInstalacion": horaInstalacion
+            "horaInstalacion": horaInstalacion,
+            "paquete": nombrePaquete
         };
 
         console.log('PARAMETROS AGENDAMIENTOS ENVIADOS:', parametros);
@@ -2328,10 +2361,10 @@ $(window).keydown(function(event) {
     if(event.ctrlKey && event.keyCode == 90) {
         
         console.log("CTRL+Z");
-        $('#titularNombre').val('ANA MARIA');
-        $('#titularApellidoPaterno').val('JIMENEZ');
+        $('#titularNombre').val('JORGE ALBERTO');
+        $('#titularApellidoPaterno').val('RODRIGUEZ');
         $('#titularApellidoMaterno').val('');
-        $('#titularRFC').val('JIZA010101AAA');
+        $('#titularRFC').val('ROAJ010101AAA');
         $('#titularTelefono').val('5512345678');
         //$('#titularCelular').val('5587654321');
 
