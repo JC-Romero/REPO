@@ -235,7 +235,7 @@ export class Paquetes {
 	                                '<p>Descuento de por vida</p>'+
 	                            '</div>'+
 	                            '<div class="packagePrice">'+
-	                                '<p><a href="#">Revisa disponibilidad</a></p>'+
+	                                '<p><a href="#">$'+clase.formatoMonedad(objPaquete.precioLista, 0, ".", ",")+'</a></p>'+
 	                            '</div>'+
 	                        '</div>'+
 	                    '</div>'+
