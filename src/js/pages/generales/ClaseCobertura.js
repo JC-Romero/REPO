@@ -341,9 +341,7 @@ export class ClaseCobertura {
             /***EVENTO TOMADO DE COBERTURASUGERENCIA.JS***/
             var codigoPostal = $('#cpModal').val();
             if(codigoPostal.length == 5){
-                $('#ciudadModal').val('');
-                $('#calleModal').val('');
-                //apuntador.buscarCiudad(codigoPostal, 'calleModal');
+                apuntador.buscarCiudad(codigoPostal, 'calleModal');
             }
         });
 
@@ -857,40 +855,27 @@ export class ClaseCobertura {
     }
 
     buscarCiudad(codigoPostal, idCampoFocus){
-        if(idCampoFocus == 'calleSection'){
-            $('.labelBusqueda').html('Buscando...<i class="fas fa-circle-notch fa-spin" style="color:white;"></i>');
-        }else{
-            $('.labelBusqueda').html('Buscando...<i class="fas fa-circle-notch fa-spin"></i>');
-        }
+        
         
         $.ajax({
-            url: '/assets/media/infoCiudad.json',
-            
+            url: Constantes.endpoints.buscarCiudad,
+            data: JSON.stringify({"codigoPostal": codigoPostal}),
             dataType: "json",
-            
+            type: 'POST'
         }).done(function(respuesta) {
             try {
                 $.each(respuesta.datos.informacion.ArrColonias, function (key, infoColonias) {
                     if(infoColonias.DelegacionMunicipio != null && infoColonias.DelegacionMunicipio != ''){
                         let nombreCiudad = infoColonias.DelegacionMunicipio;
                         $('#ciudadModal').val(nombreCiudad);
-                        $('#ciudadSection').val(nombreCiudad);
-                        $('#txtCiudad').val(nombreCiudad);
+                        
                     }
                 });
-
-                $('.labelBusqueda').html('Ciudad');
             } catch (error) {
-                $('#ciudadModal').val('');
-                $('#ciudadSection').val('');
-                $('#txtCiudad').val('');
+                
             }
         }).fail(function(jqXHR, textStatus) {
-            console.log('ER', 'OCURRIO UN ERROR EN EL API [obtener-info-cp-venta]', jqXHR);
-            $('#ciudadModal').val('');
-            $('#ciudadSection').val('');
-            $('#txtCiudad').val('');
-            $('.labelBusqueda').html('Ciudad');
+            console.log('ER', 'OCURRIO UN ERROR EN EL API [buscar-ciudad-cp]', jqXHR);
         });
     }
 

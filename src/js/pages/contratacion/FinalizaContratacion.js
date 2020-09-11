@@ -193,7 +193,7 @@ export class FinalizaContratacion {
         $('#direccionFacturacionCalleEfectivo').html(objetoDireccion.direccionCalculada.nombreCalle);
         $('#direccionFacturacionNumeroEfectivo').html(objetoDireccion.direccionCalculada.numeroDireccion);
         $('#direccionFacturacionColoniaEfectivo').html(objetoDireccion.direccionCalculada.colonia);
-        $('#direccionFacturacionMunicipioEfectivo').html(objetoDireccion.direccionFormulario.ciudad);
+        $('#direccionFacturacionMunicipioEfectivo').html(objetoDireccion.direccionCalculada.delegacionMunicipio);
         $('#direccionFacturacionCPEfectivo').html(objetoDireccion.direccionFormulario.codigoPostal);
         $('#direccionFacturacionEstadoEfectivo').html(objetoDireccion.direccionCalculada.estado);
     }
@@ -405,7 +405,7 @@ export class FinalizaContratacion {
                     "calleNombre":objetoDireccion.direccionCalculada.nombreCalle,
                     "calleNumero":objetoDireccion.direccionCalculada.numeroDireccion,
                     "colonia":objetoDireccion.direccionCalculada.colonia,
-                    "municipio":objetoDireccion.direccionCalculada.localidad,
+                    "municipio":objetoDireccion.direccionCalculada.delegacionMunicipio,
                     "codigoPostal":objetoDireccion.direccionFormulario.codigoPostal,
                     "estado":objetoDireccion.direccionCalculada.estado,
                 }
@@ -490,7 +490,7 @@ export class FinalizaContratacion {
             $('#facturacionCalle').val(objetoDireccion.direccionCalculada.nombreCalle);
             $('#facturacionNumero').val(objetoDireccion.direccionCalculada.numeroDireccion);
             $('#facturacionColonia').val(objetoDireccion.direccionCalculada.colonia);
-            $('#facturacionMunicipio').val(objetoDireccion.direccionFormulario.ciudad);
+            $('#facturacionMunicipio').val(objetoDireccion.direccionCalculada.delegacionMunicipio);
             $('#facturacionCP').val(objetoDireccion.direccionFormulario.codigoPostal,);
             $('#facturacionEstado').val(objetoDireccion.direccionCalculada.estado,);
         });

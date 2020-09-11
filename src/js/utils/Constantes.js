@@ -18,6 +18,7 @@ export const endpoints = {
 	noCompra:`${_base}enviar-compra-noexitosa`,
 	guardaArchivosEcommerce: `${_base}guarda-archivos`,
 	obtenerCiudades : `https://totalplay.dev/archivos/coberturatotalplay.json`,
+	buscarCiudad:`${_base}buscar-ciudad-cp`,
 }
 
 export const sitioBase = "/";
