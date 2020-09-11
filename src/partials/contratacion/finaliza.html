@@ -1,3 +1,4 @@
+<script src="/assets/vendor/js/jquery-3.5.1.min.js"></script>
 <style type="text/css">
     .ligaGenerica {
         font-family: Montserrat-Regular;
@@ -72,19 +73,55 @@
 </div>
 
 <script type="text/javascript">
-    //$(document).ready(function () {
-
     mostrarInformacion();
-    //});
 
-    function mostrarInformacion() {
-
-
+    /*function mostrarInformacion() {
         document.getElementById('txtNombreUsuario').innerHTML = 'USUARIO GENERICO';
         document.getElementById('txtTicketFolio').innerHTML = '20180111STE';
         document.getElementById('txtCorreoEnvio').innerHTML = 'informacion@totalplay.com.mx';
         document.getElementById('txtFechaInstalacion').innerHTML = 'Viernes 28 de Agosto del 2020';
-
         localStorage.clear();
+    }//*/
+
+    function mostrarInformacion(){
+        try {
+            var infoVentaStr = window.localStorage.getItem('TP_VENTA');
+            var infoClienteStr = window.localStorage.getItem('TP_STR_CLIENTE');
+            var fechaInstalacion = localStorage.getItem('TP_CLIENTE_FECHA_INSTALACION');
+
+            var infoVentaObj = JSON.parse(infoVentaStr);
+            var infoClienteObj = JSON.parse(infoClienteStr);
+
+            document.getElementById('txtTicketFolio').innerHTML = infoVentaObj.numeroCuenta;
+            document.getElementById('txtNombreUsuario').innerHTML = infoClienteObj.titular.nombreCompleto;
+            document.getElementById('txtCorreoEnvio').innerHTML = infoClienteObj.correoElectronico;
+            document.getElementById('txtFechaInstalacion').innerHTML = fechaInstalacion;
+
+            var nombreCliente = infoClienteObj.titular.nombreCompleto;
+            var numeroCuenta = infoVentaObj.numeroCuenta;
+            var correoElectronico = infoClienteObj.correoElectronico;
+
+            enviarCorreoConfirmacion(nombreCliente, numeroCuenta, correoElectronico)
+
+            localStorage.clear(); 
+        } catch (error) {
+            console.log("ERROR EN MOSTRAR INFORMACION:", error);
+        }
+    }
+
+    function enviarCorreoConfirmacion(nombreCliente, numeroCuenta, correoElectronico){
+        
+        $.ajax({
+            url: "https://5ui1bow6gf.execute-api.us-east-1.amazonaws.com/Desarrollo/enviar-correo-confirmacion",
+            data: JSON.stringify({"nombreCliente": nombreCliente,"numeroCuenta": numeroCuenta, "correoElectronico": correoElectronico}),
+            dataType: "json",
+            type: 'POST'
+        }).done(function(respuesta) {
+            console.log(respuesta);
+            
+        }).fail(function(jqXHR, textStatus) {
+            console.log('ER', 'OCURRIO UN ERROR EN EL API [enviar-correo-confirmacion]', jqXHR);
+            
+        });
     }
 </script>

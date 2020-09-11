@@ -54,7 +54,9 @@ export class FinalizaContratacion {
             extensionRFC : '',
             banderaGuardoArchivos : false, 
             tipoCliente: 0,
-            aniobisiesto : false
+            aniobisiesto : false,
+            archivosInfo : [],
+            tipoArchivo : {"jpg":"image\/jpeg","pdf":"application\/pdf"}
         }
         this.init();
     }
@@ -191,7 +193,7 @@ export class FinalizaContratacion {
         $('#direccionFacturacionCalleEfectivo').html(objetoDireccion.direccionCalculada.nombreCalle);
         $('#direccionFacturacionNumeroEfectivo').html(objetoDireccion.direccionCalculada.numeroDireccion);
         $('#direccionFacturacionColoniaEfectivo').html(objetoDireccion.direccionCalculada.colonia);
-        $('#direccionFacturacionMunicipioEfectivo').html(objetoDireccion.direccionFormulario.ciudad);
+        $('#direccionFacturacionMunicipioEfectivo').html(objetoDireccion.direccionCalculada.delegacionMunicipio);
         $('#direccionFacturacionCPEfectivo').html(objetoDireccion.direccionFormulario.codigoPostal);
         $('#direccionFacturacionEstadoEfectivo').html(objetoDireccion.direccionCalculada.estado);
     }
@@ -385,12 +387,13 @@ export class FinalizaContratacion {
                 $('#btnPaymentData').addClass('btnDeshabilitado');
                 $('.iconoPrevencion').show();
                 console.log('SETEANDO VALOR TRUE PARA GUARDADO DE TARJETAS');
-                
+                referenciaClase.prepararParametrosVenta(true);
+                referenciaClase.obtenerDisponibilidad();
                 $('#ventanaFinaliza').css('display','flex');
                 $('#capaFinaliza').css('opacity','1');
                 $('#contenidoFinaliza').css('opacity','1');
 
-                referenciaClase.simularVenta(referenciaClase);
+                //referenciaClase.simularVenta(referenciaClase);
             } 
 
             if($('#btnPaymentCash').hasClass("botonSeleccionado") ) {
@@ -402,7 +405,7 @@ export class FinalizaContratacion {
                     "calleNombre":objetoDireccion.direccionCalculada.nombreCalle,
                     "calleNumero":objetoDireccion.direccionCalculada.numeroDireccion,
                     "colonia":objetoDireccion.direccionCalculada.colonia,
-                    "municipio":objetoDireccion.direccionFormulario.ciudad,
+                    "municipio":objetoDireccion.direccionCalculada.delegacionMunicipio,
                     "codigoPostal":objetoDireccion.direccionFormulario.codigoPostal,
                     "estado":objetoDireccion.direccionCalculada.estado,
                 }
@@ -416,12 +419,14 @@ export class FinalizaContratacion {
                 $('#btnPaymentData').attr('disabled', '');
                 $('#btnPaymentData').addClass('btnDeshabilitado');
                 $('.iconoPrevencion').show();
+                referenciaClase.prepararParametrosVenta(false);
+                referenciaClase.obtenerDisponibilidad();
                 
                 $('#ventanaFinaliza').css('display','flex');
                 $('#capaFinaliza').css('opacity','1');
                 $('#contenidoFinaliza').css('opacity','1');
 
-                referenciaClase.simularVenta(referenciaClase);
+                //referenciaClase.simularVenta(referenciaClase);
             }
         });
 
@@ -442,10 +447,8 @@ export class FinalizaContratacion {
                 if($('#botonHorarioVespertino').hasClass('btnInstalacionActivo')){
                     turno = 'verpertino';
                     horaInstalacion = 4;
-                }
-
-                localStorage.setItem('TP_CLIENTE_FECHA_INSTALACION', 'Viernes 28 de Agosto del 2020');
-                window.location = 'finaliza.html';
+                }                
+                referenciaClase.generarAgendamiento(turno, horaInstalacion, $('#domicilioReferencia').val(), $('#domicilioEntreCalles').val());
             }                
         });
         
@@ -487,7 +490,7 @@ export class FinalizaContratacion {
             $('#facturacionCalle').val(objetoDireccion.direccionCalculada.nombreCalle);
             $('#facturacionNumero').val(objetoDireccion.direccionCalculada.numeroDireccion);
             $('#facturacionColonia').val(objetoDireccion.direccionCalculada.colonia);
-            $('#facturacionMunicipio').val(objetoDireccion.direccionFormulario.ciudad);
+            $('#facturacionMunicipio').val(objetoDireccion.direccionCalculada.delegacionMunicipio);
             $('#facturacionCP').val(objetoDireccion.direccionFormulario.codigoPostal,);
             $('#facturacionEstado').val(objetoDireccion.direccionCalculada.estado,);
         });
@@ -551,9 +554,16 @@ export class FinalizaContratacion {
                 arrayPromesas.push(referenciaClase.getFileB64(filIdeOfi,"filIdeOfi"));
 
                 Promise.all(arrayPromesas).then(function(result){
-                        console.log("extension ... "+referenciaClase.props.extensionINE);
                         referenciaClase.props.jsonparams.fileINE = result[0].b64;
                         referenciaClase.props.jsonparams.extINE = referenciaClase.props.extensionINE;
+                        console.log("TIPO ARCHIVO=>"+referenciaClase.props.tipoArchivo[referenciaClase.props.extensionINE]);
+
+                        referenciaClase.props.archivosInfo[0] = {
+                            "tipoDocumento": "Identificación",
+                            "nombreArchivo": "identificacion",
+                            "archivoB64": result[0].b64,
+                            "tipoArchivo": referenciaClase.props.tipoArchivo[referenciaClase.props.extensionINE],
+                        }
 
                         //console.log("JSON PARAMS "+JSON.stringify(referenciaClase.props.jsonparams));
                 }).catch(err=>{
@@ -597,6 +607,14 @@ export class FinalizaContratacion {
                 Promise.all(arrayPromesas).then(function(result){
                         referenciaClase.props.jsonparams.fileComprobante = result[0].b64;
                         referenciaClase.props.jsonparams.extCOMPROBANTE = referenciaClase.props.extensionCOMPROBANTE;
+                        console.log("TIPO ARCHIVO=>"+referenciaClase.props.tipoArchivo[referenciaClase.props.extensionCOMPROBANTE]);
+                        referenciaClase.props.archivosInfo[1] = {
+                            "tipoDocumento": "Comprobante de domicilio",
+                            "nombreArchivo": "comprobante_domicilio",
+                            "archivoB64": result[0].b64,
+                            "tipoArchivo": referenciaClase.props.tipoArchivo[referenciaClase.props.extensionCOMPROBANTE],
+                            
+                        }
 
                         //console.log("JSON PARAMS "+JSON.stringify(referenciaClase.props.jsonparams));
                 }).catch(err=>{
@@ -638,8 +656,15 @@ export class FinalizaContratacion {
                 Promise.all(arrayPromesas).then(function(result){
                         referenciaClase.props.jsonparams.fileRFC = result[0].b64;
                         referenciaClase.props.jsonparams.extRFC = referenciaClase.props.extensionRFC;
+                        console.log("TIPO ARCHIVO=>"+referenciaClase.props.tipoArchivo[referenciaClase.props.extensionRFC]);
 
-                        console.log("JSON PARAMS "+JSON.stringify(referenciaClase.props.jsonparams));
+                        referenciaClase.props.archivosInfo[2] = {
+                            "tipoDocumento": "Acta constitutiva",
+                            "nombreArchivo": "acta_constitutiva",
+                            "archivoB64": result[0].b64,
+                            "tipoArchivo": referenciaClase.props.tipoArchivo[referenciaClase.props.extensionRFC]
+                        }
+
                 }).catch(err=>{
                     console.error("Error en promesa base64:" + err);
                 });
@@ -1331,11 +1356,17 @@ export class FinalizaContratacion {
     obtenerDisponibilidad(){
         console.group('FUNCION obtenerDisponibilidad()');
         let referenciaClase = this;
+        let objetoDireccion = referenciaClase.obtenerObjetoDireccion();
+        var parametros = {
+            "cluster": objetoDireccion.factibilidad.nombre_cluster,
+        };
 
         $.ajax({
-            url: '/assets/media/disponibilidad.json',
+            url: Constantes.endpoints.obtenerDisponibilidad,
+            //contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(parametros),
             dataType: "json",
-            
+            type: 'POST'
         }).done(function(respuesta) {
             console.log('RESPUESTA DE DISPONIBILIDAD',respuesta);
 
@@ -1598,7 +1629,523 @@ export class FinalizaContratacion {
         }
         $("#anioTarjetaCaptura").html(html);
     }
+    /* ------------------------------------------------ */
+    prepararParametrosVenta(esPagoTarjeta){
+        console.group('FUNCION prepararParametrosVenta('+esPagoTarjeta+')');
+        let referenciaClase = this;
+    
+        var strDireccion = localStorage.getItem('TP_STR_DIRECCION');
+        var objDireccion = null;
+        var objFactibilidad = null;
+        var objCoordenadas = null;
+        try{
+            objDireccion = JSON.parse(strDireccion);
+            objFactibilidad = objDireccion.factibilidad;
+            objCoordenadas = objDireccion.coordenadas;
+        }catch(e){}
 
+        let tipoIdentificacion = '';
+        switch ($('input[name="documento"]:checked').val()) {
+            case '1':
+                tipoIdentificacion = 'INE';
+                break;
+            case '2':
+                tipoIdentificacion = 'Pasaporte';
+                break;
+            case '3':
+                tipoIdentificacion = 'Cedula Profesional';
+                break;
+            default:{
+                tipoIdentificacion = '';
+            }
+        }
+        console.log("tipoIdentificacion["+tipoIdentificacion+"]");
+
+        /* ---------------------------- PRODUCTOS ---------------------------- */
+        var arregloProductos = referenciaClase.buscarProductos()
+        console.log('arregloProductos=>', arregloProductos);
+        /* ---------------------------- SERVICIOS ---------------------------- */
+        var arregloServicios= referenciaClase.buscarServicios();
+        console.log('arregloServicios=>', arregloServicios);
+        //* ---------------------------- PROMOCIONES ---------------------------- */
+        var objPromocionNuevo = referenciaClase.buscarPromociones();
+        console.log('objPromocionNuevo=>', objPromocionNuevo);
+        
+        /*************************************************************************************/
+        var IDENTIFICADOR =  Math.floor(Math.random() * (500000 - 100000) + 100000);
+        var strLocalStorage = JSON.stringify(Object.entries(localStorage));
+
+        let nombreCliente = '';
+        let apellidoPaternoCliente = '';
+        let apellidoMaternoCliente = '';
+        let rfcCliente = '';
+        let tipoPersona = '';
+        let compania = '';
+        let numeroCelular = '';
+        let numeroTelefono = '';
+        let objetoCliente = referenciaClase.obtenerObjetoCliente();
+
+        if(referenciaClase.props.tipoCliente == 1){
+            console.log('OBTENIENDO DATOS PERSONA FISICA');
+            tipoPersona = 'Física';
+            nombreCliente = objetoCliente.titular.nombre;
+            apellidoPaternoCliente = objetoCliente.titular.apellidoPaterno;
+            apellidoMaternoCliente = objetoCliente.titular.apellidoMaterno;
+            rfcCliente = objetoCliente.titular.rfc;
+            compania = '';
+            numeroCelular = objetoCliente.titular.celular;
+            numeroTelefono = objetoCliente.titular.telefono;
+        }
+
+        if(referenciaClase.props.tipoCliente == 2){
+            console.log('OBTENIENDO DATOS PERSONA MORAL');
+            tipoPersona = 'Moral';
+            nombreCliente = objetoCliente.titular.nombre;
+            apellidoPaternoCliente = objetoCliente.titular.apellidos;
+            apellidoMaternoCliente = '';
+            rfcCliente = objetoCliente.titular.rfc;
+            compania = objetoCliente.titular.razonSocial;
+            numeroCelular = objetoCliente.numeroTelefonico;
+            numeroTelefono = objetoCliente.numeroTelefonico;
+        }
+
+        var arrelgoMatch = {
+            "a0UQ0000006IgCEMA0" : "a0UQ0000006WfxfMAC",
+            "a0UQ0000006IgCGMA0" : "a0UQ0000006WfxQMAS",
+            "a0UQ0000006IgC6MAK" : "a0UQ0000006WfxRMAS",
+            "a0UQ0000006IgC1MAK" : "a0UQ0000006WfxKMAS",
+            "a0UQ0000006IgC4MAK" : "a0UQ0000006WfxLMAS",
+            "a0UQ0000006IgC8MAK" : "a0UQ0000006WfxXMAS",
+
+            "a0UQ0000006UwF7MAK" : "a0UQ0000006WfRLMA0",
+            "a0UQ0000006UwF3MAK" : "a0UQ0000006WfRJMA0",
+            "a0UQ0000006WfRHMA0" : "a0UQ0000006WfRHMA0",
+            "a0UQ0000006UwEzMAK" : "a0UQ0000006WfRFMA0",
+            "a0UQ0000006UwEvMAK" : "a0UQ0000006WfRDMA0"
+        };
+
+        var objetoPaquete = referenciaClase.obtenerObjetoPaquete();
+        var idPaquete = objetoPaquete.idPaquete;
+
+        $.each(arrelgoMatch, function (idAnterior, idNuevo) {
+            if(idAnterior == idPaquete){
+                console.log('ID ANTERIOR ENCONTRADO ['+idAnterior+'], CAMBIANDO AL NUEVO ['+idNuevo+']');
+                idPaquete = idNuevo;
+            }
+        });
+        
+        var informacion = {
+            //"strLocalStorage":strLocalStorage,
+            "proceso":"Creacion",
+            "IDENTIFICADOR":IDENTIFICADOR,
+
+            "idPlan" : idPaquete,
+            "idCodigoPostal": objFactibilidad.idCodigoPostal,
+            //"idCodigoPostal": '',
+
+            "nombre": nombreCliente,
+            "apellidoPaterno": apellidoPaternoCliente,
+            "apellidoMaterno": apellidoMaternoCliente,
+            "rfc": rfcCliente,
+            "tipoPersona": tipoPersona, 
+            "compania":compania,
+            "referenciaUrbana": '',
+
+            "correoElectronico": objetoCliente.correoElectronico,
+            "numeroTelefono": numeroTelefono,
+            "numeroCeluar": numeroCelular,
+            
+            "direccionCalle": objetoCliente.pago.calleNombre,
+            "direccionNumero": objetoCliente.pago.calleNumero,
+            "direccionNumeroInterior": '',
+            "colonia": objetoCliente.pago.colonia,
+            "direccionCiudad": objetoCliente.pago.municipio,
+            "direccionCodigoPostal": objetoCliente.pago.codigoPostal,
+            "direccionDM": objetoCliente.pago.municipio,
+            "direccionEstado": objetoCliente.pago.estado,
+
+            "sitioCategoryService": objFactibilidad.CategoryService,
+            "sitioCluster": objFactibilidad.nombre_cluster,
+            "sitioDistrito": objFactibilidad.distrito,
+            "sitioFactibilidad": objFactibilidad.factibilidad,
+            "sitioLatitud": objCoordenadas.latitud,
+            "sitioLongitud": objCoordenadas.longitud,
+            "sitioPlaza": objFactibilidad.Cuidad,
+            "sitioRegion": objFactibilidad.Region,
+            "sitioRegionId": objFactibilidad.IdRegion,
+            "sitioZona": "SIN ZONA",
+
+            "productos": arregloProductos,
+            "servicios":arregloServicios,
+            "promociones":objPromocionNuevo,
+
+            "tipoIdentificacion":tipoIdentificacion,
+            "documentos": "",
+            "numeroCuenta":"",
+            "idOportunidad":""
+        };
+
+        console.log('INFORMACION DEL OBJETO DE VENTA');
+        console.log(informacion);
+        console.groupEnd();
+        referenciaClase.generarLeadVenta( informacion, esPagoTarjeta);
+    }
+
+    generarLeadVenta( informacion, esPagoTarjeta) {
+        let referenciaClase = this;
+        console.log('generarLeadVenta.esPagoTarjeta=>', esPagoTarjeta);
+        var objMensaje = {
+            'Creacion':'Validando Informaci&oacute;n',
+            'Modelado':'Preparando la experiencia',
+            'Adicionales':'Agregando adicionales',
+            'Documento':'Enviando Documentos',
+            'Firma':'Finalizando proceso',
+        };
+        $('#nombreProceso').html(objMensaje[informacion.proceso]);
+
+        if(informacion.proceso == 'Documento'){
+            informacion.documentos = referenciaClase.props.archivosInfo;
+        } else {
+            informacion.documentos = [];
+        }
+        
+        $.ajax({
+            url: Constantes.endpoints.generarVenta,
+            data: JSON.stringify(informacion),
+            dataType: "json",
+            type: 'POST'
+        }).done(function (respuesta) {
+            console.log('RESPUESTA SERVICIO [generar-venta]', respuesta);
+            console.table(respuesta);
+
+            if(respuesta.datos.result == '0'){
+                if(informacion.proceso=='Creacion'){
+                    localStorage.setItem('TP_VENTA', JSON.stringify({"numeroCuenta": respuesta.datos.info.numeroCuenta, "idOportunidad" : respuesta.datos.info.IdOportunidad}));
+                    informacion.proceso = 'Modelado';
+                    informacion.numeroCuenta = respuesta.datos.info.numeroCuenta;
+                    informacion.idOportunidad = respuesta.datos.info.IdOportunidad;
+
+                    if(esPagoTarjeta){
+                        console.log('ENVIANDO A GUARDAR LAS TARJETAS');
+                        referenciaClase.guardarTarjeta(respuesta.datos.info.numeroCuenta)
+                    } else {
+                        console.log('PAGO EN EFECTIVO- NO REGISTRAR TARJETA');
+                    }
+
+                    referenciaClase.generarLeadVenta(informacion, false);
+                    
+                }else{
+                    if(informacion.proceso=='Modelado'){
+                        console.log('ENVIANDO ADICIONALES');
+                        informacion.proceso = 'Adicionales';
+                        referenciaClase.generarLeadVenta(informacion, false);
+                    } else {
+                        if(informacion.proceso=='Adicionales'){
+                            console.log('ENVIANDO FIRMA');
+                            informacion.proceso = 'Documento'; 
+                            //informacion.proceso = 'Firma';
+                            referenciaClase.generarLeadVenta(informacion, false);
+                        } else {
+                            /*if(informacion.proceso=='Firma'){
+                                console.log('PROCESO DE VENTA TERMINADO');
+                                console.log('informacion.numeroCuenta=>', informacion.numeroCuenta);
+                                referenciaClase.props.jsonparams.carpeta = informacion.numeroCuenta;
+                                referenciaClase.loadGuardaArchivos(Constantes.endpoints.guardaArchivosEcommerce,referenciaClase.props.jsonparams,referenciaClase.props.tipoCliente);
+                                $('.botonEditar').remove();
+                                $('#ventanaFinaliza').css('display','none');
+                                $('#capaFinaliza').css('opacity','0');
+                                $('#contenidoFinaliza').css('opacity','0');
+
+                                referenciaClase.props.panels[2].style.cssText = 'display: block;';
+                                referenciaClase.props.casePayments.style.cssText = 'display: none;';
+                                referenciaClase.props.resumePayments.style.cssText = 'display: flex;';
+                                referenciaClase.props.btnEditPayment.style.cssText = 'display: flex;';
+
+                                $('.main-summary__invoice-data--info').css('padding-top','30px');
+                                $('.main-summary__invoice-data--info').css('padding-bottom','30px');
+
+                                $('html,body').animate({scrollTop: $("#fechaInstalacion" ).offset().top - 80}, 'slow');
+                            }//*/
+                            //-----------------------------------------
+                            if(informacion.proceso == 'Documento'){
+                                informacion.proceso = 'Firma';
+                                referenciaClase.generarLeadVenta(informacion, false);
+                            }else{
+                                if(informacion.proceso=='Firma'){
+                                    console.log('PROCESO DE VENTA TERMINADO');
+                                    console.log('informacion.numeroCuenta=>', informacion.numeroCuenta);
+                                    referenciaClase.props.jsonparams.carpeta = informacion.numeroCuenta;
+                                    referenciaClase.loadGuardaArchivos(Constantes.endpoints.guardaArchivosEcommerce,referenciaClase.props.jsonparams,referenciaClase.props.tipoCliente);
+                                    $('.botonEditar').remove();
+                                    $('#ventanaFinaliza').css('display','none');
+                                    $('#capaFinaliza').css('opacity','0');
+                                    $('#contenidoFinaliza').css('opacity','0');
+
+                                    referenciaClase.props.panels[2].style.cssText = 'display: block;';
+                                    referenciaClase.props.casePayments.style.cssText = 'display: none;';
+                                    referenciaClase.props.resumePayments.style.cssText = 'display: flex;';
+                                    referenciaClase.props.btnEditPayment.style.cssText = 'display: flex;';
+
+                                    $('.main-summary__invoice-data--info').css('padding-top','30px');
+                                    $('.main-summary__invoice-data--info').css('padding-bottom','30px');
+
+                                    $('html,body').animate({scrollTop: $("#fechaInstalacion" ).offset().top - 80}, 'slow');
+                                }
+                            }//*/
+                            
+                        }
+                    }
+                }
+            } else {
+                
+                
+                referenciaClase.enviarCompraNoExitosa();
+            }
+        }).fail(function (jqXHR, textStatus) {
+            console.log( 'OCURRIO UN ERROR EN EL SERVICIO [generar-venta] PROCESO ['+informacion.proceso+']', informacion);
+
+            if(referenciaClase.props.intentos < 2){
+                referenciaClase.generarLeadVenta(informacion);
+                referenciaClase.props.intentos = 2;
+            } else {
+                $('.iconoPrevencion').hide();
+                $('#btnPaymentData').removeClass('btnDeshabilitado');
+
+                referenciaClase.enviarCompraNoExitosa();
+            }
+        });
+    }
+
+    guardarTarjeta(cuenta){
+        let direccionCalle = $('#facturacionCalle').val().trim();
+        let direccionNumero = $('#facturacionNumero').val().trim();
+        let direccionColonia = $('#facturacionColonia').val().trim();
+        let direccionMunicipio = $('#facturacionMunicipio').val().trim();
+        let direccionCP = $('#facturacionCP').val().trim();
+        let direccionEstado = $('#facturacionEstado').val().trim();
+
+        let nombreTarjeta = $('#nombreTarjeta').val().trim();
+        let numeroTarjeta = $('#numeroTarjetaCaptura').val().trim();
+        
+        let mesTarjeta = $('#mesTarjetaCaptura').val().trim();
+        let anioTarjeta = $('#anioTarjetaCaptura').val().trim();
+        //let cvvTarjeta = $('#cvvTarjetaCaptura').val().trim();
+        let cvvTarjeta = "123";
+
+        let informacion = {
+            "cuenta": cuenta,
+            "cctype": cvvTarjeta,
+            "numeroTarjeta": numeroTarjeta,
+            "expiracionMes": mesTarjeta,
+            "expiracionAnio": anioTarjeta,
+            "primerNombre": nombreTarjeta,
+            "apellidos": "",
+            "direccion": direccionCalle + " " + direccionNumero + ", " + direccionColonia,
+            "codigoPostal": direccionCP,
+            "estado": direccionEstado,
+            "ciudad": direccionMunicipio,
+            "segundoNombre": ""
+        };
+
+        console.log('PARAMETROS DE TARJETA:', informacion);
+
+        $.ajax({
+            url: Constantes.endpoints.guardarTarjeta,
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({
+                "secdata": otpyrc2(JSON.stringify(informacion))
+            }),
+            dataType: "json",
+            type: 'POST'
+        }).done(function(respuesta) {
+            console.log('RESPUESTA GUARDAR TARJETA:', respuesta);
+
+            if(respuesta.codigo != 0){
+                var formato = 'background: #FE6A1B; color:white;border-radius:5px; padding:5px;font-style: italic;'
+                console.log('%c' + '[' + new Date().toLocaleTimeString() + ']=> ' + 'LA TARJETA NO SE PUEDO GUARDAR', formato);
+            }
+
+        }).fail(function(jqXHR, textStatus) {
+            console.log('ER', 'OCURRIO UN ERROR EN EL API [guardar-tarjeta]', jqXHR);
+            var formato = 'background: red; color:white;border-radius:5px; padding:5px;font-style: italic;'
+            console.log('%c' + '[' + new Date().toLocaleTimeString() + ']=> ' + 'ERROR DE API DE GUARDADO DE TARJETA', formato);
+            
+        });
+    }
+
+    enviarCompraNoExitosa(){
+        //https://5ui1bow6gf.execute-api.us-east-1.amazonaws.com/Desarrollo/enviar-compra-noexitosa
+        var strLocalStorage = JSON.stringify(Object.entries(localStorage));
+        var IDENTIFICADOR =  Math.floor(Math.random() * (500000 - 100000) + 100000);
+        var informacion = {
+            "strLocalStorage":strLocalStorage,
+            "proceso":"VENTA-NO EXITOSA",
+            "IDENTIFICADOR":IDENTIFICADOR
+        }
+
+        $.ajax({
+            url: Constantes.endpoints.noCompra,
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(informacion),
+            dataType: "json",
+            type: 'POST'
+        }).done(function(respuesta) {
+            console.log(respuesta);
+            window.location = 'revision.html';
+        }).fail(function(jqXHR, textStatus) {
+            console.log('ER', 'OCURRIO UN ERROR EN EL API [enviar-correo-confirmacion]', jqXHR);
+            window.location = 'revision.html';
+        });
+    }
+
+    loadGuardaArchivos(URL2LOAD, params,tipo){
+        let apuntador = this;
+        $('#botonTitularContinuar').addClass('btnDeshabilitado');
+        $('#botonTitularContinuar').css('pointer-events','none');
+        var cabeceraMC = new Headers();
+        cabeceraMC.append("Content-type", "application/json;charset=utf-8");
+
+        fetch(URL2LOAD, {
+            method: 'POST',
+            body: JSON.stringify({"data":params}),
+            headers: cabeceraMC
+        }).then((data) => {
+            if (data.ok) {
+                return data.json();
+            } else {
+                throw "Error en la llamada Ajax fetch con parametros "+URL2LOAD;
+            }
+        }).then((texto) => {
+            try {
+                var respuesta = texto;
+                if(respuesta.status == 0){
+                    if(respuesta.respuestaPayload !== null || respuesta.respuestaPayload !== ""){
+                        if(tipo == 1){
+                            //FISICA
+                            localStorage.setItem('TP_OF_STR_TITULAR_FILE_INE','IFE_'+respuesta.respuestaPayload.uuid);
+                            localStorage.setItem('TP_OF_STR_TITULAR_FILE_COMPROBANTE','COMPROBANTE_'+respuesta.respuestaPayload.uuid);
+                        }else{
+                            //MORAL
+                            localStorage.setItem('TP_OF_STR_TITULAR_FILE_INE','IFE_'+respuesta.respuestaPayload.uuid);
+                            localStorage.setItem('TP_OF_STR_TITULAR_FILE_COMPROBANTE','COMPROBANTE_'+respuesta.respuestaPayload.uuid);
+                            localStorage.setItem('TP_OF_STR_TITULAR_FILE_RFC','RFC'+respuesta.respuestaPayload.uuid);
+                        }
+                        apuntador.props.banderaGuardoArchivos = true;
+                    }
+                }
+            } catch (e) {
+                console.log("ERROR EN GUARDADO DE ARCHIVOS:", e);
+                apuntador.props.banderaGuardoArchivos =  false;
+            }
+        }).catch((err) => {
+            console.log("err=>",err);
+            apuntador.props.banderaGuardoArchivos = false;
+            
+        }).finally(() =>{
+            $('#botonTitularContinuar').removeClass('btnDeshabilitado');
+            $('#botonTitularContinuar').css('pointer-events','all');
+        });
+    }
+
+    generarAgendamiento(turno, horaInstalacion, referenciaInstalacion, entreCalles){
+        let referenciaClase = this;
+        var fechaInstalacion= $('#datepicker').datepicker("getDate");
+
+        var strDireccion = localStorage.getItem('TP_STR_DIRECCION');
+        var objDireccion = null;
+        var objFactibilidad = null;
+        var objCoordenadas = null;
+
+        var strVenta = localStorage.getItem('TP_VENTA');
+        var objVenta = null;
+        var numeroCuenta = '';
+        var idOportunidad = '';
+
+        var straPaquete = localStorage.getItem('TP_STR_PAQUETE_SELECCION');
+        var objPaquete = null;
+        var nombrePaquete = '';
+        
+
+        try{
+            objDireccion = JSON.parse(strDireccion);
+            objFactibilidad = objDireccion.factibilidad;
+            objCoordenadas = objDireccion.coordenadas;
+
+            objVenta = JSON.parse(strVenta);
+
+            numeroCuenta = objVenta.numeroCuenta;
+            idOportunidad = objVenta.idOportunidad;
+
+            objPaquete = JSON.parse(straPaquete);
+            nombrePaquete = objPaquete.detallePaquete.detalle.nombreComercial;
+        }catch(e){}
+
+        let objCliente = referenciaClase.obtenerObjetoCliente();
+
+        var parametros = {
+            "idCuenta": numeroCuenta,
+            "numeroCuenta": numeroCuenta,
+            "idOportunidad": idOportunidad,
+            "cliente": objCliente.titular.nombreCompleto,
+            "calleInstalacion": objDireccion.direccionCalculada.nombreCalle,
+            "numeroInteriorInstalacion": '',
+            "numeroExteriorInstalacion": objDireccion.direccionCalculada.numeroDireccion,
+            "coloniaInstalacion": objDireccion.direccionCalculada.colonia,
+            "cpInstalacion": objDireccion.direccionCalculada.codigoPostal,
+            "telefonoPrincipal": objCliente.numeroTelefonico,
+            "telefonoCelular": objCliente.numeroTelefonico,
+            "ciudadInstalacion": objDireccion.direccionCalculada.localidad,
+            "delegacionInstalacion": objDireccion.direccionCalculada.delegacionMunicipio,
+            "estadoInstalacion": objDireccion.direccionCalculada.estado,
+            "latitud": objCoordenadas.latitud,
+            "longitud":  objCoordenadas.longitud,
+            "referenciaInstalacion": referenciaInstalacion,
+            "entreCalles": entreCalles,
+            "plaza": objFactibilidad.Cuidad,
+            "distritoInstalacion": objFactibilidad.distrito,
+            "regionInstalacion": objFactibilidad.Region,
+            "zonaInstalacion": "SIN ZONA",
+            "clusterInstalacion": objFactibilidad.nombre_cluster,
+            "turno": turno,
+            "fechaInstalacion": new Date(fechaInstalacion).toISOString().slice(0,10),
+            "horaInstalacion": horaInstalacion,
+            "paquete": nombrePaquete
+        };
+
+        console.log('PARAMETROS AGENDAMIENTOS ENVIADOS:', parametros);
+
+        $.ajax({
+            url: Constantes.endpoints.generarAgendamiento,
+            //contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(parametros),
+            dataType: "json",
+            type: 'POST'
+        }).done(function(respuesta) {
+            console.log('RESPUESTA DEL SERVICIO DE AGENDAMIENTO');
+            console.log(respuesta);
+
+            var fechaInfo = referenciaClase.obtenerFechaFormato($('#datepicker').datepicker("getDate"));
+            localStorage.setItem('TP_CLIENTE_FECHA_INSTALACION', fechaInfo);
+            window.location = 'finaliza.html';
+
+            if(respuesta.codigo == 0){
+                var nombreCliente = objCliente.titular.nombreCompleto;
+                var numeroCuenta = '';//TODO:PENDIENTE
+                var correoElectronico = objCliente.correoElectronico;
+
+                //referenciaClase.enviarCorreoConfirmacion(nombreCliente, numeroCuenta, correoElectronico)
+            } else {
+                //TODO:PROCESO PENDIENTE
+            }
+
+        }).fail(function(jqXHR, textStatus) {
+            console.log('OCURRIO ALGO INESPERADO EN EL SERVICIO DE AGENDAMIENTO');
+            console.log(jqXHR);
+            var fechaInfo = referenciaClase.obtenerFechaFormato($('#datepicker').datepicker("getDate"));
+            localStorage.setItem('TP_CLIENTE_FECHA_INSTALACION', fechaInfo);
+            window.location = 'finaliza.html';
+        });
+    }
     /* ------------------------------------------------ */
     obtenerObjetoPaquete(){
         console.group('FUNCION obtenerObjetoPaquete()');
@@ -1814,14 +2361,14 @@ $(window).keydown(function(event) {
     if(event.ctrlKey && event.keyCode == 90) {
         
         console.log("CTRL+Z");
-        $('#titularNombre').val('ROBERTO');
-        $('#titularApellidoPaterno').val('SANCHEZ');
-        $('#titularApellidoMaterno').val('MARTINEZ');
-        $('#titularRFC').val('SAMR010101AAA');
+        $('#titularNombre').val('JORGE ALBERTO');
+        $('#titularApellidoPaterno').val('RODRIGUEZ');
+        $('#titularApellidoMaterno').val('');
+        $('#titularRFC').val('ROAJ010101AAA');
         $('#titularTelefono').val('5512345678');
-        $('#titularCelular').val('5587654321');
+        //$('#titularCelular').val('5587654321');
 
-        $('input:radio[name="documento"]').filter('[value="1"]').attr('checked', true);
+        //$('input:radio[name="documento"]').filter('[value="1"]').attr('checked', true);
 
         $('#checkBuroCredito').addClass('active');
         $('#checkLegales').addClass('active');

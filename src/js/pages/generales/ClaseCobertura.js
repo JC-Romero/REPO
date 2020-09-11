@@ -279,6 +279,7 @@ export class ClaseCobertura {
                     direccion = calle + ' '+ codigoPostal + ' '+ ciudad;
                 }
                 
+                $("#botonValidarCobertura").html('Validando <i class="fas fa-circle-notch fa-spin" style="color: white;"></i>');
                 apuntador.buscarDireccion(direccion);
             }
         });
@@ -340,9 +341,7 @@ export class ClaseCobertura {
             /***EVENTO TOMADO DE COBERTURASUGERENCIA.JS***/
             var codigoPostal = $('#cpModal').val();
             if(codigoPostal.length == 5){
-                $('#ciudadModal').val('');
-                $('#calleModal').val('');
-                //apuntador.buscarCiudad(codigoPostal, 'calleModal');
+                apuntador.buscarCiudad(codigoPostal, 'calleModal');
             }
         });
 
@@ -559,6 +558,7 @@ export class ClaseCobertura {
                 $("#titleFormStep2").html("Totalplay a&uacute;n no est&aacute; disponible en " + direccion);
                 $("#titleFormStep2").css("display", "flex");
                 $("#subtitleFormStep2").css("display", "none");
+                $("#botonValidarCobertura").html('Quiero que me llamen');
 
                 apuntador.limpiarDatos();
                 apuntador.removerCoordenadas();
@@ -730,17 +730,20 @@ export class ClaseCobertura {
                     apuntador.limpiarDatos();
                     apuntador.removerCoordenadas();
                     $("#validaCoberturaHeader").html("VALIDAR COBERTURA");
+                    $("#botonValidarCobertura").html('Quiero que me llamen');
                 }
             } else {
                 console.log('WR', 'RESPUESTA DE FACTIBILIDAD: STATUS[' + respuesta.status + '] DESCRIPCION[' + respuesta.descripcion + ']');
                 //$("#modalMenu").css("display", "none");
                 //apuntador.mostrarModalCobertura();
+                $("#botonValidarCobertura").html('Quiero que me llamen');
             }
 
         }).catch(err => {
             console.log("error" + err);
             //$("#modalMenu").css("display", "none");
             //apuntador.mostrarModalCobertura();
+            $("#botonValidarCobertura").html('Quiero que me llamen');
         });
     }
 
@@ -823,7 +826,7 @@ export class ClaseCobertura {
 
         //$("#modalMenu").css("display", "none");
         //$("#step1").css("display", "none");
-        window.location = 'detallePaquete.html';
+        window.location = 'paquetes.html';
     }
 
     resize() {
@@ -852,40 +855,27 @@ export class ClaseCobertura {
     }
 
     buscarCiudad(codigoPostal, idCampoFocus){
-        if(idCampoFocus == 'calleSection'){
-            $('.labelBusqueda').html('Buscando...<i class="fas fa-circle-notch fa-spin" style="color:white;"></i>');
-        }else{
-            $('.labelBusqueda').html('Buscando...<i class="fas fa-circle-notch fa-spin"></i>');
-        }
+        
         
         $.ajax({
-            url: '/assets/media/infoCiudad.json',
-            
+            url: Constantes.endpoints.buscarCiudad,
+            data: JSON.stringify({"codigoPostal": codigoPostal}),
             dataType: "json",
-            
+            type: 'POST'
         }).done(function(respuesta) {
             try {
                 $.each(respuesta.datos.informacion.ArrColonias, function (key, infoColonias) {
                     if(infoColonias.DelegacionMunicipio != null && infoColonias.DelegacionMunicipio != ''){
                         let nombreCiudad = infoColonias.DelegacionMunicipio;
                         $('#ciudadModal').val(nombreCiudad);
-                        $('#ciudadSection').val(nombreCiudad);
-                        $('#txtCiudad').val(nombreCiudad);
+                        
                     }
                 });
-
-                $('.labelBusqueda').html('Ciudad');
             } catch (error) {
-                $('#ciudadModal').val('');
-                $('#ciudadSection').val('');
-                $('#txtCiudad').val('');
+                
             }
         }).fail(function(jqXHR, textStatus) {
-            console.log('ER', 'OCURRIO UN ERROR EN EL API [obtener-info-cp-venta]', jqXHR);
-            $('#ciudadModal').val('');
-            $('#ciudadSection').val('');
-            $('#txtCiudad').val('');
-            $('.labelBusqueda').html('Ciudad');
+            console.log('ER', 'OCURRIO UN ERROR EN EL API [buscar-ciudad-cp]', jqXHR);
         });
     }
 
