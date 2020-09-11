@@ -1647,7 +1647,7 @@ export class FinalizaContratacion {
         let tipoIdentificacion = '';
         switch ($('input[name="documento"]:checked').val()) {
             case '1':
-                tipoIdentificacion = 'INE/IFE';
+                tipoIdentificacion = 'INE';
                 break;
             case '2':
                 tipoIdentificacion = 'Pasaporte';
