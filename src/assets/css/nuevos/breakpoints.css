@@ -33,6 +33,93 @@
     .mainCompaniesContainer {
         margin-bottom: 4rem !important;
     }
+
+    /*Breakpoints 08/09/20*/
+    .advantageDescription h2,
+    .advantageDescription p {
+        text-align: center !important;
+    }
+
+    .headerPackages .headerPackagesContent .titleRowPackages h1 {
+        font-size: 30px !important;
+    }
+
+    .headerPackages .headerPackagesContent .headerPackagesContainer {
+        top: -2vh !important;
+    }
+
+    .headerPackages {
+        height: 93vh !important;
+    }
+
+    .headerPackages .imageBackcontainer img {
+        width: 135%;
+        left: -35%;
+    }
+
+    .bestPackageImageContainer {
+        padding-left: 15px;
+    }
+
+    .bestPackageImageContainer h1 {
+        font-size: 28px;
+    }
+
+    .packageAdvantages .advantagesTitle h1 {
+        font-size: 30px;
+    }
+
+    .bestPackageImageContainer .bestPackageDescription {
+        font-size: 16px;
+    }
+
+    .bestPackageImageContainer .generalButton {
+        font-size: 17px;
+    }
+
+    .landingPackageResume .landingPackagePrice .priceContainer {
+        text-align: left;
+        padding: 20px 20px;
+    }
+
+    .landingPackageResume .landingPackagePrice .priceContainer p {
+        font-size: 12px;
+        text-align: left;
+        line-height: 16px;
+    }
+
+    .landingPackageResume .landingPackagePrice .priceContainer h1 {
+        font-size: 26px;
+        line-height: 36px;
+        text-align: left;
+    }
+
+    .landingPackageResume .landingPackagePrice .priceContainer span {
+        font-size: 12px;
+        line-height: 16px;
+        text-align: left;
+    }
+
+    .landingPackageResume .landingPackagePrice .priceContainer .buttonContainer .generalButton {
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        display: block;
+    }
+
+    .landingPackageResume .landingPackagePrice .priceContainer .buttonContainer .generalButton span::after {
+        display: none;
+    }
+
+    .topBar .barList li {
+        margin-right: 10px;
+    }
+
+    .topBar .barList li a {
+        font-size: 14px;
+    }
+
+    /*Breakpoints 08/09/20*/
 }
 
 /* Small devices (landscape phones, less than 768px)*/
@@ -58,12 +145,12 @@
     }
 
     .bannersContainers {
-        top: 6.4rem;
+        top: 6.8rem;
     }
 
     .videoContainer video {
         width: 100% !important;
-        left: 0;
+        left: 50%;
     }
 
     .videoContainer:before {
@@ -146,6 +233,7 @@
 
     .videoTextContainerSecond .videoTextContentSecond .imagesAppsContainer {
         background: transparent;
+        top: 5rem;
     }
 
     .cardsRow .card .card-body .card-title {
@@ -178,6 +266,106 @@
     .chevronContact {
         display: inline-block !important;
     }
+
+    /*Breakpoints 08/09/20*/
+    .advantageDescription h2,
+    .advantageDescription p {
+        text-align: left;
+    }
+
+    .paquetesClasicosTitulos,
+    .iconsRow p {
+        text-align: center;
+    }
+
+    .paquetesClasicosHeader .paquetesClasicosContainer {
+        padding-top: 12vh !important;
+        text-align: center;
+    }
+
+    .paquetesClasicosHeader .paquetesClasicosContainer p {
+        margin-bottom: 2vh;
+    }
+
+    .unboxCarousel .carouselContainer .itemCarousel h1,
+    .unboxCarousel .carouselContainer .itemCarousel p {
+        text-align: center;
+    }
+
+    .unboxCarousel .carouselContainer .itemCarousel img {
+        margin-bottom: 2rem;
+    }
+
+    .slick-dotted.slick-slider {
+        margin-bottom: 30px;
+    }
+
+    .slick-next {
+        right: 30px;
+        z-index: 10000;
+    }
+
+    .slick-prev {
+        left: -5px;
+        z-index: 10000;
+    }
+
+    .headerPackages {
+        height: 110vh;
+    }
+
+    .headerPackages .headerPackagesContent .titleRowPackages h1 {
+        font-size: 30px;
+    }
+
+    .unboxCarousel .carouselTitles h1 {
+        font-size: 24px;
+    }
+
+    .unboxCarousel .carouselContainer .itemCarousel {
+        text-align: center;
+    }
+
+    .unboxCarousel .carouselContainer .itemCarousel h1 {
+        font-size: 20px;
+    }
+
+    .unboxCarousel .carouselContainer .itemCarousel p {
+        font-size: 16px;
+    }
+
+    .unboxCarousel .carouselContainer .itemCarousel img {
+        margin: 0 auto;
+        width: 75%;
+        margin-bottom: 1rem;
+    }
+
+    .landingPackageResume .landingPackageTitle h1 {
+        font-size: 16px;
+    }
+
+    .landingPackageResume .landingPackageDescription h2 {
+        font-size: 18px;
+    }
+
+    .landingPackageResume .resumeColumns .resumeItem p {
+        font-size: 18px;
+    }
+
+    .landingPackageResume .resumeColumns .resumeItem span {
+        font-size: 14px;
+    }
+
+    .landingFullWidthBanner .landingBannerArt img {
+        width: 85%;
+        margin-top: 3rem;
+    }
+
+    .headerPackages {
+        height: 97vh !important;
+    }
+
+    /*Breakpoints 08/09/20*/
 }
 
 @media (max-width: 767.98px) and (orientation: landscape) {
@@ -221,7 +409,7 @@
         margin-top: 0;
         position: relative;
         top: -1rem;
-        width: 90%;
+        width: 100%;
     }
 
     header .mainNav ul.userMenu {
@@ -291,6 +479,46 @@
     .modalCityPicker .citySearchBar .autocompleteList {
         width: 84%;
     }
+
+    /**/
+    .paquetesClasicosHeader .paquetesClasicosContainer {
+        padding-top: 10vh;
+    }
+
+    .paquetesClasicosHeader .paquetesClasicosContainer p {
+        margin-bottom: 2vh;
+    }
+
+    .paquetesClasicosHeader.unbox pre {
+        margin-top: 2rem;
+    }
+
+    .paquetesClasicosHeader.unbox p,
+    .paquetesClasicosHeader.match p {
+        margin-bottom: 2rem;
+    }
+
+    .headerPackages {
+        height: 74vh;
+    }
+
+    .generalPackage {
+        height: 226px;
+    }
+
+    .generalPackage h1 {
+        font-size: 30px !important;
+    }
+
+    .generalPackage p {
+        font-size: 20px;
+    }
+
+    .generalPackage .iconsRow {
+        font-size: 25px;
+    }
+
+    /**/
 }
 
 @media (max-width: 1200px) {
@@ -300,6 +528,34 @@
 
     .modalCityPicker .citySearchBar .autocompleteList {
         width: 84%;
+    }
+
+    .headerPackages .headerPackagesContent .titleRowPackages {
+        top: -5vh;
+    }
+
+    .headerPackages .headerPackagesContent .headerPackagesContainer {
+        top: -2vh;
+    }
+
+    .headerPackages .headerPackagesContent .titleRowPackages h1 {
+        font-size: 48px;
+    }
+
+    .generalPackage h1 {
+        font-size: 36px;
+    }
+
+    .generalPackage p {
+        font-size: 24px;
+    }
+
+    .generalPackage .iconsRow {
+        font-size: 28px;
+    }
+
+    .headerPackages {
+        height: 60vh;
     }
 }
 
@@ -335,8 +591,15 @@
         top: 20%;
     }
 
+    .headerPackages {
+        height: 153vh !important;
+    }
+
     .videoTextContainer .videoTextContent {
         padding-top: 10%;
+    }
+    .headerPackages {
+        height: 264vh !important;
     }
 }
 
@@ -360,13 +623,52 @@
     .videoTextContainerSecond .videoTextContentSecond img {
         width: 70px;
     }
+
+    .paquetesClasicosHeader .paquetesClasicosContainer .paquetesClasicosTitulos {
+        margin-top: 3rem;
+    }
+
+    .headerPackages {
+        height: 153vh !important;
+    }
+
+    .slick-next {
+        right: 32px;
+        z-index: 10000;
+    }
+}
+
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+}
+
+/* Portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    .headerPackages {
+        height: 173vh !important;
+    }
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+    .headerPackages {
+        height: 283vh !important;
+    }
 }
 
 /* iPhone 6, 7, 8 ----------- */
 @media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+    .headerPackages {
+        height: 264vh;
+    }
 }
 
 @media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+    .headerPackages {
+        height: 152vh !important;
+    }
 }
 
 /* ----------- iPhone 6+, 7+ and 8+ ----------- */
@@ -388,12 +690,18 @@
 
 /* Landscape */
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+    .headerPackages {
+        height: 230vh !important;
+    }
 }
 
 /* ----------- iPhone X ----------- */
 
 /* Portrait and Landscape */
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+    .headerPackages {
+        height: 129vh !important;
+    }
 }
 
 /* Portrait */
@@ -404,6 +712,10 @@
 
     .mainVideoBannerSecond {
         height: 110%;
+    }
+
+    .headerPackages {
+        height: 129vh !important;
     }
 }
 
@@ -444,6 +756,10 @@
 
     .videoTextContainerSecond .videoTextContentSecond {
     }
+
+    .headerPackages {
+        height: 230vh !important;
+    }
 }
 
 /* ----------- iPad 1, 2, Mini and Air ----------- */
@@ -457,6 +773,10 @@
 
     .videoTextContainer .videoTextContent {
     }
+
+    .headerPackages {
+        height: 76vh;
+    }
 }
 
 /* Portrait */
@@ -468,10 +788,17 @@
     .mainVideoBannerSecond {
         height: 75%;
     }
+
+    .headerPackages {
+        height: 76vh;
+    }
 }
 
 /* Landscape */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+    .headerPackages {
+        height: 86vh;
+    }
 }
 
 /* ----------- iPad Pro 12.9" ----------- */
@@ -492,6 +819,10 @@
 
     .videoTextContainer {
         top: 5vh;
+    }
+
+    .headerPackages {
+        height: 56vh;
     }
 }
 

@@ -49,13 +49,13 @@ body,
 }
 
 .callUsModalContainer .modal-content {
-    padding-top: 2rem;
     padding-bottom: 2rem;
+    padding-left: 2rem;
 }
 
 .callUsModalContainer .modal-content .modal-header .close {
     position: relative;
-    top: -3rem;
+    top: -1rem;
     right: -1rem;
 }
 
@@ -70,9 +70,9 @@ a {
 }
 
 a:after {
-    content: "\e808";
+    content: "\e802";
     position: relative;
-    font-family: "fontello";
+    font-family: "totalplayicons";
     left: 10px;
     top: -1px;
     transition: 300ms;
@@ -141,6 +141,7 @@ header .topMenu a {
     font-weight: 700;
     color: rgba(255, 255, 255, 1);
     font-size: 14px;
+    white-space: nowrap;
 }
 
 header .topMenu a:hover {
@@ -169,9 +170,11 @@ header .topMenu .locationButton a {
     color: rgba(255, 255, 255, 1) !important;
     cursor: pointer;
 }
+
 header .topMenu .locationButton a:hover {
     color: rgba(255, 255, 255, 1);
 }
+
 header .topMenu .locationButton a::before {
     content: "\f3c5";
     font-family: "Font Awesome 5 Free";
@@ -195,6 +198,7 @@ header .mainNav img {
 
 header .mainNav ul.desktopNav {
     list-style: none;
+    padding-top: 5px;
 }
 
 header .mainNav ul.desktopNav li {
@@ -433,7 +437,7 @@ header .mainNav .mobileCart a img {
     width: 85% !important;
     object-fit: cover;
     position: relative;
-    left: 15%;
+    left: 55%;
 }
 
 .videoContainer video::-webkit-media-controls {
@@ -525,7 +529,7 @@ header .mainNav .mobileCart a img {
 
 .bannersContainers .headerBanner a:after {
     content: "\e800";
-    font-family: "fontello";
+    font-family: "totalplayicons";
     font-size: 13px;
 }
 
@@ -861,7 +865,7 @@ header .mainNav .mobileCart a img {
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
     font-size: 36px;
-    margin-bottom: 3rem !important;
+    margin-bottom: 3rem;
     height: auto;
 }
 
@@ -911,6 +915,9 @@ header .mainNav .mobileCart a img {
     margin-bottom: 4rem;
 }
 
+.packagesContainer .locationLink a {
+    color: rgba(25, 136, 255, 1);
+}
 .packagesContainer .locationLink a:after {
     display: none;
 }
@@ -2388,6 +2395,7 @@ footer ul li a:hover {
 .footerColumn.contactColumn ul li a {
     color: rgba(25, 136, 255, 1);
 }
+
 footer ul.footerSocials li {
     display: inline-block;
     margin-left: 10px;
@@ -2454,28 +2462,46 @@ footer .legalAdvice p {
 /*Footer*/
 /*Packages View*/
 .headerPackages {
-    height: auto;
-    background: url(../img/backVideoMobile.png) top center no-repeat;
-    background-size: 100% 70%;
-    padding-top: 10rem;
-    padding-bottom: 3rem;
-    background-color: rgba(246, 246, 246, 1);
+    position: relative;
+    height: 90vh;
+    background: rgba(246, 246, 246, 1);
 }
 
-.headerPackages .titleRowPackages {
-    text-align: center;
-    margin-bottom: 4rem;
+.headerPackages .imageBackcontainer {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-.headerPackages .titleRowPackages h1 {
-    font-size: 57px;
+.headerPackages .imageBackcontainer img {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.headerPackages .headerPackagesContent {
+    position: relative;
+    top: 15vh;
+    padding-top: 55px;
+}
+
+.headerPackages .headerPackagesContent .titleRowPackages {
+    position: relative;
+    top: 5vh;
     color: rgba(255, 255, 255, 1);
+    text-align: center;
+}
+
+.headerPackages .headerPackagesContent .titleRowPackages h1 {
+    font-size: 57px;
     font-weight: 600;
 }
 
-.headerPackagesContainer {
+.headerPackages .headerPackagesContent .headerPackagesContainer {
+    position: relative;
+    top: 25vh;
 }
-
 .generalPackage {
     background: rgba(250, 250, 250, 1);
     -webkit-border-radius: 16px;
@@ -2556,7 +2582,74 @@ footer .legalAdvice p {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+/*Nuevos estilos paquetes*/
+/*Unbox*/
+.generalPackage.unbox {
+    background: linear-gradient(223.9deg, rgba(89, 203, 232, 1) 0%, rgba(0, 170, 227, 1) 100%);
+    color: rgba(255, 255, 255, 1);
+}
 
+.generalPackage.unbox .paragraphRow p {
+    color: rgba(255, 255, 255, 1);
+}
+
+.generalPackage.unbox .iconsRow p i.fa-wifi {
+    background: rgba(255, 255, 255, 1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.generalPackage.unbox .iconsRow p i.fa-plus {
+    color: rgba(255, 255, 255, 1);
+}
+
+.generalPackage.unbox .iconsRow p i.fa-tv {
+    background: rgba(255, 255, 255, 1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.generalPackage.unbox .iconsRow p i.fa-phone-alt {
+    background: rgba(255, 255, 255, 1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/*Unbox*/
+/*Match*/
+.generalPackage.match {
+    background: linear-gradient(223.9deg, rgba(224, 45, 29, 1) 0%, rgba(228, 0, 43, 1) 100%);
+    color: rgba(255, 255, 255, 1);
+}
+
+.generalPackage.match .paragraphRow p {
+    color: rgba(255, 255, 255, 1);
+}
+
+.generalPackage.match .iconsRow p i.fa-wifi {
+    background: rgba(255, 255, 255, 1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.generalPackage.match .iconsRow p i.fa-plus {
+    color: rgba(255, 255, 255, 1);
+}
+
+.generalPackage.match .iconsRow p i.fa-tv {
+    background: rgba(255, 255, 255, 1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.generalPackage.match .iconsRow p i.fa-phone-alt {
+    background: rgba(255, 255, 255, 1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/*Match*/
+/*Nuevos estilos paquetes*/
 .locationPackagesContainer {
     height: auto;
 }
@@ -2582,7 +2675,9 @@ footer .legalAdvice p {
     background-color: rgba(246, 246, 246, 1);
     padding-bottom: 6rem;
 }
-
+.bestPackageContainer .bestPackageTitle {
+    margin-bottom: 24px;
+}
 .bestPackageContainer .bestPackageTitle p {
     font-size: 24px;
     font-weight: 700;
@@ -2590,7 +2685,7 @@ footer .legalAdvice p {
 
 .bestPackageImageContainer {
     width: 100%;
-    background-image: url(../img/gettyimages-1194473556-2048x2048.png),
+    background-image: url(../../../assets/img/nuevos/gettyimages-1194473556-2048x2048.png),
         linear-gradient(90deg, rgba(255, 0, 207, 1) 0.06%, rgba(120, 58, 106, 1) 100%);
     background-repeat: no-repeat;
     background-size: cover;
@@ -2656,7 +2751,11 @@ footer .legalAdvice p {
 .packageAdvantages .advantagesTiles .advantageDescription {
     margin-bottom: 2rem;
 }
-
+.packageAdvantages .advantagesTiles .advantageDescription img {
+    margin-bottom: 24px;
+    width: 48px;
+    height: auto;
+}
 .packageAdvantages .advantagesTiles .advantageDescription h2 {
     font-weight: 700;
     font-size: 20px;
@@ -2819,6 +2918,7 @@ footer .legalAdvice p {
     color: rgba(245, 245, 245, 1);
     padding: 15px 0 15px 16px;
 }
+
 .modalCityPicker .cityList .cityListItem a.active {
     display: block;
     color: rgba(130, 194, 220, 1);
@@ -3007,8 +3107,8 @@ footer .legalAdvice p {
 
 .modalPhoneList .modal-content .modal-header .close {
     position: relative;
-    top: 0;
-    right: 1rem;
+    top: -1rem;
+    right: -1rem;
 }
 
 .modalChats .modal-content {
@@ -3085,7 +3185,1194 @@ footer .legalAdvice p {
     margin-right: 5px;
 }
 
-/*Modal ity Picker*/
+/*Modal City Picker*/
+/*Paquetes clasicos*/
+.paquetesClasicosHeader {
+    height: auto;
+}
+
+.paquetesClasicosHeader .paquetesClasicosHeader.unbox .imageContainer {
+    height: auto;
+}
+
+.paquetesClasicosHeader.unbox .imageContainer img,
+.paquetesClasicosHeader.match .imageContainer img {
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.paquetesClasicosHeader.unbox .paquetesClasicosContainer {
+    padding-bottom: 0;
+    padding-top: 98px;
+}
+
+.paquetesClasicosHeader.unbox {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#00aae3+0,59cbe8+100 */
+    background: #00aae3;
+    /* Old browsers */
+    background: -moz-linear-gradient(left, #00aae3 0%, #59cbe8 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #00aae3 0%, #59cbe8 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #00aae3 0%, #59cbe8 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00aae3', endColorstr='#59cbe8', GradientType=1);
+    /* IE6-9 */
+}
+
+.paquetesClasicosHeader.unbox pre,
+.paquetesClasicosHeader.match pre {
+    color: rgba(245, 245, 245, 1);
+    font-weight: 700;
+    font-family: "Montserrat", sans-serif;
+    font-size: 21px;
+    line-height: 25px;
+}
+
+.paquetesClasicosHeader.unbox h1,
+.paquetesClasicosHeader.match h1 {
+    font-weight: 500 !important;
+    font-size: 36px !important;
+    line-height: 50px !important;
+    color: rgba(245, 245, 245, 1) !important;
+}
+
+.paquetesClasicosHeader.unbox p,
+.paquetesClasicosHeader.match p {
+    font-weight: 400 !important;
+    font-size: 20px !important;
+    line-height: 30px !important;
+    color: rgba(245, 245, 245, 1) !important;
+}
+
+.paquetesClasicosHeader.match p {
+    margin-bottom: 2rem;
+}
+
+.paquetesClasicosHeader.match {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e4002b+0,e02d1d+100 */
+    background: #e4002b;
+    /* Old browsers */
+    background: -moz-linear-gradient(left, #e4002b 0%, #e02d1d 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #e4002b 0%, #e02d1d 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #e4002b 0%, #e02d1d 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e4002b', endColorstr='#e02d1d', GradientType=1);
+    /* IE6-9 */
+}
+
+.paquetesClasicosHeader.match .paquetesClasicosContainer {
+    padding-bottom: 0;
+    padding-top: 106px;
+}
+
+.paquetesClasicosHeader .paquetesClasicosContainer {
+    padding-top: 106px;
+}
+
+.paquetesClasicosHeader .paquetesClasicosContainer i {
+    text-align: left;
+    font-size: 28px;
+    margin-bottom: 1rem;
+    margin-right: 10px;
+}
+
+.paquetesClasicosHeader .paquetesClasicosContainer i:last-child {
+    margin-right: 0;
+}
+
+.paquetesClasicosHeader .paquetesClasicosContainer i.fa-plus {
+    font-size: 10px;
+    position: relative;
+    top: -6px;
+    color: rgba(117, 120, 123, 1);
+}
+
+.paquetesClasicosHeader .paquetesClasicosContainer i.fa-wifi {
+    background: linear-gradient(213.73deg, rgba(255, 191, 63, 1) 0%, rgba(219, 228, 66, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.paquetesClasicosHeader .paquetesClasicosContainer i.fa-tv {
+    background: linear-gradient(215.84deg, rgba(228, 0, 43, 1) 0%, rgba(240, 78, 152, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.paquetesClasicosHeader .paquetesClasicosContainer i.fa-phone-alt {
+    background: linear-gradient(215.02deg, rgba(240, 78, 152, 1) 0%, rgba(130, 70, 175, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.paquetesClasicosHeader .paquetesClasicosContainer .paquetesClasicosTitulos {
+    margin-top: 1rem;
+}
+
+.paquetesClasicosHeader .paquetesClasicosContainer .paquetesClasicosTitulos h1 {
+    font-size: 36px;
+    line-height: 50.4px;
+    font-weight: 500;
+    color: rgba(59, 69, 89, 1);
+}
+
+.paquetesClasicosHeader .paquetesClasicosContainer .paquetesClasicosTitulos p {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+    color: rgba(59, 69, 89, 1);
+    margin-bottom: 2rem;
+}
+
+.paquetesClasicosHeader .paquetesClasicosContainer .imageContainer img {
+    width: 100%;
+}
+
+.contenedorPaquetesClasicos {
+    height: auto;
+    background: rgba(246, 246, 246, 1);
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+
+.contenedorPaquetesClasicos .selectorPaquetes {
+    text-align: center;
+}
+
+.contenedorPaquetesClasicos .selectorPaquetes ul {
+    list-style: none;
+    white-space: nowrap;
+}
+
+.contenedorPaquetesClasicos .selectorPaquetes ul li {
+    display: inline-block;
+    margin: 0;
+}
+
+.contenedorPaquetesClasicos .selectorPaquetes ul li a {
+    color: rgba(59, 69, 89, 1);
+}
+
+.contenedorPaquetesClasicos .selectorPaquetes ul li:first-child a {
+    border-right: none;
+    -webkit-border-top-left-radius: 8px;
+    -webkit-border-bottom-left-radius: 8px;
+    -moz-border-radius-topleft: 8px;
+    -moz-border-radius-bottomleft: 8px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.contenedorPaquetesClasicos .selectorPaquetes ul li:nth-child(2) a {
+    border-left: none;
+    -webkit-border-top-right-radius: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+    -moz-border-radius-topright: 8px;
+    -moz-border-radius-bottomright: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.contenedorPaquetesClasicos .selectorPaquetes ul li a {
+    border: rgba(224, 224, 224, 1) 2px solid;
+    padding: 6px 26px;
+}
+
+.contenedorPaquetesClasicos .selectorPaquetes ul li a.active {
+    background: rgba(26, 118, 210, 1);
+    color: rgba(255, 255, 255, 1);
+    border: rgba(26, 118, 210, 1) 2px solid;
+    font-weight: 700;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.contenedorPaquetesClasicos .selectorPaquetes ul li a::after {
+    display: none;
+}
+
+.contenedorPaquetesClasicos .selectorPaquetesTitulo {
+    text-align: center;
+    margin-top: 16px;
+    margin-bottom: 40px;
+}
+
+.contenedorPaquetesClasicos .selectorPaquetesTitulo p {
+    color: rgba(59, 69, 89, 1);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.contenedorPaquetesClasicos .selectorPaquetesTitulo p span {
+    font-weight: 700;
+}
+
+/**/
+.contenedorPaquetesClasicos .selectorPaquetesTituloUnbox {
+    text-align: center;
+    margin-top: 16px;
+    margin-bottom: 40px;
+}
+
+.contenedorPaquetesClasicos .selectorPaquetesTituloUnbox p {
+    color: rgba(59, 69, 89, 1);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.contenedorPaquetesClasicos .selectorPaquetesTituloUnbox p span {
+    color: #33bbe8;
+}
+
+/**/
+.hiddenPackageTriple,
+.hiddenPackageDoble {
+    display: none;
+}
+
+.botonMostrarMas {
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.botonMostrarMas .generalButton {
+    color: rgba(25, 138, 255, 1);
+    background: rgba(255, 255, 255, 0);
+    border: solid 2px rgba(25, 138, 255, 1);
+}
+
+.iftRow {
+    text-align: center;
+}
+
+.iftRow a {
+    color: rgba(59, 69, 89, 1);
+    font-size: 12px;
+    line-height: 18px;
+    text-decoration: underline;
+}
+
+.iftRow a::after {
+    display: none;
+}
+
+.buttonAdvantages {
+    margin-top: 51px;
+}
+
+.termsAndConditions {
+    margin-top: 48px;
+    margin-bottom: 48px;
+}
+
+.termsAndConditions hr {
+    border: rgba(117, 120, 123, 0.5) solid 1px;
+}
+
+.termsAndConditions p {
+    font-weight: 400;
+    font-size: 11px;
+    color: rgba(117, 120, 123, 1);
+}
+
+.termsAndConditions p:nth-child(2) {
+    margin-bottom: 13px;
+}
+
+.termsAndConditions p a {
+    color: rgba(117, 120, 123, 1);
+    font-size: 11px;
+    text-decoration: underline;
+}
+
+.termsAndConditions p a::after {
+    display: none;
+}
+
+.termsAndConditions p span {
+    font-weight: 700;
+}
+
+.unboxCarousel {
+    padding-top: 2rem;
+    background: rgba(34, 35, 49, 1);
+    color: rgba(255, 255, 255, 1);
+}
+
+.unboxCarousel .carouselTitles h1 {
+    text-align: center;
+    margin-bottom: 23px;
+    font-size: 40px;
+}
+
+.unboxCarousel .carouselContainer .itemCarousel h1 {
+    font-size: 32px;
+}
+
+.unboxCarousel .carouselContainer .itemCarousel p {
+    font-size: 20px;
+}
+
+.unboxCarousel .carouselContainer .itemCarousel img {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 597px;
+}
+
+/*Paquetes clasicos*/
+/*slider styles*/
+.slick-dots {
+    top: -50px;
+}
+
+.slick-dotted.slick-slider {
+    margin-bottom: 0px;
+}
+
+.slick-next::before {
+    content: "\e802";
+    font-family: "totalplayicons";
+    color: rgba(25, 138, 255, 1);
+    font-size: 52px;
+}
+
+.slick-next {
+    right: 0;
+    top: 30%;
+}
+
+.slick-prev {
+    left: -40px;
+    top: 30%;
+}
+
+.slick-prev::before {
+    content: "\e803";
+    font-family: "totalplayicons";
+    color: rgba(25, 138, 255, 1);
+    font-size: 52px;
+}
+
+/*slider styles*/
+
+/*Landing Paquetes*/
+.landingPackageResume {
+    padding-top: 136px;
+    background: rgba(246, 246, 246, 1);
+    padding-bottom: 2rem;
+}
+
+.landingPackageResume .landingPackageTitle {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.landingPackageResume .landingPackageTitle h1 {
+    color: rgba(245, 245, 245, 1);
+    font-weight: 700;
+    font-size: 26px;
+    text-align: center;
+    padding: 6px 10px;
+    display: inline;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.05);
+    height: auto;
+}
+
+.landingPackageResume .landingPackageDescription h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 500;
+    color: rgba(59, 69, 89, 1);
+    font-size: 33px;
+}
+
+/*Badges Title*/
+.landingPackageResume .landingPackageTitle h1.unboxBadge {
+    background: -moz-linear-gradient(45deg, rgba(0, 170, 227, 0.8) 0%, rgba(89, 203, 232, 0.8) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(0, 170, 227, 0.8) 0%, rgba(89, 203, 232, 0.8) 100%);
+    background: linear-gradient(45deg, rgba(0, 170, 227, 0.8) 0%, rgba(89, 203, 232, 0.8) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cc00aae3', endColorstr='#cc59cbe8', GradientType=1);
+}
+
+.landingPackageResume .landingPackageTitle h1.matchBadge {
+    background: -moz-linear-gradient(45deg, rgba(228, 0, 43, 0.8) 0%, rgba(224, 45, 29, 0.8) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(228, 0, 43, 0.8) 0%, rgba(224, 45, 29, 0.8) 100%);
+    background: linear-gradient(45deg, rgba(228, 0, 43, 0.8) 0%, rgba(224, 45, 29, 0.8) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cce4002b', endColorstr='#cce02d1d', GradientType=1);
+}
+
+.landingPackageResume .landingPackageTitle h1.surprisePlusBadge {
+    background: rgb(125, 84, 169);
+    background: -moz-linear-gradient(45deg, rgba(125, 84, 169, 1) 0%, rgba(178, 138, 209, 1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(125, 84, 169, 1) 0%, rgba(178, 138, 209, 1) 100%);
+    background: linear-gradient(45deg, rgba(125, 84, 169, 1) 0%, rgba(178, 138, 209, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7d54a9', endColorstr='#b28ad1', GradientType=1);
+}
+
+.landingPackageResume .landingPackageTitle h1.emotionPlusBadge {
+    background: rgb(98, 195, 230);
+    background: -moz-linear-gradient(45deg, rgba(98, 195, 230, 1) 0%, rgba(153, 231, 255, 1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(98, 195, 230, 1) 0%, rgba(153, 231, 255, 1) 100%);
+    background: linear-gradient(45deg, rgba(98, 195, 230, 1) 0%, rgba(153, 231, 255, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#62c3e6', endColorstr='#99e7ff', GradientType=1);
+}
+
+.landingPackageResume .landingPackageTitle h1.emotionBadge {
+    background: rgb(140, 200, 230);
+    background: -moz-linear-gradient(45deg, rgba(140, 200, 230, 1) 0%, rgba(177, 229, 246, 1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(140, 200, 230, 1) 0%, rgba(177, 229, 246, 1) 100%);
+    background: linear-gradient(45deg, rgba(140, 200, 230, 1) 0%, rgba(177, 229, 246, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8cc8e6', endColorstr='#b1e5f6', GradientType=1);
+}
+
+.landingPackageResume .landingPackageTitle h1.funPlusBadge {
+    background: rgb(252, 177, 0);
+    background: -moz-linear-gradient(45deg, rgba(252, 177, 0, 1) 0%, rgba(246, 233, 177, 1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(252, 177, 0, 1) 0%, rgba(246, 233, 177, 1) 100%);
+    background: linear-gradient(45deg, rgba(252, 177, 0, 1) 0%, rgba(246, 233, 177, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcb100', endColorstr='#f6e9b1', GradientType=1);
+}
+
+.landingPackageResume .landingPackageTitle h1.funBadge {
+    background: rgb(246, 194, 85);
+    background: -moz-linear-gradient(45deg, rgba(246, 194, 85, 1) 0%, rgba(246, 230, 175, 1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(246, 194, 85, 1) 0%, rgba(246, 230, 175, 1) 100%);
+    background: linear-gradient(45deg, rgba(246, 194, 85, 1) 0%, rgba(246, 230, 175, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6c255', endColorstr='#f6e6af', GradientType=1);
+}
+
+.landingPackageResume .landingPackageTitle h1.starterBadge {
+    background: rgb(180, 180, 180);
+    background: -moz-linear-gradient(45deg, rgba(180, 180, 180, 1) 0%, rgba(221, 221, 221, 1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(180, 180, 180, 1) 0%, rgba(221, 221, 221, 1) 100%);
+    background: linear-gradient(45deg, rgba(180, 180, 180, 1) 0%, rgba(221, 221, 221, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b4b4b4', endColorstr='#dddddd', GradientType=1);
+}
+
+/*Badges Title*/
+.landingPackageResume .resumeColumns .resumeItem p {
+    font-weight: 400;
+    color: rgba(59, 69, 89, 1);
+    font-size: 22px;
+}
+
+.landingPackageResume .resumeColumns .resumeItem {
+    margin-bottom: 16px;
+}
+
+.landingPackageResume .resumeColumns .resumeItem span {
+    font-weight: 400;
+    color: rgba(239, 108, 0, 1);
+    font-size: 15px;
+}
+
+.landingPackageResume .landingPackagePrice .priceContainer {
+    background: rgba(250, 250, 250, 1);
+    padding-top: 34px;
+    padding-bottom: 34px;
+    text-align: center;
+    -webkit-box-shadow: 0px 9px 18px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 9px 18px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 9px 18px 0px rgba(0, 0, 0, 0.15);
+    -webkit-border-radius: 26px;
+    -moz-border-radius: 26px;
+    border-radius: 26px;
+}
+
+.landingPackageResume .landingPackagePrice .priceContainer p {
+    line-height: 18px;
+    font-size: 22px;
+    font-weight: 500;
+    color: rgba(59, 69, 89, 1);
+}
+
+.landingPackageResume .landingPackagePrice .priceContainer h1 {
+    line-height: 18px;
+    font-size: 53px;
+    font-weight: 500;
+    color: rgba(59, 69, 89, 1);
+    line-height: 64px;
+}
+
+.landingPackageResume .landingPackagePrice .priceContainer span {
+    color: rgba(117, 120, 123, 1);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+}
+
+.landingPackageResume .landingPackagePrice .priceContainer .buttonContainer {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.landingPackageResume .landingPackagePrice .priceContainer .buttonContainera {
+    font-size: 18px;
+}
+
+.landingPackageResume .landingPackagePrice .priceContainer .buttonContainer .generalButton span::after {
+    content: "\e800";
+    font-family: "totalplayicons";
+    color: rgba(255, 255, 255, 1);
+    margin-left: 5px;
+    position: relative;
+}
+
+.wifiSingle::before {
+    content: "\e809";
+    font-family: "totalplayicons";
+    font-size: 28px;
+    position: absolute;
+    left: -25px;
+    top: 3px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#dbe442+0,ffbf3f+100&0.85+0,0.85+100 */
+    background: -moz-linear-gradient(45deg, rgba(219, 228, 66, 0.85) 0%, rgba(255, 191, 63, 0.85) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, rgba(219, 228, 66, 0.85) 0%, rgba(255, 191, 63, 0.85) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, rgba(219, 228, 66, 0.85) 0%, rgba(255, 191, 63, 0.85) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d9dbe442', endColorstr='#d9ffbf3f', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tvSingle::before {
+    content: "\e808";
+    font-family: "totalplayicons";
+    font-size: 28px;
+    position: absolute;
+    left: -25px;
+    top: 3px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#37c2ea+0,68e3f6+100 */
+    background: rgb(55, 194, 234);
+    /* Old browsers */
+    background: -moz-linear-gradient(45deg, rgba(55, 194, 234, 1) 0%, rgba(104, 227, 246, 1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, rgba(55, 194, 234, 1) 0%, rgba(104, 227, 246, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, rgba(55, 194, 234, 1) 0%, rgba(104, 227, 246, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#37c2ea', endColorstr='#68e3f6', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.HDSingle::before {
+    content: "\e801";
+    font-family: "totalplayicons";
+    font-size: 28px;
+    position: absolute;
+    left: -25px;
+    top: -5px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e4002b+0,f04e98+100&0.85+0,0.85+100 */
+    background: -moz-linear-gradient(45deg, rgba(228, 0, 43, 0.85) 0%, rgba(240, 78, 152, 0.85) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, rgba(228, 0, 43, 0.85) 0%, rgba(240, 78, 152, 0.85) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, rgba(228, 0, 43, 0.85) 0%, rgba(240, 78, 152, 0.85) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d9e4002b', endColorstr='#d9f04e98', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.landlineSingle::before {
+    content: "\e805";
+    font-family: "totalplayicons";
+    font-size: 28px;
+    position: absolute;
+    left: -25px;
+    top: -5px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#8246af+0,f04e98+100&0.85+0,0.85+100 */
+    background: -moz-linear-gradient(45deg, rgba(130, 70, 175, 0.85) 0%, rgba(240, 78, 152, 0.85) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, rgba(130, 70, 175, 0.85) 0%, rgba(240, 78, 152, 0.85) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, rgba(130, 70, 175, 0.85) 0%, rgba(240, 78, 152, 0.85) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d98246af', endColorstr='#d9f04e98', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.benefitsPackageTitle {
+    text-align: center;
+    background: rgba(246, 246, 246, 1);
+    padding-top: 62px;
+    padding-bottom: 31px;
+}
+
+.benefitsPackageTitle h1 {
+    font-weight: 700;
+    line-height: 32px;
+    font-size: 26px;
+}
+
+.benefitsPackageTitle h1 span {
+    color: rgba(239, 108, 0, 1);
+}
+
+.cardsRowLandingPackages {
+    background: rgba(246, 246, 246, 1);
+}
+
+.cardsRowLandingPackages h5 {
+    font-weight: 400 !important;
+    line-height: 49px;
+    font-size: 40px;
+    margin-bottom: 15px !important;
+}
+
+.cardsRowLandingPackages p {
+    font-size: 20px;
+}
+
+.cardsRowLandingPackages .cardBadgeContainer .cardBadge {
+}
+
+.cardsRowLandingPackages .cardBadgeContainer .cardBadge p {
+    background: rgba(239, 108, 0, 0.15);
+    padding: 16px 26px;
+    margin-top: 34px;
+    margin-bottom: 55px;
+    color: rgba(239, 108, 0);
+    font-size: 15px;
+    display: inline-block;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.whiteCard {
+    background-color: rgba(250, 250, 250, 1) !important;
+    text-align: center !important;
+    color: rgba(59, 69, 89, 1);
+}
+
+.blueGradientCard {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#5caadd+0,636ddb+100 */
+    background: rgb(92, 170, 221);
+    /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(92, 170, 221, 1) 0%, rgba(99, 109, 219, 1) 100%) !important;
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(92, 170, 221, 1) 0%, rgba(99, 109, 219, 1) 100%) !important;
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(92, 170, 221, 1) 0%, rgba(99, 109, 219, 1) 100%) !important;
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5caadd', endColorstr='#636ddb', GradientType=0);
+    /* IE6-9 */
+    color: rgba(255, 255, 255, 1) !important;
+    text-align: center !important;
+}
+
+.cardsRowLandingPackages .blueGradientCard .cardBadgeContainer .cardBadge p {
+    background: #fce9d8;
+}
+
+.deepBlueCard {
+    background-color: rgba(30, 30, 40, 1) !important;
+    color: rgba(255, 255, 255, 1) !important;
+    text-align: center !important;
+}
+
+.deepBlueCard img {
+    width: 60%;
+}
+
+.purpleGradientCard {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e1e28+0,49246f+100 */
+    background: rgb(30, 30, 40);
+    /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(30, 30, 40, 1) 0%, rgba(73, 36, 111, 1) 100%) !important;
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(30, 30, 40, 1) 0%, rgba(73, 36, 111, 1) 100%) !important;
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(30, 30, 40, 1) 0%, rgba(73, 36, 111, 1) 100%) !important;
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e1e28', endColorstr='#49246f', GradientType=0);
+    /* IE6-9 */
+    color: rgba(255, 255, 255, 1) !important;
+    text-align: center !important;
+}
+
+.pinkGradientCard {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f5997e+0,f75a80+100 */
+    background: rgb(245, 153, 126);
+    /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(245, 153, 126, 1) 0%, rgba(247, 90, 128, 1) 100%) !important;
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(245, 153, 126, 1) 0%, rgba(247, 90, 128, 1) 100%) !important;
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(245, 153, 126, 1) 0%, rgba(247, 90, 128, 1) 100%) !important;
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5997e', endColorstr='#f75a80', GradientType=0);
+    /* IE6-9 */
+    color: rgba(255, 255, 255, 1) !important;
+    text-align: center !important;
+}
+
+.cardsRowLandingPackages .pinkGradientCard .cardBadgeContainer .cardBadge p {
+    background: #fce9d8;
+}
+
+.deepBlueGradientCard {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#001a74+0,1800ff+100 */
+    background: rgb(0, 26, 116);
+    /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(0, 26, 116, 1) 0%, rgba(24, 0, 255, 1) 100%) !important;
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(0, 26, 116, 1) 0%, rgba(24, 0, 255, 1) 100%) !important;
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0, 26, 116, 1) 0%, rgba(24, 0, 255, 1) 100%) !important;
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#001a74', endColorstr='#1800ff', GradientType=0);
+    /* IE6-9 */
+    color: rgba(255, 255, 255, 1) !important;
+    text-align: center !important;
+}
+
+.secondWhiteCard {
+    background-color: rgba(250, 250, 250, 1) !important;
+    text-align: center !important;
+}
+
+.landingPackagesContainer .titlePackages h1 {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 32px;
+}
+
+.landingFullWidthBanner {
+    text-align: center;
+    padding-bottom: 70px;
+    padding-top: 18px;
+}
+
+.landingFullWidthBanner .landingBannerContainer {
+    background: rgba(250, 250, 250, 1);
+}
+
+.landingFullWidthBanner .landingBannerContainer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.landingFullWidthBanner .landingBannerTitle h1 {
+    font-size: 40px;
+    line-height: 49px;
+    font-weight: 500;
+    color: rgba(59, 69, 89, 1);
+}
+
+.landingFullWidthBanner .landingBannerParagraph {
+    margin-bottom: 26px;
+}
+
+.landingFullWidthBanner .landingBannerParagraph p {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 500;
+    color: rgba(59, 69, 89, 1);
+}
+
+.landingFullWidthBanner .landingBannerImages img {
+    width: 45%;
+    max-width: 150px;
+}
+
+.landingFullWidthBanner .landingBannerArt img {
+    width: 65%;
+    margin: 0 auto;
+}
+
+.scrollableDiv {
+    background: rgba(255, 255, 255, 1);
+    width: calc(100% + 30px);
+    margin: 0 auto;
+    position: sticky;
+    top: 0;
+    overflow: hidden !important;
+    z-index: 9998;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+.scrollableDiv h1 {
+}
+
+/*Landing Paquetes*/
+/*Servicios*/
+.topBar {
+    position: relative;
+    top: 108px;
+    box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.05);
+    background: rgba(250, 250, 250, 1);
+    z-index: 9998;
+}
+
+.fixedNav {
+    width: calc(100% + 30px);
+    top: 0px;
+    position: sticky;
+    overflow: hidden !important;
+    z-index: 9998;
+    margin-left: -15px;
+}
+
+.fixedTicket {
+    top: 0px;
+    position: sticky;
+    overflow: hidden !important;
+    z-index: 9998;
+    display: block;
+}
+
+.topBar .barList {
+    list-style: none;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+
+.topBar .barList li {
+    display: inline-block;
+    margin-right: 50px;
+}
+
+.topBar .barList li:last-child {
+    margin-right: 0;
+}
+
+.topBar .barList li a {
+    color: rgba(0, 0, 0, 1);
+    font-size: 18px;
+}
+
+.topBar .barList li a.active {
+    font-weight: 700;
+}
+
+.topBar .barList li a::after {
+    display: none;
+}
+
+.internetRow {
+    background: rgba(245, 245, 245, 1);
+    padding-top: 140px;
+    padding-bottom: 50px;
+    text-align: center;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.internetRow .internetTitle {
+    margin-bottom: 70px;
+}
+
+.internetRow .internetTitle p {
+    font-size: 28px;
+    line-height: 34px;
+    font-weight: 600;
+    color: rgba(59, 69, 89, 1);
+}
+
+.internetRow .internetSubtitle {
+    margin-bottom: 2rem;
+}
+
+.internetRow .internetSubtitle h1 {
+    font-weight: 300;
+    color: rgba(59, 69, 89, 1);
+    font-size: 36px;
+}
+
+.internetRow .internetSubtitle h1 span {
+    font-weight: 500;
+    color: rgba(59, 69, 89, 1);
+}
+
+.internetRow .laptop {
+    position: relative;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.internetRow .laptop .facetime {
+    position: absolute;
+    left: 50%;
+    overflow: hidden;
+    transform: translateX(-50%);
+    max-width: 100%;
+    top: 12px;
+    height: 343px;
+    width: 527px;
+}
+
+video {
+    left: 50%;
+    min-height: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: -1;
+}
+
+.internetRow > .laptop > .facetime > video {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+}
+
+.internetRow .laptop .picture {
+    border: 1px solid #fafafa;
+    top: 225px;
+    right: 27%;
+    overflow: hidden;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.8);
+    width: 253px;
+    height: 126px;
+    position: absolute;
+}
+
+.internetRow .laptop .picture video {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    z-index: 10;
+}
+
+.internetRow .internetBottomTitle {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.internetRow .internetBottomTitle h1 {
+    font-size: 28px;
+    color: rgba(59, 69, 89, 1);
+    line-height: normal;
+    font-weight: 400;
+}
+
+.internetRow .internetBottomTitle h1 span {
+    font-weight: 700;
+}
+
+.internetRow .internetButton {
+    margin-bottom: 30px;
+}
+
+.internetRow .internetButton .generalButton {
+    font-size: 22px;
+}
+
+.tvRow {
+    text-align: center;
+    background: rgba(238, 238, 238, 1);
+    padding-top: 60px;
+    padding-bottom: 60px;
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tvRow .tvTitle {
+    margin-bottom: 3rem;
+}
+
+.tvRow .tvTitle h1 {
+    font-weight: 600;
+    font-size: 28px;
+    color: #3b4559;
+    line-height: 34px;
+}
+
+.tvRow .tvVideo {
+    position: relative;
+    display: flex;
+    width: 62.9%;
+    height: auto;
+    margin-top: 14px;
+    margin: 0 auto;
+}
+
+.tvRow .tvVideo img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.tvRow .videoContent {
+    overflow: hidden;
+    box-shadow: 0 8px 48px 0 rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 1);
+    top: 1.9%;
+    height: 82.2%;
+    width: 92%;
+    left: 4%;
+    position: absolute;
+}
+
+.tvRow .videoContent .videoContainer {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    z-index: 10;
+    width: 100%;
+}
+
+.tvRow .subtitlesVideo p {
+    position: relative;
+    top: -5.5rem;
+    color: rgba(117, 120, 123, 1);
+    font-size: 13px;
+}
+
+.tvRow .subtitlesVideo h2 {
+    font-weight: 300;
+    font-size: 48px;
+    color: #3b4559;
+    line-height: 58px;
+}
+
+.tvRow .appsTitles {
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.tvRow .appsTitles p {
+    font-size: 32px;
+    color: #3b4559;
+    line-height: 42px;
+}
+
+.tvRow .servicesImagesAppsContainer {
+    margin-bottom: 50px;
+}
+
+.tvRow .servicesImagesAppsContainer img {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    max-width: 128px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    transition: 300ms;
+    cursor: pointer;
+}
+
+.tvRow .servicesImagesAppsContainer img:hover {
+    transform: scale(1.1);
+    transition: all 0.3s;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.35);
+}
+
+.infiniteCarousel {
+    width: calc(100% + 30px);
+    position: relative;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    height: 315px !important;
+    background: rgba(238, 238, 238, 1);
+    margin-left: -15px;
+}
+
+.infiniteCarousel .slideInfinite {
+    width: 560px;
+    margin-left: 10px;
+}
+
+.infiniteCarousel .slideInfinite .backImage {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.infiniteCarousel .slideInfinite .backImage img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.infiniteCarousel .slideInfinite .backImage::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: block;
+    z-index: 9998;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    background: rgba(30, 30, 40, 0.2);
+    top: 0;
+    left: 0;
+}
+.infiniteCarousel .slideInfinite .imageDescription {
+    position: relative;
+    z-index: 100000;
+}
+
+.infiniteCarousel .slideInfinite .imageDescription .imageContainer {
+    position: absolute;
+    bottom: 80px;
+    left: 30px;
+}
+
+.infiniteCarousel .slideInfinite .imageDescription .imageContainer img {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 8px;
+    width: 95px;
+    height: auto;
+}
+
+.infiniteCarousel .slideInfinite .imageDescription .textContainer {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    color: rgba(245, 245, 245, 1);
+    font-weight: 700;
+    font-size: 24px;
+}
+/*Servicios*/
 
 /*modal loader index akhm*/
 #cargadorLead {
