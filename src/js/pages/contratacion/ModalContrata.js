@@ -3,6 +3,7 @@ import * as Constantes from "../../utils/Constantes";
 import { TimelineMax } from "gsap";
 export class ModalContrata {
     constructor() {
+        
         this.props = {
             maincontainer: document.querySelector('.section-contratacion'),
             containerSteps: document.querySelector('.container-steps--contratacion'),
@@ -26,10 +27,18 @@ export class ModalContrata {
             contStep: 1,
             nip: '',
             dataUser: null,
-            lsgStorage: window.localStorage
+            lsgStorage: window.localStorage,
+            objFinaliza : null
         }
+
+        //this.listenerInputs();
+        //this.onkeypress();
+    }
+
+    continuar(){
         this.listenerInputs();
         this.onkeypress();
+        this.nextStep();
     }
 
     mostrarVentana() {
@@ -45,6 +54,7 @@ export class ModalContrata {
             ease: "power4.out"
         })
         //this.nextStep();
+        
     }
 
     mostrarVentanaContratacion() {
@@ -174,9 +184,8 @@ export class ModalContrata {
         this.props.step_2.removeAttribute('style');
         this.props.listInputs.map(item => item.value = '');
         this.props.modalContract.style.display = 'none';
-        setTimeout(() => {
-            this.nextStep();
-        }, 500)
+        //setTimeout(() => {this.nextStep();}, 500)
+        console.log('RESET ELEMENT TERMINADO');
     }
 
     setText(_title, _description) {
@@ -227,7 +236,7 @@ export class ModalContrata {
             this.props.stepItem[2].removeAttribute('style');
         }
 
-        const finalizaContratacion = new FinalizaContratacion();
+        const finalizaContratacion = new FinalizaContratacion(true);
     }
 
     esVacio(valor) {
@@ -271,18 +280,33 @@ export class ModalContrata {
     }
 
     iniciarObjetoPersona(correoElectronico, numeroTelefonico) {
-        let objetoCliente = {
+        /*let objetoCliente = {
             "correoElectronico": correoElectronico,
             "numeroTelefonico": numeroTelefonico,
         }
+        localStorage.setItem('TP_STR_CLIENTE', JSON.stringify(objetoCliente));*/
 
-        localStorage.setItem('TP_STR_CLIENTE', JSON.stringify(objetoCliente));
+        let cadenaCliente= localStorage.getItem('TP_STR_CLIENTE');
+        
+        try {
+            let objetoCliente = JSON.parse(cadenaCliente);
+            let memoria = {
+                "correoElectronico": correoElectronico,
+                "numeroTelefonico": numeroTelefonico,
+                "titular": objetoCliente.titular,
+                "pago": objetoCliente.pago
+            }
+
+            localStorage.setItem('TP_STR_CLIENTE', JSON.stringify(memoria));
+            console.log('OBJETO CLIENTE ACTUALIZADO');
+        } catch (error) {
+            console.log('ERROR AL ACTUALIAR EL OBJETO CLIENTE CON TITULAR POR:', error);
+        }
 
     }
 
     generarCodigo(correoElectronico, numeroTelefonico){
         var referenciaClase = this;
-
         var parametros = {
             "correoElectronico": correoElectronico,
             "numeroTelefonico": numeroTelefonico,
@@ -316,7 +340,7 @@ export class ModalContrata {
 
     validarCodigo(codigoContratacion){
         var referenciaClase = this;
-
+        
         var parametros = {
             "codigoContratacion": codigoContratacion
         };
@@ -332,7 +356,18 @@ export class ModalContrata {
 
             if(respuesta.codigo == 0){
 
-                referenciaClase.endAnimation();
+                //referenciaClase.endAnimation();
+                referenciaClase.props.tl.to(referenciaClase.props.contentForm, 0.2, {
+                    opacity: 0,
+                    ease: "power4.out"
+                }).to(referenciaClase.props.layerModal, 0.2, {
+                    opacity: 0,
+                    ease: "power4.out",
+                    onComplete: referenciaClase.resetElements.bind(referenciaClase)
+                });
+                //window.scrollTo(0, 0);
+                referenciaClase.props.objFinaliza = new FinalizaContratacion(false);
+                referenciaClase.props.objFinaliza.ejecutarEnvioLead();
             }else{
                 $('.contract__content-form__text').html('Enviar de nuevo');
                 

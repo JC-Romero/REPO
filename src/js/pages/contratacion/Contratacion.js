@@ -1,7 +1,7 @@
 import {TimelineMax,TweenMax } from "gsap";
 import { ModalContrata } from './ModalContrata';
 import * as Constantes from "../../utils/Constantes";
-import { FinalizaContratacion } from './FinalizaContratacion';
+//import { FinalizaContratacion } from './FinalizaContratacion';
 import { Canales } from '../detallePaquete/Canales';
 import {ClaseCobertura} from "../generales/ClaseCobertura";
 
@@ -1657,16 +1657,16 @@ export class Contratacion {
         //this.props.modalContrata = new ModalContrata();
         ////console.log('MODAL-CONTRATA', this.props.modalContrata);
         //const modalContract = new ModalContrata();
-
+        //this.nextStep();
+        //new FinalizaContratacion(true);
         if(this.props.modalContrata == null){
-            this.props.modalContrata = new ModalContrata();
-            this.props.modalContrata.mostrarVentana();
-
+            this.props.modalContrata = new ModalContrata(null);
+            this.props.modalContrata.continuar();
             ////console.log('modalContract', this.props.modalContrata.props.modalContract);
         }else{
             //console.log('EJECUTANDO MOSTRAR VENTANA');
             ////console.log('modalContract', this.props.modalContrata.props.modalContract);
-            this.props.modalContrata.mostrarVentana();
+            //this.props.modalContrata.continuar();
         }
     }
 

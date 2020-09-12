@@ -1,7 +1,9 @@
 import * as Constantes from "../../utils/Constantes";
+import { ModalContrata } from './ModalContrata';
 
 export class FinalizaContratacion {
-    constructor() {
+    constructor(bandera) {
+
         this.props = {
             indicator: 0,
             mainBody: document.getElementsByTagName('body'),
@@ -56,9 +58,12 @@ export class FinalizaContratacion {
             tipoCliente: 0,
             aniobisiesto : false,
             archivosInfo : [],
-            tipoArchivo : {"jpg":"image\/jpeg","pdf":"application\/pdf"}
+            tipoArchivo : {"jpg":"image\/jpeg","pdf":"application\/pdf"},
+            modalContrata : null,
         }
-        this.init();
+        if(bandera){    
+            this.init();
+        }
     }
 
     init() {
@@ -304,7 +309,8 @@ export class FinalizaContratacion {
                         "tipo": "fisica"
                     };
                     referenciaClase.actualizarClienteTitular(objetoTitular);
-                    referenciaClase.props.tipoCliente = 1;
+                    //referenciaClase.props.tipoCliente = 1;
+                    localStorage.setItem('TP_TIPO_CLIENTE', 1);
                 }else{
                     let razonSocial = $('#razonSocial').val().trim();
                     let diaMoral = $('#diaMoral').val().trim();
@@ -335,7 +341,8 @@ export class FinalizaContratacion {
                         "tipo": "moral"
                     };
                     referenciaClase.actualizarClienteTitular(objetoTitular);
-                    referenciaClase.props.tipoCliente = 2;
+                    //referenciaClase.props.tipoCliente = 2;
+                    localStorage.setItem('TP_TIPO_CLIENTE', 2);
                 }
 
                 this.props.formTitularData.style.cssText = 'display: none;';
@@ -387,11 +394,19 @@ export class FinalizaContratacion {
                 $('#btnPaymentData').addClass('btnDeshabilitado');
                 $('.iconoPrevencion').show();
                 console.log('SETEANDO VALOR TRUE PARA GUARDADO DE TARJETAS');
-                referenciaClase.prepararParametrosVenta(true);
+
+                if(referenciaClase.props.modalContrata == null){
+                    referenciaClase.props.modalContrata = new ModalContrata(referenciaClase.props);
+                    referenciaClase.props.modalContrata.mostrarVentana();
+                }else{
+                    referenciaClase.props.modalContrata.mostrarVentana();
+                }
+
+                /*referenciaClase.prepararParametrosVenta(true);
                 referenciaClase.obtenerDisponibilidad();
                 $('#ventanaFinaliza').css('display','flex');
                 $('#capaFinaliza').css('opacity','1');
-                $('#contenidoFinaliza').css('opacity','1');
+                $('#contenidoFinaliza').css('opacity','1');//*/
 
                 //referenciaClase.simularVenta(referenciaClase);
             } 
@@ -416,7 +431,11 @@ export class FinalizaContratacion {
                 $('#tipoPago').html('EN EFECTIVO');
                 $('#direccionResumen').html(objetoDireccion.direccionCalculada.direccionAproximada);
 
-                $('#btnPaymentData').attr('disabled', '');
+                
+                referenciaClase.props.modalContrata = new ModalContrata();
+                referenciaClase.props.modalContrata.mostrarVentana();
+
+                /*$('#btnPaymentData').attr('disabled', '');
                 $('#btnPaymentData').addClass('btnDeshabilitado');
                 $('.iconoPrevencion').show();
                 referenciaClase.prepararParametrosVenta(false);
@@ -424,9 +443,7 @@ export class FinalizaContratacion {
                 
                 $('#ventanaFinaliza').css('display','flex');
                 $('#capaFinaliza').css('opacity','1');
-                $('#contenidoFinaliza').css('opacity','1');
-
-                //referenciaClase.simularVenta(referenciaClase);
+                $('#contenidoFinaliza').css('opacity','1');//*/
             }
         });
 
@@ -564,6 +581,7 @@ export class FinalizaContratacion {
                             "archivoB64": result[0].b64,
                             "tipoArchivo": referenciaClase.props.tipoArchivo[referenciaClase.props.extensionINE],
                         }
+                        localStorage.setItem('TP_ARCHIVOS', JSON.stringify(referenciaClase.props.archivosInfo));
 
                         //console.log("JSON PARAMS "+JSON.stringify(referenciaClase.props.jsonparams));
                 }).catch(err=>{
@@ -615,6 +633,7 @@ export class FinalizaContratacion {
                             "tipoArchivo": referenciaClase.props.tipoArchivo[referenciaClase.props.extensionCOMPROBANTE],
                             
                         }
+                        localStorage.setItem('TP_ARCHIVOS', JSON.stringify(referenciaClase.props.archivosInfo));
 
                         //console.log("JSON PARAMS "+JSON.stringify(referenciaClase.props.jsonparams));
                 }).catch(err=>{
@@ -664,6 +683,8 @@ export class FinalizaContratacion {
                             "archivoB64": result[0].b64,
                             "tipoArchivo": referenciaClase.props.tipoArchivo[referenciaClase.props.extensionRFC]
                         }
+
+                        localStorage.setItem('TP_ARCHIVOS', JSON.stringify(referenciaClase.props.archivosInfo));
 
                 }).catch(err=>{
                     console.error("Error en promesa base64:" + err);
@@ -1630,6 +1651,29 @@ export class FinalizaContratacion {
         $("#anioTarjetaCaptura").html(html);
     }
     /* ------------------------------------------------ */
+    ejecutarEnvioLead(){
+        console.group('FinalizaContratacion.js ejecutarEnvioLead()');
+        let referenciaClase = this;
+        $('#btnPaymentData').attr('disabled', '');
+        $('#btnPaymentData').addClass('btnDeshabilitado');
+        $('.iconoPrevencion').show();
+
+        let tipoCliente = parseInt(localStorage.getItem('TP_TIPO_CLIENTE'));
+
+        if(tipoCliente == 1){
+            referenciaClase.prepararParametrosVenta(false);
+        }
+        if(tipoCliente == 2){
+            referenciaClase.prepararParametrosVenta(true);
+        }
+        referenciaClase.obtenerDisponibilidad();
+        
+        $('#ventanaFinaliza').css('display','flex');
+        $('#capaFinaliza').css('opacity','1');
+        $('#contenidoFinaliza').css('opacity','1');
+        console.groupEnd();
+    }
+
     prepararParametrosVenta(esPagoTarjeta){
         console.group('FUNCION prepararParametrosVenta('+esPagoTarjeta+')');
         let referenciaClase = this;
@@ -1684,8 +1728,11 @@ export class FinalizaContratacion {
         let numeroCelular = '';
         let numeroTelefono = '';
         let objetoCliente = referenciaClase.obtenerObjetoCliente();
+        let tipoCliente = parseInt(localStorage.getItem('TP_TIPO_CLIENTE'));
+        console.log('objetoCliente=>', objetoCliente);
+        console.log('tipoCliente=>', tipoCliente);
 
-        if(referenciaClase.props.tipoCliente == 1){
+        if(tipoCliente == 1){
             console.log('OBTENIENDO DATOS PERSONA FISICA');
             tipoPersona = 'Física';
             nombreCliente = objetoCliente.titular.nombre;
@@ -1697,7 +1744,7 @@ export class FinalizaContratacion {
             numeroTelefono = objetoCliente.titular.telefono;
         }
 
-        if(referenciaClase.props.tipoCliente == 2){
+        if(tipoCliente == 2){
             console.log('OBTENIENDO DATOS PERSONA MORAL');
             tipoPersona = 'Moral';
             nombreCliente = objetoCliente.titular.nombre;
@@ -1804,7 +1851,9 @@ export class FinalizaContratacion {
         $('#nombreProceso').html(objMensaje[informacion.proceso]);
 
         if(informacion.proceso == 'Documento'){
-            informacion.documentos = referenciaClase.props.archivosInfo;
+            let strDocumentos = localStorage.getItem('TP_ARCHIVOS');
+            //informacion.documentos = referenciaClase.props.archivosInfo;
+            informacion.documentos = JSON.parse(strDocumentos);
         } else {
             informacion.documentos = [];
         }
@@ -2182,16 +2231,16 @@ export class FinalizaContratacion {
     }
 
     obtenerObjetoCliente(){
-        console.group('FUNCION obtenerObjetoCliente()');
+        //console.group('FUNCION obtenerObjetoCliente()');
         let cadenaCliente= localStorage.getItem('TP_STR_CLIENTE');
         
         try {
             let objetoCliente = JSON.parse(cadenaCliente);
-            console.groupEnd();
+            //console.groupEnd();
             return objetoCliente;
         } catch (error) {
             console.log('ERROR AL OBTENER EL OBJETO CLIENTE POR:', error);
-            console.groupEnd();
+            //console.groupEnd();
             return null;
         }
     }
@@ -2207,6 +2256,10 @@ export class FinalizaContratacion {
             console.log('OBJETO CLIENTE ACTUALIZADO');
         } catch (error) {
             console.log('ERROR AL ACTUALIAR EL OBJETO CLIENTE CON TITULAR POR:', error);
+            let objetoCliente = {
+                "titular":objetoTitular
+            }
+            localStorage.setItem('TP_STR_CLIENTE', JSON.stringify(objetoCliente));
         }
 
         console.groupEnd();
@@ -2339,6 +2392,18 @@ export class FinalizaContratacion {
             return [];
         }
     }
+
+    actualizaObjetoArchivos(){
+        let referenciaClase = this;
+        let strArchivos = localStorage.getItem('TP_ARCHIVOS');
+        try {
+            let objetoArchivos = JSON.parse(strArchivos);
+            localStorage.setItem('TP_ARCHIVOS', referenciaClase.props.archivosInfo);
+            
+        } catch (error) {
+            
+        }
+    }
 }
 
 $(window).keydown(function(event) {
@@ -2370,9 +2435,9 @@ $(window).keydown(function(event) {
         $('#titularApellidoMaterno').val('');
         $('#titularRFC').val('ROAJ010101AAA');
         $('#titularTelefono').val('5512345678');
-        //$('#titularCelular').val('5587654321');
+        $('#titularCelular').val('5587654321');
 
-        //$('input:radio[name="documento"]').filter('[value="1"]').attr('checked', true);
+        $('input:radio[name="documento"]').filter('[value="1"]').attr('checked', true);
 
         $('#checkBuroCredito').addClass('active');
         $('#checkLegales').addClass('active');
