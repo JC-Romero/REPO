@@ -115,14 +115,13 @@ export class ModalContrata {
             }
 
             if (procesa) {
-
                 referenciaClase.iniciarObjetoPersona($('#email').val().trim(), $('#mobile').val().trim())
-
                 $('#titularCelular').val($('#mobile').val().trim());
                 $('#botonContinuar').attr('disabled', 'disabled');
                 $('.iconoContinuar').show();
 
                 referenciaClase.generarCodigo($('#email').val().trim(), $('#mobile').val().trim());
+
                 /*referenciaClase.mostrarVentanaContratacion();
                 $('#botonContinuar').removeAttr('disabled');
                 $('.iconoContinuar').hide();//*/
@@ -136,10 +135,17 @@ export class ModalContrata {
         $("body").on('keyup', '.campoCodigo', function () {
             var campoNumero = parseInt($(this).attr('data-num'));
             if (campoNumero == 6) {
-                //referenciaClase.endAnimation();
+                
                 let codigoContratacion = $('#nip_1').val()+$('#nip_2').val()+$('#nip_3').val()+$('#nip_4').val()+$('#nip_5').val()+$('#nip_6').val();
                 $('.contract__content-form__text').html('<i class="fas fa-circle-notch fa-spin"></i>');
                 referenciaClase.validarCodigo(codigoContratacion);//*/
+
+                /*referenciaClase.props.tl.to(referenciaClase.props.contentForm, 0.2, {opacity: 0,ease: "power4.out"
+                }).to(referenciaClase.props.layerModal, 0.2, {opacity: 0,ease: "power4.out",onComplete: referenciaClase.resetElements.bind(referenciaClase)});
+                console.log('referenciaClase.props.objFinaliza=>', referenciaClase.props.objFinaliza);
+                referenciaClase.props.objFinaliza = new FinalizaContratacion(false);
+                referenciaClase.props.objFinaliza.ejecutarEnvioLead();//*/
+
             } else {
                 campoNumero++;
                 $('#nip_' + campoNumero).focus();

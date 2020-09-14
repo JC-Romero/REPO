@@ -267,15 +267,19 @@ export class FinalizaContratacion {
             switch (this.value) {
                 case '1':
                     $('#titularIdentificacionTarjeta').html('INE/IFE');
+                    $('#contenedorSubeArchivoINER').show();
                     break;
                 case '2':
                     $('#titularIdentificacionTarjeta').html('Pasaporte');
+                    $('#contenedorSubeArchivoINER').hide();
                     break;
                 case '3':
                     $('#titularIdentificacionTarjeta').html('C&eacute;dula profesional');
+                    $('#contenedorSubeArchivoINER').hide();
                     break;
                 default:{
                     $('#titularIdentificacionTarjeta').html('');
+                    $('#contenedorSubeArchivoINER').hide();
                 }
             } 
         });
@@ -390,9 +394,7 @@ export class FinalizaContratacion {
                 referenciaClase.actualizarClienteFormaPago(objetoFormaPago);
 
                 $('#direccionResumen').html(direccionCalle + ' ' +direccionNumero+ ', ' +direccionColonia+ ', ' +direccionMunicipio+ ', ' +direccionCP+ ', ' +direccionEstado);
-                $('#btnPaymentData').attr('disabled', '');
-                $('#btnPaymentData').addClass('btnDeshabilitado');
-                $('.iconoPrevencion').show();
+                
                 console.log('SETEANDO VALOR TRUE PARA GUARDADO DE TARJETAS');
 
                 if(referenciaClase.props.modalContrata == null){
@@ -401,14 +403,6 @@ export class FinalizaContratacion {
                 }else{
                     referenciaClase.props.modalContrata.mostrarVentana();
                 }
-
-                /*referenciaClase.prepararParametrosVenta(true);
-                referenciaClase.obtenerDisponibilidad();
-                $('#ventanaFinaliza').css('display','flex');
-                $('#capaFinaliza').css('opacity','1');
-                $('#contenidoFinaliza').css('opacity','1');//*/
-
-                //referenciaClase.simularVenta(referenciaClase);
             } 
 
             if($('#btnPaymentCash').hasClass("botonSeleccionado") ) {
@@ -431,19 +425,12 @@ export class FinalizaContratacion {
                 $('#tipoPago').html('EN EFECTIVO');
                 $('#direccionResumen').html(objetoDireccion.direccionCalculada.direccionAproximada);
 
-                
-                referenciaClase.props.modalContrata = new ModalContrata();
-                referenciaClase.props.modalContrata.mostrarVentana();
-
-                /*$('#btnPaymentData').attr('disabled', '');
-                $('#btnPaymentData').addClass('btnDeshabilitado');
-                $('.iconoPrevencion').show();
-                referenciaClase.prepararParametrosVenta(false);
-                referenciaClase.obtenerDisponibilidad();
-                
-                $('#ventanaFinaliza').css('display','flex');
-                $('#capaFinaliza').css('opacity','1');
-                $('#contenidoFinaliza').css('opacity','1');//*/
+                if(referenciaClase.props.modalContrata == null){
+                    referenciaClase.props.modalContrata = new ModalContrata(referenciaClase.props);
+                    referenciaClase.props.modalContrata.mostrarVentana();
+                }else{
+                    referenciaClase.props.modalContrata.mostrarVentana();
+                }
             }
         });
 
@@ -784,7 +771,6 @@ export class FinalizaContratacion {
         let referenciaClase = this;
 
         if($('#btnDatosFisica').hasClass('botonSeleccionado')){
-            console.log("persona fisica");
             referenciaClase.props.jsonparams.nodocts = 2;
 
             let titularNombre = $('#titularNombre').val().trim();
@@ -818,6 +804,20 @@ export class FinalizaContratacion {
                 if(!referenciaClase.validaName(titularApellidoPaterno)){
                     $("#errorPaternoContratacion").css("display","block");
                     $("#errorPaternoContratacion").html("*Campo no v&aacute;lido");
+                    validacion = false;
+                } else {
+                   $("#errorPaternoContratacion").hide(); 
+                }
+            }
+
+            if(referenciaClase.esVacio(titularApellidoMaterno)){
+                $("#errorMaternoContratacion").css("display","block");
+                $("#errorMaternoContratacion").html("*Campo obligatorio");
+                validacion = false;
+            }else{
+                if(!referenciaClase.validaName(titularApellidoMaterno)){
+                    $("#errorMaternoContratacion").css("display","block");
+                    $("#errorMaternoContratacion").html("*Campo no v&aacute;lido");
                     validacion = false;
                 } else {
                    $("#errorPaternoContratacion").hide(); 
@@ -878,10 +878,9 @@ export class FinalizaContratacion {
                 $('#contenedorSubeArchivoComprobante').css('border', '1px dashed red');
             }else{
                 $('#contenedorSubeArchivoComprobante').css('border', '1px dashed #1A76D2');
-            }
+            }//*/
 
         }else{
-            console.log("persona moral");
             referenciaClase.props.jsonparams.nodocts = 3;
             
             let razonSocial = $('#razonSocial').val().trim();
@@ -989,6 +988,13 @@ export class FinalizaContratacion {
             $('#contenedorCheckTYC').css('border', '1px solid red');
         } else {
            $('#contenedorCheckTYC').css('border', '1px solid #e0e0e0');
+        }
+
+        if(!referenciaClase.validaCheks("usoinformacion")){
+            validacion = false;
+            $('#contenedorCheckUsoInformacion').css('border', '1px solid red');
+        } else {
+           $('#contenedorCheckUsoInformacion').css('border', '1px solid #e0e0e0');
         }
 
         console.log('RESULTADO DE VALIDACION ['+validacion+']');
@@ -1259,6 +1265,11 @@ export class FinalizaContratacion {
                     response = true;
                 }
                 break;
+            case 'usoinformacion' :
+                    if($('#checkUsoInformacion').hasClass( "active" )){
+                        response = true;
+                    }
+                    break;
             default :
                 break;
         }
@@ -1422,7 +1433,6 @@ export class FinalizaContratacion {
                 $('#botonFinaliza').addClass('btnDeshabilitado');
                 var fechaInfo = referenciaClase.obtenerFechaFormato(fechaSeleccionada);
                 $('#fechaInstalacionInfo').html(fechaInfo + '<strong id="horarioInstalacionInfo"> - </strong>');
-                //$('#horarioInstalacionInfo').html(" - ");
 
                 $('#botonHorarioMatutino').removeClass('btnInstalacionActivo');
                 $('#botonHorarioVespertino').removeClass('btnInstalacionActivo');
@@ -1434,6 +1444,8 @@ export class FinalizaContratacion {
                 });
             });
 
+            referenciaClase.eventoSeleccionHorario();
+
         }).fail(function(jqXHR, textStatus) {
             console.log('OCURRIO ALGO INESPERADO EN EL SERVICIO DE PREVENCION DE FRAUDES');
             console.log(jqXHR);
@@ -1444,20 +1456,7 @@ export class FinalizaContratacion {
     validarSeleccionHorario(fechaSeleccionada, disponibilidad){
         let clase = this;
         console.log("disponibilidad=>", disponibilidad);
-        $('#seleccionHorarioCombo').html('<option>VALIDANDO...</option>');
-
-        let textoHora = {
-            '9':' de 09-10 AM',
-            '10':'de 10-11 AM',
-            '11':'de 11-12 AM',
-            '12':'de 12-1 PM',
-            '13':'de 1-2 PM',
-            '14':'de 2-3 PM',
-            '15':'de 3-4 PM',
-            '16':'de 4-5 PM',
-            '17':'de 5-6 PM',
-            '18':'de 6-7 PM'
-        };
+        
         let fechaActual = new Date();
         let diferenciaMilisegundos = Math.abs(fechaSeleccionada - fechaActual);
         let diferenciaDias = Math.ceil(diferenciaMilisegundos / (1000 * 60 * 60 * 24)); 
@@ -1465,64 +1464,80 @@ export class FinalizaContratacion {
         let horaFin = 19;
         let minimaDisponibilidad = 0;
         let banderaDiaSD = false;
-
-        if(diferenciaDias == 1){
-            let horaActual = new Date().toLocaleTimeString();
-            console.log('horaActual=>', horaActual);
-            let arregloHora = horaActual.split(':');
-            horaInicio = parseInt(arregloHora[0]) + 1;
-            if(horaInicio>19){
-                horaInicio = 9;
-            }
-
-            if(horaInicio<12){
-                if(! disponibilidad.disponibleMatutina > minimaDisponibilidad){
-                    horaInicio = 12;
-                }
-            }
-            if(!disponibilidad.disponibleVespertino > minimaDisponibilidad){
-                horaFin = 12;
-            }
-
-            if(disponibilidad.disponibleMatutina == minimaDisponibilidad && disponibilidad.disponibleVespertino == minimaDisponibilidad){
-                banderaDiaSD = true;
-            }
-        }else{
-            if(!disponibilidad.disponibleMatutina > minimaDisponibilidad){
-                horaInicio = 12;
-            }
-            if(!disponibilidad.disponibleVespertino > minimaDisponibilidad){
-                horaFin = 12;
-            }
-            if(disponibilidad.disponibleMatutina == minimaDisponibilidad && disponibilidad.disponibleVespertino == minimaDisponibilidad){
-                banderaDiaSD = true;
-            }
-        }
-
-        console.log('horaInicio=>', horaInicio);
-        console.log('horaFin=>', horaFin);
-        if(banderaDiaSD){
-            $('#seleccionHorarioCombo').html('<option>SIN DISPONIBILIDAD</option>');
-            
-        } else{
+        console.log('fechaActual:', fechaActual);
+        console.log('fechaSeleccionada:', fechaSeleccionada);
+        console.log('DIFERENCIA EN DIAS:', diferenciaDias);
+        if (diferenciaDias > 1) {
             if(parseInt(disponibilidad.disponibleMatutina) > 0){
-                console.log('si es mayor a 0');
+                console.log('HAY DISPONIBLIDAD MATUTINA');
                 $('#botonHorarioMatutino').removeAttr('disabled');
                 $('#botonHorarioMatutino').removeClass('btnDeshabilitado');
                 $('#botonHorarioMatutino').css('color','#1a76d2');
                 $('#botonHorarioMatutino').css('border','1.1px solid rgba(26,118,210,.5)');
                 $('#botonHorarioMatutino').css('background-color','#fafafa');
+            } else {
+                $('#botonHorarioMatutino').attr('disabled', 'disabled');
+                $('#botonHorarioMatutino').addClass('btnDeshabilitado');
+                $('#botonHorarioMatutino').removeAttr('style');
             }
 
             if(parseInt(disponibilidad.disponibleVespertino) > 0){
-                console.log('si es mayor a 0');
+                console.log('HAY DISPONIBLIDAD VESPERTINA');
                 $('#botonHorarioVespertino').removeAttr('disabled');
                 $('#botonHorarioVespertino').removeClass('btnDeshabilitado');
                 $('#botonHorarioVespertino').css('color','#1a76d2');
                 $('#botonHorarioVespertino').css('border','1.1px solid rgba(26,118,210,.5)');
                 $('#botonHorarioVespertino').css('background-color','#fafafa');
+            } else {
+                $('#botonHorarioVespertino').attr('disabled', 'disabled');
+                $('#botonHorarioVespertino').addClass('btnDeshabilitado');
+                $('#botonHorarioVespertino').removeAttr('style');
             }
-            clase.eventoSeleccionHorario();
+        } else {
+
+            if(diferenciaDias == 1){
+                let horaActual = new Date().toLocaleTimeString();
+                //console.log('horaActual=>', horaActual);
+                let arregloHora = horaActual.split(':');
+                horaInicio = parseInt(arregloHora[0]);
+                //console.log("horaInicio=>",horaInicio);
+
+                if(horaInicio<14){
+
+                    $('#botonHorarioMatutino').attr('disabled', 'disabled');
+                    $('#botonHorarioMatutino').addClass('btnDeshabilitado');
+                    $('#botonHorarioMatutino').removeAttr('style');
+
+                    if(parseInt(disponibilidad.disponibleVespertino) > 0){
+                        console.log('HAY DISPONIBLIDAD VESPERTINA');
+                        $('#botonHorarioVespertino').removeAttr('disabled');
+                        $('#botonHorarioVespertino').removeClass('btnDeshabilitado');
+                        $('#botonHorarioVespertino').css('color','#1a76d2');
+                        $('#botonHorarioVespertino').css('border','1.1px solid rgba(26,118,210,.5)');
+                        $('#botonHorarioVespertino').css('background-color','#fafafa');
+                    } else {
+                        $('#botonHorarioVespertino').attr('disabled', 'disabled');
+                        $('#botonHorarioVespertino').addClass('btnDeshabilitado');
+                        $('#botonHorarioVespertino').removeAttr('style');
+                    }
+                } else {
+                    $('#botonHorarioMatutino').attr('disabled', 'disabled');
+                    $('#botonHorarioMatutino').addClass('btnDeshabilitado');
+                    $('#botonHorarioMatutino').removeAttr('style');
+
+                    $('#botonHorarioVespertino').attr('disabled', 'disabled');
+                    $('#botonHorarioVespertino').addClass('btnDeshabilitado');
+                    $('#botonHorarioVespertino').removeAttr('style');
+                }
+            } else {
+                $('#botonHorarioMatutino').attr('disabled', 'disabled');
+                $('#botonHorarioMatutino').addClass('btnDeshabilitado');
+                $('#botonHorarioMatutino').removeAttr('style');
+
+                $('#botonHorarioVespertino').attr('disabled', 'disabled');
+                $('#botonHorarioVespertino').addClass('btnDeshabilitado');
+                $('#botonHorarioVespertino').removeAttr('style');
+            }   
         }
     }
 
@@ -1531,7 +1546,7 @@ export class FinalizaContratacion {
         let referenciaClase = this;
         let textoHora = "";
         $('#botonHorarioMatutino').on('click',function(){
-            console.log("btn matutino");
+            
             textoHora = $('#botonHorarioMatutino').text().trim();
             var fechaSeleccionada = $('#datepicker').datepicker("getDate");
             if(fechaSeleccionada != null){
@@ -1556,7 +1571,7 @@ export class FinalizaContratacion {
         });
 
         $('#botonHorarioVespertino').on('click',function(){
-            console.log("btn vespertino")
+            
             textoHora = $('#botonHorarioVespertino').text().trim();
             var fechaSeleccionada = $('#datepicker').datepicker("getDate");
             if(fechaSeleccionada != null){
@@ -1620,7 +1635,6 @@ export class FinalizaContratacion {
 
     forDummy(){
         let referenciaClase = this;
-        referenciaClase.obtenerDisponibilidad();
         referenciaClase.props.panels[2].style.cssText = 'display: block;';
         referenciaClase.props.casePayments.style.cssText = 'display: none;';
         referenciaClase.props.resumePayments.style.cssText = 'display: flex;';
@@ -1654,18 +1668,10 @@ export class FinalizaContratacion {
     ejecutarEnvioLead(){
         console.group('FinalizaContratacion.js ejecutarEnvioLead()');
         let referenciaClase = this;
-        $('#btnPaymentData').attr('disabled', '');
-        $('#btnPaymentData').addClass('btnDeshabilitado');
-        $('.iconoPrevencion').show();
+        let esPagoTarjeta = $('#btnPaymentCard').hasClass("botonSeleccionado");
+        referenciaClase.prepararParametrosVenta(esPagoTarjeta);
+        //referenciaClase.simularVenta(referenciaClase);
 
-        let tipoCliente = parseInt(localStorage.getItem('TP_TIPO_CLIENTE'));
-
-        if(tipoCliente == 1){
-            referenciaClase.prepararParametrosVenta(false);
-        }
-        if(tipoCliente == 2){
-            referenciaClase.prepararParametrosVenta(true);
-        }
         referenciaClase.obtenerDisponibilidad();
         
         $('#ventanaFinaliza').css('display','flex');
@@ -1727,10 +1733,9 @@ export class FinalizaContratacion {
         let compania = '';
         let numeroCelular = '';
         let numeroTelefono = '';
+        let fechaNacimiento = '1980-01-01';
         let objetoCliente = referenciaClase.obtenerObjetoCliente();
         let tipoCliente = parseInt(localStorage.getItem('TP_TIPO_CLIENTE'));
-        console.log('objetoCliente=>', objetoCliente);
-        console.log('tipoCliente=>', tipoCliente);
 
         if(tipoCliente == 1){
             console.log('OBTENIENDO DATOS PERSONA FISICA');
@@ -1742,18 +1747,27 @@ export class FinalizaContratacion {
             compania = '';
             numeroCelular = objetoCliente.titular.celular;
             numeroTelefono = objetoCliente.titular.telefono;
+
+            var reName = /^([a-zA-Z]{3,4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1]))([a-zA-Z\d]{3})?$/;
+            var infoRegEx = $('#titularRFC').val().match(reName);
+            if(parseInt(infoRegEx[2])>40){
+                fechaNacimiento = '19' + infoRegEx[2] + '-' + infoRegEx[3] + '-' + infoRegEx[4];
+            }else{
+                fechaNacimiento = '20' + infoRegEx[2] + '-' + infoRegEx[3] + '-' + infoRegEx[4];
+            }            
         }
 
         if(tipoCliente == 2){
             console.log('OBTENIENDO DATOS PERSONA MORAL');
             tipoPersona = 'Moral';
             nombreCliente = objetoCliente.titular.nombre;
-            apellidoPaternoCliente = objetoCliente.titular.apellidos;
-            apellidoMaternoCliente = '';
+            apellidoPaternoCliente = '';
+            apellidoMaternoCliente = objetoCliente.titular.apellidos;
             rfcCliente = objetoCliente.titular.rfc;
             compania = objetoCliente.titular.razonSocial;
             numeroCelular = objetoCliente.numeroTelefonico;
             numeroTelefono = objetoCliente.numeroTelefonico;
+            fechaNacimiento = objetoCliente.titular.constitucionAnio + "-"+ objetoCliente.titular.constitucionMes + "-"+ objetoCliente.titular.constitucionDia;
         }
 
         var arrelgoMatch = {
@@ -1796,6 +1810,7 @@ export class FinalizaContratacion {
             "rfc": rfcCliente,
             "tipoPersona": tipoPersona, 
             "compania":compania,
+            "fechaNacimiento": fechaNacimiento,
             "referenciaUrbana": '',
 
             "correoElectronico": objetoCliente.correoElectronico,
@@ -1946,8 +1961,6 @@ export class FinalizaContratacion {
                     }
                 }
             } else {
-                
-                
                 referenciaClase.enviarCompraNoExitosa();
             }
         }).fail(function (jqXHR, textStatus) {
@@ -1957,9 +1970,6 @@ export class FinalizaContratacion {
                 referenciaClase.generarLeadVenta(informacion);
                 referenciaClase.props.intentos = 2;
             } else {
-                $('.iconoPrevencion').hide();
-                $('#btnPaymentData').removeClass('btnDeshabilitado');
-
                 referenciaClase.enviarCompraNoExitosa();
             }
         });
@@ -2411,10 +2421,9 @@ $(window).keydown(function(event) {
         console.log("CTRL+A");
 
         $('#nombreTarjeta').val('ALBERTO RAMIREZ SANCHEZ');
-        $('#numeroTarjetaCaptura').val('5573935405813257');
+        $('#numeroTarjetaCaptura').val('4931720012345678');
         $('#mesTarjetaCaptura').val('06');
-        $('#anioTarjetaCaptura').val('21');
-        $('#cvvTarjetaCaptura').val('123');
+        $('#anioTarjetaCaptura').val('2021');
 
         $('#checkPagoDomiciliado').addClass('active');
 
@@ -2436,6 +2445,20 @@ $(window).keydown(function(event) {
         $('#titularRFC').val('ROAJ010101AAA');
         $('#titularTelefono').val('5512345678');
         $('#titularCelular').val('5587654321');
+
+        $('#razonSocial').val('COMERCIALIZADORA DEL SUR S.A.');
+        $('#anioMoral').val('1995');
+
+        setTimeout(function(){
+            $('#mesMoral').val('01'); 
+            setTimeout(function(){
+                $('#diaMoral').val('02');
+            }, 2000);
+        }, 2000);
+        
+        $('#rfcMoral').val('COS950102');
+        $('#nombreMoral').val('ROBERTO');
+        $('#apellidosMoral').val('MARTINEZ');
 
         $('input:radio[name="documento"]').filter('[value="1"]').attr('checked', true);
 
