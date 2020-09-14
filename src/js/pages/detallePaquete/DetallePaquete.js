@@ -494,13 +494,20 @@ export class DetallePaquete {
     obtenerComplementos() {
         var referenciaClase = this;
 
-        
+        var parametros = {
+            "idPlan": referenciaClase.props.infoPaquete.idPaquete,
+            "plaza": "CIUDAD DE MEXICO",
+            "estimuloFiscal": false
+        };
+        console.log('', 'INVOCANDO EL SERVICIO [obtener-complementos]');
 
         $('#btn_transparentLinkDetailPaq').html('<i class="fas fa-circle-notch fa-spin" style="color: #1a76d2;"></i>');
 
         $.ajax({
             url: Constantes.endpoints.obtenerComplementos,
+            data: JSON.stringify(parametros),
             dataType: "json",
+            type: 'POST'
         }).done(function (respuesta) {
             console.log('RESPUESTA DE COMPLEMENTOS');
             console.log(respuesta);

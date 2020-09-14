@@ -1,4 +1,4 @@
-html,
+|html,
 body,
 * {
     margin: 0;
@@ -4729,6 +4729,6 @@ video {
     height: 100px;
     position: relative;
     margin: auto;
-    background-image: url(http://localhost:3000/assets/img/cargador1.gif);
+    background-image: url(../../../assets/img/cargador1.gif);
     background-size: cover;
 }

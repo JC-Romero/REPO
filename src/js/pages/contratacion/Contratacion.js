@@ -1,7 +1,7 @@
 import { TimelineMax, TweenMax } from "gsap";
 import { ModalContrata } from './ModalContrata';
 import * as Constantes from "../../utils/Constantes";
-import { FinalizaContratacion } from './FinalizaContratacion';
+//import { FinalizaContratacion } from './FinalizaContratacion';
 import { Canales } from '../detallePaquete/Canales';
 import { ClaseCobertura } from "../generales/ClaseCobertura";
 
@@ -151,6 +151,7 @@ export class Contratacion {
         window.scrollTo(0, 0);
         const heightItem = this.getHeightItem();
 
+        this.actualizarInfoBarra();
         this.reiniciarInfoObjeto();
         this.validacionExistePaquete();
         this.validarExistenciaAdicionales();
@@ -188,7 +189,25 @@ export class Contratacion {
         this.props.mainBody[0].style.cssText = 'overflow-Y: scroll;';
     }
 
-    simularPasosCompra() {
+    actualizarInfoBarra(){
+        //nombrePaquetePromocion
+        //precioPromocion
+        //nombrePaqueteComplemento
+        //precioComplemento
+        var strPaqueteSeleccion = localStorage.getItem('TP_STR_PAQUETE_SELECCION');
+        try {
+            var objetoPaqueteSeleccion = JSON.parse(strPaqueteSeleccion);
+            $('#nombrePaquetePromocion').html(objetoPaqueteSeleccion.detallePaquete.detalle.nombrePaquete);
+            $('#nombrePaqueteComplemento').html(objetoPaqueteSeleccion.detallePaquete.detalle.nombrePaquete);
+
+            $('#precioPromocion').html(objetoPaqueteSeleccion.detallePaquete.detalle.precioLista);
+            $('#precioComplemento').html(objetoPaqueteSeleccion.detallePaquete.detalle.precioLista);
+        } catch (error) {
+            console.log('ERROR EN LA FUNCION DE ACTUALIZACION DE LA BARRA:', error)
+        }
+    }
+
+    simularPasosCompra(){
         let apuntador = this;
         setTimeout(function () {
             apuntador.nextStep();
@@ -1637,16 +1656,16 @@ export class Contratacion {
         //this.props.modalContrata = new ModalContrata();
         ////console.log('MODAL-CONTRATA', this.props.modalContrata);
         //const modalContract = new ModalContrata();
-
-        if (this.props.modalContrata == null) {
-            this.props.modalContrata = new ModalContrata();
-            this.props.modalContrata.mostrarVentana();
-
+        //this.nextStep();
+        //new FinalizaContratacion(true);
+        if(this.props.modalContrata == null){
+            this.props.modalContrata = new ModalContrata(null);
+            this.props.modalContrata.continuar();
             ////console.log('modalContract', this.props.modalContrata.props.modalContract);
         } else {
             //console.log('EJECUTANDO MOSTRAR VENTANA');
             ////console.log('modalContract', this.props.modalContrata.props.modalContract);
-            this.props.modalContrata.mostrarVentana();
+            //this.props.modalContrata.continuar();
         }
     }
 
@@ -2967,9 +2986,9 @@ $(window).keydown(function (event) {
     if (event.ctrlKey && event.keyCode == 65) {
         //console.log("CTRL+A");
 
-        $('#txtCalle').val('Panoramica del fortin');
-        $('#txtNoExterior').val('636');
-        $('#txtCodigoPostal').val('68030');
+        //$('#txtCalle').val('Panoramica del fortin');
+        //$('#txtNoExterior').val('636');
+        //$('#txtCodigoPostal').val('68030');
 
         /*$('#ventanaGracias').css('display','flex');
         $('#capaVentanaGracias').css('opacity','1');
@@ -2981,6 +3000,8 @@ $(window).keydown(function (event) {
     }
     if (event.ctrlKey && event.keyCode == 90) {
         //console.log("CTRL+Z");
-        event.preventDefault();
+        $('#email').val('mfhernandez@totalplay.com.mx');
+        $('#mobile').val('5583073337');
+        event.preventDefault(); 
     }
 });
