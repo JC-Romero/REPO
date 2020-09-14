@@ -127,7 +127,7 @@ export class Paquetes {
 		}
 		console.log(tipopaquetes);
 		//var url = Constantes.endpoints.obtenerPaquetes + tipopaquetes;
-		var url = '/assets/media/totalplay_paquetes_2020_09_09.json';
+		var url = '/assets/media/totalplay_paquetes.json';
 		console.log('URL ARCHIVO:',url);
 		fetch(url, {
 			method: "GET",
@@ -255,7 +255,7 @@ export class Paquetes {
 				plantillaHTML += '<div class="card-package-item ' + color + '-item" id="' + objPaquete.id + '">' + '<div class="card-package-item__banner">' + '<div class="gradient-image ' + color + '-package-gradient-img"></div>' + '<img src="' + objPaquete.imagen + '" alt="">' + "</div>" + '<div class="card-package-item__title ' + color + '-package">' + objPaquete.nombre + "</div>" + '<div class="card-package-item__speed ' + color + '-package-gradient">' + '<span>' + result[1] + "</span>" + "</div>" + '<div class="card-package-item__megas ' + color + '-package">Megas↓</div>' + '<div class="card-package-item__include ' + color + '-package">' + objPaquete.incluye + "</div>" + '<div class="card-package-item__promotion">INCLUYE 1 PROMOCIÓN</div>' + '<div class="card-package-item__price">' + '<span>Desde: <span>$ ' + clase.formatoMonedad(objPaquete.precioLista, 0, ".", ",") + " al mes</span></span>" + "</div>" + '<a class="card-package-item__button">Descubrir</a>' + "</div>";
 			}
 		});
-
+		console.log("idContenedor "+idContenedor);
 		$("#" + idContenedor).html(plantillaHTML);
 		if (opt == "home") {
 			/*this.props.packCards = [...document.getElementsByClassName("card-package-item")];
