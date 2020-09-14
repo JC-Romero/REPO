@@ -154,17 +154,6 @@ var showLessPackages = function (item, item2, item3, e) {
     $("#" + item3).hide();
     event.preventDefault();
 };
-var distanceTop = $('#fixed').offset().top;
-$(window).scroll(function () {
-    if ($(window).scrollTop() >= distanceTop) {
-        $('#fixed').addClass("fixedNav").css({
-            'left': '0px important',
-        });
-
-    } else {
-        $('#fixed').removeClass("fixedNav");
-    }
-});
 $(document).ready(function () {
     $("#unboxCarouselContainer").slick({
         autoplay: true,
@@ -209,3 +198,167 @@ $(document).ready(function () {
         ]
     });
 });
+var distanceTop = $('#fixed').offset().top;
+$(window).scroll(function () {
+    if ($(window).scrollTop() >= distanceTop) {
+        $('#fixed').addClass("fixedNav").css({
+            'left': '0px important',
+        });
+
+    } else {
+        $('#fixed').removeClass("fixedNav");
+    }
+});
+var hideComputer = function (e) {
+    $("#computer").css({
+        "visibility": "hidden"
+    });
+    event.preventDefault();
+};
+var showComputer = function (e) {
+    $("#computer").css({
+        "visibility": "visible"
+    });
+    $("#computer").fadeIn(300)
+    event.preventDefault();
+};
+var hideIpadLandscape = function (e) {
+    $("#ipadLandscape").hide();
+    event.preventDefault();
+};
+var showIpadLandscape = function (e) {
+    $("#ipadLandscape").fadeIn(300);
+    event.preventDefault();
+};
+var hideIpadPortrait = function (e) {
+    $("#ipadPortrait").hide();
+    event.preventDefault();
+};
+var showIpadPortrait = function (e) {
+    $("#ipadPortrait").fadeIn(300);
+    event.preventDefault();
+};
+//Quitar Clases Slider
+var removeOnDemand = function (e) {
+    $("#computer").removeClass('onDemandComputer');
+    $("#phone").removeClass('onDemandPhone');
+    $("#IpadLandscape").removeClass('onDemandIpad');
+    event.preventDefault();
+};
+var removeRemote = function (e) {
+    $("#ipadPortrait").removeClass('remoteIpad');
+    $("#phone").removeClass('remotePhone');
+    event.preventDefault();
+};
+var removeLandLine = function (e) {
+    $("#ipadPortrait").removeClass('ipadLandline');
+    $("#phone").removeClass('phoneLandline');
+    event.preventDefault();
+};
+var removeWifi = function (e) {
+    $("#computer").removeClass('computerWifi');
+    $("#phone").removeClass('phoneWifi');
+    $("#ipadLandscape").removeClass('ipadWifi');
+    event.preventDefault();
+};
+var removeInvoice = function (e) {
+    $("#computer").removeClass('computerInvoice');
+    $("#phone").removeClass('phoneInvoice');
+    $("#ipadLandscape").removeClass('ipadInvoice');
+    event.preventDefault();
+};
+//Agrega Clases Slider
+var addOnDemand = function (e) {
+    showComputer();
+    $("#computer").addClass('onDemandComputer');
+    $("#phone").addClass('onDemandPhone');
+    $("#ipadLandscape").addClass('onDemandIpad');
+    $("#toggleDemand").addClass('active');
+    $("#toggleRemote").removeClass('active');
+    $("#toggleLandline").removeClass('active');
+    $("#toggleWifi").removeClass('active');
+    $("#toggleInvoice").removeClass('active');
+    showIpadLandscape();
+    hideIpadPortrait();
+    removeRemote();
+    removeLandLine();
+    removeWifi();
+    removeInvoice();
+    event.preventDefault();
+};
+var addRemote = function (e) {
+    hideComputer();
+    $("#ipadPortrait").addClass('remoteIpad');
+    $("#phone").addClass('remotePhone');
+    $("#toggleDemand").removeClass('active');
+    $("#toggleRemote").addClass('active');
+    $("#toggleLandline").removeClass('active');
+    $("#toggleWifi").removeClass('active');
+    $("#toggleInvoice").removeClass('active');
+    showIpadPortrait();
+    hideIpadLandscape();
+    removeOnDemand();
+    removeLandLine();
+    removeWifi();
+    removeInvoice();
+    event.preventDefault();
+};
+
+var addLandLine = function (e) {
+    hideComputer();
+    $("#ipadPortrait").addClass('ipadLandline')
+    $("#phone").addClass('phoneLandline');
+    $("#toggleDemand").removeClass('active');
+    $("#toggleRemote").removeClass('active');
+    $("#toggleLandline").addClass('active');
+    $("#toggleWifi").removeClass('active');
+    $("#toggleInvoice").removeClass('active');
+    showIpadPortrait();
+    hideIpadLandscape();
+    removeOnDemand();
+    removeRemote();
+    removeWifi();
+    removeInvoice();
+    event.preventDefault();
+};
+var addWifi = function (e) {
+    showComputer();
+    $("#computer").addClass('computerWifi');
+    $("#phone").addClass('phoneWifi');
+    $("#ipadLandscape").addClass('ipadWifi');
+    $("#toggleDemand").removeClass('active');
+    $("#toggleRemote").removeClass('active');
+    $("#toggleLandline").removeClass('active');
+    $("#toggleWifi").addClass('active');
+    $("#toggleInvoice").removeClass('active');
+    showIpadLandscape();
+    hideIpadPortrait();
+    removeOnDemand();
+    removeRemote();
+    removeLandLine();
+    removeInvoice();
+    event.preventDefault();
+};
+var addInvoice = function (e) {
+    showComputer();
+    $("#computer").addClass('computerInvoice');
+    $("#phone").addClass('phoneInvoice');
+    $("#ipadLandscape").addClass('ipadInvoice');
+    $("#toggleDemand").removeClass('active');
+    $("#toggleRemote").removeClass('active');
+    $("#toggleLandline").removeClass('active');
+    $("#toggleWifi").removeClass('active');
+    $("#toggleInvoice").addClass('active');
+    showIpadLandscape();
+    hideIpadPortrait();
+    removeOnDemand();
+    removeRemote();
+    removeLandLine();
+    event.preventDefault();
+};
+var activeTopMenu = function (item1, item2, item3, item4) {
+    $("#" + item1).addClass('active');
+    $("#" + item2).removeClass('active');
+    $("#" + item3).removeClass('active');
+    $("#" + item4).removeClass('active');
+ };
