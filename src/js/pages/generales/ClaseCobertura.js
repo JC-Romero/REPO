@@ -1062,10 +1062,10 @@ export class ClaseCobertura {
             if(item == ciudad){
             //if(item == "Tijuana"){
                 localStorage.setItem("TP_ESTIMULO_FISCAL","true");
-                const paq = new Paquetes();
-                if(opt == "home"){
-                    paq.cargarPaquetes("home");
-                }
+            }
+            const paq = new Paquetes();
+            if(opt == "home"){
+                paq.cargarPaquetes("home");
             }
         })
     }
