@@ -65,27 +65,6 @@ var showCollapsible = function (item, item2) {
 };
 
 $(document).ready(function () {
-    $("#citySearch").keyup(function () {
-        var x = document.getElementById('cityAutocomplete');
-        if ($(this).val() == "") {
-            x.style.display = 'none';
-        } else {
-            x.style.display = 'block';
-        }
-    });
-
-    $('#cityPicker').on('hidden.bs.modal', function () {
-        $('body').css({
-            'overflow': 'auto'
-        });
-    });
-
-    $('#cityPicker').on('show.bs.modal', function () {
-        $('body').css({
-            'overflow': 'auto'
-        });
-    });
-
     var $mainVideo = $("#mainVideo");
     var $secondaryVideo = $("#secondaryVideo");
     var $window = $(window);
@@ -132,8 +111,30 @@ $(document).ready(function () {
             $("#secondaryVideo")[0].pause();
         }
     });
-    var windw = this;
+});
+$(document).ready(function () {
+    $("#citySearch").keyup(function () {
+        var x = document.getElementById('cityAutocomplete');
+        if ($(this).val() == "") {
+            x.style.display = 'none';
+        } else {
+            x.style.display = 'block';
+        }
+    });
 
+    $('#cityPicker').on('hidden.bs.modal', function () {
+        $('body').css({
+            'overflow': 'auto'
+        });
+    });
+
+    $('#cityPicker').on('show.bs.modal', function () {
+        $('body').css({
+            'overflow': 'auto'
+        });
+    });
+
+    var windw = this;
     $.fn.followTo = function (elem) {
         var $this = this,
             $window = $(windw),
@@ -149,7 +150,7 @@ $(document).ready(function () {
                 } else {
                     $this.css({
                         position: 'fixed',
-                        top: 0, 
+                        top: 0,
                     });
                 }
             };

@@ -485,6 +485,9 @@
         margin: 0 auto;
         left: 0;
     }
+    .modalMainVideoContainer video {
+        top: 110px;
+    }
 }
 
 @media (max-width: 767.98px) and (orientation: landscape) {
@@ -652,6 +655,9 @@
         bottom: 30px;
         left: 10px;
     }
+    .modalMainVideoContainer video {
+        top: 110px;
+    }
 }
 
 @media (max-width: 1200px) {
@@ -815,6 +821,9 @@
     .headerPackages {
         height: 255vh !important;
     }
+    .modalMainVideoContainer video {
+        top: 80px;
+    }
 }
 /*Pixel 2XL*/
 @media only screen and (min-width: 411px) and (max-width: 823px) and (-webkit-min-device-pixel-ratio: 3.5) {
@@ -861,6 +870,9 @@
     }
     .tvRow .platformRow p {
         margin-top: -0.5rem !important;
+    }
+    .modalMainVideoContainer video {
+        top: 70px;
     }
 }
 
@@ -996,6 +1008,7 @@
     }
 
     .videoTextContainer .videoTextContent {
+        top: 25vh;
     }
 
     .headerPackages {

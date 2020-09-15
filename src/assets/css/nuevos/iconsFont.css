@@ -89,3 +89,9 @@
 .icon-envelope:before {
     content: "\e80a";
 } /* '' */
+.icon-chevrondown:before {
+    content: "\e80b";
+} /* '' */
+.icon-chevronup:before {
+    content: "\e80c";
+} /* '' */

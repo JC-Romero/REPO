@@ -2449,7 +2449,15 @@ footer .footerLegals p {
     font-weight: 400;
     text-transform: none;
 }
-
+footer .footerSeo {
+    text-align: left;
+    margin-top: 1rem;
+}
+footer .footerSeo p {
+    font-weight: 400;
+    font-size: 9px;
+    text-transform: none;
+}
 footer .legalAdvice {
     margin-top: 2rem;
 }
@@ -5002,8 +5010,20 @@ video {
     background: rgba(22, 22, 27, 1);
     position: absolute;
     left: -15px;
-    top: 650px;
+    top: 760px;
     visibility: hidden;
+}
+.showMoreRow {
+    position: relative;
+    top: -9rem;
+}
+.showMoreRow p {
+    color: rgba(255, 255, 255, 1);
+}
+.showMoreRow p::after {
+    display: block;
+    font-family: "totalplayicons";
+    content: "\e80b";
 }
 .appsMainTitle {
     background: rgba(22, 22, 27, 1);
@@ -5186,6 +5206,9 @@ video {
     margin: auto;
     background-image: url(http://localhost:3000/assets/img/cargador1.gif);
     background-size: cover;
+}
+.modalMainVideoContainer video {
+    z-index: 1000;
 }
 .row.equal-height {
     display: flex;
