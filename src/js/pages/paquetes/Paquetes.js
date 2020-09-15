@@ -118,16 +118,23 @@ export class Paquetes {
 	cargarPaquetes(opt) {
 		console.group('Paquetes.js FUNCION cargarPaquetes('+opt+')');
 		let apuntador = this;
-		var tipopaquetes = "totalplay_paquetes.json";
+		var tipopaquetes = "totalplay_paquetes_2020_09_09.json";
 		if (localStorage.getItem("TP_OF_OBJ_FACTIBILIDAD") != null) {
 			var datosfactibilidad = JSON.parse(localStorage.getItem("TP_OF_OBJ_FACTIBILIDAD"));
 			if (datosfactibilidad.estimulofiscal == "true") {
 				tipopaquetes = "totalplay_paquetes_fronterizo.json";
 			}
+		}else{
+			if(localStorage.getItem("TP_ESTIMULO_FISCAL") != null){
+				var estimulofiscal = localStorage.getItem("TP_ESTIMULO_FISCAL");
+				tipopaquetes = "totalplay_paquetes_fronterizo.json";
+			}
 		}
+
 		console.log(tipopaquetes);
 		//var url = Constantes.endpoints.obtenerPaquetes + tipopaquetes;
 		var url = '/assets/media/totalplay_paquetes_2020_09_09.json';
+		var url = '/assets/media/'+tipopaquetes;
 		console.log('URL ARCHIVO:',url);
 		fetch(url, {
 			method: "GET",
@@ -262,7 +269,7 @@ export class Paquetes {
                 	'<div class="row">'+
 	                    '<div class="col-10 col-sm-11 col-md-11 col-lg-11 col-xl-11 mx-auto mainContainerpackage '+claseTipoPaquete+'"'+
 	                        'onclick="showBootstrapModalFirst(\'installLocation\');">'+
-	                        '<div class="packageInfoContainer">'+
+	                        '<div class="packageInfoContainer" id="'+objPaquete.id+'">'+
 	                            '<div class="titlePackage">'+
 	                                '<p>'+objPaquete.nombre+'</p>'+
 	                            '</div>'+
@@ -403,7 +410,7 @@ export class Paquetes {
 			this.props.packCards[1].classList.add("active");
 			this.props.indicators = [...document.getElementById("detailPackageIndicatorsIndex").children];
 			this.props.indicators[1].classList.add("active");
-			*/clase.clickCards();
+			clase.clickCards();*/
 		}
 		clase.setListener();
 		localStorage.setItem("TP_PAQUETES_RECOMENDACION", JSON.stringify(arregloRecomendacion));

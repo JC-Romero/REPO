@@ -1,4 +1,6 @@
 import * as Constantes from "../../utils/Constantes";
+import {Paquetes} from '../paquetes/Paquetes';
+
 export class ClaseCobertura {
     constructor() {
         this.init();
@@ -13,6 +15,8 @@ export class ClaseCobertura {
     }
 
     validarPermisosUbicacion() {
+        var apuntador = this;
+
         if (localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME') == null) {
             var cabeceraMC = new Headers();
             cabeceraMC.append("Content-type", "application/json;charset=utf-8");
@@ -34,6 +38,7 @@ export class ClaseCobertura {
                         $('#cd-cobertura-index').html(respuesta);
                         $('#cd-cobertura-index-seccion').html(respuesta);
                         localStorage.setItem('TP_STR_DIRECCION_CIUDAD_HOME', respuesta);
+                        apuntador.checkEstimulo(respuesta,"home");
                     }
                 } catch (e) {
                     $('#cd-cobertura-index').html("Ciudad de México");
@@ -49,7 +54,10 @@ export class ClaseCobertura {
         } else {
             console.log('YA TIENE UNA CIUDAD PREDETERMINADA');
             $('#cd-cobertura-index').html(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME'));
-            $('#cd-cobertura-index-seccion').html(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME'));            
+            $('#cd-cobertura-index-seccion').html(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME'));
+            if(localStorage.getItem("TP_ESTIMULO_FISCAL") == null){
+                apuntador.checkEstimulo(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME'));
+            }
         }
     }
 
@@ -1043,4 +1051,22 @@ export class ClaseCobertura {
         return procesa;
     }
     /***FIN VALIDACIONES***/
+
+    checkEstimulo(ciudad,opt){
+        console.log("checkEstimulo "+ciudad);
+
+        var arregloFronterizo = ['Ciudad Juárez','Ensenada','Mexicali','Rosarito','Tijuana'];
+        
+        $.each(arregloFronterizo,function(index,item){
+            console.log("==>"+item);
+            if(item == ciudad){
+            //if(item == "Tijuana"){
+                localStorage.setItem("TP_ESTIMULO_FISCAL","true");
+                const paq = new Paquetes();
+                if(opt == "home"){
+                    paq.cargarPaquetes("home");
+                }
+            }
+        })
+    }
 }
