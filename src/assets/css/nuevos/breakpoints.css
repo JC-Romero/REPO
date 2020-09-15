@@ -441,11 +441,49 @@
         font-size: 22px;
         line-height: 22px;
     }
-    .devicesSlider {
+    .supportMain .phonesCol {
+        margin: 0 auto;
+        padding-bottom: 2rem;
+        border-right: none !important;
+        border-bottom: solid 1px rgba(189, 192, 195, 1);
     }
-    .devicesSlider .ipadLandscapeContainer {
+    .supportMain .phonesCol:last-child {
+        border-bottom: none;
     }
-    .devicesSlider .smartphoneContainer {
+    .supportMain .phonesRow .phoneItem {
+        left: 30px;
+    }
+    .supportManuals .manualsCarousel .documentContainer .documentDescriptionContainer {
+        width: 100%;
+        max-width: 100%;
+        top: 0;
+        height: 120px;
+    }
+    .supportManuals .manualsCarousel .documentContainer .documentImageContainer img {
+        max-width: 142px;
+        position: relative;
+        bottom: -30px;
+        z-index: 10;
+    }
+    .supportManuals .manualsCarousel .documentContainer .documentDescriptionContainer p {
+        top: 25px;
+        font-weight: 500;
+    }
+    .supportManuals .manualsCarousel .documentContainer {
+        margin-bottom: 15px;
+        height: 120px;
+    }
+    .supportManuals .slick-slider .slick-track {
+        padding-top: 2rem;
+        height: 300px;
+    }
+    .supportManuals .manualsCarousel .documentContainer .documentDescriptionContainer p {
+        text-align: center;
+        font-size: 18px;
+        font-weight: 500;
+        width: 150px;
+        margin: 0 auto;
+        left: 0;
     }
 }
 

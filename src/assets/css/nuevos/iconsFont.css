@@ -56,44 +56,36 @@
     /* Uncomment for 3D effect */
     /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
-
 .icon-arrowright:before {
     content: "\e800";
-}
-
-/* '' */
+} /* '' */
 .icon-4k:before {
     content: "\e801";
-}
-
-/* '' */
+} /* '' */
 .icon-chevron:before {
     content: "\e802";
-}
-
-/* '' */
+} /* '' */
 .icon-chevronleft:before {
     content: "\e803";
-}
-
-/* '' */
+} /* '' */
 .icon-user:before {
     content: "\e804";
-}
-
-/* '' */
+} /* '' */
 .icon-landline:before {
     content: "\e805";
-}
-
-/* '' */
+} /* '' */
+.icon-chat:before {
+    content: "\e806";
+} /* '' */
+.icon-document:before {
+    content: "\e807";
+} /* '' */
 .icon-remote:before {
     content: "\e808";
-}
-
-/* '' */
+} /* '' */
 .icon-wifi:before {
     content: "\e809";
-}
-
-/* '' */
+} /* '' */
+.icon-envelope:before {
+    content: "\e80a";
+} /* '' */
