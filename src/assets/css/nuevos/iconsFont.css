@@ -1,11 +1,11 @@
 @font-face {
-    font-family: "fontello";
-    src: url("../../font/nuevos/fontello.eot?15879374");
-    src: url("../../font/nuevos/fontello.eot?15879374#iefix") format("embedded-opentype"),
-        url("../../font/nuevos/fontello.woff2?15879374") format("woff2"),
-        url("../../font/nuevos/fontello.woff?15879374") format("woff"),
-        url("../../font/nuevos/fontello.ttf?15879374") format("truetype"),
-        url("../../font/nuevos/fontello.svg?15879374#fontello") format("svg");
+    font-family: "totalplayicons";
+    src: url("../../font/nuevos/totalplayicons.eottotalplayicons.eot?25525297");
+    src: url("../../font/nuevos/totalplayicons.eot?25525297#iefix") format("embedded-opentype"),
+        url("../../font/nuevos/totalplayicons.woff2?25525297") format("woff2"),
+        url("../../font/nuevos/totalplayicons.woff?25525297") format("woff"),
+        url("../../font/nuevos/totalplayicons.ttf?25525297") format("truetype"),
+        url("../../font/nuevos/totalplayicons.svg?25525297#totalplayicons") format("svg");
     font-weight: normal;
     font-style: normal;
 }
@@ -15,15 +15,15 @@
 /*
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
-    font-family: 'fontello';
-    src: url('../font/fontello.svg?15879374#fontello') format('svg');
+    font-family: 'totalplayicons';
+    src: url('../font/totalplayicons.svg?25525297#totalplayicons') format('svg');
   }
 }
 */
 
 [class^="icon-"]:before,
 [class*=" icon-"]:before {
-    font-family: "fontello";
+    font-family: "totalplayicons";
     font-style: normal;
     font-weight: normal;
     speak: never;
@@ -62,13 +62,38 @@
 }
 
 /* '' */
-.icon-user:before {
+.icon-4k:before {
+    content: "\e801";
+}
+
+/* '' */
+.icon-chevron:before {
     content: "\e802";
 }
 
 /* '' */
-.icon-chevron:before {
+.icon-chevronleft:before {
+    content: "\e803";
+}
+
+/* '' */
+.icon-user:before {
+    content: "\e804";
+}
+
+/* '' */
+.icon-landline:before {
+    content: "\e805";
+}
+
+/* '' */
+.icon-remote:before {
     content: "\e808";
 }
 
 /* '' */
+.icon-wifi:before {
+    content: "\e809";
+}
+
+/* '' */

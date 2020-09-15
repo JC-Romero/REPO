@@ -151,9 +151,9 @@ export class Paquetes {
 			} else {
 				var arreglo = apuntador.ordenarObjeto(respuesta["TriplePlay"]).slice(0, 1);
 
-				var arregloUnbox = apuntador.ordenarObjeto(respuesta["TripleAmazon"]).slice(0,1);
+				var arregloUnbox = apuntador.ordenarObjeto(respuesta["TriplePlayAmazon"]).slice(0,1);
 
-				var arregloNetflix = apuntador.ordenarObjeto(respuesta["TripleNetFlix"]).slice(0,1)
+				var arregloNetflix = apuntador.ordenarObjeto(respuesta["TriplePlayNetFlix"]).slice(0,1)
 
 				var arrelgoApintar = "["+JSON.stringify(arregloUnbox[0]).concat(",").concat(JSON.stringify(arregloNetflix[0])).concat(",").concat(JSON.stringify(arreglo[0]))+"]";
 

@@ -4,7 +4,7 @@ export class PaquetesEventos {
         this.props = {
             //containerBanner: document.getElementById(banner),
             contentPackagesLayer: document.getElementById('packageBannerLayerOne'),
-            header: document.getElementById('mainHeader').getBoundingClientRect().height,
+            //header: document.getElementById('mainHeader').getBoundingClientRect().height,
             menu: document.getElementById('menuPackages'),
             contentMenuTabs: document.getElementById('contentMenuTabs'),
             item: [...document.querySelectorAll('.menu-packages__item')],
@@ -30,10 +30,10 @@ export class PaquetesEventos {
             dir: null,
             windowW: window.innerWidth
         }
-        this.initialize(index);
-        this.clickTab();
-        this.mouseoverTab();
-        this.resize();
+        //this.initialize(index);
+        //this.clickTab();
+        //this.mouseoverTab();
+        //this.resize();
     }
 
 

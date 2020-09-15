@@ -1,19 +1,19 @@
 import * as Constantes from "../../utils/Constantes";
 export class ClaseCobertura {
-	constructor(){
-		this.init();
-	}
+    constructor() {
+        this.init();
+    }
 
-	init(){
+    init() {
         console.group('ClaseCobertura.js FUNCION init()');
-		this.validarPermisosUbicacion();
-		//this.revisarcobertura();
+        this.validarPermisosUbicacion();
+        //this.revisarcobertura();
         this.setListeners();
         console.groupEnd();
-	}
+    }
 
-	validarPermisosUbicacion(){
-        if(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME')==null){
+    validarPermisosUbicacion() {
+        if (localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME') == null) {
             var cabeceraMC = new Headers();
             cabeceraMC.append("Content-type", "application/json;charset=utf-8");
 
@@ -46,16 +46,16 @@ export class ClaseCobertura {
                 console.log("err=>", err);
             });
 
-        }else{
+        } else {
             console.log('YA TIENE UNA CIUDAD PREDETERMINADA');
             $('#cd-cobertura-index').html(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME'));
             $('#cd-cobertura-index-seccion').html(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME'));            
         }
-	}
+    }
 
-	obtenerDireccionNavegador(pos) {
+    obtenerDireccionNavegador(pos) {
         var info;
-        if (pos.coords.latitude == null && pos.coords.latitude == undefined && pos.coords.longitude == null && pos.coords.longitude == undefined) {} else {
+        if (pos.coords.latitude == null && pos.coords.latitude == undefined && pos.coords.longitude == null && pos.coords.longitude == undefined) { } else {
             info = {
                 latitude: pos.coords.latitude,
                 longitud: pos.coords.longitude
@@ -66,84 +66,84 @@ export class ClaseCobertura {
 
         $.ajax({
             contentType: "application/json",
-            
-            url:  '/assets/media/datosDireccion.json',
-            
-            success: function(respuesta) {
+
+            url: '/assets/media/datosDireccion.json',
+
+            success: function (respuesta) {
                 localStorage.setItem("DEBUG.MAPS.PAYLOAD", JSON.stringify(respuesta.payload));
 
                 console.log('RESPUESTA DE SERVICIO [obtener-direccion-coordenadas]', respuesta);
 
                 var objDireccionSeleccion;
-                $.each(respuesta.payload, function( index, objDireccion ) {
-                    $.each( objDireccion.types , function( key, tipo ) {
-                        if(tipo == 'street_address' || tipo == 'premise'){
+                $.each(respuesta.payload, function (index, objDireccion) {
+                    $.each(objDireccion.types, function (key, tipo) {
+                        if (tipo == 'street_address' || tipo == 'premise') {
                             objDireccionSeleccion = objDireccion;
                         }
                     });
                 });
 
-                if(objDireccionSeleccion == null || objDireccionSeleccion == undefined){
+                if (objDireccionSeleccion == null || objDireccionSeleccion == undefined) {
                     objDireccionSeleccion = respuesta.payload[0];
                 }
 
                 var direccionAproximada;
-                try{
+                try {
                     direccionAproximada = objDireccionSeleccion.formatted_address;
                     var arrayDireccion = direccionAproximada.split(',');
                     var calleNumero = arrayDireccion[0];
-                    
+
                     $('#calleModal').val(calleNumero);
                     $('#calleSection').val(calleNumero);
                     $('#txtCalle').val(calleNumero);
-                     
+
                     var regExCP = /(\d{5})/;
                     var arrayResultadoCP = regExCP.exec(direccionAproximada);
-                    
+
                     $('#cpModal').val(arrayResultadoCP[0]);
                     $('#cpSection').val(arrayResultadoCP[0]);
                     $('#txtCodigoPostal').val(arrayResultadoCP[0]);
-                    
-                    if($('#cpSection').val().length == 5){
+
+                    if ($('#cpSection').val().length == 5) {
                         $('#cpSection').trigger('buscaciudad');
                     }
 
-                }catch(e){
-                    console.log( 'NO SE ENCONTRO EL KEY [formatted_address] DEL OJETO [objDireccionSeleccion]');
+                } catch (e) {
+                    console.log('NO SE ENCONTRO EL KEY [formatted_address] DEL OJETO [objDireccionSeleccion]');
                 }
             },
-            error: function(err) {
-                console.log( 'OCURRIO UN ERROR EN EL API [obtener-direccion-coordenadas]', err);
+            error: function (err) {
+                console.log('OCURRIO UN ERROR EN EL API [obtener-direccion-coordenadas]', err);
             }
         });
     }
 
     permisoDenegado(error) {
-        console.log('PERMISO DE  GEOLOCALIZACION DENEGADO POR EL USUARIO [' + error.message+ ']');
+        console.log('PERMISO DE  GEOLOCALIZACION DENEGADO POR EL USUARIO [' + error.message + ']');
     }
 
     revisarcobertura() {
         console.group('ClaseCobertura.js FUNCION revisarcobertura()');
         var strDireccion_LS_TMP = '';
-        try{
+        try {
             strDireccion_LS_TMP = localStorage.getItem('TP_STR_DIRECCION');
             console.log("VALOR LOCALSTORAGE[TP_STR_DIRECCION]:", strDireccion_LS_TMP);
 
-            if(strDireccion_LS_TMP !== null && strDireccion_LS_TMP !== ''){
+            if (strDireccion_LS_TMP !== null && strDireccion_LS_TMP !== '') {
                 strDireccion_LS_TMP = JSON.parse(strDireccion_LS_TMP);
                 var strDireccion_LS = strDireccion_LS_TMP.direccionFormulario.direccion;
 
-                if(!this.validarCampoVacio(strDireccion_LS_TMP.direccionFormulario.codigoPostal)){
+                if (!this.validarCampoVacio(strDireccion_LS_TMP.direccionFormulario.codigoPostal)) {
                     $('#cpModal').val(strDireccion_LS_TMP.direccionFormulario.codigoPostal);
                     $('#cpSection').val(strDireccion_LS_TMP.direccionFormulario.codigoPostal);
                     $('#txtCodigoPostal').val(strDireccion_LS_TMP.direccionFormulario.codigoPostal);
                 }
 
-                if(!this.validarCampoVacio(strDireccion_LS_TMP.direccionFormulario.ciudad)){
+                if (!this.validarCampoVacio(strDireccion_LS_TMP.direccionFormulario.ciudad)) {
                     $('#ciudadModal').val(strDireccion_LS_TMP.direccionFormulario.ciudad);
                     $('#ciudadSection').val(strDireccion_LS_TMP.direccionFormulario.ciudad);
                     $('#txtCiudad').val(strDireccion_LS_TMP.direccionFormulario.ciudad);
-                }else{
+                } else {
                     $('#ciudadModal').val(localStorage.getItem('TP_CIUDAD_CONSULTA'));
                     $('#ciudadSection').val(localStorage.getItem('TP_CIUDAD_CONSULTA'));
                     $('#txtCiudad').val(localStorage.getItem('TP_CIUDAD_CONSULTA'));
@@ -151,7 +151,7 @@ export class ClaseCobertura {
 
                 let calleNumero = '';
                 let calleNumeroTmp = strDireccion_LS.split(',');
-                if(!this.validarCampoVacio(calleNumeroTmp[0])){
+                if (!this.validarCampoVacio(calleNumeroTmp[0])) {
                     calleNumero = calleNumeroTmp[0];
 
                     $('#calleModal').val(calleNumero);
@@ -160,10 +160,10 @@ export class ClaseCobertura {
                     $("#validaCoberturaHeader").html(calleNumero);
                     $('#direccionPaquete').html(calleNumero);
                 }
-            }else{
+            } else {
                 console.log("LOCALSTORAGE ESTA VACIO O ES NULL:", strDireccion_LS_TMP);
             }
-        }catch(err){
+        } catch (err) {
             console.log("OCURRIO UN ERROR EN LA FUNCION revisarcobertura():", err);
         }
         console.groupEnd();
@@ -173,10 +173,10 @@ export class ClaseCobertura {
         let apuntador = this;
         var pathname = window.location.pathname;
 
-        if(pathname !== '/contratacion.html' || pathname !== '/finaliza.html'){
-        	if (window.matchMedia("(max-width: 780px)").matches) {
-            	$(".txtdngcober").css("margin-top", "5px");
-        	}
+        if (pathname !== '/contratacion.html' || pathname !== '/finaliza.html') {
+            if (window.matchMedia("(max-width: 780px)").matches) {
+                $(".txtdngcober").css("margin-top", "5px");
+            }
         }
 
         $("#validaCoberturaHeader").on("click", function () {
@@ -271,12 +271,12 @@ export class ClaseCobertura {
 
                 var direccion = calle;
 
-                if( localStorage.getItem('SUGERENCIA_SELECCIONADA') == undefined 
-                || localStorage.getItem('SUGERENCIA_SELECCIONADA') == null 
-                || localStorage.getItem('SUGERENCIA_SELECCIONADA') == ''
-                || localStorage.getItem('SUGERENCIA_SELECCIONADA') == 0
-                ){
-                    direccion = calle + ' '+ codigoPostal + ' '+ ciudad;
+                if (localStorage.getItem('SUGERENCIA_SELECCIONADA') == undefined
+                    || localStorage.getItem('SUGERENCIA_SELECCIONADA') == null
+                    || localStorage.getItem('SUGERENCIA_SELECCIONADA') == ''
+                    || localStorage.getItem('SUGERENCIA_SELECCIONADA') == 0
+                ) {
+                    direccion = calle + ' ' + codigoPostal + ' ' + ciudad;
                 }
                 
                 $("#botonValidarCobertura").html('Validando <i class="fas fa-circle-notch fa-spin" style="color: white;"></i>');
@@ -289,14 +289,14 @@ export class ClaseCobertura {
             var calle = $.trim($('#calleSection').val());
             var ciudad = $.trim($('#ciudadSection').val());
             var codigoPostal = $.trim($('#cpSection').val());
-            var procesa = apuntador.validarFormulario(calle,  codigoPostal, 'errorCalle', 'errorcp');
+            var procesa = apuntador.validarFormulario(calle, codigoPostal, 'errorCalle', 'errorcp');
             if (procesa) {
 
                 var objetoDireccionFormulario = {
-                    "direccionFormulario":{
-                        "codigoPostal":$('#cpSection').val(),
-                        "ciudad":$('#ciudadSection').val(),
-                        "direccion":$('#calleSection').val()
+                    "direccionFormulario": {
+                        "codigoPostal": $('#cpSection').val(),
+                        "ciudad": $('#ciudadSection').val(),
+                        "direccion": $('#calleSection').val()
                     }
                 };
                 localStorage.setItem('TP_STR_DIRECCION', JSON.stringify(objetoDireccionFormulario));
@@ -310,12 +310,12 @@ export class ClaseCobertura {
 
                 var direccion = calle;
 
-                if( localStorage.getItem('SUGERENCIA_SELECCIONADA') == undefined 
-                || localStorage.getItem('SUGERENCIA_SELECCIONADA') == null 
-                || localStorage.getItem('SUGERENCIA_SELECCIONADA') == ''
-                || localStorage.getItem('SUGERENCIA_SELECCIONADA') == 0
-                ){
-                    direccion = calle + ' '+ codigoPostal + ' '+ ciudad;
+                if (localStorage.getItem('SUGERENCIA_SELECCIONADA') == undefined
+                    || localStorage.getItem('SUGERENCIA_SELECCIONADA') == null
+                    || localStorage.getItem('SUGERENCIA_SELECCIONADA') == ''
+                    || localStorage.getItem('SUGERENCIA_SELECCIONADA') == 0
+                ) {
+                    direccion = calle + ' ' + codigoPostal + ' ' + ciudad;
                 }
 
                 apuntador.buscarDireccion(direccion);
@@ -411,24 +411,24 @@ export class ClaseCobertura {
 
 
         /***EVENTOS COBERTURASUGERENCIA**/
-        $('#cpSection').bind('buscaciudad',function(){
+        $('#cpSection').bind('buscaciudad', function () {
             var codigoPostal = $('#cpSection').val();
-            apuntador.buscarCiudad(codigoPostal, 'calleModal');          
+            apuntador.buscarCiudad(codigoPostal, 'calleModal');
         });
 
-        $("body").on('keyup', '#calleSection', function() {
-            var calleNumero = $(this).val(); 
-            var codigoPostal = $('#cpSection').val(); 
+        $("body").on('keyup', '#calleSection', function () {
+            var calleNumero = $(this).val();
+            var codigoPostal = $('#cpSection').val();
             apuntador.iniciarAutocompletadoSeccion(calleNumero, codigoPostal);
         });
 
-        $("body").on('keyup', '#txtCalle', function() {
-            var calleNumero = $(this).val(); 
-            var codigoPostal = $('#txtCodigoPostal').val(); 
+        $("body").on('keyup', '#txtCalle', function () {
+            var calleNumero = $(this).val();
+            var codigoPostal = $('#txtCodigoPostal').val();
             apuntador.iniciarAutocompletadoContrata(calleNumero, codigoPostal);
         });
 
-        $("body").on('click', '.pac-item', function() {
+        $("body").on('click', '.pac-item', function () {
             var direccion = $(this).attr('data-dir-text');
             try {
                 $('#calleModal').val(direccion);
@@ -458,9 +458,9 @@ export class ClaseCobertura {
             }
         });
 
-        $('#cpSection').on("keyup", function() {
+        $('#cpSection').on("keyup", function () {
             var codigoPostal = $('#cpSection').val();
-            if(codigoPostal.length == 5){
+            if (codigoPostal.length == 5) {
                 $('#ciudadSection').val('');
                 $('#calleSection').val('');
                 apuntador.buscarCiudad(codigoPostal, 'calleSection');
@@ -487,7 +487,7 @@ export class ClaseCobertura {
         fetch(url, {
             method: 'POST',
             body: JSON.stringify(parametros),
-            headers: {'Content-Type': 'application/json'}
+            headers: { 'Content-Type': 'application/json' }
         }).then(function (respuestaServicio) {
             return respuestaServicio.json();
         }).then(function (respuesta) {
@@ -526,10 +526,10 @@ export class ClaseCobertura {
 
     buscarDireccion(direccion) {
         let apuntador = this;
-        console.log('CONSULTANDO LA DIRECCION ['+direccion+'] CON REVERSE CODE');
+        console.log('CONSULTANDO LA DIRECCION [' + direccion + '] CON REVERSE CODE');
 
         apuntador.consultarCoordenada(direccion).then(function (infoCoordenas) {
-        	//buscar consultarCoordenada en log anterior del sourcetree
+            //buscar consultarCoordenada en log anterior del sourcetree
             console.log('EL SERVICIO REVERSE CODE RESPONDE:', infoCoordenas);
             if (infoCoordenas != undefined && infoCoordenas != null && infoCoordenas != '') {
                 console.log("voy a validarFactibilidad");
@@ -600,7 +600,7 @@ export class ClaseCobertura {
 
                 direccionAproximada = objDireccion.formatted_address;
             });
-            
+
             var estado = "";
             var colonia = "";
             var codigoPostal = "";
@@ -650,7 +650,7 @@ export class ClaseCobertura {
                     });
                 }
             }
-            
+
             if (estado == 'Ciudad de México' || estado == 'CDMX' || estado == 'México D.F.') {
                 delegacionMunicipio = $('#ciudadModal').val();
             }
@@ -669,7 +669,7 @@ export class ClaseCobertura {
             objDir.codigoPostal = codigoPostal;
             objDir.colonia = colonia;
 
-            let objeto = {"coordenadas": objCoordenadas, "infoDireccion":infoDireccion}
+            let objeto = { "coordenadas": objCoordenadas, "infoDireccion": infoDireccion }
             referenciaClase.actualizarObjetoDireccion('DIR_CALCULADA', objeto);
             return objDir;
         }).catch(function (err) {
@@ -701,17 +701,18 @@ export class ClaseCobertura {
             //console.log(respuesta);
             
             if (respuesta.status == 0) {
-                let objeto = {"factibilidad": respuesta.bean}
+                let objeto = { "factibilidad": respuesta.bean }
                 apuntador.actualizarObjetoDireccion('DIR_FACTIBILIDAD', objeto);
 
                 var strDireccion_LS = localStorage.getItem('TP_OF_STR_DIRECCION');
                 $('#txtDireccion').html(strDireccion_LS);
                 $('#txtDireccionObtenida').html(strDireccion_LS);
 
+
                 if (respuesta.bean.factibilidad == '1') {
 
                     localStorage.setItem('TP_ESTIMULO_CIUDAD', respuesta.bean.estimulofiscal);
-                    
+
                     apuntador.pintarDireccionHeader();
                 } else {
                     $("#step1").css("display", "none");
@@ -782,38 +783,38 @@ export class ClaseCobertura {
         let objetoMemoria;
         try {
             objetoMemoria = JSON.parse(cadenaDireccion);
-        } catch (error) {}
+        } catch (error) { }
 
         obetoDireccion = {
-            "direccionFormulario":objetoMemoria.direccionFormulario
+            "direccionFormulario": objetoMemoria.direccionFormulario
         }
 
         localStorage.setItem('TP_STR_DIRECCION', JSON.stringify(obetoDireccion));
     }
 
-    actualizarObjetoDireccion(tipo, objeto){
+    actualizarObjetoDireccion(tipo, objeto) {
 
         let obetoDireccion;
         let cadenaDireccion = localStorage.getItem('TP_STR_DIRECCION');
         let objetoMemoria;
         try {
             objetoMemoria = JSON.parse(cadenaDireccion);
-        } catch (error) {}
+        } catch (error) { }
 
-        if(tipo == 'DIR_CALCULADA'){
+        if (tipo == 'DIR_CALCULADA') {
             obetoDireccion = {
-                "direccionFormulario":objetoMemoria.direccionFormulario,
-                "direccionCalculada":objeto.infoDireccion,
+                "direccionFormulario": objetoMemoria.direccionFormulario,
+                "direccionCalculada": objeto.infoDireccion,
                 "coordenadas": objeto.coordenadas
             }
 
             localStorage.setItem('TP_STR_DIRECCION', JSON.stringify(obetoDireccion));
         }
 
-        if(tipo == 'DIR_FACTIBILIDAD'){
+        if (tipo == 'DIR_FACTIBILIDAD') {
             obetoDireccion = {
-                "direccionFormulario":objetoMemoria.direccionFormulario,
-                "direccionCalculada":objetoMemoria.direccionCalculada,
+                "direccionFormulario": objetoMemoria.direccionFormulario,
+                "direccionCalculada": objetoMemoria.direccionCalculada,
                 "coordenadas": objetoMemoria.coordenadas,
                 "factibilidad": objeto.factibilidad
             }
@@ -826,24 +827,24 @@ export class ClaseCobertura {
 
         //$("#modalMenu").css("display", "none");
         //$("#step1").css("display", "none");
-        window.location = 'paquetes.html';
+        window.location = 'detallePaquete.html';
     }
 
     resize() {
-    	var pathname = window.location.pathname;
+        var pathname = window.location.pathname;
 
-        if(pathname !== '/contratacion.html' || pathname !== '/finaliza.html'){
-	        window.addEventListener('resize', () => {
-	            if (window.matchMedia("(max-width: 780px)").matches) {
-	                $(".txtdngcober").css("margin-top", "5px");
-	            } else {
-	                $(".txtdngcober").css("margin-top", "-25px");
-	            }
-	        });
-	    }
+        if (pathname !== '/contratacion.html' || pathname !== '/finaliza.html') {
+            window.addEventListener('resize', () => {
+                if (window.matchMedia("(max-width: 780px)").matches) {
+                    $(".txtdngcober").css("margin-top", "5px");
+                } else {
+                    $(".txtdngcober").css("margin-top", "-25px");
+                }
+            });
+        }
     }
 
-    eventoOcultarRecomendaciones(){
+    eventoOcultarRecomendaciones() {
 
         $("#modalContentForm").on("click", function () {
             $("#listDireccionesModal").css("display", "none");
@@ -865,7 +866,7 @@ export class ClaseCobertura {
         }).done(function(respuesta) {
             try {
                 $.each(respuesta.datos.informacion.ArrColonias, function (key, infoColonias) {
-                    if(infoColonias.DelegacionMunicipio != null && infoColonias.DelegacionMunicipio != ''){
+                    if (infoColonias.DelegacionMunicipio != null && infoColonias.DelegacionMunicipio != '') {
                         let nombreCiudad = infoColonias.DelegacionMunicipio;
                         $('#ciudadModal').val(nombreCiudad);
                         
@@ -879,34 +880,34 @@ export class ClaseCobertura {
         });
     }
 
-    iniciarAutocompletadoSeccion(calleNumero, codigoPostal){
+    iniciarAutocompletadoSeccion(calleNumero, codigoPostal) {
         localStorage.setItem('SUGERENCIA_SELECCIONADA', 0);
         let referenciaClase = this;
         var service = new google.maps.places.AutocompleteService();
-        service.getQueryPredictions({input: calleNumero + " " + codigoPostal + " Mexico"},
+        service.getQueryPredictions({ input: calleNumero + " " + codigoPostal + " Mexico" },
             referenciaClase.buscarSugerenciasSeccion
         );
     }
 
-    iniciarAutocompletadoModal(calleNumero, codigoPostal){
+    iniciarAutocompletadoModal(calleNumero, codigoPostal) {
         localStorage.setItem('SUGERENCIA_SELECCIONADA', 0);
         let referenciaClase = this;
         var service = new google.maps.places.AutocompleteService();
-        service.getQueryPredictions({input: calleNumero + " " + codigoPostal + " Mexico"},
+        service.getQueryPredictions({ input: calleNumero + " " + codigoPostal + " Mexico" },
             referenciaClase.buscarSugerenciasModal
         );
     }
 
-    iniciarAutocompletadoContrata(calleNumero, codigoPostal){
+    iniciarAutocompletadoContrata(calleNumero, codigoPostal) {
         localStorage.setItem('SUGERENCIA_SELECCIONADA', 0);
         let referenciaClase = this;
         var service = new google.maps.places.AutocompleteService();
-        service.getQueryPredictions({input: calleNumero + " " + codigoPostal + " Mexico"},
+        service.getQueryPredictions({ input: calleNumero + " " + codigoPostal + " Mexico" },
             referenciaClase.buscarSugerenciasContrata
         );
     }
 
-    buscarSugerenciasSeccion(predictions, status){        
+    buscarSugerenciasSeccion(predictions, status) {
         if (status != google.maps.places.PlacesServiceStatus.OK) {
             return;
         }
@@ -925,7 +926,7 @@ export class ClaseCobertura {
         $('#listDireccionesSeccion').show();
     }
 
-    buscarSugerenciasModal(predictions, status){        
+    buscarSugerenciasModal(predictions, status) {
         if (status != google.maps.places.PlacesServiceStatus.OK) {
             return;
         }
@@ -945,7 +946,7 @@ export class ClaseCobertura {
         $('#listDireccionesModal').show();
     }
 
-    buscarSugerenciasContrata(predictions, status){        
+    buscarSugerenciasContrata(predictions, status) {
         if (status != google.maps.places.PlacesServiceStatus.OK) {
             return;
         }
@@ -965,9 +966,9 @@ export class ClaseCobertura {
     }
 
     /***INICIO VALIDACIONES***/
-    validarCampoVacio(valor){
+    validarCampoVacio(valor) {
         let bandera = false;
-        if(valor == undefined || valor == null || valor == ''|| valor == 'null'|| valor == 'undefined'){
+        if (valor == undefined || valor == null || valor == '' || valor == 'null' || valor == 'undefined') {
             bandera = true;
         }
         return bandera;
@@ -1037,7 +1038,7 @@ export class ClaseCobertura {
                 procesa = false;
             }
         }
-        console.log('RESULTADO PROCESA['+procesa+']');
+        console.log('RESULTADO PROCESA[' + procesa + ']');
         console.groupEnd();
         return procesa;
     }

@@ -1,0 +1,188 @@
+---
+layout: layoutPaquetesMatch
+---
+<style>
+    body,
+    * {
+        height: auto;
+    }
+</style>
+<section class="row paquetesClasicosHeader match">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10 mx-auto">
+        <div class="row paquetesClasicosContainer">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-11 col-xl-10 mx-auto">
+                <div class="row paquetesClasicosTitulos">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 align-self-center">
+                        <pre>HAZ MATCH</pre>
+                        <h1>Paquetes Totalplay con Netflix incluido</h1>
+                        <p>Todo en el mismo estado de cuenta.</p>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 imageContainer align-self-end">
+                        <img src="../assets/img/nuevos/matchArte.png" alt="Totalplay Match">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="row contenedorPaquetesClasicos">
+    <div class="col-12 col-sm-12 col-md-11 col-lg-10 col-md-10 mx-auto">
+        <div class="row selectorPaquetes">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <ul>
+                    <li><a id="toggletriple" href="#" class="active"
+                            onclick="showPackageContainer('paquetesDoblePlay','paquetesTriplePlay','toggledoble','toggletriple');">Tripleplay</a>
+                    </li>
+                    <li><a id="toggledoble" href="#"
+                            onclick="showPackageContainer('paquetesTriplePlay','paquetesDoblePlay','toggletriple','toggledoble');">Dobleplay</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row selectorPaquetesTituloUnbox">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <p>Ahorra tiempo y dinero incluyendo <strong>Internet + TV y Apps + Telefonía <span>+ Netflix </span></strong> en el mismo paquete.</p>
+            </div>
+        </div>
+        <div id="paquetesTriplePlay" class="row triplePlayContainer">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <div class="row" id="ctnPaquetesTripleplay">
+                    
+                </div>
+                <div id="showMoreRegularTriple" class="row botonMostrarMas">
+                    <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6 mx-auto">
+                        <a href="#" class="generalButton"
+                            onclick="showMorePackages('hiddenPackageTriple', 'showMoreRegularTriple', 'showLessRegularTriple')">Mostrar
+                            más paquetes</a>
+                    </div>
+                </div>
+                <div id="showLessRegularTriple" class="row botonMostrarMas" style="display: none;">
+                    <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6 mx-auto">
+                        <a href="#" class="generalButton"
+                            onclick="showLessPackages('hiddenPackageTriple', 'showMoreRegularTriple', 'showLessRegularTriple')">Mostrar
+                            menos paquetes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="paquetesDoblePlay" class="row triplePlayContainer" style="display: none">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <div class="row" id="ctnPaquetesDobleplay">
+                    
+                </div>
+                <div id="showMoreRegularDoble" class="row botonMostrarMas">
+                    <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6 mx-auto">
+                        <a href="#" class="generalButton"
+                            onclick="showMorePackages('hiddenPackageDoble', 'showMoreRegularDoble', 'showLessRegularDoble')">Mostrar
+                            más paquetes</a>
+                    </div>
+                </div>
+                <div id="showLessRegularDoble" class="row botonMostrarMas" style="display: none;">
+                    <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6 mx-auto">
+                        <a href="#" class="generalButton"
+                            onclick="showLessPackages('hiddenPackageDoble', 'showMoreRegularDoble', 'showLessRegularDoble')">Mostrar
+                            menos paquetes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row iftRow">
+            <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6 mx-auto">
+                <a href="#">Tarifas registradas en IFT</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="row unboxCarousel">
+    <div class="col-12 col-sm-12 col-md-11 col-lg-10 col-xl-10 mx-auto">
+        <div class="row carouselTitles">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <h1>Disfruta de todas nuestras ventajas</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10 mx-auto">
+                <div id="unboxCarouselContainer" class="row carouselContainer">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 itemCarousel">
+                        <div class="row align-items-center">
+                            <div class="col-s12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-none d-sm-none d-md-block">
+                                <h1>Calidad 4K y nitidez superior</h1>
+                                <p>Tus series y películas con la mejor calidad. Disfrútalas con nitidez y calidad 4K y
+                                    sin interrupciones.</p>
+                            </div>
+                            <div class="col-s12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-none d-sm-none d-md-block">
+                                <img src="../assets/img/nuevos/sliders/match3.png">
+                            </div>
+                            <div class="col-s12 col-sm-12 d-block d-sm-block d-md-none">
+                                <img src="../assets/img/nuevos/sliders/match3.png">
+                            </div>
+                            <div class="col-s12 col-sm-12 d-block d-sm-block d-md-none">
+                                <h1>Calidad 4K y nitidez superior</h1>
+                                <p>Tus series y películas con la mejor calidad. Disfrútalas con nitidez y calidad 4K y
+                                    sin interrupciones.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 itemCarousel">
+                        <div class="row align-items-center">
+                            <div class="col-s12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-none d-sm-none d-md-block">
+                                <h1>Descarga tu contenido favorito</h1>
+                                <p>Guarda tus series y películas y disfrutalas sin estar conectado a internet cuando tu
+                                    quieras.</p>
+                            </div>
+                            <div class="col-s12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-none d-sm-none d-md-block">
+                                <img src="../assets/img/nuevos/sliders/match1.png">
+                            </div>
+                            <div class="col-s12 col-sm-12 d-block d-sm-block d-md-none">
+                                <img src="../assets/img/nuevos/sliders/match1.png">
+                            </div>
+                            <div class="col-s12 col-sm-12 d-block d-sm-block d-md-none">
+                                <h1>Descarga tu contenido favorito</h1>
+                                <p>Guarda tus series y películas y disfrutalas sin estar conectado a internet cuando tu
+                                    quieras.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 itemCarousel">
+                        <div class="row align-items-center">
+                            <div class="col-s12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-none d-sm-none d-md-block">
+                                <h1>En cualquier dispositivo</h1>
+                                <p>Ve tus series y películas favoritas ent todos tus dispositivos con el internet más
+                                    veloz</p>
+                            </div>
+                            <div class="col-s12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-none d-sm-none d-md-block">
+                                <img src="../assets/img/nuevos/sliders/match2.png">
+                            </div>
+                            <div class="col-s12 col-sm-12 d-block d-sm-block d-md-none">
+                                <img src="../assets/img/nuevos/sliders/match2.png">
+                            </div>
+                            <div class="col-s12 col-sm-12 d-block d-sm-block d-md-none">
+                                <h1>En cualquier dispositivo</h1>
+                                <p>Ve tus series y películas favoritas ent todos tus dispositivos con el internet más
+                                    veloz</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="row termsAndConditions">
+    <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 mx-auto">
+        <hr>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <p><span>Términos y condiciones</span></p>
+                <p>Consulta terminos y condiciones de los paquetes, características, servicios adicionales y docuemntos
+                    relacionados <a href="#">aquí</a>.</p>
+                <p>Para navegar a la máxima velocidad de descarga contratada, se recomienda conectarse vía alámbrica
+                    utilizando un cable ethernet. Las velocidades de transferencia de internet se ofrecen hasta la
+                    velocidad indicada y pueden variar debido al tráfico y transferencia de datos fuera de la red de
+                    totalplay. Las velocidades de carga varían en los planes debido a que el servicio de internet es
+                    asimétrico: para planes tripleplay y dobleplay inicial 1mbps, esencial 3mbps, básico 6mbps, práctico
+                    8mbps, familiar 10mbps, total 20mbps, premium 30mbps y sin límite 50mbps.</p>
+            </div>
+        </div>
+    </div>
+</section>
