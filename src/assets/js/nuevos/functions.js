@@ -132,7 +132,41 @@ $(document).ready(function () {
             $("#secondaryVideo")[0].pause();
         }
     });
+    var windw = this;
+
+    $.fn.followTo = function (elem) {
+        var $this = this,
+            $window = $(windw),
+            $bumper = $(elem),
+            bumperPos = $bumper.offset().top,
+            thisHeight = $this.outerHeight(),
+            setPosition = function () {
+                if ($window.scrollTop() > (bumperPos - thisHeight)) {
+                    $this.css({
+                        position: 'absolute',
+                        top: (bumperPos - thisHeight),
+                    });
+                } else {
+                    $this.css({
+                        position: 'fixed',
+                        top: 0, 
+                    });
+                }
+            };
+        $window.resize(function () {
+            bumperPos = pos.offset().top;
+            thisHeight = $this.outerHeight();
+            setPosition();
+        });
+        $window.scroll(setPosition);
+        setPosition();
+    };
+
+    $('#scrollingElement').followTo('#stopper');
     $('#faqsAccordion').collapse({})
+});
+$(window).scroll(function () {
+    $("#fadeButton").css("opacity", 1 - $(window).scrollTop() / 50);
 });
 var showPackageContainer = function (item, item2, item3, item4, e) {
     $("#" + item).hide();
@@ -257,17 +291,6 @@ $(document).ready(function () {
             }
         ]
     });
-});
-var distanceTop = $('#fixed').offset().top;
-$(window).scroll(function () {
-    if ($(window).scrollTop() >= distanceTop) {
-        $('#fixed').addClass("fixedNav").css({
-            'left': '0px important',
-        });
-
-    } else {
-        $('#fixed').removeClass("fixedNav");
-    }
 });
 var hideComputer = function (e) {
     $("#computer").css({
@@ -422,3 +445,14 @@ var activeTopMenu = function (item1, item2, item3, item4) {
     $("#" + item3).removeClass('active');
     $("#" + item4).removeClass('active');
 };
+var distanceTop = $('#fixed').offset().top;
+$(window).scroll(function () {
+    if ($(window).scrollTop() >= distanceTop) {
+        $('#fixed').addClass("fixedNav").css({
+            'left': '0px important',
+        });
+
+    } else {
+        $('#fixed').removeClass("fixedNav");
+    }
+});

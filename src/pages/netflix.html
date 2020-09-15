@@ -7,13 +7,29 @@ layout: home
 		height: auto;
 	}
 
+	html, body {
+		overflow-x: hidden !important;
+	}
+
 	footer {
 		max-width: 100%;
 	}
 </style>
 <div class="row appsMainContainer">
 	<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-		<section class="row appsMainTitle">
+		<section class="row appVideoContainer">
+			<div class="col-12 col-md-12 col-md-12 col-lg-12 col-xl-12">
+				<div class="videoAppContainer">
+					<video src="../assets/media/landings/Netflix.mp4" loop autoplay muted></video>
+				</div>
+			</div>
+			<div id="scrollingElement" class="appLogoContainer ">
+				<img src="../assets/img/nuevos/netflix/logo.png">
+				<a id="fadeButton" href="#" class="generalButton">Paquetes con Netflix</a>
+			</div>
+		</section>
+		<div id="stopper" class="stopperHeight"></div>
+		<section  class="row appsMainTitle">
 			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
 				<div class="row">
 					<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-8 mx-auto">
