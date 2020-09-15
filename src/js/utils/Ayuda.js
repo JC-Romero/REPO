@@ -23,7 +23,10 @@ export function Rutas(_base){
     telefonia:  `${_base}telefonia`,
     youtube:  `${_base}youtube`,
     discoverykids:  `${_base}discoverykids`,
-    tunein:  `${_base}tunein`
+    tunein:  `${_base}tunein`,
+    match:  `${_base}match`,
+    regular:  `${_base}regular`,
+    unbox:  `${_base}unbox`
   }
   return arrayrutas;
 }

@@ -68,6 +68,22 @@ if (RutasMatch(path, url.paquetes)) {
 	//const paqueteseven=new PaquetesEventos(parametro);
 	//const carruselPromociones  = new PromocionesCarrusel( '.promotions-list-cards__content--left', '.promotions-list-cards__content--right' );
 }
+
+if(RutasMatch(path,url.match)){
+	const paq = new Paquetes();
+    paq.cargarPaquetes("match");
+}
+
+if(RutasMatch(path,url.regular)){
+	const paq = new Paquetes();
+    paq.cargarPaquetes("regular");
+}
+
+if(RutasMatch(path,url.unbox)){
+	const paq = new Paquetes();
+    paq.cargarPaquetes("unbox");
+}
+
 if (RutasMatch(path, url.detallepaquete)) {
 	const detallePaquete=new DetallePaquete('resumePackage', 'resumeInfo');
 	const canales=new Canales('modalChannels', 'openChannels', true);
