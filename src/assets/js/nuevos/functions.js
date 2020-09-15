@@ -155,7 +155,7 @@ var showLessPackages = function (item, item2, item3, e) {
     event.preventDefault();
 };
 $(document).ready(function () {
-    $("#unboxCarouselContainer").slick({
+    /*$("#unboxCarouselContainer").slick({
         autoplay: true,
         autoplaySpeed: 9000,
         dots: true,
@@ -196,9 +196,10 @@ $(document).ready(function () {
                 }
             }
         ]
-    });
+    });//*/
 });
-var distanceTop = $('#fixed').offset().top;
+//var distanceTop = $('#fixed').offset().top;
+var distanceTop = 80;
 $(window).scroll(function () {
     if ($(window).scrollTop() >= distanceTop) {
         $('#fixed').addClass("fixedNav").css({

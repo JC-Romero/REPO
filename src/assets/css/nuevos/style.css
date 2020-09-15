@@ -2512,6 +2512,7 @@ footer .legalAdvice p {
     box-shadow: 0 9px 18px 0 rgba(0, 0, 0, 0.1);
     height: 340px;
     margin-bottom: 2rem;
+    cursor: pointer;
 }
 
 .generalPackage .row {

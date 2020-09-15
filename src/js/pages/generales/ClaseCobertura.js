@@ -827,7 +827,7 @@ export class ClaseCobertura {
 
         //$("#modalMenu").css("display", "none");
         //$("#step1").css("display", "none");
-        window.location = 'paquetes.html';
+        window.location = 'detallePaquete.html';
     }
 
     resize() {

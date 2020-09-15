@@ -57,7 +57,8 @@ export class DetallePaquete {
             this.pintarDetallePaquete();
             this.obtenerComplementos();
         } catch (error) {
-            window.location = "paquetes.html";
+            console.log('ERROR:', error);
+            //window.location = "paquetes.html";
         }
     }
 
