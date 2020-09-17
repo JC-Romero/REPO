@@ -2301,8 +2301,8 @@ export class FinalizaContratacion {
             let objPaquete = JSON.parse(cadenaPaquete);
 
             $.each(objPaquete.adicionales, function(key, objetoAdicionales) {    
-                if(objetoAdicionales.parrilla != undefined){
-                    if(objetoAdicionales.parrilla.precio != undefined){
+                if(objetoAdicionales!=null && objetoAdicionales.parrilla  !=null && objetoAdicionales.parrilla != undefined){
+                    if(objetoAdicionales.parrilla  !=null && objetoAdicionales.parrilla.precio != undefined){
                         var objProducto = {
                             'id': objetoAdicionales.parrilla.Id,
                             'nombre': 'PARRILLA',
@@ -2312,7 +2312,7 @@ export class FinalizaContratacion {
                     }
                 }
             
-                if(objetoAdicionales.canales != undefined){
+                if(objetoAdicionales!=null && objetoAdicionales.canales !=null && objetoAdicionales.canales != undefined){
                     if(objetoAdicionales.canales.precio != undefined){
                         var objProducto = {
                             'id': objetoAdicionales.canales.Id,
@@ -2342,7 +2342,7 @@ export class FinalizaContratacion {
             let objPaquete = JSON.parse(cadenaPaquete);
 
             $.each(objPaquete.adicionales, function(key, objetoAdicionales) {    
-                if(objetoAdicionales.equipo != undefined){
+                if(objetoAdicionales!=null && objetoAdicionales.equipo !=null && objetoAdicionales.equipo != undefined){
                     $.each(objetoAdicionales.equipo, function(i, objEquipo) {
                         console.log('objEquipo=>', objEquipo);
                         if(parseInt(objEquipo.cantidad) > 0){
@@ -2357,7 +2357,7 @@ export class FinalizaContratacion {
                     });
                 }
 
-                if(objetoAdicionales.telefonia != undefined){
+                if(objetoAdicionales!=null && objetoAdicionales.telefonia !=null &&  objetoAdicionales.telefonia != undefined){
                     if(objetoAdicionales.telefonia.precio != undefined){
                         var objServicio = {
                             'id': objetoAdicionales.telefonia.Id,
@@ -2439,10 +2439,10 @@ $(window).keydown(function(event) {
     if(event.ctrlKey && event.keyCode == 90) {
         
         console.log("CTRL+Z");
-        $('#titularNombre').val('JORGE ALBERTO');
-        $('#titularApellidoPaterno').val('RODRIGUEZ');
-        $('#titularApellidoMaterno').val('');
-        $('#titularRFC').val('ROAJ010101AAA');
+        $('#titularNombre').val('SOLEDAD');
+        $('#titularApellidoPaterno').val('PEREZ');
+        $('#titularApellidoMaterno').focus();
+        $('#titularRFC').val('PEAS010101AAA');
         $('#titularTelefono').val('5512345678');
         $('#titularCelular').val('5587654321');
 
