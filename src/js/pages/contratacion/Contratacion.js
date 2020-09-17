@@ -1643,7 +1643,7 @@ export class Contratacion {
 
         document.querySelector('#botonAgregarEquipo').addEventListener('click', (e) => {
             if (this.props.options.equipos.length > 0) {
-                //this.openModalAddon(3);
+                this.openModalAddon(3);
             }
         })
 
