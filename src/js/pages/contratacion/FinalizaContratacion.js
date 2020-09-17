@@ -1357,9 +1357,94 @@ export class FinalizaContratacion {
             if (this.value.length == 8) {
                 var bin = $('#numeroTarjetaCaptura').val().substring(0, 6);
                 console.log("bin "+bin);
-                referenciaClase.pintarIcn('VISA')
+                //referenciaClase.pintarIcn('VISA')
+                var objetoTarjeta = {
+                    inicioTarjeta: bin
+                };
+
+                var informacionEncriptada = otpyrc2(JSON.stringify(objetoTarjeta));
+                var informacion = {
+                    "informacionEncriptada": informacionEncriptada
+                };
+
+                referenciaClase.loadGetServicioBin(Constantes.endpoints.getserviciobin,informacion,1);
             }
         });
+    }
+
+    loadGetServicioBin(URL2LOAD, params,contador){
+        let apuntador = this;
+        
+        if(contador == 1){            
+            var cabeceraMC = new Headers();
+            cabeceraMC.append("Content-type", "application/json;charset=utf-8");
+
+            fetch(URL2LOAD, {
+                method: 'POST',
+                body: JSON.stringify(params),
+                headers: cabeceraMC
+            }).then((data) => {
+                if (data.ok) {
+                    return data.json();
+                } else {
+                    throw "Error en la llamada Ajax fetch con parametros "+URL2LOAD;
+                }
+            }).then((texto) => {
+
+                try {
+                    let respuesta = texto;
+                    if (parseInt(respuesta.status) === 0) {
+                        apuntador.props.aceptaDomiciliacion = true;
+                        var existeDato = false;
+                        try{
+                            var idBanco = respuesta.bean.bin.idBanco;
+                            if(idBanco !=''){
+                                existeDato = true;
+                            }
+                        }catch(Exception){
+                            $("#errorNumeroTarjeta").html('');
+                            $("#errorNumeroTarjeta").html('*Tarjeta no válida');
+                            $("#numeroTarjetaCaptura").html('');
+                            console.error(Exception);
+                        }
+
+                        var validacionServicio = parseInt(respuesta.bean.response.code);
+                        if (validacionServicio == 0 && existeDato) {
+                            apuntador.pintarIcn(respuesta.bean.bin.nombreMarca);
+                            if(respuesta.bean.bin.cargosAutomaticos == "SI"){
+                                //apuntador.props.aceptaDomiciliacion = true;
+                            }
+                            
+                        } else {
+                            $("#errorNumeroTarjeta").html('');
+                            $("#errorNumeroTarjeta").html('*Tarjeta no válida');
+                            $("#numeroTarjetaCaptura").html('');
+                            throw "Fallo tarjeta 1"
+                        }
+                    } else {
+                        $("#errorNumeroTarjeta").html('');
+                        $("#errorNumeroTarjeta").html('*Tarjeta no válida');
+                        $("#numeroTarjetaCaptura").html('');
+                        throw "Fallo tarjeta 2"
+                    }
+                    
+                } catch (e) {
+                    console.log("c a t c h");
+                    $("#errorNumeroTarjeta").html('');
+                    $("#errorNumeroTarjeta").html('*Tarjeta no válida');
+                    $("#numeroTarjetaCaptura").html('');
+                    throw "Error al traer la informacion "+e;
+                }
+            
+            }).
+            catch((err) => {
+                $("#errorNumeroTarjeta").html('');
+                $("#errorNumeroTarjeta").html('*Tarjeta no válida');
+                $("#numeroTarjetaCaptura").html('');
+                console.log("err=>"+err);
+                
+            });
+        }
     }
 
     pintarIcn(icn){

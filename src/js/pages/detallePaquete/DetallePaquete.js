@@ -513,10 +513,12 @@ export class DetallePaquete {
             console.log('RESPUESTA DE COMPLEMENTOS');
             console.log(respuesta);
 
+            let arregloProductosCI = respuesta.datos.infoAddons.costoGarantiaAdd.productos;
             let arregloPromociones = respuesta.datos.infoAddons.promocionesAdd.promociones;
             let arregloProductos = respuesta.datos.infoAddons.productosAdd.productos;
             let arregloServicios = respuesta.datos.infoAddons.serviciosAdd.servicios;
 
+            referenciaClase.buscarCostoInstalacion(arregloProductosCI);
             referenciaClase.buscarInfoComplementos(arregloPromociones,arregloProductos,arregloServicios);
 
             referenciaClase.pintarPromociones(respuesta.datos.infoAddons.promocionesAdd.promociones)
@@ -662,6 +664,20 @@ export class DetallePaquete {
         } catch (e) {
 
         }
+    }
+
+    buscarCostoInstalacion(arregloProductos){
+        let totalCosto = 0;
+
+        $.each(arregloProductos, function (key, objetoProductos) {
+            if(objetoProductos.Agrupacion == 'Costo y Garantia'){
+                $.each(objetoProductos.adicional, function (index, objetoAdicional) {
+                    totalCosto += objetoAdicional.precio;
+                });
+            }
+        });
+
+        localStorage.setItem('TP_C_I', totalCosto);
     }
 
     buscarInfoComplementos(arregloPromociones, arregloProductos,arregloServicios){

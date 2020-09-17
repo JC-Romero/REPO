@@ -19,6 +19,7 @@ export const endpoints = {
 	guardaArchivosEcommerce: `${_base}guarda-archivos`,
 	obtenerCiudades : `https://totalplay.dev/archivos/coberturatotalplay.json`,
 	buscarCiudad:`${_base}buscar-ciudad-cp`,
+	getserviciobin: `${_base}get-servicio-bin`,
 }
 
 export const sitioBase = "/";
