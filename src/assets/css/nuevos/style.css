@@ -5050,20 +5050,29 @@ video {
     background: rgba(22, 22, 27, 1);
 }
 .appsMainContainer .appsCardsContainer {
-    background: rgb(22, 22, 27);
-    background: -moz-linear-gradient(top, rgba(22, 22, 27, 1) 0%, rgba(96, 43, 38, 1) 100%);
-    background: -webkit-linear-gradient(top, rgba(22, 22, 27, 1) 0%, rgba(96, 43, 38, 1) 100%);
-    background: linear-gradient(to bottom, rgba(22, 22, 27, 1) 0%, rgba(96, 43, 38, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#16161b', endColorstr='#602b26',GradientType=0 );
     padding-top: 64px;
     padding-bottom: 64px;
+}
+.appsMainContainer .appsCardsContainer .card.white {
+    background: rgba(245, 245, 245, 1);
+    color: rgba(50, 69, 89, 1);
+}
+.animatedCard {
+    opacity: 0;
+    transition: opacity 1s;
+    transform: translate(0, 20px);
+    transition: all 1s;
+}
+.visible {
+    opacity: 1;
+    transform: translate(0, 0);
 }
 .appsMainContainer .appsCardsContainer .card {
     background: rgba(34, 36, 48, 1);
     color: rgba(245, 245, 245, 1);
     text-align: center;
     padding-bottom: 0;
-    border-bottom: none;
+    border: none;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
     border-radius: 8px;
@@ -5104,6 +5113,76 @@ video {
 .appsCardsContainer .appCenteredImage .descritionButtonRow {
     padding-top: 2rem;
     padding-bottom: 2rem;
+}
+.amazonBack {
+    background: rgba(22, 22, 27, 1);
+}
+.comedyBack {
+    background: rgb(22, 22, 27);
+    background: -moz-linear-gradient(top, rgba(22, 22, 27, 1) 0%, rgba(169, 41, 91, 1) 100%);
+    background: -webkit-linear-gradient(top, rgba(22, 22, 27, 1) 0%, rgba(169, 41, 91, 1) 100%);
+    background: linear-gradient(to bottom, rgba(22, 22, 27, 1) 0%, rgba(169, 41, 91, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#16161b', endColorstr='#a9295b',GradientType=0 );
+}
+.blimBack {
+    background: rgb(22, 22, 27);
+    background: -moz-linear-gradient(top, rgba(22, 22, 27, 1) 0%, rgba(0, 82, 75, 1) 100%);
+    background: -webkit-linear-gradient(top, rgba(22, 22, 27, 1) 0%, rgba(0, 82, 75, 1) 100%);
+    background: linear-gradient(to bottom, rgba(22, 22, 27, 1) 0%, rgba(0, 82, 75, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#16161b', endColorstr='#00524b',GradientType=0 );
+}
+.netflixBack {
+    background: rgb(22, 22, 27);
+    background: -moz-linear-gradient(top, rgba(22, 22, 27, 1) 0%, rgba(96, 43, 38, 1) 100%);
+    background: -webkit-linear-gradient(top, rgba(22, 22, 27, 1) 0%, rgba(96, 43, 38, 1) 100%);
+    background: linear-gradient(to bottom, rgba(22, 22, 27, 1) 0%, rgba(96, 43, 38, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#16161b', endColorstr='#602b26',GradientType=0 );
+}
+.hboBack {
+    background: rgb(22, 22, 27);
+    background: -moz-linear-gradient(top, rgba(22, 22, 27, 1) 0%, rgba(93, 17, 22, 1) 100%);
+    background: -webkit-linear-gradient(top, rgba(22, 22, 27, 1) 0%, rgba(93, 17, 22, 1) 100%);
+    background: linear-gradient(to bottom, rgba(22, 22, 27, 1) 0%, rgba(93, 17, 22, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#16161b', endColorstr='#5d1116',GradientType=0 );
+}
+.foxBack {
+    background: rgb(22, 22, 27);
+    background: -moz-linear-gradient(top, rgba(22, 22, 27, 1) 0%, rgba(105, 46, 11, 1) 100%);
+    background: -webkit-linear-gradient(top, rgba(22, 22, 27, 1) 0%, rgba(105, 46, 11, 1) 100%);
+    background: linear-gradient(to bottom, rgba(22, 22, 27, 1) 0%, rgba(105, 46, 11, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#16161b', endColorstr='#692e0b',GradientType=0 );
+}
+.nickelodeonBack {
+    background: rgb(22, 22, 27);
+    background: -moz-linear-gradient(top, rgba(22, 22, 27, 1) 0%, rgba(202, 107, 28, 1) 100%);
+    background: -webkit-linear-gradient(top, rgba(22, 22, 27, 1) 0%, rgba(202, 107, 28, 1) 100%);
+    background: linear-gradient(to bottom, rgba(22, 22, 27, 1) 0%, rgba(202, 107, 28, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#16161b', endColorstr='#ca6b1c',GradientType=0 );
+}
+.appGalleryContainer .channelContainer .galleryItem {
+    margin-bottom: 2rem;
+}
+.appGalleryContainer .channelContainer .galleryImage {
+    text-align: center;
+}
+.appGalleryContainer .channelContainer .galleryImage img {
+    max-width: 100%;
+    width: 352px;
+    margin: 0 auto;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+}
+.appGalleryContainer .channelContainer .galleryDescription p {
+    text-align: center;
+    font-weight: 300;
+    font-size: 20px;
+    color: rgb(245 245 245);
+    line-height: 30px;
+}
+.appGalleryContainer .channelContainer .galleryDescription p span {
+    font-weight: 700;
+    display: block;
 }
 .appTvRow {
     padding-top: 52px;
@@ -5196,6 +5275,14 @@ video {
     font-size: 12px;
 }
 /*Apps*/
+/*Modal Canales*/
+.channelsHeader{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.channelsHeader .channelsModal {}
+.channelsHeader .channelsModal .channelsMode{}
+/*Modal Canales*/
 
 /*modal loader index akhm*/
 #cargadorLead {
