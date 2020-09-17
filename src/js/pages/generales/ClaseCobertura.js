@@ -334,7 +334,6 @@ export class ClaseCobertura {
             /***EVENTO TOMADO DE COBERTURASUGERENCIA.JS***/
             var calleNumero = $(this).val(); 
             var codigoPostal = $('#cpModal').val(); 
-            console.log("voy a iniciarAutocompletadoModal");
             apuntador.iniciarAutocompletadoModal(calleNumero, codigoPostal);
         });
 

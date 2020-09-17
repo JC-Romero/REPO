@@ -181,7 +181,8 @@ export class Contratacion {
         this.eventoBuscarCP();
         this.eventoQuitarEquipo();//*/
 
-        this.eventoCanales();
+        //this.eventoCanales();
+        this.actualizarInfoComplementos();
 
         setTimeout(function () { window.scrollTo(0, 0); }, 1000);
 
@@ -471,12 +472,133 @@ export class Contratacion {
             let cadenaEncriptada = encriptar(JSON.stringify(objetoPaquete));
             let cadenaDesencriptada = desencriptar(cadenaEncriptada);
         });
+        
+        $("body").on('click', '.cntCanales', function() {
+            let contenedorActual = $( this );
+            let etiquetaPrecio = $( this ).find( ".price" );
+            let etiquetaSeleccion = $( this ).find( ".addedItem" );
+            let visiblidadActual = $(etiquetaSeleccion).css('display');
+
+            $('#confirmChannels').attr('data-id' , $(this).attr('data-id'));
+            $('#confirmChannels').attr('data-precio' , $(this).attr('data-precio'));
+
+            $.each( $('.cntCanales') , function( key, obj ) {
+                let contenedor = $( obj );
+                if(contenedorActual != contenedor){
+                    $( obj ).find( ".price" ).css('display','block');
+                    $( obj ).find( ".addedItem" ).hide();
+                }
+            });
+
+            if(visiblidadActual == 'none'){
+                console.log('ETIQUETA SELECCION ESTABA OCULTA');
+                $(etiquetaPrecio).hide();
+                $(etiquetaSeleccion).css('display','contents');
+
+                $('#confirmChannels').show();
+            }else{
+                console.log('ETIQUETA SELECCION ESTABA VISIBLE');
+                $(etiquetaSeleccion).hide();
+                $(etiquetaPrecio).css('display','block');
+
+                $('#confirmChannels').hide();
+            }
+        });
+
         $('#nextComplementos').on('click', function () {
-            console.log("currentStep " + apuntador.props.currentStep);
+            
             if (apuntador.props.currentStep === 1) {
                 apuntador.nextStep();
             }
-        })
+        });
+
+        $('#confirmChannels').on('click', function () {
+            
+            apuntador.agregarParrillaHTML($(this).attr('data-id'))
+        });
+
+        $('.ctnPromocion').on('click', function () {
+            if(!$(this).hasClass("selected")){
+                let id= $(this).attr('id');
+                if(id == 'contenedorHBOCambio'){
+                    $('#contenedorFOXCambio').removeClass('selected');
+                    $('#confirmComplements').attr('data-id','HBO');
+                }
+                if(id == 'contenedorFOXCambio'){
+                    $('#contenedorHBOCambio').removeClass('selected');
+                    $('#confirmComplements').attr('data-id','FOX');
+                }
+                $(this).addClass('selected');
+                $('#confirmComplements').show()
+            }
+        });
+
+        $('#confirmComplements').on('click', function () {
+            if($(this).attr('data-id') == 'HBO'){
+                $('#contenedorHBO').trigger('click');
+
+                $('#contenedorFoxApp').show();
+                $('#contenedorHBOApp').hide();
+            }
+            if($(this).attr('data-id') == 'FOX'){
+                $('#contenedorFOX').trigger('click');
+
+                $('#contenedorHBOApp').show();
+                $('#contenedorFoxApp').hide();
+            }
+            $('#contenedorHBOApp').removeClass('selected');
+            $('#contenedorFoxApp').removeClass('selected');
+
+            $('.invoice-data-block-content_apps__item--delete').trigger('click');
+            apuntador.closeModal();
+        });
+
+        $('.cntAppAdicional').on('click', function () {
+            $(this).addClass('selected');
+            $('#confirmPremium').attr('data-id' , $(this).attr('data-id'));
+            $('#confirmPremium').show();
+        });
+
+        $('#confirmPremium').on('click', function () {
+            apuntador.agregarCanalPremiun($(this).attr('data-id'))
+        });
+
+        console.groupEnd();
+    }
+
+    actualizarInfoComplementos(){
+        console.group('actualizarInfoComplementos()');
+        let referenciaClase = this;
+        let strComplementos = localStorage.getItem('TP_STR_COMPLEMENTOS');
+        try {
+            let objComplementos = JSON.parse(strComplementos);
+
+            let jsonParrilla = objComplementos.television[1].adicional;
+            jsonParrilla = referenciaClase.ordenarObjeto(jsonParrilla);
+            let htmlParrilas = '';
+
+            let objetoDescripcion = {
+                'TV BASICA': '120 canales (80 HD)',
+                'TV AVANZADA': '255 canales (130 HD)',
+                'TV PREMIUM': '275 canales (160 HD)',
+            }
+
+            $.each(jsonParrilla, function (key, objetoParrila) {
+                let precio = objetoParrila.precio.toFixed(0);
+                htmlParrilas += ``+
+                `<li class="item cntCanales" data-id="${objetoParrila.Id}" data-precio="${precio}">
+                    <h1>${objetoParrila.nombre}</h1>
+                    <p>${objetoDescripcion[objetoParrila.nombre]}</p>
+                    <hr>
+                    <p class="price">$ ${precio}</p>
+                    <p class="addedItem">Seleccionado</p>
+                </li>`;
+                
+            });
+            $('#ctnParrillas').html(htmlParrilas);
+        } catch (error) {
+            console.log('ERROR:=>', error);
+        }
         console.groupEnd();
     }
 
@@ -1056,10 +1178,20 @@ export class Contratacion {
 
                     if (idHTML == 'contenedorHBO') {
                         $('#contenedorFOX').removeClass('tarjeta-promo-seleccion');
+                        $('#contenedorHBOCambio').addClass('selected');
+                        
+                        console.log('VALIDACION DE CONTENEDORES');
+                        $('#contenedorFoxApp').show();
+                        $('#contenedorHBOApp').hide();
                     }
 
                     if (idHTML == 'contenedorFOX') {
                         $('#contenedorHBO').removeClass('tarjeta-promo-seleccion');
+                        $('#contenedorFOXCambio').addClass('selected');
+
+                        console.log('VALIDACION DE CONTENEDORES');
+                        $('#contenedorHBOApp').show();
+                        $('#contenedorFoxApp').hide();
                     }
 
                     if (agregado == 'Agregado') {
@@ -1566,7 +1698,7 @@ export class Contratacion {
                 }
             });
             //referenciaClase.actualizarPrecioTotal();
-            this.endAnimation();
+            this.closeModal();
         } catch (e) {
             console.log('OCURRIO UN ERROR EN LA FUNCION agregarParrillaHTML():', e);
         }
@@ -1609,6 +1741,7 @@ export class Contratacion {
             }
         });
         $('.main-summary-tv__invoice-data-block-content_apps').html(htmlCanales);
+        referenciaClase.closeModal();
         console.groupEnd();
     }
 
@@ -1686,6 +1819,7 @@ export class Contratacion {
         switch (_index) {
             case 0:
                 //this.addChannels();
+                $('#confirmChannels').hide();
                 $("#channelsSelection").show();
                 $("#complementsSelection").hide();
                 $("#boxesSelection").hide();
@@ -1693,6 +1827,7 @@ export class Contratacion {
                 break;
             case 1:
                 //this.addPromotion();
+                $('#confirmComplements').hide();
                 $("#channelsSelection").hide();
                 $("#complementsSelection").show();
                 $("#boxesSelection").hide();
@@ -1700,6 +1835,7 @@ export class Contratacion {
                 break;
             case 2:
                 //this.addApps();
+                $('#confirmPremium').hide();
                 $("#channelsSelection").hide();
                 $("#complementsSelection").hide();
                 $("#boxesSelection").hide();
@@ -1707,6 +1843,7 @@ export class Contratacion {
                 break;
             case 3:
                 //this.addDevices();
+                $('#confirmBoxes').hide();
                 $("#channelsSelection").hide();
                 $("#complementsSelection").hide();
                 $("#boxesSelection").show();

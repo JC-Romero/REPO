@@ -48,9 +48,21 @@ export class CargaCiudades{
 
 	setListeners(){
 		var apuntador = this;
+		$('#cityPicker').on('hidden.bs.modal', function () {
+			$('body').css({
+				'overflow': 'auto'
+			});
+		});
 
 		$('#citySearch').on('keyup',function(){
-			console.log("keyup");
+			console.log("AUTOCOMPLETADO MODAL CIUDADES");
+			var x = document.getElementById('cityAutocomplete');
+			if ($(this).val() == "") {
+				x.style.display = 'none';
+			} else {
+				x.style.display = 'block';
+			}
+
 			apuntador.autocompletado(this.value);
 		});
 
