@@ -37,17 +37,20 @@ export class ClaseCobertura {
                     if (respuesta !== null || respuesta !== "") {
                         $('#cd-cobertura-index').html(respuesta);
                         $('#cd-cobertura-index-seccion').html(respuesta);
+                        $('#cd-cobertura-index-span').html(respuesta);
                         localStorage.setItem('TP_STR_DIRECCION_CIUDAD_HOME', respuesta);
                         apuntador.checkEstimulo(respuesta,"home");
                     }
                 } catch (e) {
                     $('#cd-cobertura-index').html("Ciudad de México");
                     $('#cd-cobertura-index-seccion').html("Ciudad de México");
+                    $('#cd-cobertura-index-span').html("Ciudad de México");
                     console.log("ERROR EN TRAER LA CIUDAD:", e);
                 }
             }).catch(function (err) {
                 $('#cd-cobertura-index').html("Ciudad de México");
                 $('#cd-cobertura-index-seccion').html("Ciudad de México");
+                $('#cd-cobertura-index-span').html("Ciudad de México");
                 console.log("err=>", err);
             });
 
@@ -55,7 +58,17 @@ export class ClaseCobertura {
             console.log('YA TIENE UNA CIUDAD PREDETERMINADA');
             $('#cd-cobertura-index').html(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME'));
             $('#cd-cobertura-index-seccion').html(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME'));
-            apuntador.checkEstimulo(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME'),"home");
+            $('#cd-cobertura-index-span').html(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME'));
+            var path = window.location.pathname;
+            if(path.includes("/")){
+                path = "home";
+            }else{
+                path = path.replace("/","");
+                if(path.includes(".html")){
+                    path = path.replace(".html","");
+                }
+            }
+            apuntador.checkEstimulo(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME'),path);
         }
     }
 
@@ -1072,8 +1085,7 @@ export class ClaseCobertura {
             localStorage.setItem("TP_ESTIMULO_FISCAL","false");
         }
         const paq = new Paquetes();
-        if(opt == "home"){
-            paq.cargarPaquetes("home");
-        }
+        console.log("VOY A MANDAR "+opt)
+        paq.cargarPaquetes(opt);
     }
 }

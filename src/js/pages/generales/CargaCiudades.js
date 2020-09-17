@@ -74,6 +74,7 @@ export class CargaCiudades{
 				if((ciudadActual !== "" || ciudadActual !== undefined) && (apuntador.props.cdSeleccionada !== "")){
 					$('#cd-cobertura-index').html(apuntador.props.cdSeleccionada);
             		$('#cd-cobertura-index-seccion').html(apuntador.props.cdSeleccionada);
+            		$('#cd-cobertura-index-span').html(apuntador.props.cdSeleccionada);
             		localStorage.setItem('TP_STR_DIRECCION_CIUDAD_HOME',apuntador.props.cdSeleccionada);
             		$('#confirmaCambioCiudad').modal('hide');
             		$('#cityPicker').modal('hide');
@@ -131,11 +132,22 @@ export class CargaCiudades{
 				if((ciudadActual !== "" || ciudadActual !== undefined) && (apuntador.props.cdSeleccionada !== "")){
 					$('#cd-cobertura-index').html(apuntador.props.cdSeleccionada);
             		$('#cd-cobertura-index-seccion').html(apuntador.props.cdSeleccionada);
+            		$('#cd-cobertura-index-span').html(apuntador.props.cdSeleccionada);
             		localStorage.setItem('TP_STR_DIRECCION_CIUDAD_HOME',apuntador.props.cdSeleccionada);
             		$('#cityPicker').modal('hide');
-            		console.log("voy a mandar ciudad "+apuntador.props.cdSeleccionada);
+            		
             		const estimulo = new ClaseCobertura();
-          			estimulo.checkEstimulo(apuntador.props.cdSeleccionada,"home");
+            		var path = window.location.pathname;
+            		if(path == "/"){
+            			path = "home";
+            		}else{
+	            		path = path.replace("/","");
+	            		if(path.includes(".html")){
+	            			path = path.replace(".html","");
+	            		}
+	            	}
+
+          			estimulo.checkEstimulo(apuntador.props.cdSeleccionada,path);
 				}
 			}catch(err){
 				console.log("error => "+err)

@@ -300,7 +300,6 @@ export class Paquetes {
 	            '</div>';
 
 			} else if(opt == "match"){
-				console.log("ESTOY EN OPCION MATCH*****")
 				var canalesDescripcion = (arrayCanales[1] != undefined)? arrayCanales[1]: '';
 		        plantillaHTML += ``+
 		        `<div class="col-12 col-sm-6 mx-sm-auto col-md-6 col-lg-4 col-xl-4 ${claseOcultar}">
