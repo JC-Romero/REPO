@@ -125,7 +125,8 @@ export class Paquetes {
 				tipopaquetes = "totalplay_paquetes_fronterizo.json";
 			}
 		}else{
-			if(localStorage.getItem("TP_ESTIMULO_FISCAL") != null){
+			if(localStorage.getItem("TP_ESTIMULO_FISCAL") != null && 
+				localStorage.getItem("TP_ESTIMULO_FISCAL") == "true"){
 				var estimulofiscal = localStorage.getItem("TP_ESTIMULO_FISCAL");
 				tipopaquetes = "totalplay_paquetes_fronterizo.json";
 			}
@@ -133,7 +134,7 @@ export class Paquetes {
 
 		console.log(tipopaquetes);
 		//var url = Constantes.endpoints.obtenerPaquetes + tipopaquetes;
-		var url = '/assets/media/totalplay_paquetes_2020_09_09.json';
+		//var url = '/assets/media/totalplay_paquetes_2020_09_09.json';
 		var url = '/assets/media/'+tipopaquetes;
 		console.log('URL ARCHIVO:',url);
 		fetch(url, {
@@ -156,8 +157,8 @@ export class Paquetes {
 				apuntador.pintarPaquetes(respuesta["DoblePlayNetFlix"], "ctnPaquetesDobleplay", paqueteList);//*/
 			}else if( opt == "match" ){
 
-				apuntador.pintarPaquetes(respuesta["TriplePlayNetFlix"], "ctnPaquetesTripleplay", paqueteList);
-				apuntador.pintarPaquetes(respuesta["DoblePlayNetFlix"], "ctnPaquetesDobleplay", paqueteList);//*/
+				apuntador.pintarPaquetes(respuesta["TriplePlayNetFlix"], "ctnPaquetesTripleplay", paqueteList, opt);
+				apuntador.pintarPaquetes(respuesta["DoblePlayNetFlix"], "ctnPaquetesDobleplay", paqueteList, opt);//*/
 
 			}else if( opt == "regular" ){
 
@@ -261,7 +262,7 @@ export class Paquetes {
 	                claseOcultar = 'hiddenPackageDoble';
 	            }
 	        }
-
+	        console.log("*************"+opt+"**************++");
 			if (opt == "home") {
 
 				plantillaHTML += 
@@ -299,6 +300,7 @@ export class Paquetes {
 	            '</div>';
 
 			} else if(opt == "match"){
+				console.log("ESTOY EN OPCION MATCH*****")
 				var canalesDescripcion = (arrayCanales[1] != undefined)? arrayCanales[1]: '';
 		        plantillaHTML += ``+
 		        `<div class="col-12 col-sm-6 mx-sm-auto col-md-6 col-lg-4 col-xl-4 ${claseOcultar}">

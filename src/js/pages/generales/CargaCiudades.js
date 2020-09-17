@@ -1,4 +1,5 @@
 import * as Constantes from "../../utils/Constantes";
+import {ClaseCobertura} from '../generales/ClaseCobertura';
 
 export class CargaCiudades{
 	constructor(){
@@ -110,18 +111,24 @@ export class CargaCiudades{
 		var apuntador = this;
 
 		$('.cambiaCiudad').on('click',function(event){
-			$('#confirmaCambioCiudad').modal('show');
+			//$('#confirmaCambioCiudad').modal('show');
 			apuntador.props.cdSeleccionada = event.target.innerText;
-			//alert(event.target.innerText);
-		})
 
-		/*var items = document.getElementsByClassName('cambiaCiudad');
-   
-		for( var i = 0; i < items.length; i++){ 
-			items[i].addEventListener( 'click', function(event){
-				console.log( items[i].innerText );
-			});
-		}*/
+			try{
+				var ciudadActual = localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME');
+				if((ciudadActual !== "" || ciudadActual !== undefined) && (apuntador.props.cdSeleccionada !== "")){
+					$('#cd-cobertura-index').html(apuntador.props.cdSeleccionada);
+            		$('#cd-cobertura-index-seccion').html(apuntador.props.cdSeleccionada);
+            		localStorage.setItem('TP_STR_DIRECCION_CIUDAD_HOME',apuntador.props.cdSeleccionada);
+            		$('#cityPicker').modal('hide');
+            		console.log("voy a mandar ciudad "+apuntador.props.cdSeleccionada);
+            		const estimulo = new ClaseCobertura();
+          			estimulo.checkEstimulo(apuntador.props.cdSeleccionada,"home");
+				}
+			}catch(err){
+				console.log("error => "+err)
+			}
+		})
 	}
 
 }

@@ -160,95 +160,6 @@
         </div>
     </div>
 </div>
-<div class="modal fade modalCityPicker" id="cityPicker" tabindex="-1" role="dialog" aria-labelledby="modalCityPicker"
-    aria-hidden="true">
-    <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <img src="{{root}}/assets/img/nuevos/icons/closeIconSVG.svg">
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 mx-auto">
-                        <div class="row citySearchBar">
-                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="citySearch">
-                                    <div id="cityAutocomplete" class="autocompleteList">
-                                        <ul class="row" id="cityAutocompleteList">
-                                            <li class="col-12"><a href="#">Ciudad de México</a></li>
-                                            <li class="col-12"><a href="#">Ciudad de México</a></li>
-                                            <li class="col-12"><a href="#">Ciudad de México</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row cityList" id="cityList">
-                            <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
-                                <p><a href="#" class="active">Ciudad de México</a></p>
-                            </div>
-                            <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
-                                <p><a href="#">Ciudad de México</a></p>
-                            </div>
-                            <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
-                                <p><a href="#">Ciudad de México</a></p>
-                            </div>
-                            <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
-                                <p><a href="#">Ciudad de México</a></p>
-                            </div>
-                            <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
-                                <p><a href="#">Ciudad de México</a></p>
-                            </div>
-                            <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
-                                <p><a href="#">Ciudad de México</a></p>
-                            </div>
-                            <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
-                                <p><a href="#">Ciudad de México</a></p>
-                            </div>
-                            <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
-                                <p><a href="#">Ciudad de México</a></p>
-                            </div>
-                            <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
-                                <p><a href="#">Ciudad de México</a></p>
-                            </div>
-                            <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
-                                <p><a href="#">Ciudad de México</a></p>
-                            </div>
-                        </div>
-                        <div id="noService" class="row noServiceCity" style="display: none;">
-                            <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 mx-auto">
-                                <div class="row">
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                        <h1>Totalplay aún no está disponible en <span>Ciudad no disponible</span></h1>
-                                        <p>¡Pero pronto estaremos cerca!<br>Ingresa tu correo para mantenerte informado.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-6 mx-auto">
-                                        <div class="mat-input-outer">
-                                            <input type="text" autocomplete="off" />
-                                            <label class="">Correo electrónico</label>
-                                            <div class="border"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-6 mx-auto">
-                                        <input type="submit" value="Enviar" class="generalButton">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="modal callUsModalContainer" id="installLocation" tabindex="-1" role="dialog" aria-labelledby="callUsModal"
     aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -346,28 +257,89 @@
     </div>
 </div>
 
-<div class="modal callUsModalContainer" id="confirmaCambioCiudad" tabindex="-1" role="dialog"
-    aria-labelledby="confirmaCambioCiudad" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal fade modalCityPicker" id="cityPicker" tabindex="-1" role="dialog" aria-labelledby="modalCityPicker"
+    aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <img src="{{root}}/assets/img/nuevos/icons/closeIconSVGDark.svg">
+                    <img src="{{root}}/assets/img/nuevos/icons/closeIconSVG.svg">
                 </button>
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 offset-xl-1 offset-lg-1 offset-md-1 mx-auto">
-                        <div class="mat-input-outer mx-auto">
-                            <p>¿Deseas cambiar de ciudad?</p>
+                    <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 mx-auto">
+                        <div class="row citySearchBar">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="citySearch">
+                                    <div id="cityAutocomplete" class="autocompleteList">
+                                        <ul class="row" id="cityAutocompleteList">
+                                            <li class="col-12"><a href="#">Ciudad de México</a></li>
+                                            <li class="col-12"><a href="#">Ciudad de México</a></li>
+                                            <li class="col-12"><a href="#">Ciudad de México</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <div class="row modalPackagesButton">
-                    <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 d-flex">
-                        <a class="generalButton ml-auto" id="btnConfirmaCambioCiudad">Confirmar </a>
+                        <div class="row cityList" id="cityList">
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
+                                <p><a href="#" class="active">Ciudad de México</a></p>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
+                                <p><a href="#">Ciudad de México</a></p>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
+                                <p><a href="#">Ciudad de México</a></p>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
+                                <p><a href="#">Ciudad de México</a></p>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
+                                <p><a href="#">Ciudad de México</a></p>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
+                                <p><a href="#">Ciudad de México</a></p>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
+                                <p><a href="#">Ciudad de México</a></p>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
+                                <p><a href="#">Ciudad de México</a></p>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
+                                <p><a href="#">Ciudad de México</a></p>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
+                                <p><a href="#">Ciudad de México</a></p>
+                            </div>
+                        </div>
+                        <div id="noService" class="row noServiceCity" style="display: none;">
+                            <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 mx-auto">
+                                <div class="row">
+                                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                        <h1>Totalplay aún no está disponible en <span>Ciudad no disponible</span></h1>
+                                        <p>¡Pero pronto estaremos cerca!<br>Ingresa tu correo para mantenerte informado.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-6 mx-auto">
+                                        <div class="mat-input-outer">
+                                            <input type="text" autocomplete="off" />
+                                            <label class="">Correo electrónico</label>
+                                            <div class="border"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-6 mx-auto">
+                                        <input type="submit" value="Enviar" class="generalButton">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

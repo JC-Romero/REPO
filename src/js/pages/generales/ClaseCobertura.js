@@ -55,9 +55,7 @@ export class ClaseCobertura {
             console.log('YA TIENE UNA CIUDAD PREDETERMINADA');
             $('#cd-cobertura-index').html(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME'));
             $('#cd-cobertura-index-seccion').html(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME'));
-            if(localStorage.getItem("TP_ESTIMULO_FISCAL") == null){
-                apuntador.checkEstimulo(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME'));
-            }
+            apuntador.checkEstimulo(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME'),"home");
         }
     }
 
@@ -1053,20 +1051,30 @@ export class ClaseCobertura {
     /***FIN VALIDACIONES***/
 
     checkEstimulo(ciudad,opt){
-        console.log("checkEstimulo "+ciudad);
-
+        
+        var bandera = false;
         var arregloFronterizo = ['Ciudad Juárez','Ensenada','Mexicali','Rosarito','Tijuana'];
         
         $.each(arregloFronterizo,function(index,item){
-            console.log("==>"+item);
+            
             if(item == ciudad){
             //if(item == "Tijuana"){
-                localStorage.setItem("TP_ESTIMULO_FISCAL","true");
-            }
-            const paq = new Paquetes();
-            if(opt == "home"){
-                paq.cargarPaquetes("home");
-            }
+                console.log("si item "+item);
+                bandera = true;
+                //localStorage.setItem("TP_ESTIMULO_FISCAL","true");
+            }else{
+                //localStorage.setItem('TP_ESTIMULO_FISCAL','false');
+            }            
         })
+
+        if(bandera){
+            localStorage.setItem("TP_ESTIMULO_FISCAL","true");
+        }else{
+            localStorage.setItem("TP_ESTIMULO_FISCAL","false");
+        }
+        const paq = new Paquetes();
+        if(opt == "home"){
+            paq.cargarPaquetes("home");
+        }
     }
 }
