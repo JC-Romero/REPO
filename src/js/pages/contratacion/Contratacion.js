@@ -2516,14 +2516,8 @@ export class Contratacion {
         let totalCupon = 0;
 
         let paqueteTipo = referenciaClase.props.infoPaquete.detallePaquete.tipoOferta;
-        let costoInstalacion = 0;
-        try {
-            costoInstalacion = parseInt(localStorage.getItem('TP_C_I'));
-        } catch (error) {
-            console.log('ERROR AL INTENTAR TRANSFORMAR CI:', error);
-        }
-        
-        console.log('COSTO INSTALACION:' + costoInstalacion);
+        let costoInstalacion = referenciaClase.obtenerCostoInstalacion();
+
         if(costoInstalacion <= 0){
             if (paqueteTipo == '3P' || paqueteTipo == 'M3P') {
                 costoInstalacion = 450;
@@ -2600,6 +2594,20 @@ export class Contratacion {
         $('#cargoInstalacion').html('$ ' + costoInstalacion.toFixed(0));
 
         console.groupEnd();
+    }
+
+    obtenerCostoInstalacion(){
+        let costoInstalacion = 0;
+        let cadenaComplementos= localStorage.getItem('TP_STR_COMPLEMENTOS');
+        try {
+            let objComplemento = JSON.parse(cadenaComplementos);
+
+            costoInstalacion = parseInt(objComplemento.costoinstalacion);
+            return costoInstalacion;
+        } catch (error) {
+            console.log('ERROR AL BUSCAR COSTO DE INSTALACION:', error);
+            return costoInstalacion;
+        }
     }
 
     revisarExistencia() {

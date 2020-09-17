@@ -513,13 +513,12 @@ export class DetallePaquete {
             console.log('RESPUESTA DE COMPLEMENTOS');
             console.log(respuesta);
 
-            let arregloProductosCI = respuesta.datos.infoAddons.costoGarantiaAdd.productos;
+            let arregloGarantia = respuesta.datos.infoAddons.costoGarantiaAdd.productos;
             let arregloPromociones = respuesta.datos.infoAddons.promocionesAdd.promociones;
             let arregloProductos = respuesta.datos.infoAddons.productosAdd.productos;
             let arregloServicios = respuesta.datos.infoAddons.serviciosAdd.servicios;
 
-            referenciaClase.buscarCostoInstalacion(arregloProductosCI);
-            referenciaClase.buscarInfoComplementos(arregloPromociones,arregloProductos,arregloServicios);
+            referenciaClase.buscarInfoComplementos(arregloPromociones,arregloProductos,arregloServicios, arregloGarantia);
 
             referenciaClase.pintarPromociones(respuesta.datos.infoAddons.promocionesAdd.promociones)
 
@@ -666,21 +665,7 @@ export class DetallePaquete {
         }
     }
 
-    buscarCostoInstalacion(arregloProductos){
-        let totalCosto = 0;
-
-        $.each(arregloProductos, function (key, objetoProductos) {
-            if(objetoProductos.Agrupacion == 'Costo y Garantia'){
-                $.each(objetoProductos.adicional, function (index, objetoAdicional) {
-                    totalCosto += objetoAdicional.precio;
-                });
-            }
-        });
-
-        localStorage.setItem('TP_C_I', totalCosto);
-    }
-
-    buscarInfoComplementos(arregloPromociones, arregloProductos,arregloServicios){
+    buscarInfoComplementos(arregloPromociones, arregloProductos,arregloServicios, arregloGarantia){
         let objetoComplementos = {};
         let arregloPromocion = new Array();
         //$.each(arregloPromociones, function (key, objetoPromociones) {
@@ -730,6 +715,18 @@ export class DetallePaquete {
 
         objetoComplementos.equipoAdicional = arregloEquipoAdicional;
         objetoComplementos.telefonia = arregloTelefonia;
+
+        let costoIntalacion = 0;
+
+        $.each(arregloGarantia, function (key, objetoGarantia,) {
+            if(objetoGarantia.Agrupacion == 'Costo y Garantia'){
+                $.each(objetoGarantia.adicional, function (index, objetoAdicional) {
+                    costoIntalacion += objetoAdicional.precio;
+                });
+            }
+        });
+
+        objetoComplementos.costoinstalacion = costoIntalacion;
 
         localStorage.setItem("TP_STR_COMPLEMENTOS", JSON.stringify(objetoComplementos));
 
