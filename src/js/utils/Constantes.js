@@ -21,6 +21,7 @@ export const endpoints = {
 	buscarCiudad:`${_base}buscar-ciudad-cp`,
 	getserviciobin: `${_base}get-servicio-bin`,
 	obtenerCanales:`${_base}obtener-canales`,
+	enviaBuzon: `${_base}insertar-sugerencia`,
 }
 
 export const sitioBase = "/";
