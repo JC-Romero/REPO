@@ -89,7 +89,7 @@ $(document).ready(function () {
     var $mainVideo = $("#mainVideo");
     var $secondaryVideo = $("#secondaryVideo");
     var $window = $(window);
-    $window.scroll(function () {
+    /*$window.scroll(function () {
         if ($mainVideo.is(":in-viewport")) {
             $mainVideo[0].play();
             $secondaryVideo[0].pause();
@@ -132,6 +132,7 @@ $(document).ready(function () {
             $("#secondaryVideo")[0].pause();
         }
     });
+    //*/
 });
 var showPackageContainer = function (item, item2, item3, item4, e) {
     $("#" + item).hide();
