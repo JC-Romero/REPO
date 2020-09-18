@@ -99,7 +99,7 @@ if (RutasMatch(path, url.contratacion)) {
 
 if (RutasMatch(path, url.servicios)) {
 	const servicios = new Servicios();
-	const eventosiptv = new eventosIPTV();
+	//const eventosiptv = new eventosIPTV();
 }
 
 if (RutasMatch(path, url.faqs)) {

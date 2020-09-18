@@ -72,7 +72,7 @@ export class Servicios {
 	}
 
 	setListeners(){
-		let banner = this.cmsGetBannerList();
+		//let banner = this.cmsGetBannerList();
 		var apuntador = this;
 
 		$('.selectapp').on('click',function(e){
@@ -190,7 +190,7 @@ export class Servicios {
 			indicadorMenuServicios(0, apuntador.props.itemsServicios, apuntador.props.selectorMenuServicios);
 		});
 
-		$(document).on('scroll', function() {
+		/*$(document).on('scroll', function() {
 			var clase = document.getElementsByClassName('selectServicios');
 			if($(this).scrollTop()>=$('#internet').position().top){
 				clase[0].style.fontFamily = 'Montserrat-Bold';
@@ -217,7 +217,7 @@ export class Servicios {
 		    	clase[2].style.fontFamily = 'Montserrat-Regular';
 		    	clase[3].style.fontFamily = 'Montserrat-Bold';
 		    }
-		})
+		})*/
 	}
 
 
