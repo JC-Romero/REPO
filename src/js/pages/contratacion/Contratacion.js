@@ -276,8 +276,8 @@ export class Contratacion {
             objPaquete = JSON.parse(strPaqueteSeleccionado);
             objComplementos = JSON.parse(strComplementos);
             let megasTexto = objPaquete.detallePaquete.detalle.megas;
-            let regex = /(\d{1,3})/;
-            let resultado = regex.exec(megasTexto);
+            let regexMB = /(\d{1,3})/;
+            let resultado = regexMB.exec(megasTexto);
             megasPaquete = parseInt(resultado[0]);
         } catch (error) {
             console.log("Error en:", error);
@@ -287,7 +287,7 @@ export class Contratacion {
 
         if (megasPaquete < 150) {
 
-            listaPasos = '<li class="contratacion--top-bar__steps__list-names__item active" style="display:flex">Cobertura</li>' +
+            listaPasos = '<li class="contratacion--top-bar__steps__list-names__item active" style="display:flex">Complemento</li>' +
                 '<li class="contratacion--top-bar__steps__list-names__item" >Resumen</li>' +
                 '<li class="contratacion--top-bar__steps__list-names__item">Contrata</li>';
 
@@ -2516,11 +2516,14 @@ export class Contratacion {
         let totalCupon = 0;
 
         let paqueteTipo = referenciaClase.props.infoPaquete.detallePaquete.tipoOferta;
-        let costoInstalacion = 0; //TEMA PENDIENTE DESDE EL SERVICIO
-        if (paqueteTipo == '3P' || paqueteTipo == 'M3P') {
-            costoInstalacion = 450;
-        } else {
-            costoInstalacion = 350;
+        let costoInstalacion = referenciaClase.obtenerCostoInstalacion();
+
+        if(costoInstalacion <= 0){
+            if (paqueteTipo == '3P' || paqueteTipo == 'M3P') {
+                costoInstalacion = 450;
+            } else {
+                costoInstalacion = 350;
+            }
         }
 
         let cadenaPaquete = localStorage.getItem('TP_STR_PAQUETE_SELECCION');
@@ -2591,6 +2594,20 @@ export class Contratacion {
         $('#cargoInstalacion').html('$ ' + costoInstalacion.toFixed(0));
 
         console.groupEnd();
+    }
+
+    obtenerCostoInstalacion(){
+        let costoInstalacion = 0;
+        let cadenaComplementos= localStorage.getItem('TP_STR_COMPLEMENTOS');
+        try {
+            let objComplemento = JSON.parse(cadenaComplementos);
+
+            costoInstalacion = parseInt(objComplemento.costoinstalacion);
+            return costoInstalacion;
+        } catch (error) {
+            console.log('ERROR AL BUSCAR COSTO DE INSTALACION:', error);
+            return costoInstalacion;
+        }
     }
 
     revisarExistencia() {

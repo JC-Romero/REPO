@@ -65,27 +65,6 @@ var showCollapsible = function (item, item2) {
 };
 
 $(document).ready(function () {
-    $("#citySearch").keyup(function () {
-        var x = document.getElementById('cityAutocomplete');
-        if ($(this).val() == "") {
-            x.style.display = 'none';
-        } else {
-            x.style.display = 'block';
-        }
-    });
-
-    $('#cityPicker').on('hidden.bs.modal', function () {
-        $('body').css({
-            'overflow': 'auto'
-        });
-    });
-
-    $('#cityPicker').on('show.bs.modal', function () {
-        $('body').css({
-            'overflow': 'auto'
-        });
-    });
-
     var $mainVideo = $("#mainVideo");
     var $secondaryVideo = $("#secondaryVideo");
     var $window = $(window);
@@ -133,6 +112,63 @@ $(document).ready(function () {
         }
     });
 });
+$(document).ready(function () {
+    $("#citySearch").keyup(function () {
+        var x = document.getElementById('cityAutocomplete');
+        if ($(this).val() == "") {
+            x.style.display = 'none';
+        } else {
+            x.style.display = 'block';
+        }
+    });
+
+    $('#cityPicker').on('hidden.bs.modal', function () {
+        $('body').css({
+            'overflow': 'auto'
+        });
+    });
+
+    $('#cityPicker').on('show.bs.modal', function () {
+        $('body').css({
+            'overflow': 'auto'
+        });
+    });
+
+    var windw = this;
+    $.fn.followTo = function (elem) {
+        var $this = this,
+            $window = $(windw),
+            $bumper = $(elem),
+            bumperPos = $bumper.offset().top,
+            thisHeight = $this.outerHeight(),
+            setPosition = function () {
+                if ($window.scrollTop() > (bumperPos - thisHeight)) {
+                    $this.css({
+                        position: 'absolute',
+                        top: (bumperPos - thisHeight),
+                    });
+                } else {
+                    $this.css({
+                        position: 'fixed',
+                        top: 0,
+                    });
+                }
+            };
+        $window.resize(function () {
+            bumperPos = pos.offset().top;
+            thisHeight = $this.outerHeight();
+            setPosition();
+        });
+        $window.scroll(setPosition);
+        setPosition();
+    };
+
+    $('#scrollingElement').followTo('#stopper');
+    $('#faqsAccordion').collapse({});
+});
+$(window).scroll(function () {
+    $("#fadeButton").css("opacity", 1 - $(window).scrollTop() / 50);
+});
 var showPackageContainer = function (item, item2, item3, item4, e) {
     $("#" + item).hide();
     $("#" + item2).fadeIn(500);
@@ -155,7 +191,7 @@ var showLessPackages = function (item, item2, item3, e) {
     event.preventDefault();
 };
 $(document).ready(function () {
-    /*$("#unboxCarouselContainer").slick({
+    $("#unboxCarouselContainer").slick({
         autoplay: true,
         autoplaySpeed: 9000,
         dots: true,
@@ -196,19 +232,96 @@ $(document).ready(function () {
                 }
             }
         ]
-    });//*/
+    });
+    $("#carouselDocuments").slick({
+        speed: 300,
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        autoplay: false,
+        infinite: true,
+        cssEase: 'linear',
+        arrows: true,
+        swipe: true,
+        swipeToSlide: true,
+        touchMove: true,
+        pauseOnHover: false,
+        draggable: true,
+        dots: false,
+        responsive: [
+            {
+                breakpoint: 1920,
+                settings: {
+                    slidesToShow: 6,
+                }
+            },
+            {
+                breakpoint: 1700,
+                settings: {
+                    slidesToShow: 6,
+                }
+            },
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 4,
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 750,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 340,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
+    });
 });
-//var distanceTop = $('#fixed').offset().top;
-var distanceTop = 80;
-$(window).scroll(function () {
-    if ($(window).scrollTop() >= distanceTop) {
-        $('#fixed').addClass("fixedNav").css({
-            'left': '0px important',
-        });
 
-    } else {
-        $('#fixed').removeClass("fixedNav");
+(function ($) {
+    $.fn.visible = function (partial) {
+        var $t = $(this),
+            $w = $(window),
+            viewTop = $w.scrollTop(),
+            viewBottom = viewTop + $w.height(),
+            _top = $t.offset().top,
+            _bottom = _top + $t.height(),
+            compareTop = partial === true ? _bottom : _top,
+            compareBottom = partial === true ? _top : _bottom;
+        return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+    };
+})(jQuery);
+var win = $(window);
+var allMods = $(".animatedCard");
+allMods.each(function (i, el) {
+    var el = $(el);
+    if (el.visible(true)) {
+        el.removeClass("visible");
     }
+});
+win.scroll(function (event) {
+    allMods.each(function (i, el) {
+        var el = $(el);
+        if (el.visible(true)) {
+            el.addClass("visible");
+        }
+    });
 });
 var hideComputer = function (e) {
     $("#computer").css({
@@ -362,4 +475,15 @@ var activeTopMenu = function (item1, item2, item3, item4) {
     $("#" + item2).removeClass('active');
     $("#" + item3).removeClass('active');
     $("#" + item4).removeClass('active');
- };
+};
+var distanceTop = $('#fixed').offset().top;
+$(window).scroll(function () {
+    if ($(window).scrollTop() >= distanceTop) {
+        $('#fixed').addClass("fixedNav").css({
+            'left': '0px important',
+        });
+
+    } else {
+        $('#fixed').removeClass("fixedNav");
+    }
+});
