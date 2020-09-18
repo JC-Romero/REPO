@@ -61,8 +61,8 @@ if (RutasMatch(path, url.paquetes)) {
 	//var hashlo=window.location.hash;
 	//var parametro=0;
 	//if(hashlo!="")parametro=hashlo.replace("#",'');
-	//const paquetes=new Paquetes();
-	//paquetes.init();
+	const paquetes=new Paquetes();
+	paquetes.init();
 	//const paqueteseven=new PaquetesEventos(parametro);
 	//const carruselPromociones  = new PromocionesCarrusel( '.promotions-list-cards__content--left', '.promotions-list-cards__content--right' );
 }

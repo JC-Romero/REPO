@@ -141,6 +141,8 @@ export class CargaCiudades{
             		var path = window.location.pathname;
             		if(path == "/"){
             			path = "home";
+            		}else if(path == "/paquetes.html" || path == "/paquetes"){
+            			path = "home";
             		}else{
 	            		path = path.replace("/","");
 	            		if(path.includes(".html")){

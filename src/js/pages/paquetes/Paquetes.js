@@ -11,7 +11,7 @@ export class Paquetes {
 
 	init() {
 		this.revisarDireccion();
-		this.cargarPaquetes("Todos");
+		this.cargarPaquetes("home");
 		//this.eventoTipoPaquete();
 	}
 
