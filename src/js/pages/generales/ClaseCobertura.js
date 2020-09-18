@@ -39,16 +39,6 @@ export class ClaseCobertura {
                         $('#cd-cobertura-index-seccion').html(respuesta);
                         $('#cd-cobertura-index-span').html(respuesta);
                         localStorage.setItem('TP_STR_DIRECCION_CIUDAD_HOME', respuesta);
-                        var path = window.location.pathname;
-                        if(path.includes("/")){
-                            path = "home";
-                        }else{
-                            path = path.replace("/","");
-                            if(path.includes(".html")){
-                                path = path.replace(".html","");
-                            }
-                        }
-                        apuntador.checkEstimulo(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME'),path);
                     }
                 } catch (e) {
                     $('#cd-cobertura-index').html("Ciudad de México");
@@ -61,6 +51,17 @@ export class ClaseCobertura {
                 $('#cd-cobertura-index-seccion').html("Ciudad de México");
                 $('#cd-cobertura-index-span').html("Ciudad de México");
                 console.log("err=>", err);
+            }).finally(() => {
+                var path = window.location.pathname;
+                if(path.includes("/")){
+                    path = "home";
+                }else{
+                    path = path.replace("/","");
+                    if(path.includes(".html")){
+                        path = path.replace(".html","");
+                    }
+                }
+                apuntador.checkEstimulo(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME'),path);
             });
 
         } else {
@@ -68,7 +69,19 @@ export class ClaseCobertura {
             $('#cd-cobertura-index').html(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME'));
             $('#cd-cobertura-index-seccion').html(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME'));
             $('#cd-cobertura-index-span').html(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME'));
-            
+            /*if(localStorage.getItem("TP_ESTIMULO_FISCAL") == null){
+                console.log("estimulofiscal nulo");
+                var path = window.location.pathname;
+                if(path.includes("/")){
+                    path = "home";
+                }else{
+                    path = path.replace("/","");
+                    if(path.includes(".html")){
+                        path = path.replace(".html","");
+                    }
+                }
+                apuntador.checkEstimulo(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME'),path);
+            }*/
         }
     }
 
@@ -1085,7 +1098,8 @@ export class ClaseCobertura {
         if(bandera){
             localStorage.setItem("TP_ESTIMULO_FISCAL","true");
         }else{
-            localStorage.setItem("TP_ESTIMULO_FISCAL","false");
+            //localStorage.setItem("TP_ESTIMULO_FISCAL","false");
+            localStorage.removeItem("TP_ESTIMULO_FISCAL");
         }
         const paq = new Paquetes();
         paq.cargarPaquetes(opt);

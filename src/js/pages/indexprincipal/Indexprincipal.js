@@ -1172,7 +1172,7 @@ export class Indexprincipal {
           //const paq = new Paquetes();
           //paq.cargarPaquetes("home");
           const estimulo = new ClaseCobertura();
-          estimulo.checkEstimulo($("#ciudadHome").html(),"home");
+          estimulo.checkEstimulo($('#cd-cobertura-index').html(),"home");
         }
     }
 
