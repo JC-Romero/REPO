@@ -64,7 +64,7 @@ var showCollapsible = function (item, item2) {
     }
 };
 
-$(document).ready(function () {
+/*$(document).ready(function () {
     var $mainVideo = $("#mainVideo");
     var $secondaryVideo = $("#secondaryVideo");
     var $window = $(window);
@@ -111,7 +111,7 @@ $(document).ready(function () {
             $("#secondaryVideo")[0].pause();
         }
     });
-});
+});//*/
 $(document).ready(function () {
     $("#citySearch").keyup(function () {
         var x = document.getElementById('cityAutocomplete');
@@ -163,7 +163,7 @@ $(document).ready(function () {
         setPosition();
     };
 
-    $('#scrollingElement').followTo('#stopper');
+    //$('#scrollingElement').followTo('#stopper');
     $('#faqsAccordion').collapse({});
 });
 $(window).scroll(function () {
@@ -476,7 +476,7 @@ var activeTopMenu = function (item1, item2, item3, item4) {
     $("#" + item3).removeClass('active');
     $("#" + item4).removeClass('active');
 };
-var distanceTop = $('#fixed').offset().top;
+/*var distanceTop = $('#fixed').offset().top;
 $(window).scroll(function () {
     if ($(window).scrollTop() >= distanceTop) {
         $('#fixed').addClass("fixedNav").css({
@@ -486,4 +486,4 @@ $(window).scroll(function () {
     } else {
         $('#fixed').removeClass("fixedNav");
     }
-});
+});//*/

@@ -20,6 +20,7 @@ export const endpoints = {
 	obtenerCiudades : `https://totalplay.dev/archivos/coberturatotalplay.json`,
 	buscarCiudad:`${_base}buscar-ciudad-cp`,
 	getserviciobin: `${_base}get-servicio-bin`,
+	obtenerCanales:`${_base}obtener-canales`,
 }
 
 export const sitioBase = "/";
