@@ -39,7 +39,16 @@ export class ClaseCobertura {
                         $('#cd-cobertura-index-seccion').html(respuesta);
                         $('#cd-cobertura-index-span').html(respuesta);
                         localStorage.setItem('TP_STR_DIRECCION_CIUDAD_HOME', respuesta);
-                        apuntador.checkEstimulo(respuesta,"home");
+                        var path = window.location.pathname;
+                        if(path.includes("/")){
+                            path = "home";
+                        }else{
+                            path = path.replace("/","");
+                            if(path.includes(".html")){
+                                path = path.replace(".html","");
+                            }
+                        }
+                        apuntador.checkEstimulo(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME'),path);
                     }
                 } catch (e) {
                     $('#cd-cobertura-index').html("Ciudad de México");
@@ -59,16 +68,7 @@ export class ClaseCobertura {
             $('#cd-cobertura-index').html(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME'));
             $('#cd-cobertura-index-seccion').html(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME'));
             $('#cd-cobertura-index-span').html(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME'));
-            var path = window.location.pathname;
-            if(path.includes("/")){
-                path = "home";
-            }else{
-                path = path.replace("/","");
-                if(path.includes(".html")){
-                    path = path.replace(".html","");
-                }
-            }
-            apuntador.checkEstimulo(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME'),path);
+            
         }
     }
 
@@ -266,6 +266,7 @@ export class ClaseCobertura {
         });
 
         $("#botonValidarCobertura").on("click", function (e) {
+            e.stopImmediatePropagation();
             var calle = $.trim($('#calleModal').val());
             var ciudad = $.trim($('#ciudadModal').val());
             var codigoPostal = $.trim($('#cpModal').val());
@@ -304,7 +305,8 @@ export class ClaseCobertura {
         });
 
         $('#btnCoberturaSeccion').on('click', function (e) {
-            e.preventDefault();
+            //e.preventDefault();
+            e.e.stopImmediatePropagation();
             var calle = $.trim($('#calleSection').val());
             var ciudad = $.trim($('#ciudadSection').val());
             var codigoPostal = $.trim($('#cpSection').val());
@@ -354,7 +356,8 @@ export class ClaseCobertura {
             $("#errorNumH").css("display", "none");
         });
 
-        $('#cpModal').on("keyup", function () {
+        $('#cpModal').on("keyup", function (e) {
+            e.stopImmediatePropagation();
             $("#errorCodigoH").css("display", "none");
             /***EVENTO TOMADO DE COBERTURASUGERENCIA.JS***/
             var codigoPostal = $('#cpModal').val();
@@ -1085,7 +1088,6 @@ export class ClaseCobertura {
             localStorage.setItem("TP_ESTIMULO_FISCAL","false");
         }
         const paq = new Paquetes();
-        console.log("VOY A MANDAR "+opt)
         paq.cargarPaquetes(opt);
     }
 }

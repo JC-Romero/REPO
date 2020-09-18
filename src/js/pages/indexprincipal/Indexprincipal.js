@@ -23,7 +23,7 @@ export class Indexprincipal {
     
     init(){
         this.setKeyupInput();
-        this.evento();
+        //this.evento();
         localStorage.setItem('SUGERENCIA_SELECCIONADA', 0);
         if(localStorage.getItem('TP_ESTIMULO_CIUDAD') == undefined || localStorage.getItem('TP_ESTIMULO_CIUDAD') == null || localStorage.getItem('TP_ESTIMULO_CIUDAD') == ''  ){
             localStorage.setItem('TP_ESTIMULO_CIUDAD','false');

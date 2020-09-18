@@ -124,6 +124,7 @@ export class CargaCiudades{
 		var apuntador = this;
 
 		$('.cambiaCiudad').on('click',function(event){
+			event.stopImmediatePropagation();
 			//$('#confirmaCambioCiudad').modal('show');
 			apuntador.props.cdSeleccionada = event.target.innerText;
 

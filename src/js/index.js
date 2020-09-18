@@ -2,8 +2,6 @@
 import * as Constantes from "./utils/Constantes";
 import {Rutas, RutasMatch } from "./utils/Ayuda";
 import {ClaseCobertura} from "./pages/generales/ClaseCobertura";
-import {Cobertura} from "./pages/generales/Cobertura";
-import {CoberturaSugerencias} from "./pages/generales/CoberturaSugerencias";
 import {Menu} from "./pages/generales/Menu"
 import {CargaCiudades} from "./pages/generales/CargaCiudades"
 import {Experiencia} from "./pages/generales/Experiencia"

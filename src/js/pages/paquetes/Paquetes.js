@@ -12,7 +12,7 @@ export class Paquetes {
 	init() {
 		this.revisarDireccion();
 		this.cargarPaquetes("Todos");
-		this.eventoTipoPaquete();
+		//this.eventoTipoPaquete();
 	}
 
 	resize() {
@@ -292,7 +292,7 @@ export class Paquetes {
 	                                '<p>Descuento de por vida</p>'+
 	                            '</div>'+
 	                            '<div class="packagePrice">'+
-	                                '<p><a href="#">$'+clase.formatoMonedad(objPaquete.precioLista, 0, ".", ",")+'</a></p>'+
+	                                '<p><a >Desde: <span>$ '+clase.formatoMonedad(objPaquete.precioLista, 0, ".", ",")+' al mes</span></a></p>'+
 	                            '</div>'+
 	                        '</div>'+
 	                    '</div>'+
@@ -362,7 +362,7 @@ export class Paquetes {
 		                        <div class="packageDiscount">
 		                        <p>20% de descuento</p>
 		                        </div>
-		                        <div class="packagePrice" onclick="showBootstrapModalFirst(\'installLocation\');">
+		                        <div class="packagePrice" >
 		                            <p><a >Desde: <span>$ ${clase.formatoMonedad(objPaquete.precioLista, 0, ".", ",") } al mes</span></a></p>
 		                        </div>
 		                    </div>
@@ -480,8 +480,9 @@ export class Paquetes {
 
 	setListener() {
 		let referenciaClase = this;
-		/*$(".card-package-item").on("click", function () {
+		/*$(".packageInfoContainer").on("click", function () {
 			var idPaqueteSeleccionado = $(this).attr("id");
+			console.log('idPaqueteSeleccionado=>', idPaqueteSeleccionado);
 			var cadenaOfertaActual = localStorage.getItem("TP_INFO_PAQUETES");
 			var jsonOferta = JSON.parse(cadenaOfertaActual);
 			$.each(jsonOferta, function (familiaPaquete, arrayOferta) {
@@ -500,10 +501,12 @@ export class Paquetes {
 					}
 				});
 			});
-			window.location = "detallePaquete.html";
+			//window.location = "detallePaquete.html";
+			$("#installLocation").modal('show');
 		});*/
 
-		$("body").on("click",".packageInfoContainer", function () {
+		$("body").on("click",".packageInfoContainer", function (e) {
+			e.stopImmediatePropagation();
 	        var idPaqueteSeleccionado = $(this).attr("id");
 	        console.log('idPaqueteSeleccionado=>', idPaqueteSeleccionado);
 	        var cadenaOfertaActual = localStorage.getItem("TP_INFO_PAQUETES");
@@ -525,6 +528,8 @@ export class Paquetes {
 	                }
 	            });
 	        });
+	        //installLocation
+	        $("#installLocation").modal('show');
 	        
 	    });
 	}
