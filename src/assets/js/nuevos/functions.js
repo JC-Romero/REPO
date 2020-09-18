@@ -65,27 +65,6 @@ var showCollapsible = function (item, item2) {
 };
 
 $(document).ready(function () {
-    $("#citySearch").keyup(function () {
-        var x = document.getElementById('cityAutocomplete');
-        if ($(this).val() == "") {
-            x.style.display = 'none';
-        } else {
-            x.style.display = 'block';
-        }
-    });
-
-    $('#cityPicker').on('hidden.bs.modal', function () {
-        $('body').css({
-            'overflow': 'auto'
-        });
-    });
-
-    $('#cityPicker').on('show.bs.modal', function () {
-        $('body').css({
-            'overflow': 'auto'
-        });
-    });
-
     var $mainVideo = $("#mainVideo");
     var $secondaryVideo = $("#secondaryVideo");
     var $window = $(window);
@@ -132,4 +111,379 @@ $(document).ready(function () {
             $("#secondaryVideo")[0].pause();
         }
     });
+});
+$(document).ready(function () {
+    $("#citySearch").keyup(function () {
+        var x = document.getElementById('cityAutocomplete');
+        if ($(this).val() == "") {
+            x.style.display = 'none';
+        } else {
+            x.style.display = 'block';
+        }
+    });
+
+    $('#cityPicker').on('hidden.bs.modal', function () {
+        $('body').css({
+            'overflow': 'auto'
+        });
+    });
+
+    $('#cityPicker').on('show.bs.modal', function () {
+        $('body').css({
+            'overflow': 'auto'
+        });
+    });
+
+    var windw = this;
+    $.fn.followTo = function (elem) {
+        var $this = this,
+            $window = $(windw),
+            $bumper = $(elem),
+            bumperPos = $bumper.offset().top,
+            thisHeight = $this.outerHeight(),
+            setPosition = function () {
+                if ($window.scrollTop() > (bumperPos - thisHeight)) {
+                    $this.css({
+                        position: 'absolute',
+                        top: (bumperPos - thisHeight),
+                    });
+                } else {
+                    $this.css({
+                        position: 'fixed',
+                        top: 0,
+                    });
+                }
+            };
+        $window.resize(function () {
+            bumperPos = pos.offset().top;
+            thisHeight = $this.outerHeight();
+            setPosition();
+        });
+        $window.scroll(setPosition);
+        setPosition();
+    };
+
+    $('#scrollingElement').followTo('#stopper');
+    $('#faqsAccordion').collapse({});
+});
+$(window).scroll(function () {
+    $("#fadeButton").css("opacity", 1 - $(window).scrollTop() / 50);
+});
+var showPackageContainer = function (item, item2, item3, item4, e) {
+    $("#" + item).hide();
+    $("#" + item2).fadeIn(500);
+    $("#" + item3).removeClass('active');
+    $("#" + item4).addClass('active');
+    event.preventDefault();
+};
+
+var showMorePackages = function (item, item2, item3, e) {
+    $("." + item).fadeIn(300);
+    $("#" + item2).hide();
+    $("#" + item3).show();
+    event.preventDefault();
+};
+
+var showLessPackages = function (item, item2, item3, e) {
+    $("." + item).fadeOut(300);
+    $("#" + item2).show();
+    $("#" + item3).hide();
+    event.preventDefault();
+};
+$(document).ready(function () {
+    $("#unboxCarouselContainer").slick({
+        autoplay: true,
+        autoplaySpeed: 9000,
+        dots: true,
+        draggable: true,
+        fade: true,
+        infinite: true,
+        pauseOnHover: true,
+        swipe: true,
+        touchMove: true,
+        swipeToSlide: true
+    });
+    $("#infiniteSlides").slick({
+        speed: 25000,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 0,
+        infinite: true,
+        cssEase: 'linear',
+        arrows: false,
+        swipe: false,
+        swipeToSlide: false,
+        touchMove: false,
+        pauseOnHover: false,
+        draggable: false,
+        dots: false,
+        responsive: [
+            {
+                breakpoint: 750,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
+    });
+    $("#carouselDocuments").slick({
+        speed: 300,
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        autoplay: false,
+        infinite: true,
+        cssEase: 'linear',
+        arrows: true,
+        swipe: true,
+        swipeToSlide: true,
+        touchMove: true,
+        pauseOnHover: false,
+        draggable: true,
+        dots: false,
+        responsive: [
+            {
+                breakpoint: 1920,
+                settings: {
+                    slidesToShow: 6,
+                }
+            },
+            {
+                breakpoint: 1700,
+                settings: {
+                    slidesToShow: 6,
+                }
+            },
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 4,
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 750,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 340,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
+    });
+});
+
+(function ($) {
+    $.fn.visible = function (partial) {
+        var $t = $(this),
+            $w = $(window),
+            viewTop = $w.scrollTop(),
+            viewBottom = viewTop + $w.height(),
+            _top = $t.offset().top,
+            _bottom = _top + $t.height(),
+            compareTop = partial === true ? _bottom : _top,
+            compareBottom = partial === true ? _top : _bottom;
+        return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+    };
+})(jQuery);
+var win = $(window);
+var allMods = $(".animatedCard");
+allMods.each(function (i, el) {
+    var el = $(el);
+    if (el.visible(true)) {
+        el.removeClass("visible");
+    }
+});
+win.scroll(function (event) {
+    allMods.each(function (i, el) {
+        var el = $(el);
+        if (el.visible(true)) {
+            el.addClass("visible");
+        }
+    });
+});
+var hideComputer = function (e) {
+    $("#computer").css({
+        "visibility": "hidden"
+    });
+    event.preventDefault();
+};
+var showComputer = function (e) {
+    $("#computer").css({
+        "visibility": "visible"
+    });
+    $("#computer").fadeIn(300)
+    event.preventDefault();
+};
+var hideIpadLandscape = function (e) {
+    $("#ipadLandscape").hide();
+    event.preventDefault();
+};
+var showIpadLandscape = function (e) {
+    $("#ipadLandscape").fadeIn(300);
+    event.preventDefault();
+};
+var hideIpadPortrait = function (e) {
+    $("#ipadPortrait").hide();
+    event.preventDefault();
+};
+var showIpadPortrait = function (e) {
+    $("#ipadPortrait").fadeIn(300);
+    event.preventDefault();
+};
+//Quitar Clases Slider
+var removeOnDemand = function (e) {
+    $("#computer").removeClass('onDemandComputer');
+    $("#phone").removeClass('onDemandPhone');
+    $("#IpadLandscape").removeClass('onDemandIpad');
+    event.preventDefault();
+};
+var removeRemote = function (e) {
+    $("#ipadPortrait").removeClass('remoteIpad');
+    $("#phone").removeClass('remotePhone');
+    event.preventDefault();
+};
+var removeLandLine = function (e) {
+    $("#ipadPortrait").removeClass('ipadLandline');
+    $("#phone").removeClass('phoneLandline');
+    event.preventDefault();
+};
+var removeWifi = function (e) {
+    $("#computer").removeClass('computerWifi');
+    $("#phone").removeClass('phoneWifi');
+    $("#ipadLandscape").removeClass('ipadWifi');
+    event.preventDefault();
+};
+var removeInvoice = function (e) {
+    $("#computer").removeClass('computerInvoice');
+    $("#phone").removeClass('phoneInvoice');
+    $("#ipadLandscape").removeClass('ipadInvoice');
+    event.preventDefault();
+};
+//Agrega Clases Slider
+var addOnDemand = function (e) {
+    showComputer();
+    $("#computer").addClass('onDemandComputer');
+    $("#phone").addClass('onDemandPhone');
+    $("#ipadLandscape").addClass('onDemandIpad');
+    $("#toggleDemand").addClass('active');
+    $("#toggleRemote").removeClass('active');
+    $("#toggleLandline").removeClass('active');
+    $("#toggleWifi").removeClass('active');
+    $("#toggleInvoice").removeClass('active');
+    showIpadLandscape();
+    hideIpadPortrait();
+    removeRemote();
+    removeLandLine();
+    removeWifi();
+    removeInvoice();
+    event.preventDefault();
+};
+var addRemote = function (e) {
+    hideComputer();
+    $("#ipadPortrait").addClass('remoteIpad');
+    $("#phone").addClass('remotePhone');
+    $("#toggleDemand").removeClass('active');
+    $("#toggleRemote").addClass('active');
+    $("#toggleLandline").removeClass('active');
+    $("#toggleWifi").removeClass('active');
+    $("#toggleInvoice").removeClass('active');
+    showIpadPortrait();
+    hideIpadLandscape();
+    removeOnDemand();
+    removeLandLine();
+    removeWifi();
+    removeInvoice();
+    event.preventDefault();
+};
+
+var addLandLine = function (e) {
+    hideComputer();
+    $("#ipadPortrait").addClass('ipadLandline')
+    $("#phone").addClass('phoneLandline');
+    $("#toggleDemand").removeClass('active');
+    $("#toggleRemote").removeClass('active');
+    $("#toggleLandline").addClass('active');
+    $("#toggleWifi").removeClass('active');
+    $("#toggleInvoice").removeClass('active');
+    showIpadPortrait();
+    hideIpadLandscape();
+    removeOnDemand();
+    removeRemote();
+    removeWifi();
+    removeInvoice();
+    event.preventDefault();
+};
+var addWifi = function (e) {
+    showComputer();
+    $("#computer").addClass('computerWifi');
+    $("#phone").addClass('phoneWifi');
+    $("#ipadLandscape").addClass('ipadWifi');
+    $("#toggleDemand").removeClass('active');
+    $("#toggleRemote").removeClass('active');
+    $("#toggleLandline").removeClass('active');
+    $("#toggleWifi").addClass('active');
+    $("#toggleInvoice").removeClass('active');
+    showIpadLandscape();
+    hideIpadPortrait();
+    removeOnDemand();
+    removeRemote();
+    removeLandLine();
+    removeInvoice();
+    event.preventDefault();
+};
+var addInvoice = function (e) {
+    showComputer();
+    $("#computer").addClass('computerInvoice');
+    $("#phone").addClass('phoneInvoice');
+    $("#ipadLandscape").addClass('ipadInvoice');
+    $("#toggleDemand").removeClass('active');
+    $("#toggleRemote").removeClass('active');
+    $("#toggleLandline").removeClass('active');
+    $("#toggleWifi").removeClass('active');
+    $("#toggleInvoice").addClass('active');
+    showIpadLandscape();
+    hideIpadPortrait();
+    removeOnDemand();
+    removeRemote();
+    removeLandLine();
+    event.preventDefault();
+};
+var activeTopMenu = function (item1, item2, item3, item4) {
+    $("#" + item1).addClass('active');
+    $("#" + item2).removeClass('active');
+    $("#" + item3).removeClass('active');
+    $("#" + item4).removeClass('active');
+};
+var distanceTop = $('#fixed').offset().top;
+$(window).scroll(function () {
+    if ($(window).scrollTop() >= distanceTop) {
+        $('#fixed').addClass("fixedNav").css({
+            'left': '0px important',
+        });
+
+    } else {
+        $('#fixed').removeClass("fixedNav");
+    }
 });

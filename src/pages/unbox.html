@@ -1,0 +1,189 @@
+---
+layout: home
+---
+<style>
+    body,
+    * {
+        height: auto;
+    }
+</style>
+<section class="row paquetesClasicosHeader unbox">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10 mx-auto">
+        <div class="row paquetesClasicosContainer">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-11 col-xl-10 mx-auto">
+                <div class="row paquetesClasicosTitulos">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-5 align-self-center">
+                        <pre>UNBOX</pre>
+                        <h1>El paquete que estabas esperando</h1>
+                        <p>Con amazon Prime incluido</p>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 offset-xl-1 imageContainer align-self-end">
+                        <img src="../assets/img/nuevos/unboxArte.png" alt="Totalplay Unbox">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="row contenedorPaquetesClasicos">
+    <div class="col-12 col-sm-12 col-md-11 col-lg-10 col-md-10 mx-auto">
+        <div class="row selectorPaquetes">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <ul>
+                    <li><a id="toggletriple" href="#" class="active"
+                            onclick="showPackageContainer('paquetesDoblePlay','paquetesTriplePlay','toggledoble','toggletriple');">Tripleplay</a>
+                    </li>
+                    <li><a id="toggledoble" href="#"
+                            onclick="showPackageContainer('paquetesTriplePlay','paquetesDoblePlay','toggletriple','toggledoble');">Dobleplay</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row selectorPaquetesTituloUnbox">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <p>Ahorra tiempo y dinero incluyendo <strong>Internet + TV y Apps + Telefonía <span>+ Amazon
+                            Prime</span></strong> en el mismo paquete.</p>
+            </div>
+        </div>
+        <div id="paquetesTriplePlay" class="row triplePlayContainer">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <div class="row" id="ctnPaquetesTripleplay">
+                    
+                </div>
+                <div id="showMoreRegularTriple" class="row botonMostrarMas">
+                    <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6 mx-auto">
+                        <a href="#" class="generalButton"
+                            onclick="showMorePackages('hiddenPackageTriple', 'showMoreRegularTriple', 'showLessRegularTriple')">Mostrar
+                            más paquetes</a>
+                    </div>
+                </div>
+                <div id="showLessRegularTriple" class="row botonMostrarMas" style="display: none;">
+                    <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6 mx-auto">
+                        <a href="#" class="generalButton"
+                            onclick="showLessPackages('hiddenPackageTriple', 'showMoreRegularTriple', 'showLessRegularTriple')">Mostrar
+                            menos paquetes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="paquetesDoblePlay" class="row triplePlayContainer" style="display: none">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <div class="row" id="ctnPaquetesDobleplay">
+                    
+                </div>
+                <div id="showMoreRegularDoble" class="row botonMostrarMas">
+                    <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6 mx-auto">
+                        <a href="#" class="generalButton"
+                            onclick="showMorePackages('hiddenPackageDoble', 'showMoreRegularDoble', 'showLessRegularDoble')">Mostrar
+                            más paquetes</a>
+                    </div>
+                </div>
+                <div id="showLessRegularDoble" class="row botonMostrarMas" style="display: none;">
+                    <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6 mx-auto">
+                        <a href="#" class="generalButton"
+                            onclick="showLessPackages('hiddenPackageDoble', 'showMoreRegularDoble', 'showLessRegularDoble')">Mostrar
+                            menos paquetes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row iftRow">
+            <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6 mx-auto">
+                <a href="#">Tarifas registradas en IFT</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="row unboxCarousel">
+    <div class="col-12 col-sm-12 col-md-11 col-lg-10 col-xl-10 mx-auto">
+        <div class="row carouselTitles">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <h1>Disfruta de todas nuestras ventajas</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10 mx-auto">
+                <div id="unboxCarouselContainer" class="row carouselContainer">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 itemCarousel">
+                        <div class="row align-items-center">
+                            <div class="col-s12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-none d-sm-none d-md-block">
+                                <h1>Envios gratis</h1>
+                                <p>Recibe envíos GRATIS y rápidos, sin mínimo de compra en Amazon México.</p>
+                            </div>
+                            <div class="col-s12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-none d-sm-none d-md-block">
+                                <img src="../assets/img/nuevos/sliders/unbox3.png">
+                            </div>
+                            <div class="col-s12 col-sm-12 d-block d-sm-block d-md-none">
+                                <img src="../assets/img/nuevos/sliders/unbox3.png">
+                            </div>
+                            <div class="col-s12 col-sm-12 d-block d-sm-block d-md-none">
+                                <h1>Envios gratis</h1>
+                                <p>Recibe envíos GRATIS y rápidos, sin mínimo de compra en Amazon México.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 itemCarousel">
+                        <div class="row align-items-center">
+                            <div class="col-s12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-none d-sm-none d-md-block">
+                                <h1>Tu música sin anuncios</h1>
+                                <p>Disfruta dos millones de canciones con Amazon Music, incluido en tu membresia de
+                                    Amazon Prime.</p>
+                            </div>
+                            <div class="col-s12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-none d-sm-none d-md-block">
+                                <img src="../assets/img/nuevos/sliders/unbox2.png">
+                            </div>
+                            <div class="col-s12 col-sm-12 d-block d-sm-block d-md-none">
+                                <img src="../assets/img/nuevos/sliders/unbox2.png">
+                            </div>
+                            <div class="col-s12 col-sm-12 d-block d-sm-block d-md-none">
+                                <h1>Tu música sin anuncios</h1>
+                                <p>Disfruta dos millones de canciones con Amazon Music, incluido en tu membresia de
+                                    Amazon Prime.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 itemCarousel">
+                        <div class="row align-items-center">
+                            <div class="col-s12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-none d-sm-none d-md-block">
+                                <h1>Ahora tu voz es el control</h1>
+                                <p>Cambia de canal, busca tus programas favoritos y mucho más con la Skill de Totalplay
+                                    en Alexa.</p>
+                            </div>
+                            <div class="col-s12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-none d-sm-none d-md-block">
+                                <img src="../assets/img/nuevos/sliders/unbox1.png">
+                            </div>
+                            <div class="col-s12 col-sm-12 d-block d-sm-block d-md-none">
+                                <img src="../assets/img/nuevos/sliders/unbox1.png">
+                            </div>
+                            <div class="col-s12 col-sm-12 d-block d-sm-block d-md-none">
+                                <h1>Ahora tu voz es el control</h1>
+                                <p>Cambia de canal, busca tus programas favoritos y mucho más con la Skill de Totalplay
+                                    en Alexa.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="row termsAndConditions">
+    <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 mx-auto">
+        <hr>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <p><span>Términos y condiciones</span></p>
+                <p>Consulta terminos y condiciones de los paquetes, características, servicios adicionales y docuemntos
+                    relacionados <a href="#">aquí</a>.</p>
+                <p>Para navegar a la máxima velocidad de descarga contratada, se recomienda conectarse vía alámbrica
+                    utilizando un cable ethernet. Las velocidades de transferencia de internet se ofrecen hasta la
+                    velocidad indicada y pueden variar debido al tráfico y transferencia de datos fuera de la red de
+                    totalplay. Las velocidades de carga varían en los planes debido a que el servicio de internet es
+                    asimétrico: para planes tripleplay y dobleplay inicial 1mbps, esencial 3mbps, básico 6mbps, práctico
+                    8mbps, familiar 10mbps, total 20mbps, premium 30mbps y sin límite 50mbps.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{> modalesIndex}}

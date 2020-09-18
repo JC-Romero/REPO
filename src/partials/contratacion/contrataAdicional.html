@@ -1,12 +1,312 @@
 <style type="text/css">
-    .slick-prev:before,
+    /*
     .slick-next:before {
-        font-family: 'slick';
-        font-size: 20px;
-        line-height: 1;
+    .slick-prev:before,
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 1;
+    color: #3b4559;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    }
+    */
+    .optionContainer {
+        width: 100%;
+    }
+
+    .rowModalBottom {
+        width: 100%;
+        text-align: center;
+    }
+
+    .rowModalBottom h1 {
+        font-family: Montserrat-Regular;
+        font-size: 28px;
         color: #3b4559;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
+        line-height: 42px;
+        padding: 0 15px;
+    }
+
+    .rowModalBottom p {
+        font-family: Montserrat-Regular;
+        font-size: 18px;
+        color: #3b4559;
+        line-height: 24px;
+        padding: 0 15px;
+    }
+
+    .rowModalBottom .flex-container {
+        max-width: 840px;
+        width: 100%;
+        list-style-type: none;
+        margin: 20px auto;
+        padding: 0;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    .rowModalBottom .flex-container .item {
+        height: 328px;
+        width: 232px;
+        font-size: 20px;
+        text-align: center;
+        color: rgba(117, 120, 123, 1);
+        margin: 5px 16px;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 1);
+        text-align: center;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .complementsContainer .flex-container .item {
+        box-shadow: none;
+        background: rgba(255, 255, 255, 0);
+        height: 298px;
+        width: 212px;
+    }
+
+    .complementsContainer .flex-container .item.selected .overlapComplement::after {
+        border-radius: 8px;
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: block;
+        left: 0;
+        background: rgba(255, 255, 255, 0.5);
+        top: 0;
+    }
+
+    .complementsContainer .flex-container .item .imageComplement {
+        height: 272px;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .complementsContainer .flex-container .item .imageComplement:after {
+        border-radius: 4px;
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: block;
+        left: 0;
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e5799+0,1e1e28+50,1e1e28+100&0+0,1+50,1+100 */
+        background: -moz-linear-gradient(top,
+                rgba(30, 87, 153, 0) 0%,
+                rgba(30, 30, 40, 1) 75%,
+                rgba(30, 30, 40, 1) 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(top,
+                rgba(30, 87, 153, 0) 0%,
+                rgba(30, 30, 40, 1) 75%,
+                rgba(30, 30, 40, 1) 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom,
+                rgba(30, 87, 153, 0) 0%,
+                rgba(30, 30, 40, 1) 75%,
+                rgba(30, 30, 40, 1) 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#001e5799', endColorstr='#1e1e28', GradientType=0);
+        /* IE6-9 */
+        z-index: 10;
+        top: -230px;
+    }
+
+    .complementsContainer .flex-container .item .imageComplement img {
+        height: auto;
+        min-width: 150%;
+        position: relative;
+        top: 0;
+        z-index: 0;
+        left: -48px;
+    }
+
+    .complementsContainer .flex-container .item .overlapComplement {
+        height: 199px;
+        width: 192px;
+        margin: 0 auto;
+        background: #fff;
+        position: relative;
+        top: -175px;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+        z-index: 11;
+        border-radius: 8px;
+    }
+
+    .complementsContainer .flex-container .item .overlapComplement img {
+        height: auto;
+        width: 124px;
+        margin: 0 auto;
+        position: relative;
+        top: 4px;
+    }
+
+    .complementsContainer .flex-container .item .overlapComplement h1 {
+        font-family: Montserrat-Bold;
+        font-size: 18px;
+        line-height: 25px;
+        color: rgba(59, 69, 89, 1);
+    }
+
+    .complementsContainer .flex-container .item .overlapComplement p {
+        font-family: Montserrat-Regular;
+        font-size: 16px;
+        line-height: 30px;
+        color: rgba(117, 120, 123, 1);
+    }
+
+    .complementsContainer .flex-container .item .overlapComplement p.price {
+        font-family: Montserrat-Regular;
+        font-size: 14px;
+        line-height: 18px;
+        color: rgba(241, 108, 0, 1);
+        border: rgba(241, 108, 0, 1) solid 1px;
+        display: inline-block;
+        padding: 4px 7px 6px 7px;
+        border-radius: 4px;
+    }
+
+    .addedItem {
+        color: rgba(25, 138, 255, 1) !important;
+    }
+
+    .channelsContainer .addedItem {
+        top: -66px;
+        position: relative;
+        display: none;
+    }
+
+    .complementsContainer .addedItem {
+        top: 5px;
+        position: relative;
+        display: none;
+    }
+
+    .boxesContainer .addedItem {
+        top: -90px;
+        position: relative;
+        display: none;
+    }
+
+    .channelsContainer .flex-container .item {
+        padding-top: 53px;
+        width: 200px;
+        min-height: 216px;
+        max-height: 216px;
+        background: rgba(250, 250, 250, 1);
+    }
+
+    .channelsContainer .flex-container .item h1 {
+        height: 22px;
+        font-family: Montserrat-Bold;
+        font-size: 18px;
+        color: #3b4559;
+        line-height: 18px;
+        margin-bottom: 4px;
+    }
+
+    .channelsContainer .flex-container .item p {
+        font-family: Montserrat-Regular;
+        font-size: 16px;
+        color: #75787b;
+        line-height: 24px;
+        margin-bottom: 45px;
+    }
+
+    .channelsContainer .flex-container .item hr {
+        width: 75%;
+        margin: 0 auto;
+        margin-bottom: 23px;
+        margin-top: 14px;
+    }
+
+    .channelsContainer .flex-container .item .price {
+        font-family: Montserrat-Regular;
+        font-size: 16px;
+        color: #3b4559;
+        line-height: 16px;
+    }
+
+    .boxesContainer .flex-container .item {
+        padding-top: 25px;
+        padding-bottom: 25px;
+        height: 286px;
+        width: 200px;
+    }
+
+    .boxesContainer .flex-container .item img {
+        max-width: 112px;
+        max-height: 64px;
+        margin-bottom: 19px;
+    }
+
+    .boxesContainer .flex-container .item h1 {
+        font-family: Montserrat-Bold;
+        font-size: 18px;
+        height: 44px;
+        color: #3b4559;
+        line-height: 18px;
+        text-align: center;
+        margin-bottom: 8px;
+    }
+
+    .boxesContainer .flex-container .item p {
+        font-family: Montserrat-Regular;
+        font-size: 14px;
+        color: #75787b;
+        height: 72px;
+        line-height: 1.57;
+        text-align: center;
+        margin-bottom: 11px;
+    }
+
+    .boxesContainer .flex-container .item .price {
+        font-family: Montserrat-Regular;
+        font-size: 16px;
+        color: #3b4559;
+        line-height: 16px;
+    }
+
+    .channelsContainer,
+    .complementsContainer,
+    .boxesContainer {
+        display: none;
+    }
+
+    .container-edit--addon {
+        display: none;
+    }
+
+    .buttonModalContainer a {
+        color: rgba(255, 255, 255, 1);
+        background: rgba(25, 138, 255, 1);
+        padding-top: 10px;
+        padding-bottom: 10px;
+        position: absolute;
+        bottom: 0;
+        font-size: 18px;
+        width: 100%;
+        font-family: Montserrat-Regular;
+        display: block;
+    }
+
+    @media (max-width: 767.98px) {
+        .buttonModalContainer a {
+            position: relative;
+        }
+    }
+
+    @media (max-width: 991.98px) {
+
+        .channelsContainer .flex-container,
+        .complementsContainer .flex-container,
+        .boxesContainer .flex-container {
+            padding-bottom: 0 !important;
+        }
     }
 </style>
 <section class="container-edit--addon">
@@ -14,16 +314,149 @@
     <div class="container-edit--addon__content" style="overflow-y: auto">
         <!-- contenido dinamico -->
         <span class="addon--content-close"></span>
-        <div class="addon--content-description">
-
+        <!--Canales-->
+        <div id="channelsSelection" class="optionContainer channelsContainer">
+            <div class="rowModalBottom">
+                <h1>Agrega un paquete de canales</h1>
+                <p>Este paquete ya incluye 80 canales, 21 en HD</p>
+            </div>
+            <div class="rowModalBottom">
+                <ul class="flex-container" id="ctnParrillas">
+                    
+                </ul>
+            </div>
+            <div class="rowModalBottom buttonModalContainer">
+                <a id="confirmChannels" class="" data-id="" data-precio="">Confirmar selección</a>
+            </div>
         </div>
-        <div class="addon--content-dinamic">
-
+        <!--Canales-->
+        <!--Complementos-->
+        <div id="complementsSelection" class="optionContainer complementsContainer">
+            <div class="rowModalBottom">
+                <h1>Elige tu beneficio por promoción</h1>
+                <p>Elige una experiencia premium de entretenimiento sin costo x 3 meses.</p>
+            </div>
+            <div class="rowModalBottom">
+                <ul id="complementsCarousel" class="flex-container">
+                    <li class="item ctnPromocion" id="contenedorHBOCambio">
+                        <div class="imageComplement">
+                            <img src="/assets/img/pages/contratacion/Canales_1.png">
+                        </div>
+                        <div class="overlapComplement">
+                            <div class="imageOverlap">
+                                <img src="/assets/img/pages/contratacion/hbo-holding.png">
+                            </div>
+                            <div class="titlesOverlap">
+                                <h1>HBO</h1>
+                                <p>Canales + App</p>
+                                <p class="price">Sin costo x 3 meses</p>
+                                <p class="addedItem">Agregado</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item ctnPromocion" id="contenedorFOXCambio">
+                        <div class="imageComplement">
+                            <img src="/assets/img/pages/contratacion/Canales_2.png">
+                        </div>
+                        <div class="overlapComplement">
+                            <div class="imageOverlap">
+                                <img src="/assets/img/pages/contratacion/LogoFox.png">
+                            </div>
+                            <div class="titlesOverlap">
+                                <h1>Fox Premium</h1>
+                                <p>Canales + App</p>
+                                <p class="price">Sin costo x 3 meses</p>
+                                <p class="addedItem">Agregado</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="rowModalBottom buttonModalContainer">
+                <a id="confirmComplements" class="" data-id="">Confirmar selección</a>
+            </div>
         </div>
+        <!--Complementos-->
+        <!--Premium-->
+        <div id="premiumSelection" class="optionContainer complementsContainer">
+            <div class="rowModalBottom">
+                <h1>Apps y canales premium</h1>
+                <p>Agrega apps y canales adicionales con cargo a tu estado de cuenta.</p>
+            </div>
+            <div class="rowModalBottom">
+                <ul id="complementsCarousel" class="flex-container">
+                    <li class="item cntAppAdicional" id="contenedorHBOApp" data-id="a0fQ0000003BWYSIA4">
+                        <div class="imageComplement">
+                            <img src="/assets/img/pages/contratacion/Canales_1.png">
+                        </div>
+                        <div class="overlapComplement">
+                            <div class="imageOverlap">
+                                <img src="/assets/img/pages/contratacion/hbo-holding.png">
+                            </div>
+                            <div class="titlesOverlap">
+                                <h1>HBO</h1>
+                                <p>Canales + App</p>
+                                <p class="price">$ 175</p>
+                                <p class="addedItem">Agregado</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item cntAppAdicional" id="contenedorHBOApp" data-id="a0fQ0000003BWXVIA4">
+                        <div class="imageComplement">
+                            <img src="/assets/img/pages/contratacion/Canales_2.png">
+                        </div>
+                        <div class="overlapComplement">
+                            <div class="imageOverlap">
+                                <img src="/assets/img/pages/contratacion/LogoFox.png">
+                            </div>
+                            <div class="titlesOverlap">
+                                <h1>Fox Premium</h1>
+                                <p>Canales + App</p>
+                                <p class="price">$ 169</p>
+                                <p class="addedItem">Agregado</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="rowModalBottom buttonModalContainer">
+                <a id="confirmPremium" class="">Confirmar selección</a>
+            </div>
+        </div>
+        <!--Premium-->
+        <!--Boxes-->
+        <div id="boxesSelection" class="optionContainer boxesContainer">
+            <div class="rowModalBottom">
+                <h1>Agrega un equipo</h1>
+                <p>¿TV adicional o Internet? ¡Que tal ambos! en un solo dispositivo adicional.</p>
+            </div>
+            <div class="rowModalBottom">
+                <ul class="flex-container">
+                    <li class="item">
+                        <img src="../../assets/img/nuevos/extender@2x.png">
+                        <h1>WIFI EXTENDER</h1>
+                        <p>Disfruta tu conexión en cada espacio de tu hogar</p>
+                        <p class="price">+ <span>$148</span> al mes</p>
+                        <p class="addedItem">Agregado</p>
+                    </li>
+                    <li class="item">
+                        <img src="../../assets/img/nuevos/adicionales-tv-adicional.png">
+                        <h1>TV ADICIONAL.</h1>
+                        <p>Disfruta de los mejores canales donde mas desees</p>
+                        <p class="price">+ <span>$109</span> al mes</p>
+                        <p class="addedItem">Agregado</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="rowModalBottom buttonModalContainer">
+                <a id="confirmBoxes" href="#" class="">Confirmar selección </a>
+            </div>
+        </div>
+        <!--Boxes-->
+        <div class="addon--content-description" style="display: none !important;"></div>
+        <div class="addon--content-dinamic" style="display: none !important;"></div>
         <div class="addon--content-barAdd">
-            <p class="addon--content-barAdd__text">
-                Confirmar adicionales
-            </p>
+            <p class="addon--content-barAdd__text"></p>
         </div>
     </div>
 </section>

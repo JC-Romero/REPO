@@ -5,6 +5,7 @@ import {ClaseCobertura} from "./pages/generales/ClaseCobertura";
 import {Cobertura} from "./pages/generales/Cobertura";
 import {CoberturaSugerencias} from "./pages/generales/CoberturaSugerencias";
 import {Menu} from "./pages/generales/Menu"
+import {CargaCiudades} from "./pages/generales/CargaCiudades"
 import {Experiencia} from "./pages/generales/Experiencia"
 import {eventosIPTV} from "./pages/generales/eventosIPTV"
 
@@ -59,14 +60,30 @@ if (RutasMatch(path, url.index)) {
 }
 
 if (RutasMatch(path, url.paquetes)) {
-	var hashlo=window.location.hash;
-	var parametro=0;
-	if(hashlo!="")parametro=hashlo.replace("#",'');
-	const paquetes=new Paquetes();
-	paquetes.init();
-	const paqueteseven=new PaquetesEventos(parametro);
-	const carruselPromociones  = new PromocionesCarrusel( '.promotions-list-cards__content--left', '.promotions-list-cards__content--right' );
+	//var hashlo=window.location.hash;
+	//var parametro=0;
+	//if(hashlo!="")parametro=hashlo.replace("#",'');
+	//const paquetes=new Paquetes();
+	//paquetes.init();
+	//const paqueteseven=new PaquetesEventos(parametro);
+	//const carruselPromociones  = new PromocionesCarrusel( '.promotions-list-cards__content--left', '.promotions-list-cards__content--right' );
 }
+
+if(RutasMatch(path,url.match)){
+	const paq = new Paquetes();
+    paq.cargarPaquetes("match");
+}
+
+if(RutasMatch(path,url.regular)){
+	const paq = new Paquetes();
+    paq.cargarPaquetes("regular");
+}
+
+if(RutasMatch(path,url.unbox)){
+	const paq = new Paquetes();
+    paq.cargarPaquetes("unbox");
+}
+
 if (RutasMatch(path, url.detallepaquete)) {
 	const detallePaquete=new DetallePaquete('resumePackage', 'resumeInfo');
 	const canales=new Canales('modalChannels', 'openChannels', true);
@@ -143,4 +160,5 @@ if (RutasMatch(path, url.tunein)) {
 }
 
 const menu = new Menu();
+const cargaciudades = new CargaCiudades();
 

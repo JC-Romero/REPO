@@ -57,7 +57,8 @@ export class DetallePaquete {
             this.pintarDetallePaquete();
             this.obtenerComplementos();
         } catch (error) {
-            window.location = "paquetes.html";
+            console.log('ERROR:', error);
+            //window.location = "paquetes.html";
         }
     }
 
@@ -494,22 +495,30 @@ export class DetallePaquete {
     obtenerComplementos() {
         var referenciaClase = this;
 
-        
+        var parametros = {
+            "idPlan": referenciaClase.props.infoPaquete.idPaquete,
+            "plaza": "CIUDAD DE MEXICO",
+            "estimuloFiscal": false
+        };
+        console.log('', 'INVOCANDO EL SERVICIO [obtener-complementos]');
 
         $('#btn_transparentLinkDetailPaq').html('<i class="fas fa-circle-notch fa-spin" style="color: #1a76d2;"></i>');
 
         $.ajax({
             url: Constantes.endpoints.obtenerComplementos,
+            data: JSON.stringify(parametros),
             dataType: "json",
+            type: 'POST'
         }).done(function (respuesta) {
             console.log('RESPUESTA DE COMPLEMENTOS');
             console.log(respuesta);
 
+            let arregloGarantia = respuesta.datos.infoAddons.costoGarantiaAdd.productos;
             let arregloPromociones = respuesta.datos.infoAddons.promocionesAdd.promociones;
             let arregloProductos = respuesta.datos.infoAddons.productosAdd.productos;
             let arregloServicios = respuesta.datos.infoAddons.serviciosAdd.servicios;
 
-            referenciaClase.buscarInfoComplementos(arregloPromociones,arregloProductos,arregloServicios);
+            referenciaClase.buscarInfoComplementos(arregloPromociones,arregloProductos,arregloServicios, arregloGarantia);
 
             referenciaClase.pintarPromociones(respuesta.datos.infoAddons.promocionesAdd.promociones)
 
@@ -656,16 +665,19 @@ export class DetallePaquete {
         }
     }
 
-    buscarInfoComplementos(arregloPromociones, arregloProductos,arregloServicios){
+    buscarInfoComplementos(arregloPromociones, arregloProductos,arregloServicios, arregloGarantia){
         let objetoComplementos = {};
         let arregloPromocion = new Array();
-        $.each(arregloPromociones, function (key, objetoPromociones) {
-            if (objetoPromociones.adicionalProductoNombre == "FOX PREMIUM.") {
+        //$.each(arregloPromociones, function (key, objetoPromociones) {
+        $.each(arregloProductos[0].adicional, function (key, objetoPromociones) {
+            //let nombrePromocion = objetoPromociones.adicionalProductoNombre;
+            let nombrePromocion = objetoPromociones.nombre;
+            if (nombrePromocion == "FOX PREMIUM.") {
                 objetoPromociones.tipo = 'PROMO_FOX';
                 arregloPromocion.push(objetoPromociones);
             }
 
-            if (objetoPromociones.adicionalProductoNombre == "HBO MAX TP") {
+            if (nombrePromocion == "HBO MAX") {
                 objetoPromociones.tipo = 'PROMO_HBO';
                 arregloPromocion.push(objetoPromociones);
             }
@@ -687,11 +699,11 @@ export class DetallePaquete {
         let arregloEquipoAdicional = new Array();
         let arregloTelefonia = new Array();
         $.each(arregloServicios, function (key, objetoServicio) {
-            if (objetoServicio.nombre == 'WIFI EXTENDER' || objetoServicio.nombre == 'Wifi Extender') {
+            if (objetoServicio.nombre == 'WIFI EXTENDER 89' || objetoServicio.nombre == 'Wifi Extender') {
                 objetoServicio.tipo = 'ADDON_WIFI';
                 arregloEquipoAdicional.push(objetoServicio);
             }
-            if (objetoServicio.nombre == 'TV ADICIONAL.' || objetoServicio.nombre == 'Television Adicional.') {
+            if (objetoServicio.nombre == 'TV ADICIONAL.' || objetoServicio.nombre == 'Television Adicional 129') {
                 objetoServicio.tipo = 'ADDON_TV_ADCIONAL';
                 arregloEquipoAdicional.push(objetoServicio);
             }
@@ -703,6 +715,18 @@ export class DetallePaquete {
 
         objetoComplementos.equipoAdicional = arregloEquipoAdicional;
         objetoComplementos.telefonia = arregloTelefonia;
+
+        let costoIntalacion = 0;
+
+        $.each(arregloGarantia, function (key, objetoGarantia,) {
+            if(objetoGarantia.Agrupacion == 'Costo y Garantia'){
+                $.each(objetoGarantia.adicional, function (index, objetoAdicional) {
+                    costoIntalacion += objetoAdicional.precio;
+                });
+            }
+        });
+
+        objetoComplementos.costoinstalacion = costoIntalacion;
 
         localStorage.setItem("TP_STR_COMPLEMENTOS", JSON.stringify(objetoComplementos));
 

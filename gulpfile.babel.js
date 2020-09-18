@@ -129,6 +129,11 @@ gulp.task('scripts-nuevo-maquetado', () => {
   .pipe(gulp.dest('./public/assets/js/nuevos/'))
 })
 
+gulp.task('scripts-integracion', () => {
+  gulp.src('./src/assets/js/integracion/*.js')
+  .pipe(gulp.dest('./public/assets/js/integracion/'))
+})
+
 gulp.task('scripts-build', () =>
   browserify('./src/js/index.js')
     .transform(babelify, {
@@ -185,7 +190,7 @@ gulp.task('assets', () => {
 })
 
 
-gulp.task('dev', ['styles-dev', 'pages', 'scripts-dev', 'scripts-nuevo-maquetado', 'images-dev','assets','styles-dev-2', 'styles-nuevo-maquetado', 'seo'], () => {
+gulp.task('dev', ['styles-dev', 'pages', 'scripts-dev', 'scripts-nuevo-maquetado', 'scripts-integracion','images-dev','assets','styles-dev-2', 'styles-nuevo-maquetado', 'seo'], () => {
   server.init({
     server: {
       baseDir: './public'
@@ -196,6 +201,7 @@ gulp.task('dev', ['styles-dev', 'pages', 'scripts-dev', 'scripts-nuevo-maquetado
   watch('./src/assets/css/**/**', () => gulp.start('styles-dev-2', server.reload))
   watch('./src/assets/css/nuevos/**', () => gulp.start('styles-nuevo-maquetado', server.reload))
   watch('./src/assets/js/nuevos/**', () => gulp.start('scripts-nuevo-maquetado', server.reload))
+  watch('./src/assets/js/integracion/**', () => gulp.start('scripts-integracion', server.reload))
   watch('./src/assets/css/seo/**', () => gulp.start('seo', server.reload))
   watch('./src/js/**/**', () => gulp.start('scripts-dev', server.reload))
   watch('./src/assets/img/**/**', () => gulp.start('images-dev'))

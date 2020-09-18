@@ -357,19 +357,19 @@
                         <div class="radioButtonsContainer" style="width: 100%; margin-bottom: 16px">
                             <div class="radioButtonItem">
                                 <label class="container">
-                                    <input type="radio" name="radio">
+                                    <input type="radio" name="documento" value="1">
                                     <span class="checkmark"></span>INE
                                 </label>
                             </div>
                             <div class="radioButtonItem">
                                 <label class="container">
-                                    <input type="radio" name="radio">
+                                    <input type="radio" name="documento" value="2">
                                     <span class="checkmark"></span>Pasaporte
                                 </label>
                             </div>
                             <div class="radioButtonItem">
                                 <label class="container">
-                                    <input type="radio" name="radio">
+                                    <input type="radio" name="documento" value="3">
                                     <span class="checkmark"></span>Cedula Profesional
                                 </label>
                             </div>
@@ -395,21 +395,21 @@
                             <i class="fas fa-trash-alt" id="eliminarIdentificacion"
                                 style="display: none;cursor: pointer;color: #1A76D2;"></i>
                         </div>
-                        <input type="file" id="inputFileINE" style="display:none" accept="image/jpeg,application/pdf" />
-                        <div class="pay-check-container" id="contenedorSubeArchivoINE"
-                            style="margin-top: 0; margin-bottom: 5px; border: 1px dashed #1A76D2; cursor: pointer;">
+                        <input type="file" id="inputFileINER" style="display:none" accept="image/jpeg,application/pdf" />
+                        <div class="pay-check-container" id="contenedorSubeArchivoINER"
+                            style="margin-top: 0; margin-bottom: 5px; border: 1px dashed #1A76D2; cursor: pointer;display: none;">
                             <i class="fas fa-upload"
                                 style="color: #1A76D2;display: inline;margin-right: 10px; cursor: pointer;"
                                 id="iconoSubeINE"></i>
-                            <span class="textoLegales" id="divArchivoIdentificacion"
+                            <span class="textoLegales" id="divArchivoIdentificacionR"
                                 style="color: #1A76D2;cursor: pointer;">
                                 Agrega tu documento adicional pdf o jpg. M&aacute;x. 5Mb.
                             </span>
                             <p class="text-danger" style="margin-top: 15px; margin-left: 32px; display: none;"
-                                id="errorArchivoINE">
+                                id="errorArchivoINER">
                                 *Archivo no válido
                             </p>
-                            <i class="fas fa-trash-alt" id="eliminarIdentificacion"
+                            <i class="fas fa-trash-alt" id="eliminarIdentificacionR"
                                 style="display: none;cursor: pointer;color: #1A76D2;"></i>
                         </div>
 
@@ -473,9 +473,6 @@
                                     style="font-size: 14px;">Aviso de Privacidad</a> y estoy de acuerdo con la <a
                                     href="#" class="text-blue-terms" style="font-size: 14px;">revisi&oacute;n de
                                     bur&oacute; de cr&eacute;dito</a>
-                                <!--<a href="#" class="text-blue-terms" style="font-size: 14px;">Contrato de
-                                    confidencial</a>&nbsp;y los&nbsp;
-                                de uso de Totalplay Telecomunicaciones.-->
                             </span>
                             <div id="checkLegales" class="pay-check"></div>
                         </div>
@@ -488,8 +485,8 @@
                             </span>
                             <div id="checkBuroCredito" class="pay-check"></div>
                         </div>
-                        <!-- TITULAR INFO-->
-                        <div class="pay-check-container" id="">
+                        <!-- TITULAR CHECK AUTORIZACION -->
+                        <div class="pay-check-container" id="contenedorCheckUsoInformacion">
                             <span class="textoLegalesInfoNew" style="font-size: 14px;">Autorizo el uso de mi
                                 información y datos personales para:
                                 <ul style="list-style: disc; padding-left: 15px; margin-top: 8px;">
@@ -503,7 +500,7 @@
                                         publicitarios.</li>
                                 </ul>
                             </span>
-                            <div id="checkLegales" class="pay-check"></div>
+                            <div id="checkUsoInformacion" class="pay-check"></div>
                         </div>
                     </div>
                     <!--FIN DOCUMENTOS-->
@@ -870,12 +867,12 @@
                         <div class="input__float" style="width: 100%">
 
                             <button type="button" class="btn__blue btnDeshabilitado" id="botonHorarioMatutino"
-                                disabled="" style="width: 100%;">
+                                disabled="">
                                 De 10 a 14 hrs.
                             </button>
 
                             <button type="button" class="btn__blue btnDeshabilitado" id="botonHorarioVespertino"
-                                disabled="" style="width: 100%;">
+                                disabled="">
                                 De 16 a 19 hrs.
                             </button>
                             <label style="top: -20px; font-size: 16px;" id="labelHorario">

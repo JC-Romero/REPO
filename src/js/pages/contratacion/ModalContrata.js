@@ -3,6 +3,7 @@ import * as Constantes from "../../utils/Constantes";
 import { TimelineMax } from "gsap";
 export class ModalContrata {
     constructor() {
+        
         this.props = {
             maincontainer: document.querySelector('.section-contratacion'),
             containerSteps: document.querySelector('.container-steps--contratacion'),
@@ -26,10 +27,18 @@ export class ModalContrata {
             contStep: 1,
             nip: '',
             dataUser: null,
-            lsgStorage: window.localStorage
+            lsgStorage: window.localStorage,
+            objFinaliza : null
         }
+
+        //this.listenerInputs();
+        //this.onkeypress();
+    }
+
+    continuar(){
         this.listenerInputs();
         this.onkeypress();
+        this.nextStep();
     }
 
     mostrarVentana() {
@@ -44,7 +53,8 @@ export class ModalContrata {
             opacity: 1,
             ease: "power4.out"
         })
-        this.nextStep();
+        //this.nextStep();
+        
     }
 
     mostrarVentanaContratacion() {
@@ -105,16 +115,16 @@ export class ModalContrata {
             }
 
             if (procesa) {
-
                 referenciaClase.iniciarObjetoPersona($('#email').val().trim(), $('#mobile').val().trim())
-
                 $('#titularCelular').val($('#mobile').val().trim());
                 $('#botonContinuar').attr('disabled', 'disabled');
                 $('.iconoContinuar').show();
 
-                referenciaClase.mostrarVentanaContratacion();
+                referenciaClase.generarCodigo($('#email').val().trim(), $('#mobile').val().trim());
+
+                /*referenciaClase.mostrarVentanaContratacion();
                 $('#botonContinuar').removeAttr('disabled');
-                $('.iconoContinuar').hide();
+                $('.iconoContinuar').hide();//*/
             }
         });
     }
@@ -125,7 +135,16 @@ export class ModalContrata {
         $("body").on('keyup', '.campoCodigo', function () {
             var campoNumero = parseInt($(this).attr('data-num'));
             if (campoNumero == 6) {
-                referenciaClase.endAnimation();
+                
+                let codigoContratacion = $('#nip_1').val()+$('#nip_2').val()+$('#nip_3').val()+$('#nip_4').val()+$('#nip_5').val()+$('#nip_6').val();
+                $('.contract__content-form__text').html('<i class="fas fa-circle-notch fa-spin"></i>');
+                referenciaClase.validarCodigo(codigoContratacion);//*/
+
+                /*referenciaClase.props.tl.to(referenciaClase.props.contentForm, 0.2, {opacity: 0,ease: "power4.out"
+                }).to(referenciaClase.props.layerModal, 0.2, {opacity: 0,ease: "power4.out",onComplete: referenciaClase.resetElements.bind(referenciaClase)});
+                console.log('referenciaClase.props.objFinaliza=>', referenciaClase.props.objFinaliza);
+                referenciaClase.props.objFinaliza = new FinalizaContratacion(false);
+                referenciaClase.props.objFinaliza.ejecutarEnvioLead();//*/
 
             } else {
                 campoNumero++;
@@ -171,9 +190,8 @@ export class ModalContrata {
         this.props.step_2.removeAttribute('style');
         this.props.listInputs.map(item => item.value = '');
         this.props.modalContract.style.display = 'none';
-        setTimeout(() => {
-            this.nextStep();
-        }, 500)
+        //setTimeout(() => {this.nextStep();}, 500)
+        console.log('RESET ELEMENT TERMINADO');
     }
 
     setText(_title, _description) {
@@ -224,7 +242,7 @@ export class ModalContrata {
             this.props.stepItem[2].removeAttribute('style');
         }
 
-        const finalizaContratacion = new FinalizaContratacion();
+        const finalizaContratacion = new FinalizaContratacion(true);
     }
 
     esVacio(valor) {
@@ -268,12 +286,118 @@ export class ModalContrata {
     }
 
     iniciarObjetoPersona(correoElectronico, numeroTelefonico) {
-        let objetoCliente = {
+        /*let objetoCliente = {
             "correoElectronico": correoElectronico,
             "numeroTelefonico": numeroTelefonico,
         }
+        localStorage.setItem('TP_STR_CLIENTE', JSON.stringify(objetoCliente));*/
 
-        localStorage.setItem('TP_STR_CLIENTE', JSON.stringify(objetoCliente));
+        let cadenaCliente= localStorage.getItem('TP_STR_CLIENTE');
+        
+        try {
+            let objetoCliente = JSON.parse(cadenaCliente);
+            let memoria = {
+                "correoElectronico": correoElectronico,
+                "numeroTelefonico": numeroTelefonico,
+                "titular": objetoCliente.titular,
+                "pago": objetoCliente.pago
+            }
 
+            localStorage.setItem('TP_STR_CLIENTE', JSON.stringify(memoria));
+            console.log('OBJETO CLIENTE ACTUALIZADO');
+        } catch (error) {
+            console.log('ERROR AL ACTUALIAR EL OBJETO CLIENTE CON TITULAR POR:', error);
+        }
+
+    }
+
+    generarCodigo(correoElectronico, numeroTelefonico){
+        var referenciaClase = this;
+        var parametros = {
+            "correoElectronico": correoElectronico,
+            "numeroTelefonico": numeroTelefonico,
+        };
+
+        $.ajax({
+            url: Constantes.endpoints.generarCodigoC,
+            data: JSON.stringify(parametros),
+            dataType: "json",
+            type: 'POST'
+        }).done(function(respuesta) {
+            console.log('RESPUESTA DE COMPLEMENTOS');
+            console.log(respuesta);
+            $('.contract__content-form__text').html('Enviar de nuevo');
+
+            $('#botonContinuar').removeAttr('disabled');
+            $('.iconoContinuar').hide();
+
+            if(respuesta.codigo == 0){
+                //localStorage.setItem('TP_EMAIL_CONTRATO', correoElectronico);
+                referenciaClase.mostrarVentanaContratacion();
+            }
+        }).fail(function(jqXHR, textStatus) {
+            console.log('OCURRIO ALGO INESPERADO EN EL SERVICIO DE GENERAR CODIGO');
+            console.log(jqXHR);
+            $('#botonContinuar').removeAttr('disabled');
+            $('.iconoContinuar').hide();
+            $('.contract__content-form__text').html('Enviar de nuevo');
+        });
+    }
+
+    validarCodigo(codigoContratacion){
+        var referenciaClase = this;
+        
+        var parametros = {
+            "codigoContratacion": codigoContratacion
+        };
+
+        $.ajax({
+            url: Constantes.endpoints.validarCodigoC,
+            data: JSON.stringify(parametros),
+            dataType: "json",
+            type: 'POST'
+        }).done(function(respuesta) {
+            console.log('RESPUESTA DE COMPLEMENTOS');
+            console.log(respuesta);
+
+            if(respuesta.codigo == 0){
+
+                //referenciaClase.endAnimation();
+                referenciaClase.props.tl.to(referenciaClase.props.contentForm, 0.2, {
+                    opacity: 0,
+                    ease: "power4.out"
+                }).to(referenciaClase.props.layerModal, 0.2, {
+                    opacity: 0,
+                    ease: "power4.out",
+                    onComplete: referenciaClase.resetElements.bind(referenciaClase)
+                });
+                //window.scrollTo(0, 0);
+                referenciaClase.props.objFinaliza = new FinalizaContratacion(false);
+                referenciaClase.props.objFinaliza.ejecutarEnvioLead();
+            }else{
+                $('.contract__content-form__text').html('Enviar de nuevo');
+                
+                referenciaClase.props.cont = 0;
+                $('#nip_1').val('');
+                $('#nip_2').val('');
+                $('#nip_3').val('');
+                $('#nip_4').val('');
+                $('#nip_5').val('');
+                $('#nip_6').val('');
+                $('#nip_1').focus();
+            }
+        }).fail(function(jqXHR, textStatus) {
+            console.log('OCURRIO ALGO INESPERADO EN EL SERVICIO DE COMPLEMENTOS');
+            console.log(jqXHR);
+            $('.contract__content-form__text').html('Enviar de nuevo');
+            referenciaClase.props.cont = 0;
+            $('#nip_1').val('');
+            $('#nip_2').val('');
+            $('#nip_3').val('');
+            $('#nip_4').val('');
+            $('#nip_5').val('');
+            $('#nip_6').val('');
+            $('#nip_1').focus();
+        });
     }
 }

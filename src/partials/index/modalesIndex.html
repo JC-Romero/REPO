@@ -97,8 +97,8 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-12 col sm-12 col-md-12 col-lg-12 col-xl-12">
-                        <video src="{{root}}assets/media/FibraVideoLow.mp4" type="video/mp4" class="embed-responsive"
-                            autoplay muted loop controls="true"></video>
+                        <video src="{{root}}assets/media/FibraVideo_Big.mp4" type="video/mp4" class="embed-responsive"
+                            autoplay controls="true"></video>
                     </div>
                 </div>
             </div>
@@ -160,6 +160,103 @@
         </div>
     </div>
 </div>
+<div class="modal callUsModalContainer" id="installLocation" tabindex="-1" role="dialog" aria-labelledby="callUsModal"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 offset-xl-1 offset-lg-1 offset-md-1 ">
+                        <p>Para continuar dinos…</p>
+                        <p>¿En dónde quieres que instalemos Totalplay?</p>
+                    </div>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img src="{{root}}/assets/img/nuevos/icons/closeIconSVGDark.svg">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 offset-xl-1 offset-lg-1 offset-md-1">
+                        <div class="mat-input-outer">
+                            <input type="text" autocomplete="off" minlength="5" maxlength="5" id="cpModal" class="solo-numeros" required />
+                            <label class="">Código postal</label>
+                            <div class="border"></div>
+                            <p class="text-danger txtdngcober" id="errorCodigoH"></p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                        <div class="mat-input-outer">
+                            <input id="calleModal" name="calleModal" type="text" autocomplete="off" required />
+                            <label class="">Calle y número exterior</label>
+                            <div class="border"></div>
+                            <p class="text-danger txtdngcober" id="errorCalleH"></p>
+                            <ul id="listDireccionesModal" class="pac-container"></ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" style="display: none;">
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 offset-xl-1 offset-lg-1 offset-md-1">
+                        <input id="ciudadModal" name="ciudadModal" type="text" autocomplete="off" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 d-flex">
+                        <a class="generalButton ml-auto" id="botonValidarCobertura">Validar cobertura</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal callUsModalContainer" id="continueLocation" tabindex="-1" role="dialog"
+    aria-labelledby="continueLocation" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 offset-xl-1 offset-lg-1 offset-md-1 ">
+                        <p class="successNotification">Calle No, Colonia, Delegacion, Ciudad.</p>
+                        <p>Complementa los datos de tu domicilio:</p>
+                    </div>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img src="{{root}}/assets/img/nuevos/icons/closeIconSVGDark.svg">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 offset-xl-1 offset-lg-1 offset-md-1">
+                        <div class="mat-input-outer">
+                            <input type="text" autocomplete="off" />
+                            <label class="">No. Interior/Depto</label>
+                            <div class="border"></div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                        <div class="mat-input-outer">
+                            <input type="text" autocomplete="off" />
+                            <label class="">Entre calle y calle</label>
+                            <div class="border"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row modalPackagesButton">
+                    <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 d-flex">
+                        <a class="generalButton ml-auto" disabled data-dismiss="modal">Ver paquetes <img
+                                src="{{root}}/assets/img/nuevos/icons/arrowForwardWhite.svg"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="modal fade modalCityPicker" id="cityPicker" tabindex="-1" role="dialog" aria-labelledby="modalCityPicker"
     aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
@@ -175,9 +272,9 @@
                         <div class="row citySearchBar">
                             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="citySearch">
+                                    <input type="text" class="form-control" id="citySearch" autocomplete="off">
                                     <div id="cityAutocomplete" class="autocompleteList">
-                                        <ul class="row">
+                                        <ul class="row" id="cityAutocompleteList">
                                             <li class="col-12"><a href="#">Ciudad de México</a></li>
                                             <li class="col-12"><a href="#">Ciudad de México</a></li>
                                             <li class="col-12"><a href="#">Ciudad de México</a></li>
@@ -186,9 +283,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row cityList">
+                        <div class="row cityList" id="cityList">
                             <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
-                                <p><a href="#">Ciudad de México</a></p>
+                                <p><a href="#" class="active">Ciudad de México</a></p>
                             </div>
                             <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 cityListItem">
                                 <p><a href="#">Ciudad de México</a></p>
@@ -243,96 +340,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal callUsModalContainer" id="installLocation" tabindex="-1" role="dialog" aria-labelledby="callUsModal"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="row">
-                    <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 offset-xl-1 offset-lg-1 offset-md-1 ">
-                        <p>Para continuar dinos…</p>
-                        <p>¿En dónde quieres que instalemos Totalplay?</p>
-                    </div>
-                </div>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <img src="{{root}}/assets/img/nuevos/icons/closeIconSVGDark.svg">
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 offset-xl-1 offset-lg-1 offset-md-1">
-                        <div class="mat-input-outer">
-                            <input type="text" autocomplete="off" minlength="5" maxlength="5" id="cpModal" class="solo-numeros" required />
-                            <label class="">Código postal</label>
-                            <div class="border"></div>
-                            <p class="text-danger txtdngcober" id="errorCodigoH"></p>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                        <div class="mat-input-outer">
-                            <input id="calleModal" name="calleModal" type="text" autocomplete="off" required />
-                            <label class="">Calle y número exterior</label>
-                            <div class="border"></div>
-                            <p class="text-danger txtdngcober" id="errorCalleH"></p>
-                            <ul id="listDireccionesModal" class="pac-container"></ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <div class="row">
-                    <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 d-flex">
-                        <a class="generalButton ml-auto" id="botonValidarCobertura">Quiero que me llamen</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal callUsModalContainer" id="continueLocation" tabindex="-1" role="dialog"
-    aria-labelledby="continueLocation" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="row">
-                    <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 offset-xl-1 offset-lg-1 offset-md-1 ">
-                        <p class="successNotification">Calle No, Colonia, Delegacion, Ciudad.</p>
-                        <p>Complementa los datos de tu domicilio:</p>
-                    </div>
-                </div>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <img src="{{root}}/assets/img/nuevos/icons/closeIconSVGDark.svg">
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 offset-xl-1 offset-lg-1 offset-md-1">
-                        <div class="mat-input-outer">
-                            <input type="text" autocomplete="off" />
-                            <label class="">No. Interior/Depto</label>
-                            <div class="border"></div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                        <div class="mat-input-outer">
-                            <input type="text" autocomplete="off" />
-                            <label class="">Entre calle y calle</label>
-                            <div class="border"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <div class="row modalPackagesButton">
-                    <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 d-flex">
-                        <a class="generalButton ml-auto" disabled data-dismiss="modal">Ver paquetes <img
-                                src="{{root}}/assets/img/nuevos/icons/arrowForwardWhite.svg"></a>
                     </div>
                 </div>
             </div>

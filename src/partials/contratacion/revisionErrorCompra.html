@@ -56,16 +56,23 @@
 
     function mostrarInformacion(){
         
-        var txtNombre = window.localStorage.getItem('TP_CLIENTE_NOMBRE');
-        var telefonoContacto = window.localStorage.getItem('TP_CLIENTE_TELEFONO');
-        var correoFolio = window.localStorage.getItem('TP_CLIENTE_CORREO');
-        var planSeleccionado = window.localStorage.getItem('TP_CLIENTE_PLAN');
-        
-        document.getElementById('txtNombre').innerHTML = txtNombre;
-        document.getElementById('txtTelefonoContacto').innerHTML = telefonoContacto;
-        document.getElementById('txtCorreoEnvio').innerHTML = correoFolio;
-        document.getElementById('txtPlan').innerHTML = planSeleccionado;
-        
-        //localStorage.clear();
+        try {
+            var infoVentaStr = window.localStorage.getItem('TP_VENTA');
+            var infoClienteStr = window.localStorage.getItem('TP_STR_CLIENTE');
+            var infoPaqueteStr = localStorage.getItem('TP_STR_PAQUETE_SELECCION');
+
+            var infoVentaObj = JSON.parse(infoVentaStr);
+            var infoClienteObj = JSON.parse(infoClienteStr);
+            var infoPaqueteObj = JSON.parse(infoPaqueteStr);
+
+            document.getElementById('txtNombre').innerHTML = infoClienteObj.titular.nombreCompleto;
+            document.getElementById('txtTelefonoContacto').innerHTML = infoClienteObj.numeroTelefonico;
+            document.getElementById('txtCorreoEnvio').innerHTML = infoClienteObj.correoElectronico;
+            document.getElementById('txtPlan').innerHTML = infoPaqueteObj.detallePaquete.nombre;
+            localStorage.clear();
+        } catch (error) {
+            console.log("ERROR EN MOSTRAR INFORMACION:", error);
+            localStorage.clear();
+        }
     }
 </script>
