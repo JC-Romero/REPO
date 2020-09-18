@@ -17,6 +17,14 @@ $(function () {
 var showMenu = function () {
     $("#mobile").fadeToggle(250);
 };
+var showChannels = function (e) {
+    $("#modalChannels").fadeIn(250);
+    event.preventDefault();
+};
+var hideChannels = function (e) {
+    $("#modalChannels").fadeOut(250);
+    event.preventDefault();
+};
 var hideMenu = function () {
     $("#mobile").hide();
 };
@@ -62,6 +70,17 @@ var showCollapsible = function (item, item2) {
             'transform': 'rotate(-180deg)'
         });
     }
+};
+
+var showFilters = function (item, e) {
+    if ($('#' + item).is(":visible")) {
+        $('#' + item).fadeOut(300);
+        $('.filterToggleParagraph').removeClass('closeIconFilters');
+    } else {
+        $('#' + item).fadeIn(300);
+        $('.filterToggleParagraph').addClass('closeIconFilters');
+    }
+    event.preventDefault();
 };
 
 $(document).ready(function () {
