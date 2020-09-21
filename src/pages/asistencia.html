@@ -273,7 +273,7 @@ layout: home
                 <h1>¿Aún no resolvemos tu problema?</h1>
             </div>
         </div>
-        <div class="row contactInputContainer">
+        <div class="row contactInputContainer" id="formBuzon">
             <div class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-6 mx-auto">
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
@@ -286,7 +286,7 @@ layout: home
                     </div>
                     <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                         <div class="mat-input-outer">
-                            <input type="text" id="noCuentaAyuda" autocomplete="off" />
+                            <input type="text" id="noCuentaAyuda" autocomplete="off" required class="solo-numeros" maxlength="10" placeholder=" " />
                             <label class="">Número de cuenta*</label>
                             <div class="border"></div>
                             <p class="text-danger-white" id="errorNocuenta" ></p>
@@ -304,7 +304,7 @@ layout: home
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                         <div class="mat-input-outer">
-                            <input type="text" id="movilAyuda" autocomplete="off" />
+                            <input type="text" id="movilAyuda" autocomplete="off" required class="solo-numeros" maxlength="10" placeholder=" " />
                             <label class="">Celular de contacto*</label>
                             <div class="border"></div>
                             <p class="text-danger-white" id="errorMovilAyuda" ></p>
@@ -312,7 +312,7 @@ layout: home
                     </div>
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                         <select id="motivoAyuda">
-                            <option disabled selected>Motivo de contacto</option>
+                            <option value="0" selected>Motivo de contacto</option>
                             <option value="soporte">Soporte técnico</option>
                             <option value="sugerencias">Sugerencias al director</option>
                             <option value="dudas">Dudas generales</option>
@@ -337,15 +337,11 @@ layout: home
                         <button type="button" id="botonEnviarBuzon">Enviar</button>
                     </div>
                 </div>
-
             </div>
+        </div>
+        <div class="row">
+            {{> loader}}
         </div>
     </div>
 </section>
 {{> modalesIndex}}
-<!--<section class="container_prin_asist">
-    {{> sectionAsistencia}}
-    {{> sectionHardwareList}}
-    {{> sectionFAQ}}
-    {{> sectionFormulario}}
-</section>-->
