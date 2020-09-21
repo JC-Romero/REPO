@@ -107,3 +107,6 @@
 .icon-play:before {
     content: "\e810";
 } /* '' */
+.icon-arrowleft:before {
+    content: "\e811";
+} /* '' */

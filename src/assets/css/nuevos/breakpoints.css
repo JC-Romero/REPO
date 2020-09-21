@@ -539,6 +539,86 @@
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
     }
+
+    .extraBanners .extraBannerChannel .extraBannerChannelCol .extraBannerLogo img {
+        margin-top: 0;
+    }
+    .extraBanners .extraBannerChannel .extraBannerChannelCol .extraBannerIncluded p {
+        margin-bottom: 0;
+    }
+    .extraBannerDescription {
+        display: none;
+    }
+    .extraBannerLink {
+        display: none;
+    }
+    .extraBanners .extraBannerChannel .extraBannerImageCol .extraBannerLinkImage {
+        display: block;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    .faqsMainContainer .faqsLargeContainer .faqsToggleContainer {
+        margin-bottom: 2rem;
+    }
+    .faqsItem {
+        text-align: center;
+    }
+    .faqsMainContainer .faqsLargeContainer .faqsToggleContainer .faqsItem a {
+        padding-left: 0;
+    }
+    .faqsMobileLinks {
+        list-style: none;
+        overflow: auto;
+        white-space: nowrap;
+        padding-top: 15px;
+        padding-bottom: 30px;
+        text-align: center;
+        width: calc(100% + 30px);
+        position: relative;
+        left: -15px;
+    }
+    .faqsMobileLinks li {
+        display: inline;
+
+        margin: 0 10px;
+    }
+    .faqsMobileLinks li a {
+        font-weight: 300;
+        background: rgba(225, 225, 225, 1);
+        color: rgba(59, 69, 89, 1);
+        padding: 7px 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border-radius: 20px;
+        border: solid rgba(26, 118, 210, 0) 2px;
+    }
+    .faqsMobileLinks li a::after {
+        display: none;
+    }
+    .faqsCardsContainer .card .card-header h2 button {
+        font-size: 16px;
+    }
+    .faqsCardsContainer .card .card-body {
+        font-size: 18px;
+    }
+    .faqsMainContainer .faqsLargeContainer .faqsToggleContainer .faqsBackSupport a {
+        font-size: 16px;
+    }
+    .mobileactiveFaq {
+        border: solid rgba(26, 118, 210, 1) 2px !important;
+        font-weight: 700 !important;
+        pointer-events: none !important;
+        -webkit-user-select: none !important;
+        -moz-user-select: none !important;
+        -ms-user-select: none !important;
+        user-select: none !important;
+    }
+    .faqsMainContainer {
+        padding-top: 108px;
+    }
+    .faqsMainContainer .faqsLargeContainer .faqsToggleContainer {
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    }
 }
 
 @media (max-width: 767.98px) and (orientation: landscape) {
