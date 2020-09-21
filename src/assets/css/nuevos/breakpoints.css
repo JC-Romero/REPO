@@ -126,7 +126,7 @@
     .internetRow .laptop .facetime {
         transform: translateX(-50%) !important;
         top: 8px !important;
-        height: 221px !important;
+        height: 232px !important;
         width: 340px !important;
     }
 }
@@ -379,7 +379,7 @@
     .internetRow .laptop .facetime {
         transform: translateX(-49.5%);
         top: 8px;
-        height: 241px;
+        height: 251px;
         width: 374px;
     }
     .internetRow .laptop .picture {

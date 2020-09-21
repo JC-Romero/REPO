@@ -431,7 +431,7 @@ var removeInvoice = function (e) {
 };
 //Agrega Clases Slider
 var addOnDemand = function (e) {
-    showComputer();
+    hideComputer();
     $("#computer").addClass('onDemandComputer');
     $("#phone").addClass('onDemandPhone');
     $("#ipadLandscape").addClass('onDemandIpad');
