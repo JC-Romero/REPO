@@ -668,6 +668,7 @@ export class DetallePaquete {
     buscarInfoComplementos(arregloPromociones, arregloProductos,arregloServicios, arregloGarantia){
         let objetoComplementos = {};
         let arregloPromocion = new Array();
+        let infoParrilla = new Array();
         //$.each(arregloPromociones, function (key, objetoPromociones) {
         $.each(arregloProductos[0].adicional, function (key, objetoPromociones) {
             //let nombrePromocion = objetoPromociones.adicionalProductoNombre;
@@ -692,6 +693,23 @@ export class DetallePaquete {
 
             if (objetoProductos.Agrupacion == "Parrillas") {
                 arregloTelevision.push(objetoProductos);
+
+                $.each(objetoProductos.adicional, function (index, objetoParrilla) {
+                    //nombre: "TV AVANZADA"
+                    //nombre: "TV BASICA"
+                    //nombre: "TV PREMIUM"
+                    if(objetoParrilla.nombre == 'TV BASICA'){
+                        infoParrilla[0] = objetoParrilla.idPlanParrilla;
+                    }
+                    if(objetoParrilla.nombre == 'TV AVANZADA'){
+                        infoParrilla[1] = objetoParrilla.idPlanParrilla;
+                    }
+                    if(objetoParrilla.nombre == 'TV PREMIUM'){
+                        infoParrilla[2] = objetoParrilla.idPlanParrilla;
+                    }
+                    console.log('idPlanParrilla=>', objetoParrilla.idPlanParrilla);
+                });
+                localStorage.setItem('TP_PARRILLAS', JSON.stringify(infoParrilla));
             }
         });
         objetoComplementos.television = arregloTelevision;
