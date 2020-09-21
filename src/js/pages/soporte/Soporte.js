@@ -8,8 +8,7 @@ export class Soporte {
 			correo : '',
 			celular : '',
 			motivo : '',
-			descripcion : '',
-			url : Constantes.endpoints.enviaBuzon
+			descripcion : ''
 		}
 		this.init();
 	}
@@ -223,8 +222,8 @@ export class Soporte {
 	insertaBuzon(params){
 		var apuntador = this;
 		console.log('Empieza loader');
-		console.log(apuntador.props.url);
-		fetch(apuntador.props.url, {
+		console.log(Constantes.endpoints.enviaBuzon);
+		fetch(Constantes.endpoints.enviaBuzon, {
 			method: "POST",
 			body: params
 		}).then(data => {
