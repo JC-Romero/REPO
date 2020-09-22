@@ -706,9 +706,9 @@ header .mainNav .mobileCart a img {
     margin: 0 auto;
     margin-bottom: 2rem;
     transition: all 0.3s;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
     cursor: pointer;
 }
 .videoTextContainerSecond .videoTextContentSecond .imagesAppsContainer img:hover {
@@ -4301,7 +4301,7 @@ video {
 
 .infiniteCarousel .slideInfinite {
     width: 560px;
-    margin-left: 10px;
+    margin-left: 5px;
 }
 
 .infiniteCarousel .slideInfinite .backImage {
@@ -4473,7 +4473,7 @@ video {
     background-position: 49% 24%;
 }
 .onDemandPhone img {
-    background: url(../../../assets/img/nuevos/imgservicios/screen@3xiphone.jpg) left top no-repeat;
+    background: url(../../../assets/img/nuevos/imgservicios/nuevoAppTotalplay.png) left top no-repeat;
     background-size: 63% auto;
     background-position: 49% 44%;
 }
@@ -4524,13 +4524,13 @@ video {
 }
 .ipadWifi img {
     background: url(../../../assets/img/nuevos/imgservicios/group@3x.png) top left no-repeat;
-    background-size: 62% auto;
-    background-position: 49% 45%;
+    background-size: 57% auto;
+    background-position: 48% 39%;
 }
 .phoneWifi img {
     background: url(../../../assets/img/nuevos/imgservicios/group-2@3x.png) left top no-repeat;
     background-size: 63% auto;
-    background-position: 49% 44%;
+    background-position: 49% 46%;
 }
 .phoneWifi {
     left: 40% !important;
@@ -4555,7 +4555,7 @@ video {
 .phoneInvoice img {
     background: url(../../../assets/img/nuevos/imgservicios/movil-edo-cuenta@3x.png) left top no-repeat;
     background-size: 63% auto;
-    background-position: 49% 44%;
+    background-position: 49% 47%;
 }
 .phoneInvoice {
     bottom: 0 !important;
@@ -4968,7 +4968,7 @@ video {
 }
 .appsMainContainer .appVideoContainer {
     width: calc(100% + 30px);
-    height: 85vh;
+    height: 80vh;
     position: relative;
     display: flex;
     flex-wrap: nowrap;
@@ -5019,7 +5019,7 @@ video {
     align-items: center;
     top: 0;
     position: fixed;
-    margin-top: 460px;
+    margin-top: 65vh;
 }
 .stopperHeight {
     height: 10px;
@@ -5028,7 +5028,7 @@ video {
     background: rgba(22, 22, 27, 1);
     position: absolute;
     left: -15px;
-    top: 620px;
+    top: 30vh;
     visibility: hidden;
 }
 .showMoreRow {
@@ -5270,6 +5270,23 @@ video {
     color: #3b4559;
     margin-bottom: 2rem;
 }
+.otherAppsRow .linksToLandings .otherAppsItem .landingLink {
+    background: rgba(255, 255, 255, 1);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+.otherAppsRow .linksToLandings .otherAppsItem .landingLink h1 a {
+    font-weight: 700;
+    color: rgba(59, 69, 89, 1);
+    font-size: 24px;
+}
+.otherAppsRow .linksToLandings .otherAppsItem .landingLink h1 a::after {
+    display: none;
+}
 .otherAppsRow .otherAppsGallery {
     text-align: center;
 }
@@ -5341,14 +5358,14 @@ video {
     background: rgba(255, 255, 255, 1) !important;
 }
 .whiteBackApps .appLogoContainer {
-    margin-top: 580px;
+    margin-top: 75vh;
 }
 .whiteBackApps .appLogoContainer h1 {
     font-weight: 700;
     color: rgba(59, 69, 89, 1);
 }
 .whiteBackApps .stopperHeight {
-    top: 460px;
+    top: 20vh;
 }
 .whiteBackApps .videoAppContainer {
     box-shadow: none !important;
@@ -5362,6 +5379,82 @@ video {
 }
 .whiteBackApps .showMoreRow p {
     color: rgba(22, 27, 27) !important;
+}
+.whiteBackApps.television .appVideoContainer {
+    background: rgba(23, 22, 28, 1);
+    background-image: url(../../img/nuevos/backLandingTV.jpg), linear-gradient(rgba(23, 22, 28, 1), rgba(23, 22, 28, 1)) !important;
+    background-size: cover !important;
+    background-position: top center !important;
+    background-repeat: no-repeat !important;
+}
+.whiteBackApps.telefonia .appVideoContainer {
+    background: url(../../../assets/img/nuevos/tel.jpg) top center no-repeat !important;
+    background-size: cover !important;
+}
+.whiteBackApps .appVideoContainer::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: block;
+    z-index: 9;
+    left: 0;
+    background: -moz-linear-gradient(top, rgba(252, 252, 252, 0) 0%, rgba(252, 252, 252, 1) 100%);
+    background: -webkit-linear-gradient(top, rgba(252, 252, 252, 0) 0%, rgba(252, 252, 252, 1) 100%);
+    background: linear-gradient(to bottom, rgba(252, 252, 252, 0) 0%, rgba(252, 252, 252, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00fcfcfc', endColorstr='#fcfcfc',GradientType=0 );
+    box-shadow: 0 24px 48px 0 rgba(0, 0, 0, 0.5);
+}
+.whiteBackApps.telefonia .appVideoContainer::after,
+.whiteBackApps.television .appVideoContainer::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: block;
+    z-index: 9;
+    left: 0;
+    background: -moz-linear-gradient(top, rgba(22, 22, 27, 0.3) 0%, rgba(22, 22, 27, 1) 100%);
+    background: -webkit-linear-gradient(top, rgba(22, 22, 27, 0.3) 0%, rgba(22, 22, 27, 1) 100%);
+    background: linear-gradient(to bottom, rgba(22, 22, 27, 0.3) 0%, rgba(22, 22, 27, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4d16161b', endColorstr='#16161b',GradientType=0 );
+    box-shadow: 0 24px 48px 0 rgba(0, 0, 0, 0.5);
+}
+.whiteBackApps.telefonia .appVideoContainer h1,
+.whiteBackApps.television .appVideoContainer h1 {
+    color: rgba(255, 255, 255, 1);
+}
+.whiteBackApps.telefonia .appsMainTitle,
+.whiteBackApps.television .appsMainTitle {
+    background: rgba(22, 22, 27, 1) !important;
+}
+.whiteBackApps.telefonia .showMoreRow p,
+.whiteBackApps.television .showMoreRow p {
+    color: rgba(245, 245, 245, 1) !important;
+}
+.whiteBackApps.telefonia .landingWhiteBack,
+.whiteBackApps.television .landingWhiteBack {
+    background: rgb(22, 22, 27);
+    background: -moz-linear-gradient(top, rgba(22, 22, 27, 1) 0%, rgba(59, 69, 89, 1) 100%);
+    background: -webkit-linear-gradient(top, rgba(22, 22, 27, 1) 0%, rgba(59, 69, 89, 1) 100%);
+    background: linear-gradient(to bottom, rgba(22, 22, 27, 1) 0%, rgba(59, 69, 89, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#16161b', endColorstr='#3b4559',GradientType=0 );
+}
+.whiteBackApps.telefonia .landingWhiteBack .card.dark,
+.whiteBackApps.television .landingWhiteBack .card.dark {
+    background: rgba(34, 36, 48, 1);
+}
+.whiteBackApps.television .videoAppContainer img {
+    width: 100%;
+    max-width: 100%;
+    position: absolute;
+    top: -50%;
+    left: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 /*Landings Servicios*/
 /*Modal Canales*/
@@ -5758,8 +5851,8 @@ video {
     border-radius: 8px;
     overflow: hidden;
 }
-.extraBanners .extraBannerChannel .extraBannerChannelCol {
-}
+/*.extraBanners .extraBannerChannel .extraBannerChannelCol {
+}*/
 .extraBanners .extraBannerChannel .extraBannerChannelCol .extraBannerLogo img {
     width: 100%;
     max-width: 123px;

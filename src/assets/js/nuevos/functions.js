@@ -212,6 +212,7 @@ $(document).ready(function () {
 });
 $(window).scroll(function () {
     $("#fadeButton").css("opacity", 1 - $(window).scrollTop() / 50);
+    $("#showMoreFade").css("opacity", 1 - $(window).scrollTop() / 50);
 });
 var showPackageContainer = function (item, item2, item3, item4, e) {
     $("#" + item).hide();

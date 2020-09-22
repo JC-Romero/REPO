@@ -917,8 +917,8 @@
         top: 15vh;
     }
 
-    .videoTextContainer .videoTextContent {
-    }
+    /*.videoTextContainer .videoTextContent {
+    }*/
 
     .videoTextContainerSecond .videoTextContentSecond img {
         width: 70px;
@@ -1033,10 +1033,10 @@
         top: 70px;
     }
     .appLogoContainer {
-        margin-top: 170px;
+        margin-top: 55vh;
     }
     .stopperHeight {
-        top: 480px;
+        top: 55vh;
     }
 }
 
@@ -1052,7 +1052,7 @@
         margin-top: 100px;
     }
     .stopperHeight {
-        top: 330px;
+        top: 320px;
     }
 }
 
@@ -1080,7 +1080,7 @@
         margin-top: 230px;
     }
     .stopperHeight {
-        top: 500px;
+        top: 470px;
     }
 }
 
@@ -1149,7 +1149,7 @@
         margin-top: 330px;
     }
     .stopperHeight {
-        top: 520px;
+        top: 470px;
     }
 }
 
@@ -1236,7 +1236,7 @@
         margin-top: 350px;
     }
     .stopperHeight {
-        top: 680px;
+        top: 640px;
     }
 }
 
@@ -1249,7 +1249,7 @@
         margin-top: 300px;
     }
     .stopperHeight {
-        top: 520px;
+        top: 480px;
     }
 }
 
@@ -1280,7 +1280,7 @@
         margin-top: 550px;
     }
     .stopperHeight {
-        top: 770px;
+        top: 690px;
     }
 }
 
@@ -1296,7 +1296,7 @@
         margin-top: 400px;
     }
     .stopperHeight {
-        top: 630px;
+        top: 580px;
     }
 }
 
@@ -1304,5 +1304,25 @@
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
     .headerPackages {
         height: 113vh;
+    }
+}
+@media screen and (min-device-width: 1440px) and (-webkit-min-device-pixel-ratio: 1) {
+    .stopperHeight {
+        top: 450px;
+    }
+}
+@media screen and (min-device-width: 1280px) and (max-device-height: 900px) and (-webkit-min-device-pixel-ratio: 1) {
+    .stopperHeight {
+        top: 450px;
+    }
+}
+@media screen and (min-device-width: 1280px) and (max-device-height: 800px) and (-webkit-min-device-pixel-ratio: 1) {
+    .stopperHeight {
+        top: 350px;
+    }
+}
+@media screen and (min-device-width: 1700px) and (-webkit-min-device-pixel-ratio: 1) {
+    .stopperHeight {
+        top: 30vh;
     }
 }
