@@ -600,9 +600,6 @@ header .mainNav .mobileCart a img {
     margin-bottom: 2rem;
 }
 
-.videoTextContainer .row a:after {
-}
-
 .videoTextContainer .row a:hover {
     text-decoration: none;
 }
@@ -708,6 +705,16 @@ header .mainNav .mobileCart a img {
     max-width: 128px;
     margin: 0 auto;
     margin-bottom: 2rem;
+    transition: all 0.3s;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.videoTextContainerSecond .videoTextContentSecond .imagesAppsContainer img:hover {
+    transform: scale(1.1);
+    transition: all 0.3s;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.35);
 }
 
 .videoTextContainerSecond h1 {
@@ -1116,15 +1123,10 @@ header .mainNav .mobileCart a img {
 
 .unbox .titlePackage p {
     color: rgba(255, 255, 255, 1);
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#00aae3+0,59cbe8+100&0.8+0,0.8+100 */
     background: -moz-linear-gradient(45deg, rgba(0, 170, 227, 0.8) 0%, rgba(89, 203, 232, 0.8) 100%);
-    /* FF3.6-15 */
     background: -webkit-linear-gradient(45deg, rgba(0, 170, 227, 0.8) 0%, rgba(89, 203, 232, 0.8) 100%);
-    /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(45deg, rgba(0, 170, 227, 0.8) 0%, rgba(89, 203, 232, 0.8) 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cc00aae3', endColorstr='#cc59cbe8', GradientType=1);
-    /* IE6-9 fallback on horizontal gradient */
     padding: 6px 10px;
     display: inline;
     font-family: "Montserrat", sans-serif;
@@ -1134,9 +1136,7 @@ header .mainNav .mobileCart a img {
     -moz-border-radius: 4px;
     border-radius: 4px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.05);
-    height: auto;
 }
-
 .unbox .velocityPackage {
     color: #33bbe8;
     font-family: "Montserrat", sans-serif;
@@ -1217,7 +1217,6 @@ header .mainNav .mobileCart a img {
     text-align: center;
     padding: 5px 16px;
     display: inline;
-    height: auto;
     white-space: nowrap;
 }
 
@@ -1243,15 +1242,10 @@ header .mainNav .mobileCart a img {
 
 .match .titlePackage p {
     color: rgba(255, 255, 255, 1);
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e4002b+0,e02d1d+100&0.8+0,0.8+100 */
     background: -moz-linear-gradient(45deg, rgba(228, 0, 43, 0.8) 0%, rgba(224, 45, 29, 0.8) 100%);
-    /* FF3.6-15 */
     background: -webkit-linear-gradient(45deg, rgba(228, 0, 43, 0.8) 0%, rgba(224, 45, 29, 0.8) 100%);
-    /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(45deg, rgba(228, 0, 43, 0.8) 0%, rgba(224, 45, 29, 0.8) 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cce4002b', endColorstr='#cce02d1d', GradientType=1);
-    /* IE6-9 fallback on horizontal gradient */
     padding: 6px 10px;
     display: inline;
     font-family: "Montserrat", sans-serif;
@@ -2364,10 +2358,6 @@ footer .footerColumn p i {
     margin-left: 5px;
 }
 
-footer .footerColumn:nth-child(6) p:first-child {
-    margin-bottom: 0;
-}
-
 .servicesCollapsible,
 .productsCollapsible,
 .supportCollapsible,
@@ -2580,18 +2570,21 @@ footer .legalAdvice p {
 .generalPackage .iconsRow p i.fa-wifi {
     background: linear-gradient(213.73deg, rgba(255, 191, 63, 1) 0%, rgba(219, 228, 66, 1) 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .generalPackage .iconsRow p i.fa-tv {
     background: linear-gradient(215.84deg, rgba(228, 0, 43, 1) 0%, rgba(240, 78, 152, 1) 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .generalPackage .iconsRow p i.fa-phone-alt {
     background: linear-gradient(215.02deg, rgba(240, 78, 152, 1) 0%, rgba(130, 70, 175, 1) 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 /*Nuevos estilos paquetes*/
@@ -2608,6 +2601,7 @@ footer .legalAdvice p {
 .generalPackage.unbox .iconsRow p i.fa-wifi {
     background: rgba(255, 255, 255, 1);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -2618,12 +2612,14 @@ footer .legalAdvice p {
 .generalPackage.unbox .iconsRow p i.fa-tv {
     background: rgba(255, 255, 255, 1);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .generalPackage.unbox .iconsRow p i.fa-phone-alt {
     background: rgba(255, 255, 255, 1);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -2641,6 +2637,7 @@ footer .legalAdvice p {
 .generalPackage.match .iconsRow p i.fa-wifi {
     background: rgba(255, 255, 255, 1);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -2651,12 +2648,14 @@ footer .legalAdvice p {
 .generalPackage.match .iconsRow p i.fa-tv {
     background: rgba(255, 255, 255, 1);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .generalPackage.match .iconsRow p i.fa-phone-alt {
     background: rgba(255, 255, 255, 1);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -2721,6 +2720,7 @@ footer .legalAdvice p {
     background: linear-gradient(270deg, rgba(250, 119, 102, 1) 0%, rgba(244, 66, 54, 1) 100%);
     font-size: 32px;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 700;
 }
@@ -3264,17 +3264,11 @@ footer .legalAdvice p {
 }
 
 .paquetesClasicosHeader.match {
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e4002b+0,e02d1d+100 */
     background: #e4002b;
-    /* Old browsers */
     background: -moz-linear-gradient(left, #e4002b 0%, #e02d1d 100%);
-    /* FF3.6-15 */
     background: -webkit-linear-gradient(left, #e4002b 0%, #e02d1d 100%);
-    /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to right, #e4002b 0%, #e02d1d 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e4002b', endColorstr='#e02d1d', GradientType=1);
-    /* IE6-9 */
 }
 
 .paquetesClasicosHeader.match .paquetesClasicosContainer {
@@ -3307,18 +3301,21 @@ footer .legalAdvice p {
 .paquetesClasicosHeader .paquetesClasicosContainer i.fa-wifi {
     background: linear-gradient(213.73deg, rgba(255, 191, 63, 1) 0%, rgba(219, 228, 66, 1) 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .paquetesClasicosHeader .paquetesClasicosContainer i.fa-tv {
     background: linear-gradient(215.84deg, rgba(228, 0, 43, 1) 0%, rgba(240, 78, 152, 1) 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .paquetesClasicosHeader .paquetesClasicosContainer i.fa-phone-alt {
     background: linear-gradient(215.02deg, rgba(240, 78, 152, 1) 0%, rgba(130, 70, 175, 1) 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -3601,7 +3598,6 @@ footer .legalAdvice p {
     -moz-border-radius: 4px;
     border-radius: 4px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.05);
-    height: auto;
 }
 
 .landingPackageResume .landingPackageDescription h2 {
@@ -3751,16 +3747,12 @@ footer .legalAdvice p {
     position: absolute;
     left: -25px;
     top: 3px;
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#dbe442+0,ffbf3f+100&0.85+0,0.85+100 */
     background: -moz-linear-gradient(45deg, rgba(219, 228, 66, 0.85) 0%, rgba(255, 191, 63, 0.85) 100%);
-    /* FF3.6-15 */
     background: -webkit-linear-gradient(45deg, rgba(219, 228, 66, 0.85) 0%, rgba(255, 191, 63, 0.85) 100%);
-    /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(45deg, rgba(219, 228, 66, 0.85) 0%, rgba(255, 191, 63, 0.85) 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d9dbe442', endColorstr='#d9ffbf3f', GradientType=1);
-    /* IE6-9 fallback on horizontal gradient */
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -3771,18 +3763,13 @@ footer .legalAdvice p {
     position: absolute;
     left: -25px;
     top: 3px;
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#37c2ea+0,68e3f6+100 */
     background: rgb(55, 194, 234);
-    /* Old browsers */
     background: -moz-linear-gradient(45deg, rgba(55, 194, 234, 1) 0%, rgba(104, 227, 246, 1) 100%);
-    /* FF3.6-15 */
     background: -webkit-linear-gradient(45deg, rgba(55, 194, 234, 1) 0%, rgba(104, 227, 246, 1) 100%);
-    /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(45deg, rgba(55, 194, 234, 1) 0%, rgba(104, 227, 246, 1) 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#37c2ea', endColorstr='#68e3f6', GradientType=1);
-    /* IE6-9 fallback on horizontal gradient */
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -3793,16 +3780,12 @@ footer .legalAdvice p {
     position: absolute;
     left: -25px;
     top: -5px;
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e4002b+0,f04e98+100&0.85+0,0.85+100 */
     background: -moz-linear-gradient(45deg, rgba(228, 0, 43, 0.85) 0%, rgba(240, 78, 152, 0.85) 100%);
-    /* FF3.6-15 */
     background: -webkit-linear-gradient(45deg, rgba(228, 0, 43, 0.85) 0%, rgba(240, 78, 152, 0.85) 100%);
-    /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(45deg, rgba(228, 0, 43, 0.85) 0%, rgba(240, 78, 152, 0.85) 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d9e4002b', endColorstr='#d9f04e98', GradientType=1);
-    /* IE6-9 fallback on horizontal gradient */
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -3813,16 +3796,12 @@ footer .legalAdvice p {
     position: absolute;
     left: -25px;
     top: -5px;
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#8246af+0,f04e98+100&0.85+0,0.85+100 */
     background: -moz-linear-gradient(45deg, rgba(130, 70, 175, 0.85) 0%, rgba(240, 78, 152, 0.85) 100%);
-    /* FF3.6-15 */
     background: -webkit-linear-gradient(45deg, rgba(130, 70, 175, 0.85) 0%, rgba(240, 78, 152, 0.85) 100%);
-    /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(45deg, rgba(130, 70, 175, 0.85) 0%, rgba(240, 78, 152, 0.85) 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d98246af', endColorstr='#d9f04e98', GradientType=1);
-    /* IE6-9 fallback on horizontal gradient */
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -4346,6 +4325,7 @@ video {
     z-index: 9998;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
+    border-radius: 4px;
     background: rgba(30, 30, 40, 0.2);
     top: 0;
     left: 0;
@@ -4439,9 +4419,9 @@ video {
     z-index: 1;
 }
 .devicesSlider .smartphoneContainer {
-    width: 11.4%;
-    left: 41.6%;
-    bottom: 0;
+    bottom: 0 !important;
+    left: 30%;
+    width: 13%;
     position: absolute;
     z-index: 3;
     transition: all 0.3s;
@@ -4454,12 +4434,13 @@ video {
     object-fit: contain;
 }
 .devicesSlider .ipadLandscapeContainer {
-    width: 33.9%;
-    left: 42.2%;
+    width: 40.9%;
+    left: 33.2%;
     bottom: 0;
     right: 12.2%;
     position: absolute;
     z-index: 2;
+    transition: 300ms;
 }
 
 .devicesSlider .ipadLandscapeContainer img {
@@ -4536,6 +4517,11 @@ video {
     background-size: 56% auto;
     background-position: 49% 24%;
 }
+.ipadWifi {
+    width: 36.9% !important;
+    left: 39.2% !important;
+    transition: 300ms;
+}
 .ipadWifi img {
     background: url(../../../assets/img/nuevos/imgservicios/group@3x.png) top left no-repeat;
     background-size: 62% auto;
@@ -4545,6 +4531,10 @@ video {
     background: url(../../../assets/img/nuevos/imgservicios/group-2@3x.png) left top no-repeat;
     background-size: 63% auto;
     background-position: 49% 44%;
+}
+.phoneWifi {
+    left: 40% !important;
+    width: 11% !important;
 }
 .computerInvoice img {
     background: url(../../img/nuevos/imgservicios/edoCuenta@3x.png) top left no-repeat;
@@ -4556,10 +4546,32 @@ video {
     background-size: 62% auto;
     background-position: 49% 45%;
 }
+.ipadInvoice {
+    width: 40.9% !important;
+    left: 33.2% !important;
+    bottom: 0 !important;
+    right: 12.2% !important;
+}
 .phoneInvoice img {
     background: url(../../../assets/img/nuevos/imgservicios/movil-edo-cuenta@3x.png) left top no-repeat;
     background-size: 63% auto;
     background-position: 49% 44%;
+}
+.phoneInvoice {
+    bottom: 0 !important;
+    left: 30% !important;
+    width: 13% !important;
+    transition: 300ms;
+}
+.newRemoteIpad img {
+    background: url(../../../assets/img/nuevos/imgservicios/controlipad.png) top left no-repeat;
+    background-size: 58% auto;
+    background-position: 49% 41%;
+}
+.newPhoneIpad img {
+    background: url(../../../assets/img/nuevos/imgservicios/phoneipad.png) top left no-repeat;
+    background-size: 58% auto;
+    background-position: 49% 41%;
 }
 .sliderSelector {
     list-style: none;
@@ -4576,9 +4588,9 @@ video {
 }
 .sliderSelector li a {
     color: rgba(59, 69, 89, 1);
-    margin-right: 15px;
     display: block;
     font-size: 18px;
+    margin-right: 15px;
 }
 .sliderSelector li a::after {
     display: none;
@@ -4644,7 +4656,7 @@ video {
     font-weight: 700;
 }
 .landlineRow .landlineImage img {
-    max-width: 500px;
+    max-width: 850px;
 }
 .landlineRow .landlineDescription p {
     font-weight: 300;
@@ -5528,6 +5540,7 @@ video {
     background: linear-gradient(to right, rgba(59, 69, 89, 1) 70%, rgba(59, 69, 89, 0.05) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b4559', endColorstr='#0d3b4559',GradientType=1 );
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 .modalChannelsContainer .filtersContainer .filterClass .automaticLabel::before {
@@ -5537,6 +5550,7 @@ video {
     background: linear-gradient(to right, rgba(228, 0, 43, 1) 0%, rgba(240, 78, 152, 1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4002b', endColorstr='#f04e98',GradientType=1 );
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 .modalChannelsContainer .filtersContainer .channelContainer .channelItem {
@@ -5573,6 +5587,7 @@ video {
     background: linear-gradient(to right, rgba(228, 0, 43, 1) 0%, rgba(240, 78, 152, 1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4002b', endColorstr='#f04e98',GradientType=1 );
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 .modalChannelsContainer .filtersContainer .channelContainer .channelItem .channelItemName.normalrewind p::before {
@@ -5585,6 +5600,7 @@ video {
     background: linear-gradient(to right, rgba(59, 69, 89, 1) 70%, rgba(59, 69, 89, 0.05) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b4559', endColorstr='#0d3b4559',GradientType=1 );
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 .showFilters .buttonRow {
@@ -5655,6 +5671,7 @@ video {
     background: linear-gradient(to right, rgba(228, 0, 43, 1) 0%, rgba(240, 78, 152, 1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4002b', endColorstr='#f04e98',GradientType=1 );
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 .channelDescriptionRow .channelDescriptionCol h1.normalrewind::before {
@@ -5667,6 +5684,7 @@ video {
     background: linear-gradient(to right, rgba(59, 69, 89, 1) 70%, rgba(59, 69, 89, 0.05) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b4559', endColorstr='#0d3b4559',GradientType=1 );
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 .channelDescriptionRow .channelImageCol img {
@@ -5741,8 +5759,6 @@ video {
     overflow: hidden;
 }
 .extraBanners .extraBannerChannel .extraBannerChannelCol {
-    padding-top: 40px;
-    padding-bottom: 32px;
 }
 .extraBanners .extraBannerChannel .extraBannerChannelCol .extraBannerLogo img {
     width: 100%;
@@ -5769,6 +5785,9 @@ video {
     line-height: 24px;
     margin-bottom: 124px;
 }
+.extraBanners .extraBannerChannel .extraBannerChannelCol .extraBannerLink {
+    margin-bottom: 15px;
+}
 .extraBanners .extraBannerChannel .extraBannerChannelCol .extraBannerLink a {
     font-size: 16px;
     color: rgba(100, 181, 246, 1);
@@ -5779,6 +5798,7 @@ video {
 }
 .extraBanners .extraBannerChannel .extraBannerImageCol img {
     width: 100%;
+    min-height: 397px;
 }
 .extraBanners .extraBannerChannel .extraBannerImageCol .extraBannerLinkImage {
     display: none;
@@ -5882,6 +5902,15 @@ video {
 .activeFaq {
     background: rgba(26, 118, 210, 0.1) !important;
 }
+.mobileactiveFaq {
+    border: solid rgba(26, 118, 210, 1) 2px !important;
+    font-weight: 700 !important;
+    pointer-events: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+}
 .faqsCardsContainer .card-header {
     background: rgba(255, 255, 255, 0);
 }
@@ -5898,7 +5927,9 @@ video {
 .centerImage {
     text-align: center;
 }
-
+.rotateChevron {
+    transform: rotate(-180deg);
+}
 /*modal loader index akhm*/
 #cargadorLead {
     display: none;

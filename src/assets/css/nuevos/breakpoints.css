@@ -432,7 +432,7 @@
         padding-bottom: 5px;
     }
     .sliderSelector li {
-        padding: 5px 15px;
+        padding: 7px 15px;
         display: inline-block;
     }
     .sliderSelector li a {
@@ -605,20 +605,18 @@
     .faqsMainContainer .faqsLargeContainer .faqsToggleContainer .faqsBackSupport a {
         font-size: 16px;
     }
-    .mobileactiveFaq {
-        border: solid rgba(26, 118, 210, 1) 2px !important;
-        font-weight: 700 !important;
-        pointer-events: none !important;
-        -webkit-user-select: none !important;
-        -moz-user-select: none !important;
-        -ms-user-select: none !important;
-        user-select: none !important;
-    }
     .faqsMainContainer {
         padding-top: 108px;
     }
     .faqsMainContainer .faqsLargeContainer .faqsToggleContainer {
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    }
+    .extraBanners .extraBannerChannel .extraBannerChannelCol {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    .extraBanners .extraBannerChannel .extraBannerImageCol img {
+        min-height: auto;
     }
 }
 

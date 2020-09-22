@@ -61,14 +61,10 @@ var hideModal = function (item) {
 var showCollapsible = function (item, item2) {
     if ($('#' + item).is(":visible")) {
         $('#' + item).hide();
-        $('.' + item2).css({
-            'transform': 'rotate(180deg)'
-        });
+        $('#' + item2).removeClass('rotateChevron');
     } else {
         $('#' + item).show();
-        $('.' + item2).css({
-            'transform': 'rotate(-180deg)'
-        });
+        $('#' + item2).addClass('rotateChevron')
     }
 };
 var faqsToggle = function (item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, e) {
@@ -412,6 +408,14 @@ var removeRemote = function (e) {
     $("#phone").removeClass('remotePhone');
     event.preventDefault();
 };
+var removeNewRemote = function (e) {
+    $("#ipadLandscape").removeClass('newRemoteIpad');
+    event.preventDefault();
+};
+var removeNewPhone = function (e) {
+    $("#ipadLandscape").removeClass('newPhoneIpad');
+    event.preventDefault();
+};
 var removeLandLine = function (e) {
     $("#ipadPortrait").removeClass('ipadLandline');
     $("#phone").removeClass('phoneLandline');
@@ -443,6 +447,8 @@ var addOnDemand = function (e) {
     showIpadLandscape();
     hideIpadPortrait();
     removeRemote();
+    removeNewRemote();
+    removeNewPhone();
     removeLandLine();
     removeWifi();
     removeInvoice();
@@ -450,7 +456,7 @@ var addOnDemand = function (e) {
 };
 var addRemote = function (e) {
     hideComputer();
-    $("#ipadPortrait").addClass('remoteIpad');
+    $("#ipadLandscape").addClass('newRemoteIpad');
     $("#phone").addClass('remotePhone');
     $("#toggleDemand").removeClass('active');
     $("#toggleRemote").addClass('active');
@@ -460,6 +466,7 @@ var addRemote = function (e) {
     hideIpadPortrait();
     showIpadLandscape();
     removeOnDemand();
+    removeNewPhone();
     removeLandLine();
     removeWifi();
     removeInvoice();
@@ -468,7 +475,7 @@ var addRemote = function (e) {
 
 var addLandLine = function (e) {
     hideComputer();
-    $("#ipadPortrait").addClass('ipadLandline')
+    $("#ipadLandscape").addClass('newPhoneIpad')
     $("#phone").addClass('phoneLandline');
     $("#toggleDemand").removeClass('active');
     $("#toggleRemote").removeClass('active');
@@ -477,6 +484,7 @@ var addLandLine = function (e) {
     $("#toggleInvoice").removeClass('active');
     hideIpadPortrait();
     showIpadLandscape();
+    removeNewRemote();
     removeOnDemand();
     removeRemote();
     removeWifi();
@@ -496,6 +504,8 @@ var addWifi = function (e) {
     showIpadLandscape();
     hideIpadPortrait();
     removeOnDemand();
+    removeNewRemote();
+    removeNewPhone();
     removeRemote();
     removeLandLine();
     removeInvoice();
@@ -514,6 +524,8 @@ var addInvoice = function (e) {
     showIpadLandscape();
     hideIpadPortrait();
     removeOnDemand();
+    removeNewRemote();
+    removeNewPhone();
     removeRemote();
     removeLandLine();
     event.preventDefault();
