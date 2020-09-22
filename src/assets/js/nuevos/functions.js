@@ -457,8 +457,8 @@ var addRemote = function (e) {
     $("#toggleLandline").removeClass('active');
     $("#toggleWifi").removeClass('active');
     $("#toggleInvoice").removeClass('active');
-    showIpadPortrait();
-    hideIpadLandscape();
+    hideIpadPortrait();
+    showIpadLandscape();
     removeOnDemand();
     removeLandLine();
     removeWifi();
@@ -475,8 +475,8 @@ var addLandLine = function (e) {
     $("#toggleLandline").addClass('active');
     $("#toggleWifi").removeClass('active');
     $("#toggleInvoice").removeClass('active');
-    showIpadPortrait();
-    hideIpadLandscape();
+    hideIpadPortrait();
+    showIpadLandscape();
     removeOnDemand();
     removeRemote();
     removeWifi();
@@ -502,7 +502,7 @@ var addWifi = function (e) {
     event.preventDefault();
 };
 var addInvoice = function (e) {
-    showComputer();
+    hideComputer();
     $("#computer").addClass('computerInvoice');
     $("#phone").addClass('phoneInvoice');
     $("#ipadLandscape").addClass('ipadInvoice');

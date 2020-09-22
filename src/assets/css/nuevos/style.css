@@ -2041,7 +2041,7 @@ header .mainNav .mobileCart a img {
     /*background: rgba(226, 2, 39, 1);*/
     position: relative;
     max-height: 300px;
-    box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 4rem;
 }
 
 .bussinesBranches .companies .branchImage,
@@ -2072,6 +2072,7 @@ header .mainNav .mobileCart a img {
 .bussinesBranches .companies .branchImage div img {
     width: 100%;
     height: auto;
+    box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
 }
 
 .bussinesBranches .companies .branchDescription {
@@ -2124,7 +2125,7 @@ header .mainNav .mobileCart a img {
     /*background: rgba(8, 155, 154, 1);*/
     position: relative;
     max-height: 300px;
-    box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 4rem;
 }
 
 .bussinesBranches .entrepreneur .branchImage,
@@ -2155,6 +2156,7 @@ header .mainNav .mobileCart a img {
 .bussinesBranches .entrepreneur .branchImage div img {
     width: 100%;
     height: auto;
+    box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
 }
 
 .bussinesBranches .entrepreneur .branchDescription {
@@ -4425,6 +4427,7 @@ video {
     left: -5.5%;
     bottom: 0;
     z-index: 1;
+    visibility: hidden;
 }
 .devicesSlider .computerContainer img {
     width: 54.5%;

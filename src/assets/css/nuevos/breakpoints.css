@@ -114,7 +114,7 @@
     }
 
     .topBar .barList li {
-        margin-right: 10px;
+        margin-right: 20px;
     }
 
     .topBar .barList li a {
@@ -423,19 +423,20 @@
         font-size: 18px;
         line-height: 24px;
     }
-    .sliderSelector li {
-        width: 50%;
-        padding: 5px 15px;
-        float: left;
+    .sliderSelector {
+        width: calc(100% + 30px);
+        position: relative;
+        left: -15px;
+        overflow: auto;
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
-    .sliderSelector li:last-child {
-        margin: 0 auto;
-        width: 100%;
-        text-align: center;
+    .sliderSelector li {
+        padding: 5px 15px;
+        display: inline-block;
     }
     .sliderSelector li a {
-        font-size: 14px;
-        display: block;
+        font-size: 16px;
     }
     .landlineRow .landlineHeader h1 {
         font-size: 36px;
