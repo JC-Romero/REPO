@@ -473,6 +473,38 @@ export class Contratacion {
             let cadenaDesencriptada = desencriptar(cadenaEncriptada);
         });
         
+        $("body").on('click', '.cntEquipo', function() {
+            let contenedorActual = $( this );
+            let etiquetaPrecio = $( this ).find( ".price" );
+            let etiquetaSeleccion = $( this ).find( ".addedItem" );
+            let visiblidadActual = $(etiquetaSeleccion).css('display');
+
+            $('#confirmChannels').attr('data-id' , $(this).attr('data-id'));
+            $('#confirmChannels').attr('data-precio' , $(this).attr('data-precio'));
+
+            $.each( $('.cntCanales') , function( key, obj ) {
+                let contenedor = $( obj );
+                if(contenedorActual != contenedor){
+                    $( obj ).find( ".price" ).css('display','block');
+                    $( obj ).find( ".addedItem" ).hide();
+                }
+            });
+
+            if(visiblidadActual == 'none'){
+                console.log('ETIQUETA SELECCION ESTABA OCULTA');
+                $(etiquetaPrecio).hide();
+                $(etiquetaSeleccion).css('display','contents');
+
+                $('#confirmBoxes').show();
+            }else{
+                console.log('ETIQUETA SELECCION ESTABA VISIBLE');
+                $(etiquetaSeleccion).hide();
+                $(etiquetaPrecio).css('display','block');
+
+                $('#confirmBoxes').hide();
+            }
+        });
+
         $("body").on('click', '.cntCanales', function() {
             let contenedorActual = $( this );
             let etiquetaPrecio = $( this ).find( ".price" );
@@ -596,6 +628,17 @@ export class Contratacion {
                 
             });
             $('#ctnParrillas').html(htmlParrilas);
+
+            let jsonAdicional = objComplementos.equipoAdicional;
+
+            $.each(jsonAdicional, function (key, objetoAdicional) {
+                if(objetoAdicional.tipo == 'ADDON_TV_ADCIONAL'){
+                    $('#cntEquipoWifi').attr('data-id', objetoAdicional.Id);
+                }
+                if(objetoAdicional.tipo == 'ADDON_WIFI'){
+                    $('#cntEquipoTV').attr('data-id', objetoAdicional.Id);
+                }
+            });
         } catch (error) {
             console.log('ERROR:=>', error);
         }

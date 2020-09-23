@@ -665,7 +665,7 @@ function obtenerCanales(tmcode) {
                         totalCanales++;
                         var srcImage = '';
                         if(objCanal.images['SUPER'] != undefined){
-                            srcImage = 'https://imgn.cdn.iutpcdn.com/IMGS/CHANNEL/SUPER/'+objCanal.images['SUPER']['misId']+'-8c.'+objCanal.images['SUPER']['ext'];
+                            srcImage = 'https://imgn.cdn.iutpcdn.com/IMGS/CHANNEL/SUPER/'+objCanal.images['SUPER']['misId']+'-2c.'+objCanal.images['SUPER']['ext'];
                         }
                         htmlInterno +=  '<div class="content-channel" data-categoria="'+categoria+'" data-canal="'+objCanal.lchId+'">'+
                                             '<div class="logo-channel" style="">'+
