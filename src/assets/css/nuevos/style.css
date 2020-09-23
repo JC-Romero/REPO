@@ -625,7 +625,7 @@ header .mainNav .mobileCart a img {
     position: relative;
     background: url(../../../assets/img/nuevos/backVideoMobile.png) top center no-repeat;
     background-size: cover;
-    height: 80vh;
+    height: 90vh;
 }
 
 .videoContainerSecond {
@@ -654,15 +654,10 @@ header .mainNav .mobileCart a img {
     z-index: 9;
     left: 0;
     top: 0;
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e1e28+0,1e1e28+50&0+0,1+50 */
-    background: -moz-linear-gradient(top, rgba(30, 30, 40, 0) 0%, rgba(30, 30, 40, 1) 40%);
-    /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(30, 30, 40, 0) 0%, rgba(30, 30, 40, 1) 40%);
-    /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba(30, 30, 40, 0) 0%, rgba(30, 30, 40, 1) 40%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: -moz-linear-gradient(top, rgba(30, 30, 40, 0) 0%, rgba(30, 30, 40, 1) 60%);
+    background: -webkit-linear-gradient(top, rgba(30, 30, 40, 0) 0%, rgba(30, 30, 40, 1) 60%);
+    background: linear-gradient(to bottom, rgba(30, 30, 40, 0) 0%, rgba(30, 30, 40, 1) 60%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#001e1e28', endColorstr='#1e1e28', GradientType=0);
-    /* IE6-9 */
 }
 
 .videoTextContainerSecond {
@@ -692,12 +687,13 @@ header .mainNav .mobileCart a img {
 .videoTextContainerSecond .videoTextContentSecond .imagesAppsContainer {
     position: relative;
     height: 50%;
+    padding-top: 12vh;
 }
 
 .videoTextContainerSecond .videoTextContentSecond .titleSecondVideo {
     position: relative;
     height: 50%;
-    padding-top: 7vh;
+    padding-top: 35vh;
 }
 
 .videoTextContainerSecond .videoTextContentSecond .imagesAppsContainer img {
@@ -2067,6 +2063,9 @@ header .mainNav .mobileCart a img {
     width: 100%;
     height: auto;
     box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
 }
 
 .bussinesBranches .companies .branchDescription {
@@ -2151,6 +2150,9 @@ header .mainNav .mobileCart a img {
     width: 100%;
     height: auto;
     box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
 }
 
 .bussinesBranches .entrepreneur .branchDescription {
@@ -2323,6 +2325,7 @@ header .mainNav .mobileCart a img {
 /*Location Footer*/
 /*Footer*/
 footer {
+    background: rgba(246, 246, 246, 1);
     height: auto;
     font-size: 14px;
     padding-top: 4rem;
@@ -2465,7 +2468,7 @@ footer .legalAdvice p {
 /*Packages View*/
 .headerPackages {
     position: relative;
-    height: 90vh;
+    height: 95vh;
     background: rgba(246, 246, 246, 1);
 }
 
@@ -3442,6 +3445,10 @@ footer .legalAdvice p {
 .contenedorPaquetesClasicos .selectorPaquetesTituloUnbox p span {
     color: #33bbe8;
 }
+.contenedorPaquetesClasicos .selectorPaquetesTituloUnbox p span.netflix {
+    color: rgba(216, 31, 38, 1);
+    font-weight: 700;
+}
 
 /**/
 .hiddenPackageTriple,
@@ -3486,7 +3493,7 @@ footer .legalAdvice p {
 }
 
 .termsAndConditions hr {
-    border: rgba(117, 120, 123, 0.5) solid 1px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .termsAndConditions p {
@@ -3514,9 +3521,10 @@ footer .legalAdvice p {
 }
 
 .unboxCarousel {
-    padding-top: 2rem;
+    padding-top: 70px;
     background: rgba(34, 35, 49, 1);
     color: rgba(255, 255, 255, 1);
+    padding-bottom: 70px;
 }
 
 .unboxCarousel .carouselTitles h1 {
@@ -3603,7 +3611,7 @@ footer .legalAdvice p {
 .landingPackageResume .landingPackageDescription h2 {
     text-align: center;
     margin-bottom: 3rem;
-    font-weight: 500;
+    font-weight: 400;
     color: rgba(59, 69, 89, 1);
     font-size: 33px;
 }
@@ -3988,7 +3996,7 @@ footer .legalAdvice p {
 }
 
 .landingFullWidthBanner .landingBannerArt img {
-    width: 85%;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -4746,6 +4754,7 @@ video {
 
 .supportMain .phonesRow .phoneItem a {
     font-size: 20px;
+    color: rgba(25, 138, 255, 1);
 }
 .supportMain .phonesRow .phoneItem a,
 .supportMain .phonesRow .phoneItem p,
@@ -4759,6 +4768,7 @@ video {
 }
 .supportMain .phonesRow .phoneItem.multipleItem a {
     font-size: 24px;
+    color: rgba(25, 138, 255, 1);
 }
 .supportMain .phonesRow .phoneItem.multipleItem a::before {
     content: "\f879";
@@ -4784,6 +4794,9 @@ video {
 }
 .supportManuals .manualsCarousel a {
     color: rgba(59, 69, 89, 1);
+}
+.supportManuals .manualsCarousel a:focus {
+    outline: none;
 }
 
 .supportManuals .manualsCarousel a::after {
@@ -4951,6 +4964,7 @@ video {
     padding-top: 10px;
     padding-left: 15px;
     margin-bottom: 20px;
+    -moz-appearance: none;
 }
 .contactInputContainer .mat-input-outer {
     margin-bottom: 15px;
@@ -5019,6 +5033,9 @@ video {
     align-items: center;
     margin-top: 65vh;
 }
+.appLogoContainer img {
+    margin-bottom: 24px;
+}
 .stopperHeight {
     height: 150px;
     width: calc(100% + 30px);
@@ -5032,6 +5049,23 @@ video {
     @media {
         .stopperHeight {
             top: 20vh;
+        }
+        .contactInputContainer select {
+            -webkit-appearance: none;
+            width: 100%;
+            background: rgba(255, 255, 255, 0);
+            position: relative;
+            top: 7px;
+            color: rgba(255, 255, 255, 1);
+            border: none;
+            border-bottom: rgba(222, 226, 230, 1) solid 1px;
+            padding-bottom: 12px;
+            padding-top: 10px;
+            padding-left: 15px;
+            margin-bottom: 20px;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            border-radius: 0;
         }
     }
 }
@@ -5135,6 +5169,13 @@ video {
 .appsCardsContainer .appCenteredImage .descritionButtonRow {
     padding-top: 2rem;
     padding-bottom: 2rem;
+}
+.whiteBackApps .appsCardsContainer .appCenteredImage p {
+    color: rgba(59, 69, 89, 1);
+}
+.whiteBackApps.telefonia .appsCardsContainer .appCenteredImage p,
+.whiteBackApps.television .appsCardsContainer .appCenteredImage p {
+    color: rgba(245, 245, 245, 1);
 }
 .amazonBack {
     background: rgba(22, 22, 27, 1);
@@ -5303,7 +5344,7 @@ video {
     border-radius: 16px;
 }
 .appFaqs {
-    background: rgba(245, 245, 245, 1);
+    background: rgba(255, 255, 255, 1);
     padding-top: 60px;
     padding-bottom: 50px;
 }
@@ -5318,12 +5359,12 @@ video {
 }
 .appFaqs .faqsContainer .card {
     margin-bottom: 16px;
-    background: rgba(224, 224, 224, 1);
+    background: rgba(245, 245, 245, 1);
     border: none;
 }
 .appFaqs .faqsContainer .card .card-header {
     border: none;
-    background: rgba(224, 224, 224, 1);
+    background: rgba(245, 245, 245, 1);
 }
 .appFaqs .faqsContainer .card .card-header h2 button {
     color: rgba(59, 69, 89, 1);
@@ -5367,9 +5408,10 @@ video {
 .whiteBackApps .appLogoContainer h1 {
     font-weight: 700;
     color: rgba(59, 69, 89, 1);
+    margin-bottom: 24px;
 }
 .whiteBackApps .stopperHeight {
-    top: 20vh;
+    top: 30vh;
 }
 .whiteBackApps .videoAppContainer {
     box-shadow: none !important;
@@ -5427,6 +5469,7 @@ video {
 .whiteBackApps.telefonia .appVideoContainer h1,
 .whiteBackApps.television .appVideoContainer h1 {
     color: rgba(255, 255, 255, 1);
+    margin-bottom: 24px;
 }
 .whiteBackApps.telefonia .appsMainTitle,
 .whiteBackApps.television .appsMainTitle {

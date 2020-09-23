@@ -241,7 +241,7 @@ $(document).ready(function () {
         draggable: true,
         fade: true,
         infinite: true,
-        pauseOnHover: true,
+        pauseOnHover: false,
         swipe: true,
         touchMove: true,
         swipeToSlide: true
@@ -535,8 +535,6 @@ var activeTopMenu = function (item1, item2, item3, item4) {
     $("#" + item3).removeClass('active');
     $("#" + item4).removeClass('active');
 };
-var appSlider = document.getElementById('parallaxMain');
-var parallax = new Parallax(appSlider);
 var distanceTop = $('#fixed').offset().top;
 $(window).scroll(function () {
     if ($(window).scrollTop() >= distanceTop) {
@@ -548,3 +546,5 @@ $(window).scroll(function () {
         $('#fixed').removeClass("fixedNav");
     }
 });
+var appSlider = document.getElementById('parallaxMain');
+var parallax = new Parallax(appSlider);
