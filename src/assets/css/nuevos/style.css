@@ -5028,8 +5028,12 @@ video {
     top: 40vh;
     visibility: hidden;
 }
-.stopperHeight:not(*:root) {
-    top: 20vh;
+@media not all and (min-resolution: 0.001dpcm) {
+    @media {
+        .stopperHeight {
+            top: 20vh;
+        }
+    }
 }
 .showMoreRow {
     position: relative;
