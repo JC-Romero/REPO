@@ -177,7 +177,7 @@ $(document).ready(function () {
             'overflow': 'auto'
         });
     });
-
+    $('#faqsAccordion').collapse({});
     var windw = this;
     $.fn.followTo = function (elem) {
         var $this = this,
@@ -206,9 +206,7 @@ $(document).ready(function () {
         $window.scroll(setPosition);
         setPosition();
     };
-
     $('#scrollingElement').followTo('#stopper');
-    $('#faqsAccordion').collapse({});
 });
 $(window).scroll(function () {
     $("#fadeButton").css("opacity", 1 - $(window).scrollTop() / 50);
@@ -537,6 +535,8 @@ var activeTopMenu = function (item1, item2, item3, item4) {
     $("#" + item3).removeClass('active');
     $("#" + item4).removeClass('active');
 };
+var appSlider = document.getElementById('parallaxMain');
+var parallax = new Parallax(appSlider);
 var distanceTop = $('#fixed').offset().top;
 $(window).scroll(function () {
     if ($(window).scrollTop() >= distanceTop) {

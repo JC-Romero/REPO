@@ -3960,8 +3960,8 @@ footer .legalAdvice p {
 }
 
 .landingFullWidthBanner .landingBannerContainer {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .landingFullWidthBanner .landingBannerTitle h1 {
@@ -3988,7 +3988,7 @@ footer .legalAdvice p {
 }
 
 .landingFullWidthBanner .landingBannerArt img {
-    width: 65%;
+    width: 85%;
     margin: 0 auto;
 }
 
@@ -5017,19 +5017,19 @@ video {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    top: 0;
-    position: fixed;
     margin-top: 65vh;
 }
 .stopperHeight {
-    height: 10px;
-    width: 100%;
+    height: 150px;
     width: calc(100% + 30px);
     background: rgba(22, 22, 27, 1);
-    position: absolute;
+    position: fixed;
     left: -15px;
-    top: 30vh;
+    top: 40vh;
     visibility: hidden;
+}
+.stopperHeight:not(*:root) {
+    top: 20vh;
 }
 .showMoreRow {
     position: relative;
@@ -6009,6 +6009,39 @@ video {
 }
 
 /*Faqs*/
+/*Landing App*/
+.mainSliderApp {
+    margin-top: 120px;
+}
+.mainSliderApp .sliderAppContainer .sliderAppTexts h1 {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 49px;
+    color: rgba(59, 69, 89, 1);
+}
+.mainSliderApp .sliderAppContainer .sliderAppTexts p {
+    font-size: 53px;
+    font-weight: 300;
+    line-height: 64px;
+    color: rgba(59, 69, 89, 1);
+    margin-bottom: 70px;
+}
+.mainSliderApp .sliderAppContainer .sliderAppTexts span {
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 28px;
+    color: rgba(59, 69, 89, 1);
+}
+.mainSliderApp .sliderAppContainer .sliderAppsBadges {
+    margin-top: 20px;
+}
+.mainSliderApp .sliderAppContainer .sliderAppImagesContainer {
+    text-align: center;
+}
+.mainSliderApp .sliderAppContainer .sliderAppImagesContainer svg {
+    max-width: 80%;
+}
+/*Landing App*/
 /*Modal Canales*/
 .disableClick {
     pointer-events: none;
