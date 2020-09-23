@@ -9,7 +9,7 @@ export class Fox{
         this.cargarCarrusel();
         this.cargarCanales();
 
-		this.setListener();
+		//this.setListener();
 	}
 
      cargarVideo(){

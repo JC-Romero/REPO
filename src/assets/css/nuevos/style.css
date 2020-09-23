@@ -6,7 +6,9 @@ body,
     height: 100%;
     font-family: "Montserrat", sans-serif;
 }
-
+.card-header {
+    background-color: transparent;
+}
 .card-deck {
     height: auto;
 }
@@ -313,7 +315,9 @@ header .mainNav .mobileCart a img {
 .mobileHeader .headerTopMenu .mobileToggle {
     padding-left: 40px;
 }
-
+.mobileHeader .headerTopMenu .logoContainer {
+    margin-right: 15px;
+}
 .mobileHeader .headerTopMenu .logoContainer img {
     width: 132px;
     margin: 0 auto;
@@ -596,9 +600,6 @@ header .mainNav .mobileCart a img {
     margin-bottom: 2rem;
 }
 
-.videoTextContainer .row a:after {
-}
-
 .videoTextContainer .row a:hover {
     text-decoration: none;
 }
@@ -704,6 +705,16 @@ header .mainNav .mobileCart a img {
     max-width: 128px;
     margin: 0 auto;
     margin-bottom: 2rem;
+    transition: all 0.3s;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.videoTextContainerSecond .videoTextContentSecond .imagesAppsContainer img:hover {
+    transform: scale(1.1);
+    transition: all 0.3s;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.35);
 }
 
 .videoTextContainerSecond h1 {
@@ -855,6 +866,10 @@ header .mainNav .mobileCart a img {
     -moz-border-radius: 4px;
     border-radius: 4px;
     padding-top: 1.5rem;
+}
+.cardsRow .card.blueCardHome {
+    background: rgba(34, 36, 48, 1);
+    color: rgba(245, 245, 245, 1);
 }
 
 .cardsRow .card img {
@@ -1108,15 +1123,10 @@ header .mainNav .mobileCart a img {
 
 .unbox .titlePackage p {
     color: rgba(255, 255, 255, 1);
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#00aae3+0,59cbe8+100&0.8+0,0.8+100 */
     background: -moz-linear-gradient(45deg, rgba(0, 170, 227, 0.8) 0%, rgba(89, 203, 232, 0.8) 100%);
-    /* FF3.6-15 */
     background: -webkit-linear-gradient(45deg, rgba(0, 170, 227, 0.8) 0%, rgba(89, 203, 232, 0.8) 100%);
-    /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(45deg, rgba(0, 170, 227, 0.8) 0%, rgba(89, 203, 232, 0.8) 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cc00aae3', endColorstr='#cc59cbe8', GradientType=1);
-    /* IE6-9 fallback on horizontal gradient */
     padding: 6px 10px;
     display: inline;
     font-family: "Montserrat", sans-serif;
@@ -1126,9 +1136,7 @@ header .mainNav .mobileCart a img {
     -moz-border-radius: 4px;
     border-radius: 4px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.05);
-    height: auto;
 }
-
 .unbox .velocityPackage {
     color: #33bbe8;
     font-family: "Montserrat", sans-serif;
@@ -1209,7 +1217,6 @@ header .mainNav .mobileCart a img {
     text-align: center;
     padding: 5px 16px;
     display: inline;
-    height: auto;
     white-space: nowrap;
 }
 
@@ -1235,15 +1242,10 @@ header .mainNav .mobileCart a img {
 
 .match .titlePackage p {
     color: rgba(255, 255, 255, 1);
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e4002b+0,e02d1d+100&0.8+0,0.8+100 */
     background: -moz-linear-gradient(45deg, rgba(228, 0, 43, 0.8) 0%, rgba(224, 45, 29, 0.8) 100%);
-    /* FF3.6-15 */
     background: -webkit-linear-gradient(45deg, rgba(228, 0, 43, 0.8) 0%, rgba(224, 45, 29, 0.8) 100%);
-    /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(45deg, rgba(228, 0, 43, 0.8) 0%, rgba(224, 45, 29, 0.8) 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cce4002b', endColorstr='#cce02d1d', GradientType=1);
-    /* IE6-9 fallback on horizontal gradient */
     padding: 6px 10px;
     display: inline;
     font-family: "Montserrat", sans-serif;
@@ -2030,10 +2032,10 @@ header .mainNav .mobileCart a img {
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
-    background: rgba(226, 2, 39, 1);
+    /*background: rgba(226, 2, 39, 1);*/
     position: relative;
     max-height: 300px;
-    box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 4rem;
 }
 
 .bussinesBranches .companies .branchImage,
@@ -2043,7 +2045,7 @@ header .mainNav .mobileCart a img {
     overflow: hidden;
 }
 
-.bussinesBranches .companies .branchImage:after {
+/*.bussinesBranches .companies .branchImage:after {
     content: "";
     width: 100%;
     height: 100%;
@@ -2053,22 +2055,18 @@ header .mainNav .mobileCart a img {
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e0d7d1+0,e20227+50&0+0,1+50 */
     background: -moz-linear-gradient(top, rgba(224, 215, 209, 0) 0%, rgba(226, 2, 39, 1) 65%);
-    /* FF3.6-15 */
     background: -webkit-linear-gradient(top, rgba(224, 215, 209, 0) 0%, rgba(226, 2, 39, 1) 65%);
-    /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to bottom, rgba(224, 215, 209, 0) 0%, rgba(226, 2, 39, 1) 65%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00e0d7d1', endColorstr='#e20227', GradientType=0);
-    /* IE6-9 */
     min-height: 322px;
     max-height: 322px;
-}
+}*/
 
 .bussinesBranches .companies .branchImage div img {
     width: 100%;
     height: auto;
+    box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
 }
 
 .bussinesBranches .companies .branchDescription {
@@ -2118,10 +2116,10 @@ header .mainNav .mobileCart a img {
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
-    background: rgba(8, 155, 154, 1);
+    /*background: rgba(8, 155, 154, 1);*/
     position: relative;
     max-height: 300px;
-    box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 4rem;
 }
 
 .bussinesBranches .entrepreneur .branchImage,
@@ -2131,7 +2129,7 @@ header .mainNav .mobileCart a img {
     overflow: hidden;
 }
 
-.bussinesBranches .entrepreneur .branchImage:after {
+/*.bussinesBranches .entrepreneur .branchImage:after {
     content: "";
     width: 100%;
     height: 100%;
@@ -2141,22 +2139,18 @@ header .mainNav .mobileCart a img {
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e0d7d1+0,089b9a+50&0+0,1+50 */
     background: -moz-linear-gradient(top, rgba(224, 215, 209, 0) 0%, rgba(8, 155, 154, 1) 65%);
-    /* FF3.6-15 */
     background: -webkit-linear-gradient(top, rgba(224, 215, 209, 0) 0%, rgba(8, 155, 154, 1) 65%);
-    /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to bottom, rgba(224, 215, 209, 0) 0%, rgba(8, 155, 154, 1) 65%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00e0d7d1', endColorstr='#089b9a', GradientType=0);
-    /* IE6-9 */
     min-height: 322px;
     max-height: 322px;
-}
+}*/
 
 .bussinesBranches .entrepreneur .branchImage div img {
     width: 100%;
     height: auto;
+    box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
 }
 
 .bussinesBranches .entrepreneur .branchDescription {
@@ -2333,6 +2327,7 @@ footer {
     font-size: 14px;
     padding-top: 4rem;
     padding-bottom: 2rem;
+    margin-top: 4rem;
     overflow-x: hidden !important;
 }
 
@@ -2361,10 +2356,6 @@ footer .footerColumn p {
 
 footer .footerColumn p i {
     margin-left: 5px;
-}
-
-footer .footerColumn:nth-child(6) p:first-child {
-    margin-bottom: 0;
 }
 
 .servicesCollapsible,
@@ -2580,18 +2571,21 @@ footer .legalAdvice p {
 .generalPackage .iconsRow p i.fa-wifi {
     background: linear-gradient(213.73deg, rgba(255, 191, 63, 1) 0%, rgba(219, 228, 66, 1) 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .generalPackage .iconsRow p i.fa-tv {
     background: linear-gradient(215.84deg, rgba(228, 0, 43, 1) 0%, rgba(240, 78, 152, 1) 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .generalPackage .iconsRow p i.fa-phone-alt {
     background: linear-gradient(215.02deg, rgba(240, 78, 152, 1) 0%, rgba(130, 70, 175, 1) 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 /*Nuevos estilos paquetes*/
@@ -2608,6 +2602,7 @@ footer .legalAdvice p {
 .generalPackage.unbox .iconsRow p i.fa-wifi {
     background: rgba(255, 255, 255, 1);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -2618,12 +2613,14 @@ footer .legalAdvice p {
 .generalPackage.unbox .iconsRow p i.fa-tv {
     background: rgba(255, 255, 255, 1);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .generalPackage.unbox .iconsRow p i.fa-phone-alt {
     background: rgba(255, 255, 255, 1);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -2641,6 +2638,7 @@ footer .legalAdvice p {
 .generalPackage.match .iconsRow p i.fa-wifi {
     background: rgba(255, 255, 255, 1);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -2651,12 +2649,14 @@ footer .legalAdvice p {
 .generalPackage.match .iconsRow p i.fa-tv {
     background: rgba(255, 255, 255, 1);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .generalPackage.match .iconsRow p i.fa-phone-alt {
     background: rgba(255, 255, 255, 1);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -2721,6 +2721,7 @@ footer .legalAdvice p {
     background: linear-gradient(270deg, rgba(250, 119, 102, 1) 0%, rgba(244, 66, 54, 1) 100%);
     font-size: 32px;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 700;
 }
@@ -3264,17 +3265,11 @@ footer .legalAdvice p {
 }
 
 .paquetesClasicosHeader.match {
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e4002b+0,e02d1d+100 */
     background: #e4002b;
-    /* Old browsers */
     background: -moz-linear-gradient(left, #e4002b 0%, #e02d1d 100%);
-    /* FF3.6-15 */
     background: -webkit-linear-gradient(left, #e4002b 0%, #e02d1d 100%);
-    /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to right, #e4002b 0%, #e02d1d 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e4002b', endColorstr='#e02d1d', GradientType=1);
-    /* IE6-9 */
 }
 
 .paquetesClasicosHeader.match .paquetesClasicosContainer {
@@ -3307,18 +3302,21 @@ footer .legalAdvice p {
 .paquetesClasicosHeader .paquetesClasicosContainer i.fa-wifi {
     background: linear-gradient(213.73deg, rgba(255, 191, 63, 1) 0%, rgba(219, 228, 66, 1) 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .paquetesClasicosHeader .paquetesClasicosContainer i.fa-tv {
     background: linear-gradient(215.84deg, rgba(228, 0, 43, 1) 0%, rgba(240, 78, 152, 1) 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .paquetesClasicosHeader .paquetesClasicosContainer i.fa-phone-alt {
     background: linear-gradient(215.02deg, rgba(240, 78, 152, 1) 0%, rgba(130, 70, 175, 1) 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -3601,7 +3599,6 @@ footer .legalAdvice p {
     -moz-border-radius: 4px;
     border-radius: 4px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.05);
-    height: auto;
 }
 
 .landingPackageResume .landingPackageDescription h2 {
@@ -3751,16 +3748,12 @@ footer .legalAdvice p {
     position: absolute;
     left: -25px;
     top: 3px;
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#dbe442+0,ffbf3f+100&0.85+0,0.85+100 */
     background: -moz-linear-gradient(45deg, rgba(219, 228, 66, 0.85) 0%, rgba(255, 191, 63, 0.85) 100%);
-    /* FF3.6-15 */
     background: -webkit-linear-gradient(45deg, rgba(219, 228, 66, 0.85) 0%, rgba(255, 191, 63, 0.85) 100%);
-    /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(45deg, rgba(219, 228, 66, 0.85) 0%, rgba(255, 191, 63, 0.85) 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d9dbe442', endColorstr='#d9ffbf3f', GradientType=1);
-    /* IE6-9 fallback on horizontal gradient */
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -3771,18 +3764,13 @@ footer .legalAdvice p {
     position: absolute;
     left: -25px;
     top: 3px;
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#37c2ea+0,68e3f6+100 */
     background: rgb(55, 194, 234);
-    /* Old browsers */
     background: -moz-linear-gradient(45deg, rgba(55, 194, 234, 1) 0%, rgba(104, 227, 246, 1) 100%);
-    /* FF3.6-15 */
     background: -webkit-linear-gradient(45deg, rgba(55, 194, 234, 1) 0%, rgba(104, 227, 246, 1) 100%);
-    /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(45deg, rgba(55, 194, 234, 1) 0%, rgba(104, 227, 246, 1) 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#37c2ea', endColorstr='#68e3f6', GradientType=1);
-    /* IE6-9 fallback on horizontal gradient */
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -3793,16 +3781,12 @@ footer .legalAdvice p {
     position: absolute;
     left: -25px;
     top: -5px;
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e4002b+0,f04e98+100&0.85+0,0.85+100 */
     background: -moz-linear-gradient(45deg, rgba(228, 0, 43, 0.85) 0%, rgba(240, 78, 152, 0.85) 100%);
-    /* FF3.6-15 */
     background: -webkit-linear-gradient(45deg, rgba(228, 0, 43, 0.85) 0%, rgba(240, 78, 152, 0.85) 100%);
-    /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(45deg, rgba(228, 0, 43, 0.85) 0%, rgba(240, 78, 152, 0.85) 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d9e4002b', endColorstr='#d9f04e98', GradientType=1);
-    /* IE6-9 fallback on horizontal gradient */
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -3813,16 +3797,12 @@ footer .legalAdvice p {
     position: absolute;
     left: -25px;
     top: -5px;
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#8246af+0,f04e98+100&0.85+0,0.85+100 */
     background: -moz-linear-gradient(45deg, rgba(130, 70, 175, 0.85) 0%, rgba(240, 78, 152, 0.85) 100%);
-    /* FF3.6-15 */
     background: -webkit-linear-gradient(45deg, rgba(130, 70, 175, 0.85) 0%, rgba(240, 78, 152, 0.85) 100%);
-    /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(45deg, rgba(130, 70, 175, 0.85) 0%, rgba(240, 78, 152, 0.85) 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d98246af', endColorstr='#d9f04e98', GradientType=1);
-    /* IE6-9 fallback on horizontal gradient */
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -4129,12 +4109,12 @@ footer .legalAdvice p {
 
 .internetRow .laptop .facetime {
     position: absolute;
-    left: 50%;
+    left: 50.1%;
     overflow: hidden;
     transform: translateX(-50%);
     max-width: 100%;
     top: 12px;
-    height: 343px;
+    height: 358px;
     width: 527px;
 }
 
@@ -4322,7 +4302,7 @@ video {
 
 .infiniteCarousel .slideInfinite {
     width: 560px;
-    margin-left: 10px;
+    margin-left: 5px;
 }
 
 .infiniteCarousel .slideInfinite .backImage {
@@ -4346,6 +4326,7 @@ video {
     z-index: 9998;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
+    border-radius: 4px;
     background: rgba(30, 30, 40, 0.2);
     top: 0;
     left: 0;
@@ -4427,6 +4408,7 @@ video {
     left: -5.5%;
     bottom: 0;
     z-index: 1;
+    visibility: hidden;
 }
 .devicesSlider .computerContainer img {
     width: 54.5%;
@@ -4438,9 +4420,9 @@ video {
     z-index: 1;
 }
 .devicesSlider .smartphoneContainer {
-    width: 11.4%;
-    left: 41.6%;
-    bottom: 0;
+    bottom: 0 !important;
+    left: 30%;
+    width: 13%;
     position: absolute;
     z-index: 3;
     transition: all 0.3s;
@@ -4453,12 +4435,13 @@ video {
     object-fit: contain;
 }
 .devicesSlider .ipadLandscapeContainer {
-    width: 33.9%;
-    left: 42.2%;
+    width: 40.9%;
+    left: 33.2%;
     bottom: 0;
     right: 12.2%;
     position: absolute;
     z-index: 2;
+    transition: 300ms;
 }
 
 .devicesSlider .ipadLandscapeContainer img {
@@ -4491,7 +4474,7 @@ video {
     background-position: 49% 24%;
 }
 .onDemandPhone img {
-    background: url(../../../assets/img/nuevos/imgservicios/screen@3xiphone.jpg) left top no-repeat;
+    background: url(../../../assets/img/nuevos/imgservicios/nuevoAppTotalplay.png) left top no-repeat;
     background-size: 63% auto;
     background-position: 49% 44%;
 }
@@ -4535,15 +4518,24 @@ video {
     background-size: 56% auto;
     background-position: 49% 24%;
 }
+.ipadWifi {
+    width: 36.9% !important;
+    left: 39.2% !important;
+    transition: 300ms;
+}
 .ipadWifi img {
     background: url(../../../assets/img/nuevos/imgservicios/group@3x.png) top left no-repeat;
-    background-size: 62% auto;
-    background-position: 49% 45%;
+    background-size: 57% auto;
+    background-position: 48% 39%;
 }
 .phoneWifi img {
     background: url(../../../assets/img/nuevos/imgservicios/group-2@3x.png) left top no-repeat;
     background-size: 63% auto;
-    background-position: 49% 44%;
+    background-position: 49% 46%;
+}
+.phoneWifi {
+    left: 40% !important;
+    width: 11% !important;
 }
 .computerInvoice img {
     background: url(../../img/nuevos/imgservicios/edoCuenta@3x.png) top left no-repeat;
@@ -4555,10 +4547,32 @@ video {
     background-size: 62% auto;
     background-position: 49% 45%;
 }
+.ipadInvoice {
+    width: 40.9% !important;
+    left: 33.2% !important;
+    bottom: 0 !important;
+    right: 12.2% !important;
+}
 .phoneInvoice img {
     background: url(../../../assets/img/nuevos/imgservicios/movil-edo-cuenta@3x.png) left top no-repeat;
     background-size: 63% auto;
-    background-position: 49% 44%;
+    background-position: 49% 47%;
+}
+.phoneInvoice {
+    bottom: 0 !important;
+    left: 30% !important;
+    width: 13% !important;
+    transition: 300ms;
+}
+.newRemoteIpad img {
+    background: url(../../../assets/img/nuevos/imgservicios/controlipad.png) top left no-repeat;
+    background-size: 58% auto;
+    background-position: 49% 41%;
+}
+.newPhoneIpad img {
+    background: url(../../../assets/img/nuevos/imgservicios/phoneipad.png) top left no-repeat;
+    background-size: 58% auto;
+    background-position: 49% 41%;
 }
 .sliderSelector {
     list-style: none;
@@ -4575,9 +4589,9 @@ video {
 }
 .sliderSelector li a {
     color: rgba(59, 69, 89, 1);
-    margin-right: 15px;
     display: block;
     font-size: 18px;
+    margin-right: 15px;
 }
 .sliderSelector li a::after {
     display: none;
@@ -4643,7 +4657,7 @@ video {
     font-weight: 700;
 }
 .landlineRow .landlineImage img {
-    max-width: 300px;
+    max-width: 850px;
 }
 .landlineRow .landlineDescription p {
     font-weight: 300;
@@ -4955,7 +4969,7 @@ video {
 }
 .appsMainContainer .appVideoContainer {
     width: calc(100% + 30px);
-    height: 810px;
+    height: 80vh;
     position: relative;
     display: flex;
     flex-wrap: nowrap;
@@ -4967,11 +4981,15 @@ video {
 }
 .appsMainContainer .appVideoContainer .videoAppContainer {
     width: 100%;
+    height: 100%;
     overflow: hidden;
     position: absolute;
-    height: 455px;
     box-shadow: 0 8px 48px 0 rgba(0, 0, 0, 0.5);
     left: 0px;
+}
+.hotPack {
+    background: url(../../../assets/img/nuevos/hotpack/background.jpg) top center no-repeat;
+    background-size: cover;
 }
 .appsMainContainer .appVideoContainer .videoAppContainer video {
     position: absolute;
@@ -4987,10 +5005,10 @@ video {
     display: block;
     z-index: 9;
     left: 0;
-    background: -moz-linear-gradient(top, rgba(22, 27, 27, 0.05) 0%, rgba(22, 22, 27, 1) 100%); /* FF3.6-15 */
+    background: -moz-linear-gradient(top, rgba(22, 27, 27, 0.05) 0%, rgba(22, 22, 27, 1) 100%);
     background: -webkit-linear-gradient(top, rgba(22, 27, 27, 0.05) 0%, rgba(22, 22, 27, 1) 100%);
     background: linear-gradient(to bottom, rgba(22, 27, 27, 0.05) 0%, rgba(22, 22, 27, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d161b1b', endColorstr='#16161b',GradientType=0 ); /* IE6-9 */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d161b1b', endColorstr='#16161b',GradientType=0 );
 }
 .appLogoContainer {
     z-index: 10;
@@ -5002,7 +5020,7 @@ video {
     align-items: center;
     top: 0;
     position: fixed;
-    margin-top: 200px;
+    margin-top: 65vh;
 }
 .stopperHeight {
     height: 10px;
@@ -5011,12 +5029,12 @@ video {
     background: rgba(22, 22, 27, 1);
     position: absolute;
     left: -15px;
-    top: 760px;
+    top: 30vh;
     visibility: hidden;
 }
 .showMoreRow {
     position: relative;
-    top: -9rem;
+    top: -8rem;
 }
 .showMoreRow p {
     color: rgba(255, 255, 255, 1);
@@ -5117,6 +5135,12 @@ video {
 }
 .amazonBack {
     background: rgba(22, 22, 27, 1);
+}
+.landingWhiteBack {
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(245, 245, 245, 1) 100%);
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(245, 245, 245, 1) 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(245, 245, 245, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#f5f5f5',GradientType=0 );
 }
 .comedyBack {
     background: rgb(22, 22, 27);
@@ -5247,6 +5271,23 @@ video {
     color: #3b4559;
     margin-bottom: 2rem;
 }
+.otherAppsRow .linksToLandings .otherAppsItem .landingLink {
+    background: rgba(255, 255, 255, 1);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+.otherAppsRow .linksToLandings .otherAppsItem .landingLink h1 a {
+    font-weight: 700;
+    color: rgba(59, 69, 89, 1);
+    font-size: 24px;
+}
+.otherAppsRow .linksToLandings .otherAppsItem .landingLink h1 a::after {
+    display: none;
+}
 .otherAppsRow .otherAppsGallery {
     text-align: center;
 }
@@ -5310,20 +5351,679 @@ video {
     font-size: 12px;
 }
 /*Apps*/
+/*Landings Servicios*/
+.whiteBackApps .appVideoContainer {
+    background: rgba(255, 255, 255, 1) !important;
+}
+.whiteBackApps .appsMainTitle {
+    background: rgba(255, 255, 255, 1) !important;
+}
+.whiteBackApps .appLogoContainer {
+    margin-top: 75vh;
+}
+.whiteBackApps .appLogoContainer h1 {
+    font-weight: 700;
+    color: rgba(59, 69, 89, 1);
+}
+.whiteBackApps .stopperHeight {
+    top: 20vh;
+}
+.whiteBackApps .videoAppContainer {
+    box-shadow: none !important;
+}
+.whiteBackApps .videoAppContainer img {
+    width: 742px;
+    max-width: 100%;
+}
+.whiteBackApps .videoAppContainer::before {
+    display: none !important;
+}
+.whiteBackApps .showMoreRow p {
+    color: rgba(22, 27, 27) !important;
+}
+.whiteBackApps.television .appVideoContainer {
+    background: rgba(23, 22, 28, 1);
+    background-image: url(../../img/nuevos/backLandingTV.jpg), linear-gradient(rgba(23, 22, 28, 1), rgba(23, 22, 28, 1)) !important;
+    background-size: cover !important;
+    background-position: top center !important;
+    background-repeat: no-repeat !important;
+}
+.whiteBackApps.telefonia .appVideoContainer {
+    background: url(../../../assets/img/nuevos/tel.jpg) top center no-repeat !important;
+    background-size: cover !important;
+}
+.whiteBackApps .appVideoContainer::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: block;
+    z-index: 9;
+    left: 0;
+    background: -moz-linear-gradient(top, rgba(252, 252, 252, 0) 0%, rgba(252, 252, 252, 1) 100%);
+    background: -webkit-linear-gradient(top, rgba(252, 252, 252, 0) 0%, rgba(252, 252, 252, 1) 100%);
+    background: linear-gradient(to bottom, rgba(252, 252, 252, 0) 0%, rgba(252, 252, 252, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00fcfcfc', endColorstr='#fcfcfc',GradientType=0 );
+    box-shadow: 0 24px 48px 0 rgba(0, 0, 0, 0.5);
+}
+.whiteBackApps.telefonia .appVideoContainer::after,
+.whiteBackApps.television .appVideoContainer::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: block;
+    z-index: 9;
+    left: 0;
+    background: -moz-linear-gradient(top, rgba(22, 22, 27, 0.3) 0%, rgba(22, 22, 27, 1) 100%);
+    background: -webkit-linear-gradient(top, rgba(22, 22, 27, 0.3) 0%, rgba(22, 22, 27, 1) 100%);
+    background: linear-gradient(to bottom, rgba(22, 22, 27, 0.3) 0%, rgba(22, 22, 27, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4d16161b', endColorstr='#16161b',GradientType=0 );
+    box-shadow: 0 24px 48px 0 rgba(0, 0, 0, 0.5);
+}
+.whiteBackApps.telefonia .appVideoContainer h1,
+.whiteBackApps.television .appVideoContainer h1 {
+    color: rgba(255, 255, 255, 1);
+}
+.whiteBackApps.telefonia .appsMainTitle,
+.whiteBackApps.television .appsMainTitle {
+    background: rgba(22, 22, 27, 1) !important;
+}
+.whiteBackApps.telefonia .showMoreRow p,
+.whiteBackApps.television .showMoreRow p {
+    color: rgba(245, 245, 245, 1) !important;
+}
+.whiteBackApps.telefonia .landingWhiteBack,
+.whiteBackApps.television .landingWhiteBack {
+    background: rgb(22, 22, 27);
+    background: -moz-linear-gradient(top, rgba(22, 22, 27, 1) 0%, rgba(59, 69, 89, 1) 100%);
+    background: -webkit-linear-gradient(top, rgba(22, 22, 27, 1) 0%, rgba(59, 69, 89, 1) 100%);
+    background: linear-gradient(to bottom, rgba(22, 22, 27, 1) 0%, rgba(59, 69, 89, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#16161b', endColorstr='#3b4559',GradientType=0 );
+}
+.whiteBackApps.telefonia .landingWhiteBack .card.dark,
+.whiteBackApps.television .landingWhiteBack .card.dark {
+    background: rgba(34, 36, 48, 1);
+}
+.whiteBackApps.television .videoAppContainer img {
+    width: 100%;
+    max-width: 100%;
+    position: absolute;
+    top: -50%;
+    left: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/*Landings Servicios*/
 /*Modal Canales*/
 .modalButton {
     height: auto;
 }
-.channelsHeader {
+.modalChannelsContainer > div {
+    height: auto;
+}
+.modalChannelsContainer {
+    width: 100%;
+    height: 100%;
+    background: rgba(245, 245, 245, 1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    display: none;
+    text-align: center;
+    padding: 0 15px;
+    overflow-y: auto;
+}
+.modalChannelsContainer .closeButton {
+    font-size: 32px;
+    position: absolute;
+    height: auto;
+    top: 4px;
+    right: 24px;
+    cursor: pointer;
+    height: auto;
+    z-index: 1000;
+    width: 32px;
+    height: 32px;
+}
+.modalChannelsContainer .closeButton .closeButtonIcon::after {
+    content: "\e80d";
+    font-family: "totalplayicons";
+    font-size: 18px;
+    color: rgba(59, 69, 89, 1);
+}
+.modalChannelsContainer .channelsTopBar .channelsTopBarTitle {
+    padding-top: 2rem;
+    height: auto;
+}
+.modalChannelsContainer .channelsTopBar .channelsTopBarTitle h1 {
+    font-weight: 300;
+    text-align: center;
+    font-size: 36px;
+    color: rgba(59, 69, 89, 1);
+    margin-bottom: 1rem;
+}
+.modalChannelsContainer .channelsTopBar .channelsTopBarToggle ul {
+    list-style: none;
+    height: auto;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow-x: auto;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+.modalChannelsContainer .channelsTopBar .channelsTopBarToggle li {
+    display: inline;
+    margin: 0 10px;
+}
+.modalChannelsContainer .channelsTopBar .channelsTopBarToggle li a {
+    font-weight: 300;
+    background: rgba(225, 225, 225, 1);
+    color: rgba(59, 69, 89, 1);
+    padding: 7px 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    border: solid rgba(26, 118, 210, 0) 2px;
+}
+.modalChannelsContainer .channelsTopBar .channelsTopBarToggle li a:hover {
+    border: solid rgba(26, 118, 210, 1) 2px;
+    background: rgba(26, 118, 210, 0.15);
+}
+.modalChannelsContainer .channelsTopBar .channelsTopBarToggle li a.active {
+    border: solid rgba(26, 118, 210, 1) 2px;
+    font-weight: 700;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.modalChannelsContainer .channelsTopBar .channelsTopBarToggle ul li a::after {
+    display: none;
+}
+.modalChannelsContainer .channelsTopBar .channelsDescription h1 {
+    font-weight: 500;
+    font-size: 24px;
+    color: #3b4559;
+    line-height: 42px;
+}
+/*#essentialDesc,*/
+#basicDesc,
+#advancedDesc,
+#premiumDesc {
+    display: none;
+}
+.modalChannelsContainer .filtersContainer {
+    text-align: left;
+}
+.modalChannelsContainer .filtersContainer p {
+    font-weight: 500;
+}
+.modalChannelsContainer .filtersContainer hr {
+    border: rgba(224, 224, 224, 1) solid 1px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.modalChannelsContainer .filtersContainer .filterToggle {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-left: 15px;
+}
+
+.modalChannelsContainer .filtersContainer .filterToggle p {
+    display: block;
+    cursor: pointer;
+}
+.modalChannelsContainer .filtersContainer .filterToggle p::before {
+    content: "\e80e";
+    font-family: "totalplayicons";
+    font-size: 20px;
+    margin-right: 16px;
+    cursor: pointer;
+}
+.modalChannelsContainer .filtersContainer .filterToggle p.closeIconFilters::after {
+    content: "\e80d";
+    font-family: "totalplayicons";
+    font-size: 14px;
+    cursor: pointer;
+    float: right;
+    margin-top: 4px;
+}
+.modalChannelsContainer .filtersContainer .filterToggle p a {
+    font-size: 16px;
+    color: rgba(59, 69, 89, 1);
+}
+.modalChannelsContainer .filtersContainer .filterToggle p a::after {
+    display: none;
+}
+.modalChannelsContainer .filtersContainer .filterClass {
+    margin-top: 40px;
+    padding-left: 15px;
+}
+.modalChannelsContainer .filtersContainer .filterClass .form-check-label {
+    color: rgba(117, 120, 123, 1);
+    font-size: 14px;
+}
+.modalChannelsContainer .filtersContainer .filterClass .filterClassTitle {
+    margin-bottom: 21px;
+}
+.modalChannelsContainer .filtersContainer .filterClass .filterItem {
+    margin-bottom: 21px;
+}
+.modalChannelsContainer .filtersContainer .filterClass .filterItem:last-child {
+    margin-bottom: 9px;
+}
+.modalChannelsContainer .filtersContainer .filterClass .filterItem input {
+    margin-top: 0 !important;
+}
+.modalChannelsContainer .filtersContainer .filterClass .automaticLabel::before,
+.modalChannelsContainer .filtersContainer .filterClass .manualLabel::before {
+    content: "\e80f";
+    font-family: "totalplayicons";
+}
+
+.modalChannelsContainer .filtersContainer .filterClass .manualLabel::before {
+    background: rgb(59, 69, 89, 1);
+    background: -moz-linear-gradient(left, rgba(59, 69, 89, 1) 70%, rgba(59, 69, 89, 0.05) 100%);
+    background: -webkit-linear-gradient(left, rgba(59, 69, 89, 1) 70%, rgba(59, 69, 89, 0.05) 100%);
+    background: linear-gradient(to right, rgba(59, 69, 89, 1) 70%, rgba(59, 69, 89, 0.05) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b4559', endColorstr='#0d3b4559',GradientType=1 );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.modalChannelsContainer .filtersContainer .filterClass .automaticLabel::before {
+    background: rgb(228, 0, 43);
+    background: -moz-linear-gradient(left, rgba(228, 0, 43, 1) 0%, rgba(240, 78, 152, 1) 100%);
+    background: -webkit-linear-gradient(left, rgba(228, 0, 43, 1) 0%, rgba(240, 78, 152, 1) 100%);
+    background: linear-gradient(to right, rgba(228, 0, 43, 1) 0%, rgba(240, 78, 152, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4002b', endColorstr='#f04e98',GradientType=1 );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.modalChannelsContainer .filtersContainer .channelContainer .channelItem {
+    text-align: center;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+.modalChannelsContainer .filtersContainer .channelContainer .channelItem .channelItemImage img {
+    background: rgba(250, 250, 250, 1);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding: 5px 8px;
+    width: 100%;
+    max-width: 136px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+    filter: grayscale(100%);
+    transition: 300ms;
+}
+.modalChannelsContainer .filtersContainer .channelContainer .channelItem:hover .channelItemImage img {
+    filter: grayscale(0%);
+    transition: 300ms;
+}
+.modalChannelsContainer .filtersContainer .channelContainer .channelItem .channelItemName {
+    margin-top: 6px;
+}
+.modalChannelsContainer .filtersContainer .channelContainer .channelItem .channelItemName.rewind p::before {
+    content: "\e80f";
+    font-family: "totalplayicons";
+    margin-right: 5px;
+    background: rgb(228, 0, 43);
+    background: -moz-linear-gradient(left, rgba(228, 0, 43, 1) 0%, rgba(240, 78, 152, 1) 100%);
+    background: -webkit-linear-gradient(left, rgba(228, 0, 43, 1) 0%, rgba(240, 78, 152, 1) 100%);
+    background: linear-gradient(to right, rgba(228, 0, 43, 1) 0%, rgba(240, 78, 152, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4002b', endColorstr='#f04e98',GradientType=1 );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.modalChannelsContainer .filtersContainer .channelContainer .channelItem .channelItemName.normalrewind p::before {
+    content: "\e80f";
+    font-family: "totalplayicons";
+    margin-right: 5px;
+    background: rgb(59, 69, 89, 1);
+    background: -moz-linear-gradient(left, rgba(59, 69, 89, 1) 70%, rgba(59, 69, 89, 0.05) 100%);
+    background: -webkit-linear-gradient(left, rgba(59, 69, 89, 1) 70%, rgba(59, 69, 89, 0.05) 100%);
+    background: linear-gradient(to right, rgba(59, 69, 89, 1) 70%, rgba(59, 69, 89, 0.05) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b4559', endColorstr='#0d3b4559',GradientType=1 );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.showFilters .buttonRow {
+    margin-top: 1rem;
+}
+.showFilters .buttonRow .generalButton {
+    display: block;
+    margin-bottom: 1rem;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    width: 100%;
+}
+.channelDescriptionRow {
+    background: rgba(40, 49, 65, 1);
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+    position: relative;
+    top: -3rem;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding-right: 0;
+}
+.channelDescriptionRow .channelDescriptionCol {
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.channelDescriptionRow .channelDescriptionCol h1 {
+    color: rgba(250, 250, 250, 1);
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 13px;
+}
+.channelDescriptionRow .channelDescriptionCol p {
+    color: rgba(250, 250, 250, 1);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 40px;
+}
+.channelDescriptionRow .channelDescriptionCol span {
+    color: rgba(253, 204, 0, 1);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 26px;
+}
+.channelDescriptionRow .channelDescriptionCol span a {
+    font-size: 16px;
+}
+.channelDescriptionRow .channelDescriptionCol span a::after {
+    content: "\e810";
+    font-family: "totalplayicons";
+    font-size: 18px;
+    position: relative;
+    top: 1px;
+    left: 4px;
+}
+.channelDescriptionRow .channelDescriptionCol span a:hover::after {
+    left: 4px;
+}
+.channelDescriptionRow .channelDescriptionCol h1.rewind::before {
+    content: "\e80f";
+    font-family: "totalplayicons";
+    margin-right: 5px;
+    background: rgb(228, 0, 43);
+    background: -moz-linear-gradient(left, rgba(228, 0, 43, 1) 0%, rgba(240, 78, 152, 1) 100%);
+    background: -webkit-linear-gradient(left, rgba(228, 0, 43, 1) 0%, rgba(240, 78, 152, 1) 100%);
+    background: linear-gradient(to right, rgba(228, 0, 43, 1) 0%, rgba(240, 78, 152, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4002b', endColorstr='#f04e98',GradientType=1 );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.channelDescriptionRow .channelDescriptionCol h1.normalrewind::before {
+    content: "\e80f";
+    font-family: "totalplayicons";
+    margin-right: 5px;
+    background: rgb(59, 69, 89, 1);
+    background: -moz-linear-gradient(left, rgba(59, 69, 89, 1) 70%, rgba(59, 69, 89, 0.05) 100%);
+    background: -webkit-linear-gradient(left, rgba(59, 69, 89, 1) 70%, rgba(59, 69, 89, 0.05) 100%);
+    background: linear-gradient(to right, rgba(59, 69, 89, 1) 70%, rgba(59, 69, 89, 0.05) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b4559', endColorstr='#0d3b4559',GradientType=1 );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.channelDescriptionRow .channelImageCol img {
+    width: 100%;
+    height: 100%;
+    min-height: 354px;
+    -webkit-border-top-right-radius: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    -moz-border-radius-topright: 4px;
+    -moz-border-radius-bottomright: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.channelDescriptionRow .closeChannelBanner {
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 1;
+    cursor: pointer;
+}
+.channelDescriptionRow .closeChannelBanner::before {
+    content: "\e80d";
+    font-family: "totalplayicons";
+    color: rgba(250, 250, 250, 1);
+    font-size: 12px;
+}
+.mainChannelBanners {
+    background: rgba(34, 36, 48, 1);
+    padding-top: 48px;
+    padding-bottom: 48px;
+    margin-top: 60px;
+}
+.mainChannelBanners .channelBannersItem .channelBannersImage {
+    text-align: center;
+}
+.mainChannelBanners .channelBannersItem .channelBannersImage img {
+    width: 100%;
+    max-width: 352px;
+    margin-bottom: 1rem;
+}
+.extraBanners {
+    background: rgba(30, 30, 40, 1);
+    padding-top: 48px;
+    padding-bottom: 48px;
+    text-align: center;
+    color: rgba(245, 245, 245, 1);
+}
+.extraBanners .extraBannerContainer {
+    margin-bottom: 32px;
+}
+.extraBanners .extraBannersTitle {
+    margin-bottom: 32px;
+}
+.extraBanners .extraBannersTitle h1 {
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 42px;
+}
+.extraBanners .hboBanner .extraBannerChannel {
+    background: rgba(64, 43, 60, 1);
+}
+.extraBanners .foxBanner .extraBannerChannel {
+    background: rgba(34, 36, 48, 1);
+}
+.extraBanners .extraBannerChannel {
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+/*.extraBanners .extraBannerChannel .extraBannerChannelCol {
+}*/
+.extraBanners .extraBannerChannel .extraBannerChannelCol .extraBannerLogo img {
+    width: 100%;
+    max-width: 123px;
+    margin-bottom: 32px;
+    margin-top: 40px;
+}
+.extraBanners .extraBannerChannel .extraBannerChannelCol .extraBannerIncluded p {
+    background: rgba(253, 253, 253, 0.1);
+    display: inline-block;
+    padding: 8px 10px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    color: rgba(245, 245, 245, 1);
+    font-weight: 300;
+    font-size: 16px;
+    margin-bottom: 24px;
+}
+.extraBanners .extraBannerChannel .extraBannerChannelCol .extraBannerDescription p {
+    color: rgba(245, 245, 245, 1);
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 124px;
+}
+.extraBanners .extraBannerChannel .extraBannerChannelCol .extraBannerLink {
+    margin-bottom: 15px;
+}
+.extraBanners .extraBannerChannel .extraBannerChannelCol .extraBannerLink a {
+    font-size: 16px;
+    color: rgba(100, 181, 246, 1);
+}
+.extraBanners .extraBannerChannel .extraBannerImageCol {
+    padding-right: 0;
+    padding-left: 0;
+}
+.extraBanners .extraBannerChannel .extraBannerImageCol img {
+    width: 100%;
+    min-height: 397px;
+}
+.extraBanners .extraBannerChannel .extraBannerImageCol .extraBannerLinkImage {
+    display: none;
+}
+/*Faqs*/
+.faqsMainContainer {
+    padding-top: 140px;
+    background: rgba(250, 250, 250, 1);
+}
+.faqsMainContainer .faqsLargeContainer .faqsToggleContainer .faqsItem a {
+    font-weight: 700;
+    display: block;
+    color: rgba(59, 69, 89, 1);
     padding-top: 1rem;
     padding-bottom: 1rem;
+    font-size: 20px;
+    padding-left: 15px;
 }
-.channelsHeader .channelsModal {
+.faqsMainContainer .faqsLargeContainer .faqsToggleContainer .faqsItem a:hover {
+    background: rgba(26, 118, 210, 0.05);
 }
-.channelsHeader .channelsModal .channelsMode {
+.faqsMainContainer .faqsLargeContainer .faqsToggleContainer .faqsItem a::after {
+    display: none;
 }
-/*Modal Canales*/
+.faqsMainContainer .faqsLargeContainer .faqsToggleContainer .faqsBackSupport a {
+    color: rgba(59, 69, 89, 1);
+    font-weight: 300;
+    font-size: 22px;
+    padding-left: 0;
+}
+.faqsMainContainer .faqsLargeContainer .faqsToggleContainer .faqsBackSupport a:hover {
+    background: rgba(255, 255, 255, 0);
+    color: rgba(25, 136, 255, 1);
+}
+.faqsMainContainer .faqsLargeContainer .faqsToggleContainer .faqsBackSupport a::after {
+    display: none;
+}
+.faqsMainContainer .faqsLargeContainer .faqsToggleContainer .faqsBackSupport a::before {
+    content: "\e811";
+    font-family: "totalplayicons";
+    margin-right: 1rem;
+}
+.faqsMainContainer .faqsLargeContainer .faqsCardsContainer {
+    border-left: solid 1px rgba(240, 240, 240, 1);
+}
+.faqsMainContainer .faqsLargeContainer .faqsCardsContainer .faqsContainerTitle {
+    margin-bottom: 2rem;
+}
+.faqsMainContainer .faqsLargeContainer .faqsCardsContainer .faqsContainerTitle h1 {
+    font-weight: 700;
+    font-size: 24px;
+}
+.faqsMainContainer .faqsLargeContainer .faqsCardsContainer .faqsContainerTitle p {
+    font-weight: 300;
+    font-size: 18px;
+}
+.faqsCardsContainer .card {
+    margin-bottom: 16px;
+    background: rgba(224, 224, 224, 1);
+    border: none;
+}
+.faqsCardsContainer .card .card-header {
+    border: none;
+    background: rgba(245, 245, 245, 1);
+}
+.faqsCardsContainer .card .card-header h2 button {
+    color: rgba(59, 69, 89, 1);
+    font-weight: 500;
+    font-size: 18px;
+}
+.faqsCardsContainer .card .card-header h2 button:hover {
+    text-decoration: none;
+}
+.faqsCardsContainer .card .card-header h2 button:focus {
+    text-decoration: none;
+}
+.faqsCardsContainer .card .card-body {
+    color: rgba(59, 69, 89, 1);
+    font-weight: 300;
+    font-size: 18px;
+    background: rgba(245, 245, 245, 1);
+}
+.faqsCardsContainer .card .card-body a {
+    font-size: 18px;
+}
+.faqsCardsContainer .card .card-body a::after {
+    display: none;
+}
 
+.faqsCardsContainer .card .card-body ul {
+    padding-left: 2rem;
+}
+.faqsCardsContainer .card .card-header h2 button::after {
+    font-family: "totalplayicons";
+    content: "\e802";
+    color: rgba(25, 136, 255, 1);
+    float: right;
+    transform: rotate(90deg);
+    font-size: 12px;
+}
+.activeFaq {
+    background: rgba(26, 118, 210, 0.1) !important;
+}
+.mobileactiveFaq {
+    border: solid rgba(26, 118, 210, 1) 2px !important;
+    font-weight: 700 !important;
+    pointer-events: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+}
+.faqsCardsContainer .card-header {
+    background: rgba(255, 255, 255, 0);
+}
+
+/*Faqs*/
+/*Modal Canales*/
+.disableClick {
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.centerImage {
+    text-align: center;
+}
+.rotateChevron {
+    transform: rotate(-180deg);
+}
 /*modal loader index akhm*/
 #cargadorLead {
     display: none;

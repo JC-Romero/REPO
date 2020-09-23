@@ -9,7 +9,7 @@ export class Mtv{
         this.cargarVideo();
         this.cargarCarrusel();
         this.cargarCanales();
-        this.setListener();
+        //this.setListener();
 	}
 
      cargarVideo(){
@@ -85,7 +85,7 @@ export class Mtv{
 
         $("#tarjetasCanales").html(htmlcanales);
 
-        const even= new Eventos();
+        //const even= new Eventos();
 	}
 
 	setListener(){

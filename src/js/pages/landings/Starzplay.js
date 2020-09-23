@@ -9,7 +9,7 @@ export class Starz{
 		this.cargarVideo();
 		this.cargarCarrusel();
 		this.cargarCanales();
-		this.setListener();
+		//this.setListener();
 	}
 
 	cargarVideo(){
@@ -82,7 +82,7 @@ export class Starz{
 
         $("#tarjetasCanales").html(htmlcanales);
 
-        const even= new Eventos();
+        //const even= new Eventos();
 	}
 
 	setListener(){

@@ -17,6 +17,14 @@ $(function () {
 var showMenu = function () {
     $("#mobile").fadeToggle(250);
 };
+var showChannels = function (e) {
+    $("#modalChannels").fadeIn(250);
+    event.preventDefault();
+};
+var hideChannels = function (e) {
+    $("#modalChannels").fadeOut(250);
+    event.preventDefault();
+};
 var hideMenu = function () {
     $("#mobile").hide();
 };
@@ -53,15 +61,51 @@ var hideModal = function (item) {
 var showCollapsible = function (item, item2) {
     if ($('#' + item).is(":visible")) {
         $('#' + item).hide();
-        $('.' + item2).css({
-            'transform': 'rotate(180deg)'
-        });
+        $('#' + item2).removeClass('rotateChevron');
     } else {
         $('#' + item).show();
-        $('.' + item2).css({
-            'transform': 'rotate(-180deg)'
-        });
+        $('#' + item2).addClass('rotateChevron')
     }
+};
+var faqsToggle = function (item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, e) {
+    $("#" + item1).fadeIn(300);
+    $("#" + item2).hide();
+    $("#" + item3).hide();
+    $("#" + item4).hide();
+    $("#" + item5).addClass('activeFaq');
+    $("#" + item6).removeClass('activeFaq');
+    $("#" + item7).removeClass('activeFaq');
+    $("#" + item8).removeClass('activeFaq');
+    $("#" + item9).addClass('mobileactiveFaq');
+    $("#" + item10).removeClass('mobileactiveFaq');
+    $("#" + item11).removeClass('mobileactiveFaq');
+    $("#" + item12).removeClass('mobileactiveFaq');
+    event.preventDefault();
+};
+var mobileFaqsToggle = function (item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, e) {
+    $("#" + item1).fadeIn(300);
+    $("#" + item2).hide();
+    $("#" + item3).hide();
+    $("#" + item4).hide();
+    $("#" + item5).addClass('mobileactiveFaq');
+    $("#" + item6).removeClass('mobileactiveFaq');
+    $("#" + item7).removeClass('mobileactiveFaq');
+    $("#" + item8).removeClass('mobileactiveFaq');
+    $("#" + item9).addClass('activeFaq');
+    $("#" + item10).removeClass('activeFaq');
+    $("#" + item11).removeClass('activeFaq');
+    $("#" + item12).removeClass('activeFaq');
+    event.preventDefault();
+};
+var showFilters = function (item, e) {
+    if ($('#' + item).is(":visible")) {
+        $('#' + item).fadeOut(300);
+        $('.filterToggleParagraph').removeClass('closeIconFilters');
+    } else {
+        $('#' + item).fadeIn(300);
+        $('.filterToggleParagraph').addClass('closeIconFilters');
+    }
+    event.preventDefault();
 };
 
 /*$(document).ready(function () {
@@ -168,6 +212,7 @@ $(document).ready(function () {
 });
 $(window).scroll(function () {
     $("#fadeButton").css("opacity", 1 - $(window).scrollTop() / 50);
+    $("#showMoreFade").css("opacity", 1 - $(window).scrollTop() / 50);
 });
 var showPackageContainer = function (item, item2, item3, item4, e) {
     $("#" + item).hide();
@@ -364,6 +409,14 @@ var removeRemote = function (e) {
     $("#phone").removeClass('remotePhone');
     event.preventDefault();
 };
+var removeNewRemote = function (e) {
+    $("#ipadLandscape").removeClass('newRemoteIpad');
+    event.preventDefault();
+};
+var removeNewPhone = function (e) {
+    $("#ipadLandscape").removeClass('newPhoneIpad');
+    event.preventDefault();
+};
 var removeLandLine = function (e) {
     $("#ipadPortrait").removeClass('ipadLandline');
     $("#phone").removeClass('phoneLandline');
@@ -383,7 +436,7 @@ var removeInvoice = function (e) {
 };
 //Agrega Clases Slider
 var addOnDemand = function (e) {
-    showComputer();
+    hideComputer();
     $("#computer").addClass('onDemandComputer');
     $("#phone").addClass('onDemandPhone');
     $("#ipadLandscape").addClass('onDemandIpad');
@@ -395,6 +448,8 @@ var addOnDemand = function (e) {
     showIpadLandscape();
     hideIpadPortrait();
     removeRemote();
+    removeNewRemote();
+    removeNewPhone();
     removeLandLine();
     removeWifi();
     removeInvoice();
@@ -402,16 +457,17 @@ var addOnDemand = function (e) {
 };
 var addRemote = function (e) {
     hideComputer();
-    $("#ipadPortrait").addClass('remoteIpad');
+    $("#ipadLandscape").addClass('newRemoteIpad');
     $("#phone").addClass('remotePhone');
     $("#toggleDemand").removeClass('active');
     $("#toggleRemote").addClass('active');
     $("#toggleLandline").removeClass('active');
     $("#toggleWifi").removeClass('active');
     $("#toggleInvoice").removeClass('active');
-    showIpadPortrait();
-    hideIpadLandscape();
+    hideIpadPortrait();
+    showIpadLandscape();
     removeOnDemand();
+    removeNewPhone();
     removeLandLine();
     removeWifi();
     removeInvoice();
@@ -420,15 +476,16 @@ var addRemote = function (e) {
 
 var addLandLine = function (e) {
     hideComputer();
-    $("#ipadPortrait").addClass('ipadLandline')
+    $("#ipadLandscape").addClass('newPhoneIpad')
     $("#phone").addClass('phoneLandline');
     $("#toggleDemand").removeClass('active');
     $("#toggleRemote").removeClass('active');
     $("#toggleLandline").addClass('active');
     $("#toggleWifi").removeClass('active');
     $("#toggleInvoice").removeClass('active');
-    showIpadPortrait();
-    hideIpadLandscape();
+    hideIpadPortrait();
+    showIpadLandscape();
+    removeNewRemote();
     removeOnDemand();
     removeRemote();
     removeWifi();
@@ -448,13 +505,15 @@ var addWifi = function (e) {
     showIpadLandscape();
     hideIpadPortrait();
     removeOnDemand();
+    removeNewRemote();
+    removeNewPhone();
     removeRemote();
     removeLandLine();
     removeInvoice();
     event.preventDefault();
 };
 var addInvoice = function (e) {
-    showComputer();
+    hideComputer();
     $("#computer").addClass('computerInvoice');
     $("#phone").addClass('phoneInvoice');
     $("#ipadLandscape").addClass('ipadInvoice');
@@ -466,6 +525,8 @@ var addInvoice = function (e) {
     showIpadLandscape();
     hideIpadPortrait();
     removeOnDemand();
+    removeNewRemote();
+    removeNewPhone();
     removeRemote();
     removeLandLine();
     event.preventDefault();

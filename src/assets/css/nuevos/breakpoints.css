@@ -114,7 +114,7 @@
     }
 
     .topBar .barList li {
-        margin-right: 10px;
+        margin-right: 20px;
     }
 
     .topBar .barList li a {
@@ -126,7 +126,7 @@
     .internetRow .laptop .facetime {
         transform: translateX(-50%) !important;
         top: 8px !important;
-        height: 221px !important;
+        height: 232px !important;
         width: 340px !important;
     }
 }
@@ -153,8 +153,12 @@
         width: 90%;
     }
 
+    .mobileHeader .headerTopMenu .logoContainer {
+        margin-right: 0;
+    }
+
     .bannersContainers {
-        top: 6.8rem;
+        top: 6.78rem;
     }
 
     .videoContainer video {
@@ -375,7 +379,7 @@
     .internetRow .laptop .facetime {
         transform: translateX(-49.5%);
         top: 8px;
-        height: 241px;
+        height: 251px;
         width: 374px;
     }
     .internetRow .laptop .picture {
@@ -419,19 +423,20 @@
         font-size: 18px;
         line-height: 24px;
     }
-    .sliderSelector li {
-        width: 50%;
-        padding: 5px 15px;
-        float: left;
+    .sliderSelector {
+        width: calc(100% + 30px);
+        position: relative;
+        left: -15px;
+        overflow: auto;
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
-    .sliderSelector li:last-child {
-        margin: 0 auto;
-        width: 100%;
-        text-align: center;
+    .sliderSelector li {
+        padding: 7px 15px;
+        display: inline-block;
     }
     .sliderSelector li a {
-        font-size: 14px;
-        display: block;
+        font-size: 16px;
     }
     .landlineRow .landlineHeader h1 {
         font-size: 36px;
@@ -487,6 +492,131 @@
     }
     .modalMainVideoContainer video {
         top: 110px;
+    }
+    .appsMainTitle h1 {
+        font-size: 22px;
+    }
+    .appsMainTitle h1 span {
+        font-size: 22px;
+    }
+    .appsMainContainer .appsCardsContainer .card .card-title {
+        font-size: 26px;
+    }
+    .appsCardsContainer .appCenteredImage p {
+        font-size: 18px;
+    }
+    .appTvRow .tvRowTitles p {
+        line-height: 25px;
+    }
+    .appFaqs .appFaqsTitles h1 {
+        font-size: 24px;
+    }
+    .appFaqs .faqsContainer .card .card-header h2 button {
+        font-size: 16px;
+    }
+    .appFaqs .faqsContainer .card .card-body {
+        font-size: 16px;
+    }
+    .appFaqs .faqsContainer .card .card-body a {
+        font-size: 16px;
+    }
+    .otherAppsRow .otherAppsRowTitle h1 {
+        font-size: 24px;
+    }
+    .modalChannelsContainer .filtersContainer .marginMobile {
+        margin-bottom: 1rem;
+    }
+    .channelDescriptionRow .channelImageCol img {
+        -webkit-border-bottom-right-radius: 4px;
+        -webkit-border-bottom-left-radius: 4px;
+        -moz-border-radius-bottomright: 4px;
+        -moz-border-radius-bottomleft: 4px;
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+        -webkit-border-top-right-radius: 0;
+        -webkit-border-bottom-right-radius: 0;
+        -moz-border-radius-topright: 0;
+        -moz-border-radius-bottomright: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .extraBanners .extraBannerChannel .extraBannerChannelCol .extraBannerLogo img {
+        margin-top: 0;
+    }
+    .extraBanners .extraBannerChannel .extraBannerChannelCol .extraBannerIncluded p {
+        margin-bottom: 0;
+    }
+    .extraBannerDescription {
+        display: none;
+    }
+    .extraBannerLink {
+        display: none;
+    }
+    .extraBanners .extraBannerChannel .extraBannerImageCol .extraBannerLinkImage {
+        display: block;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    .faqsMainContainer .faqsLargeContainer .faqsToggleContainer {
+        margin-bottom: 2rem;
+    }
+    .faqsItem {
+        text-align: center;
+    }
+    .faqsMainContainer .faqsLargeContainer .faqsToggleContainer .faqsItem a {
+        padding-left: 0;
+    }
+    .faqsMobileLinks {
+        list-style: none;
+        overflow: auto;
+        white-space: nowrap;
+        padding-top: 15px;
+        padding-bottom: 30px;
+        text-align: center;
+        width: calc(100% + 30px);
+        position: relative;
+        left: -15px;
+    }
+    .faqsMobileLinks li {
+        display: inline;
+
+        margin: 0 10px;
+    }
+    .faqsMobileLinks li a {
+        font-weight: 300;
+        background: rgba(225, 225, 225, 1);
+        color: rgba(59, 69, 89, 1);
+        padding: 7px 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border-radius: 20px;
+        border: solid rgba(26, 118, 210, 0) 2px;
+    }
+    .faqsMobileLinks li a::after {
+        display: none;
+    }
+    .faqsCardsContainer .card .card-header h2 button {
+        font-size: 16px;
+    }
+    .faqsCardsContainer .card .card-body {
+        font-size: 18px;
+    }
+    .faqsMainContainer .faqsLargeContainer .faqsToggleContainer .faqsBackSupport a {
+        font-size: 16px;
+    }
+    .faqsMainContainer {
+        padding-top: 108px;
+    }
+    .faqsMainContainer .faqsLargeContainer .faqsToggleContainer {
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    }
+    .extraBanners .extraBannerChannel .extraBannerChannelCol {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    .extraBanners .extraBannerChannel .extraBannerImageCol img {
+        min-height: auto;
     }
 }
 
@@ -706,7 +836,12 @@
     .headerPackages {
         height: 270vh !important;
     }
-    /* Styles */
+    .appLogoContainer {
+        margin-top: 270px;
+    }
+    .stopperHeight {
+        top: 340px !important;
+    }
 }
 
 @media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
@@ -716,7 +851,12 @@
     .headerPackages {
         height: 150vh !important;
     }
-    /* Styles */
+    .appLogoContainer {
+        margin-top: 270px;
+    }
+    .stopperHeight {
+        top: 530px !important;
+    }
 }
 
 /* Galaxy S10 ----------- */
@@ -765,11 +905,11 @@
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
     .mainVideoBanner {
-        height: 115vh;
+        height: 125vh;
     }
 
     .mainVideoBannerSecond {
-        height: 117vh;
+        height: 127vh;
     }
 
     .videoTextContainer {
@@ -777,8 +917,8 @@
         top: 15vh;
     }
 
-    .videoTextContainer .videoTextContent {
-    }
+    /*.videoTextContainer .videoTextContent {
+    }*/
 
     .videoTextContainerSecond .videoTextContentSecond img {
         width: 70px;
@@ -796,22 +936,22 @@
         right: 32px;
         z-index: 10000;
     }
+    .modalChannelsContainer .closeButton {
+        right: 4px;
+    }
 }
-
-/*Moto G*/
-@media only screen and (max-width: 360px) and (max-height: 598px) {
-}
-@media only screen and (max-width: 360px) and (max-height: 598px) and (orientation: portrait) {
-}
-@media only screen and (max-width: 360px) and (max-height: 598px) and (orientation: landscape) {
-}
-
 /*Pixel 2*/
 @media only screen and (min-width: 411px) and (max-width: 731px) and (-webkit-min-device-pixel-ratio: 2.6) {
 }
 @media only screen and (min-width: 411px) and (max-width: 731px) and (-webkit-min-device-pixel-ratio: 2.6) and (orientation: portrait) {
     .headerPackages {
         height: 138vh !important;
+    }
+    .appLogoContainer {
+        margin-top: 270px;
+    }
+    .stopperHeight {
+        top: 510px;
     }
 }
 @media only screen and (min-width: 411px) and (max-width: 731px) and (-webkit-min-device-pixel-ratio: 2.6) and (orientation: landscape) {
@@ -824,6 +964,12 @@
     .modalMainVideoContainer video {
         top: 80px;
     }
+    .appLogoContainer {
+        margin-top: 130px;
+    }
+    .stopperHeight {
+        top: 380px;
+    }
 }
 /*Pixel 2XL*/
 @media only screen and (min-width: 411px) and (max-width: 823px) and (-webkit-min-device-pixel-ratio: 3.5) {
@@ -832,6 +978,12 @@
     .headerPackages {
         height: 240vh !important;
     }
+    .appLogoContainer {
+        margin-top: 330px;
+    }
+    .stopperHeight {
+        top: 440px;
+    }
 }
 @media only screen and (min-width: 411px) and (max-width: 823px) and (-webkit-min-device-pixel-ratio: 3.5) and (orientation: landscape) {
     .headerPackages .headerPackagesContent {
@@ -839,6 +991,12 @@
     }
     .headerPackages {
         height: 200vh !important;
+    }
+    .appLogoContainer {
+        margin-top: 130px !important;
+    }
+    .stopperHeight {
+        top: 220px !important;
     }
 }
 
@@ -874,6 +1032,12 @@
     .modalMainVideoContainer video {
         top: 70px;
     }
+    .appLogoContainer {
+        margin-top: 55vh;
+    }
+    .stopperHeight {
+        top: 55vh;
+    }
 }
 
 /* Landscape */
@@ -883,6 +1047,12 @@
     }
     .headerPackages {
         height: 305vh !important;
+    }
+    .appLogoContainer {
+        margin-top: 100px;
+    }
+    .stopperHeight {
+        top: 320px;
     }
 }
 
@@ -894,11 +1064,23 @@
     .headerPackages {
         height: 305vh !important;
     }
+    .appLogoContainer {
+        margin-top: 100px;
+    }
+    .stopperHeight {
+        top: 380px;
+    }
 }
 
 @media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
     .headerPackages {
         height: 155vh !important;
+    }
+    .appLogoContainer {
+        margin-top: 230px;
+    }
+    .stopperHeight {
+        top: 470px;
     }
 }
 
@@ -920,6 +1102,12 @@
     .headerPackages {
         height: 132vh !important;
     }
+    .appLogoContainer {
+        margin-top: 250px;
+    }
+    .stopperHeight {
+        top: 540px;
+    }
 }
 
 /* Landscape */
@@ -929,6 +1117,12 @@
     }
     .headerPackages {
         height: 240vh !important;
+    }
+    .appLogoContainer {
+        margin-top: 150px;
+    }
+    .stopperHeight {
+        top: 360px;
     }
 }
 
@@ -950,6 +1144,12 @@
 
     .headerPackages {
         height: 140vh !important;
+    }
+    .appLogoContainer {
+        margin-top: 330px;
+    }
+    .stopperHeight {
+        top: 470px;
     }
 }
 
@@ -987,14 +1187,17 @@
     .videoTextContainerSecond {
         padding-top: 16%;
     }
-
-    .videoTextContainerSecond .videoTextContentSecond {
-    }
     .headerPackages .headerPackagesContent {
         top: 25vh;
     }
     .headerPackages {
         height: 250vh !important;
+    }
+    .appLogoContainer {
+        margin-top: 130px;
+    }
+    .stopperHeight {
+        top: 380px;
     }
 }
 
@@ -1029,12 +1232,24 @@
     .headerPackages {
         height: 81vh;
     }
+    .appLogoContainer {
+        margin-top: 350px;
+    }
+    .stopperHeight {
+        top: 640px;
+    }
 }
 
 /* Landscape */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
     .headerPackages {
         height: 92vh;
+    }
+    .appLogoContainer {
+        margin-top: 300px;
+    }
+    .stopperHeight {
+        top: 480px;
     }
 }
 
@@ -1061,6 +1276,12 @@
     .headerPackages {
         height: 58vh;
     }
+    .appLogoContainer {
+        margin-top: 550px;
+    }
+    .stopperHeight {
+        top: 690px;
+    }
 }
 
 /* Landscape */
@@ -1071,11 +1292,37 @@
     .headerPackages {
         height: 96vh !important;
     }
+    .appLogoContainer {
+        margin-top: 400px;
+    }
+    .stopperHeight {
+        top: 580px;
+    }
 }
 
 /* ----------- Non-Retina Screens ----------- */
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
     .headerPackages {
         height: 113vh;
+    }
+}
+@media screen and (min-device-width: 1440px) and (-webkit-min-device-pixel-ratio: 1) {
+    .stopperHeight {
+        top: 450px;
+    }
+}
+@media screen and (min-device-width: 1280px) and (max-device-height: 900px) and (-webkit-min-device-pixel-ratio: 1) {
+    .stopperHeight {
+        top: 450px;
+    }
+}
+@media screen and (min-device-width: 1280px) and (max-device-height: 800px) and (-webkit-min-device-pixel-ratio: 1) {
+    .stopperHeight {
+        top: 350px;
+    }
+}
+@media screen and (min-device-width: 1700px) and (-webkit-min-device-pixel-ratio: 1) {
+    .stopperHeight {
+        top: 30vh;
     }
 }
