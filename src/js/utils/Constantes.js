@@ -25,3 +25,15 @@ export const endpoints = {
 }
 
 export const sitioBase = "/";
+
+export const cms = {
+	host: "https://cms.totalplay.dev",
+	getBanner: "/banners",
+	getSplash: "/splash-page-promociones",
+	getPromociones: "/promociones",
+	getImagenPaquete: "/imagenes-paquetes",
+	getTextoLegal: "/textos-legales",
+	getTextoPromocion: "/textos-promociones",
+	getTextoHome: "/homes",
+	getLanding: "/landings"
+};
