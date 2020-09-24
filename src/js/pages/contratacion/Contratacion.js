@@ -490,19 +490,39 @@ export class Contratacion {
                 }
             });
 
+            let cantidad = 0;
             if(visiblidadActual == 'none'){
                 console.log('ETIQUETA SELECCION ESTABA OCULTA');
                 $(etiquetaPrecio).hide();
                 $(etiquetaSeleccion).css('display','contents');
 
                 $('#confirmBoxes').show();
+
+                cantidad = 1;
             }else{
                 console.log('ETIQUETA SELECCION ESTABA VISIBLE');
                 $(etiquetaSeleccion).hide();
                 $(etiquetaPrecio).css('display','block');
 
                 $('#confirmBoxes').hide();
+
+                cantidad = 0;
             }
+
+            let _index = $(this).attr('data-index');
+            apuntador.props.setopboxSelected[_index].id = $(this).attr('data-id');
+            apuntador.props.setopboxSelected[_index].price = $(this).attr('data-precio');
+            apuntador.props.setopboxSelected[_index].cantidad = cantidad;
+            apuntador.props.setopboxSelected[_index].name = $(this).attr('data-name');
+
+            console.log('apuntador.props.setopboxSelected:', apuntador.props.setopboxSelected);
+
+            //apuntador.agregarEquipoAdicional(apuntador.props.setopboxSelected);
+        });
+
+        $('#confirmBoxes').on('click', function () {
+            
+            apuntador.agregarEquipoHTML()
         });
 
         $("body").on('click', '.cntCanales', function() {
@@ -634,9 +654,15 @@ export class Contratacion {
             $.each(jsonAdicional, function (key, objetoAdicional) {
                 if(objetoAdicional.tipo == 'ADDON_TV_ADCIONAL'){
                     $('#cntEquipoWifi').attr('data-id', objetoAdicional.Id);
+                    $('#cntEquipoWifi').attr('data-precio', objetoAdicional.precio);
+                    $('#cntEquipoWifi').attr('data-index', '0');
+                    $('#cntEquipoWifi').attr('data-name', objetoAdicional.nombre);
                 }
                 if(objetoAdicional.tipo == 'ADDON_WIFI'){
                     $('#cntEquipoTV').attr('data-id', objetoAdicional.Id);
+                    $('#cntEquipoTV').attr('data-precio', objetoAdicional.precio);
+                    $('#cntEquipoTV').attr('data-index', '1');
+                    $('#cntEquipoTV').attr('data-name', objetoAdicional.nombre);
                 }
             });
         } catch (error) {
@@ -1788,7 +1814,7 @@ export class Contratacion {
         console.groupEnd();
     }
 
-    agregarEquipoHTML(idProducto) {
+    agregarEquipoHTML() {
         let referenciaClase = this;
         this.props.devicesSelected = this.props.options.equipos.filter(device => {
             if (device.add) {
@@ -1823,8 +1849,7 @@ export class Contratacion {
         this.props.devicesInvoice = [...document.querySelectorAll('.main-summary-device__invoice-data-block-content_devices__item')];
         this.getHeightItemStep();
         this.endAnimation();
-        //this.actualizarPrecioTotal();
-        //this.onkeypressDevicesInvoice();
+        
     }
 
     endContract() {
@@ -2590,6 +2615,7 @@ export class Contratacion {
                         }
                     }
 
+                    console.log('objetoAdicionales.equipo=>', objetoAdicionales.equipo);
                     if (objetoAdicionales.equipo != undefined) {
                         $.each(objetoAdicionales.equipo, function (i, objEquipo) {
                             console.log('objEquipo=>', objEquipo);
@@ -3078,10 +3104,10 @@ export class Contratacion {
         console.group('FUNCION eliminarEquipoSeleccionado(' + idEliminar + ')');
         let referenciaClase = this;
         let cadenaPaquete = localStorage.getItem('TP_STR_PAQUETE_SELECCION');
-        let cadenaEquipos = localStorage.getItem('TP_EQUIPO_ADICIONAL');
+        //let cadenaEquipos = localStorage.getItem('TP_EQUIPO_ADICIONAL');
         try {
             let objPaquete = JSON.parse(cadenaPaquete);
-            let objEquipo = JSON.parse(cadenaEquipos);
+            //let objEquipo = JSON.parse(cadenaEquipos);
             let indice = -1;
             $.each(objPaquete.adicionales[2].equipo, function (key, objeto) {
                 console.log('objeto[' + key + ']=>', objeto);
@@ -3107,18 +3133,6 @@ export class Contratacion {
             });
 
             if (indice >= 0) {
-                let objetoRespaldo = objEquipo[indice];
-                objEquipo[indice] = {
-                    "amount": objetoRespaldo.amount,
-                    "cantidad": "",
-                    "id": objetoRespaldo.id,
-                    "name": objetoRespaldo.name,
-                    "price": objetoRespaldo.price,
-                    "show": objetoRespaldo.show,
-                    "total": objetoRespaldo.total,
-                };
-
-                localStorage.setItem('TP_EQUIPO_ADICIONAL', JSON.stringify(objEquipo));
 
                 objPaquete.adicionales[2].equipo.splice(indice, 1);
                 $('#contenedorEquipo_' + idEliminar).remove();
