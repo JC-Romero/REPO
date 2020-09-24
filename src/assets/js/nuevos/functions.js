@@ -108,7 +108,7 @@ var showFilters = function (item, e) {
     event.preventDefault();
 };
 
-/*$(document).ready(function () {
+$(document).ready(function () {
     var $mainVideo = $("#mainVideo");
     var $secondaryVideo = $("#secondaryVideo");
     var $window = $(window);
@@ -155,7 +155,7 @@ var showFilters = function (item, e) {
             $("#secondaryVideo")[0].pause();
         }
     });
-});//*/
+});
 $(document).ready(function () {
     $("#citySearch").keyup(function () {
         var x = document.getElementById('cityAutocomplete');
@@ -177,8 +177,8 @@ $(document).ready(function () {
             'overflow': 'auto'
         });
     });
-
-    var windw = this;
+    $('#faqsAccordion').collapse({});
+    /*var windw = this;
     $.fn.followTo = function (elem) {
         var $this = this,
             $window = $(windw),
@@ -206,9 +206,7 @@ $(document).ready(function () {
         $window.scroll(setPosition);
         setPosition();
     };
-
-    //$('#scrollingElement').followTo('#stopper');
-    $('#faqsAccordion').collapse({});
+    $('#scrollingElement').followTo('#stopper');*/
 });
 $(window).scroll(function () {
     $("#fadeButton").css("opacity", 1 - $(window).scrollTop() / 50);
@@ -243,7 +241,7 @@ $(document).ready(function () {
         draggable: true,
         fade: true,
         infinite: true,
-        pauseOnHover: true,
+        pauseOnHover: false,
         swipe: true,
         touchMove: true,
         swipeToSlide: true
@@ -537,7 +535,7 @@ var activeTopMenu = function (item1, item2, item3, item4) {
     $("#" + item3).removeClass('active');
     $("#" + item4).removeClass('active');
 };
-/*var distanceTop = $('#fixed').offset().top;
+var distanceTop = $('#fixed').offset().top;
 $(window).scroll(function () {
     if ($(window).scrollTop() >= distanceTop) {
         $('#fixed').addClass("fixedNav").css({
@@ -547,4 +545,6 @@ $(window).scroll(function () {
     } else {
         $('#fixed').removeClass("fixedNav");
     }
-});//*/
+});
+var appSlider = document.getElementById('parallaxMain');
+var parallax = new Parallax(appSlider);

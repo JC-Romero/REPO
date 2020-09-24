@@ -76,7 +76,7 @@ export class Servicios {
 	}
 
 	setListeners(){
-		let banner = this.cmsGetBannerList();
+		//let banner = this.cmsGetBannerList();
 		var apuntador = this;
 
 		$('.selectapp').on('click',function(e){
