@@ -2,8 +2,6 @@
 import * as Constantes from "./utils/Constantes";
 import {Rutas, RutasMatch } from "./utils/Ayuda";
 import {ClaseCobertura} from "./pages/generales/ClaseCobertura";
-import {Cobertura} from "./pages/generales/Cobertura";
-import {CoberturaSugerencias} from "./pages/generales/CoberturaSugerencias";
 import {Menu} from "./pages/generales/Menu"
 import {CargaCiudades} from "./pages/generales/CargaCiudades"
 import {Experiencia} from "./pages/generales/Experiencia"
@@ -63,8 +61,8 @@ if (RutasMatch(path, url.paquetes)) {
 	//var hashlo=window.location.hash;
 	//var parametro=0;
 	//if(hashlo!="")parametro=hashlo.replace("#",'');
-	//const paquetes=new Paquetes();
-	//paquetes.init();
+	const paquetes=new Paquetes();
+	paquetes.init();
 	//const paqueteseven=new PaquetesEventos(parametro);
 	//const carruselPromociones  = new PromocionesCarrusel( '.promotions-list-cards__content--left', '.promotions-list-cards__content--right' );
 }
@@ -101,7 +99,7 @@ if (RutasMatch(path, url.contratacion)) {
 
 if (RutasMatch(path, url.servicios)) {
 	const servicios = new Servicios();
-	const eventosiptv = new eventosIPTV();
+	//const eventosiptv = new eventosIPTV();
 }
 
 if (RutasMatch(path, url.faqs)) {

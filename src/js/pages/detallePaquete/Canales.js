@@ -120,14 +120,21 @@ export class Canales{
                     </ul>
                 </div>`]);
 
+        let strParrilla = localStorage.getItem('TP_PARRILLAS');
+        let arregloParrilla = new Array();
+        try {
+            arregloParrilla = JSON.parse(strParrilla);
+        } catch (error) {
+            arregloParrilla = ["11235", "11220", "11259"];
+        }
 
         const menuTVContainer = this.createCustomElement('div',{
             class: `${mainClass}__select-options`
             },[`<ul id="menuTvCategory" class="menu-channels">
                     <li class="btn__blue__bold botonParrilla parrillaSeleccionada" data-code="10658" data-tipo="0" >TV Inicial</li>
-                    <li class="btn__blue__bold botonParrilla" data-code="11235" data-tipo="1">TV Básica</li>
-                    <li class="btn__blue__bold botonParrilla" data-code="11203" data-tipo="2">TV Avanzada</li>
-                    <li class="btn__blue__bold botonParrilla" data-code="11205" data-tipo="3">TV Premium</li>
+                    <li class="btn__blue__bold botonParrilla" data-code="${arregloParrilla[0]}" data-tipo="1">TV Básica</li>
+                    <li class="btn__blue__bold botonParrilla" data-code="${arregloParrilla[1]}" data-tipo="2">TV Avanzada</li>
+                    <li class="btn__blue__bold botonParrilla" data-code="${arregloParrilla[2]}" data-tipo="3">TV Premium</li>
                 </ul>
                 <span><i id="textoTipoParrilla">Disfruta de 80 canales, 35 en HD.</i></span>
             `]);
@@ -603,8 +610,6 @@ export class Canales{
 }
 
 $(document).ready(function() {
-    //printConsole('', 'SCRIPT CHANNEL.JS CARGADO OK');
-
     $("body").on('click', '.filtroCanal', function () {
         var filtroSeleccionado = $(this).attr('data-filtro');
 
@@ -632,15 +637,12 @@ $(document).ready(function() {
 });
 
 function obtenerCanales(tmcode) {
-    
-    //consolo.log('', 'INICIANDO EL SERVICIO [obtener-canales]');
-
     $.ajax({
-        url: '/assets/media/infoCanales.json',
+        url: Constantes.endpoints.obtenerCanales,
+        data: JSON.stringify({'tmCode':tmcode}),
         dataType: "json",
+        type: 'POST'
     }).done(function (respuesta) {
-        //printConsole('', 'SERVICIO [obtener-canales] RESPONDE', respuesta);
-
         try{
             var informacion = respuesta.body;
             localStorage.setItem('TP_OF_OBJ_CANALES', JSON.stringify (respuesta.body) );

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 500 512" style="enable-background:new 0 0 500 512;" xml:space="preserve">
+<image style="overflow:visible;" width="170" height="184" id="triangleThird" xlink:href="triangulo1.png"  transform="matrix(0.4118 0 0 0.4118 81.8913 333)">
+</image>
+<image style="overflow:visible;" width="371" height="512" id="mainImage" xlink:href="landingAppMainImage.png"  transform="matrix(1 0 0 1 75.8913 0)">
+</image>
+<image style="overflow:visible;" width="210" height="228" id="triangleSecond" xlink:href="triangulo2.png"  transform="matrix(0.381 0 0 0.381 34.8913 348)">
+</image>
+<image style="overflow:visible;" width="172" height="184" id="triangleFirst" xlink:href="triangulo3.png"  transform="matrix(0.5652 0 0 0.5652 367.8913 219)">
+</image>
+</svg>

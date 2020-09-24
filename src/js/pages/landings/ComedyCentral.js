@@ -10,7 +10,7 @@ export class ComedyCentral{
         this.cargarCarrusel();
         this.cargarCanales();
 
-		this.setListener();
+		//this.setListener();
 	}
 
      cargarVideo(){
@@ -88,7 +88,7 @@ export class ComedyCentral{
 
         $("#tarjetasCanales").html(htmlcanales);
 
-        const even= new Eventos();
+        //const even= new Eventos();
 	}
 
 	setListener(){

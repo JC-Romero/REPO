@@ -13,8 +13,8 @@
             </div>
             <div
                 class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-2 offset-md-2 offset-lg-1 offsetxl-1 footerColumn d-block d-sm-block d-md-none">
-                <p>Servicios<i class="fas fa-chevron-down chevronServices"
-                        onclick="showCollapsible('servicesList, chevronServices')"></i></p>
+                <p onclick="showCollapsible('servicesList, chevronServices')">Servicios<i id="chevronServices"
+                        class="fas fa-chevron-down"></i></p>
                 <ul id="servicesList" class="servicesCollapsible">
                     <li><a href="{{root}}internet.html">Internet</a></li>
                     <li><a href="{{root}}television.html">Television y apps</a></li>
@@ -33,8 +33,8 @@
                 </ul>
             </div>
             <div class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-2 footerColumn d-block d-sm-block d-md-none">
-                <p>Productos <i class="fas fa-chevron-down chevronProducts"
-                        onclick="showCollapsible('productsList, chevronProducts')"></i></p>
+                <p onclick="showCollapsible('productsList, chevronProducts')">Productos <i id="chevronProducts"
+                        class="fas fa-chevron-down"></i></p>
                 <ul id="productsList" class="productsCollapsible">
                     <li><a href="/">Residencial</a></li>
                     <li><a href="https://www.negociostotalplay.com.mx/?utm_source=sitio&utm_medium=header">Negocios</a>
@@ -52,8 +52,8 @@
                 </ul>
             </div>
             <div class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-2 footerColumn d-block d-sm-block d-md-none">
-                <p>Soporte <i class="fas fa-chevron-down chevronSupport"
-                        onclick="showCollapsible('supportList, chevronSupport')"></i></p>
+                <p onclick="showCollapsible('supportList, chevronSupport')">Soporte <i id="chevronSupport"
+                        class="fas fa-chevron-down"></i></p>
                 <ul id="supportList" class="supportCollapsible">
                     <li><a href="{{root}}asistencia.html#manuales">Manuales</a></li>
                     <li><a href="{{root}}asistencia.html#totalplayAyuda">@TotalplayAyuda</a></li>
@@ -71,8 +71,8 @@
             </div>
             <div
                 class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-2 footerColumn d-block d-sm-block d-md-none contactColumn">
-                <p>Contáctanos <i class="fas fa-chevron-down chevronContact"
-                        onclick="showCollapsible('contactsList, chevronContact')"></i></p>
+                <p onclick="showCollapsible('contactsList, chevronContact')">Contáctanos <i id="chevronContact"
+                        class="fas fa-chevron-down"></i></p>
                 <ul id="contactsList" class="contactsCollapsible">
                     <li>Contrataciones<a href="tel: 800 330 1111">800 330 1111</a></li>
                     <li>Atención a clientes<a href="tel: 55 1579 80000">55 1579 80000</a></li>
@@ -92,8 +92,8 @@
                     <li><a href="https://api.whatsapp.com/send?l=pt_br&phone=5215515798000&text=Hola%2C+Asistente+Virtual+Totalplay&lang=es"
                             target="_blank"><i class="fab fa-whatsapp"></i></a></li>
                 </ul>
-                <p>Convenios</p>
-                <p>Buzón al Director</p>
+                <p onclick="window.location='/generica.html'" style="cursor: pointer;">Convenios</p>
+                <p onclick="window.location='/asistencia.html#buzonDirector'" style="cursor: pointer;">Buzón al Director</p>
             </div>
         </div>
         <hr>
@@ -124,19 +124,18 @@
                     fibra óptica!</p>
                 {{/ifpage}}
                 {{#ifpage 'asistencia'}}
+                <p>Soporte técnico de Totalplay: Estamos para ayudarte. Contacta con atención a clientes para pedir la
+                    asistencia de nuestro soporte técnico Totalplay. Nuestros expertos te atenderán vía chat o por
+                    teléfono.</p>
+                {{/ifpage}}
+                {{#ifpage 'paquetes'}}
+                <p>Paquetes de internet y televisión para casa. ¡Conoce Totalplay! Disfruta de la mejor calidad de fibra
+                    óptica con nuestros paquetes de internet, televisón y telefonía. ¡Conoce más!</p>
+                {{/ifpage}}
+                {{#ifpage 'servicios'}}
                 <p>Conoce todos los servicios Totalplay que hay para ti. ¡Te encantarán! Obtén un internet más veloz,
                     HBO Go, Netflix, Fox Premium, además de tus programas favoritos dentro de los servicios Totalplay.
                     ¡Cámbiate ya!</p>
-                {{/ifpage}}
-                {{#ifpage 'paquetes'}}
-                <p>Paquetes de internet y televisión para casa. ¡Conoce Totalplay!
-                    Disfruta de la mejor calidad de fibra óptica con nuestros paquetes de internet, televisón y
-                    telefonía. ¡Conoce más!</p>
-                {{/ifpage}}
-                {{#ifpage 'servicios'}}
-                <p>Conoce todos los servicios Totalplay que hay para ti. ¡Te encantarán!
-                    Obtén un internet más veloz, HBO Go, Netflix, Fox Premium, además de tus programas favoritos dentro
-                    de los servicios Totalplay. ¡Cámbiate ya!</p>
                 {{/ifpage}}
             </div>
         </div>

@@ -3,6 +3,7 @@ let _base = "https://5ui1bow6gf.execute-api.us-east-1.amazonaws.com/Desarrollo/"
 
 export const endpoints = {
 	obtenerPaquetes: `https://totalplay.dev/archivos/paquetes/`, 
+	//obtenerAplicaciones: `${_base}obtener-aplicaciones`,
 	obtenerAplicaciones: `/assets/media/aplicaciones.json`,
 	obtenerComplementos: `${_base}obtener-complementos`,
 
@@ -20,6 +21,20 @@ export const endpoints = {
 	obtenerCiudades : `https://totalplay.dev/archivos/coberturatotalplay.json`,
 	buscarCiudad:`${_base}buscar-ciudad-cp`,
 	getserviciobin: `${_base}get-servicio-bin`,
+	obtenerCanales:`${_base}obtener-canales`,
+	enviaBuzon: `${_base}insertar-sugerencia`,
 }
 
 export const sitioBase = "/";
+
+export const cms = {
+	host: "https://cms.totalplay.dev",
+	getBanner: "/banners",
+	getSplash: "/splash-page-promociones",
+	getPromociones: "/promociones",
+	getImagenPaquete: "/imagenes-paquetes",
+	getTextoLegal: "/textos-legales",
+	getTextoPromocion: "/textos-promociones",
+	getTextoHome: "/homes",
+	getLanding: "/landings"
+};

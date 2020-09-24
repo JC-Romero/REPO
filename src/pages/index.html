@@ -68,7 +68,7 @@ layout: home
     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
         <div class="row">
             <div class="col-12 col sm-12 col-md-12 col-lg-12 col-xl-12 videoContainerSecond">
-                <video id="secondaryVideo" src="{{root}}assets/media/home_Small.mp4" type="video/mp4"
+                <video id="secondaryVideo" src="{{root}}assets/media/seccion-apps-video-ajustado.mp4" type="video/mp4"
                     class="embed-responsive embed-responsive-21by9" autoplay muted loop controls="false"></video>
             </div>
         </div>
@@ -98,9 +98,9 @@ layout: home
                         </div>
                     </div>
                 </div>
-                <div class="row imagesAppsContainer">
+                <!--<div class="row imagesAppsContainer">
                     <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-11 mx-auto" id="appHome">
-                        <!--<div class="row">
+                        <div class="row">
                             <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 offset-xl-1 offset-lg-1">
                                 <img src="{{root}}assets/img/onDemandTotalPlay.png" alt="Total Play OnDemand">
                             </div>
@@ -135,20 +135,21 @@ layout: home
                                 class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 d-none d-sm-none d-md-none d-lg-block">
                                 <img src="{{root}}assets/img/onDemandTotalPlay.png" alt="Total Play OnDemand">
                             </div>
-                        </div>-->
+                        </div>
                         <div class="row">
                             <div class="col-12">
                                 <a href="ventajas.html">Conoce las ventajas Totalplay</a>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
+                {{> seccionApps}}
             </div>
         </div>
     </div>
 </section>
 <section class="card-deck cardsRow">
-    <div class="card">
+    <div class="card blueCardHome">
         <div class="card-body">
             <div class="row">
                 <div class="col-10 mx-auto">
@@ -158,7 +159,7 @@ layout: home
                 </div>
             </div>
         </div>
-        <img src="{{root}}/assets/img/nuevos/img-hero3.png" class="card-img-top" alt="Decodificador Totalplay">
+        <img src="{{root}}/assets/img/nuevos/stbycontrol.png" class="card-img-top" alt="Decodificador Totalplay">
     </div>
     <div class="card">
         <div class="card-body">
@@ -303,8 +304,7 @@ layout: home
                     <div class="col-11 col-sm-8 col-md-11 col-lg-11 col-xl-11 mx-auto companies">
                         <div class="row branchImage">
                             <div class="col-12">
-                                <img src="{{root}}/assets/img/nuevos/package-tp-empresarial.png"
-                                    alt="Totalplay Empresarial">
+                                <img src="{{root}}/assets/img/nuevos/epresarialTP.png" alt="Totalplay Empresarial">
                             </div>
                         </div>
                         <div class="row">
@@ -335,7 +335,7 @@ layout: home
                     <div class="col-11 col-sm-8 col-md-11 col-lg-11 col-xl-11 mx-auto entrepreneur">
                         <div class="row branchImage">
                             <div class="col-12">
-                                <img src="{{root}}/assets/img/nuevos/package-tp-negocios.png" alt="Totalplay Negocio">
+                                <img src="{{root}}/assets/img/nuevos/negociosTP.png" alt="Totalplay Negocio">
                             </div>
                         </div>
                         <div class="row">
@@ -364,7 +364,7 @@ layout: home
         </div>
     </div>
 </section>
-{{> seoindex}}
+<!--{{> seoindex}}-->
 <!--<section class="row locationSharing">
     <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 mx-auto">
         <div class="row locationIcon">
@@ -439,18 +439,18 @@ layout: home
             <li><a href="soporte.html">Ayuda y soporte</a></li>
         </ul>
         <div class="row bottomMobileMenu">
-            <div class="col-4 bottomMobileMenuItem activeItem">
+            <div class="col-3 bottomMobileMenuItem activeItem">
                 <a href="index.html">Hogar</a>
             </div>
-            <div class="col-4 bottomMobileMenuItem">
+            <div class="col-3 bottomMobileMenuItem">
                 <a href="https://www.negociostotalplay.com.mx/?utm_source=sitio&utm_medium=header"
                     target="_blank">Negocio</a>
             </div>
-            <div class="col-4 bottomMobileMenuItem">
+            <div class="col-3 bottomMobileMenuItem">
                 <a href="https://totalplayempresarial.com.mx/?utm_source=sitio&utm_medium=header"
                     target="_blank">Empresa</a>
             </div>
-            <div class="col-4 bottomMobileMenuItem">
+            <div class="col-3 bottomMobileMenuItem">
                 <a href="https://www.totalplay.dev/micuenta/?fromSite=https://totalplay.c6exvb10-totalplay1-d1-public.model-t.cc.commerce.ondemand.com/totalplaystorefront/totalplay/es"
                     target="_blank">Totalplay shop</a>
             </div>

@@ -1,1026 +1,820 @@
-<section class="faq-main">
-    <div class="faq-tabs-container">
-        <ul class="faq-tabs">
-            <li class="faq-tabs__link-back">
-                <div class="faq-tabs__links-back__content">
-                    <span class="link-back__content--icon"></span>
-                    <span class="link-back__content--label" onclick="location.replace('/asistencia.html')">Volver a
-                        Soporte</span>
+---
+layout: home
+---
+<style>
+    body,
+    * {
+        height: auto;
+    }
+
+    html,
+    body {
+        overflow-x: hidden !important;
+    }
+
+    footer {
+        max-width: 100%;
+    }
+</style>
+<section class="row faqsMainContainer">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="row faqsLargeContainer">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 faqsToggleContainer">
+                <div class="row">
+                    <div class="col-12 faqsItem faqsBackSupport">
+                        <a href="asistencia.html">Volver a soporte</a>
+                    </div>
                 </div>
-            </li>
-            <li class="faq-tabs__link faq-tipo active">Internet</li>
-            <li class="faq-tabs__link faq-tipo">Televisi&oacute;n</li>
-            <li class="faq-tabs__link faq-tipo">Tel&eacute;fono</li>
-            <li class="faq-tabs__link faq-tipo">Atenci&oacute;n a Clientes</li>
-        </ul>
+                <ul class="d-block d-sm-block d-md-none faqsMobileLinks">
+                    <li><a id="mobileToggleInternet" class="mobileactiveFaq" href="#"
+                            onclick="mobileFaqsToggle('internetQuestions','tvQuestions','phoneQuestions','supportQuestions','mobileToggleInternet','mobileToggleTelevisión','mobileToggleTeléfono','mobileToggleSupport','internetToggle','tvToggle','phoneToggle','supportToggle',event);">Internet</a>
+                    </li>
+                    <li><a id="mobileToggleTelevisión" class="" href="#"
+                            onclick="mobileFaqsToggle('tvQuestions','internetQuestions','phoneQuestions','supportQuestions','mobileToggleTelevisión','mobileToggleInternet','mobileToggleTeléfono','mobileToggleSupport','tvToggle','internetToggle','phoneToggle','supportToggle',event);">Televisión</a>
+                    </li>
+                    <li><a id="mobileToggleTeléfono" class="" href="#"
+                            onclick="mobileFaqsToggle('phoneQuestions','internetQuestions','tvQuestions','supportQuestions','mobileToggleTeléfono','mobileToggleTelevisión','mobileToggleInternet','mobileToggleSupport','phoneToggle','supportToggle','internetToggle','tvToggle',event);">Teléfono</a>
+                    </li>
+                    <li><a id="mobileToggleSupport" class="" href="#"
+                            onclick="mobileFaqsToggle('supportQuestions','internetQuestions','tvQuestions','phoneQuestions','mobileToggleSupport','mobileToggleTelevisión','mobileToggleTeléfono','mobileToggleInternet','supportToggle','phoneToggle','tvToggle','internetToggle',event);">Atención
+                            a clientes</a></li>
+                </ul>
+                <div class="row">
+                    <div class="d-none d-sm-none d-md-block col-md-12 col-lg-12 col-xl-12 faqsItem">
+                        <a id="internetToggle" class="activeFaq" href="#"
+                            onclick="faqsToggle('internetQuestions','tvQuestions','phoneQuestions','supportQuestions','internetToggle','tvToggle','phoneToggle','supportToggle','mobileToggleInternet','mobileToggleTelevisión','mobileToggleTeléfono','mobileToggleSupport',event);">Internet</a>
+                    </div>
+                    <div class="d-none d-sm-none d-md-block col-md-12 col-lg-12 col-xl-12 faqsItem">
+                        <a id="tvToggle" href="#"
+                            onclick="faqsToggle('tvQuestions','internetQuestions','phoneQuestions','supportQuestions','tvToggle','internetToggle','phoneToggle','supportToggle','mobileToggleTelevisión','mobileToggleInternet','mobileToggleTeléfono','mobileToggleSupport',event);">Televisión</a>
+                    </div>
+                    <div class="d-none d-sm-none d-md-block col-md-12 col-lg-12 col-xl-12 faqsItem">
+                        <a id="phoneToggle" href="#"
+                            onclick="faqsToggle('phoneQuestions','internetQuestions','tvQuestions','supportQuestions','phoneToggle','tvToggle','internetToggle','supportToggle','mobileToggleTeléfono','mobileToggleSupport','mobileToggleInternet','mobileToggleTelevisión',event);">Teléfono</a>
+                    </div>
+                    <div class="d-none d-sm-none d-md-block col-md-12 col-lg-12 col-xl-12 faqsItem">
+                        <a id="supportToggle" href="#"
+                            onclick="faqsToggle('supportQuestions','internetQuestions','tvQuestions','phoneQuestions','supportToggle','phoneToggle','tvToggle','internetToggle','mobileToggleSupport','mobileToggleTeléfono','mobileToggleTelevisión','mobileToggleInternet',event);">Atención
+                            a clientes</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-9 faqsCardsContainer">
+                <div id="internetQuestions" class="row">
+                    <div class="col-11 mx-auto FaqsQuestionContainer">
+                        <div class="row faqsContainerTitle">
+                            <div class="col-12">
+                                <h1>Preguntas frecuentes</h1>
+                                <p>Dudas sobre el servicio de internet</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="accordion" id="internetAccordion">
+                                    <div class="card">
+                                        <div class="card-header" id="headingOne">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapseInternetOne"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Cuál es la diferencia entre el servicio de Internet de Totalplay y
+                                                    un servicio convencional de Internet?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseInternetOne" class="collapse show" aria-labelledby="headingOne"
+                                            data-parent="#internetAccordion">
+                                            <div class="card-body">
+                                                La diferencia es que Totalplay te conecta a una velocidad sin
+                                                comparación en México de hasta 500 Megas. Sorpréndete descargando
+                                                música, películas y archivos muy pesados en tan sólo segundos,
+                                                mientras que con un servicio de Internet convencional tardarías minutos
+                                                u horas.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingTwo">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapseInternetTwo"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Cuáles son los requisitos mínimos de mi computadora para conectarse
+                                                    al Internet de Totalplay?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseInternetTwo" class="collapse" aria-labelledby="headingTwo"
+                                            data-parent="#internetAccordion">
+                                            <div class="card-body">
+                                                Que la computadora tenga una tarjeta Ethernet o capacidad para Wi-Fi.
+                                                Prácticamente cualquier computadora reciente puede recibir nuestra
+                                                señal. Sin embargo si deseas crecer en capacidades que rebasen
+                                                determinados Megas (mega bits por segundo) de velocidad de bajada,
+                                                tendremos servicios que se adapten a sus necesidades.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingThree">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapseInternetThree"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Mi velocidad de internet se verá afectada cuando haga una llamada
+                                                    telefónica?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseInternetThree" class="collapse" aria-labelledby="headingThree"
+                                            data-parent="#internetAccordion">
+                                            <div class="card-body">
+                                                Tu servicio de Internet no sufrirá interrupciones cuando realices
+                                                llamadas telefónicas, gracias a la fibra óptica de Totalplay.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingFour">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapseInternetFour"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Qué necesito para conectarme a Internet?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseInternetFour" class="collapse" aria-labelledby="headingFour"
+                                            data-parent="#internetAccordion">
+                                            <div class="card-body">
+                                                Sólo conectar tus dispositivos al servicio de Totalplay, por medio de un
+                                                cable Ethernet o por Wi-Fi.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingFive">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapseInternetFive"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Cuál es la distancia recomendada que debe existir entre mi
+                                                    computadora y el Módem Óptico?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseInternetFive" class="collapse" aria-labelledby="headingFive"
+                                            data-parent="#internetAccordion">
+                                            <div class="card-body">
+                                                Una conexión Ethernet estará limitada por el largo del cable. Para Wi-Fi
+                                                dependerá de la ubicación del Módem Óptico (ONT), es importante
+                                                considerar los objetos cercanos que pueden bloquear o degradar la señal.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingSix">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapseInternetSix"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Cuáles son las formas por las que me puedo conectar a Internet
+                                                    (ej.: Wi-Fi, cable de red, etc.)?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseInternetSix" class="collapse" aria-labelledby="headingSix"
+                                            data-parent="#internetAccordion">
+                                            <div class="card-body">
+                                                Hay 2 formas para conectarte a Internet de Totalplay: una es conectarte
+                                                vía Wi-Fi, o si prefieres a través del cable Ethernet que viene en tu
+                                                kit. Conecta tu computadora en forma inalámbrica al configurar la red en
+                                                tu equipo. Además, aprovecha la conexión Wi-Fi de tu Internet con otros
+                                                dispositivos, como tu smartphone, Tablet, iPod y hasta tu consola de
+                                                videojuegos. Verás que todos tus aparatos cargan velozmente cuando se
+                                                conectan al Internet de Totalplay.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingSeven">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapseInternetSeven"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Puedo usar cualquier tipo de cable que tenga en mi domicilio?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseInternetSeven" class="collapse" aria-labelledby="headingSeven"
+                                            data-parent="#internetAccordion">
+                                            <div class="card-body">
+                                                Hay 2 formas para conectarte a Internet de Totalplay: una es conectarte
+                                                vía Wi-Fi, o si prefieres a través del cable Ethernet que viene en tu
+                                                kit. Conecta tu computadora en forma inalámbrica al configurar la red en
+                                                tu equipo. Además, aprovecha la conexión Wi-Fi de tu Internet con otros
+                                                dispositivos, como tu smartphone, Tablet, iPod y hasta tu consola de
+                                                videojuegos. Verás que todos tus aparatos cargan velozmente cuando se
+                                                conectan al Internet de Totalplay.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingEight">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapseInternetEight"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Se ofrecerá servicio de antivirus? Si es así, ¿todos los antivirus
+                                                    son compatibles?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseInternetEight" class="collapse" aria-labelledby="headingEight"
+                                            data-parent="#internetAccordion">
+                                            <div class="card-body">
+                                                Por el momento Totalplay no ofrece el servicio de antivirus. Puedes
+                                                ocupar cualquier antivirus, no requerimos uno en especial.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingNine">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapseInternetNine"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Cuáles son las tarifas de los servicios adicionales de Internet?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseInternetNine" class="collapse centerImage"
+                                            aria-labelledby="headingNine" data-parent="#internetAccordion">
+                                            <div class="card-body">
+                                                <img src="../assets/img/nuevos/preguntas-frecuentes-crecelo.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tvQuestions" class="row" style="display: none;">
+                    <div class="col-11 mx-auto FqsQuestionContainer">
+                        <div class="row faqsContainerTitle">
+                            <div class="col-12">
+                                <h1>Preguntas frecuentes</h1>
+                                <p>Dudas sobre el servicio de televisión</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="accordion" id="tvAccordion">
+                                    <div class="card">
+                                        <div class="card-header" id="headingTvOne">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapseTvOne"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Cuántos canales ofrece Totalplay?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseTvOne" class="collapse show" aria-labelledby="headingTvOne"
+                                            data-parent="#tvAccordion">
+                                            <div class="card-body">
+                                                Más de 300 canales y 125 en HD. Además disfruta los últimos estrenos en
+                                                On Demand, o si lo prefieres disfruta tu programación en Donde Sea con
+                                                tus dispositivos móviles.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingTvTwo">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapseTvTwo"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Qué es On Demand (VOD)?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseTvTwo" class="collapse" aria-labelledby="headingTvTwo"
+                                            data-parent="#tvAccordion">
+                                            <div class="card-body">
+                                                On Demand (VOD) es un servicio para rentar películas, series y programas
+                                                favoritos en tu televisión desde la comodidad de tu hogar. Con los
+                                                últimos estrenos, la mejor calidad HD y a los mejores precios.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingTvThree">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapseTvThree"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Cuántas veces puedo ver una película rentada?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseTvThree" class="collapse" aria-labelledby="headingTvThree"
+                                            data-parent="#tvAccordion">
+                                            <div class="card-body">
+                                                Puedes verla cuantas veces quieras, 24 horas a partir de su
+                                                contratación. Consúltalas en la sección Rentadas.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingTvFour">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapseTvFour"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Necesito algún equipo especial para disfrutar del servicio HD de
+                                                    Totalplay?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseTvFour" class="collapse" aria-labelledby="headingTvFour"
+                                            data-parent="#tvAccordion">
+                                            <div class="card-body">
+                                                Únicamente tener televisión HD.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingTvFive">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapseTvFive"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Qué canales HD hay en Totalplay?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseTvFive" class="collapse" aria-labelledby="headingTvFive"
+                                            data-parent="#tvAccordion">
+                                            <div class="card-body">
+                                                Totalplay cuenta con la mejor programación, consulta los canales HD en
+                                                totalplay.com.mx
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingTvSix">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapseTvSix"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Tendrán canales de audio?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseTvSix" class="collapse" aria-labelledby="headingTvSix"
+                                            data-parent="#tvAccordion">
+                                            <div class="card-body">
+                                                Sí, tenemos canales de audio a partir del paquete Básico. Además
+                                                contamos con aplicaciones como Deezer con millones de canciones y TuneIn
+                                                con estaciones de radio del mundo para que las disfrutes desde tu TV.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingTvSeven">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapseTvSeven"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Cuánto tiempo quedará registrado el historial de la renta de
+                                                    películas en mi TV?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseTvSeven" class="collapse" aria-labelledby="headingTvSeven"
+                                            data-parent="#tvAccordion">
+                                            <div class="card-body">
+                                                El historial de renta de películas podrá ser consultado durante 30 días,
+                                                o bien durante el mes en que se factura.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingTvEight">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapseTvEight"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Puedo comprar las películas de On Demand (VOD)?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseTvEight" class="collapse" aria-labelledby="headingTvEight"
+                                            data-parent="#tvAccordion">
+                                            <div class="card-body">
+                                                No, únicamente se pueden rentar.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="phoneQuestions" class="row" style="display: none;">
+                    <div class="col-11 mx-auto FqsQuestionContainer">
+                        <div class="row faqsContainerTitle">
+                            <div class="col-12">
+                                <h1>Preguntas frecuentes</h1>
+                                <p>Dudas sobre el servicio de teléfono</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="accordion" id="phoneAccordion">
+                                    <div class="card">
+                                        <div class="card-header" id="headingPhoneOne">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapsePhoneOne"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Cuál es la diferencia entre el servicio de telefonía de Totalplay y
+                                                    otros servicios de telefonía?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapsePhoneOne" class="collapse show"
+                                            aria-labelledby="headingPhoneOne" data-parent="#phoneAccordion">
+                                            <div class="card-body">
+                                                El servicio de telefonía de Totalplay cuenta con tecnología de última
+                                                generación con la que siempre estarás comunicado sin importar las
+                                                inclemencias del clima, además de poder llamar y con minutos a celular
+                                                ya incluidos en tu plan. La aplicación Totalplay Donde Sea te permite
+                                                utilizar tu servicio desde tu Smartphone, entra a y conoce más acerca de
+                                                Softphone
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingPhoneTwo">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapsePhoneTwo"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Necesito comprar un aparato telefónico nuevo?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapsePhoneTwo" class="collapse" aria-labelledby="headingPhoneTwo"
+                                            data-parent="#phoneAccordion">
+                                            <div class="card-body">
+                                                No, cualquier equipo puede funcionar con Totalplay, el que ya tengas en
+                                                casa lo podremos conectar a la línea telefónica de Totalplay.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingPhoneThree">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapsePhoneThree"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Tengo llamadas incluidas a número fijos y otros países?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapsePhoneThree" class="collapse"
+                                            aria-labelledby="headingPhoneThree" data-parent="#phoneAccordion">
+                                            <div class="card-body">
+                                                Sí, llamadas a números fijos, Estados Unidos y Canadá, además de contar
+                                                con minutos a celular ya incluidos en tu paquete.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingPhoneFour">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapsePhoneFour"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Se podrán bloquear llamadas a números fijos o celulares?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapsePhoneFour" class="collapse" aria-labelledby="headingPhoneFour"
+                                            data-parent="#phoneAccordion">
+                                            <div class="card-body">
+                                                Por el momento no ofrecemos el servicio de bloqueo de llamadas a
+                                                teléfonos fijos ni celulares.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingPhonFive">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapsePhoneFive"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Me asignarán un nuevo número telefónico?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapsePhoneFive" class="collapse" aria-labelledby="headingPhoneFive"
+                                            data-parent="#phoneAccordion">
+                                            <div class="card-body">
+                                                Sí, o si lo prefieres puedes realizar el trámite de portabilidad para
+                                                conservar tu mismo número.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingPhonSix">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapsePhoneSix"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Puedo estar conectado a internet o ver la televisión mientras hago
+                                                    mis llamadas?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapsePhoneSix" class="collapse" aria-labelledby="headingPhoneSix"
+                                            data-parent="#phoneAccordion">
+                                            <div class="card-body">
+                                                Por supuesto que sí, todos los servicios de Totalplay se pueden utilizar
+                                                simultáneamente.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingPhonSeven">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapsePhoneSeven"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Puedo contratar una segunda línea?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapsePhoneSeven" class="collapse"
+                                            aria-labelledby="headingPhoneSeven" data-parent="#phoneAccordion">
+                                            <div class="card-body">
+                                                Sí, comunícate a la Línea Totalplay al 55 1579 8000 o 800 5100 510 para
+                                                solicitarla.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingPhonEight">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapsePhoneEight"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Cuáles son las tarifas telefónicas que maneja Totalplay?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapsePhoneEight" class="collapse"
+                                            aria-labelledby="headingPhoneEight" data-parent="#phoneAccordion">
+                                            <div class="card-body">
+                                                Puedes consultar los precios comunicándote a la Línea Totalplay al 55
+                                                1579 8000 o 800 5100 510 en donde con gusto te atenderán en un horario
+                                                de 24 hrs.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingPhonNine">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapsePhoneNine"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Se pueden realizar transferencias de llamadas? De ser así, ¿cómo se
+                                                    cobrarán?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapsePhoneNine" class="collapse" aria-labelledby="headingPhoneNine"
+                                            data-parent="#phoneAccordion">
+                                            <div class="card-body">
+                                                Por el momento no ofrecemos el servicio de transferencia de llamadas
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="supportQuestions" class="row" style="display: none;">
+                    <div class="col-11 mx-auto FqsQuestionContainer">
+                        <div class="row faqsContainerTitle">
+                            <div class="col-12">
+                                <h1>Preguntas frecuentes</h1>
+                                <p>Dudas sobre atención a clientes</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="accordion" id="supportAccordion">
+                                    <div class="card">
+                                        <div class="card-header" id="headingSupportOne">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapseSupportOne"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Cómo puedo comunicarme con Totalplay?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseSupportOne" class="collapse show"
+                                            aria-labelledby="headingSupportOne" data-parent="#supportAccordion">
+                                            <div class="card-body">
+                                                Estamos para atender todas tus preguntas las 24 horas en la línea
+                                                Totalplay (55 1579 8000 para la Ciudad de México, Área Metropolitana y
+                                                al 800 5100 510 para el Interior de la República), por nuestro chat
+                                                ingresando a nuestro sitio web en totalplay.com.mx o a través de Twitter
+                                                @totalplayayuda.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingSupportTwo">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapseSupportTwo"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Dónde localizo mi número de cuenta?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseSupportTwo" class="collapse"
+                                            aria-labelledby="headingSupportTwo" data-parent="#supportAccordion">
+                                            <div class="card-body">
+                                                En tu estado de cuenta que recibes en tu correo electrónico, abriendo el
+                                                archivo PDF, o con tu cuenta en mitotalplay.com.mx.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingSupportThree">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapseSupportThree"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Dónde puedo consultar mi estado de cuenta?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseSupportThree" class="collapse"
+                                            aria-labelledby="headingSupportThree" data-parent="#supportAccordion">
+                                            <div class="card-body">
+                                                Si ya te registraste, en: mitotalplay.com.mx, si no es importante que
+                                                tomes unos minutos para tu registro. Conoce a detalle tus consumos
+                                                dentro del archivo PDF.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingSupportFour">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapseSupportFour"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Dónde puedo consultar mi saldo?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseSupportFour" class="collapse"
+                                            aria-labelledby="headingSupportFour" data-parent="#supportAccordion">
+                                            <div class="card-body">
+                                                <ul>
+                                                    <li>Ingresando a mitotalplay.com.mx</li>
+                                                    <li>En nuestro sistema de respuesta de voz automática llamando a la
+                                                        línea Totalplay al 55 1570 8000 ó 800 5100 510, ingresando tú
+                                                        número de cuenta en la opción 1 de nuestro menú.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingSupportFive">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapseSupportFive"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Dónde puedo pagar mi estado de cuenta?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseSupportFive" class="collapse"
+                                            aria-labelledby="headingSupportFive" data-parent="#supportAccordion">
+                                            <div class="card-body">
+                                                <ul>
+                                                    <li>Activando el cargo único a tarjeta de crédito o debito en
+                                                        mitotalplay.com.mx o en nuestro sistema de respuesta de voz
+                                                        automática llamando a la línea Totalplay al 55 1570 8000 ó 800
+                                                        5100 510 y tu pago se reflejará de inmediato.</li>
+                                                    <li>En sucursales bancarias, tu pago se reflejará de 24 a 48 horas.
+                                                        Es importante que lleves contigo la referencia bancaria,
+                                                        localízala en tu estado de cuenta.</li>
+                                                    <li>Bancos autorizados: Banco Azteca, BBVA Bancomer, Banorte,
+                                                        Scotiabank, Santander, Banamex</li>
+                                                    <li>En OXXO, Tiendas Neto, Farmacias Guadalajara, Farmacias del
+                                                        ahorro, Farmapronto.</li>
+                                                    <li>Pago por SPEI</li>
+                                                    <li>O si lo prefieres, solicita cargo recurrente a tu Tarjeta de
+                                                        Crédito o Débito, actívalo en el 55 4170 3285 y 800 5100 510
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingSupportSix">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapseSupportSix"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Dónde encuentro mi referencia bancaria?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseSupportSix" class="collapse"
+                                            aria-labelledby="headingSupportSix" data-parent="#supportAccordion">
+                                            <div class="card-body">
+                                                Localízala en tu estado de cuenta, ingresa a: mitotalplay.com.mx
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingSupportSeven">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapseSupportSeven"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Cuáles son las fechas que tengo para pagar mi estado de cuenta?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseSupportSeven" class="collapse"
+                                            aria-labelledby="headingSupportSeven" data-parent="#supportAccordion">
+                                            <div class="card-body">
+                                                Aprovecha el pronto pago dentro de los primeros 10 días a partir de la
+                                                fecha de corte, del día 11 al 19 el pago será con el precio regular del
+                                                paquete. Te recomendamos dejar registrada tu tarjeta de crédito para
+                                                cargo recurrente llamando a la línea Totalplay y así siempre
+                                                aprovecharás el descuento de pronto pago.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingSupportEight">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapseSupportEight"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    ¿Cuándo recibo mi estado de cuenta?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseSupportEight" class="collapse"
+                                            aria-labelledby="headingSupportEight" data-parent="#supportAccordion">
+                                            <div class="card-body">
+                                                Tu estado de cuenta lo recibirás de forma mensual al correo electrónico
+                                                que registraste en el momento de tu contratación.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingSupportNine">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button"
+                                                    data-toggle="collapse" data-target="#collapseSupportNine"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    Si no pagué en tiempo mi servicio, ¿qué tengo que hacer?
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseSupportNine" class="collapse"
+                                            aria-labelledby="headingSupportNine" data-parent="#supportAccordion">
+                                            <div class="card-body">
+                                                Si no realizaste tu pago al día 19 posterior a la fecha de tu corte, tu
+                                                servicio será desconectado, sin embargo puedes comunicarte al 55 4170
+                                                3285 y 800 5100 510 y con gusto te podemos apoyar a que realices tu
+                                                pago.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="faq-container">
-        <h1 class="faq-container__title">Preguntas frecuentes</h1>
-        <p class="faq-container__description">Dudas sobre el servicio de <span id="titleSection"></span></p>
-        <!-- seccion de internet -->
-        <div class="faq-container__content-accordion" id="Internet">
-
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">
-                        ¿Cuál es la diferencia entre el servicio de Internet de Totalplay y un servicio convencional de
-                        Internet?
-                    </h5>
-                    <span class="content-accordion__item--content__icon active"></span>
-                </div>
-                <p class="content-accordion__item--answer">La diferencia es que Totalplay te conecta a una velocidad sin
-                    comparación en México de hasta 500 Megas.
-                    Sorpréndete descargando música, películas y archivos muy pesados en tan sólo segundos,
-                    mientras que con un servicio de Internet convencional tardarías minutos u horas.</p>
-            </article>
-
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">¿Cuáles son los requisitos mínimos de mi
-                        computadora para conectarse al Internet de Totalplay?</h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">Que la computadora tenga una tarjeta Ethernet o capacidad
-                    para Wi-Fi.
-                    Prácticamente cualquier computadora reciente puede recibir nuestra señal.
-                    Sin embargo si deseas crecer en capacidades que rebasen determinados Megas (mega bits por segundo)
-                    de velocidad de bajada,
-                    tendremos servicios que se adapten a sus necesidades.</p>
-            </article>
-
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">¿Mi velocidad de internet se verá afectada
-                        cuando haga una llamada telefónica?</h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">Tu servicio de Internet no sufrirá interrupciones cuando
-                    realices llamadas telefónicas, gracias a la fibra óptica de Totalplay.</p>
-            </article>
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">¿Qué necesito para conectarme a Internet?
-                    </h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">
-                    Sólo conectar tus dispositivos al servicio de Totalplay, por medio de un cable Ethernet o por Wi-Fi.
-                </p>
-            </article>
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">¿Cuál es la distancia recomendada que debe
-                        existir entre mi computadora y el Módem Óptico?</h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">
-                    Una conexión Ethernet estará limitada por el largo del cable. Para Wi-Fi dependerá de la ubicación
-                    del Módem Óptico (ONT), es importante considerar los objetos cercanos que pueden bloquear o degradar
-                    la señal.
-                </p>
-            </article>
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">¿Cuáles son las formas por las que me puedo
-                        conectar a Internet (ej.: Wi-Fi, cable de red, etc.)?</h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">
-                    Hay 2 formas para conectarte a Internet de Totalplay: una es conectarte vía Wi-Fi, o si prefieres a
-                    través del cable Ethernet que viene en tu kit. Conecta tu computadora en forma inalámbrica al
-                    configurar la red en tu equipo. Además, aprovecha la conexión Wi-Fi de tu Internet con otros
-                    dispositivos, como tu smartphone, Tablet, iPod y hasta tu consola de videojuegos. Verás que todos
-                    tus aparatos cargan velozmente cuando se conectan al Internet de Totalplay.
-                </p>
-            </article>
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">¿Puedo usar cualquier tipo de cable que tenga
-                        en mi domicilio?</h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">
-                    Hay 2 formas para conectarte a Internet de Totalplay: una es conectarte vía Wi-Fi, o si prefieres a
-                    través del cable Ethernet que viene en tu kit. Conecta tu computadora en forma inalámbrica al
-                    configurar la red en tu equipo. Además, aprovecha la conexión Wi-Fi de tu Internet con otros
-                    dispositivos, como tu smartphone, Tablet, iPod y hasta tu consola de videojuegos. Verás que todos
-                    tus aparatos cargan velozmente cuando se conectan al Internet de Totalplay.
-                </p>
-            </article>
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">¿Se ofrecerá servicio de antivirus? Si es
-                        así, ¿todos los antivirus son compatibles?</h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">
-                    Por el momento Totalplay no ofrece el servicio de antivirus. Puedes ocupar cualquier antivirus, no
-                    requerimos uno en especial.
-                </p>
-            </article>
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">¿Cuáles son las tarifas de los servicios
-                        adicionales de Internet?</h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">
-                    <img src="/assets/img/preguntas-frecuentes-crecelo.png" alt="">
-                </p>
-            </article>
-
-        </div>
-        <!-- seccion de TV -->
-        <div class="faq-container__content-accordion" id="Tv">
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">
-                        ¿Cuántos canales ofrece Totalplay?
-                    </h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">
-                    Más de 300 canales y 125 en HD. Además disfruta los últimos estrenos en On Demand, o si lo prefieres
-                    disfruta tu programación en Donde Sea con tus dispositivos móviles.
-                </p>
-            </article>
-
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">
-                        ¿Qué es On Demand (VOD)?
-                    </h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">
-                    On Demand (VOD) es un servicio para rentar películas, series y programas favoritos en tu televisión
-                    desde la comodidad de tu hogar. Con los últimos estrenos, la mejor calidad HD y a los mejores
-                    precios.
-                </p>
-            </article>
-
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">
-                        ¿Cuántas veces puedo ver una película rentada?
-                    </h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">
-                    Puedes verla cuantas veces quieras, 24 horas a partir de su contratación. Consúltalas en la sección
-                    Rentadas.
-                </p>
-            </article>
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">
-                        ¿Necesito algún equipo especial para disfrutar del servicio HD de Totalplay?
-                    </h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">
-                    Únicamente tener televisión HD.
-                </p>
-            </article>
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">
-                        ¿Qué canales HD hay en Totalplay?
-                    </h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">
-                    Totalplay cuenta con la mejor programación, consulta los canales HD en totalplay.com.mx
-                </p>
-            </article>
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">
-                        ¿Tendrán canales de audio?
-                    </h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">
-                    Sí, tenemos canales de audio a partir del paquete Básico. Además contamos con aplicaciones como
-                    Deezer con millones de canciones y TuneIn con estaciones de radio del mundo para que las disfrutes
-                    desde tu TV.
-                </p>
-            </article>
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">
-                        ¿Cuánto tiempo quedará registrado el historial de la renta de películas en mi TV?
-                    </h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">
-                    El historial de renta de películas podrá ser consultado durante 30 días, o bien durante el mes en
-                    que se factura.
-                </p>
-            </article>
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">
-                        ¿Puedo comprar las películas de On Demand (VOD)?
-                    </h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">
-                    No, únicamente se pueden rentar.
-                </p>
-            </article>
-        </div>
-
-        <!-- seccion de Telefono -->
-        <div class="faq-container__content-accordion" id="Telefono">
-
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">
-                        ¿Cuál es la diferencia entre el servicio de telefonía de Totalplay y otros servicios de
-                        telefonía?
-                    </h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">
-                    El servicio de telefonía de Totalplay cuenta con tecnología de última generación con la que siempre
-                    estarás comunicado sin importar las inclemencias del clima, además de poder llamar y con minutos a
-                    celular ya incluidos en tu plan. La aplicación Totalplay Donde Sea te permite utilizar tu servicio
-                    desde tu Smartphone, entra a y conoce más acerca de Softphone
-                </p>
-            </article>
-
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">
-                        ¿Necesito comprar un aparato telefónico nuevo?
-                    </h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">
-                    No, cualquier equipo puede funcionar con Totalplay, el que ya tengas en casa lo podremos conectar a
-                    la línea telefónica de Totalplay.
-                </p>
-            </article>
-
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">
-                        ¿Tengo llamadas incluidas a número fijos y otros países?
-                    </h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">
-                    Sí, llamadas a números fijos, Estados Unidos y Canadá, además de contar con minutos a celular ya
-                    incluidos en tu paquete.
-                </p>
-            </article>
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">
-                        ¿Se podrán bloquear llamadas a números fijos o celulares?
-                    </h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">
-                    Por el momento no ofrecemos el servicio de bloqueo de llamadas a teléfonos fijos ni celulares.
-                </p>
-            </article>
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">
-                        ¿Me asignarán un nuevo número telefónico?
-                    </h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">
-                    Sí, o si lo prefieres puedes realizar el trámite de portabilidad para conservar tu mismo número.
-                </p>
-            </article>
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">
-                        ¿Puedo estar conectado a internet o ver la televisión mientras hago mis llamadas?
-                    </h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">
-                    Por supuesto que sí, todos los servicios de Totalplay se pueden utilizar simultáneamente.
-                </p>
-            </article>
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">
-                        ¿Puedo contratar una segunda línea?
-                    </h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">
-                    Sí, comunícate a la Línea Totalplay al 55 1579 8000 o 800 5100 510 para solicitarla.
-                </p>
-            </article>
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">
-                        ¿Cuáles son las tarifas telefónicas que maneja Totalplay?
-                    </h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">
-                    Puedes consultar los precios comunicándote a la Línea Totalplay al 55 1579 8000 o 800 5100 510 en
-                    donde con gusto te atenderán en un horario de 24 hrs.
-                </p>
-            </article>
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">
-                        ¿Se pueden realizar transferencias de llamadas? De ser así, ¿cómo se cobrarán?
-                    </h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">
-                    Por el momento no ofrecemos el servicio de transferencia de llamadas
-                </p>
-            </article>
-
-        </div>
-
-        <!-- seccion de Atención -->
-        <div class="faq-container__content-accordion" id="Atencion">
-
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">
-                        ¿Cómo puedo comunicarme con Totalplay?
-                    </h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">
-                    Estamos para atender todas tus preguntas las 24 horas en la línea Totalplay (55 1579 8000 para la
-                    Ciudad de México, Área Metropolitana y al 800 5100 510 para el Interior de la República), por
-                    nuestro chat ingresando a nuestro sitio web en totalplay.com.mx o a través de Twitter
-                    @totalplayayuda.
-                </p>
-            </article>
-
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">
-                        ¿Dónde localizo mi número de cuenta?
-                    </h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">
-                    En tu estado de cuenta que recibes en tu correo electrónico, abriendo el archivo PDF, o con tu
-                    cuenta en mitotalplay.com.mx.
-                </p>
-            </article>
-
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">
-                        ¿Dónde puedo consultar mi estado de cuenta?
-                    </h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">
-                    Si ya te registraste, en: mitotalplay.com.mx, si no es importante que tomes unos minutos para tu
-                    registro. Conoce a detalle tus consumos dentro del archivo PDF.
-                </p>
-            </article>
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">
-                        ¿Dónde puedo consultar mi saldo?
-                    </h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">
-                    • Ingresando a mitotalplay.com.mx
-                    <br>
-                    • En nuestro sistema de respuesta de voz automática llamando a la línea Totalplay al 55 1570 8000 ó
-                    800 5100 510, ingresando tú número de cuenta en la opción 1 de nuestro menú.
-                </p>
-            </article>
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">
-                        ¿Dónde puedo pagar mi estado de cuenta?
-                    </h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">
-                    • Activando el cargo único a tarjeta de crédito o debito en mitotalplay.com.mx o en nuestro sistema
-                    de respuesta de voz automática llamando a la línea Totalplay al 55 1570 8000 ó 800 5100 510 y tu
-                    pago se reflejará de inmediato.
-                    <br>
-                    • En sucursales bancarias, tu pago se reflejará de 24 a 48 horas. Es importante que lleves contigo
-                    la referencia bancaria, localízala en tu estado de cuenta.
-                    <br>
-                    • Bancos autorizados: Banco Azteca, BBVA Bancomer, Banorte, Scotiabank, Santander, Banamex
-                    <br>
-                    • En OXXO, Tiendas Neto, Farmacias Guadalajara, Farmacias del ahorro, Farmapronto.
-                    <br>
-                    • Pago por SPEI
-                    <br>
-                    • O si lo prefieres, solicita cargo recurrente a tu Tarjeta de Crédito o Débito, actívalo en el 55
-                    4170 3285 y 800 5100 510
-                </p>
-            </article>
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">
-                        ¿Dónde encuentro mi referencia bancaria?
-                    </h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">
-                    Localízala en tu estado de cuenta, ingresa a: mitotalplay.com.mx
-                </p>
-            </article>
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">
-                        ¿Cuáles son las fechas que tengo para pagar mi estado de cuenta?
-                    </h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">
-                    Aprovecha el pronto pago dentro de los primeros 10 días a partir de la fecha de corte, del día 11 al
-                    19 el pago será con el precio regular del paquete. Te recomendamos dejar registrada tu tarjeta de
-                    crédito para cargo recurrente llamando a la línea Totalplay y así siempre aprovecharás el descuento
-                    de pronto pago.
-                </p>
-            </article>
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">
-                        ¿Cuándo recibo mi estado de cuenta?
-                    </h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">
-                    Tu estado de cuenta lo recibirás de forma mensual al correo electrónico que registraste en el
-                    momento de tu contratación.
-                </p>
-            </article>
-            <article class="content-accordion__item articulo-pregunta-respuesta">
-                <div class="content-accordion__item--content">
-                    <h5 class="content-accordion__item--content__question">
-                        Si no pagué en tiempo mi servicio, ¿qué tengo que hacer?
-                    </h5>
-                    <span class="content-accordion__item--content__icon"></span>
-                </div>
-                <p class="content-accordion__item--answer">
-                    Si no realizaste tu pago al día 19 posterior a la fecha de tu corte, tu servicio será desconectado,
-                    sin embargo puedes comunicarte al 55 4170 3285 y 800 5100 510 y con gusto te podemos apoyar a que
-                    realices tu pago.
-                </p>
-            </article>
-
-        </div>
-
-    </div>
-
 </section>
-
-<section class="faq-main_mobile">
-    <div class="faq-tabs__links-back__content_mobile">
-        <span class="link-back__content--icon"></span>
-        <span class="link-back__content--label" onclick="window.history.back()">Volver a Soporte</span>
-    </div>
-    <div class="accordion js-accordion">
-        <div class="accordion__item js-accordion-item articulo-seccion-movil active">
-            <div class="accordion-header js-accordion-header articulo-texto-seccion-principal-movil">
-                Internet
-            </div>
-            <div class="accordion-body js-accordion-body wd" id="faqInternetMovil">
-                <div class="accordion-body__contents">
-                    <h1 class="faq-container__title">Preguntas frecuentes sobre internet</h1>
-                    <p class="faq-container__description">Dudas sobre el servicio de <span
-                            id="titleSection">Internet</span></p>
-                </div>
-                <div class="accordion js-accordion">
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>¿Cuál es la diferencia entre el servicio de Internet de Totalplay y un servicio
-                                convencional de Internet?</span></div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                La diferencia es que Totalplay te conecta a una velocidad sin comparación en México de
-                                hasta 500 Megas.
-                                Sorpréndete descargando música, películas y archivos muy pesados en tan sólo segundos,
-                                mientras que con un servicio de Internet convencional tardarías minutos u horas.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>
-                                ¿Mi velocidad de internet se verá afectada cuando haga una llamada telefónica?
-                            </span>
-                        </div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                Tu servicio de Internet no sufrirá interrupciones cuando realices llamadas telefónicas,
-                                gracias a la fibra óptica de Totalplay.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>
-                                ¿Cuáles son los requisitos mínimos de mi computadora para conectarse al Internet de
-                                Totalplay?
-                            </span>
-                        </div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                Que la computadora tenga una tarjeta Ethernet o capacidad para Wi-Fi. Prácticamente
-                                cualquier computadora reciente puede recibir nuestra señal. Sin embargo si deseas crecer
-                                en capacidades que rebasen determinados Megas (mega bits por segundo) de velocidad de
-                                bajada, tendremos servicios que se adapten a sus necesidades.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>¿Qué necesito para conectarme a Internet?</span></div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                Sólo conectar tus dispositivos al servicio de Totalplay, por medio de un cable Ethernet
-                                o por Wi-Fi.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>
-                                ¿Cuál es la distancia recomendada que debe existir entre mi computadora y el Módem
-                                Óptico?
-                            </span>
-                        </div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                Una conexión Ethernet estará limitada por el largo del cable. Para Wi-Fi dependerá de la
-                                ubicación del Módem Óptico (ONT), es importante considerar los objetos cercanos que
-                                pueden bloquear o degradar la señal.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>
-                                ¿Cuáles son las formas por las que me puedo conectar a Internet (ej.: Wi-Fi, cable de
-                                red, etc.)?
-                            </span>
-                        </div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                Hay 2 formas para conectarte a Internet de Totalplay: una es conectarte vía Wi-Fi, o si
-                                prefieres a través del cable Ethernet que viene en tu kit. Conecta tu computadora en
-                                forma inalámbrica al configurar la red en tu equipo. Además, aprovecha la conexión Wi-Fi
-                                de tu Internet con otros dispositivos, como tu smartphone, Tablet, iPod y hasta tu
-                                consola de videojuegos. Verás que todos tus aparatos cargan velozmente cuando se
-                                conectan al Internet de Totalplay.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>
-                                ¿Puedo usar cualquier tipo de cable que tenga en mi domicilio?
-                            </span>
-                        </div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                Sí, mientras sea Ethernet puedes utilizar cualquier cable comercial.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>¿Cuáles son las tarifas de los servicios adicionales de Internet?</span></div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                <img src="/assets/img/preguntas-frecuentes-crecelo.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="accordion__item js-accordion-item articulo-seccion-movil">
-            <div class="accordion-header js-accordion-header articulo-texto-seccion-principal-movil">TV</div>
-            <div class="accordion-body js-accordion-body wd" style="display: none;" id="faqTvMovil">
-                <div class="accordion-body__contents">
-                    <h1 class="faq-container__title">Preguntas frecuentes sobre TV</h1>
-                    <p class="faq-container__description">Dudas sobre el servicio de TV <span id="titleSection"></span>
-                    </p>
-                </div>
-                <div class="accordion js-accordion">
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>
-                                ¿Cuántos canales ofrece Totalplay?
-                            </span>
-                        </div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                Más de 300 canales y 125 en HD. Además disfruta los últimos estrenos en On Demand, o si
-                                lo prefieres disfruta tu programación en Donde Sea con tus dispositivos móviles.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>
-                                ¿Qué es On Demand (VOD)?
-                            </span>
-                        </div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                On Demand (VOD) es un servicio para rentar películas, series y programas favoritos en tu
-                                televisión desde la comodidad de tu hogar. Con los últimos estrenos, la mejor calidad HD
-                                y a los mejores precios.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>
-                                ¿Cuántas veces puedo ver una película rentada?
-                            </span>
-                        </div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                Puedes verla cuantas veces quieras, 24 horas a partir de su contratación. Consúltalas en
-                                la sección Rentadas.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>
-                                ¿Necesito algún equipo especial para disfrutar del servicio HD de Totalplay?
-                            </span>
-                        </div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                Únicamente tener televisión HD.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>
-                                ¿Qué canales HD hay en Totalplay?
-                            </span></div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                Totalplay cuenta con la mejor programación, consulta los canales HD en totalplay.com.mx.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>
-                                ¿Dónde puedo consultar la alineación de canales de mi ciudad?
-                            </span>
-                        </div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                Puedes revisar la alineación de canales aquí.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>
-                                ¿Tendrán canales de audio?
-                            </span></div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                Sí, tenemos canales de audio a partir del paquete Básico. Además contamos con
-                                aplicaciones como Deezer con millones de canciones y TuneIn con estaciones de radio del
-                                mundo para que las disfrutes desde tu TV.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>
-                                ¿Cuánto tiempo quedará registrado el historial de la renta de películas en mi TV?
-                            </span>
-                        </div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                El historial de renta de películas podrá ser consultado durante 30 días, o bien durante
-                                el mes en que se factura.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>
-                                ¿Puedo comprar las películas de On Demand (VOD)?
-                            </span>
-                        </div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                No, únicamente se pueden rentar.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="accordion__item js-accordion-item articulo-seccion-movil">
-            <div class="accordion-header js-accordion-header articulo-texto-seccion-principal-movil">Tel&eacute;fono
-            </div>
-            <div class="accordion-body js-accordion-body wd" style="display: none;" id="faqTelefonoMovil">
-                <div class="accordion-body__contents">
-                    <h1 class="faq-container__title">Preguntas frecuentes sobre Teléfono</h1>
-                    <p class="faq-container__description">Dudas sobre el servicio de Teléfono <span
-                            id="titleSection"></span></p>
-                </div>
-                <div class="accordion js-accordion">
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>
-                                ¿Cuál es la diferencia entre el servicio de telefonía de Totalplay y otros servicios de
-                                telefonía?
-                            </span>
-                        </div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                El servicio de telefonía de Totalplay cuenta con tecnología de última generación con la
-                                que siempre estarás comunicado sin importar las inclemencias del clima, además de poder
-                                llamar y con minutos a celular ya incluidos en tu plan. La aplicación Totalplay Donde
-                                Sea te permite utilizar tu servicio desde tu Smartphone, entra a y conoce más acerca de
-                                Softphone. (https://www.totalplay.com.mx/telefonia)
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>
-                                ¿Necesito comprar un aparato telefónico nuevo?
-                            </span>
-                        </div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                No, cualquier equipo puede funcionar con Totalplay, el que ya tengas en casa lo podremos
-                                conectar a la línea telefónica de Totalplay.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>
-                                ¿Tengo llamadas incluidas a número fijos y otros países?
-                            </span>
-                        </div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                Sí, llamadas a números fijos, Estados Unidos y Canadá, además de contar con minutos a
-                                celular ya incluidos en tu paquete. Para mayor información entra a
-                                totalplay.com.mx/telefonía.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>
-                                ¿Se podrán bloquear llamadas a números fijos o celulares?
-                            </span>
-                        </div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                Por el momento no ofrecemos el servicio de bloqueo de llamadas a teléfonos fijos ni
-                                celulares.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>
-                                ¿Me asignarán un nuevo número telefónico?
-                            </span>
-                        </div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                Sí, o si lo prefieres puedes realizar el trámite de portabilidad para conservar tu mismo
-                                número.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>
-                                ¿Puedo estar conectado a internet o ver la televisión mientras hago mis llamadas?
-                            </span>
-                        </div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                Por supuesto que sí, todos los servicios de Totalplay se pueden utilizar
-                                simultáneamente.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>
-                                ¿Puedo contratar una segunda línea?
-                            </span>
-                        </div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                Sí, comunícate a la Línea Totalplay al 55 1579 8000 o 800 5100 510 para solicitarla.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>
-                                ¿Cuáles son las tarifas telefónicas que maneja Totalplay?
-                            </span>
-                        </div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                Puedes consultar los precios comunicándote a la Línea Totalplay al 55 1579 8000 o 800
-                                5100 510 en donde con gusto te atenderán en un horario de 24 hrs.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>
-                                ¿Se pueden realizar transferencias de llamadas? De ser así, ¿cómo se cobrarán?
-                            </span>
-                        </div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                Por el momento no ofrecemos el servicio de transferencia de llamadas
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="accordion__item js-accordion-item articulo-seccion-movil">
-            <div class="accordion-header js-accordion-header articulo-texto-seccion-principal-movil">Atención a clientes
-            </div>
-            <div class="accordion-body js-accordion-body wd" style="display: none;" id="faqAtencionMovil">
-                <div class="accordion-body__contents">
-                    <h1 class="faq-container__title">Preguntas frecuentes Atención a Clientes</h1>
-                    <p class="faq-container__description">Dudas sobre el servicio de Atención a Clientes <span
-                            id="titleSection"></span></p>
-                </div>
-                <div class="accordion js-accordion">
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>
-                                ¿Cómo puedo comunicarme con Totalplay?
-                            </span>
-                        </div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                Estamos para atender todas tus preguntas las 24 horas en la línea Totalplay (55 1579
-                                8000 para la Ciudad de México, Área Metropolitana y al 800 5100 510 para el Interior de
-                                la República), por nuestro chat ingresando a nuestro sitio web en totalplay.com.mx o a
-                                través de Twitter @totalplayayuda.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>
-                                ¿Dónde localizo mi número de cuenta?
-                            </span>
-                        </div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                En tu estado de cuenta que recibes en tu correo electrónico, abriendo el archivo PDF, o
-                                con tu cuenta en mitotalplay.com.mx.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>
-                                ¿Dónde puedo consultar mi estado de cuenta?
-                            </span>
-                        </div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                Si ya te registraste, en: mitotalplay.com.mx, si no es importante que tomes unos minutos
-                                para tu registro. Conoce a detalle tus consumos dentro del archivo PDF.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>
-                                ¿Dónde puedo consultar mi saldo?
-                            </span>
-                        </div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                • Ingresando a mitotalplay.com.mx
-                                <br>
-                                • En nuestro sistema de respuesta de voz automática llamando a la línea Totalplay al 55
-                                1570 8000 ó 800 5100 510, ingresando tú número de cuenta en la opción 1 de nuestro menú.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>
-                                ¿Dónde puedo pagar mi estado de cuenta?
-                            </span>
-                        </div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                • Activando el cargo único a tarjeta de crédito o debito en mitotalplay.com.mx o en
-                                nuestro sistema de respuesta de voz automática llamando a la línea Totalplay al 55 1570
-                                8000 ó 800 5100 510 y tu pago se reflejará de inmediato.
-                                <br>
-                                • En sucursales bancarias, tu pago se reflejará de 24 a 48 horas. Es importante que
-                                lleves contigo la referencia bancaria, localízala en tu estado de cuenta.
-                                <br>
-                                • Bancos autorizados: Banco Azteca, BBVA Bancomer, Banorte, Scotiabank, Santander,
-                                Banamex
-                                <br>
-                                • En OXXO, Tiendas Neto, Farmacias Guadalajara, Farmacias del ahorro, Farmapronto.
-                                <br>
-                                • Pago por SPEI
-                                <br>
-                                • O si lo prefieres, solicita cargo recurrente a tu Tarjeta de Crédito o Débito,
-                                actívalo en el 55 4170 3285 y 800 5100 510
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>
-                                ¿Dónde encuentro mi referencia bancaria?
-                            </span>
-                        </div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                Localízala en tu estado de cuenta, ingresa a: mitotalplay.com.mx
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>
-                                ¿Cuáles son las fechas que tengo para pagar mi estado de cuenta?
-                            </span>
-                        </div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                Aprovecha el pronto pago dentro de los primeros 10 días a partir de la fecha de corte,
-                                del día 11 al 19 el pago será con el precio regular del paquete. Te recomendamos dejar
-                                registrada tu tarjeta de crédito para cargo recurrente llamando a la línea Totalplay y
-                                así siempre aprovecharás el descuento de pronto pago.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>
-                                ¿Cuándo recibo mi estado de cuenta?
-                            </span>
-                        </div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                Tu estado de cuenta lo recibirás de forma mensual al correo electrónico que registraste
-                                en el momento de tu contratación.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item js-accordion-item articulo-pregunta-respuesta-movil">
-                        <div class="accordion-header_question js-accordion-header div-icon-flecha-movil">
-                            <span>
-                                ¿Si tengo dudas respecto a mi estado de cuenta, con quién lo puedo aclarar?
-                            </span>
-                        </div>
-                        <div class="accordion-body js-accordion-body div-respuesta-movil">
-                            <div class="accordion-body__contents_resp">
-                                Puedes consultar el manual en
-                                https://www.totalplay.com.mx/web/assets/pdf/conoce-tu-estado-de-cuenta.pdf o llamando a
-                                la línea Totalplay al 55 1570 8000 ó 800 5100 510 y un asesor telefónico con gusto te
-                                ayudará. Te recomendamos tener a la mano tu número de cuenta o tú número telefónico para
-                                que sea más rápida la atención.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</section>
+{{> modalesIndex}}

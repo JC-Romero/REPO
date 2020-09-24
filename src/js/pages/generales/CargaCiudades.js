@@ -124,6 +124,7 @@ export class CargaCiudades{
 		var apuntador = this;
 
 		$('.cambiaCiudad').on('click',function(event){
+			event.stopImmediatePropagation();
 			//$('#confirmaCambioCiudad').modal('show');
 			apuntador.props.cdSeleccionada = event.target.innerText;
 
@@ -139,6 +140,8 @@ export class CargaCiudades{
             		const estimulo = new ClaseCobertura();
             		var path = window.location.pathname;
             		if(path == "/"){
+            			path = "home";
+            		}else if(path == "/paquetes.html" || path == "/paquetes"){
             			path = "home";
             		}else{
 	            		path = path.replace("/","");

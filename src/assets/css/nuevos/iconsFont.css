@@ -95,3 +95,18 @@
 .icon-chevronup:before {
     content: "\e80c";
 } /* '' */
+.icon-close:before {
+    content: "\e80d";
+} /* '' */
+.icon-filters:before {
+    content: "\e80e";
+} /* '' */
+.icon-rewind:before {
+    content: "\e80f";
+} /* '' */
+.icon-play:before {
+    content: "\e810";
+} /* '' */
+.icon-arrowleft:before {
+    content: "\e811";
+} /* '' */

@@ -9,7 +9,7 @@ export class Youtube{
         this.cargarVideo();
         this.cargarCanales();
         this.cargarCarrusel();
-		this.setListener();
+		//this.setListener();
 	}
 
     cargarVideo(){
@@ -74,7 +74,7 @@ export class Youtube{
 
         $("#tarjetasCanales").html(htmlcanales);
 
-        const even= new Eventos();
+        //const even= new Eventos();
     }
      cargarCarrusel(){
         var htmlcarrusel="";

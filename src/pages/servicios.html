@@ -42,14 +42,12 @@ layout: home
 		<div class="laptop">
 			<img src="../assets/img/nuevos/imgservicios/facetime.png">
 			<div class="facetime">
-				<video class="facetime"
-					src="../assets/img/nuevos/imgservicios/stock-footage-family-video-calling-using-smartphone-during-lunch-at-traditional-village-house-in-italy.mp4"
-					autoplay muted loop></video>
+				<video class="facetime" src="../assets/img/nuevos/imgservicios/GettyImages-1195000653.mp4" autoplay
+					muted loop></video>
 			</div>
 			<div class="picture">
-				<video class=" picture"
-					src="../assets/img/nuevos/imgservicios/stock-footage-excited-couple-sharing-ultrasound-pregnancy-photo-reveal-they-are-pregnant-to-family-over-internet.mp4"
-					autoplay muted loop></video>
+				<video class=" picture" src="../assets/img/nuevos/imgservicios/GettyImages-1154391799.mp4" autoplay
+					muted loop></video>
 			</div>
 		</div>
 		<div class="row internetBottomTitle">
@@ -59,12 +57,12 @@ layout: home
 		</div>
 		<div class="row internetButton">
 			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-				<a href="#" class="generalButton">Planes con internet</a>
+				<a href="/paquetes.html" class="generalButton">Planes con internet</a>
 			</div>
 		</div>
 		<div class="row internetMore">
 			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-				<a href="#">Conoce más</a>
+				<a href="internet.html">Conoce más</a>
 			</div>
 		</div>
 	</div>
@@ -79,8 +77,8 @@ layout: home
 		<div class="tvVideo">
 			<img src="../assets/img/nuevos/imgservicios/back-television.png">
 			<div class="videoContent">
-				<video class="videoContainer" src="../assets/img/nuevos/imgservicios/canal-uno.mov" autoplay muted
-					loop></video>
+				<video class="videoContainer" src="../assets/img/nuevos/imgservicios/sistema-3niveles.mp4" autoplay
+					muted loop></video>
 			</div>
 		</div>
 		<div class="row platformRow">
@@ -103,8 +101,8 @@ layout: home
 				<p>Apps, series, estrenos, tu programación favorita, música y mucho más...</p>
 			</div>
 		</div>
-		<div class="row servicesImagesAppsContainer">
-			<div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-11 mx-auto">
+		<!--<div class="row servicesImagesAppsContainer">
+			<div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-11 mx-auto" id="servicioAppsImg">
 				<div class="row">
 					<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 offset-xl-1 offset-lg-1">
 						<img src="../assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
@@ -140,7 +138,8 @@ layout: home
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>-->
+		{{> seccionApps}}
 		<div id="infiniteSlides" class="infiniteCarousel">
 			<div class="slideInfinite">
 				<div class="backImage">
@@ -223,12 +222,12 @@ layout: home
 		</div>
 		<div class="row buttonTv">
 			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-				<a href="" class="generalButton">Planes con TV</a>
+				<a href="/paquetes.html" class="generalButton">Planes con TV</a>
 			</div>
 		</div>
 		<div class="row buttonTv">
 			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-				<a href="">Conoce más</a>
+				<a href="/television.html">Conoce más</a>
 			</div>
 		</div>
 	</div>
@@ -281,7 +280,7 @@ layout: home
 		</div>
 		<div class="row bottomAppButton">
 			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-				<a href="#" class="generalButton">Conoce más</a>
+				<a href="/app.html" class="generalButton">Conoce más</a>
 			</div>
 		</div>
 	</div>
@@ -300,7 +299,7 @@ layout: home
 		</div>
 		<div class="row landlineImage">
 			<div class="col-12 col-md-12 col-md-12 col-lg-12 col-lx-12">
-				<img src="../assets/img/nuevos/imgservicios/phone.png" alt="Telefonia Totalplay">
+				<img src="../assets/img/nuevos/imgservicios/telefono.png" alt="Telefonia Totalplay">
 			</div>
 		</div>
 		<div class="row landlineDescription">
@@ -310,16 +309,17 @@ layout: home
 		</div>
 		<div class="row buttonLandline">
 			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-				<a href="" class="generalButton">Planes con TV</a>
+				<a href="/paquetes.html" class="generalButton">Planes con TV</a>
 			</div>
 		</div>
 		<div class="row buttonLandline">
 			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-				<a href="">Conoce más</a>
+				<a href="/telefonia.html">Conoce más</a>
 			</div>
 		</div>
 	</div>
 </div>
+{{> modalesIndex}}
 <!--<section id="sectionServices" class="section-services">
 	{{> menuServices}}
 	{{> internet}}

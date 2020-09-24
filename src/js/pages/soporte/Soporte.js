@@ -8,8 +8,7 @@ export class Soporte {
 			correo : '',
 			celular : '',
 			motivo : '',
-			descripcion : '',
-			url : Constantes.endpoints.enviaBuzon
+			descripcion : ''
 		}
 		this.init();
 	}
@@ -51,7 +50,14 @@ export class Soporte {
                 $("#errorNombreAyuda").css("display","block");
                 $("#errorNombreAyuda").html("*Campo obligatorio");
                 procesa = false;
+            }else{
+                if(!apuntador.validaLetras(apuntador.props.descripcion)){
+                    $("#errorNombreAyuda").css("display","block");
+                    $("#errorNombreAyuda").html("*Campo no v&aacute;lido.");
+                    procesa = false;
+                }
             }
+
             if(apuntador.esVacio(apuntador.props.nocta)){
                 $("#errorNocuenta").css("display","block");
                 $("#errorNocuenta").html("*Campo obligatorio");
@@ -63,6 +69,7 @@ export class Soporte {
                     procesa = false;
                 }
             }
+
             if(apuntador.esVacio(apuntador.props.correo)){
                 $("#errorCorreoAyuda").css("display","block");
                 $("#errorCorreoAyuda").html("*Campo obligatorio");
@@ -74,6 +81,7 @@ export class Soporte {
                     procesa = false;
                 }
             }
+
             if(apuntador.esVacio(apuntador.props.celular)){
                 $("#errorMovilAyuda").css("display","block");
                 $("#errorMovilAyuda").html("*Campo obligatorio");
@@ -85,6 +93,7 @@ export class Soporte {
                     procesa = false;
                 }
             }
+
             if(apuntador.props.motivo === "0"){
                 $("#errorMotivoAyuda").css("display","block");
                 $("#errorMotivoAyuda").html("*Selecciona un motivo de contacto");
@@ -105,7 +114,7 @@ export class Soporte {
 
             if(procesa){     
             	//$("#buzonDirector").css("display","none"); 
-                $("#cargador").css("display","block");     
+                $("#cargadorLead").css("display","block");     
                 $("#formBuzon").css("display","none");     
                 $("#botonEnviarBuzon").css("display","none");     
             	var params = {"nombre":apuntador.props.nombre,"nocta":apuntador.props.nocta,
@@ -223,8 +232,8 @@ export class Soporte {
 	insertaBuzon(params){
 		var apuntador = this;
 		console.log('Empieza loader');
-		console.log(apuntador.props.url);
-		fetch(apuntador.props.url, {
+		console.log(Constantes.endpoints.enviaBuzon);
+		fetch(Constantes.endpoints.enviaBuzon, {
 			method: "POST",
 			body: params
 		}).then(data => {
@@ -239,8 +248,7 @@ export class Soporte {
 					console.log("Se guardó la info");
                     $("#buzonDirector").css("display","none"); 
                     $("#buzonDirectorRespuesta").css("display","flex");
-                    $("#formBuzon").css("display","none");     
-                    $("#botonEnviarBuzon").css("display","none");    
+                    $("#formBuzon").css("display","none");                        
 
 				} else {
 					console.log("Poner mensaje de error");
@@ -259,7 +267,8 @@ export class Soporte {
             $("#buzonDirectorRespuesta").html("Hubo un error, por favor intentar m&aacute;s tarde.");
 		}).finally(()=>{
 	    	console.log('oculta loader');
-            $("#cargador").css("display","none");      
+            $("#botonEnviarBuzon").css("display","inline-block");
+            $("#cargadorLead").css("display","none");      
 	    });
 	}
 
