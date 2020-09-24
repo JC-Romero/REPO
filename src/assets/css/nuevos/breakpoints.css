@@ -628,6 +628,20 @@
     .videoTextContainerSecond .videoTextContentSecond .imagesAppsContainer {
         padding-top: 0;
     }
+    .floatingBar .barButtons {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .floatingBar .barButtons .barDetailsRow p {
+        font-size: 18px;
+    }
+    .floatingBar .barButtons .barDetailsRow p span {
+        font-size: 18px;
+    }
+    .floatingBar .barButtons a {
+        font-size: 18px;
+        padding: 10px 15px !important;
+    }
 }
 
 @media (max-width: 767.98px) and (orientation: landscape) {
@@ -797,6 +811,18 @@
     }
     .modalMainVideoContainer video {
         top: 110px;
+    }
+    .barPackageDetails {
+        padding-left: 15px;
+    }
+    .barPackageDetails,
+    .barPackagePrice {
+    }
+    .floatingBar .barButtons a {
+        padding: 12px 24px !important;
+    }
+    .towhiteBack .barPackageButton {
+        margin-bottom: 1rem;
     }
 }
 

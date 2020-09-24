@@ -11,19 +11,19 @@ layout: home
 		background: rgba(246, 246, 246, 1);
 		overflow-x: hidden
 	}
+
+	html {
+		scroll-behavior: smooth;
+	}
 </style>
 <section id="fixed" class="row topBar">
 	<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
 		<ul class="barList">
-			<li><a id="internetLink" href="#internetSection"
-					onclick="activeTopMenu('internetLink','tvLink','appLink','phoneLink')" class="active">Internet</a>
+			<li><a id="internetLink" href="#internetSection" class="active">Internet</a>
 			</li>
-			<li><a id="tvLink" href="#tvSection"
-					onclick="activeTopMenu('tvLink','internetLink','appLink','phoneLink')">Tv</a></li>
-			<li><a id="appLink" href="#appSection"
-					onclick="activeTopMenu('appLink','internetLink','tvLink','phoneLink')">App móvil</a></li>
-			<li><a id="phoneLink" href="#phoneSection"
-					onclick="activeTopMenu('phoneLink','internetLink','tvLink','appLink')">Telefonía</a></li>
+			<li><a id="tvLink" href="#tvContent">Tv</a></li>
+			<li><a id="appLink" href="#appContent">App móvil</a></li>
+			<li><a id="phoneLink" href="#phoneContent">Telefonía</a></li>
 		</ul>
 	</div>
 </section>
@@ -67,224 +67,232 @@ layout: home
 		</div>
 	</div>
 </section>
-<section id="tvSection" class="row tvRow">
+<section id="tvContent" class="row tvRow">
 	<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-		<div class="row tvTitle">
-			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-				<h1>TV Totalplay</h1>
-			</div>
-		</div>
-		<div class="tvVideo">
-			<img src="../assets/img/nuevos/imgservicios/back-television.png">
-			<div class="videoContent">
-				<video class="videoContainer" src="../assets/img/nuevos/imgservicios/sistema-3niveles.mp4" autoplay
-					muted loop></video>
-			</div>
-		</div>
-		<div class="row platformRow">
-			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-lx-12">
-				<p>Plataforma de TV Totalplay V 3.9</p>
-			</div>
-		</div>
-		<div class="row subtitlesVideo">
-			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-				<h2>Todo lo que te gusta en un solo lugar.</h2>
-			</div>
-		</div>
 		<div class="row">
-			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-				<img src="../assets/img/nuevos/imgservicios/Furniture.png" class=" col-12 mx-auto">
-			</div>
-		</div>
-		<div class="row appsTitles">
-			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-				<p>Apps, series, estrenos, tu programación favorita, música y mucho más...</p>
-			</div>
-		</div>
-		<div class="row servicesImagesAppsContainer">
-			<div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-11 mx-auto">
-				<div class="row">
-					<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 offset-xl-1 offset-lg-1">
-						<img src="../assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
+			<div id="tvSection" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+				<div class="row tvTitle">
+					<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+						<h1>TV Totalplay</h1>
 					</div>
-					<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-						<img src="../assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
+				</div>
+				<div class="tvVideo">
+					<img src="../assets/img/nuevos/imgservicios/back-television.png">
+					<div class="videoContent">
+						<video class="videoContainer" src="../assets/img/nuevos/imgservicios/sistema-3niveles.mp4"
+							autoplay muted loop></video>
 					</div>
-					<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-						<img src="../assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
+				</div>
+				<div class="row platformRow">
+					<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-lx-12">
+						<p>Plataforma de TV Totalplay V 3.9</p>
 					</div>
-					<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 d-none d-sm-none d-md-block">
-						<img src="../assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
-					</div>
-					<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 d-none d-sm-none d-md-none d-lg-block">
-						<img src="../assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
+				</div>
+				<div class="row subtitlesVideo">
+					<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+						<h2>Todo lo que te gusta en un solo lugar.</h2>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 offset-xl-1 offset-lg-1">
-						<img src="../assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
-					</div>
-					<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-						<img src="../assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
-					</div>
-					<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-						<img src="../assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
-					</div>
-					<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 d-none d-sm-none d-md-block">
-						<img src="../assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
-					</div>
-					<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 d-none d-sm-none d-md-none d-lg-block">
-						<img src="../assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
+					<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+						<img src="../assets/img/nuevos/imgservicios/Furniture.png" class=" col-12 mx-auto">
 					</div>
 				</div>
-			</div>
-		</div>
-		<div id="infiniteSlides" class="infiniteCarousel">
-			<div class="slideInfinite">
-				<div class="backImage">
-					<img src="../assets/img/nuevos/imgservicios/GOT.jpg">
-				</div>
-				<div class="imageDescription">
-					<div class="imageContainer">
-						<img src="../assets/img/nuevos/onDemandTotalPlay.png">
-					</div>
-					<div class="textContainer">
-						<p>The Irishman</p>
+				<div class="row appsTitles">
+					<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+						<p>Apps, series, estrenos, tu programación favorita, música y mucho más...</p>
 					</div>
 				</div>
-			</div>
-			<div class="slideInfinite">
-				<div class="backImage">
-					<img src="../assets/img/nuevos/imgservicios/GOT.jpg">
-				</div>
-				<div class="imageDescription">
-					<div class="imageContainer">
-						<img src="../assets/img/nuevos/onDemandTotalPlay.png">
-					</div>
-					<div class="textContainer">
-						<p>The Irishman</p>
-					</div>
-				</div>
-			</div>
-			<div class="slideInfinite">
-				<div class="backImage">
-					<img src="../assets/img/nuevos/imgservicios/GOT.jpg">
-				</div>
-				<div class="imageDescription">
-					<div class="imageContainer">
-						<img src="../assets/img/nuevos/onDemandTotalPlay.png">
-					</div>
-					<div class="textContainer">
-						<p>The Irishman</p>
-					</div>
-				</div>
-			</div>
-			<div class="slideInfinite">
-				<div class="backImage">
-					<img src="../assets/img/nuevos/imgservicios/GOT.jpg">
-				</div>
-				<div class="imageDescription">
-					<div class="imageContainer">
-						<img src="../assets/img/nuevos/onDemandTotalPlay.png">
-					</div>
-					<div class="textContainer">
-						<p>The Irishman</p>
-					</div>
-				</div>
-			</div>
-			<div class="slideInfinite">
-				<div class="backImage">
-					<img src="../assets/img/nuevos/imgservicios/GOT.jpg">
-				</div>
-				<div class="imageDescription">
-					<div class="imageContainer">
-						<img src="../assets/img/nuevos/onDemandTotalPlay.png">
-					</div>
-					<div class="textContainer">
-						<p>The Irishman</p>
+				<div class="row servicesImagesAppsContainer">
+					<div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-11 mx-auto">
+						<div class="row">
+							<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 offset-xl-1 offset-lg-1">
+								<img src="../assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
+							</div>
+							<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
+								<img src="../assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
+							</div>
+							<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
+								<img src="../assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
+							</div>
+							<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 d-none d-sm-none d-md-block">
+								<img src="../assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
+							</div>
+							<div
+								class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 d-none d-sm-none d-md-none d-lg-block">
+								<img src="../assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 offset-xl-1 offset-lg-1">
+								<img src="../assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
+							</div>
+							<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
+								<img src="../assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
+							</div>
+							<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
+								<img src="../assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
+							</div>
+							<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 d-none d-sm-none d-md-block">
+								<img src="../assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
+							</div>
+							<div
+								class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 d-none d-sm-none d-md-none d-lg-block">
+								<img src="../assets/img/nuevos/onDemandTotalPlay.png" alt="Total Play OnDemand">
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="slideInfinite">
-				<div class="backImage">
-					<img src="../assets/img/nuevos/imgservicios/GOT.jpg">
-				</div>
-				<div class="imageDescription">
-					<div class="imageContainer">
-						<img src="../assets/img/nuevos/onDemandTotalPlay.png">
+				<div id="infiniteSlides" class="infiniteCarousel">
+					<div class="slideInfinite">
+						<div class="backImage">
+							<img src="../assets/img/nuevos/imgservicios/GOT.jpg">
+						</div>
+						<div class="imageDescription">
+							<div class="imageContainer">
+								<img src="../assets/img/nuevos/onDemandTotalPlay.png">
+							</div>
+							<div class="textContainer">
+								<p>The Irishman</p>
+							</div>
+						</div>
 					</div>
-					<div class="textContainer">
-						<p>The Irishman</p>
+					<div class="slideInfinite">
+						<div class="backImage">
+							<img src="../assets/img/nuevos/imgservicios/GOT.jpg">
+						</div>
+						<div class="imageDescription">
+							<div class="imageContainer">
+								<img src="../assets/img/nuevos/onDemandTotalPlay.png">
+							</div>
+							<div class="textContainer">
+								<p>The Irishman</p>
+							</div>
+						</div>
+					</div>
+					<div class="slideInfinite">
+						<div class="backImage">
+							<img src="../assets/img/nuevos/imgservicios/GOT.jpg">
+						</div>
+						<div class="imageDescription">
+							<div class="imageContainer">
+								<img src="../assets/img/nuevos/onDemandTotalPlay.png">
+							</div>
+							<div class="textContainer">
+								<p>The Irishman</p>
+							</div>
+						</div>
+					</div>
+					<div class="slideInfinite">
+						<div class="backImage">
+							<img src="../assets/img/nuevos/imgservicios/GOT.jpg">
+						</div>
+						<div class="imageDescription">
+							<div class="imageContainer">
+								<img src="../assets/img/nuevos/onDemandTotalPlay.png">
+							</div>
+							<div class="textContainer">
+								<p>The Irishman</p>
+							</div>
+						</div>
+					</div>
+					<div class="slideInfinite">
+						<div class="backImage">
+							<img src="../assets/img/nuevos/imgservicios/GOT.jpg">
+						</div>
+						<div class="imageDescription">
+							<div class="imageContainer">
+								<img src="../assets/img/nuevos/onDemandTotalPlay.png">
+							</div>
+							<div class="textContainer">
+								<p>The Irishman</p>
+							</div>
+						</div>
+					</div>
+					<div class="slideInfinite">
+						<div class="backImage">
+							<img src="../assets/img/nuevos/imgservicios/GOT.jpg">
+						</div>
+						<div class="imageDescription">
+							<div class="imageContainer">
+								<img src="../assets/img/nuevos/onDemandTotalPlay.png">
+							</div>
+							<div class="textContainer">
+								<p>The Irishman</p>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-		<div class="row buttonTv">
-			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-				<a href="" class="generalButton">Planes con TV</a>
-			</div>
-		</div>
-		<div class="row buttonTv">
-			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-				<a href="">Conoce más</a>
+				<div class="row buttonTv">
+					<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+						<a href="" class="generalButton">Planes con TV</a>
+					</div>
+				</div>
+				<div class="row buttonTv">
+					<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+						<a href="">Conoce más</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
-<section id="appSection" class="row appContainer">
-	<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-		<div class="row">
-			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-				<p>App Totalplay</p>
+<div id="appSection">
+	<section id="appContent" class="row appContainer">
+		<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+			<div class="row">
+				<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+					<p>App Totalplay</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+					<h1>Todo lo que buscas está en <span>nuestra App.</span></h1>
+				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-				<h1>Todo lo que buscas está en <span>nuestra App.</span></h1>
-			</div>
+	</section>
+	<div class="devicesSlider">
+		<div id="computer" class="computerContainer onDemandComputer">
+			<img id="imageComputer" src="../assets/img/nuevos/imgservicios/macbook@3xShadow.png">
+		</div>
+		<div id="ipadLandscape" class="ipadLandscapeContainer onDemandIpad">
+			<img id="imageLandscape" src="../assets/img/nuevos/imgservicios/tablet@3xShadow.png">
+		</div>
+		<div id="ipadPortrait" class="ipadPortraitContainer">
+			<img id="imagePortrait" src="../assets/img/nuevos/imgservicios/group@3x-ipadCase2.png">
+		</div>
+		<div id="phone" class="smartphoneContainer onDemandPhone">
+			<img id="imagePhone" src="../assets/img/nuevos/imgservicios/i-phone@3xShadow.png">
 		</div>
 	</div>
-</section>
-<div class="devicesSlider">
-	<div id="computer" class="computerContainer onDemandComputer">
-		<img id="imageComputer" src="../assets/img/nuevos/imgservicios/macbook@3xShadow.png">
+	<div class="row">
+		<div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 mx-auto">
+			<ul class="sliderSelector">
+				<li><a id="toggleDemand" href="#" class="active" onclick="addOnDemand(event);">Tv y OnDemand</a></li>
+				<li><a id="toggleRemote" href="#" onclick="addRemote(event);">Control Remoto</a></li>
+				<li><a id="toggleLandline" href="#" onclick="addLandLine(event)">Teléfono</a></li>
+				<li><a id="toggleWifi" href="#" onclick="addWifi(event);">Red WiFi</a></li>
+				<li><a id="toggleInvoice" href="#" onclick="addInvoice(event);">Estado de cuenta</a></li>
+			</ul>
+		</div>
 	</div>
-	<div id="ipadLandscape" class="ipadLandscapeContainer onDemandIpad">
-		<img id="imageLandscape" src="../assets/img/nuevos/imgservicios/tablet@3xShadow.png">
-	</div>
-	<div id="ipadPortrait" class="ipadPortraitContainer">
-		<img id="imagePortrait" src="../assets/img/nuevos/imgservicios/group@3x-ipadCase2.png">
-	</div>
-	<div id="phone" class="smartphoneContainer onDemandPhone">
-		<img id="imagePhone" src="../assets/img/nuevos/imgservicios/i-phone@3xShadow.png">
-	</div>
+	<section class="row bottomApp">
+		<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+			<div class="row bottomAppDescription">
+				<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+					<p>Lleva contigo lo mejor de Totalplay a donde vayas. Descárgala sin costo.</p>
+				</div>
+			</div>
+			<div class="row bottomAppButton">
+				<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+					<a href="#" class="generalButton">Conoce más</a>
+				</div>
+			</div>
+		</div>
+	</section>
 </div>
-<div class="row">
-	<div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 mx-auto">
-		<ul class="sliderSelector">
-			<li><a id="toggleDemand" href="#" class="active" onclick="addOnDemand(event);">Tv y OnDemand</a></li>
-			<li><a id="toggleRemote" href="#" onclick="addRemote(event);">Control Remoto</a></li>
-			<li><a id="toggleLandline" href="#" onclick="addLandLine(event)">Teléfono</a></li>
-			<li><a id="toggleWifi" href="#" onclick="addWifi(event);">Red WiFi</a></li>
-			<li><a id="toggleInvoice" href="#" onclick="addInvoice(event);">Estado de cuenta</a></li>
-		</ul>
-	</div>
-</div>
-<section class="row bottomApp">
-	<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-		<div class="row bottomAppDescription">
-			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-				<p>Lleva contigo lo mejor de Totalplay a donde vayas. Descárgala sin costo.</p>
-			</div>
-		</div>
-		<div class="row bottomAppButton">
-			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-				<a href="#" class="generalButton">Conoce más</a>
-			</div>
-		</div>
-	</div>
-</section>
-<div id="phoneSection" class="row landlineRow">
+<div id="phoneContent" class="row landlineRow">
 	<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
 		<div class="row landlineTitle">
 			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -296,7 +304,7 @@ layout: home
 				<h1>Tu línea de siempre, ahora <span>va contigo.</span></h1>
 			</div>
 		</div>
-		<div class="row landlineImage">
+		<div id="phoneSection" class="row landlineImage">
 			<div class="col-12 col-md-12 col-md-12 col-lg-12 col-lx-12">
 				<img src="../assets/img/nuevos/imgservicios/telefono.png" alt="Telefonia Totalplay">
 			</div>
