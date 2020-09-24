@@ -4,7 +4,8 @@ import * as Constantes from "../../utils/Constantes";
 export function cargaapps(opt) {
   var apunta = this;
   var url = Constantes.endpoints.obtenerAplicaciones;
-  fetch(url, { method: "POST" })
+  //fetch(url, { method: "POST" })
+  fetch(url, { method: "GET" })
     .then((data) => {
       if (data.ok) {
         return data.json();

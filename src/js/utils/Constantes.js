@@ -3,7 +3,8 @@ let _base = "https://5ui1bow6gf.execute-api.us-east-1.amazonaws.com/Desarrollo/"
 
 export const endpoints = {
 	obtenerPaquetes: `https://totalplay.dev/archivos/paquetes/`, 
-	obtenerAplicaciones: `${_base}obtener-aplicaciones`,
+	//obtenerAplicaciones: `${_base}obtener-aplicaciones`,
+	obtenerAplicaciones: `/assets/media/aplicaciones.json`,
 	obtenerComplementos: `${_base}obtener-complementos`,
 
 	guardaLead:`${_baseTP}tp-guardar-lead`,
