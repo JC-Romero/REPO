@@ -417,12 +417,92 @@
             </div>
         </div>
     </div>-->
+    <div id="mobile" class="mobileMenuContainer d-md-none">
+        <div class="mobileMenu">
+            <div class="row mobileHeader">
+                <div class="col-12 col-sm-12">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 mx-auto locationButton">
+                            <a href="#" onclick="showModal('userLocationModal');">Validar ubicación</a>
+                        </div>
+                    </div>
+                    <div class="row headerTopMenu">
+                        <div class="col-2 col-sm-2 mobileToggle">
+                            <a id="closeIcon" href="#" onclick="closeMenu();"><i class="fas fa-times"></i></a>
+                        </div>
+                        <div class="col-8 col-sm-8 col-md-2 col-lg-2 col-xl-1 logoContainer">
+                            <a href="index.html"><img src="{{root}}/assets/img/nuevos/totalplay-logoWhite.svg"
+                                    alt="Totalplay"></a>
+                        </div>
+                        <div class="col-2 col-sm-2 d-block d-sm-block d-md-none mobileCart">
+                            <a href="#"><img src="{{root}}/assets/img/nuevos/icons/account.svg"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul>
+                <li><a href="https://totalgo.totalplay.com.mx:444/TPW/TotalPlay.htm" target="_blank"><img
+                            src="{{root}}/assets/img/nuevos/icons/liveTv.svg"><span>Ver la Tv</span></a></li>
+                <li><a href="#"><img src="{{root}}/assets/img/nuevos/icons/cart.svg">Carrito</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="paquetes.html">Paquetes</a></li>
+                <li><a href="soporte.html">Ayuda y soporte</a></li>
+            </ul>
+            <div class="row bottomMobileMenu">
+                <div class="col-3 bottomMobileMenuItem activeItem">
+                    <a href="index.html">Hogar</a>
+                </div>
+                <div class="col-3 bottomMobileMenuItem">
+                    <a href="https://www.negociostotalplay.com.mx/?utm_source=sitio&utm_medium=header"
+                        target="_blank">Negocio</a>
+                </div>
+                <div class="col-3 bottomMobileMenuItem">
+                    <a href="https://totalplayempresarial.com.mx/?utm_source=sitio&utm_medium=header"
+                        target="_blank">Empresa</a>
+                </div>
+                <div class="col-3 bottomMobileMenuItem">
+                    <a href="https://www.totalplay.dev/micuenta/?fromSite=https://totalplay.c6exvb10-totalplay1-d1-public.model-t.cc.commerce.ondemand.com/totalplaystorefront/totalplay/es"
+                        target="_blank">Totalplay shop</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="{{root}}/assets/js/nuevos/jquery-3.5.1.min.js"></script>
 <script src="{{root}}/assets/js/nuevos/bootstrap.bundle.min.js"></script>
+{{#ifpage 'index'}}
+<script src="{{root}}/assets/js/nuevos/homeFunctions.js"></script>
+<script src="{{root}}/assets/js/nuevos/isInViewport.js"></script>
+{{/ifpage}}
+{{#ifpage 'servicios'}}
+<script src="{{root}}/assets/js/nuevos/serviciosFunctions.js"></script>
 <script src="{{root}}/assets/js/nuevos/isInViewport.js"></script>
 <script src="{{root}}/assets/js/nuevos/slick.min.js"></script>
-<!--<script src="{{root}}/assets/js/nuevos/parallax.min.js"></script>-->
+{{/ifpage}}
+{{#ifpage 'app'}}
+<script src="{{root}}/assets/js/nuevos/appFunctions.js"></script>
+<script src="{{root}}/assets/js/nuevos/parallax.min.js"></script>
+<script src="{{root}}/assets/js/nuevos/slick.min.js"></script>
+{{/ifpage}}
+{{#ifpage 'faq'}}
+<script src="{{root}}/assets/js/nuevos/faqFunctions.js"></script>
+{{/ifpage}}
+{{#ifpage 'amazon' 'blim' 'comedycentral' 'discoverykids' 'fox' 'hbo' 'hotpack' 'internet' 'mtv' 'netflix' 'nickelodeon' 'nogginparamount' 'ondemand' 'starz' 'telefonia' 'television' 'tunein' 'starz'}}
+<script src="{{root}}/assets/js/nuevos/landingsFunctions.js"></script>
+<script src="{{root}}/assets/js/nuevos/slick.min.js"></script>
+{{/ifpage}}
+{{#ifpage 'asistencia'}}
+<script src="{{root}}/assets/js/nuevos/asistenciaFunctions.js"></script>
+<script src="{{root}}/assets/js/nuevos/slick.min.js"></script>
+{{/ifpage}}
+{{#ifpage 'regular' 'unbox' 'match'}}
+<script src="{{root}}/assets/js/nuevos/paquetesFunctions.js"></script>
+<script src="{{root}}/assets/js/nuevos/slick.min.js"></script>
+{{/ifpage}}
+{{#ifpage 'detallePaquete'}}
+<script src="{{root}}/assets/js/nuevos/detallePaqueteFunctions.js"></script>
+<script src="{{root}}/assets/js/nuevos/isInViewport.js"></script>
+{{/ifpage}}
 <script src="{{root}}/assets/js/nuevos/functions.js"></script>
 <script src="{{root}}assets/vendor/encripcion/secBase.js"></script>
 <script src="{{root}}assets/js/scripts-min.js"></script>
