@@ -11,7 +11,7 @@ layout: home
         background: rgba(250, 250, 250, 1);
     }
 </style>
-<section class="row supportMain">
+<section class="row supportMain" id="totalplayAyuda">
     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
         <div class="row supportTitle">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -28,7 +28,7 @@ layout: home
                                 <p>Te ayudamos con cualquier duda, tus estados de cuenta, formas de pago y otros.</p>
                             </div>
                         </div>
-                        <div class="row phoneItem ">
+                        <div class="row phoneItem " id="chatAC">
                             <div class="col-12">
                                 <a href="">Chat de Asistencia</a>
                             </div>
@@ -36,14 +36,14 @@ layout: home
                         <div class="row phoneItem multipleItem">
                             <div class="col-12">
                                 <p>Asistencia con tu cuenta</p>
-                                <a href="#">55 1579 8000</a>
+                                <a href="tel:5515798000">55 1579 8000</a>
                                 <span>L-D de 7:00 a.m. a 11:00 p.m.</span>
                             </div>
                         </div>
                         <div class="row phoneItem multipleItem">
                             <div class="col-12">
                                 <p>Cargos recurrentes</p>
-                                <a href="#">55 1579 8000</a>
+                                <a href="tel:5515798000">55 1579 8000</a>
                                 <span>L-D de 7:00 a.m. a 11:00 p.m.</span>
                             </div>
                         </div>
@@ -55,7 +55,7 @@ layout: home
                                 <p>Alguno de tus dispositivos presenta una falla, te damos la solución.</p>
                             </div>
                         </div>
-                        <div class="row phoneItem">
+                        <div class="row phoneItem" id="chatST">
                             <div class="col-12">
                                 <a href="">Chat de Asistencia</a>
                             </div>
@@ -63,14 +63,14 @@ layout: home
                         <div class="row phoneItem multipleItem">
                             <div class="col-12">
                                 <p>Asistencia con tu cuenta</p>
-                                <a href="#">55 1579 8000</a>
+                                <a href="tel:5515798000">55 1579 8000</a>
                                 <span>L-D de 7:00 a.m. a 11:00 p.m.</span>
                             </div>
                         </div>
                         <div class="row phoneItem multipleItem">
                             <div class="col-12">
                                 <p>Cargos recurrentes</p>
-                                <a href="#">800 5100 510</a>
+                                <a href="tel:8005100510">800 5100 510</a>
                                 <span>L-D de 7:00 a.m. a 11:00 p.m.</span>
                             </div>
                         </div>
@@ -80,7 +80,7 @@ layout: home
         </div>
     </div>
 </section>
-<section class="row supportManuals">
+<section class="row supportManuals" id="manuales">
     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
         <div class="row supportManualsTitle">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -234,13 +234,13 @@ layout: home
             <div class="col-11 col-sm-11 col-md-10 col-lg-10 col-xl-10 mx-auto">
                 <div class="row">
                     <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 documentItem">
-                        <a href="#">Clausulado de contrato</a>
+                        <a href="/pdf/clausulado-de-contrato.pdf">Clausulado de contrato</a>
                     </div>
                     <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 documentItem">
-                        <a href="#">Cesión de derechos</a>
+                        <a href="/pdf/formato-de-cesion-de-derechos.pdf">Cesión de derechos</a>
                     </div>
                     <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 documentItem">
-                        <a href="#">Formato de portabilidad</a>
+                        <a href="/pdf/portabilidad-numerica.pdf">Formato de portabilidad</a>
                     </div>
                 </div>
             </div>
@@ -256,12 +256,12 @@ layout: home
         </div>
         <div class="row">
             <div class="col-12">
-                <a href="faq.html">Preguntas frecuentes</a>
+                <a href="/faq.html">Preguntas frecuentes</a>
             </div>
         </div>
     </div>
 </section>
-<section class="row contactRow">
+<section class="row contactRow" id="buzonDirector">
     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-lx-12">
         <div class="row envelopeRow">
             <div class="col-12">
@@ -273,65 +273,75 @@ layout: home
                 <h1>¿Aún no resolvemos tu problema?</h1>
             </div>
         </div>
-        <div class="row contactInputContainer">
+        <div class="row contactInputContainer" id="formBuzon">
             <div class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-6 mx-auto">
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                         <div class="mat-input-outer">
-                            <input type="text" autocomplete="off" />
+                            <input type="text" id="nombreAyuda" autocomplete="off" />
                             <label class="">Nombre*</label>
                             <div class="border"></div>
+                            <p class="text-danger-white" id="errorNombreAyuda" ></p>
                         </div>
                     </div>
                     <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                         <div class="mat-input-outer">
-                            <input type="text" autocomplete="off" />
+                            <input type="text" id="noCuentaAyuda" autocomplete="off" required class="solo-numeros" maxlength="10" placeholder=" " />
                             <label class="">Número de cuenta*</label>
                             <div class="border"></div>
+                            <p class="text-danger-white" id="errorNocuenta" ></p>
                         </div>
                     </div>
                     <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                         <div class="mat-input-outer">
-                            <input type="text" autocomplete="off" />
+                            <input type="text" id="correoAyuda" autocomplete="off" />
                             <label class="">Correo*</label>
                             <div class="border"></div>
+                            <p class="text-danger-white" id="errorCorreoAyuda" ></p>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                         <div class="mat-input-outer">
-                            <input type="text" autocomplete="off" />
+                            <input type="text" id="movilAyuda" autocomplete="off" required class="solo-numeros" maxlength="10" placeholder=" " />
                             <label class="">Celular de contacto*</label>
                             <div class="border"></div>
+                            <p class="text-danger-white" id="errorMovilAyuda" ></p>
                         </div>
                     </div>
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                        <select>
-                            <option disabled selected>Motivo de contacto</option>
+                        <select id="motivoAyuda">
+                            <option value="0" selected>Motivo de contacto</option>
                             <option value="soporte">Soporte técnico</option>
                             <option value="sugerencias">Sugerencias al director</option>
                             <option value="dudas">Dudas generales</option>
                         </select>
+                        <p class="text-danger-white" id="errorMotivoAyuda" ></p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                         <div class="mat-input-outer">
-                            <input type="text" autocomplete="off" />
+                            <input type="text" id="comentarioAyuda" autocomplete="off" />
                             <label class="">¿En que podemos ayudarte?</label>
                             <div class="border"></div>
+                            <p class="text-danger-white" id="errorComentarioAyuda" ></p>
                         </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        
+                        <button type="button" id="botonEnviarBuzon">Enviar</button>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="row">
+            {{> loader}}
+        </div>
     </div>
 </section>
-{{> seoAsistencia}}
-<!--<section class="container_prin_asist">
-    {{> sectionAsistencia}}
-    {{> sectionHardwareList}}
-    {{> sectionFAQ}}
-    {{> sectionFormulario}}
-</section>-->
+{{> modalesIndex}}

@@ -321,32 +321,12 @@
                 <p>Este paquete ya incluye 80 canales, 21 en HD</p>
             </div>
             <div class="rowModalBottom">
-                <ul class="flex-container">
-                    <li class="item cntCanales">
-                        <h1>TV BÁSICA</h1>
-                        <p>120 canales (80 HD)</p>
-                        <hr>
-                        <p class="price">$ 50</p>
-                        <p class="addedItem">Seleccionado</p>
-                    </li>
-                    <li class="item cntCanales">
-                        <h1>TV AVANZADA</h1>
-                        <p>255 canales (130 HD)</p>
-                        <hr>
-                        <p class="price">$ 130</p>
-                        <p class="addedItem">Seleccionado</p>
-                    </li>
-                    <li class="item cntCanales">
-                        <h1>TV PREMIUM</h1>
-                        <p>275 canales (160 HD)</p>
-                        <hr>
-                        <p class="price">$ 420</p>
-                        <p class="addedItem">Seleccionado</p>
-                    </li>
+                <ul class="flex-container" id="ctnParrillas">
+                    
                 </ul>
             </div>
             <div class="rowModalBottom buttonModalContainer">
-                <a id="confirmChannels" href="#" class="">Confirmar selección</a>
+                <a id="confirmChannels" class="" data-id="" data-precio="">Confirmar selección</a>
             </div>
         </div>
         <!--Canales-->
@@ -358,13 +338,13 @@
             </div>
             <div class="rowModalBottom">
                 <ul id="complementsCarousel" class="flex-container">
-                    <li class="item">
+                    <li class="item ctnPromocion" id="contenedorHBOCambio">
                         <div class="imageComplement">
-                            <img src="assets/img/pages/contratacion/Canales_1.png">
+                            <img src="/assets/img/pages/contratacion/Canales_1.png">
                         </div>
                         <div class="overlapComplement">
                             <div class="imageOverlap">
-                                <img src="assets/img/pages/contratacion/hbo-holding.png">
+                                <img src="/assets/img/pages/contratacion/hbo-holding.png">
                             </div>
                             <div class="titlesOverlap">
                                 <h1>HBO</h1>
@@ -374,13 +354,13 @@
                             </div>
                         </div>
                     </li>
-                    <li class="item selected">
+                    <li class="item ctnPromocion" id="contenedorFOXCambio">
                         <div class="imageComplement">
-                            <img src="assets/img/pages/contratacion/Canales_2.png">
+                            <img src="/assets/img/pages/contratacion/Canales_2.png">
                         </div>
                         <div class="overlapComplement">
                             <div class="imageOverlap">
-                                <img src="assets/img/pages/contratacion/LogoFox.png">
+                                <img src="/assets/img/pages/contratacion/LogoFox.png">
                             </div>
                             <div class="titlesOverlap">
                                 <h1>Fox Premium</h1>
@@ -393,7 +373,7 @@
                 </ul>
             </div>
             <div class="rowModalBottom buttonModalContainer">
-                <a id="confirmComplements" href="#" class="">Confirmar selección</a>
+                <a id="confirmComplements" class="" data-id="">Confirmar selección</a>
             </div>
         </div>
         <!--Complementos-->
@@ -405,34 +385,34 @@
             </div>
             <div class="rowModalBottom">
                 <ul id="complementsCarousel" class="flex-container">
-                    <li class="item">
+                    <li class="item cntAppAdicional" id="contenedorHBOApp" data-id="">
                         <div class="imageComplement">
-                            <img src="assets/img/pages/contratacion/Canales_1.png">
+                            <img src="/assets/img/pages/contratacion/Canales_1.png">
                         </div>
                         <div class="overlapComplement">
                             <div class="imageOverlap">
-                                <img src="assets/img/pages/contratacion/hbo-holding.png">
+                                <img src="/assets/img/pages/contratacion/hbo-holding.png">
                             </div>
                             <div class="titlesOverlap">
                                 <h1>HBO</h1>
                                 <p>Canales + App</p>
-                                <p class="price">Sin costo x 3 meses</p>
+                                <p class="price" id="appHBOPrecio"></p>
                                 <p class="addedItem">Agregado</p>
                             </div>
                         </div>
                     </li>
-                    <li class="item selected">
+                    <li class="item cntAppAdicional" id="contenedorFoxApp" data-id="">
                         <div class="imageComplement">
-                            <img src="assets/img/pages/contratacion/Canales_2.png">
+                            <img src="/assets/img/pages/contratacion/Canales_2.png">
                         </div>
                         <div class="overlapComplement">
                             <div class="imageOverlap">
-                                <img src="assets/img/pages/contratacion/LogoFox.png">
+                                <img src="/assets/img/pages/contratacion/LogoFox.png">
                             </div>
                             <div class="titlesOverlap">
                                 <h1>Fox Premium</h1>
                                 <p>Canales + App</p>
-                                <p class="price">Sin costo x 3 meses</p>
+                                <p class="price" id="appFOXPrecio"></p>
                                 <p class="addedItem">Agregado</p>
                             </div>
                         </div>
@@ -440,7 +420,7 @@
                 </ul>
             </div>
             <div class="rowModalBottom buttonModalContainer">
-                <a id="confirmPremium" href="#" class="">Confirmar selección</a>
+                <a id="confirmPremium" class="">Confirmar selección</a>
             </div>
         </div>
         <!--Premium-->
@@ -452,24 +432,24 @@
             </div>
             <div class="rowModalBottom">
                 <ul class="flex-container">
-                    <li class="item">
-                        <img src="../../assets/img/nuevos/extender@2x.png">
+                    <li class="item cntEquipo" id="cntEquipoWifi" data-id="">
+                        <img src="/assets/img/nuevos/extender@2x.png">
                         <h1>WIFI EXTENDER</h1>
                         <p>Disfruta tu conexión en cada espacio de tu hogar</p>
-                        <p class="price">+ <span>$148</span> al mes</p>
+                        <p class="price">+ <span class="cntWifiPrecio"></span> al mes</p>
                         <p class="addedItem">Agregado</p>
                     </li>
-                    <li class="item">
-                        <img src="../../assets/img/nuevos/adicionales-tv-adicional.png">
+                    <li class="item cntEquipo" id="cntEquipoTV" data-id="">
+                        <img src="/assets/img/nuevos/adicionales-tv-adicional.png">
                         <h1>TV ADICIONAL.</h1>
                         <p>Disfruta de los mejores canales donde mas desees</p>
-                        <p class="price">+ <span>$109</span> al mes</p>
+                        <p class="price">+ <span class="cntTVPrecio"></span> al mes</p>
                         <p class="addedItem">Agregado</p>
                     </li>
                 </ul>
             </div>
             <div class="rowModalBottom buttonModalContainer">
-                <a id="confirmBoxes" href="#" class="">Confirmar selección </a>
+                <a id="confirmBoxes" class="">Confirmar selección </a>
             </div>
         </div>
         <!--Boxes-->

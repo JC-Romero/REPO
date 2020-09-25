@@ -4,6 +4,7 @@ import * as Constantes from "../../utils/Constantes";
 export function cargaapps(opt) {
   var apunta = this;
   var url = Constantes.endpoints.obtenerAplicaciones;
+  //fetch(url, { method: "POST" })
   fetch(url, { method: "GET" })
     .then((data) => {
       if (data.ok) {
@@ -25,7 +26,7 @@ export function cargaapps(opt) {
               contador++;
               contadorGeneral++;
 
-              if (opt == 1) {
+              /*if (opt == 1) {*/
                 if(contador == 1 && contadorGeneral < 11){
                   htmlimg += "<div class='row'>";
                 }
@@ -65,18 +66,19 @@ export function cargaapps(opt) {
                   contador = 0;
                 }
 
-              } else if (opt == 2) {
+              /*} else if (opt == 2) {
                 var estilo = "";
                 htmlimg = htmlimg + '<img src="' + elem.urlimg + '"' + estilo + ' alt="" onclick="window.open(\'' + elem.pagina + '\',\'_blank\');">';
-              }
+              }*/
 
             });
 
             if (opt == 1) {
-              $("#appHome").prepend(htmlimg);
+              //$("#appHome").prepend(htmlimg);
+              $("#servicioAppsImg").prepend(htmlimg);
             } else if (opt == 2) {
               $("#servicioAppsImg").html(htmlimg);
-              const eventosmas = new AppsEventos("tv");
+              //const eventosmas = new AppsEventos("tv");
             }
           }
         }

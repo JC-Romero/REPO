@@ -1,4 +1,4 @@
-html,
+|html,
 body,
 * {
     margin: 0;
@@ -2575,6 +2575,7 @@ footer .legalAdvice p {
     box-shadow: 0 9px 18px 0 rgba(0, 0, 0, 0.1);
     height: 340px;
     margin-bottom: 2rem;
+    cursor: pointer;
 }
 
 .generalPackage .row {
@@ -6371,7 +6372,7 @@ video {
     height: 100px;
     position: relative;
     margin: auto;
-    background-image: url(http://localhost:3000/assets/img/cargador1.gif);
+    background-image: url(../../../assets/img/cargador1.gif);
     background-size: cover;
 }
 .modalMainVideoContainer video {

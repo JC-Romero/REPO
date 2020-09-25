@@ -11,8 +11,8 @@ export class Paquetes {
 
 	init() {
 		this.revisarDireccion();
-		this.cargarPaquetes("Todos");
-		this.eventoTipoPaquete();
+		this.cargarPaquetes("home");
+		//this.eventoTipoPaquete();
 	}
 
 	resize() {
@@ -118,9 +118,24 @@ export class Paquetes {
 	cargarPaquetes(opt) {
 		console.group('Paquetes.js FUNCION cargarPaquetes('+opt+')');
 		let apuntador = this;
-		var tipopaquetes = "totalplay_paquetes.json";
-		
-		var url = Constantes.endpoints.obtenerPaquetes + tipopaquetes;
+		var tipopaquetes = "totalplay_paquetes_2020_09_09.json";
+		if (localStorage.getItem("TP_OF_OBJ_FACTIBILIDAD") != null) {
+			var datosfactibilidad = JSON.parse(localStorage.getItem("TP_OF_OBJ_FACTIBILIDAD"));
+			if (datosfactibilidad.estimulofiscal == "true") {
+				tipopaquetes = "totalplay_paquetes_fronterizo.json";
+			}
+		}else{
+			if(localStorage.getItem("TP_ESTIMULO_FISCAL") != null && 
+				localStorage.getItem("TP_ESTIMULO_FISCAL") == "true"){
+				var estimulofiscal = localStorage.getItem("TP_ESTIMULO_FISCAL");
+				tipopaquetes = "totalplay_paquetes_fronterizo.json";
+			}
+		}
+
+		console.log(tipopaquetes);
+		//var url = Constantes.endpoints.obtenerPaquetes + tipopaquetes;
+		//var url = '/assets/media/totalplay_paquetes_2020_09_09.json';
+		var url = '/assets/media/'+tipopaquetes;
 		console.log('URL ARCHIVO:',url);
 		fetch(url, {
 			method: "GET",
@@ -135,28 +150,47 @@ export class Paquetes {
 			let paqueteList = apuntador.cmsGetImagenPaqueteList();
 			localStorage.setItem("TP_INFO_PAQUETES", JSON.stringify(respuesta));
 			if (opt == "Todos") {
+
 				apuntador.pintarPaquetes(respuesta["TriplePlay"], "paquetes_tripleplay", paqueteList);
-				apuntador.pintarPaquetes(respuesta["TripleNetFlix"], "paquetes_match3P", paqueteList);
+				apuntador.pintarPaquetes(respuesta["TriplePlayNetFlix"], "ctnPaquetesTripleplay", paqueteList);
 				apuntador.pintarPaquetes(respuesta["DoblePlay"], "paquetes_dobleplay", paqueteList);
-				apuntador.pintarPaquetes(respuesta["DoblePlayNetFlix"], "paquetes_match2P", paqueteList);//*/
-			} else {
+				apuntador.pintarPaquetes(respuesta["DoblePlayNetFlix"], "ctnPaquetesDobleplay", paqueteList);//*/
+			}else if( opt == "match" ){
+
+				apuntador.pintarPaquetes(respuesta["TriplePlayNetFlix"], "ctnPaquetesTripleplay", paqueteList, opt);
+				apuntador.pintarPaquetes(respuesta["DoblePlayNetFlix"], "ctnPaquetesDobleplay", paqueteList, opt);//*/
+
+			}else if( opt == "regular" ){
+
+				apuntador.pintarPaquetes(respuesta["TriplePlay"], "ctnPaquetesTripleplay", paqueteList,opt);
+				apuntador.pintarPaquetes(respuesta["DoblePlay"], "ctnPaquetesDobleplay", paqueteList,opt);
+
+			}else if( opt == "unbox" ){
+
+				apuntador.pintarPaquetes(respuesta["TriplePlayAmazon"], "ctnPaquetesTripleplay", paqueteList,opt);
+				apuntador.pintarPaquetes(respuesta["DoblePlayAmazon"], "ctnPaquetesDobleplay", paqueteList,opt);
+
+			}else { //home
 				var arreglo = apuntador.ordenarObjeto(respuesta["TriplePlay"]).slice(0, 1);
 
-				var arregloUnbox = apuntador.ordenarObjeto(respuesta["TripleAmazon"]).slice(0,1);
+				var arregloUnbox = apuntador.ordenarObjeto(respuesta["TriplePlayAmazon"]).slice(0,1);
 
-				var arregloNetflix = apuntador.ordenarObjeto(respuesta["TripleNetFlix"]).slice(0,1)
+				var arregloNetflix = apuntador.ordenarObjeto(respuesta["TriplePlayNetFlix"]).slice(0,1)
 
 				var arrelgoApintar = "["+JSON.stringify(arregloUnbox[0]).concat(",").concat(JSON.stringify(arregloNetflix[0])).concat(",").concat(JSON.stringify(arreglo[0]))+"]";
 
 				apuntador.pintarPaquetes(arrelgoApintar, "cardsPackage", paqueteList, opt);
+
 			}
 		});
 		console.groupEnd();
 	}
 
 	pintarPaquetes(arregloPaquetes, idContenedor, listaImagenesCms, opt) {
+		console.log("estoy en pintarPaquetes")
 		let clase = this;
 		var plantillaHTML = "";
+
 		if(opt == "home"){
 			var arreglo = JSON.parse(arregloPaquetes);
 		}else{
@@ -165,7 +199,6 @@ export class Paquetes {
 		
 		var arregloRecomendacion = new Array();
 		var contador = 1;
-		console.log("iré hacer each");
 
 		$.each(arreglo, function (key, objPaquete) {
 
@@ -176,14 +209,13 @@ export class Paquetes {
 				}
 			}
 			
-			var regex = /\s(\d{1,3})\sMbps/;
-			var result = regex.exec(objPaquete.detalleServicio);
+
 			var color = objPaquete.color;
 			var claseTipoPaquete;
 			var imagenPaquete;
 			var descriptionApp;
 
-			if(objPaquete.nombre.includes("unbox") || objPaquete.nombre.includes("UNBOX")){
+			if(objPaquete.nombre.includes("unbox") || objPaquete.nombre.includes("UNBOX") || opt == "unbox"){
 				claseTipoPaquete = "unbox";
 				imagenPaquete = "/assets/img/nuevos/amazon-prime-logoMain.png";
 				descriptionApp = "Envíos, música y <span>prime video.</span>";
@@ -205,15 +237,40 @@ export class Paquetes {
 					}
 				});
 			}
+
+			var regexMegas = /\s(\d{1,3})\sMbps/;
+	        var arrayMegas = regexMegas.exec(objPaquete.detalleServicio);
+
+	        var regexPantallas = "";
+	        var arrayPantallas = "";
+	        var arrayCanales = "";
+
+	        if(opt == "match"){
+		        regexPantallas = /(\d)\spantalla/;
+		        arrayPantallas = regexPantallas.exec(objPaquete.detalleServicio);
+
+		        arrayCanales= objPaquete.detalle.canales.split('/');
+		        console.log('arrayCanales=>',arrayCanales);
+		    }
+
+			var claseOcultar = '';
+	        if(key > 2){
+	            if(idContenedor == 'ctnPaquetesTripleplay'){
+	                claseOcultar = 'hiddenPackageTriple';
+	            }
+	            if(idContenedor == 'ctnPaquetesDobleplay'){
+	                claseOcultar = 'hiddenPackageDoble';
+	            }
+	        }
+	        console.log("*************"+opt+"**************++");
 			if (opt == "home") {
-				//plantillaHTML += '<div class="card-package-item ' + color + '-item" id="' + objPaquete.id + '" style="margin-bottom:15px !important;">' + '<div class="card-package-item__banner szCrd">' + '<div class="gradient-image ' + color + '-package-gradient-img"></div>' + '<img src="' + objPaquete.imagen + '" alt="">' + "</div>" + '<div class="card-package-item__title ' + color + '-package szCrdTitle" >' + objPaquete.nombre + "</div>" + '<div class="card-package-item__speed ' + color + '-package-gradient szNumMb">' + '<span>' + result[1] + "</span>" + "</div>" + '<div class="card-package-item__megas ' + color + '-package szMoreMb">Megas↓</div>' + '<div class="card-package-item__include ' + color + '-package szPromoTxt">' + objPaquete.incluye + "</div>" + '<div class="card-package-item__promotion szBtnProm">INCLUYE 1 PROMOCIÓN</div>' + '<div class="card-package-item__price">' + '<span class="colorTxt1">' + 'Desde: <span class="colorTxt2">$ ' + clase.formatoMonedad(objPaquete.precioLista, 0, ".", ",") + " al mes</span></span>" + "</div>" + '<a class="card-package-item__button szBtnTrns">Descubrir</a>' + "</div>";
 
 				plantillaHTML += 
 				'<div class="col-12 col-sm-6 mx-sm-auto col-md-6 col-lg-4 col-xl-3">'+
                 	'<div class="row">'+
 	                    '<div class="col-10 col-sm-11 col-md-11 col-lg-11 col-xl-11 mx-auto mainContainerpackage '+claseTipoPaquete+'"'+
 	                        'onclick="showBootstrapModalFirst(\'installLocation\');">'+
-	                        '<div class="packageInfoContainer">'+
+	                        '<div class="packageInfoContainer" id="'+objPaquete.id+'">'+
 	                            '<div class="titlePackage">'+
 	                                '<p>'+objPaquete.nombre+'</p>'+
 	                            '</div>'+
@@ -235,36 +292,142 @@ export class Paquetes {
 	                                '<p>Descuento de por vida</p>'+
 	                            '</div>'+
 	                            '<div class="packagePrice">'+
-	                                '<p><a href="#">$'+clase.formatoMonedad(objPaquete.precioLista, 0, ".", ",")+'</a></p>'+
+	                                '<p><a >Desde: <span>$ '+clase.formatoMonedad(objPaquete.precioLista, 0, ".", ",")+' al mes</span></a></p>'+
 	                            '</div>'+
 	                        '</div>'+
 	                    '</div>'+
 	                '</div>'+
 	            '</div>';
 
-			} else {
-				plantillaHTML += '<div class="card-package-item ' + color + '-item" id="' + objPaquete.id + '">' + '<div class="card-package-item__banner">' + '<div class="gradient-image ' + color + '-package-gradient-img"></div>' + '<img src="' + objPaquete.imagen + '" alt="">' + "</div>" + '<div class="card-package-item__title ' + color + '-package">' + objPaquete.nombre + "</div>" + '<div class="card-package-item__speed ' + color + '-package-gradient">' + '<span>' + result[1] + "</span>" + "</div>" + '<div class="card-package-item__megas ' + color + '-package">Megas↓</div>' + '<div class="card-package-item__include ' + color + '-package">' + objPaquete.incluye + "</div>" + '<div class="card-package-item__promotion">INCLUYE 1 PROMOCIÓN</div>' + '<div class="card-package-item__price">' + '<span>Desde: <span>$ ' + clase.formatoMonedad(objPaquete.precioLista, 0, ".", ",") + " al mes</span></span>" + "</div>" + '<a class="card-package-item__button">Descubrir</a>' + "</div>";
+			} else if(opt == "match"){
+				var canalesDescripcion = (arrayCanales[1] != undefined)? arrayCanales[1]: '';
+		        plantillaHTML += ``+
+		        `<div class="col-12 col-sm-6 mx-sm-auto col-md-6 col-lg-4 col-xl-4 ${claseOcultar}">
+		            <div class="row">
+		                <div class="col-10 col-sm-11 col-md-11 col-lg-11 col-xl-11 mx-auto mainContainerpackage match">
+		                    <div class="packageInfoContainer" id="${objPaquete.id}">
+		                        <div class="titlePackage">
+		                            <p>${objPaquete.nombre}</p>
+		                        </div>
+		                        <div class="velocityPackage">
+		                            <p>${arrayMegas[1]} Megas</p>
+		                        </div>
+		                        <div class="descriptionPackage">
+		                            <p>${canalesDescripcion}</p>
+		                            <p><span>1 línea</span> de teléfono</p>
+		                        </div>
+		                        <hr>
+		                        <div class="imagePackage">
+		                            <img src="/assets/img/nuevos/1200px-Netflix_2015_logo.svg.png" alt="Image Paquete">
+		                        </div>
+		                        <div class="descriptionApp">
+		                            <p>${arrayPantallas[1]} pantalla(s) <span>Premium UHD</span></p>
+		                        </div>
+		                        <div class="packageDiscount">
+		                            <p>Descuento de por vida</p>
+		                        </div>
+		                        <div class="packagePrice">
+		                            <p><a >Desde: <span>$ ${clase.formatoMonedad(objPaquete.precioLista, 0, ".", ",") } al mes</span></a></p>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>`;
+			}else if(opt == "regular"){
+				var colores = ['surprisePlus','emotionPlus','emotion', 'funPlus', 'fun', 'starter']
+        
+		        var canalesDescripcion = (objPaquete.detalle.canales != undefined)? objPaquete.detalle.canales: '';
+		        plantillaHTML += ``+
+		        `<div class="col-12 col-sm-6 mx-sm-auto col-md-6 col-lg-4 col-xl-4 ${claseOcultar}">
+		            <div class="row">
+		                <div class="col-10 col-sm-11 col-md-11 col-lg-11 col-xl-11 mx-auto mainContainerpackage ${colores[key]} card-package-item">
+		                    <div class="packageInfoContainer" id="${objPaquete.id}">
+		                        <div class="titlePackage">
+		                            <p>${objPaquete.nombre}</p>
+		                        </div>
+		                        <div class="velocityPackage">
+		                            <p>${arrayMegas[1]} Megas</p>
+		                        </div>
+		                        <div class="descriptionPackage">
+		                            <p>${canalesDescripcion}</p>
+		                            <p><span>1 línea</span> de teléfono</p>
+		                        </div>
+		                        <hr>
+		                        <div class="imagePackage">
+		                            <img src="/assets/img/nuevos/emptyApp.png" alt="Image Paquete">
+		                        </div>
+		                        <div class="descriptionApp">
+		                            <p>App description</p>
+		                        </div>
+		                        <div class="packageDiscount">
+		                        <p>20% de descuento</p>
+		                        </div>
+		                        <div class="packagePrice" >
+		                            <p><a >Desde: <span>$ ${clase.formatoMonedad(objPaquete.precioLista, 0, ".", ",") } al mes</span></a></p>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>`;
+			}else if(opt == "unbox"){
+				plantillaHTML += ``+
+				`<div class="col-12 col-sm-6 mx-sm-auto col-md-6 col-lg-4 col-xl-4 ${claseOcultar}">
+                    <div class="row">
+                        <div class="col-10 col-sm-11 col-md-11 col-lg-11 col-xl-11 mx-auto mainContainerpackage unbox">
+                            <div class="packageInfoContainer" id="${objPaquete.id}">
+                                <div class="titlePackage">
+                                    <p>${objPaquete.nombre}</p>
+                                </div>
+                                <div class="velocityPackage">
+                                    <p>${arrayMegas[1]} Megas</p>
+                                </div>
+                                <div class="descriptionPackage">
+                                    <p><span>1 línea</span> de teléfono</p>
+                                    <p class="hiddenText"><span>3 equipos</span> de TV con Apps</p>
+                                </div>
+                                <hr>
+                                <div class="imagePackage">
+                                    <img src="${imagenPaquete}" alt="Image Paquete">
+                                </div>
+                                <div class="descriptionApp">
+                                    <p>${descriptionApp}</span></p>
+                                </div>
+                                <div class="packageDiscount">
+                                    <p>Descuento de por vida</p>
+                                </div>
+                                <div class="packagePrice">
+                                    <p><a >Desde: <span>$ ${clase.formatoMonedad(objPaquete.precioLista, 0, ".", ",") } al mes</span></a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
 			}
 		});
-
+		
 		$("#" + idContenedor).html(plantillaHTML);
 		if (opt == "home") {
 			/*this.props.packCards = [...document.getElementsByClassName("card-package-item")];
 			this.props.packCards[1].classList.add("active");
 			this.props.indicators = [...document.getElementById("detailPackageIndicatorsIndex").children];
 			this.props.indicators[1].classList.add("active");
-			*/clase.clickCards();
+			clase.clickCards();*/
 		}
 		clase.setListener();
 		localStorage.setItem("TP_PAQUETES_RECOMENDACION", JSON.stringify(arregloRecomendacion));
 	}
 
 	ordenarObjeto(objetoInicial) {
-		var objetoOrdenado = objetoInicial.slice(0);
-		objetoOrdenado.sort(function (a, b) {
-			return b.precioLista - a.precioLista;
-		});
-		return objetoOrdenado;
+		try {
+			var objetoOrdenado = objetoInicial.slice(0);
+			objetoOrdenado.sort(function (a, b) {
+				return b.precioLista - a.precioLista;
+			});
+			return objetoOrdenado;	
+		} catch (error) {
+			console.log('ERROR:', error);
+		}
+		
 	}
 
 	formatoMonedad(n, c, d, t) {
@@ -317,8 +480,9 @@ export class Paquetes {
 
 	setListener() {
 		let referenciaClase = this;
-		$(".card-package-item").on("click", function () {
+		/*$(".packageInfoContainer").on("click", function () {
 			var idPaqueteSeleccionado = $(this).attr("id");
+			console.log('idPaqueteSeleccionado=>', idPaqueteSeleccionado);
 			var cadenaOfertaActual = localStorage.getItem("TP_INFO_PAQUETES");
 			var jsonOferta = JSON.parse(cadenaOfertaActual);
 			$.each(jsonOferta, function (familiaPaquete, arrayOferta) {
@@ -337,8 +501,37 @@ export class Paquetes {
 					}
 				});
 			});
-			window.location = "detallePaquete.html";
-		});
+			//window.location = "detallePaquete.html";
+			$("#installLocation").modal('show');
+		});*/
+
+		$("body").on("click",".packageInfoContainer", function (e) {
+			e.stopImmediatePropagation();
+	        var idPaqueteSeleccionado = $(this).attr("id");
+	        console.log('idPaqueteSeleccionado=>', idPaqueteSeleccionado);
+	        var cadenaOfertaActual = localStorage.getItem("TP_INFO_PAQUETES");
+	        var jsonOferta = JSON.parse(cadenaOfertaActual);
+	        $.each(jsonOferta, function (familiaPaquete, arrayOferta) {
+	            $.each(arrayOferta, function (key, objPaquete) {
+	                if (idPaqueteSeleccionado == objPaquete.id) {
+	                    var objetoInicial = {
+	                        "idPaquete": objPaquete.id,
+	                        "detallePaquete":objPaquete,
+	                        "proceso":{
+	                            "numeroPaso":1,
+	                            "url":"detallePaquete.html"
+	                        }
+	                    };
+	                    localStorage.setItem("TP_STR_PAQUETE_SELECCION", JSON.stringify(objetoInicial));
+	                    //window.location = "detallePaquete.html";
+	                    //Constantes.paqueteSeleccion = objetoInicial;
+	                }
+	            });
+	        });
+	        //installLocation
+	        $("#installLocation").modal('show');
+	        
+	    });
 	}
 
 	eventoTipoPaquete(){

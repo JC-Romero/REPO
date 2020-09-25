@@ -1,4 +1,6 @@
 import * as Constantes from "../../utils/Constantes";
+import {Paquetes} from '../paquetes/Paquetes';
+
 export class ClaseCobertura {
     constructor() {
         this.init();
@@ -13,6 +15,8 @@ export class ClaseCobertura {
     }
 
     validarPermisosUbicacion() {
+        var apuntador = this;
+
         if (localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME') == null) {
             var cabeceraMC = new Headers();
             cabeceraMC.append("Content-type", "application/json;charset=utf-8");
@@ -33,22 +37,51 @@ export class ClaseCobertura {
                     if (respuesta !== null || respuesta !== "") {
                         $('#cd-cobertura-index').html(respuesta);
                         $('#cd-cobertura-index-seccion').html(respuesta);
+                        $('#cd-cobertura-index-span').html(respuesta);
                         localStorage.setItem('TP_STR_DIRECCION_CIUDAD_HOME', respuesta);
                     }
                 } catch (e) {
                     $('#cd-cobertura-index').html("Ciudad de México");
                     $('#cd-cobertura-index-seccion').html("Ciudad de México");
+                    $('#cd-cobertura-index-span').html("Ciudad de México");
                     console.log("ERROR EN TRAER LA CIUDAD:", e);
                 }
             }).catch(function (err) {
                 $('#cd-cobertura-index').html("Ciudad de México");
                 $('#cd-cobertura-index-seccion').html("Ciudad de México");
+                $('#cd-cobertura-index-span').html("Ciudad de México");
                 console.log("err=>", err);
+            }).finally(() => {
+                var path = window.location.pathname;
+                if(path.includes("/")){
+                    path = "home";
+                }else{
+                    path = path.replace("/","");
+                    if(path.includes(".html")){
+                        path = path.replace(".html","");
+                    }
+                }
+                apuntador.checkEstimulo(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME'),path);
             });
 
         } else {
             console.log('YA TIENE UNA CIUDAD PREDETERMINADA');
             $('#cd-cobertura-index').html(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME'));
+            $('#cd-cobertura-index-seccion').html(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME'));
+            $('#cd-cobertura-index-span').html(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME'));
+            /*if(localStorage.getItem("TP_ESTIMULO_FISCAL") == null){
+                console.log("estimulofiscal nulo");
+                var path = window.location.pathname;
+                if(path.includes("/")){
+                    path = "home";
+                }else{
+                    path = path.replace("/","");
+                    if(path.includes(".html")){
+                        path = path.replace(".html","");
+                    }
+                }
+                apuntador.checkEstimulo(localStorage.getItem('TP_STR_DIRECCION_CIUDAD_HOME'),path);
+            }*/
         }
     }
 
@@ -246,17 +279,19 @@ export class ClaseCobertura {
         });
 
         $("#botonValidarCobertura").on("click", function (e) {
+            e.stopImmediatePropagation();
             var calle = $.trim($('#calleModal').val());
             var ciudad = $.trim($('#ciudadModal').val());
             var codigoPostal = $.trim($('#cpModal').val());
-            var procesa = apuntador.validarFormulario(calle, codigoPostal, 'errorCalleH', 'errorCodigoH');
+            var procesa = apuntador.validarFormulario(calle, codigoPostal, 'errorCalleH','errorCodigoH');
+            console.log("procesa = "+procesa);
             if (procesa) {
 
                 var objetoDireccionFormulario = {
-                    "direccionFormulario": {
-                        "codigoPostal": $('#cpModal').val(),
-                        "ciudad": $('#ciudadModal').val(),
-                        "direccion": $('#calleModal').val()
+                    "direccionFormulario":{
+                        "codigoPostal":$('#cpModal').val(),
+                        "ciudad":$('#cd-cobertura-index').html(),
+                        "direccion":$('#calleModal').val()
                     }
                 };
                 localStorage.setItem('TP_STR_DIRECCION', JSON.stringify(objetoDireccionFormulario));
@@ -276,13 +311,15 @@ export class ClaseCobertura {
                 ) {
                     direccion = calle + ' ' + codigoPostal + ' ' + ciudad;
                 }
-
+                
+                $("#botonValidarCobertura").html('Validando <i class="fas fa-circle-notch fa-spin" style="color: white;"></i>');
                 apuntador.buscarDireccion(direccion);
             }
         });
 
         $('#btnCoberturaSeccion').on('click', function (e) {
-            e.preventDefault();
+            //e.preventDefault();
+            e.e.stopImmediatePropagation();
             var calle = $.trim($('#calleSection').val());
             var ciudad = $.trim($('#ciudadSection').val());
             var codigoPostal = $.trim($('#cpSection').val());
@@ -323,8 +360,8 @@ export class ClaseCobertura {
         $('#calleModal').on("keyup", function () {
             $("#errorCalleH").css("display", "none");
             /***EVENTO TOMADO DE COBERTURASUGERENCIA.JS***/
-            var calleNumero = $(this).val();
-            var codigoPostal = $('#cpModal').val();
+            var calleNumero = $(this).val(); 
+            var codigoPostal = $('#cpModal').val(); 
             apuntador.iniciarAutocompletadoModal(calleNumero, codigoPostal);
         });
 
@@ -332,13 +369,12 @@ export class ClaseCobertura {
             $("#errorNumH").css("display", "none");
         });
 
-        $('#cpModal').on("keyup", function () {
+        $('#cpModal').on("keyup", function (e) {
+            e.stopImmediatePropagation();
             $("#errorCodigoH").css("display", "none");
             /***EVENTO TOMADO DE COBERTURASUGERENCIA.JS***/
             var codigoPostal = $('#cpModal').val();
-            if (codigoPostal.length == 5) {
-                $('#ciudadModal').val('');
-                $('#calleModal').val('');
+            if(codigoPostal.length == 5){
                 apuntador.buscarCiudad(codigoPostal, 'calleModal');
             }
         });
@@ -530,7 +566,7 @@ export class ClaseCobertura {
             //buscar consultarCoordenada en log anterior del sourcetree
             console.log('EL SERVICIO REVERSE CODE RESPONDE:', infoCoordenas);
             if (infoCoordenas != undefined && infoCoordenas != null && infoCoordenas != '') {
-
+                console.log("voy a validarFactibilidad");
                 apuntador.validarFactibilidad({
                     latitud: infoCoordenas.geometry.location.lat,
                     longitud: infoCoordenas.geometry.location.lng,
@@ -556,6 +592,7 @@ export class ClaseCobertura {
                 $("#titleFormStep2").html("Totalplay a&uacute;n no est&aacute; disponible en " + direccion);
                 $("#titleFormStep2").css("display", "flex");
                 $("#subtitleFormStep2").css("display", "none");
+                $("#botonValidarCobertura").html('Quiero que me llamen');
 
                 apuntador.limpiarDatos();
                 apuntador.removerCoordenadas();
@@ -566,13 +603,13 @@ export class ClaseCobertura {
 
     async consultarCoordenada(direccion) {
         let referenciaClase = this;
-        //url:  '/assets/media/datosDireccion.json',
-        var url = '/assets/media/datosDireccion.json';
+        var url = Constantes.endpoints.consultarCoordenadas;
         var data = JSON.stringify({ "direccion": direccion });
 
         let response = await fetch(url, {
-
-
+            method: 'POST',
+            body: data,
+            headers: { 'Content-Type': 'application/json' }
         }).then(function (respuestaServicio) {
             return respuestaServicio.json();
         }).then(function (respuesta) {
@@ -668,7 +705,6 @@ export class ClaseCobertura {
 
             let objeto = { "coordenadas": objCoordenadas, "infoDireccion": infoDireccion }
             referenciaClase.actualizarObjetoDireccion('DIR_CALCULADA', objeto);
-
             return objDir;
         }).catch(function (err) {
             console.log('OCURRIO ALGO INESPERADO EN LA FUNCION [consultarCoordenada] ERROR', err);
@@ -678,13 +714,16 @@ export class ClaseCobertura {
     }
 
     validarFactibilidad(informacion, direccion) {
-        console.log('INFORMACION PARA FACTIBILIDAD');
-        console.log(JSON.stringify(informacion));
+        //console.log('INFORMACION PARA FACTIBILIDAD');
+        //console.log(JSON.stringify(informacion));
         let apuntador = this;
-        let urlFac = '/assets/media/factibilidad.json';
+        let urlFac = Constantes.endpoints.validarFactibilidad;
+        var datos = JSON.stringify({"secdata": otpyrc2(JSON.stringify(informacion))});
 
         fetch(urlFac, {
-
+            method: 'POST',
+            body: datos,
+            headers: { 'Content-Type': 'application/json' }
         }).then(data => {
             if (data.ok) {
                 return data.json();
@@ -692,16 +731,14 @@ export class ClaseCobertura {
                 throw "Error en la llamada Ajax load sin parametros";
             }
         }).then(respuesta => {
-            console.log('RESPUESTA FACTIBILIDAD COBERTURA.JS');
-            console.log(respuesta);
-
+            //console.log('RESPUESTA FACTIBILIDAD COBERTURA.JS');
+            //console.log(respuesta);
+            
             if (respuesta.status == 0) {
                 let objeto = { "factibilidad": respuesta.bean }
                 apuntador.actualizarObjetoDireccion('DIR_FACTIBILIDAD', objeto);
 
-                var strDireccion_LS_TMP = localStorage.getItem('TP_STR_DIRECCION');
-                strDireccion_LS_TMP = JSON.parse(strDireccion_LS_TMP);
-                var strDireccion_LS = strDireccion_LS_TMP.direccionFormulario.direccion;
+                var strDireccion_LS = localStorage.getItem('TP_OF_STR_DIRECCION');
                 $('#txtDireccion').html(strDireccion_LS);
                 $('#txtDireccionObtenida').html(strDireccion_LS);
 
@@ -728,17 +765,20 @@ export class ClaseCobertura {
                     apuntador.limpiarDatos();
                     apuntador.removerCoordenadas();
                     $("#validaCoberturaHeader").html("VALIDAR COBERTURA");
+                    $("#botonValidarCobertura").html('Quiero que me llamen');
                 }
             } else {
                 console.log('WR', 'RESPUESTA DE FACTIBILIDAD: STATUS[' + respuesta.status + '] DESCRIPCION[' + respuesta.descripcion + ']');
-                $("#modalMenu").css("display", "none");
-                apuntador.mostrarModalCobertura();
+                //$("#modalMenu").css("display", "none");
+                //apuntador.mostrarModalCobertura();
+                $("#botonValidarCobertura").html('Quiero que me llamen');
             }
 
         }).catch(err => {
             console.log("error" + err);
-            $("#modalMenu").css("display", "none");
-            apuntador.mostrarModalCobertura();
+            //$("#modalMenu").css("display", "none");
+            //apuntador.mostrarModalCobertura();
+            $("#botonValidarCobertura").html('Quiero que me llamen');
         });
     }
 
@@ -819,9 +859,9 @@ export class ClaseCobertura {
 
     pintarDireccionHeader() {
 
-        $("#modalMenu").css("display", "none");
-        $("#step1").css("display", "none");
-        window.location = 'paquetes.html';
+        //$("#modalMenu").css("display", "none");
+        //$("#step1").css("display", "none");
+        window.location = 'detallePaquete.html';
     }
 
     resize() {
@@ -849,41 +889,28 @@ export class ClaseCobertura {
         });
     }
 
-    buscarCiudad(codigoPostal, idCampoFocus) {
-        if (idCampoFocus == 'calleSection') {
-            $('.labelBusqueda').html('Buscando...<i class="fas fa-circle-notch fa-spin" style="color:white;"></i>');
-        } else {
-            $('.labelBusqueda').html('Buscando...<i class="fas fa-circle-notch fa-spin"></i>');
-        }
-
+    buscarCiudad(codigoPostal, idCampoFocus){
+        
+        
         $.ajax({
-            url: '/assets/media/infoCiudad.json',
-
+            url: Constantes.endpoints.buscarCiudad,
+            data: JSON.stringify({"codigoPostal": codigoPostal}),
             dataType: "json",
-
-        }).done(function (respuesta) {
+            type: 'POST'
+        }).done(function(respuesta) {
             try {
                 $.each(respuesta.datos.informacion.ArrColonias, function (key, infoColonias) {
                     if (infoColonias.DelegacionMunicipio != null && infoColonias.DelegacionMunicipio != '') {
                         let nombreCiudad = infoColonias.DelegacionMunicipio;
                         $('#ciudadModal').val(nombreCiudad);
-                        $('#ciudadSection').val(nombreCiudad);
-                        $('#txtCiudad').val(nombreCiudad);
+                        
                     }
                 });
-
-                $('.labelBusqueda').html('Ciudad');
             } catch (error) {
-                $('#ciudadModal').val('');
-                $('#ciudadSection').val('');
-                $('#txtCiudad').val('');
+                
             }
-        }).fail(function (jqXHR, textStatus) {
-            console.log('ER', 'OCURRIO UN ERROR EN EL API [obtener-info-cp-venta]', jqXHR);
-            $('#ciudadModal').val('');
-            $('#ciudadSection').val('');
-            $('#txtCiudad').val('');
-            $('.labelBusqueda').html('Ciudad');
+        }).fail(function(jqXHR, textStatus) {
+            console.log('ER', 'OCURRIO UN ERROR EN EL API [buscar-ciudad-cp]', jqXHR);
         });
     }
 
@@ -1050,4 +1077,31 @@ export class ClaseCobertura {
         return procesa;
     }
     /***FIN VALIDACIONES***/
+
+    checkEstimulo(ciudad,opt){
+        
+        var bandera = false;
+        var arregloFronterizo = ['Ciudad Juárez','Ensenada','Mexicali','Rosarito','Tijuana'];
+        
+        $.each(arregloFronterizo,function(index,item){
+            
+            if(item == ciudad){
+            //if(item == "Tijuana"){
+                console.log("si item "+item);
+                bandera = true;
+                //localStorage.setItem("TP_ESTIMULO_FISCAL","true");
+            }else{
+                //localStorage.setItem('TP_ESTIMULO_FISCAL','false');
+            }            
+        })
+
+        if(bandera){
+            localStorage.setItem("TP_ESTIMULO_FISCAL","true");
+        }else{
+            //localStorage.setItem("TP_ESTIMULO_FISCAL","false");
+            localStorage.removeItem("TP_ESTIMULO_FISCAL");
+        }
+        const paq = new Paquetes();
+        paq.cargarPaquetes(opt);
+    }
 }

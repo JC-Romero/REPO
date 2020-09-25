@@ -1,5 +1,5 @@
 .seo {
-	font-family: Montserrat-Regular;
+	font-family: "Montserrat";
 	text-align: center;
 	margin: 15px 20px 30px 20px;
 	color: #3b4559;
@@ -11,7 +11,7 @@
 }
 
 .seoTituloBold {
-	font-family: Montserrat-Bold;
+	font-family: "Montserrat";
 }
 
 .seoParrafoUno {

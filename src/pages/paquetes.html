@@ -24,7 +24,7 @@ layout: home
                 <div class="row headerPackagesContainer">
                     <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
                         <div class="row mainPackageRow">
-                            <div class="col-11 col-sm-11 col-md-12 col-lg-11 col-xl-11 mx-auto generalPackage">
+                            <div class="col-11 col-sm-11 col-md-12 col-lg-11 col-xl-11 mx-auto generalPackage" onclick='window.location = "regular.html"'>
                                 <div class="row paragraphRow">
                                     <div class="col-12">
                                         <p>Paquetes <span>Totalplay</span></p>
@@ -47,7 +47,7 @@ layout: home
                     </div>
                     <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4">
                         <div class="row">
-                            <div class="col-11 col-sm-11 col-md-12 col-lg-11 col-xl-11 mx-auto generalPackage unbox">
+                            <div class="col-11 col-sm-11 col-md-12 col-lg-11 col-xl-11 mx-auto generalPackage unbox " onclick='window.location = "unbox.html"'>
                                 <div class="row paragraphRow">
                                     <div class="col-12">
                                         <p>Paquetes <span>UNBOX</span></p>
@@ -70,7 +70,7 @@ layout: home
                     </div>
                     <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4 offset-md-2 offset-lg-0">
                         <div class="row">
-                            <div class="col-11 col-sm-11 col-md-12 col-lg-11 col-xl-11 mx-auto generalPackage match">
+                            <div class="col-11 col-sm-11 col-md-12 col-lg-11 col-xl-11 mx-auto generalPackage match" onclick='window.location = "match.html"'>
                                 <div class="row paragraphRow">
                                     <div class="col-12">
                                         <p>Paquetes <span>Match</span></p>
@@ -104,8 +104,8 @@ layout: home
                 <p>Los más vendidos en Ciudad de México</p>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 col-sm-6 mx-sm-auto col-md-6 col-lg-4 col-xl-4">
+        <div class="row" id="cardsPackage">
+            <!--<div class="col-12 col-sm-6 mx-sm-auto col-md-6 col-lg-4 col-xl-4">
                 <div class="row">
                     <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 mx-auto mainContainerpackage unbox">
                         <div class="packageInfoContainer">
@@ -198,7 +198,7 @@ layout: home
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
         </div>
     </div>
 </section>
@@ -270,11 +270,12 @@ layout: home
         </div>
         <div class="row buttonAdvantages">
             <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6 mx-auto">
-                <a href="#">Conoce todas las ventajas Totalplay</a>
+                <a href="/ventajas.html">Conoce todas las ventajas Totalplay</a>
             </div>
         </div>
     </div>
 </section>
+{{> modalesIndex}}
 <!--<section class="main-packages">
     {{> seccionCobertura}}
     {{> seccionListaPaquetes}}

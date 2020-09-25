@@ -2,6 +2,7 @@ import * as Constantes from "../../utils/Constantes";
 import {Chat} from './Chat';
 import {cargaapps} from '../generales/cargaApps';
 import {Paquetes} from '../paquetes/Paquetes';
+import {ClaseCobertura} from '../generales/ClaseCobertura';
 
 var cms;
 export class Indexprincipal {
@@ -22,7 +23,7 @@ export class Indexprincipal {
     
     init(){
         this.setKeyupInput();
-        this.evento();
+        //this.evento();
         localStorage.setItem('SUGERENCIA_SELECCIONADA', 0);
         if(localStorage.getItem('TP_ESTIMULO_CIUDAD') == undefined || localStorage.getItem('TP_ESTIMULO_CIUDAD') == null || localStorage.getItem('TP_ESTIMULO_CIUDAD') == ''  ){
             localStorage.setItem('TP_ESTIMULO_CIUDAD','false');
@@ -1168,8 +1169,10 @@ export class Indexprincipal {
             $("#ciudadHome").html('Ciudad de México');
             console.log("NO PUDE TRAER LOCALSTORAGE")
         }finally{
-          const paq = new Paquetes();
-          paq.cargarPaquetes("home");
+          //const paq = new Paquetes();
+          //paq.cargarPaquetes("home");
+          const estimulo = new ClaseCobertura();
+          estimulo.checkEstimulo($('#cd-cobertura-index').html(),"home");
         }
     }
 

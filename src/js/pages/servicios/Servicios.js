@@ -40,30 +40,34 @@ export class Servicios {
 							numBanner++;
 							let imagen = element.imagen.url;
 							let logoStyle = "";
-							
+							/*console.log("elemento logo => "+JSON.stringify(element.logo));
+							console.log("url => "+element.logo.url);*/
+							let logo = "../assets/img/nuevos/onDemandTotalPlay.png";
 							if(element.logo != null){
-								let logo = element.logo.url;
-								logoStyle = "style=\"background: url('"+logo+"') no-repeat\" ";
+								if(element.logo.url != null){
+									logo = element.logo.url;
+								}
+								//logoStyle = "style=\"background: url('"+logo+"') no-repeat\" ";
 							}
 
-							htmlBanner+= 
-							"<div class='slide'>"+
-							"	<div class='content-image'>"+
-							"		<img src='"+imagen+"' alt=''>"+
-							"		 <div class='mask-image'></div>"+
-							"	</div>"+
-							"	<div class='slide-details'>"+
-							"		<div class='slide-details-content'>"+
-							"			<div class='slide-details__logo' "+logoStyle+"></div>"+
-							"			<div class='slide-details__title'>"+titulo+"</div>"+
-							"		</div>"+
-							"	</div>"+
-							"</div>"
-							;
+							htmlBanner += '<div class="slideInfinite">'+
+								'<div class="backImage">'+
+									'<img src="'+imagen+'">'+
+								'</div>'+
+								'<div class="imageDescription">'+
+									'<div class="imageContainer">'+
+										'<img src="'+logo+'">'+
+									'</div>'+
+									'<div class="textContainer">'+
+										'<p>'+titulo+'</p>'+
+									'</div>'+
+								'</div>'+
+							'</div>';
 						}
 					});
 					if(numBanner > 0){
-						$("#listaBanner").html(htmlBanner);
+						//$("#listaBanner").html(htmlBanner);
+						$("#infiniteSlides").html(htmlBanner);
 					}
 
 				}else{reject("no se encontro ningun banner");}
@@ -72,7 +76,7 @@ export class Servicios {
 	}
 
 	setListeners(){
-		let banner = this.cmsGetBannerList();
+		//let banner = this.cmsGetBannerList();
 		var apuntador = this;
 
 		$('.selectapp').on('click',function(e){
@@ -190,7 +194,7 @@ export class Servicios {
 			indicadorMenuServicios(0, apuntador.props.itemsServicios, apuntador.props.selectorMenuServicios);
 		});
 
-		$(document).on('scroll', function() {
+		/*$(document).on('scroll', function() {
 			var clase = document.getElementsByClassName('selectServicios');
 			if($(this).scrollTop()>=$('#internet').position().top){
 				clase[0].style.fontFamily = 'Montserrat-Bold';
@@ -217,7 +221,7 @@ export class Servicios {
 		    	clase[2].style.fontFamily = 'Montserrat-Regular';
 		    	clase[3].style.fontFamily = 'Montserrat-Bold';
 		    }
-		})
+		})*/
 	}
 
 

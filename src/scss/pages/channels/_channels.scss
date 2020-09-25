@@ -1108,7 +1108,7 @@
                         .logo-channel{
                             width: 100%;
                             height: 56px;
-                            background-color: $gray-100;
+                            //background-color: $gray-100;
                             box-shadow: $shadow-1500;
                             transition: 0.3s;
                             margin-bottom: 6px;
@@ -1116,7 +1116,7 @@
                             border-radius: 2.6px;
                             cursor: pointer;
                             //filter: grayscale(100%);
-                            background: lightslategrey;
+                            //background: lightslategrey;
                             @include break-point('768'){
                                 box-shadow: $shadow-600;
                                 height: 86px;

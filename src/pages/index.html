@@ -98,51 +98,7 @@ layout: home
                         </div>
                     </div>
                 </div>
-                <div class="row imagesAppsContainer">
-                    <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-11 mx-auto" id="appHome">
-                        <!--<div class="row">
-                            <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 offset-xl-1 offset-lg-1">
-                                <img src="{{root}}assets/img/onDemandTotalPlay.png" alt="Total Play OnDemand">
-                            </div>
-                            <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                                <img src="{{root}}assets/img/onDemandTotalPlay.png" alt="Total Play OnDemand">
-                            </div>
-                            <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                                <img src="{{root}}assets/img/onDemandTotalPlay.png" alt="Total Play OnDemand">
-                            </div>
-                            <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 d-none d-sm-none d-md-block">
-                                <img src="{{root}}assets/img/onDemandTotalPlay.png" alt="Total Play OnDemand">
-                            </div>
-                            <div
-                                class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 d-none d-sm-none d-md-none d-lg-block">
-                                <img src="{{root}}assets/img/onDemandTotalPlay.png" alt="Total Play OnDemand">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 offset-xl-1 offset-lg-1">
-                                <img src="{{root}}assets/img/onDemandTotalPlay.png" alt="Total Play OnDemand">
-                            </div>
-                            <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                                <img src="{{root}}assets/img/onDemandTotalPlay.png" alt="Total Play OnDemand">
-                            </div>
-                            <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                                <img src="{{root}}assets/img/onDemandTotalPlay.png" alt="Total Play OnDemand">
-                            </div>
-                            <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 d-none d-sm-none d-md-block">
-                                <img src="{{root}}assets/img/onDemandTotalPlay.png" alt="Total Play OnDemand">
-                            </div>
-                            <div
-                                class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 d-none d-sm-none d-md-none d-lg-block">
-                                <img src="{{root}}assets/img/onDemandTotalPlay.png" alt="Total Play OnDemand">
-                            </div>
-                        </div>-->
-                        <div class="row">
-                            <div class="col-12">
-                                <a href="ventajas.html">Conoce las ventajas Totalplay</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {{> seccionApps}}
             </div>
         </div>
     </div>
@@ -187,16 +143,16 @@ layout: home
     <div class="col-12 col-sm-12 col-md-11 col-lg-10 col-xl-10 mx-auto">
         <div class="row titlePackages">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                <h1>Paquetes disponibles en <span>Ciudad de México</span></h1>
+                <h1>Paquetes disponibles en <span id="cd-cobertura-index-span">Ciudad de México</span></h1>
             </div>
         </div>
         <div class="row locationLink">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                <a id="cd-cobertura-index-seccion">Valida tu cobertura</a>
+                <a id="cd-cobertura-index-seccion" data-toggle="modal" data-target="#cityPicker">Valida tu cobertura</a>
             </div>
         </div>
         <div class="row" id="cardsPackage">
-            <div class="col-12 col-sm-6 mx-sm-auto col-md-6 col-lg-4 col-xl-3">
+            <!--<div class="col-12 col-sm-6 mx-sm-auto col-md-6 col-lg-4 col-xl-3">
                 <div class="row">
                     <div class="col-10 col-sm-11 col-md-11 col-lg-11 col-xl-11 mx-auto mainContainerpackage unbox"
                         onclick="showBootstrapModalFirst('installLocation');">
@@ -291,7 +247,7 @@ layout: home
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
         </div>
     </div>
 </section>
