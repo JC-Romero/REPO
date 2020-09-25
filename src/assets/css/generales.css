@@ -924,3 +924,11 @@ p.text-danger-white {
         top: -95px;
     }
 }
+
+.ctnComplemento{
+    cursor: pointer;
+}
+
+.ctnComplemento.selected{
+    border: 1px solid #1a76d2;
+}
