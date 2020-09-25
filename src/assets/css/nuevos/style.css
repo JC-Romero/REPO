@@ -842,9 +842,9 @@ header .mainNav .mobileCart a img {
     color: rgba(117, 120, 123, 1);
 }
 .installationLocationModal .modal-header .close {
-    position: relative;
-    right: 0;
-    top: -1rem;
+    position: relative !important;
+    right: -1rem !important;
+    top: -2rem !important;
 }
 .installationLocationModal .modal-header .close img {
     max-width: 24px;
