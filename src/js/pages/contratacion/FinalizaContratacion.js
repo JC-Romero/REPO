@@ -2477,15 +2477,15 @@ export class FinalizaContratacion {
         let cadenaPaquete = localStorage.getItem('TP_STR_PAQUETE_SELECCION');
         try {
             let objPaquete = JSON.parse(cadenaPaquete);
-            $.each(objPaquete.promocionesDefautl, function(key, objPromocion) {    
+            //$.each(objPaquete.promocionPremium, function(key, objPromocion) {    
                 var obj = {
-                    'id':objPromocion.Id,
-                    'nombre':objPromocion.nombre,
-                    'montoDescuento':objPromocion.montoDescuento,
-                    'esAutomatica':objPromocion.esAutomatica
+                    'id':objPaquete.promocionPremium.Id,
+                    'nombre':objPaquete.promocionPremium.nombre,
+                    'montoDescuento':objPaquete.promocionPremium.montoDescuento,
+                    'esAutomatica':objPaquete.promocionPremium.esAutomatica
                 }
                 objPromocionNuevo.push(obj);
-            });
+            //});
             console.groupEnd();
             return objPromocionNuevo;
         } catch (error) {
