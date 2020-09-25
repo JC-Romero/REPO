@@ -12,6 +12,25 @@ layout: home
         height: auto;
     }
 </style>
+<div id="detailBar" class="floatingBar hide">
+    <div class="row">
+        <div id="insideBar" class="barButtons">
+            <div class="row barDetailsRow">
+                <div id="packageName" class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 barPackageDetails">
+                    <p>Paquete<span>Nombre de paquete</span></p>
+                </div>
+                <div id="priceAndDiscount" class="col-6 col-sm-6 col-md-6 col-lg-5 col-xl-5 barPackagePrice">
+                    <p>Desde $<span id="">1,862</span> al mes<span class="barDiscount">con descuento de por
+                            vida</span>
+                    </p>
+                </div>
+                <div id="buyButton" class="col-12 barPackageButton">
+                    <a href="#">Lo quiero</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <section class="row landingPackageResume">
     <div class="col-12 col-sm-12 col-md-11 col-lg-11 col-xl-11 mx-auto">
         <div class="row landingPackageTitle">
@@ -68,22 +87,6 @@ layout: home
         </div>
     </div>
 </section>
-<div class="scrollableDiv" style="display: none;">
-    <div class="row">
-        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 mx-auto">
-            <div class="row align-items-center">
-                <div class="col-6">
-                    <p>Llévatelo desde:</p>
-                    <h1>$ 1,489</h1>
-                    <span>Pagando a tiempo y a partir del 6º mes</span>
-                </div>
-                <div class="col-6">
-                    <a href="#" class="generalButton">Lo quiero <span></span></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <section class="row benefitsPackageTitle">
     <div class="col-12 col-sm-12 col-md-11 col-lg-11 col-xl-11 mx-auto">
         <div class="row">
@@ -140,7 +143,7 @@ layout: home
         <img src="../assets/img/nuevos/tvBasica.png" class="card-img-bottom" alt="Decodificador Totalplay">
     </div>
 </div>
-<section class="card-deck cardsRow cardsRowLandingPackages ">
+<section id="scrollFirst" class="card-deck cardsRow cardsRowLandingPackages ">
     <div class="card blueGradientCard">
         <div class="card-body">
             <div class="row">
