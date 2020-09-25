@@ -487,12 +487,10 @@ export class Contratacion {
                 $(etiquetaPrecio).hide();
                 $(etiquetaSeleccion).css('display','contents');
                 $( this ).addClass('activo');
-                //$('#confirmBoxes').show();
                 cantidad = 1;
             }else{
                 $(etiquetaSeleccion).hide();
                 $(etiquetaPrecio).css('display','block');
-                //$('#confirmBoxes').hide();
                 $( this ).removeClass('activo');
                 cantidad = 0;
             }
@@ -510,8 +508,6 @@ export class Contratacion {
                 $('#confirmBoxes').hide();
             }
 
-            
-
             let _index = $(this).attr('data-index');
             apuntador.props.setopboxSelected[_index].id = $(this).attr('data-id');
             apuntador.props.setopboxSelected[_index].price = $(this).attr('data-precio');
@@ -520,8 +516,6 @@ export class Contratacion {
             apuntador.props.setopboxSelected[_index].tipo = $(this).attr('data-tipo');
 
             console.log('apuntador.props.setopboxSelected:', apuntador.props.setopboxSelected);
-
-            //apuntador.agregarEquipoAdicional(apuntador.props.setopboxSelected);
         });
 
         $('#confirmBoxes').on('click', function () {
@@ -562,9 +556,7 @@ export class Contratacion {
         });
 
         $('#beforeComplementos').on('click', function () {            
-            /*apuntador.props.currentStep = 1;
-            apuntador.props.containerSteps.style.cssText = `transform: translateX(0%); transition: all .3s ease-in;`;
-            //*/
+            apuntador.afterStep();
         });
 
         $('#nextComplementos').on('click', function () {
@@ -1717,6 +1709,32 @@ export class Contratacion {
         });
     }
 
+    afterStep(){
+        this.props.currentStep--;
+        
+        this.props.options.step = this.props.currentStep;
+        this.props.containerSteps.style.cssText = `transform: translateX(-0%); transition: all .3s ease-in;`;
+        this.props.stepItem[1].style.display = "none";
+
+        $('.contratacion--top-bar__steps__list-names__item').removeClass('active');
+        $('.contratacion--top-bar__steps__list-names__item').removeAttr('style');
+
+        $('.point-item').removeAttr('style');
+
+        $.each($('.contratacion--top-bar__steps__list-names__item'), function (key, objStep) {
+            if(key == 0){
+                $(objStep).addClass('active');
+            }
+        });
+        $.each($('.point-item'), function (key, objPoint) {
+            if(key == 0){
+                $(objPoint).attr('style', 'background-color: rgb(26, 118, 210); height: 7px; width: 7px;');
+            }
+        });
+
+        $('.progress-item-done').removeAttr('style');
+    }
+
     nextStep() {
         this.props.currentStep++;
         if (this.props.currentStep === 1) this.props.stepItem[1].removeAttribute('style');
@@ -1730,6 +1748,50 @@ export class Contratacion {
             transition: all .3s ease-in;
             `;
         this.changeStep(this.props.currentStep);
+    }
+
+    changeStep(_index) {
+        console.group('Contratacion.js FUNCION changeStep()');
+        if (window.innerWidth > 500 && window.innerWidth < 768) {
+            console.log("window.innerWidth 500-768");
+            try {
+                this.props.containerName.innerText = this.props.options.steps[_index].name;
+            } catch (error) {
+                console.log("OCURRIO ALGO INESPERADO:", error);
+            }
+        }
+
+        var cuanto = this.props.itemsNamesSteps.length;
+        if (window.innerWidth > 260 && window.innerWidth < 768) {
+            console.log("window.innerWidth 260-768");
+            for (var a = 0; a < cuanto; a++) {
+                this.props.itemsNamesSteps[a].style.display = "none";
+            }
+            this.props.itemsNamesSteps[_index].style.display = "flex";
+        }
+        
+        //CAMBIO DE NUMERO DE PASO
+        this.props.itemsNamesSteps.map(item => item.classList.remove('active'));
+        this.props.itemsNamesSteps[_index].classList.add('active');
+
+        if (this.props.direction === 'right') {
+            if (_index > 0) {
+                this.props.listPointsStepItems[_index - 1].children[1].children[0].style.cssText = `left:0; transition: all .4s`;
+            }
+            setTimeout(() => {
+                this.props.listPointsStepItems[_index - 1].children[0].style.cssText = `background-color: #1a76d2;`;
+                this.props.listPointsStepItems[_index].children[0].style.cssText = `background-color: #1a76d2; transition: all .1s; height:7px; width:7px;`;
+            }, 300);
+            //CAMBIO DE COLOR DEL # PASO
+            this.props.itemsNamesSteps[_index - 1].style.color = '#1a76d2';
+            this.props.itemsNamesSteps[_index].style.color = '#1a76d2';
+        } else {
+            this.props.itemsNamesSteps[(_index < 0) ? _index = 0 : (_index + 1)].style.color = '#75787b';
+            this.props.listPointsStepItems[_index + 1].children[0].style.cssText = `heght: 5px; background-color: #bdc0c3; transition: all .1s; width: 5px;`;
+            this.props.listPointsStepItems[_index].children[1].children[0].style.cssText = `left: -101%; transition: all .4s; color: #75787b;`;
+            this.props.listPointsStepItems[_index].children[0].style.cssText = 'background-color: #1a76d2; height:7px; width:7px;';
+        }
+        console.groupEnd();
     }
 
     showStep() {
@@ -2415,61 +2477,6 @@ export class Contratacion {
                     transform: translateX(-${(movX)}%);`;
             }
         });
-    }
-
-    changeStep(_index) {
-        console.group('Contratacion.js FUNCION changeStep()');
-        let referenciaClase = this;
-        if (window.innerWidth > 500 && window.innerWidth < 768) {
-            try {
-                this.props.containerName.innerText = this.props.options.steps[_index].name;
-            } catch (error) {
-                console.log("OCURRIO ALGO INESPERADO:", error);
-            }
-        }
-
-        var cuanto = this.props.itemsNamesSteps.length;
-        if (window.innerWidth > 260 && window.innerWidth < 768) {
-            for (var a = 0; a < cuanto; a++) {
-                this.props.itemsNamesSteps[a].style.display = "none";
-            }
-            this.props.itemsNamesSteps[_index].style.display = "flex";
-        }
-
-        this.props.itemsNamesSteps.map(item => item.classList.remove('active'));
-        this.props.itemsNamesSteps[_index].classList.add('active');
-        if (this.props.direction === 'right') {
-            if (_index > 0) {
-                this.props.listPointsStepItems[_index - 1].children[1].children[0].style.cssText = `left:0; transition: all .4s`;
-            }
-            setTimeout(() => {
-                this.props.listPointsStepItems[_index - 1].children[0].style.cssText = `background-color: #1a76d2;`;
-                this.props.listPointsStepItems[_index].children[0].style.cssText = `background-color: #1a76d2; transition: all .1s; height:7px; width:7px;`;
-            }, 300);
-            this.props.itemsNamesSteps[_index - 1].style.color = '#1a76d2';
-            this.props.itemsNamesSteps[_index].style.color = '#1a76d2';
-        } else {
-            this.props.itemsNamesSteps[(_index < 0) ? _index = 0 : (_index + 1)].style.color = '#75787b';
-            this.props.listPointsStepItems[_index + 1].children[0].style.cssText = `heght: 5px; background-color: #bdc0c3; transition: all .1s; width: 5px;`;
-            this.props.listPointsStepItems[_index].children[1].children[0].style.cssText = `left: -101%; transition: all .4s; color: #75787b;`;
-            this.props.listPointsStepItems[_index].children[0].style.cssText = 'background-color: #1a76d2; height:7px; width:7px;';
-        }
-
-        /*let objeto = referenciaClase.props.refCarrito.validarContratacionPromo();
-        if (objeto != null) {
-            if (objeto.hasOwnProperty('tipoPromo')) {
-                let promoSeleccion = objeto.tipoPromo;
-                setTimeout(function () {
-                    if (promoSeleccion == 'PROMO_FOX') {
-                        //$('#contenedorFOX').trigger('click');
-                    }
-                    if (promoSeleccion == 'PROMO_HBO') {
-                        //$('#contenedorHBO').trigger('click');
-                    }
-                }, 1200);
-            }
-        }//*/
-        console.groupEnd();
     }
 
     abrirVentanaCupon() {
