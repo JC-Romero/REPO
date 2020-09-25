@@ -669,8 +669,8 @@ export class DetallePaquete {
         let objetoComplementos = {};
         let arregloPromocion = new Array();
         let infoParrilla = new Array();
-        //$.each(arregloPromociones, function (key, objetoPromociones) {
-        $.each(arregloProductos[0].adicional, function (key, objetoPromociones) {
+        $.each(arregloPromociones, function (key, objetoPromociones) {
+        //$.each(arregloProductos[0].adicional, function (key, objetoPromociones) {
             //let nombrePromocion = objetoPromociones.adicionalProductoNombre;
             let nombrePromocion = objetoPromociones.nombre;
             if (nombrePromocion == "FOX PREMIUM.") {
@@ -678,7 +678,7 @@ export class DetallePaquete {
                 arregloPromocion.push(objetoPromociones);
             }
 
-            if (nombrePromocion == "HBO MAX") {
+            if (nombrePromocion == "HBO x 2 meses Gratis") {
                 objetoPromociones.tipo = 'PROMO_HBO';
                 arregloPromocion.push(objetoPromociones);
             }

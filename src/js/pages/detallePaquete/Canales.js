@@ -664,8 +664,12 @@ function obtenerCanales(tmcode) {
                     if(objCanal.type == 'C'){
                         totalCanales++;
                         var srcImage = '';
-                        if(objCanal.images['SUPER'] != undefined){
-                            srcImage = 'https://imgn.cdn.iutpcdn.com/IMGS/CHANNEL/SUPER/'+objCanal.images['SUPER']['misId']+'-8c.'+objCanal.images['SUPER']['ext'];
+                        if(objCanal.images['SUPER_LIGHT'] != undefined){
+                            srcImage = 'https://imgn.cdn.iutpcdn.com/IMGS/CHANNEL/SUPER_LIGHT/'+objCanal.images['SUPER_LIGHT']['misId']+'-8c.'+objCanal.images['SUPER_LIGHT']['ext'];
+                        } else {
+                            if(objCanal.images['SUPER'] != undefined){
+                                srcImage = 'https://imgn.cdn.iutpcdn.com/IMGS/CHANNEL/SUPER/'+objCanal.images['SUPER']['misId']+'-2c.'+objCanal.images['SUPER']['ext'];
+                            }
                         }
                         htmlInterno +=  '<div class="content-channel" data-categoria="'+categoria+'" data-canal="'+objCanal.lchId+'">'+
                                             '<div class="logo-channel" style="">'+

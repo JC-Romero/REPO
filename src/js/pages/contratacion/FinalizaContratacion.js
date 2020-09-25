@@ -1754,6 +1754,7 @@ export class FinalizaContratacion {
         console.group('FinalizaContratacion.js ejecutarEnvioLead()');
         let referenciaClase = this;
         let esPagoTarjeta = $('#btnPaymentCard').hasClass("botonSeleccionado");
+        console.log('ES PAGO CON TARJETA: ', esPagoTarjeta);
         referenciaClase.prepararParametrosVenta(esPagoTarjeta);
         //referenciaClase.simularVenta(referenciaClase);
 
@@ -2076,6 +2077,11 @@ export class FinalizaContratacion {
         //let cvvTarjeta = $('#cvvTarjetaCaptura').val().trim();
         let cvvTarjeta = "";
 
+        let pagoDomiciliado = '0';
+        if($('#checkPagoDomiciliado').hasClass('active')){
+            pagoDomiciliado = '1';
+        }
+
         let informacion = {
             "cuenta": cuenta,
             "cctype": cvvTarjeta,
@@ -2088,7 +2094,8 @@ export class FinalizaContratacion {
             "codigoPostal": direccionCP,
             "estado": direccionEstado,
             "ciudad": direccionMunicipio,
-            "segundoNombre": ""
+            "segundoNombre": "",
+            "esPagoDomiciliado": pagoDomiciliado
         };
 
         console.log('PARAMETROS DE TARJETA:', informacion);
@@ -2470,15 +2477,15 @@ export class FinalizaContratacion {
         let cadenaPaquete = localStorage.getItem('TP_STR_PAQUETE_SELECCION');
         try {
             let objPaquete = JSON.parse(cadenaPaquete);
-            $.each(objPaquete.promocionesDefautl, function(key, objPromocion) {    
+            //$.each(objPaquete.promocionPremium, function(key, objPromocion) {    
                 var obj = {
-                    'id':objPromocion.Id,
-                    'nombre':objPromocion.nombre,
-                    'montoDescuento':objPromocion.montoDescuento,
-                    'esAutomatica':objPromocion.esAutomatica
+                    'id':objPaquete.promocionPremium.Id,
+                    'nombre':objPaquete.promocionPremium.nombre,
+                    'montoDescuento':objPaquete.promocionPremium.montoDescuento,
+                    'esAutomatica':objPaquete.promocionPremium.esAutomatica
                 }
                 objPromocionNuevo.push(obj);
-            });
+            //});
             console.groupEnd();
             return objPromocionNuevo;
         } catch (error) {
