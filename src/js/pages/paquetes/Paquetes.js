@@ -147,7 +147,7 @@ export class Paquetes {
 				throw "Error en la llamada Ajax";
 			}
 		}).then(async function (respuesta) {
-			let paqueteList = apuntador.cmsGetImagenPaqueteList();
+			let paqueteList = [];
 			localStorage.setItem("TP_INFO_PAQUETES", JSON.stringify(respuesta));
 			if (opt == "Todos") {
 
@@ -181,6 +181,12 @@ export class Paquetes {
 
 				apuntador.pintarPaquetes(arrelgoApintar, "cardsPackage", paqueteList, opt);
 
+				try {
+					let objetoRecomendados = JSON.parse(arrelgoApintar);
+					localStorage.setItem("TP_PAQUETES_RECOMENDACION", JSON.stringify(objetoRecomendados));
+				} catch (error) {
+					console.log('ERROR RECOMENDADOS:', error);
+				}
 			}
 		});
 		console.groupEnd();
@@ -201,15 +207,6 @@ export class Paquetes {
 		var contador = 1;
 
 		$.each(arreglo, function (key, objPaquete) {
-			
-			if(opt !== "home"){
-				if (contador <= 3) {
-					contador++;
-					arregloRecomendacion.push(objPaquete);
-				}
-			}
-			
-
 			var color = objPaquete.color;
 			var claseTipoPaquete;
 			var imagenPaquete;
@@ -227,15 +224,6 @@ export class Paquetes {
 				claseTipoPaquete = "surprisePlus";
 				imagenPaquete = "/assets/img/nuevos/emptyApp.png";
 				descriptionApp = objPaquete.detalle.canales;
-			}
-
-			if (listaImagenesCms.length > 0) {
-				listaImagenesCms.forEach((element) => {
-					if (element.id_paquete == objPaquete.id) {
-						color = element.color;
-						objPaquete.imagen = element.imagen.url;
-					}
-				});
 			}
 
 			//var regexMegas = /\s(\d{1,3})\sMbps/;
@@ -282,7 +270,7 @@ export class Paquetes {
 	                            '</div>'+
 								'<div class="descriptionPackage">'+
 									'<p><span>'+canalesDescripcion+'</p>'+
-	                                '<p><span>1 línea</span> de teléfono</p>'+
+	                                '<p>1 Línea + Softphone</p>'+
 	                                
 	                            '</div>'+
 	                            '<hr>'+
@@ -316,7 +304,7 @@ export class Paquetes {
 		                        </div>
 		                        <div class="descriptionPackage">
 		                            <p>${canalesDescripcion}</p>
-		                            <p><span>1 línea</span> de teléfono</p>
+		                            <p>1 Línea + Softphone</p>
 		                        </div>
 		                        <hr>
 		                        <div class="imagePackage">
@@ -350,7 +338,7 @@ export class Paquetes {
 		                        </div>
 		                        <div class="descriptionPackage">
 		                            <p>${canalesDescripcion}</p>
-		                            <p><span>1 línea</span> de teléfono</p>
+		                            <p>1 Línea + Softphone</p>
 		                        </div>
 		                        <hr>
 		                        <div class="imagePackage">
@@ -382,7 +370,7 @@ export class Paquetes {
                                 </div>
 								<div class="descriptionPackage">
 									<p>${canalesDescripcion}</p>
-                                    <p><span>1 línea</span> de teléfono</p>
+                                    <p>1 Línea + Softphone</p>
                                     
                                 </div>
                                 <hr>
@@ -412,7 +400,7 @@ export class Paquetes {
 			clase.clickCards();*/
 		}
 		clase.setListener();
-		localStorage.setItem("TP_PAQUETES_RECOMENDACION", JSON.stringify(arregloRecomendacion));
+		
 	}
 
 	ordenarObjeto(objetoInicial) {
@@ -497,7 +485,8 @@ export class Paquetes {
 	                            "url":"detallePaquete.html"
 	                        }
 	                    };
-	                    localStorage.setItem("TP_STR_PAQUETE_SELECCION", JSON.stringify(objetoInicial));
+						localStorage.setItem("TP_STR_PAQUETE_SELECCION", JSON.stringify(objetoInicial));
+						setTimeout(function(){ window.location = "detallePaquete1.html";}, 1000);
 	                    //window.location = "detallePaquete1.html";
 	                    //Constantes.paqueteSeleccion = objetoInicial;
 	                }

@@ -78,6 +78,12 @@ function pintarDetallePaquete(objetoPaquete){
         $('.tarjeta3P').hide();
     }
 
+    var regexMegas = /(\d{1,3})\s/;
+    var arrayMegas = regexMegas.exec(objetoPaquete.detallePaquete.detalle.megas);
+    if(parseInt(arrayMegas[1]) < 150){
+        $('#tarjetaPromocionPremium').hide();
+    }
+
     $('#cntNombrePaqueteBar').html(objetoPaquete.detallePaquete.nombre);
     $('#cntPrecioPaqueteBar').html(objetoPaquete.detallePaquete.detalle.desc6ProntoPago);
 
