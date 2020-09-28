@@ -68,6 +68,16 @@ function iniciarObjetoPaquete(){
 function pintarDetallePaquete(objetoPaquete){
     console.log('objetoPaquete', objetoPaquete);
 
+    if(objetoPaquete.detallePaquete.detalle.canales == ''){
+        $('#cntTelevision').hide();
+        $('#cntTarjetaTelevision').hide();
+    }
+
+    console.log('objetoPaquete.detallePaquete.tipoOferta=>', objetoPaquete.detallePaquete.tipoOferta);
+    if(objetoPaquete.detallePaquete.tipoOferta == '2P'){
+        $('.tarjeta3P').hide();
+    }
+
     $('#cntNombrePaqueteBar').html(objetoPaquete.detallePaquete.nombre);
     $('#cntPrecioPaqueteBar').html(objetoPaquete.detallePaquete.detalle.desc6ProntoPago);
 
@@ -76,6 +86,8 @@ function pintarDetallePaquete(objetoPaquete){
     $('#cntMegas').html('Internet de '+ objetoPaquete.detallePaquete.detalle.megas);
     $('#cntMegasDetalle').html(objetoPaquete.detallePaquete.detalle.megasDetalle);
     $('#cntTVDetalle').html(objetoPaquete.detallePaquete.detalle.canales);
+
+    
 
     $('#cntPrecioPaquete').html(objetoPaquete.detallePaquete.detalle.desc6ProntoPago);
 

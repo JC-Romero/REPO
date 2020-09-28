@@ -118,7 +118,7 @@ export class Paquetes {
 	cargarPaquetes(opt) {
 		console.group('Paquetes.js FUNCION cargarPaquetes('+opt+')');
 		let apuntador = this;
-		var tipopaquetes = "totalplay_paquetes_2020_09_09.json";
+		var tipopaquetes = "totalplay_paquetes_2020_09_09.json?v=28SEP0001";
 		if (localStorage.getItem("TP_OF_OBJ_FACTIBILIDAD") != null) {
 			var datosfactibilidad = JSON.parse(localStorage.getItem("TP_OF_OBJ_FACTIBILIDAD"));
 			if (datosfactibilidad.estimulofiscal == "true") {
@@ -201,7 +201,7 @@ export class Paquetes {
 		var contador = 1;
 
 		$.each(arreglo, function (key, objPaquete) {
-			console.log('objPaquete=>', objPaquete);
+			
 			if(opt !== "home"){
 				if (contador <= 3) {
 					contador++;
@@ -239,7 +239,7 @@ export class Paquetes {
 			}
 
 			//var regexMegas = /\s(\d{1,3})\sMbps/;
-			console.log('objPaquete.detalle.megas=>', objPaquete.detalle.megas);
+			//console.log('objPaquete.detalle.megas=>', objPaquete.detalle.megas);
 			var regexMegas = /(\d{1,3})\s/;
 	        var arrayMegas = regexMegas.exec(objPaquete.detalle.megas);
 
@@ -264,7 +264,8 @@ export class Paquetes {
 	                claseOcultar = 'hiddenPackageDoble';
 	            }
 	        }
-	        console.log("*************"+opt+"**************++");
+			console.log("*************"+opt+"**************++");
+			var canalesDescripcion = (objPaquete.detalle.canales != undefined)? objPaquete.detalle.canales: '';
 			if (opt == "home") {
 
 				plantillaHTML += 
@@ -279,9 +280,10 @@ export class Paquetes {
 	                            '<div class="velocityPackage">'+
 	                                '<p>'+objPaquete.detalle.megas+'</p>'+
 	                            '</div>'+
-	                            '<div class="descriptionPackage">'+
+								'<div class="descriptionPackage">'+
+									'<p><span>'+canalesDescripcion+'</p>'+
 	                                '<p><span>1 línea</span> de teléfono</p>'+
-	                                '<p class="hiddenText"><span>3 equipos</span> de TV con Apps</p>'+
+	                                
 	                            '</div>'+
 	                            '<hr>'+
 	                            '<div class="imagePackage">'+
@@ -300,7 +302,7 @@ export class Paquetes {
 	            '</div>';
 
 			} else if(opt == "match"){
-				var canalesDescripcion = (arrayCanales[1] != undefined)? arrayCanales[1]: '';
+				
 		        plantillaHTML += ``+
 		        `<div class="col-12 col-sm-6 mx-sm-auto col-md-6 col-lg-4 col-xl-4 ${claseOcultar}">
 		            <div class="row">
@@ -334,7 +336,7 @@ export class Paquetes {
 			}else if(opt == "regular"){
 				var colores = ['surprisePlus','emotionPlus','emotion', 'funPlus', 'fun', 'starter']
         
-		        var canalesDescripcion = (objPaquete.detalle.canales != undefined)? objPaquete.detalle.canales: '';
+		        
 		        plantillaHTML += ``+
 		        `<div class="col-12 col-sm-6 mx-sm-auto col-md-6 col-lg-4 col-xl-4 ${claseOcultar}">
 		            <div class="row">
@@ -366,6 +368,7 @@ export class Paquetes {
 		            </div>
 		        </div>`;
 			}else if(opt == "unbox"){
+				
 				plantillaHTML += ``+
 				`<div class="col-12 col-sm-6 mx-sm-auto col-md-6 col-lg-4 col-xl-4 ${claseOcultar}">
                     <div class="row">
@@ -377,9 +380,10 @@ export class Paquetes {
                                 <div class="velocityPackage">
                                     <p>${arrayMegas[1]} Megas</p>
                                 </div>
-                                <div class="descriptionPackage">
+								<div class="descriptionPackage">
+									<p>${canalesDescripcion}</p>
                                     <p><span>1 línea</span> de teléfono</p>
-                                    <p class="hiddenText"><span>3 equipos</span> de TV con Apps</p>
+                                    
                                 </div>
                                 <hr>
                                 <div class="imagePackage">
@@ -474,30 +478,7 @@ export class Paquetes {
 
 	setListener() {
 		let referenciaClase = this;
-		/*$(".packageInfoContainer").on("click", function () {
-			var idPaqueteSeleccionado = $(this).attr("id");
-			console.log('idPaqueteSeleccionado=>', idPaqueteSeleccionado);
-			var cadenaOfertaActual = localStorage.getItem("TP_INFO_PAQUETES");
-			var jsonOferta = JSON.parse(cadenaOfertaActual);
-			$.each(jsonOferta, function (familiaPaquete, arrayOferta) {
-				$.each(arrayOferta, function (key, objPaquete) {
-					if (idPaqueteSeleccionado == objPaquete.id) {
-						var objetoInicial = {
-							"idPaquete": objPaquete.id,
-							"detallePaquete":objPaquete,
-							"proceso":{
-								"numeroPaso":1,
-								"url":"detallePaquete.html"
-							}
-						};
-						 localStorage.setItem("TP_STR_PAQUETE_SELECCION", JSON.stringify(objetoInicial));
-						Constantes.paqueteSeleccion = objetoInicial;
-					}
-				});
-			});
-			//window.location = "detallePaquete.html";
-			$("#installLocation").modal('show');
-		});*/
+		
 
 		$("body").on("click",".packageInfoContainer", function (e) {
 			e.stopImmediatePropagation();
@@ -517,7 +498,7 @@ export class Paquetes {
 	                        }
 	                    };
 	                    localStorage.setItem("TP_STR_PAQUETE_SELECCION", JSON.stringify(objetoInicial));
-	                    window.location = "detallePaquete1.html";
+	                    //window.location = "detallePaquete1.html";
 	                    //Constantes.paqueteSeleccion = objetoInicial;
 	                }
 	            });
