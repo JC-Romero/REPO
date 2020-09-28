@@ -51,14 +51,16 @@ body,
 }
 
 .callUsModalContainer .modal-content {
-    padding-bottom: 2rem;
-    padding-left: 2rem;
+    border: none;
+}
+.callUsModalContainer .modal-content .modal-footer {
+    padding-bottom: 1rem;
 }
 
 .callUsModalContainer .modal-content .modal-header .close {
-    position: relative;
-    top: -1rem;
-    right: -1rem;
+    position: absolute;
+    top: -10rem;
+    right: 0rem;
 }
 
 body {
@@ -827,26 +829,98 @@ header .mainNav .mobileCart a img {
 }
 
 /*Materialize Inputs*/
-
-.callUsModalContainer .modal-header p:first-child {
+.installationLocationModal .modal-header {
+    padding-top: 2rem;
+}
+.installationLocationModal .modal-footer {
+    padding-bottom: 2rem;
+}
+.installationLocationModal .modal-header p:first-child {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 16px;
     color: rgba(117, 120, 123, 1);
 }
-
-.callUsModalContainer .modal-header .close img {
+.installationLocationModal .modal-header .close {
+    position: relative !important;
+    right: -1rem !important;
+    top: -2rem !important;
+}
+.installationLocationModal .modal-header .close img {
     max-width: 24px;
     max-height: 24px;
 }
 
-.callUsModalContainer .modal-header p:nth-child(2) {
+.installationLocationModal .modal-header p:nth-child(2) {
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
     font-size: 24px;
     color: rgba(59, 69, 89, 1);
 }
-
+.callMeModal .modal-body {
+    padding: 0;
+}
+.callMeModal .modal-header {
+    padding-top: 2rem;
+}
+.callMeModal .modal-footer {
+    padding-bottom: 2rem;
+}
+.callMeModal .modal-header .close {
+    position: relative;
+    right: 0.5rem;
+    top: -0.5rem;
+}
+.callMeModal .modal-header .close img {
+    max-width: 24px;
+    max-height: 24px;
+}
+.callMeModal .modal-header p:first-child {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: rgba(117, 120, 123, 1);
+}
+.callMeModal .modal-header p:nth-child(2) {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: rgba(59, 69, 89, 1);
+}
+.continueInstall .modal-header {
+    padding-top: 2rem;
+}
+.continueInstall .modal-footer {
+    padding-bottom: 2rem !important;
+}
+.continueInstall .modal-header p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: rgba(59, 69, 89, 1);
+}
+.continueInstall .modal-header .close {
+    position: absolute !important;
+    right: -0.25rem !important;
+    top: -8.5rem !important;
+}
+.continueInstall .modal-header .close img {
+    max-width: 24px;
+    max-height: 24px;
+}
+.continueInstall .successNotification {
+    font-weight: 300 !important;
+    font-size: 14px !important;
+    background: rgba(76, 217, 100, 0.05) !important;
+    display: inline-block !important;
+    border: 1px solid rgba(76, 217, 100, 1) !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    -webkit-border-radius: 24vw !important;
+    -moz-border-radius: 24vw !important;
+    border-radius: 24vw !important;
+    margin-bottom: 1rem !important;
+}
 .cardsRow {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -3108,8 +3182,8 @@ footer .legalAdvice p {
 
 .modalPhoneList .modal-content .modal-header .close {
     position: relative;
-    top: -1rem;
-    right: -1rem;
+    top: 0;
+    right: 0;
 }
 
 .modalChats .modal-content {
@@ -3118,8 +3192,8 @@ footer .legalAdvice p {
 }
 
 .modalChats .close img {
-    max-width: 18px;
-    max-height: 18px;
+    width: 18px;
+    height: 18px;
     opacity: 1;
 }
 
@@ -3142,6 +3216,7 @@ footer .legalAdvice p {
     transition-duration: 0.4s;
     text-align: center;
     margin-bottom: 1rem;
+    cursor: pointer;
 }
 
 .modalChats .chatsLinks a:after {
@@ -3153,8 +3228,12 @@ footer .legalAdvice p {
     text-align: center;
     background-color: #fafafa;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
-    font-size: 24px;
+    font-size: 20px;
     color: #3b4559;
+    transform: scale(1.05);
+}
+.chatModalTitle {
+    padding-left: 40px;
 }
 
 .modalsButons {
@@ -3336,7 +3415,20 @@ footer .legalAdvice p {
     padding-top: 48px;
     padding-bottom: 48px;
 }
-
+.goBackContainer {
+    text-align: left;
+}
+.goBackContainer a {
+    font-size: 16px;
+}
+.goBackContainer a::after {
+    display: none;
+}
+.goBackContainer a::before {
+    font-family: "totalplayicons";
+    content: "\e811";
+    margin-right: 16px;
+}
 .contenedorPaquetesClasicos .selectorPaquetes {
     text-align: center;
 }
@@ -3506,10 +3598,10 @@ footer .legalAdvice p {
 }
 
 .unboxCarousel {
-    padding-top: 70px;
+    padding-top: 48px;
+    padding-bottom: 35px;
     background: rgba(34, 35, 49, 1);
     color: rgba(255, 255, 255, 1);
-    padding-bottom: 70px;
 }
 
 .unboxCarousel .carouselTitles h1 {
@@ -3529,7 +3621,7 @@ footer .legalAdvice p {
 .unboxCarousel .carouselContainer .itemCarousel img {
     margin: 0 auto;
     width: 100%;
-    max-width: 597px;
+    max-width: 528px;
 }
 
 /*Paquetes clasicos*/
@@ -3551,12 +3643,12 @@ footer .legalAdvice p {
 
 .slick-next {
     right: 0;
-    top: 30%;
+    top: 50%;
 }
 
 .slick-prev {
     left: -40px;
-    top: 30%;
+    top: 50%;
 }
 
 .slick-prev::before {
@@ -3564,6 +3656,45 @@ footer .legalAdvice p {
     font-family: "totalplayicons";
     color: rgba(25, 138, 255, 1);
     font-size: 52px;
+}
+
+.progressBarContainer {
+    position: absolute;
+    bottom: 10px;
+    width: 90px;
+    left: 15px;
+}
+
+.progressBarContainer div {
+    display: block;
+    width: 27%;
+    padding: 0;
+    margin-right: 3%;
+    float: left;
+    color: white;
+}
+
+.progressBarContainer div:last-child {
+    margin-right: 0;
+}
+
+.progressBarContainer div span.progressBar {
+    width: 100%;
+    height: 8px;
+    background-color: rgba(253, 253, 253, 1);
+    display: block;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.progressBarContainer div span.progressBar .inProgress {
+    background-color: rgba(59, 69, 89, 0.5);
+    width: 0%;
+    height: 8px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
 
 /*slider styles*/
@@ -5241,6 +5372,19 @@ video {
     padding-bottom: 48px;
     background: rgba(224, 224, 224, 1);
 }
+.appTvRow .tvRow {
+    background: rgba(224, 224, 224, 0);
+}
+.appTvRow .tvRow .videoContent {
+    overflow: hidden;
+    box-shadow: 0 8px 48px 0 rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 1);
+    top: 0.5%;
+    height: 87.5%;
+    width: 89.5%;
+    left: 6.4%;
+    position: absolute;
+}
 .appTvRow .tvImageContainer img {
     width: 100%;
     max-width: 90%;
@@ -5249,7 +5393,7 @@ video {
 }
 .appTvRow .decoderImgContainer {
     position: relative;
-    top: -5rem;
+    top: -2rem;
 }
 .appTvRow .decoderImgContainer img {
     width: 100%;

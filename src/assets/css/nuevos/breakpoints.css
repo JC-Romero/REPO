@@ -815,14 +815,21 @@
     .barPackageDetails {
         padding-left: 15px;
     }
-    .barPackageDetails,
-    .barPackagePrice {
-    }
+
     .floatingBar .barButtons a {
         padding: 12px 24px !important;
     }
     .towhiteBack .barPackageButton {
         margin-bottom: 1rem;
+    }
+    .goBackContainer {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    .progressBarContainer {
+        position: relative;
+        margin: 0 auto;
+        bottom: -15px;
     }
 }
 

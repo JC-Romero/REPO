@@ -27,8 +27,11 @@ layout: home
 </section>
 <section class="row contenedorPaquetesClasicos">
     <div class="col-12 col-sm-12 col-md-11 col-lg-10 col-md-10 mx-auto">
-        <div class="row selectorPaquetes">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="row selectorPaquetes align-items-center">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 goBackContainer">
+                <a href="#">Regresar a paquetes</a>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
                 <ul>
                     <li><a id="toggletriple" href="#" class="active"
                             onclick="showPackageContainer('paquetesDoblePlay','paquetesTriplePlay','toggledoble','toggletriple');">Tripleplay</a>
@@ -111,10 +114,10 @@ layout: home
                                 <p>Recibe envíos GRATIS y rápidos, sin mínimo de compra en Amazon México.</p>
                             </div>
                             <div class="col-s12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-none d-sm-none d-md-block">
-                                <img src="../assets/img/nuevos/sliders/unbox3.png">
+                                <img src="../assets/img/nuevos/sliders/unboxCarousel1.png">
                             </div>
                             <div class="col-s12 col-sm-12 d-block d-sm-block d-md-none">
-                                <img src="../assets/img/nuevos/sliders/unbox3.png">
+                                <img src="../assets/img/nuevos/sliders/unboxCarousel1.png">
                             </div>
                             <div class="col-s12 col-sm-12 d-block d-sm-block d-md-none">
                                 <h1>Envios gratis</h1>
@@ -130,10 +133,10 @@ layout: home
                                     Amazon Prime.</p>
                             </div>
                             <div class="col-s12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-none d-sm-none d-md-block">
-                                <img src="../assets/img/nuevos/sliders/unbox2.png">
+                                <img src="../assets/img/nuevos/sliders/unboxCarousel2.png">
                             </div>
                             <div class="col-s12 col-sm-12 d-block d-sm-block d-md-none">
-                                <img src="../assets/img/nuevos/sliders/unbox2.png">
+                                <img src="../assets/img/nuevos/sliders/unboxCarousel2.png">
                             </div>
                             <div class="col-s12 col-sm-12 d-block d-sm-block d-md-none">
                                 <h1>Tu música sin anuncios</h1>
@@ -150,10 +153,10 @@ layout: home
                                     en Alexa.</p>
                             </div>
                             <div class="col-s12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-none d-sm-none d-md-block">
-                                <img src="../assets/img/nuevos/sliders/unbox1.png">
+                                <img src="../assets/img/nuevos/sliders/unboxCarousel3.png">
                             </div>
                             <div class="col-s12 col-sm-12 d-block d-sm-block d-md-none">
-                                <img src="../assets/img/nuevos/sliders/unbox1.png">
+                                <img src="../assets/img/nuevos/sliders/unboxCarousel3.png">
                             </div>
                             <div class="col-s12 col-sm-12 d-block d-sm-block d-md-none">
                                 <h1>Ahora tu voz es el control</h1>
@@ -163,9 +166,19 @@ layout: home
                         </div>
                     </div>
                 </div>
+                <div class="progressBarContainer">
+                    <div>
+                        <span data-slick-index="0" class="progressBar"></span>
+                    </div>
+                    <div>
+                        <span data-slick-index="1" class="progressBar"></span>
+                    </div>
+                    <div>
+                        <span data-slick-index="2" class="progressBar"></span>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 </section>
 <section class="row termsAndConditions">
     <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 mx-auto">
