@@ -22,7 +22,7 @@
                 "tipo": "2P",
                 "descuento": "$ 80",
                 "megas": "500 Megas↓",
-                "megasDetalle": "Disfruta de la máxima conectividad",
+                "megasDetalle": "",
                 "descriMegasDetalle": "Si trabajas desde casa y a demás toda la familia se mantiene conectada, tenemos el plan perfecto para ti. ",
                 "promoMegasDetalle": "Disfruta de la máxima conectividad",
                 "canales": "Disfruta 275 canales / 30 días",
@@ -59,7 +59,7 @@
                 "tipo": "2P",
                 "descuento": "$ 60",
                 "megas": "250 Megas↓",
-                "megasDetalle": "Disfruta de la máxima conectividad",
+                "megasDetalle": "",
                 "descriMegasDetalle": "Para trabajar en casa y disfrutar de tus video juegos en línea con la mejor experiencia. ",
                 "promoMegasDetalle": "Disfruta de la máxima conectividad",
                 "canales": "Disfruta 275 canales / 30 días",
@@ -96,7 +96,7 @@
                 "tipo": "2P",
                 "descuento": "$ 40",
                 "megas": "150 Megas↓",
-                "megasDetalle": "Disfruta de 300 Megas por 6 meses",
+                "megasDetalle": "",
                 "descriMegasDetalle": "Disfruta de videos juegos, series, películas y navegación en todos tus dispositivos con el mejor desempeño.",
                 "promoMegasDetalle": "Disfruta de 300 Megas por 6 meses",
                 "canales": "",
@@ -419,12 +419,12 @@
             "imagen": "/assets/img/pages/packages/img-paquete 100.png",
             "incluye": "Netflix + Televisión + Internet + Telefonía",
             "tipoPlan": "Residencial",
-            "id": "a0UQ0000006WfRIMA0",
+            "id": "a0UQ0000006WfRMMA0",
             "nombre": "MATCH 500 +",
             "tipoOferta": "3P",
             "familiaPaquete": "TriplePlay 5",
             "detalle": {
-                "idPaquete": "a0UQ0000006WfRIMA0",
+                "idPaquete": "a0UQ0000006WfRMMA0",
                 "nombrePaquete": "Match 500 +",
                 "precioProntoPago": "$ 2,119",
                 "precioLista": "$ 2,199",
@@ -443,28 +443,28 @@
                 "promoTelefono": "Tu línea fija a donde vayas",
                 "descripcionDetalleTel": "1 línea fija con llamadas incluidas a números de México, E.U y Canadá.",
                 "promoMegas": "",
-                "nombreComercial": "SORPRENDETE MAS TRIPLE PLAY",
+                "nombreComercial": "MATCH 500 +",
                 "promoMegasN": "",
                 "telefono": "1 Línea"
             }
         },
         {
-            "precioProntoPago": 1409,
-            "precioLista": 1489,
+            "precioProntoPago": 1599,
+            "precioLista": 1679,
             "color": "new-purple",
             "detalleServicio": "-Netflix incluido licencia de 4 pantalla  -Servicio de  internet de 250 Mbps de descarga. -Servicio para 2 TV 80 Canales (21 HD). -Televisión interactiva (Donde Sea y Cuando Sea). -Servicio de telefonía con llamadas a números fijos, minutos a Estados Unid",
             "imagen": "/assets/img/pages/packages/img-paquete 100.png",
             "incluye": "Netflix + Televisión + Internet + Telefonía",
             "tipoPlan": "Residencial",
-            "id": "a0UQ0000006WfxQMAS",
+            "id": "a0UQ0000006WfRKMA0",
             "nombre": "MATCH 250 +",
             "tipoOferta": "3P",
             "familiaPaquete": "TriplePlay 5",
             "detalle": {
-                "idPaquete": "a0UQ0000006WfxQMAS",
+                "idPaquete": "a0UQ0000006WfRKMA0",
                 "nombrePaquete": "MATCH 250 +",
-                "precioProntoPago": "$ 1,409",
-                "precioLista": "$ 1,489",
+                "precioProntoPago": "$ 1,599",
+                "precioLista": "$ 1,679",
                 "desc6ProntoPago": "$ 1,499",
                 "desc6PrecioLista": "$ 1,579",
                 "tipo": "3P",
@@ -480,7 +480,7 @@
                 "promoTelefono": "Tu línea fija a donde vayas",
                 "descripcionDetalleTel": "1 línea fija con llamadas incluidas a números de México, E.U y Canadá.",
                 "promoMegas": "",
-                "nombreComercial": "EMOCIONATE MAS TRIPLE PLAY",
+                "nombreComercial": "MATCH 250 +",
                 "promoMegasN": "",
                 "telefono": "1 Línea"
             }
@@ -517,7 +517,7 @@
                 "promoTelefono": "Tu línea fija a donde vayas",
                 "descripcionDetalleTel": "1 línea fija con llamadas incluidas a números de México, E.U y Canadá.",
                 "promoMegas": "",
-                "nombreComercial": "EMOCIONATE TRIPLE PLAY",
+                "nombreComercial": "MATCH 150 +",
                 "promoMegasN": "",
                 "telefono": "1 Línea"
             }
@@ -554,7 +554,7 @@
                 "promoTelefono": "Tu línea fija a donde vayas",
                 "descripcionDetalleTel": "1 línea fija con llamadas incluidas a números de México, E.U y Canadá.",
                 "promoMegas": "",
-                "nombreComercial": "DIVIERTETE MAS TRIPLE PLAY",
+                "nombreComercial": "MATCH 80 +",
                 "promoMegasN": "",
                 "telefono": "1 Línea"
             }
@@ -591,7 +591,7 @@
                 "promoTelefono": "Tu línea fija a donde vayas",
                 "descripcionDetalleTel": "1 línea fija con llamadas incluidas a números de México, E.U y Canadá.",
                 "promoMegas": "",
-                "nombreComercial": "DIVIERTETE TRIPLE PLAY",
+                "nombreComercial": "MATCH 40 +",
                 "promoMegasN": "",
                 "telefono": "1 Línea"
             }

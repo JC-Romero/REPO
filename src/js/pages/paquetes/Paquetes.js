@@ -323,7 +323,7 @@ export class Paquetes {
 		                            <img src="/assets/img/nuevos/1200px-Netflix_2015_logo.svg.png" alt="Image Paquete">
 		                        </div>
 		                        <div class="descriptionApp">
-		                            <p>${arrayPantallas[1]} pantalla(s) <span>Premium UHD</span></p>
+		                            <p>${arrayPantallas[1]} pantalla(s) <span>UHD</span></p>
 		                        </div>
 		                        
 		                        <div class="packagePrice">
@@ -498,6 +498,7 @@ export class Paquetes {
 	                        }
 	                    };
 	                    localStorage.setItem("TP_STR_PAQUETE_SELECCION", JSON.stringify(objetoInicial));
+	                    setTimeout(function(){ window.location = "detallePaquete1.html";}, 1000);
 	                    //window.location = "detallePaquete1.html";
 	                    //Constantes.paqueteSeleccion = objetoInicial;
 	                }
