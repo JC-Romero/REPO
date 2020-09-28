@@ -30,11 +30,15 @@ $(document).ready(function () {
     };
     $('#scrollingElement').followTo('#stopper');
 });
+$(window).on('beforeunload', function () {
+    $(window).scrollTop(0);
+});
 $(window).scroll(function () {
     $("#fadeButton").css("opacity", 1 - $(window).scrollTop() / 50);
     $("#showMoreFade").css("opacity", 1 - $(window).scrollTop() / 50);
 });
 $(document).ready(function () {
+    $(this).scrollTop(0);
     $("#infiniteSlides").slick({
         speed: 25000,
         slidesToShow: 3,

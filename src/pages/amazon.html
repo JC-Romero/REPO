@@ -26,7 +26,7 @@ layout: home
 			</div>
 			<div id="scrollingElement" class="appLogoContainer ">
 				<img src="../assets/img/nuevos/amazon/logo.png">
-				<a id="fadeButton" href="#" class="generalButton">Paquetes con Prime</a>
+				<a id="fadeButton" href="/unbox.html" class="generalButton">Paquetes con Prime</a>
 			</div>
 		</section>
 		<div id="stopper" class="stopperHeight"></div>
@@ -99,7 +99,7 @@ layout: home
 		</section>
 		<section class="row buttonRow">
 			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-				<a href="#" class="generalButton">Suscribete ahora</a>
+				<a href="/unbox.html" class="generalButton">Suscribete ahora</a>
 			</div>
 		</section>
 		<section class="row appsCardsContainer amazonBack">
@@ -152,7 +152,7 @@ layout: home
 						</div>
 						<div class="row descritionButtonRow">
 							<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-								<a href="#" class="generalButton">Suscríbete ahora</a>
+								<a href="/unbox.html" class="generalButton">Suscríbete ahora</a>
 							</div>
 						</div>
 					</div>
@@ -160,10 +160,12 @@ layout: home
 			</div>
 		</section>
 		<section class="row appTvRow">
-			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-				<div class="row tvImageContainer">
-					<div class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-8 mx-auto">
-						<img src="../assets/img/nuevos/netflix/tv.png">
+			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 tvRow">
+				<div class="tvVideo">
+					<img src="../assets/img/nuevos/netflix/tv.png">
+					<div class="videoContent">
+						<video class="videoContainer" src="../assets/media/landings/primeVideoTutorial.mp4" autoplay
+							muted loop></video>
 					</div>
 				</div>
 				<div class="row decoderImgContainer">
@@ -187,7 +189,7 @@ layout: home
 						</div>
 						<div class="row tvRowButton">
 							<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-								<a href="#" class="generalButton">Suscríbete ahora</a>
+								<a href="/unbox.html" class="generalButton">Suscríbete ahora</a>
 							</div>
 						</div>
 
@@ -339,10 +341,4 @@ layout: home
 		</section>
 	</div>
 </section>
-<!--<section class="main-template">
-	{{> seccionVideo}}
-	{{> seccionCanalesNetflix}}
-	{{> seccionTVSinEfecto}}
-	{{> seccionPreguntas}}
-	{{> seccionAplicaciones}}
-</section>-->
+{{> modalesIndex}}

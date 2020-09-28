@@ -173,6 +173,7 @@
 
 #phoneChat {
     background-color: #9767bd;
+    cursor: pointer;
 }
 
 .menu-item-help:nth-child(3) a {
@@ -241,7 +242,7 @@
     .menu-movil__help img {
         width: 64x;
         height: 64px;
-        margin-top: 16.2%;
+        margin-top: 5.2%;
     }
 
     .menu-help-robot {
