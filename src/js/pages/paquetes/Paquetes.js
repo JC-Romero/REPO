@@ -201,7 +201,7 @@ export class Paquetes {
 		var contador = 1;
 
 		$.each(arreglo, function (key, objPaquete) {
-
+			console.log('objPaquete=>', objPaquete);
 			if(opt !== "home"){
 				if (contador <= 3) {
 					contador++;
@@ -238,8 +238,10 @@ export class Paquetes {
 				});
 			}
 
-			var regexMegas = /\s(\d{1,3})\sMbps/;
-	        var arrayMegas = regexMegas.exec(objPaquete.detalleServicio);
+			//var regexMegas = /\s(\d{1,3})\sMbps/;
+			console.log('objPaquete.detalle.megas=>', objPaquete.detalle.megas);
+			var regexMegas = /(\d{1,3})\s/;
+	        var arrayMegas = regexMegas.exec(objPaquete.detalle.megas);
 
 	        var regexPantallas = "";
 	        var arrayPantallas = "";
@@ -288,9 +290,7 @@ export class Paquetes {
 	                            '<div class="descriptionApp">'+
 	                                '<p>'+descriptionApp+'</p>'+
 	                            '</div>'+
-	                            '<div class="packageDiscount">'+
-	                                '<p>Descuento de por vida</p>'+
-	                            '</div>'+
+	                            
 	                            '<div class="packagePrice">'+
 	                                '<p><a >Desde: <span>$ '+clase.formatoMonedad(objPaquete.precioLista, 0, ".", ",")+' al mes</span></a></p>'+
 	                            '</div>'+
@@ -323,9 +323,7 @@ export class Paquetes {
 		                        <div class="descriptionApp">
 		                            <p>${arrayPantallas[1]} pantalla(s) <span>Premium UHD</span></p>
 		                        </div>
-		                        <div class="packageDiscount">
-		                            <p>Descuento de por vida</p>
-		                        </div>
+		                        
 		                        <div class="packagePrice">
 		                            <p><a >Desde: <span>$ ${clase.formatoMonedad(objPaquete.precioLista, 0, ".", ",") } al mes</span></a></p>
 		                        </div>
@@ -359,9 +357,7 @@ export class Paquetes {
 		                        <div class="descriptionApp">
 		                            <p>App description</p>
 		                        </div>
-		                        <div class="packageDiscount">
-		                        <p>20% de descuento</p>
-		                        </div>
+		                        
 		                        <div class="packagePrice" >
 		                            <p><a >Desde: <span>$ ${clase.formatoMonedad(objPaquete.precioLista, 0, ".", ",") } al mes</span></a></p>
 		                        </div>
@@ -392,9 +388,7 @@ export class Paquetes {
                                 <div class="descriptionApp">
                                     <p>${descriptionApp}</span></p>
                                 </div>
-                                <div class="packageDiscount">
-                                    <p>Descuento de por vida</p>
-                                </div>
+                                
                                 <div class="packagePrice">
                                     <p><a >Desde: <span>$ ${clase.formatoMonedad(objPaquete.precioLista, 0, ".", ",") } al mes</span></a></p>
                                 </div>
@@ -523,7 +517,7 @@ export class Paquetes {
 	                        }
 	                    };
 	                    localStorage.setItem("TP_STR_PAQUETE_SELECCION", JSON.stringify(objetoInicial));
-	                    //window.location = "detallePaquete.html";
+	                    window.location = "detallePaquete1.html";
 	                    //Constantes.paqueteSeleccion = objetoInicial;
 	                }
 	            });

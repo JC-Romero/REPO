@@ -2,30 +2,25 @@
 layout: home
 ---
 <style>
-    html,
-    body {
-        overflow-x: hidden;
-    }
+    html,body { overflow-x: hidden;}
 
-    body,
-    * {
-        height: auto;
-    }
+    body,* { height: auto;}
 </style>
 <div id="detailBar" class="floatingBar hide">
     <div class="row">
         <div id="insideBar" class="barButtons">
             <div class="row barDetailsRow">
                 <div id="packageName" class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 barPackageDetails">
-                    <p>Paquete<span>Nombre de paquete</span></p>
+                    <p>Paquete<span id="cntNombrePaqueteBar">Nombre de paquete</span></p>
                 </div>
                 <div id="priceAndDiscount" class="col-6 col-sm-6 col-md-6 col-lg-5 col-xl-5 barPackagePrice">
-                    <p>Desde $<span id="">1,862</span> al mes<span class="barDiscount">con descuento de por
-                            vida</span>
+                    <p>Desde
+                        <span id="cntPrecioPaqueteBar">1,862</span> al mes
+                        <span class="barDiscount">con descuento de por vida</span>
                     </p>
                 </div>
                 <div id="buyButton" class="col-12 barPackageButton">
-                    <a href="#">Lo quiero</a>
+                    <a href="contratacion.html">Lo quiero</a>
                 </div>
             </div>
         </div>
@@ -35,7 +30,7 @@ layout: home
     <div class="col-12 col-sm-12 col-md-11 col-lg-11 col-xl-11 mx-auto">
         <div class="row landingPackageTitle">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                <h1 class="surprisePlusBadge">Sorprendete +</h1>
+                <h1 class="surprisePlusBadge" id="cntNombrePaquete">Sorprendete +</h1>
             </div>
         </div>
         <div class="row landingPackageDescription">
@@ -47,24 +42,34 @@ layout: home
             <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4 offset-xl-2 resumeItem">
                 <div class="row resumeItem">
                     <div class="col-9 col-sm-9 col-md-9 col-lg-10 col-xl-10 wifiSingle mx-auto">
-                        <p>Internet de 350 Megas &#8595;</p>
-                        <span>+150 Megas de regalo sin costo x 3 meses</span>
+                        <p id="cntMegas">Internet de 350 Megas &#8595;</p>
+                        <span id="cntMegasDetalle">+150 Megas de regalo sin costo x 3 meses</span>
+                    </div>
+                </div>
+                
+                <div class="row resumeItem">
+                    <div class="col-9 col-sm-9 col-md-9 col-lg-10 col-xl-10 HDSingle mx-auto">
+                        <p id="cntTVDetalle">2 equipos de TV 4K con Wi-Fi</p>
+                        <span id="cntTVDetalle" style="display: none;">Y acceso a tus apps favoritas</span>
+                    </div>
+                </div>
+                <div class="row resumeItem" id="cntNetflix" style="display: none;">
+                    <div class="col-9 col-sm-9 col-md-9 col-lg-10 col-xl-10 HDSingle mx-auto">
+                        <p>Plan Premium</p>
+                        <span>4 pantallas UHD</span>
+                    </div>
+                </div>
+
+                <div class="row resumeItem">
+                    <div class="col-9 col-sm-9 col-md-9 col-lg-10 col-xl-10 landlineSingle mx-auto">
+                        <p>1 Línea + Softphone</p>
+                        <span>Con llamadas ilimitadas</span>
                     </div>
                 </div>
                 <div class="row resumeItem">
                     <div class="col-9 col-sm-9 col-md-9 col-lg-10 col-xl-10 tvSingle mx-auto">
-                        <p>120 canales (45 en HD)</p>
-                        <span>Sin costo x 3 meses</span>
-                    </div>
-                </div>
-                <div class="row resumeItem">
-                    <div class="col-9 col-sm-9 col-md-9 col-lg-10 col-xl-10 HDSingle mx-auto">
-                        <p>2 equipos de TV 4K con Wi-Fi</p>
-                    </div>
-                </div>
-                <div class="row resumeItem">
-                    <div class="col-9 col-sm-9 col-md-9 col-lg-10 col-xl-10 landlineSingle mx-auto">
-                        <p>1 linea con llamadas ilimitadas</p>
+                        <p>Accede a las apps más populares</p>
+                        <span>Convierte tu TV en una Smart TV</span>
                     </div>
                 </div>
             </div>
@@ -74,11 +79,11 @@ layout: home
                         <div class="row">
                             <div class="col-6 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                 <p>Llévatelo desde:</p>
-                                <h1>$ 1,489</h1>
+                                <h1 id="cntPrecioPaquete">$ 1,489</h1>
                                 <span>Pagando a tiempo y a partir del 6º mes</span>
                             </div>
                             <div class="col-6 col-sm-12 col-md-12 col-lg-12 col-xl-12 buttonContainer">
-                                <a href="#" class="generalButton">Lo quiero <span></span></a>
+                                <button class="generalButton btnDeshabilitado" id="btnObtenerPaquete" disabled="" onclick="window.location='contratacion.html'" ><i class="fas fa-circle-notch fa-spin" style="color: #1a76d2;"></i></button>
                             </div>
                         </div>
                     </div>
@@ -101,18 +106,18 @@ layout: home
         <div class="card-body">
             <div class="row">
                 <div class="col-10 mx-auto">
-                    <h5>350 Megas</h5>
+                    <h5 id="cntCardMegas">350 Megas</h5>
                 </div>
             </div>
             <div class="row">
                 <div class="col-10 mx-auto">
-                    <p>Para lo que necesites, manten a tu familia conectada sin problemas.</p>
+                    <p id="cntCardMegasPaquete">Para lo que necesites, manten a tu familia conectada sin problemas.</p>
                 </div>
             </div>
             <div class="row cardBadgeContainer">
                 <div class="col-10 col-sm-10 col-md-8 col-lg-6 col-xl-6 mx-auto">
                     <div class="cardBadge">
-                        <p>Podrás elegir más megas o más canales sin costo por 4 meses</p>
+                        <p id="cntCardMegasDetalle">Podrás elegir más megas o más canales sin costo por 4 meses</p>
                     </div>
                 </div>
             </div>
@@ -123,19 +128,19 @@ layout: home
         <div class="card-body">
             <div class="row">
                 <div class="col-10 mx-auto">
-                    <h5>TV Básica</h5>
+                    <h5 id="cntCardTelevision">TV Básica</h5>
                 </div>
             </div>
             <div class="row">
                 <div class="col-10 mx-auto">
-                    <p>Más de 80 canales, 21 en HD</p>
+                    <p id="cntCardTelevisionPaquete">Más de 80 canales, 21 en HD</p>
                     <a href="#">Ver canales</a>
                 </div>
             </div>
             <div class="row cardBadgeContainer">
                 <div class="col-10 col-sm-10 col-md-8 col-lg-6 col-xl-6 mx-auto">
                     <div class="cardBadge">
-                        <p>Podrás elegir 500 Megas ó 120 Canales sin costo por 4 meses</p>
+                        <p id="cntCardTelevisionDetalle">Podrás elegir 500 Megas ó 120 Canales sin costo por 4 meses</p>
                     </div>
                 </div>
             </div>
@@ -153,13 +158,13 @@ layout: home
             </div>
             <div class="row">
                 <div class="col-10 mx-auto">
-                    <p>Ambos incluyen canales en vivo y contenido en streaming.</p>
+                    <p>Disfruta una suscripción al mejor contenido cinematográfico en todos tus dispositivos.</p>
                 </div>
             </div>
             <div class="row cardBadgeContainer">
                 <div class="col-10 col-sm-10 col-md-8 col-lg-6 col-xl-6 mx-auto">
                     <div class="cardBadge">
-                        <p>Sin costo durante 6 meses</p>
+                        <p>Incluido en tu paquete durante 6 meses</p>
                     </div>
                 </div>
             </div>
@@ -170,12 +175,12 @@ layout: home
         <div class="card-body">
             <div class="row">
                 <div class="col-10 mx-auto">
-                    <h5>3 Equipos de TV 4K</h5>
+                    <h5>Tecnología 4K en todos tus equipos</h5>
                 </div>
             </div>
             <div class="row">
                 <div class="col-10 mx-auto">
-                    <p>Con repetidor WiFi integrado y acceso a tus aplicaciones favoritas</p>
+                    <p>Con acceso a las apps más populares y en cada equipo un punto de acceso a internet para maximizar la cobertura wifi de tu hogar.</p>
                 </div>
             </div>
         </div>
@@ -192,7 +197,7 @@ layout: home
             </div>
             <div class="row">
                 <div class="col-10 mx-auto">
-                    <p>Los mejores estrenos de la temporada disponibles sin salir de casa.</p>
+                    <p>Cientos de películas, los estrenos más destacados, conciertos, contenido infantil y más, disponibles para renta. ¡Da clic y comienza la función!</p>
                     <a href="#">Ver películas</a>
                 </div>
             </div>
@@ -208,16 +213,16 @@ layout: home
             </div>
             <div class="row">
                 <div class="col-10 mx-auto">
-                    <p>Tus programas favoritos cuando quieras, o vuelve al inicio de un programa en vivo.</p>
+                    <p>Regresa el tiempo hasta por 7 días y disfruta tus programas favoritos una y otra vez.</p>
                 </div>
             </div>
-            <div class="row cardBadgeContainer">
+            <!--div class="row cardBadgeContainer">
                 <div class="col-10 col-sm-10 col-md-8 col-lg-6 col-xl-6 mx-auto">
                     <div class="cardBadge">
                         <p>Sin costo durante 6 meses</p>
                     </div>
                 </div>
-            </div>
+            </div-->
         </div>
         <img src="../assets/img/nuevos/exatlon.png" class="card-img-top" alt="Decodificador Totalplay">
     </div>
@@ -227,12 +232,12 @@ layout: home
         <div class="card-body">
             <div class="row">
                 <div class="col-10 mx-auto">
-                    <h5 class="card-title">Tus Apps favoritas</h5>
+                    <h5 class="card-title">Tus apps favoritas en un solo lugar</h5>
                 </div>
             </div>
             <div class="row">
                 <div class="col-10 mx-auto">
-                    <p>Convierte tu pantalla en una Smart TV con apps y funcionalidades unicas.</p>
+                    <p>Integramos las apps que amas para disfrutar la mejor experiencia de entretenimiento y siempre tener tu contenido favorito a un solo clic.</p>
                     <a href="#">Ver apps</a>
                 </div>
             </div>
@@ -243,14 +248,12 @@ layout: home
         <div class="card-body">
             <div class="row">
                 <div class="col-10 mx-auto">
-                    <h5 class="card-title">2 Líneas incluidas</h5>
+                    <h5 class="card-title">Tu línea fija a donde vayas</h5>
                 </div>
             </div>
             <div class="row">
                 <div class="col-10 mx-auto">
-                    <p>Llamadas incluidas a números fijos y celulares de México, EEUU. y Canadá + App Teléfono
-                        incluida.
-                    </p>
+                    <p>1 línea fija con llamadas incluidas a números de México, E.U y Canadá. </p>
                 </div>
             </div>
         </div>
