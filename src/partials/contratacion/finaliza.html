@@ -87,6 +87,8 @@
         try {
             var infoVentaStr = window.localStorage.getItem('TP_VENTA');
             var infoClienteStr = window.localStorage.getItem('TP_STR_CLIENTE');
+            var paquete = localStorage.getItem('TP_CLIENTE_PAQUETE');
+            var direcionInstalacion = localStorage.getItem('TP_CLIENTE_DIR_INSTALACION');
             var fechaInstalacion = localStorage.getItem('TP_CLIENTE_FECHA_INSTALACION');
 
             var infoVentaObj = JSON.parse(infoVentaStr);
@@ -101,7 +103,7 @@
             var numeroCuenta = infoVentaObj.numeroCuenta;
             var correoElectronico = infoClienteObj.correoElectronico;
 
-            enviarCorreoConfirmacion(nombreCliente, numeroCuenta, correoElectronico)
+            enviarCorreoConfirmacion(nombreCliente, numeroCuenta, correoElectronico, paquete, direcionInstalacion, fechaInstalacion)
 
             localStorage.clear(); 
         } catch (error) {
@@ -109,11 +111,19 @@
         }
     }
 
-    function enviarCorreoConfirmacion(nombreCliente, numeroCuenta, correoElectronico){
+    function enviarCorreoConfirmacion(
+        nombreCliente, numeroCuenta, correoElectronico, paquete, direcionInstalacion, fechaInstalacion){
         
         $.ajax({
             url: "https://5ui1bow6gf.execute-api.us-east-1.amazonaws.com/Desarrollo/enviar-correo-confirmacion",
-            data: JSON.stringify({"nombreCliente": nombreCliente,"numeroCuenta": numeroCuenta, "correoElectronico": correoElectronico}),
+            data: JSON.stringify({
+                    "nombreCliente": nombreCliente,
+                    "numeroCuenta": numeroCuenta, 
+                    "correoElectronico": correoElectronico,
+                    "nombrePaquete": paquete,
+                    "direccionInstalacion": direcionInstalacion,
+                    "fechaInstalacion": fechaInstalacion
+                }),
             dataType: "json",
             type: 'POST'
         }).done(function(respuesta) {

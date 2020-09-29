@@ -2373,7 +2373,6 @@ header .mainNav .mobileCart a img {
     margin-top: 2.5rem;
     text-align: center;
 }
-
 .locationSharing .locationButton .generalButton {
     border: rgba(255, 255, 255, 1) solid 1px;
     background: rgba(26, 118, 210, 1);
@@ -2388,7 +2387,6 @@ footer {
     font-size: 14px;
     padding-top: 4rem;
     padding-bottom: 2rem;
-    margin-top: 4rem;
     overflow-x: hidden !important;
 }
 
@@ -5150,30 +5148,6 @@ video {
     top: 40vh;
     visibility: hidden;
 }
-@media not all and (min-resolution: 0.001dpcm) {
-    @media {
-        .stopperHeight {
-            top: 20vh;
-        }
-        .contactInputContainer select {
-            -webkit-appearance: none;
-            width: 100%;
-            background: rgba(255, 255, 255, 0);
-            position: relative;
-            top: 7px;
-            color: rgba(255, 255, 255, 1);
-            border: none;
-            border-bottom: rgba(222, 226, 230, 1) solid 1px;
-            padding-bottom: 12px;
-            padding-top: 10px;
-            padding-left: 15px;
-            margin-bottom: 20px;
-            -webkit-border-radius: 0;
-            -moz-border-radius: 0;
-            border-radius: 0;
-        }
-    }
-}
 .showMoreRow {
     position: relative;
     top: -8rem;
@@ -6174,39 +6148,6 @@ video {
 }
 
 /*Faqs*/
-/*Landing App*/
-.mainSliderApp {
-    margin-top: 120px;
-}
-.mainSliderApp .sliderAppContainer .sliderAppTexts h1 {
-    font-size: 40px;
-    font-weight: 500;
-    line-height: 49px;
-    color: rgba(59, 69, 89, 1);
-}
-.mainSliderApp .sliderAppContainer .sliderAppTexts p {
-    font-size: 53px;
-    font-weight: 300;
-    line-height: 64px;
-    color: rgba(59, 69, 89, 1);
-    margin-bottom: 70px;
-}
-.mainSliderApp .sliderAppContainer .sliderAppTexts span {
-    font-size: 23px;
-    font-weight: 700;
-    line-height: 28px;
-    color: rgba(59, 69, 89, 1);
-}
-.mainSliderApp .sliderAppContainer .sliderAppsBadges {
-    margin-top: 20px;
-}
-.mainSliderApp .sliderAppContainer .sliderAppImagesContainer {
-    text-align: center;
-}
-.mainSliderApp .sliderAppContainer .sliderAppImagesContainer svg {
-    max-width: 80%;
-}
-/*Landing App*/
 /*Barra detalle Paquete*/
 .floatingBar {
     position: fixed;
@@ -6316,7 +6257,141 @@ video {
 .towhiteBack .barPackageButton a {
     padding: 1rem 2rem;
 }
-/*Animacion*/
+/*Landing App*/
+.mainSliderApp {
+    padding-top: 120px;
+    padding-bottom: 45px;
+}
+.mainSliderApp .sliderAppContainer .sliderAppTexts h1 {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 49px;
+    color: rgba(59, 69, 89, 1);
+}
+.mainSliderApp .sliderAppContainer .sliderAppTexts {
+    margin-bottom: 70px;
+}
+.mainSliderApp .sliderAppContainer .sliderAppTexts p {
+    font-size: 53px;
+    font-weight: 300;
+    line-height: 64px;
+    color: rgba(59, 69, 89, 1);
+}
+#animatedTextFirst {
+    visibility: hidden;
+    animation: flipOverText 10s infinite;
+}
+#animatedTextSecond {
+    animation: flipOverText 10s 4s infinite;
+}
+.mainSliderApp .sliderAppContainer .sliderAppTexts p.animatedTextBanner {
+    position: absolute;
+}
+.mainSliderApp .sliderAppContainer .sliderAppsBadges span {
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 28px;
+    color: rgba(59, 69, 89, 1);
+}
+.mainSliderApp .sliderAppContainer .sliderAppsBadges {
+    margin-top: 20px;
+}
+.mainSliderApp .sliderAppContainer .sliderAppsBadges img {
+    margin-top: 20px;
+}
+.mainSliderApp .sliderAppContainer .sliderAppsBadges a::after {
+    display: none;
+}
+.mainSliderApp .sliderAppContainer .sliderAppImagesContainer {
+    text-align: center;
+}
+.mainSliderApp .sliderAppContainer .sliderAppImagesContainer svg {
+    padding-top: 2rem;
+    max-width: 80%;
+    overflow: visible;
+    margin: 0 auto;
+}
+.mainSliderApp .sliderAppContainer .sliderAppImagesContainer .backgroundImageApp {
+    opacity: 0;
+    animation: showbackAppMain 500ms 2s forwards;
+}
+.mainSliderApp .sliderAppContainer .sliderAppImagesContainer .tvIcon {
+    opacity: 0;
+    animation: showbackApp 500ms 2.75s forwards;
+}
+.mainSliderApp .sliderAppContainer .sliderAppImagesContainer .phoneIcon {
+    opacity: 0;
+    animation: showbackApp 500ms 3s forwards;
+}
+.mainSliderApp .sliderAppContainer .sliderAppImagesContainer .controlIcon {
+    opacity: 0;
+    animation: showbackApp 500ms 3.25s forwards;
+}
+.mainSliderApp .sliderAppContainer .sliderAppImagesContainer .homeIcon {
+    opacity: 0;
+    animation: showbackApp 500ms 3.5s forwards;
+}
+.mainSliderApp .sliderAppContainer .sliderAppImagesContainer .navBar {
+    opacity: 0;
+    animation: showbackApp 500ms 3.75s forwards;
+}
+.mainSliderApp .sliderAppContainer .sliderAppImagesContainer .triangleContainerFirst {
+    opacity: 0;
+    transform: translateX(820px) translateY(280px) scale(0.45, 0.45);
+    animation: translateTriangleFirst 500ms 1s forwards;
+}
+.mainSliderApp .sliderAppContainer .sliderAppImagesContainer .triangleContainerSecond {
+    opacity: 0;
+    transform: translateX(820px) translateY(380px) scale(0.55, 0.55);
+    animation: translateTriangleSecond 500ms 1s forwards;
+    backdrop-filter: blur(2px);
+}
+.mainSliderApp .sliderAppContainer .sliderAppImagesContainer .triangleContainerThird {
+    opacity: 0;
+    transform: translateX(820px) translateY(200px) scale(0.55, 0.55);
+    animation: translateTriangleThird 500ms 1.15s forwards;
+}
+.videosApp {
+    background: rgba(30, 30, 40, 1);
+    padding-top: 92px;
+    padding-bottom: 92px;
+}
+.videosApp .videosAppTitles {
+    text-align: center;
+}
+.videosApp .videosAppTitles h1 {
+    font-size: 35px;
+    line-height: 43px;
+    color: rgba(245, 245, 245, 1);
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+.videosApp .videosColContanier {
+    transform: translateY(40px);
+    opacity: 0;
+}
+.animateInVideoRow {
+    animation: animateIn 1s 0.5s forwards;
+}
+.animateOutVideoRow {
+    animation: animateOut 1s 0.5s forwards;
+}
+.nextRow {
+    height: 2500px;
+}
+.videosApp .videosAppLinks .videosAppItem {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.videosApp .videosAppLinks .videosAppItem a::after {
+    display: none;
+}
+.videosApp .videosAppLinks .videosAppItem a img {
+    width: 100%;
+}
+/*Landing App*/
+/*Clases Animación*/
 @keyframes slideDown {
     0% {
         top: -6rem;
@@ -6349,7 +6424,136 @@ video {
         width: 250px;
     }
 }
-/*Animacion*/
+@keyframes showbackAppMain {
+    0% {
+        transform: translateY(20px) translateX(105px) scale(0.5, 0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px) translateX(105px) scale(0.5, 0.5);
+        opacity: 1;
+    }
+}
+@keyframes showbackApp {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes translateTriangleFirst {
+    0% {
+        opacity: 0;
+        transform: translateX(820px) translateY(320px) scale(0.4, 0.4);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(50px) translateY(320px) scale(0.4, 0.4);
+    }
+}
+@keyframes translateTriangleSecond {
+    0% {
+        opacity: 0;
+        transform: translateX(820px) translateY(380px) scale(0.55, 0.55);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(20px) translateY(320px) scale(0.55, 0.55);
+    }
+}
+@keyframes translateTriangleThird {
+    0% {
+        opacity: 0;
+        transform: translateX(820px) translateY(200px) scale(0.55, 0.55);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(360px) translateY(200px) scale(0.65, 0.65);
+    }
+}
+@keyframes animateIn {
+    0% {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+@keyframes animateOut {
+    0% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+}
+@keyframes flipOverText {
+    0% {
+        visibility: hidden;
+        transform-origin: 50% 0;
+        transform: rotateX(-180deg) translateY(-53px);
+        backface-visibility: hidden;
+    }
+    5% {
+        visibility: visible;
+        transform: rotateX(180deg) translateY(53px);
+        backface-visibility: hidden;
+    }
+    10% {
+        transform: rotateX(180deg);
+        backface-visibility: hidden;
+    }
+    20% {
+        transform: rotateX(0deg);
+        backface-visibility: hidden;
+    }
+    30% {
+        transform: rotateX(0deg);
+        backface-visibility: hidden;
+    }
+    40% {
+        visibility: visible;
+        transform-origin: 50% 100%;
+        transform: rotateX(180deg) translateY(53px);
+        backface-visibility: hidden;
+    }
+    50% {
+        visibility: visible;
+        transform: rotateX(180deg) translateY(53px);
+        backface-visibility: hidden;
+    }
+    60% {
+        visibility: visible;
+        transform: rotateX(180deg) translateY(53px);
+        backface-visibility: hidden;
+    }
+    70% {
+        visibility: visible;
+        transform: rotateX(180deg) translateY(53px);
+        backface-visibility: hidden;
+    }
+    80% {
+        visibility: visible;
+        transform: rotateX(180deg) translateY(53px);
+        backface-visibility: hidden;
+    }
+    90% {
+        visibility: visible;
+        transform: rotateX(180deg) translateY(53px);
+        backface-visibility: hidden;
+    }
+    100% {
+        visibility: visible;
+        transform: rotateX(180deg) translateY(53px);
+        backface-visibility: hidden;
+    }
+}
+/*Clases Animación*/
 /*Barra detalle Paquete*/
 /*Modal Canales*/
 .disableClick {
@@ -6389,4 +6593,28 @@ video {
 .appsCardsContainer .card {
     flex: 1;
     margin-bottom: 2rem;
+}
+@media not all and (min-resolution: 0.001dpcm) {
+    @media {
+        .stopperHeight {
+            top: 20vh;
+        }
+        .contactInputContainer select {
+            -webkit-appearance: none;
+            width: 100%;
+            background: rgba(255, 255, 255, 0);
+            position: relative;
+            top: 7px;
+            color: rgba(255, 255, 255, 1);
+            border: none;
+            border-bottom: rgba(222, 226, 230, 1) solid 1px;
+            padding-bottom: 12px;
+            padding-top: 10px;
+            padding-left: 15px;
+            margin-bottom: 20px;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            border-radius: 0;
+        }
+    }
 }

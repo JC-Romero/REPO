@@ -29,6 +29,9 @@
     margin-left: 6.2%;
 }
 
+.menu-help-robot:hover + label {
+    animation: pulse-blue 3s infinite;
+}
 .menu-help-robot + label {
     width: 54px;
     height: 54px;
@@ -259,5 +262,28 @@
     .menu-movil__help img {
         width: 36px;
         height: 36px;
+    }
+}
+
+@keyframes pulse-blue {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.3);
+    }
+    25% {
+        transform: scale(1);
+        box-shadow: 0 0 0 15px rgba(128, 211, 249, 0.6);
+    }
+    50% {
+        transform: scale(1);
+        box-shadow: 0 0 0 3px rgba(128, 211, 249, 0.2);
+    }
+    75% {
+        transform: scale(1);
+        box-shadow: 0 0 0 15px rgba(128, 211, 249, 0.3);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.3);
     }
 }

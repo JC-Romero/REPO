@@ -6,6 +6,7 @@ export function Rutas(_base){
     servicios :              `${_base}servicios`,
     paquetes:                `${_base}paquetes`,
     detallepaquete:          `${_base}detallePaquete`,
+    detalle_1:          `${_base}detallePaquete1`,
     faqs :                   `${_base}faq`,
     contratacion: `${_base}contratacion`,
     ventajas: `${_base}ventajas`,
