@@ -77,7 +77,6 @@ var showCollapsible = function (item, item2) {
         $('#' + item2).addClass('rotateChevron')
     }
 };
-
 $(document).ready(function () {
     $("#citySearch").keyup(function () {
         var x = document.getElementById('cityAutocomplete');
