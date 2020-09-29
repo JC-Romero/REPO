@@ -528,6 +528,10 @@ export class FinalizaContratacion {
             }
         });
 
+        $("#contenedorSubeArchivoINER").click(function () {
+            $("#inputFileINER").click();
+        });
+
         $("#contenedorSubeArchivoComprobante").click(function () {
             if(referenciaClase.props.banderaComprobante){
                 $("#inputFileComprobante").click();
@@ -578,7 +582,49 @@ export class FinalizaContratacion {
             }else{
                 $('#errorArchivoINE').css('display','block')
             }
-            
+        });
+
+        $("#inputFileINER").change(function (){
+            $('#errorArchivoINER').css('display','none');
+            $('#contenedorSubeArchivoINER').css('border', '1px dashed #1A76D2');
+            var propiedadesArchivo = $('#inputFileINER').prop('files');
+            var archivo = $('#inputFileINER').val();
+            if(referenciaClase.validaExtensionFile(archivo,1)){
+                //Archivo válido
+                $('#iconoSubeINER').css('display','none');
+                $("#divArchivoIdentificacionR").html('<i class="far fa-file-alt"></i>&nbsp;&nbsp;<span>'+propiedadesArchivo[0].name+'</span>');
+                $('#eliminarIdentificacionR').show();
+
+                var filIdeOfi = document.getElementById("inputFileINER")!=null ? document.getElementById("inputFileINER").files[0]:"";
+                var arrayPromesas = [];
+                arrayPromesas.push(referenciaClase.getFileB64(filIdeOfi,"filIdeOfi"));
+
+                Promise.all(arrayPromesas).then(function(result){
+                        referenciaClase.props.jsonparams.fileINE = result[0].b64;
+                        referenciaClase.props.jsonparams.extINE = referenciaClase.props.extensionINE;
+
+                        referenciaClase.props.archivosInfo[3] = {
+                            "tipoDocumento": "Identificación",
+                            "nombreArchivo": "identificacion",
+                            "archivoB64": result[0].b64,
+                            "tipoArchivo": referenciaClase.props.tipoArchivo[referenciaClase.props.extensionINE],
+                        }
+                        localStorage.setItem('TP_ARCHIVOS', JSON.stringify(referenciaClase.props.archivosInfo));
+                }).catch(err=>{
+                    console.error("Error en promesa base64:" + err);
+                });
+
+            }else{
+                $('#errorArchivoINER').css('display','block')
+            }
+        });
+
+        $('#eliminarIdentificacionR').on('click',function(event){
+            event.preventDefault();
+            $("#inputFileINER").val(null);
+            $('#iconoSubeINER').css('display','block');
+            $("#divArchivoIdentificacionR").html('Agrega tu documento adicional pdf o jpg. Máx. 5Mb.');
+            $('#eliminarIdentificacionR').hide();
         });
 
         $('#eliminarIdentificacion').on('click',function(event){

@@ -118,7 +118,7 @@ export class Paquetes {
 	cargarPaquetes(opt) {
 		console.group('Paquetes.js FUNCION cargarPaquetes('+opt+')');
 		let apuntador = this;
-		var tipopaquetes = "totalplay_paquetes_2020_09_09.json?v=28SEP0001";
+		var tipopaquetes = "totalplay_paquetes_2020_09_09.json?v=29SEP0001";
 		if (localStorage.getItem("TP_OF_OBJ_FACTIBILIDAD") != null) {
 			var datosfactibilidad = JSON.parse(localStorage.getItem("TP_OF_OBJ_FACTIBILIDAD"));
 			if (datosfactibilidad.estimulofiscal == "true") {

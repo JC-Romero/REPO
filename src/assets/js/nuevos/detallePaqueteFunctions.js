@@ -88,10 +88,12 @@ function pintarDetallePaquete(objetoPaquete){
     $('#cntPrecioPaqueteBar').html(objetoPaquete.detallePaquete.detalle.desc6ProntoPago);
 
     $('#cntNombrePaquete').html(objetoPaquete.detallePaquete.nombre);
+    $('#cntPaqueteDescripcion').html(objetoPaquete.detallePaquete.descripcion);
 
     $('#cntMegas').html('Internet de '+ objetoPaquete.detallePaquete.detalle.megas);
     $('#cntMegasDetalle').html(objetoPaquete.detallePaquete.detalle.megasDetalle);
     $('#cntTVDetalle').html(objetoPaquete.detallePaquete.detalle.canales);
+    $('#cntTVPromo').html(objetoPaquete.detallePaquete.detalle.promoCanales);
 
     
 
@@ -101,7 +103,7 @@ function pintarDetallePaquete(objetoPaquete){
     $('#cntCardMegasPaquete').html(objetoPaquete.detallePaquete.detalle.descriMegasDetalle);
     $('#cntCardMegasDetalle').html(objetoPaquete.detallePaquete.detalle.promoMegasDetalle);
 
-    $('#cntCardTelevision').html(objetoPaquete.detallePaquete.detalle.promoCanales);
+    //$('#cntCardTelevision').html(objetoPaquete.detallePaquete.detalle.promoCanales);
     $('#cntCardTelevisionPaquete').html(objetoPaquete.detallePaquete.detalle.canales);
     $('#cntCardTelevisionDetalle').html(objetoPaquete.detallePaquete.detalle.promoCanalesDetalle);
 
