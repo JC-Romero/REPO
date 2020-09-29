@@ -2232,7 +2232,7 @@ export class FinalizaContratacion {
             idOportunidad = objVenta.idOportunidad;
 
             objPaquete = JSON.parse(straPaquete);
-            nombrePaquete = objPaquete.detallePaquete.detalle.nombreComercial;
+            nombrePaquete = objPaquete.detallePaquete.nombre;
         }catch(e){}
 
         let objCliente = referenciaClase.obtenerObjetoCliente();
@@ -2267,6 +2267,13 @@ export class FinalizaContratacion {
             "paquete": nombrePaquete
         };
 
+        let direccionInstalacionFull = objDireccion.direccionCalculada.nombreCalle + " "
+        + objDireccion.direccionCalculada.numeroDireccion + " ,"
+        + objDireccion.direccionCalculada.colonia + " ,"
+        + objDireccion.direccionCalculada.delegacionMunicipio + " ,"
+        + objDireccion.direccionCalculada.estado + " ,"
+        + objDireccion.direccionCalculada.codigoPostal;
+
         console.log('PARAMETROS AGENDAMIENTOS ENVIADOS:', parametros);
 
         $.ajax({
@@ -2281,6 +2288,8 @@ export class FinalizaContratacion {
 
             var fechaInfo = referenciaClase.obtenerFechaFormato($('#datepicker').datepicker("getDate"));
             localStorage.setItem('TP_CLIENTE_FECHA_INSTALACION', fechaInfo);
+            localStorage.setItem('TP_CLIENTE_DIR_INSTALACION', direccionInstalacionFull);
+            localStorage.setItem('TP_CLIENTE_PAQUETE', nombrePaquete);
             window.location = 'finaliza.html';
 
             if(respuesta.codigo == 0){

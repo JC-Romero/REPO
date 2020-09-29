@@ -695,6 +695,12 @@ export class Contratacion {
                 }
             });
 
+        } catch (error) {
+            console.log('CANALES PREMIUM ERROR:=>', error);
+        }
+
+        try {
+            let objComplementos = JSON.parse(strComplementos);
             /* ------------------ PARRILLAS ------------------ */
             let jsonParrilla = objComplementos.television[1].adicional;
             jsonParrilla = referenciaClase.ordenarObjeto(jsonParrilla);
@@ -718,7 +724,12 @@ export class Contratacion {
                 
             });
             $('#ctnParrillas').html(htmlParrilas);
+        } catch (error) {
+            console.log('PARRILLAS ERROR:=>', error);
+        }
 
+        try {
+            let objComplementos = JSON.parse(strComplementos);
             /* ------------------ EQUIPO ADICIONAL ------------------ */
             let jsonAdicional = objComplementos.equipoAdicional;
             $.each(jsonAdicional, function (key, objetoAdicional) {
@@ -756,7 +767,7 @@ export class Contratacion {
                 }
             });
         } catch (error) {
-            console.log('ERROR:=>', error);
+            console.log('EQUIPO ERROR:=>', error);
         }
         console.groupEnd();
     }

@@ -224,49 +224,53 @@ export class Menu {
 		var divContenedor3PM = document.getElementById('section-paquetes-tripleplaymatch');
 		var divContenedor2PM = document.getElementById('section-paquetes-dobleplaymatch');
 
-    	if(window.matchMedia("(min-width: 320)").matches){
-			for (var i = 0; i < divItemsPaquetes.length; i++ ) {
-			    divItemsPaquetes[i].style.display="inline-grid";
+		try {
+			if(window.matchMedia("(min-width: 320)").matches){
+				for (var i = 0; i < divItemsPaquetes.length; i++ ) {
+					divItemsPaquetes[i].style.display="inline-grid";
+				}
+				console.log("media 320px");
+			}if(window.matchMedia("(min-width: 320)").matches){
+				for (var i = 0; i < divVelocidadPaquetes.length; i++ ) {
+					divVelocidadPaquetes[i].style.display="inline-grid";
+				}
+				
+				for (var i = 0; i < divMegasPaquetes.length; i++ ) {
+					divMegasPaquetes[i].style.display="inline-grid";
+				}
+				console.log("media 375px");
+			}else if(window.matchMedia("(min-width: 1024px)").matches){
+				//paquetes 3P
+				divContenedor3P.style.display="inline-grid";
+				//paquetes 3P match
+				divContenedor3PM.style.display="inline-grid";
+				//paquetes 2P
+				divContenedor2P.style.display="inline-grid";
+				//paquetes 2P match
+				divContenedor2PM.style.display="inline-grid";
+				console.log("media 1024px");
+			}else if(window.matchMedia("1366").matches){
+				//paquetes 3P
+				divContenedor3P.style.display="-webkit-box";
+				//paquetes 3P match
+				divContenedor3PM.style.display="-webkit-box";
+				//paquetes 2P
+				divContenedor2P.style.display="-webkit-box";
+				//paquetes 2P match
+				divContenedor2PM.style.display="-webkit-box";
+				console.log("media 1366px");
+			}else if(window.matchMedia("1700").matches){
+				divContenedor3P.style.display="-webkit-box";
+				//paquetes 3P match
+				divContenedor3PM.style.display="-webkit-box";
+				//paquetes 2P
+				divContenedor2P.style.display="-webkit-box";
+				//paquetes 2P match
+				divContenedor2PM.style.display="-webkit-box";
+				console.log("media 1700px");
 			}
-    		console.log("media 320px");
-    	}if(window.matchMedia("(min-width: 320)").matches){
-    		for (var i = 0; i < divVelocidadPaquetes.length; i++ ) {
-			    divVelocidadPaquetes[i].style.display="inline-grid";
-			}
-    		
-    		for (var i = 0; i < divMegasPaquetes.length; i++ ) {
-			    divMegasPaquetes[i].style.display="inline-grid";
-			}
-    		console.log("media 375px");
-    	}else if(window.matchMedia("(min-width: 1024px)").matches){
-    		//paquetes 3P
-    		divContenedor3P.style.display="inline-grid";
-    		//paquetes 3P match
-    		divContenedor3PM.style.display="inline-grid";
-			//paquetes 2P
-			divContenedor2P.style.display="inline-grid";
-			//paquetes 2P match
-			divContenedor2PM.style.display="inline-grid";
-		    console.log("media 1024px");
-		}else if(window.matchMedia("1366").matches){
-			//paquetes 3P
-    		divContenedor3P.style.display="-webkit-box";
-    		//paquetes 3P match
-    		divContenedor3PM.style.display="-webkit-box";
-			//paquetes 2P
-			divContenedor2P.style.display="-webkit-box";
-			//paquetes 2P match
-			divContenedor2PM.style.display="-webkit-box";
-			console.log("media 1366px");
-		}else if(window.matchMedia("1700").matches){
-			divContenedor3P.style.display="-webkit-box";
-    		//paquetes 3P match
-    		divContenedor3PM.style.display="-webkit-box";
-			//paquetes 2P
-			divContenedor2P.style.display="-webkit-box";
-			//paquetes 2P match
-			divContenedor2PM.style.display="-webkit-box";
-			console.log("media 1700px");
+		} catch (error) {
+			
 		}
     }
 }

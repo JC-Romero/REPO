@@ -486,7 +486,7 @@ export class Paquetes {
 	                        }
 	                    };
 						localStorage.setItem("TP_STR_PAQUETE_SELECCION", JSON.stringify(objetoInicial));
-						setTimeout(function(){ window.location = "detallePaquete1.html";}, 1000);
+						//setTimeout(function(){ window.location = "detallePaquete1.html";}, 1000);
 	                    //window.location = "detallePaquete1.html";
 	                    //Constantes.paqueteSeleccion = objetoInicial;
 	                }
