@@ -695,6 +695,12 @@ export class Contratacion {
                 }
             });
 
+        } catch (error) {
+            console.log('CANALES PREMIUM ERROR:=>', error);
+        }
+
+        try {
+            let objComplementos = JSON.parse(strComplementos);
             /* ------------------ PARRILLAS ------------------ */
             let jsonParrilla = objComplementos.television[1].adicional;
             jsonParrilla = referenciaClase.ordenarObjeto(jsonParrilla);
@@ -718,7 +724,12 @@ export class Contratacion {
                 
             });
             $('#ctnParrillas').html(htmlParrilas);
+        } catch (error) {
+            console.log('PARRILLAS ERROR:=>', error);
+        }
 
+        try {
+            let objComplementos = JSON.parse(strComplementos);
             /* ------------------ EQUIPO ADICIONAL ------------------ */
             let jsonAdicional = objComplementos.equipoAdicional;
             $.each(jsonAdicional, function (key, objetoAdicional) {
@@ -756,7 +767,7 @@ export class Contratacion {
                 }
             });
         } catch (error) {
-            console.log('ERROR:=>', error);
+            console.log('EQUIPO ERROR:=>', error);
         }
         console.groupEnd();
     }
@@ -1339,6 +1350,7 @@ export class Contratacion {
                     if (idHTML == 'contenedorHBO') {
                         $('#contenedorFOX').removeClass('tarjeta-promo-seleccion');
                         $('#contenedorHBOCambio').addClass('selected');
+                        $('#contenedorFOXCambio').removeClass('selected');
 
                         $('#contenedorFoxApp').show();
                         $('#contenedorHBOApp').hide();
@@ -1347,7 +1359,7 @@ export class Contratacion {
                     if (idHTML == 'contenedorFOX') {
                         $('#contenedorHBO').removeClass('tarjeta-promo-seleccion');
                         $('#contenedorFOXCambio').addClass('selected');
-
+                        $('#contenedorHBOCambio').removeClass('selected');
                         $('#contenedorHBOApp').show();
                         $('#contenedorFoxApp').hide();
                     }
@@ -2646,6 +2658,7 @@ export class Contratacion {
             });
             referenciaClase.props.totalCanalesPremium = sumaTotalCanales
             $('#totalAdicionales').html('$ ' + parseFloat(sumaTotalCanales).toFixed(2));
+            //$('#precioComplemento').html('$ ' + parseFloat(sumaTotalCanales).toFixed(2));
         } catch (e) {
             //console.log('CATCH ACTUALIZAR COSTO TOTAL', e);
         }
@@ -2764,6 +2777,8 @@ export class Contratacion {
         $('.toolPrecioTotal').html('$ ' + totalInstalacion.toFixed(0));
         $('.txtMontoTotal').html('$ ' + totalInstalacion.toFixed(0));
         $('#cargoInstalacion').html('$ ' + costoInstalacion.toFixed(0));
+
+        $('#precioComplemento').html('$ ' + total.toFixed(0));
 
         console.groupEnd();
     }
