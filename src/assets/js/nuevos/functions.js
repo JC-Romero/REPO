@@ -48,6 +48,14 @@ var hideChannels = function (e) {
     $("#modalChannels").fadeOut(250);
     event.preventDefault();
 };
+var showChannelsOver = function (e) {
+    $("#channelsOverMdoal").fadeIn(250);
+    event.preventDefault();
+};
+var hideChannelsOver = function (e) {
+    $("#channelsOverMdoal").fadeOut(250);
+    event.preventDefault();
+};
 var showFilters = function (item, e) {
     if ($('#' + item).is(":visible")) {
         $('#' + item).fadeOut(300);

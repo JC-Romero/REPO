@@ -33,9 +33,9 @@
     {{> headerindex}}
     {{> body}}
     {{> footerindex}}
-    <!--<a href="#" class="generalButton modalButton" onclick="showChannels(event);">Modal
-        Canales</a>-->
-    <!--<div id="modalChannels" class="modalChannelsContainer">
+    <a href="#" class="generalButton modalButton" onclick="showChannels(event);">Modal
+        Canales</a>
+    <div id="modalChannels" class="modalChannelsContainer">
         <div class="closeButton" onclick="hideChannels(event);">
             <div class="closeButtonIcon"></div>
         </div>
@@ -73,12 +73,12 @@
                         <hr>
                         <div class="row filterToggle">
                             <div class="col-12">
-                                <p class="filterToggleParagraph closeIconFilters"
-                                    onclick="showFilters('filtersContent', event)"><a href="#">Filtros</a></p>
+                                <p class="filterToggleParagraph" onclick="showFilters('filtersContent', event)"><a
+                                        href="#">Filtros</a></p>
                             </div>
                         </div>
                         <hr class="marginMobile">
-                        <div id="filtersContent" class="row showFilters">
+                        <div id="filtersContent" class="row showFilters" style="display: none;">
                             <div class="col-12">
                                 <div class="row filterClass">
                                     <div class="col-12">
@@ -164,16 +164,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <hr>
-                                <div class="row buttonRow">
-                                    <div class="col-6 col-sm-6 col-md-12 col-lg-12 col-xl-12">
-                                        <a type="submit" class="generalButton"
-                                            onclick="showFilters('filtersContent', event);">Cancelar</a>
-                                    </div>
-                                    <div class="col-6 col-sm-6 col-md-12 col-lg-12 col-xl-12">
-                                        <input type="submit" class="generalButton" value="Filtrar">
-                                    </div>
-                                </div>
                             </div>
                             <hr class="marginMobile">
                         </div>
@@ -181,6 +171,7 @@
                     <div class="col-12 col-sm-12 col-md-8 col-lg-10 col-xl-10 channelContainer">
                         <div class="row">
                             <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
+                                <!--onclick="showChannelsOver(event);"-->
                                 <div class="row">
                                     <div class="col-12 mx-auto channelItem">
                                         <div class="row channelItemImage">
@@ -197,6 +188,7 @@
                                 </div>
                             </div>
                             <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
+                                <!--onclick="showChannelsOver(event);"-->
                                 <div class="row">
                                     <div class="col-12 mx-auto channelItem">
                                         <div class="row channelItemImage">
@@ -213,6 +205,7 @@
                                 </div>
                             </div>
                             <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
+                                <!--onclick="showChannelsOver(event);"-->
                                 <div class="row">
                                     <div class="col-12 mx-auto channelItem">
                                         <div class="row channelItemImage">
@@ -225,71 +218,6 @@
                                                 <p>000</p>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                                <div class="row">
-                                    <div class="col-12 mx-auto channelItem">
-                                        <div class="row channelItemImage">
-                                            <div class="col-12">
-                                                <img src="../assets/img/nuevos/canales/logoCanal.png">
-                                            </div>
-                                        </div>
-                                        <div class="row channelItemName">
-                                            <div class="col-12">
-                                                <p>000</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                                <div class="row">
-                                    <div class="col-12 mx-auto channelItem">
-                                        <div class="row channelItemImage">
-                                            <div class="col-12">
-                                                <img src="../assets/img/nuevos/canales/logoCanal.png">
-                                            </div>
-                                        </div>
-                                        <div class="row channelItemName">
-                                            <div class="col-12">
-                                                <p>000</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                                <div class="row">
-                                    <div class="col-12 mx-auto channelItem">
-                                        <div class="row channelItemImage">
-                                            <div class="col-12">
-                                                <img src="../assets/img/nuevos/canales/logoCanal.png">
-                                            </div>
-                                        </div>
-                                        <div class="row channelItemName">
-                                            <div class="col-12">
-                                                <p>000</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 mx-auto channelDescriptionRow">
-                                <div class="closeChannelBanner"></div>
-                                <div class="row align-items-center">
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 channelDescriptionCol">
-                                        <h1 class="normalrewind">101 - Azteca Uno</h1>
-                                        <p>Vive la diversión, el entretenimiento, el mundo del espectáculo, los hechos
-                                            de la noticia, la libertad del análisis político y la pasión del deporte.
-                                        </p>
-                                        <span>No te pierdas ningún episodio, este canal se graba automáticamente.</span>
-                                    </div>
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 channelImageCol">
-                                        <img src="../assets/img/nuevos/canales/img_canales.png">
                                     </div>
                                 </div>
                             </div>
@@ -416,7 +344,30 @@
                 </div>
             </div>
         </div>
-    </div>-->
+        <!--<div id="channelsOverMdoal" class="row overModalContainer align-items-center">
+            <div class="col-10 col-sm-10 col-md-8 col-lg-6 col-xl-4 mx-auto channelDescriptionRow">
+                <div class="closeChannelBanner" onclick="hideChannelsOver();"></div>
+                <div class="row align-items-center">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 channelImageCol">
+                        <img src="../assets/img/nuevos/canales/img_canales.png">
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 channelDescriptionCol">
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                <img src="../assets/img/nuevos/canales/logoCanal.png">
+                                <h1 class="normalrewind">101 - Azteca Uno</h1>
+                                <h1 class="rewind">101 - Azteca Uno</h1>
+                                <p>Vive la diversión, el entretenimiento, el mundo del espectáculo, los hechos
+                                    de la noticia, la libertad del análisis político y la pasión del deporte.
+                                </p>
+                                <span>No te pierdas ningún episodio, este canal se graba automáticamente.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+    </div>
     <div id="mobile" class="mobileMenuContainer d-md-none">
         <div class="mobileMenu">
             <div class="row mobileHeader">

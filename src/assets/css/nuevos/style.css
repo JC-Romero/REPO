@@ -5620,8 +5620,8 @@ video {
     font-size: 32px;
     position: absolute;
     height: auto;
-    top: 4px;
-    right: 24px;
+    top: 0;
+    right: 5px;
     cursor: pointer;
     height: auto;
     z-index: 1000;
@@ -5644,6 +5644,10 @@ video {
     font-size: 36px;
     color: rgba(59, 69, 89, 1);
     margin-bottom: 1rem;
+}
+.modalChannelsContainer .channelsTopBar .channelsTopBarToggle div {
+    padding-right: 0;
+    padding-left: 0;
 }
 .modalChannelsContainer .channelsTopBar .channelsTopBarToggle ul {
     list-style: none;
@@ -5757,7 +5761,6 @@ video {
     margin-bottom: 9px;
 }
 .modalChannelsContainer .filtersContainer .filterClass .filterItem input {
-    margin-top: 0 !important;
 }
 .modalChannelsContainer .filtersContainer .filterClass .automaticLabel::before,
 .modalChannelsContainer .filtersContainer .filterClass .manualLabel::before {
@@ -5788,7 +5791,7 @@ video {
 .modalChannelsContainer .filtersContainer .channelContainer .channelItem {
     text-align: center;
     margin-bottom: 25px;
-    cursor: pointer;
+    /*cursor: pointer;*/
 }
 .modalChannelsContainer .filtersContainer .channelContainer .channelItem .channelItemImage img {
     background: rgba(250, 250, 250, 1);
@@ -5799,13 +5802,13 @@ video {
     width: 100%;
     max-width: 136px;
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
-    filter: grayscale(100%);
+    /*filter: grayscale(100%);*/
     transition: 300ms;
 }
-.modalChannelsContainer .filtersContainer .channelContainer .channelItem:hover .channelItemImage img {
+/*.modalChannelsContainer .filtersContainer .channelContainer .channelItem:hover .channelItemImage img {
     filter: grayscale(0%);
     transition: 300ms;
-}
+}*/
 .modalChannelsContainer .filtersContainer .channelContainer .channelItem .channelItemName {
     margin-top: 6px;
 }
@@ -5845,37 +5848,62 @@ video {
     padding-bottom: 0 !important;
     width: 100%;
 }
+.overModalContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    width: calc(100% + 30px);
+    height: 100%;
+    z-index: 10001;
+    padding-top: 20vh;
+    padding-bottom: 100vh;
+    overflow: hidden;
+    display: none;
+}
 .channelDescriptionRow {
-    background: rgba(40, 49, 65, 1);
+    background: rgba(250, 250, 250, 1);
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
-    position: relative;
-    top: -3rem;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
+    padding-left: 0;
     padding-right: 0;
 }
 .channelDescriptionRow .channelDescriptionCol {
     padding-bottom: 20px;
     padding-top: 20px;
+    text-align: center;
+    position: relative;
+    top: -6vh;
+}
+.channelDescriptionRow .channelDescriptionCol img {
+    margin-bottom: 32px;
+    -webkit-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
+}
+.channelDescriptionRow .channelDescriptionCol .row div {
+    padding-left: 30px;
+    padding-right: 30px;
 }
 .channelDescriptionRow .channelDescriptionCol h1 {
-    color: rgba(250, 250, 250, 1);
+    color: rgba(59, 69, 89, 1);
     font-weight: 300;
     font-size: 20px;
     line-height: 24px;
     margin-bottom: 13px;
 }
 .channelDescriptionRow .channelDescriptionCol p {
-    color: rgba(250, 250, 250, 1);
+    color: rgba(59, 69, 89, 1);
     font-weight: 300;
     font-size: 16px;
     line-height: 26px;
-    margin-bottom: 40px;
+    margin-bottom: 24px;
 }
 .channelDescriptionRow .channelDescriptionCol span {
-    color: rgba(253, 204, 0, 1);
-    font-weight: 300;
+    color: rgba(59, 69, 89, 1);
+    font-weight: 700;
     font-size: 16px;
     line-height: 26px;
 }
@@ -5921,14 +5949,13 @@ video {
 }
 .channelDescriptionRow .channelImageCol img {
     width: 100%;
-    height: 100%;
-    min-height: 354px;
+    height: auto;
+    -webkit-border-top-left-radius: 4px;
     -webkit-border-top-right-radius: 4px;
-    -webkit-border-bottom-right-radius: 4px;
+    -moz-border-radius-topleft: 4px;
     -moz-border-radius-topright: 4px;
-    -moz-border-radius-bottomright: 4px;
+    border-top-left-radius: 4px;
     border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
 }
 .channelDescriptionRow .closeChannelBanner {
     width: 24px;
@@ -6389,6 +6416,15 @@ video {
 }
 .videosApp .videosAppLinks .videosAppItem a img {
     width: 100%;
+}
+.sliderAppContainer {
+    position: relative;
+}
+.sliderAppContainer .backgroundSliderContainer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    position: absolute;
+    height: 100%;
 }
 /*Landing App*/
 /*Clases Animación*/
