@@ -428,7 +428,7 @@ header .mainNav .mobileCart a img {
 /*Main Video Banner*/
 .mainVideoBanner {
     position: relative;
-    background: url(../../../assets/img/nuevos/banner-home.jpg) top center no-repeat;
+    background: url(../../../assets/img/nuevos/banner-home2.png) top center no-repeat;
     background-size: cover;
     margin-bottom: 3px;
     height: 90vh;
@@ -459,7 +459,6 @@ header .mainNav .mobileCart a img {
     display: block;
     z-index: 9;
     left: 0;
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#16161b+0,16161b+15,16161b+15,16161b+100&1+1,1+15,0+100 */
     background: -moz-linear-gradient(
         left,
         rgba(22, 22, 27, 1) 0%,
@@ -467,7 +466,6 @@ header .mainNav .mobileCart a img {
         rgba(22, 22, 27, 1) 15%,
         rgba(22, 22, 27, 0) 100%
     );
-    /* FF3.6-15 */
     background: -webkit-linear-gradient(
         left,
         rgba(22, 22, 27, 1) 0%,
@@ -475,7 +473,6 @@ header .mainNav .mobileCart a img {
         rgba(22, 22, 27, 1) 15%,
         rgba(22, 22, 27, 0) 100%
     );
-    /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(
         to right,
         rgba(22, 22, 27, 1) 0%,
@@ -483,9 +480,7 @@ header .mainNav .mobileCart a img {
         rgba(22, 22, 27, 1) 15%,
         rgba(22, 22, 27, 0) 100%
     );
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#16161b', endColorstr='#0016161b', GradientType=1);
-    /* IE6-9 */
 }
 
 .bannersContainers {
@@ -3640,7 +3635,7 @@ footer .legalAdvice p {
 }
 
 .slick-next {
-    right: 0;
+    right: -10px;
     top: 50%;
 }
 
@@ -3809,7 +3804,6 @@ footer .legalAdvice p {
     color: rgba(239, 108, 0, 1);
     font-size: 15px;
 }
-
 .landingPackageResume .landingPackagePrice .priceContainer {
     background: rgba(250, 250, 250, 1);
     padding-top: 34px;
@@ -3862,6 +3856,23 @@ footer .legalAdvice p {
     position: relative;
 }
 
+.resumeAppItem.unboxPackage::before {
+    content: url("../../img/nuevos/amazon-prime-logoMainSmall.png");
+    float: left;
+    margin-top: 6px;
+    margin-left: -62px;
+    margin-right: 0;
+}
+.resumeAppItem.matchPackage::before {
+    content: url("../../img/nuevos/1200px-Netflix_2015_logoSmall.png");
+    float: left;
+    margin-top: 6px;
+    margin-left: -55px;
+    margin-right: 0;
+}
+.resumeAppItem p {
+    display: inline;
+}
 .wifiSingle::before {
     content: "\e809";
     font-family: "totalplayicons";
@@ -3977,6 +3988,7 @@ footer .legalAdvice p {
     background-color: rgba(250, 250, 250, 1) !important;
     text-align: center !important;
     color: rgba(59, 69, 89, 1);
+    border: none;
 }
 
 .blueGradientCard {
@@ -3993,6 +4005,7 @@ footer .legalAdvice p {
     /* IE6-9 */
     color: rgba(255, 255, 255, 1) !important;
     text-align: center !important;
+    border: none;
 }
 
 .cardsRowLandingPackages .blueGradientCard .cardBadgeContainer .cardBadge p {
@@ -4003,10 +4016,12 @@ footer .legalAdvice p {
     background-color: rgba(30, 30, 40, 1) !important;
     color: rgba(255, 255, 255, 1) !important;
     text-align: center !important;
+    border: none;
 }
 
 .deepBlueCard img {
-    width: 60%;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .purpleGradientCard {
@@ -4023,6 +4038,7 @@ footer .legalAdvice p {
     /* IE6-9 */
     color: rgba(255, 255, 255, 1) !important;
     text-align: center !important;
+    border: none;
 }
 
 .pinkGradientCard {
@@ -4039,6 +4055,7 @@ footer .legalAdvice p {
     /* IE6-9 */
     color: rgba(255, 255, 255, 1) !important;
     text-align: center !important;
+    border: none;
 }
 
 .cardsRowLandingPackages .pinkGradientCard .cardBadgeContainer .cardBadge p {
@@ -4059,11 +4076,13 @@ footer .legalAdvice p {
     /* IE6-9 */
     color: rgba(255, 255, 255, 1) !important;
     text-align: center !important;
+    border: none;
 }
 
 .secondWhiteCard {
     background-color: rgba(250, 250, 250, 1) !important;
     text-align: center !important;
+    border: none;
 }
 
 .landingPackagesContainer .titlePackages h1 {
@@ -4073,13 +4092,47 @@ footer .legalAdvice p {
 }
 
 .landingFullWidthBanner {
+    background: rgba(246, 246, 246, 1);
     text-align: center;
-    padding-bottom: 70px;
-    padding-top: 18px;
+    padding-bottom: 2rem;
 }
 
 .landingFullWidthBanner .landingBannerContainer {
     background: rgba(250, 250, 250, 1);
+}
+.landingFullWidthBanner.unboxBanner .landingBannerContainer {
+    background: rgb(125, 185, 232);
+    background: -moz-linear-gradient(left, rgba(125, 185, 232, 1) 0%, rgba(89, 203, 232, 1) 100%);
+    background: -webkit-linear-gradient(left, rgba(125, 185, 232, 1) 0%, rgba(89, 203, 232, 1) 100%);
+    background: linear-gradient(to right, rgba(125, 185, 232, 1) 0%, rgba(89, 203, 232, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#59cbe8',GradientType=1 );
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    color: rgba(245, 245, 245, 1);
+}
+.landingFullWidthBanner.unboxBanner .landingBannerContainer h1 {
+    color: rgba(245, 245, 245, 1);
+}
+.landingFullWidthBanner.unboxBanner .landingBannerContainer p {
+    color: rgba(245, 245, 245, 1);
+}
+.landingFullWidthBanner.matchBanner .landingBannerContainer {
+    background: rgb(228, 0, 43);
+    background: -moz-linear-gradient(45deg, rgba(228, 0, 43, 0.8) 0%, rgba(224, 45, 29, 0.8) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(228, 0, 43, 0.8) 0%, rgba(224, 45, 29, 0.8) 100%);
+    background: linear-gradient(45deg, rgba(228, 0, 43, 0.8) 0%, rgba(224, 45, 29, 0.8) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4002b', endColorstr='#e02d1d',GradientType=1 );
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    color: rgba(245, 245, 245, 1);
+}
+.landingFullWidthBanner.matchBanner .landingBannerContainer h1 {
+    color: rgba(245, 245, 245, 1);
+}
+.landingFullWidthBanner.matchBanner .landingBannerContainer p {
+    color: rgba(245, 245, 245, 1);
 }
 
 .landingFullWidthBanner .landingBannerContainer {
@@ -6288,6 +6341,7 @@ video {
 .mainSliderApp {
     padding-top: 120px;
     padding-bottom: 45px;
+    height: 100vh;
 }
 .mainSliderApp .sliderAppContainer .sliderAppTexts h1 {
     font-size: 40px;
@@ -6417,14 +6471,255 @@ video {
 .videosApp .videosAppLinks .videosAppItem a img {
     width: 100%;
 }
-.sliderAppContainer {
+.sliderAppPayments {
+    position: relative;
+    height: 100vh;
+}
+.sliderAppPayments .progressBarContainer {
+    width: 140px;
+}
+.sliderAppPayments .progressBarContainer div {
+    width: 20%;
+    margin-right: 3%;
+}
+.sliderAppPayments .progressBarContainer div span.progressBar {
+    background-color: rgba(224, 224, 224, 1);
+}
+.sliderAppPayments .backgroundSliderPaymentsContainer {
+    position: absolute;
+    height: 100vh;
+    top: -36.3vh;
+    left: 0;
+    width: calc(100% + 30px);
+    overflow: hidden;
+}
+.sliderAppPayments .backgroundSliderPaymentsContainer .backImageFirstAppSlider {
+    position: relative;
+    left: 53vw;
+    top: 0;
+    width: 30vw;
+    height: auto;
+    transform: rotateZ(180deg);
+    transform-origin: top left;
+}
+.sliderAppPayments .backgroundSliderPaymentsContainer .backImageSecondAppSlider {
+    position: relative;
+    left: 53vw;
+    top: -25vh;
+    width: 40vw;
+    height: auto;
+    transform: rotateZ(180deg);
+    transform-origin: bottom right;
+}
+.rotateDown {
+    animation: rotateDown 1s forwards;
+}
+.rotateUp {
+    animation: rotateUp 1s forwards;
+}
+.appCards {
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+.firstAppCard,
+.secondAppCard {
+    border: none;
+    text-align: center;
+    -webkit-border-radius: 24px;
+    -moz-border-radius: 24px;
+    border-radius: 24px;
     position: relative;
 }
-.sliderAppContainer .backgroundSliderContainer {
-    padding-top: 40px;
-    padding-bottom: 40px;
+.overModalCard {
+    height: 96%;
+    width: 95%;
+    padding-top: 50%;
+    backdrop-filter: blur(4.4px);
     position: absolute;
-    height: 100%;
+    -webkit-border-radius: 24px;
+    -moz-border-radius: 24px;
+    border-radius: 24px;
+    border: none;
+    display: none;
+}
+.overModalCard .innerModalContent {
+    background: rgba(255, 255, 255, 1);
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    border-radius: 16px;
+    padding: 24px;
+}
+.overModalCard .innerModalContent .closeIcon {
+    width: 7px;
+    height: 7px;
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    cursor: pointer;
+}
+.overModalCard .innerModalContent .closeIcon::before {
+    font-family: "totalplayicons";
+    content: "\e80d";
+}
+.overModalCard .innerModalContent h1 {
+    color: rgba(75, 87, 111, 1);
+    font-weight: 700;
+    font-size: 24px;
+}
+.overModalCard .innerModalContent p {
+    color: rgba(75, 87, 111, 1);
+    font-weight: 300;
+    font-size: 21px;
+}
+.overModalCard .innerModalContent h1::after {
+    content: "_";
+    font-weight: 700;
+    font-size: 32px;
+    display: block;
+    position: relative;
+    top: -15px;
+}
+.firstCardAppContainer .overModalCard {
+    background: rgb(240, 78, 152);
+    background: -moz-linear-gradient(top, rgba(240, 78, 152, 0.5) 0%, rgba(130, 70, 175, 0.5) 100%);
+    background: -webkit-linear-gradient(top, rgba(240, 78, 152, 0.5) 0%, rgba(130, 70, 175, 0.5) 100%);
+    background: linear-gradient(to bottom, rgba(240, 78, 152, 0.5) 0%, rgba(130, 70, 175, 0.5) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f04e98', endColorstr='#8246af',GradientType=0 );
+}
+.firstAppCard h5,
+.secondAppCard h5 {
+    color: rgba(245, 245, 245, 1);
+    font-size: 36px;
+    font-weight: 500;
+    letter-spacing: 0;
+    margin-bottom: 25px;
+}
+.firstAppCard p,
+.secondAppCard p {
+    background: rgba(253, 253, 253, 0.2);
+    padding: 11px 12px;
+    font-size: 21px;
+    display: inline-block;
+    color: rgba(245, 245, 245, 1);
+    -webkit-border-radius: 22px;
+    -moz-border-radius: 22px;
+    border-radius: 22px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 18px;
+    cursor: pointer;
+}
+.firstAppCard p span::before,
+.secondAppCard p span::before {
+    font-family: "totalplayicons";
+    content: "\e812";
+    font-size: 21px;
+    margin-right: 10px;
+}
+.firstAppCard img,
+.secondAppCard img {
+    max-width: 335px;
+    margin: 0 auto;
+}
+.firstAppCard {
+    background: rgb(240, 78, 152);
+    background: -moz-linear-gradient(top, rgba(240, 78, 152, 1) 0%, rgba(130, 70, 175, 1) 100%);
+    background: -webkit-linear-gradient(top, rgba(240, 78, 152, 1) 0%, rgba(130, 70, 175, 1) 100%);
+    background: linear-gradient(to bottom, rgba(240, 78, 152, 1) 0%, rgba(130, 70, 175, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f04e98', endColorstr='#8246af',GradientType=0 );
+}
+.secondAppCard {
+    background: rgb(240, 78, 152);
+    background: -moz-linear-gradient(top, rgba(240, 78, 152, 1) 0%, rgba(255, 191, 63, 1) 100%);
+    background: -webkit-linear-gradient(top, rgba(240, 78, 152, 1) 0%, rgba(255, 191, 63, 1) 100%);
+    background: linear-gradient(to bottom, rgba(240, 78, 152, 1) 0%, rgba(255, 191, 63, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f04e98', endColorstr='#ffbf3f',GradientType=0 );
+}
+.appImageDownload {
+    text-align: center;
+    padding-top: 56px;
+    padding-bottom: 56px;
+}
+.appImageDownload .appDownloadImageContainer img {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 908px;
+}
+.appImageDownload .appDownloadTitles h1 {
+    font-size: 48px;
+    line-height: 62px;
+    color: rgba(59, 69, 89, 1);
+    margin-bottom: 16px;
+}
+.appImageDownload .appDownloadTitles p {
+    font-size: 24px;
+    color: rgba(59, 69, 89, 1);
+    margin-bottom: 24px;
+}
+.appImageDownload .downloadAppBadges a::after {
+    display: none;
+}
+.appImageDownload .downloadAppBadges a img {
+    margin-bottom: 2rem;
+}
+.scrollerContainer {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    height: 3000px;
+}
+.scrollerContainer .scrollerCarousel {
+    width: calc(100% + 30px);
+    left: 0;
+    padding-right: 15px;
+    padding-left: 15px;
+    opacity: 0;
+}
+.scrollerContainer .scrollerCarousel.showCarousel {
+    animation: opacityShow 300ms forwards;
+}
+.scrollerContainer .scrollerCarousel.hideCarousel {
+    animation: opacityHide 300ms forwards;
+}
+.scrollerContainer .scrollerCarousel .scrollerImage {
+    text-align: center;
+}
+.scrollerContainer .scrollerCarousel .scrollerMessage h1 {
+    font-weight: 500;
+    font-size: 48px;
+    color: rgba(59, 69, 89, 1);
+    line-height: 62.4px;
+}
+.scrollerContainer .scrollerCarousel .scrollerMessage p {
+    font-weight: 300;
+    font-size: 24px;
+    color: rgba(59, 69, 89, 1);
+    line-height: 36px;
+    color: rgba(117, 120, 123, 1);
+}
+#secondScrollerImage,
+#thirdScrollerImage,
+#secondScrollerMessage,
+#thirdScrollerMessage {
+    display: none;
+}
+.fixedScrollerCarousel {
+    position: fixed;
+    top: 25vh;
+}
+.unfixedScrollerCarousel {
+    position: absolute;
+    opacity: 1;
+    top: 2300px;
+    width: calc(100% + 30px);
+    left: 0;
+}
+.hideText {
+    opacity: 0;
+    display: none;
+}
+.showText {
+    display: block !important;
+    opacity: 1;
 }
 /*Landing App*/
 /*Clases Animación*/
@@ -6528,6 +6823,38 @@ video {
         opacity: 0;
     }
 }
+@keyframes rotateDown {
+    0% {
+        transform: rotateZ(180deg);
+    }
+    100% {
+        transform: rotateZ(0deg);
+    }
+}
+@keyframes rotateUp {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(180deg);
+    }
+}
+@keyframes opacityShow {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes opacityHide {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
 @keyframes flipOverText {
     0% {
         visibility: hidden;
@@ -6626,7 +6953,7 @@ video {
     display: flex;
     flex-direction: column;
 }
-.appsCardsContainer .card {
+.card {
     flex: 1;
     margin-bottom: 2rem;
 }

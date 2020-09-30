@@ -2,4 +2,68 @@
 layout: layoutContratacion
 ---
 {{> finaliza }}
+<style>
+    #footer {
+        display: none
+    }
 
+    .terms {
+        width: 100%;
+    }
+
+    .termsContainer {
+        width: 80%;
+        margin: 0 auto;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .termsContainer hr {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .termsContainer p {
+        font-family: Montserrat-Regular;
+        font-weight: 400;
+        font-size: 11px;
+        color: rgba(117, 120, 123, 1);
+    }
+
+    .termsContainer span {
+        font-family: Montserrat-bold;
+        line-height: 1.5rem;
+        color: rgba(117, 120, 123, 1);
+    }
+
+    .termsContainer p:nth-child(3) {
+        margin-bottom: 13px;
+    }
+
+    .termsContainer p:nth-child(4) {
+        margin-bottom: 2rem;
+    }
+
+    @media (max-width: 767.98px) {
+        .termsContainer {
+            width: 100%;
+        }
+    }
+</style>
+<div class="terms">
+    <div class="termsContainer">
+        <hr>
+        <p><span>Términos y condiciones</span></p>
+        <p>Consulta terminos y condiciones de los paquetes, características, servicios adicionales y docuemntos
+            relacionados aquí.</p>
+        <p>Para navegar a la máxima velocidad de descarga contratada, se recomienda conectarse vía alámbrica utilizando
+            un cable ethernet. Las velocidades de transferencia de internet se ofrecen hasta la velocidad indicada y
+            pueden variar debido al tráfico y transferencia de datos fuera de la red de totalplay. Las velocidades de
+            carga varían en los planes debido a que el servicio de internet es asimétrico: para planes tripleplay y
+            dobleplay inicial 1mbps, esencial 3mbps, básico 6mbps, práctico 8mbps, familiar 10mbps, total 20mbps,
+            premium 30mbps y sin límite 50mbps.</p>
+    </div>
+</div>
