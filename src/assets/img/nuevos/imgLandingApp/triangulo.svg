@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 545 497" style="enable-background:new 0 0 545 497;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:url(#triangulo_1_);fill-opacity:0.8;}
+</style>
+<linearGradient id="triangulo_1_" gradientUnits="userSpaceOnUse" x1="125.6392" y1="287.4662" x2="124.8899" y2="286.5454" gradientTransform="matrix(453.5525 -174.1025 -189.2309 -492.9633 -2264.468 163462.5)">
+	<stop  offset="0" style="stop-color:#F04E98"/>
+	<stop  offset="1" style="stop-color:#FFBF3F"/>
+</linearGradient>
+<path id="triangulo" class="st0" d="M1.6,24.7l176.6,460.1c3.5,9.1,13.7,13.6,22.7,10.1c2.8-1.1,5.2-2.8,7.1-5L540.5,98.3
+	c6.3-7.4,5.4-18.5-2-24.8c-2.6-2.2-5.7-3.6-9-4L20.4,0.9C10.8-0.4,1.9,6.4,0.6,16C0.2,18.9,0.6,21.9,1.6,24.7z"/>
+</svg>

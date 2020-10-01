@@ -627,6 +627,10 @@
         font-size: 18px;
         padding: 10px 15px !important;
     }
+    .overModalCard {
+        height: 95.6%;
+        width: 93.4%;
+    }
 }
 
 @media (max-width: 767.98px) and (orientation: landscape) {
@@ -815,6 +819,10 @@
         position: relative;
         margin: 0 auto;
         bottom: -15px;
+    }
+    .overModalCard {
+        height: 95.7%;
+        width: 93.4%;
     }
 }
 
