@@ -526,21 +526,6 @@
     .modalChannelsContainer .filtersContainer .marginMobile {
         margin-bottom: 1rem;
     }
-    .channelDescriptionRow .channelImageCol img {
-        -webkit-border-bottom-right-radius: 4px;
-        -webkit-border-bottom-left-radius: 4px;
-        -moz-border-radius-bottomright: 4px;
-        -moz-border-radius-bottomleft: 4px;
-        border-bottom-right-radius: 4px;
-        border-bottom-left-radius: 4px;
-        -webkit-border-top-right-radius: 0;
-        -webkit-border-bottom-right-radius: 0;
-        -moz-border-radius-topright: 0;
-        -moz-border-radius-bottomright: 0;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-
     .extraBanners .extraBannerChannel .extraBannerChannelCol .extraBannerLogo img {
         margin-top: 0;
     }
@@ -641,6 +626,10 @@
     .floatingBar .barButtons a {
         font-size: 18px;
         padding: 10px 15px !important;
+    }
+    .overModalCard {
+        height: 95.6%;
+        width: 93.4%;
     }
 }
 
@@ -830,6 +819,10 @@
         position: relative;
         margin: 0 auto;
         bottom: -15px;
+    }
+    .overModalCard {
+        height: 95.7%;
+        width: 93.4%;
     }
 }
 
