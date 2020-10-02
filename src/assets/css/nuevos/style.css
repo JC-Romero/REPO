@@ -6981,3 +6981,7 @@ video {
         }
     }
 }
+/*MODAL CANALES AKHM*/
+.parrillaSeleccionada {
+    border: solid rgba(26, 118, 210, 1) 2px;
+}
