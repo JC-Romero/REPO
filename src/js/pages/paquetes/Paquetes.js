@@ -255,7 +255,17 @@ export class Paquetes {
 			console.log("*************"+opt+"**************++");
 			var canalesDescripcion = (objPaquete.detalle.canales != undefined)? objPaquete.detalle.canales: '';
 			if (opt == "home") {
+				var nombrePaq = objPaquete.nombre;
+				// Add Arthur
+				
+				var incluido = false;
+				if(nombrePaq.includes("UNBOX") || nombrePaq.includes("MATCH")){
+					var arrPaq = nombrePaq.split(" ");
 
+					nombrePaq = arrPaq[0].charAt(0).toUpperCase() + arrPaq[0].slice(1).toLowerCase();
+					nombrePaq = nombrePaq + " " + arrPaq[1];
+					incluido = true;
+				}
 				plantillaHTML += 
 				'<div class="col-12 col-sm-6 mx-sm-auto col-md-6 col-lg-4 col-xl-3">'+
                 	'<div class="row">'+
@@ -263,7 +273,7 @@ export class Paquetes {
 	                        'onclick="showBootstrapModalFirst(\'installLocation\');">'+
 	                        '<div class="packageInfoContainer" id="'+objPaquete.id+'">'+
 	                            '<div class="titlePackage">'+
-	                                '<p>'+objPaquete.nombre+'</p>'+
+	                                '<p>'+nombrePaq+'</p>'+ // objPaquete.nombre
 	                            '</div>'+
 	                            '<div class="velocityPackage">'+
 	                                '<p>'+objPaquete.detalle.megas+'</p>'+
@@ -276,11 +286,21 @@ export class Paquetes {
 	                            '<hr>'+
 	                            '<div class="imagePackage">'+
 	                                '<img src="'+imagenPaquete+'" alt="Image Paquete">'+
-	                            '</div>'+
-	                            '<div class="descriptionApp">'+
+								'</div>';
+
+								if(incluido){
+									plantillaHTML = plantillaHTML+ '<div class="descriptionApp">'+
+										'<p><span> incluido </span></p>'+
+									'</div>';
+								}else{
+									plantillaHTML = plantillaHTML+ '<div class="descriptionApp">'+
+										'<p><span> &nbsp; </span></p>'+
+									'</div>';
+								}
+	                            
+	                            plantillaHTML = plantillaHTML+'<div class="descriptionApp">'+
 	                                '<p>'+descriptionApp+'</p>'+
 	                            '</div>'+
-	                            
 	                            '<div class="packagePrice">'+
 	                                '<p><a >Desde: <span>$ '+clase.formatoMonedad(objPaquete.precioLista, 0, ".", ",")+' al mes</span></a></p>'+
 	                            '</div>'+

@@ -115,11 +115,13 @@ export class FinalizaContratacion {
 
     funcionQuery(x) {     
         if (x.matches) { // If media query matches
-            $('#btnDatosFisica').html('P. F&Iacute;SICA');
-            $('#btnDatosMoral').html('P. MORAL'); 
+            $('#btnDatosFisica').html('P. F&iacute;sica');
+            $('#btnDatosMoral').html('P. Moral'); 
         } else {
-            $('#btnDatosFisica').html('PERSONA F&Iacute;SICA');
-            $('#btnDatosMoral').html('PERSONA MORAL');
+            /*$('#btnDatosFisica').html('PERSONA F&Iacute;SICA');
+            $('#btnDatosMoral').html('PERSONA MORAL');*/
+            $('#btnDatosFisica').html('Persona F&iacute;sica');
+            $('#btnDatosMoral').html('Persona Moral');
         }
     }
 
@@ -1121,7 +1123,8 @@ export class FinalizaContratacion {
                 }
 
                 if(idCampo == 'facturacionCalle'){
-                    if(!referenciaClase.validaCalle(dirCalleTarjeta)){
+                    //if(!referenciaClase.validaCalle(dirCalleTarjeta)){
+                    if(!referenciaClase.validaDir(dirCalleTarjeta)){
                         $("#errorCalleTarjeta").css("display","block");
                         $("#errorCalleTarjeta").html("*Campo no v&aacute;lido");
                         validacion = false;
