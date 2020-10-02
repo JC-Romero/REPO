@@ -40,7 +40,7 @@ var closeMenu = function (e) {
     changeIconOpen();
     event.preventDefault();
 };
-var showChannels = function (e) {
+/*var showChannels = function (e) {
     $("#modalChannels").fadeIn(250);
     event.preventDefault();
 };
@@ -65,7 +65,7 @@ var showFilters = function (item, e) {
         $('.filterToggleParagraph').addClass('closeIconFilters');
     }
     event.preventDefault();
-};
+};*/
 var showModal = function (item) {
     $("#" + item).fadeToggle(250);
 };
