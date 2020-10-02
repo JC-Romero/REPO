@@ -3992,17 +3992,11 @@ footer .legalAdvice p {
 }
 
 .blueGradientCard {
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#5caadd+0,636ddb+100 */
     background: rgb(92, 170, 221);
-    /* Old browsers */
     background: -moz-linear-gradient(top, rgba(92, 170, 221, 1) 0%, rgba(99, 109, 219, 1) 100%) !important;
-    /* FF3.6-15 */
     background: -webkit-linear-gradient(top, rgba(92, 170, 221, 1) 0%, rgba(99, 109, 219, 1) 100%) !important;
-    /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to bottom, rgba(92, 170, 221, 1) 0%, rgba(99, 109, 219, 1) 100%) !important;
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5caadd', endColorstr='#636ddb', GradientType=0);
-    /* IE6-9 */
     color: rgba(255, 255, 255, 1) !important;
     text-align: center !important;
     border: none;
@@ -4025,34 +4019,22 @@ footer .legalAdvice p {
 }
 
 .purpleGradientCard {
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e1e28+0,49246f+100 */
     background: rgb(30, 30, 40);
-    /* Old browsers */
     background: -moz-linear-gradient(top, rgba(30, 30, 40, 1) 0%, rgba(73, 36, 111, 1) 100%) !important;
-    /* FF3.6-15 */
     background: -webkit-linear-gradient(top, rgba(30, 30, 40, 1) 0%, rgba(73, 36, 111, 1) 100%) !important;
-    /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to bottom, rgba(30, 30, 40, 1) 0%, rgba(73, 36, 111, 1) 100%) !important;
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e1e28', endColorstr='#49246f', GradientType=0);
-    /* IE6-9 */
     color: rgba(255, 255, 255, 1) !important;
     text-align: center !important;
     border: none;
 }
 
 .pinkGradientCard {
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f5997e+0,f75a80+100 */
     background: rgb(245, 153, 126);
-    /* Old browsers */
     background: -moz-linear-gradient(top, rgba(245, 153, 126, 1) 0%, rgba(247, 90, 128, 1) 100%) !important;
-    /* FF3.6-15 */
     background: -webkit-linear-gradient(top, rgba(245, 153, 126, 1) 0%, rgba(247, 90, 128, 1) 100%) !important;
-    /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to bottom, rgba(245, 153, 126, 1) 0%, rgba(247, 90, 128, 1) 100%) !important;
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5997e', endColorstr='#f75a80', GradientType=0);
-    /* IE6-9 */
     color: rgba(255, 255, 255, 1) !important;
     text-align: center !important;
     border: none;
@@ -4063,20 +4045,17 @@ footer .legalAdvice p {
 }
 
 .deepBlueGradientCard {
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#001a74+0,1800ff+100 */
-    background: rgb(0, 26, 116);
-    /* Old browsers */
-    background: -moz-linear-gradient(top, rgba(0, 26, 116, 1) 0%, rgba(24, 0, 255, 1) 100%) !important;
-    /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(0, 26, 116, 1) 0%, rgba(24, 0, 255, 1) 100%) !important;
-    /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba(0, 26, 116, 1) 0%, rgba(24, 0, 255, 1) 100%) !important;
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#001a74', endColorstr='#1800ff', GradientType=0);
-    /* IE6-9 */
+    background: rgb(43, 91, 255);
+    background: -moz-linear-gradient(top, rgba(43, 91, 255, 1) 0%, rgba(124, 143, 253, 1) 100%);
+    background: -webkit-linear-gradient(top, rgba(43, 91, 255, 1) 0%, rgba(124, 143, 253, 1) 100%);
+    background: linear-gradient(to bottom, rgba(43, 91, 255, 1) 0%, rgba(124, 143, 253, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2b5bff', endColorstr='#7c8ffd',GradientType=0 );
     color: rgba(255, 255, 255, 1) !important;
     text-align: center !important;
     border: none;
+}
+.deepBlueGradientCard a {
+    color: rgba(55, 194, 234, 1);
 }
 
 .secondWhiteCard {
@@ -6349,46 +6328,84 @@ video {
     line-height: 49px;
     color: rgba(59, 69, 89, 1);
 }
-.mainSliderApp .sliderAppContainer .sliderAppTexts {
+.mainSliderApp .sliderAppContainer .sliderAppTexts:nth-child(2) {
     margin-bottom: 70px;
+}
+.hexagonDiv {
+    transform: rotateX(0deg);
+}
+.hexagonDiv .animatedTextBannerFirst {
+    transform: rotateX(0deg);
+}
+.hexagonDiv .animatedTextBannerSecond {
+    transform: rotateX(120deg);
+}
+.hexagonDiv .animatedTextBannerThird {
+    transform: rotateX(240deg);
+}
+.hexagonDiv .animatedTextBannerFourth {
+    transform: rotateX(360deg);
+}
+.hexagonDiv .animatedTextBannerFifht {
+    transform: rotateX(480deg);
+}
+.hexagonDiv .animatedTextBannerSixth {
+    transform: rotateX(480deg);
+}
+.hexagonDiv .animatedTextBannerSixth {
+    transform: rotateX(600deg);
 }
 .mainSliderApp .sliderAppContainer .sliderAppTexts p {
     font-size: 53px;
     font-weight: 300;
-    line-height: 64px;
+    line-height: 53px;
     color: rgba(59, 69, 89, 1);
 }
-#animatedTextFirst {
-    visibility: hidden;
-    animation: flipOverText 10s infinite;
-}
-#animatedTextSecond {
-    animation: flipOverText 10s 4s infinite;
-}
-.mainSliderApp .sliderAppContainer .sliderAppTexts p.animatedTextBanner {
-    position: absolute;
-}
-.mainSliderApp .sliderAppContainer .sliderAppsBadges span {
+.mainSliderApp .sliderAppContainer .sliderAppsBadgesFirst span {
     font-size: 23px;
     font-weight: 700;
     line-height: 28px;
     color: rgba(59, 69, 89, 1);
 }
-.mainSliderApp .sliderAppContainer .sliderAppsBadges {
+.mainSliderApp .sliderAppContainer .sliderAppsBadgesFirst {
     margin-top: 20px;
 }
-.mainSliderApp .sliderAppContainer .sliderAppsBadges img {
-    margin-top: 20px;
+.mainSliderApp .sliderAppContainer .sliderAppsBadgesFirst .sliderAppBadgesImages {
+    text-align: center;
+    margin-top: 1rem;
 }
-.mainSliderApp .sliderAppContainer .sliderAppsBadges a::after {
+.mainSliderApp .sliderAppContainer .sliderAppsBadgesFirst a::after {
     display: none;
 }
+.mainSliderApp .sliderAppContainer .sliderAppsBadgesFirst a img {
+    max-width: 250px;
+    width: 100%;
+}
+.sliderAppsBadgesSecond {
+    text-align: center;
+}
+.sliderAppsBadgesSecond .sliderAppBadgesTitles {
+    font-weight: 700;
+    color: rgba(59, 69, 89, 1);
+}
+
+.sliderAppsBadgesSecond .sliderAppBadgesImages {
+    text-align: center;
+}
+.sliderAppsBadgesSecond .sliderAppBadgesImages a::after {
+    display: none;
+}
+.sliderAppsBadgesSecond .sliderAppBadgesImages a img {
+    max-width: 140px;
+    margin-top: 16px;
+}
+
 .mainSliderApp .sliderAppContainer .sliderAppImagesContainer {
     text-align: center;
 }
 .mainSliderApp .sliderAppContainer .sliderAppImagesContainer svg {
     padding-top: 2rem;
-    max-width: 80%;
+    max-width: 750px;
     overflow: visible;
     margin: 0 auto;
 }
@@ -6475,6 +6492,23 @@ video {
     position: relative;
     height: 100vh;
 }
+.sliderAppPayments .itemCarousel h1 {
+    font-weight: 500;
+    line-height: 68.64px;
+    color: rgba(59, 69, 89, 1);
+    font-size: 53px;
+}
+.sliderAppPayments .itemCarousel p {
+    font-weight: 300;
+    line-height: 39.6px;
+    color: rgba(117, 120, 123, 1);
+    font-size: 26px;
+}
+.sliderAppPayments .itemCarousel img {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 350px;
+}
 .sliderAppPayments .progressBarContainer {
     width: 140px;
 }
@@ -6488,7 +6522,7 @@ video {
 .sliderAppPayments .backgroundSliderPaymentsContainer {
     position: absolute;
     height: 100vh;
-    top: -36.3vh;
+    top: 0;
     left: 0;
     width: calc(100% + 30px);
     overflow: hidden;
@@ -6661,17 +6695,19 @@ video {
 }
 .appImageDownload .downloadAppBadges a img {
     margin-bottom: 2rem;
+    max-width: 150px;
+    width: 100%;
 }
 .scrollerContainer {
     padding-top: 50px;
     padding-bottom: 50px;
-    height: 3000px;
+    height: 300vh;
 }
 .scrollerContainer .scrollerCarousel {
     width: calc(100% + 30px);
-    left: 0;
-    padding-right: 15px;
-    padding-left: 15px;
+    left: -15px;
+    padding-right: 30px;
+    padding-left: 30px;
     opacity: 0;
 }
 .scrollerContainer .scrollerCarousel.showCarousel {
@@ -6683,6 +6719,9 @@ video {
 .scrollerContainer .scrollerCarousel .scrollerImage {
     text-align: center;
 }
+.scrollerContainer .scrollerCarousel .scrollerImage svg {
+    max-width: 566px;
+}
 .scrollerContainer .scrollerCarousel .scrollerMessage h1 {
     font-weight: 500;
     font-size: 48px;
@@ -6692,7 +6731,6 @@ video {
 .scrollerContainer .scrollerCarousel .scrollerMessage p {
     font-weight: 300;
     font-size: 24px;
-    color: rgba(59, 69, 89, 1);
     line-height: 36px;
     color: rgba(117, 120, 123, 1);
 }
@@ -6709,7 +6747,7 @@ video {
 .unfixedScrollerCarousel {
     position: absolute;
     opacity: 1;
-    top: 2300px;
+    top: 230vh;
     width: calc(100% + 30px);
     left: 0;
 }
@@ -6718,6 +6756,14 @@ video {
     display: none;
 }
 .showText {
+    display: block !important;
+    opacity: 1;
+}
+.hideImage {
+    opacity: 0;
+    display: none;
+}
+.showImage {
     display: block !important;
     opacity: 1;
 }
@@ -6852,6 +6898,26 @@ video {
         opacity: 1;
     }
     100% {
+        opacity: 0;
+    }
+}
+@keyframes opacityShowScroller {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+@keyframes opacityHideScroller {
+    0% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-20px);
         opacity: 0;
     }
 }

@@ -16,38 +16,41 @@ layout: home
     width: 110%;
   }
 </style>
-<section id="mainSliderLandingApp" class="row mainSliderApp">
+<section id="mainSliderLandingApp" class="row mainSliderApp align-items-center">
   <div class="col-12 col-sm-12 col-md-11 col-lg-11 col-xl-11 mx-auto">
     <div class="row sliderAppContainer align-items-center">
       <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-        <div class="row sliderAppTexts">
-          <div class="col-12 ">
-            <h1>Usa la App Totalplay</h1>
-            <p id="animatedTextFirst" class="animatedTextBanner" style="display: none;">Para pagar.</p>
-            <p id="animatedTextFirst" class="animatedTextBanner" style="display: none;">Para ver TV.</p>
-            <p id="animatedTextFirst" class="animatedTextBanner" style="display: none;">Para administrar tu red.</p>
-            <p id="animatedTextFirst" class="animatedTextBanner" style="display: none;">Para rentar películas.</p>
-            <p id="animatedTextFirst" class="animatedTextBanner" style="display: none;">Para recomendar.</p>
-            <p id="animatedTextFirst" class="animatedTextBanner" style="display: none;">Para portar tu línea.</p>
-            <p id="animatedTextFirst" class="animatedTextBanner" style="display: none;">Para controlar tu TV.</p>
-            <p id="animatedTextFirst" class="animatedTextBanner" style="display: none;">Para hacer llamadas.</p>
-            <p id="animatedTextFirst" class="animatedTextBanner" style="display: none;">Para seguimiento de visita.</p>
-            <p id="animatedTextFirst" class="animatedTextBanner" style="display: none;">Para todo</p>
+        <div class="sliderAppTexts">
+          <h1>Usa la App Totalplay</h1>
+        </div>
+        <div class="row sliderAppTexts hexagonDiv">
+          <div class="col-12">
+            <p id="animatedTextFirst" class="animatedTextBannerFirst">Para pagar.</p>
+            <p id="animatedTextFirst" class="animatedTextBannerSecond">Para ver TV.</p>
+            <p id="animatedTextFirst" class="animatedTextBannerThird">Para administrar tu red.</p>
+            <p id="animatedTextFirst" class="animatedTextBannerFourth">Para controlar tu TV.</p>
+            <p id="animatedTextFirst" class="animatedTextBannerSixth">Para hacer llamadas.</p>
+            <p id="animatedTextFirst" class="animatedTextBannerSeventh">Para todo</p>
           </div>
         </div>
-        <div class="row sliderAppsBadges">
-          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-            <div class="row">
+        <div class="row sliderAppsBadgesFirst">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-none d-sm-none d-md-block">
+            <div class="row sliderAppBadgesTitles">
               <div class="col-12">
                 <span>¡Descargala ahora!</span>
               </div>
             </div>
-            <div class="row">
-              <div class="col-6">
-                <a href="#"><img src="../assets/img/nuevos/icons/badge-GooglePlay.svg"></a>
+            <div class="row sliderAppBadgesImages align-items-center">
+              <div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+                <a href="https://play.google.com/store/apps/details?id=com.TotalPlay.totalplay&hl=es_MX"
+                  target="_blank">
+                  <img src="/assets/img/nuevos/icons/badge-GooglePlay.svg">
+                </a>
               </div>
-              <div class="col-6">
-                <a href="#"><img src="../assets/img/nuevos/icons/badge-AppStore.svg"></a>
+              <div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+                <a href="https://itunes.apple.com/mx/app/totalplay/id847892109?mt=8" target="_blank">
+                  <img src="/assets/img/nuevos/icons/badge-AppStore.svg">
+                </a>
               </div>
             </div>
           </div>
@@ -108,6 +111,27 @@ layout: home
         </svg>
       </div>
     </div>
+    <div class="row sliderAppsBadgesSecond">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-block d-sm-block d-md-none">
+        <div class="row sliderAppBadgesTitles">
+          <div class="col-12">
+            <span>¡Descargala ahora!</span>
+          </div>
+        </div>
+        <div class="row sliderAppBadgesImages align-items-center">
+          <div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <a href="https://play.google.com/store/apps/details?id=com.TotalPlay.totalplay&hl=es_MX" target="_blank">
+              <img src="/assets/img/nuevos/icons/badge-GooglePlay.svg">
+            </a>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <a href="https://itunes.apple.com/mx/app/totalplay/id847892109?mt=8" target="_blank">
+              <img src="/assets/img/nuevos/icons/badge-AppStore.svg">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 <!--<section id="rowVideosApp" class="row videosApp">
@@ -153,35 +177,93 @@ layout: home
     <div id="scrollCarousel" class="scrollerCarousel hideCarousel">
       <div class="row align-items-center">
         <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-          <div id="firstScrollerImage" class="scrollerImageContainer">
+          <div id="firstScrollerImage" class="scrollerImageContainer hideImage">
             <div class="scrollerImage">
-              <img src="../assets/img/nuevos/imgLandingApp/scroller/firstImageScroller.png">
+              <svg id="firstImage" x="0px" y="0px" viewBox="0 0 517 566">
+                <g>
+                  <image style="overflow:visible;" width="517" height="566"
+                    xlink:href="../assets/img/nuevos/imgLandingApp/scroller/enVivo/enVivoBack.png">
+                  </image>
+                </g>
+                <g>
+                  <image style="overflow:visible;" width="360" height="232"
+                    xlink:href="../assets/img/nuevos/imgLandingApp/scroller/enVivo/enVivoOver2.png"
+                    transform="matrix(1.0027 0 0 1.0027 28.9588 115.3814)">
+                  </image>
+                </g>
+              </svg>
             </div>
           </div>
           <div id="secondScrollerImage" class=scrollerImage>
             <div class="scrollerImage">
-              <img src="../assets/img/nuevos/imgLandingApp/scroller/secondImageScroller.png">
+              <svg id="secondImage" x="0px" y="0px" viewBox="0 0 517 566">
+                <g>
+                  <image style="overflow:visible;" width="517" height="566"
+                    xlink:href="../assets/img/nuevos/imgLandingApp/scroller/estrenos/estrenosBack.png">
+                  </image>
+                </g>
+                <g>
+                  <image style="overflow:visible;" width="244" height="80"
+                    xlink:href="../assets/img/nuevos/imgLandingApp/scroller/estrenos/estrenosOverBottom.png"
+                    transform="matrix(1 0 0 1 85.4059 366.6989)">
+                  </image>
+                </g>
+                <g>
+                  <image style="overflow:visible;" width="360" height="240"
+                    xlink:href="../assets/img/nuevos/imgLandingApp/scroller/estrenos/estrenosOverTop.png"
+                    transform="matrix(1.007 0 0 1.007 26.0828 113.7911)">
+                  </image>
+                </g>
+              </svg>
             </div>
           </div>
           <div id="thirdScrollerImage" class=scrollerImage>
             <div class="scrollerImage">
-              <img src="../assets/img/nuevos/imgLandingApp/scroller/thirdImageScroller.png">
+              <svg id="thirdImage" x="0px" y="0px" viewBox="0 0 517 566">
+                <g>
+                  <image style="overflow:visible;" width="517" height="566"
+                    xlink:href="../assets/img/nuevos/imgLandingApp/scroller/regresa/regresaBack.png">
+                  </image>
+                </g>
+                <g>
+                  <image style="overflow:visible;" width="360" height="191"
+                    xlink:href="../assets/img/nuevos/imgLandingApp/scroller/regresa/regresaOverBottom.png"
+                    transform="matrix(1 0 0 1 29.2408 286.0844)">
+                  </image>
+                </g>
+                <g>
+                  <image style="overflow:visible;" width="270" height="177"
+                    xlink:href="../assets/img/nuevos/imgLandingApp/scroller/regresa/regresaOverTop.png"
+                    transform="matrix(1 0 0 1 73.7086 114.8829)">
+                  </image>
+                </g>
+              </svg>
             </div>
           </div>
         </div>
-        <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5">
-          <div id="firstScrollerMessage" class="scrollerMessage">
-            <h1>Mira programas y eventos en vivo.</h1>
-            <p>Disfruta de tus canales favoritos en la palma de tu mano y en cualquier dispositivo.</p>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+          <div id="firstScrollerMessage" class="scrollerMessage hideText">
+            <h1>Mira programas y<br>eventos en vivo.</h1>
+            <p class="d-none d-sm-none d-md-block">Disfruta de tus canales favoritos en la<br>palma de tu mano y en
+              cualquier<br>dispositivo.</p>
+            <p class="d-block d-sm-block d-md-none">Disfruta de tus canales favoritos en la palma de tu mano y en
+              cualquier dispositivo.</p>
           </div>
-          <div id="secondScrollerMessage" class="scrollerMessage">
-            <h1>Regresa el tiempo.</h1>
-            <p>Vuelve a ver la programación de hasta 7 días atrás y no te pierdas ninguno de tus episodios o partidos
-              favoritos.</p>
+          <div id="secondScrollerMessage" class="scrollerMessage hideText">
+            <h1 class="d-none d-sm-none d-md-block">Regresa el<br>tiempo.</h1>
+            <h1 class="d-block d-sm-block d-md-none">Regresa el tiempo.</h1>
+            <p class="d-none d-sm-none d-md-block">Vuelve a ver la programación de hasta<br>7 días atrás y no te pierdas
+              ninguno de<br>tus episodios o partidos favoritos.</p>
+            <p class="d-block d-sm-block d-md-none">Vuelve a ver la programación de hasta 7 días atrás y no te
+              pierdas ninguno de tus episodios o partidos favoritos.</p>
           </div>
-          <div id="thirdScrollerMessage" class="scrollerMessage">
-            <h1>Estrenos de cine sin horarios.</h1>
-            <p>Renta OnDemand en tu TV y lleva contigo las películas del momento.</p>
+          <div id="thirdScrollerMessage" class="scrollerMessage hideText">
+            <h1 class="d-none d-sm-none d-md-block">Estrenos de cine<br>sin horarios.</h1>
+            <h1 class="d-block d-sm-block d-md-none">Estrenos de cine sin horarios.</h1>
+            <p class="d-none d-sm-none d-md-block">Renta OnDemand en tu TV y lleva<br>contigo las películas del momento.
+            </p>
+            <p class="d-block d-sm-block d-md-none">Renta OnDemand en tu TV y lleva contigo las películas del
+              momento.</p>
           </div>
         </div>
       </div>
@@ -189,18 +271,18 @@ layout: home
   </div>
 </section>
 <section id="paymentsSlider" class="row sliderAppPayments align-items-center">
-  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-    <div class="backgroundSliderPaymentsContainer">
-      <div id="upDownRotation" class="backImageFirstAppSlider">
-        <img src="../assets/img/nuevos/imgLandingApp/triangulo.svg">
-      </div>
-      <div id="downUpRotation" class="backImageSecondAppSlider">
-        <img src="../assets/img/nuevos/imgLandingApp/triangulo2.svg">
-      </div>
+  <div class="backgroundSliderPaymentsContainer">
+    <div id="upDownRotation" class="backImageFirstAppSlider">
+      <img src="../assets/img/nuevos/imgLandingApp/triangulo.svg">
     </div>
+    <div id="downUpRotation" class="backImageSecondAppSlider">
+      <img src="../assets/img/nuevos/imgLandingApp/triangulo2.svg">
+    </div>
+  </div>
+  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
     <div class="row">
       <div class="col-12 col-sm-12 col-md-11 col-lg-9 col-xl-9 mx-auto">
-        <div id="appUsesCarousel" class="row carouselContainer">
+        <div id="appUsesCarousel" class="row carouselContainer align-items-center">
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 itemCarousel">
             <div class="row align-items-center">
               <div class="col-s12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-none d-sm-none d-md-block">
@@ -209,10 +291,10 @@ layout: home
                   métodos de pago que tenemos disponibles.</p>
               </div>
               <div class="col-s12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-none d-sm-none d-md-block">
-                <img src="../assets/img/nuevos/sliders/unboxCarousel1.png">
+                <img src="../assets/img/nuevos/imgLandingApp/consultaSaldo.png">
               </div>
               <div class="col-s12 col-sm-12 d-block d-sm-block d-md-none">
-                <img src="../assets/img/nuevos/sliders/unboxCarousel1.png">
+                <img src="../assets/img/nuevos/imgLandingApp/consultaSaldo.png">
               </div>
               <div class="col-s12 col-sm-12 d-block d-sm-block d-md-none">
                 <h1>Consulta y paga tu saldo.</h1>
@@ -228,10 +310,10 @@ layout: home
                 <p>Administra cada una de tus redes Wi-Fi, podrás cambiar el nombre y contraseña desde tu App.</p>
               </div>
               <div class="col-s12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-none d-sm-none d-md-block">
-                <img src="../assets/img/nuevos/sliders/unboxCarousel2.png">
+                <img src="../assets/img/nuevos/imgLandingApp/configuraRed.png">
               </div>
               <div class="col-s12 col-sm-12 d-block d-sm-block d-md-none">
-                <img src="../assets/img/nuevos/sliders/unboxCarousel2.png">
+                <img src="../assets/img/nuevos/imgLandingApp/configuraRed.png">
               </div>
               <div class="col-s12 col-sm-12 d-block d-sm-block d-md-none">
                 <h1>Configura tu red.</h1>
@@ -246,10 +328,10 @@ layout: home
                 <p>Recomienda Totalplay a tus amigos o familiares desde tu App y recibe increíbles beneficios.</p>
               </div>
               <div class="col-s12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-none d-sm-none d-md-block">
-                <img src="../assets/img/nuevos/sliders/unboxCarousel3.png">
+                <img src="../assets/img/nuevos/imgLandingApp/recomienda.png">
               </div>
               <div class="col-s12 col-sm-12 d-block d-sm-block d-md-none">
-                <img src="../assets/img/nuevos/sliders/unboxCarousel3.png">
+                <img src="../assets/img/nuevos/imgLandingApp/recomienda.png">
               </div>
               <div class="col-s12 col-sm-12 d-block d-sm-block d-md-none">
                 <h1>Recomienda y gana.</h1>
@@ -264,10 +346,10 @@ layout: home
                 <p>Consulta nuestra sección de ayuda en caso de presentar algún fallo con tu internet.</p>
               </div>
               <div class="col-s12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-none d-sm-none d-md-block">
-                <img src="../assets/img/nuevos/sliders/unboxCarousel3.png">
+                <img src="../assets/img/nuevos/imgLandingApp/soporte.png">
               </div>
               <div class="col-s12 col-sm-12 d-block d-sm-block d-md-none">
-                <img src="../assets/img/nuevos/sliders/unboxCarousel3.png">
+                <img src="../assets/img/nuevos/imgLandingApp/soporte.png">
               </div>
               <div class="col-s12 col-sm-12 d-block d-sm-block d-md-none">
                 <h1>Soporte y ayuda</h1>
@@ -301,12 +383,12 @@ layout: home
         <div class="card firstAppCard">
           <div class="card-body">
             <div class="row">
-              <div class="col-10 mx-auto">
+              <div class="col-11 mx-auto">
                 <h5>Toma el control<br>de tu TV.</h5>
               </div>
             </div>
             <div class="row">
-              <div class="col-10 mx-auto">
+              <div class="col-11 mx-auto">
                 <p onclick="showInnerModal('innerModalFirst', event);"><span>Más información</span></p>
               </div>
             </div>
@@ -329,12 +411,12 @@ layout: home
         <div class="card secondAppCard">
           <div class="card-body">
             <div class="row">
-              <div class="col-10 mx-auto">
+              <div class="col-11 mx-auto">
                 <h5>Lleva tu línea fija a donde vayas.</h5>
               </div>
             </div>
             <div class="row">
-              <div class="col-10 mx-auto">
+              <div class="col-11 mx-auto">
                 <p onclick="showInnerModal('innerModalSecond', event);"><span>Más información</span></p>
               </div>
             </div>
@@ -369,12 +451,12 @@ layout: home
       </div>
     </div>
     <div class="row downloadAppBadges">
-      <div class="col-6 col-sm-6 col-md-6 col-lg-2 col-xl-2 offset-xl-4 offset-lg-4 offset-md-">
+      <div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 offset-xl-3 offset-lg-3">
         <a href="https://play.google.com/store/apps/details?id=com.TotalPlay.totalplay&hl=es_MX" target="_blank">
           <img src="/assets/img/nuevos/icons/badge-GooglePlay.svg">
         </a>
       </div>
-      <div class="col-6 col-sm-6 col-md-6 col-lg-2 col-xl-2">
+      <div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3">
         <a href="https://itunes.apple.com/mx/app/totalplay/id847892109?mt=8" target="_blank">
           <img src="/assets/img/nuevos/icons/badge-AppStore.svg">
         </a>

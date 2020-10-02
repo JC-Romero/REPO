@@ -631,6 +631,67 @@
         height: 95.6%;
         width: 93.4%;
     }
+    .mainSliderApp .sliderAppContainer .sliderAppsBadges .sliderAppBadgesImages img {
+        max-width: 150px;
+    }
+    .downloadAppBadges a img {
+        max-width: 140px;
+    }
+    .sliderAppPayments .itemCarousel {
+        text-align: center;
+    }
+    .mainSliderApp .sliderAppContainer .sliderAppTexts h1 {
+        font-size: 20px;
+        margin-bottom: 0;
+    }
+    .mainSliderApp .sliderAppContainer .sliderAppTexts p {
+        font-size: 32px;
+        margin-bottom: 0;
+    }
+    .mainSliderApp .sliderAppContainer .sliderAppsBadges span {
+        font-size: 16px;
+    }
+    .mainSliderApp .sliderAppContainer .sliderAppImagesContainer svg {
+        padding-top: 0;
+    }
+    .mainSliderApp .sliderAppContainer .sliderAppsBadgesFirst {
+        display: none;
+    }
+    .sliderAppPayments {
+        height: 150vh;
+    }
+    .sliderAppPayments .itemCarousel h1 {
+        font-size: 32px;
+        line-height: 44px;
+    }
+    .sliderAppPayments .itemCarousel p {
+        font-size: 20px;
+        line-height: 32px;
+    }
+    .firstAppCard h5,
+    .secondAppCard h5 {
+        font-size: 30px;
+    }
+    .firstAppCard p,
+    .secondAppCard p {
+        font-size: 20px;
+    }
+    .appImageDownload .appDownloadTitles h1 {
+        font-size: 32px;
+        line-height: 50px;
+    }
+    .appImageDownload .appDownloadTitles p {
+        font-size: 16px;
+        line-height: 25px;
+    }
+    .overModalCard .innerModalContent h1 {
+        font-size: 20px;
+        line-height: 31.5px;
+    }
+    .overModalCard .innerModalContent p {
+        font-size: 16px;
+        line-height: 25px;
+    }
 }
 
 @media (max-width: 767.98px) and (orientation: landscape) {
@@ -823,6 +884,44 @@
     .overModalCard {
         height: 95.7%;
         width: 93.4%;
+    }
+    .scrollerMessage {
+        text-align: center;
+    }
+    .scrollerContainer .scrollerCarousel {
+        width: 100%;
+        left: 0;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .scrollerContainer .scrollerCarousel .scrollerImage img {
+        max-width: 240px;
+    }
+    .scrollerContainer .scrollerCarousel .scrollerMessage h1 {
+        font-size: 32px;
+        line-height: 44px;
+    }
+    .scrollerContainer .scrollerCarousel .scrollerMessage p {
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .mainSliderApp {
+        padding-top: 108px;
+    }
+    .mainSliderApp .sliderAppContainer .sliderAppTexts {
+        margin-bottom: 0;
+    }
+    .fixedScrollerCarousel {
+        top: 15vh;
+    }
+    .scrollerContainer {
+        height: 3000px;
+    }
+    .unfixedScrollerCarousel {
+        top: 2400px;
+    }
+    .sliderAppPayments .itemCarousel img {
+        max-width: 250px;
     }
 }
 
@@ -1324,4 +1423,13 @@
     }
 }
 @media screen and (min-device-width: 1700px) and (-webkit-min-device-pixel-ratio: 1) {
+}
+/*Ana K*/
+@media screen and (min-device-width: 1349px) and (max-device-height: 768px) and (-webkit-min-device-pixel-ratio: 1) {
+    .videoTextContainerSecond .videoTextContentSecond .titleSecondVideo {
+        padding-top: 16vh;
+    }
+    .videoTextContainerSecond .videoTextContentSecond .imagesAppsContainer {
+        padding-top: 6vh;
+    }
 }
