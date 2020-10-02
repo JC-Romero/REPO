@@ -643,6 +643,7 @@
     .mainSliderApp .sliderAppContainer .sliderAppTexts h1 {
         font-size: 20px;
         margin-bottom: 0;
+        font-weight: 700;
     }
     .mainSliderApp .sliderAppContainer .sliderAppTexts p {
         font-size: 32px;
@@ -653,6 +654,7 @@
     }
     .mainSliderApp .sliderAppContainer .sliderAppImagesContainer svg {
         padding-top: 0;
+        max-width: 590px;
     }
     .mainSliderApp .sliderAppContainer .sliderAppsBadgesFirst {
         display: none;
@@ -691,6 +693,9 @@
     .overModalCard .innerModalContent p {
         font-size: 16px;
         line-height: 25px;
+    }
+    .landlineRow .landlineImage img {
+        max-width: 300px;
     }
 }
 
@@ -906,13 +911,17 @@
         line-height: 24px;
     }
     .mainSliderApp {
-        padding-top: 108px;
+        padding-top: 128px;
     }
     .mainSliderApp .sliderAppContainer .sliderAppTexts {
-        margin-bottom: 0;
+        margin-bottom: 0 !important;
+        text-align: center;
+    }
+    .mainSliderApp .sliderAppContainer .sliderAppsBadgesFirst {
+        text-align: center;
     }
     .fixedScrollerCarousel {
-        top: 15vh;
+        top: 10vh;
     }
     .scrollerContainer {
         height: 3000px;
@@ -921,7 +930,7 @@
         top: 2400px;
     }
     .sliderAppPayments .itemCarousel img {
-        max-width: 250px;
+        max-width: 330px;
     }
 }
 

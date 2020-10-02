@@ -25,12 +25,13 @@ $(document).ready(function () {
         speed: 500,
         dots: false,
         draggable: true,
-        fade: true,
+        fade: false,
         infinite: true,
         pauseOnHover: false,
         swipe: true,
         touchMove: true,
-        swipeToSlide: true
+        swipeToSlide: true,
+        adaptiveHeight: true
     });
     var percentTime;
     var tick;

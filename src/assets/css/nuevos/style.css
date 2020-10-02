@@ -690,7 +690,7 @@ header .mainNav .mobileCart a img {
 .videoTextContainerSecond .videoTextContentSecond .titleSecondVideo {
     position: relative;
     height: 50%;
-    padding-top: 35vh;
+    padding-top: 30vh;
 }
 
 .videoTextContainerSecond .videoTextContentSecond .imagesAppsContainer img {
@@ -2383,6 +2383,7 @@ footer {
     padding-top: 4rem;
     padding-bottom: 2rem;
     overflow-x: hidden !important;
+    margin-top: 3rem;
 }
 
 footer a {
@@ -6333,33 +6334,21 @@ video {
 }
 .hexagonDiv {
     transform: rotateX(0deg);
+    max-height: 63px;
+    overflow-y: hidden;
+    overflow-x: visible;
 }
-.hexagonDiv .animatedTextBannerFirst {
-    transform: rotateX(0deg);
-}
-.hexagonDiv .animatedTextBannerSecond {
-    transform: rotateX(120deg);
-}
-.hexagonDiv .animatedTextBannerThird {
-    transform: rotateX(240deg);
-}
-.hexagonDiv .animatedTextBannerFourth {
-    transform: rotateX(360deg);
-}
-.hexagonDiv .animatedTextBannerFifht {
-    transform: rotateX(480deg);
-}
-.hexagonDiv .animatedTextBannerSixth {
-    transform: rotateX(480deg);
-}
-.hexagonDiv .animatedTextBannerSixth {
-    transform: rotateX(600deg);
+.hexagonDiv .scrollingTexts {
+    transform: translateY(0px);
+    opacity: 1;
+    animation: showScrollingTexts 32s forwards infinite;
 }
 .mainSliderApp .sliderAppContainer .sliderAppTexts p {
-    font-size: 53px;
+    font-size: 50px;
     font-weight: 300;
-    line-height: 53px;
+    line-height: 63px;
     color: rgba(59, 69, 89, 1);
+    white-space: nowrap;
 }
 .mainSliderApp .sliderAppContainer .sliderAppsBadgesFirst span {
     font-size: 23px;
@@ -6388,7 +6377,6 @@ video {
     font-weight: 700;
     color: rgba(59, 69, 89, 1);
 }
-
 .sliderAppsBadgesSecond .sliderAppBadgesImages {
     text-align: center;
 }
@@ -6399,7 +6387,6 @@ video {
     max-width: 140px;
     margin-top: 16px;
 }
-
 .mainSliderApp .sliderAppContainer .sliderAppImagesContainer {
     text-align: center;
 }
@@ -6492,22 +6479,27 @@ video {
     position: relative;
     height: 100vh;
 }
+.sliderAppPayments .itemCarousel:focus {
+    outline: none;
+}
 .sliderAppPayments .itemCarousel h1 {
     font-weight: 500;
     line-height: 68.64px;
     color: rgba(59, 69, 89, 1);
     font-size: 53px;
+    padding-left: 24px;
 }
 .sliderAppPayments .itemCarousel p {
     font-weight: 300;
     line-height: 39.6px;
     color: rgba(117, 120, 123, 1);
     font-size: 26px;
+    padding-left: 24px;
 }
 .sliderAppPayments .itemCarousel img {
     margin: 0 auto;
     width: 100%;
-    max-width: 350px;
+    max-width: 500px;
 }
 .sliderAppPayments .progressBarContainer {
     width: 140px;
@@ -6901,89 +6893,88 @@ video {
         opacity: 0;
     }
 }
-@keyframes opacityShowScroller {
+@keyframes showScrollingTexts {
     0% {
-        transform: translateY(-20px);
+        transform: translateY(65px);
         opacity: 0;
     }
-    100% {
-        transform: translateY(0px);
+    1% {
+        transform: translateY(0);
         opacity: 1;
-    }
-}
-@keyframes opacityHideScroller {
-    0% {
-        transform: translateY(0px);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-20px);
-        opacity: 0;
-    }
-}
-@keyframes flipOverText {
-    0% {
-        visibility: hidden;
-        transform-origin: 50% 0;
-        transform: rotateX(-180deg) translateY(-53px);
-        backface-visibility: hidden;
-    }
-    5% {
-        visibility: visible;
-        transform: rotateX(180deg) translateY(53px);
-        backface-visibility: hidden;
     }
     10% {
-        transform: rotateX(180deg);
-        backface-visibility: hidden;
+        transform: translateY(0);
+        opacity: 1;
     }
-    20% {
-        transform: rotateX(0deg);
-        backface-visibility: hidden;
+    14% {
+        transform: translateY(-65px);
+        opacity: 1;
     }
-    30% {
-        transform: rotateX(0deg);
-        backface-visibility: hidden;
+    24% {
+        transform: translateY(-65px);
+        opacity: 1;
     }
-    40% {
-        visibility: visible;
-        transform-origin: 50% 100%;
-        transform: rotateX(180deg) translateY(53px);
-        backface-visibility: hidden;
+    28% {
+        transform: translateY(-130px);
+        opacity: 1;
     }
-    50% {
-        visibility: visible;
-        transform: rotateX(180deg) translateY(53px);
-        backface-visibility: hidden;
+    38% {
+        transform: translateY(-130px);
+        opacity: 1;
     }
-    60% {
-        visibility: visible;
-        transform: rotateX(180deg) translateY(53px);
-        backface-visibility: hidden;
+    42% {
+        transform: translateY(-195px);
+        opacity: 1;
+    }
+    52% {
+        transform: translateY(-195px);
+        opacity: 1;
+    }
+    56% {
+        transform: translateY(-260px);
+        opacity: 1;
+    }
+    66% {
+        transform: translateY(-260px);
+        opacity: 1;
     }
     70% {
-        visibility: visible;
-        transform: rotateX(180deg) translateY(53px);
-        backface-visibility: hidden;
+        transform: translateY(-325px);
+        opacity: 1;
     }
     80% {
-        visibility: visible;
-        transform: rotateX(180deg) translateY(53px);
-        backface-visibility: hidden;
+        transform: translateY(-325px);
+        opacity: 1;
     }
-    90% {
-        visibility: visible;
-        transform: rotateX(180deg) translateY(53px);
-        backface-visibility: hidden;
+    84% {
+        transform: translateY(-390px);
+        opacity: 1;
+    }
+    98% {
+        transform: translateY(-390px);
+        opacity: 0;
+    }
+    99% {
+        transform: translateY(65px);
+        opacity: 0;
     }
     100% {
-        visibility: visible;
-        transform: rotateX(180deg) translateY(53px);
-        backface-visibility: hidden;
+        transform: translateY(65px);
+        opacity: 0;
     }
 }
 /*Clases Animación*/
-/*Barra detalle Paquete*/
+/*Modal Continue Location*/
+#continueLocation .modal-content .modal-header .close {
+    position: relative !important;
+    top: -1rem !important;
+    right: -1rem !important;
+}
+#continueLocation .modal-content .modal-header .close img {
+    max-width: 24px;
+    max-height: 24px;
+}
+/*Modal Continue Location*/
 /*Modal Canales*/
 .disableClick {
     pointer-events: none;
