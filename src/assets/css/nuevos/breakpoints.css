@@ -1325,3 +1325,13 @@
 }
 @media screen and (min-device-width: 1700px) and (-webkit-min-device-pixel-ratio: 1) {
 }
+
+
+@media screen and (min-device-width: 1349px) and (max-device-height: 768px) and (-webkit-min-device-pixel-ratio: 1) {
+    .videoTextContainerSecond .videoTextContentSecond .titleSecondVideo {
+        padding-top: 16vh;
+    }
+    .videoTextContainerSecond .videoTextContentSecond .imagesAppsContainer {
+        padding-top: 6vh;
+    }
+}
