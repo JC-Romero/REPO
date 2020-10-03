@@ -3,3 +3,195 @@ layout: layoutContratacion
 ---
 {{> contrataProgreso }}
 {{> contrataPasos }}
+<style>
+    .customModalContainer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.25);
+        z-index: 10000;
+        padding-right: 16px;
+        padding-left: 16px;
+        display: none;
+    }
+
+    .dataValidateModal {
+        max-width: 650px;
+        width: 650px;
+        padding-bottom: 40px;
+        padding-top: 24px;
+        height: auto;
+        margin: 0 auto;
+        margin-top: 5vh;
+        background: rgba(250, 250, 250, 1);
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        padding-left: 28px;
+        padding-right: 28px;
+    }
+
+    .dataValidateModal .goBackLink {
+        font-family: Montserrat-Medium;
+        font-size: 14px;
+        line-height: 27px;
+        color: rgba(117, 120, 123, 1);
+        cursor: pointer;
+    }
+
+    .dataValidateModal .goBackLink img {
+        max-width: 16px;
+        max-height: 16px;
+        display: inline-block;
+        position: relative;
+        top: 3px;
+        margin-right: 8px;
+    }
+
+    .titleVerify {
+        text-align: center;
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+
+    .titleVerify h1 {
+        font-family: Montserrat-Bold;
+        font-size: 24px;
+        line-height: 36px;
+        color: rgba(59, 69, 89, 1);
+    }
+
+    .dataValidateModal .flex-container {
+        width: 100%;
+        list-style-type: none;
+        margin: 20px auto;
+        padding: 0;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+
+    .dataValidateModal .flex-container .item {
+        height: auto;
+        width: 280px;
+        text-align: left;
+        margin: 5px 10px 32px 0;
+        overflow: hidden;
+    }
+
+    .dataValidateModal .flex-container .item p.titleData {
+        font-family: Montserrat-Regular;
+        font-size: 12px;
+        line-height: 15px;
+        color: rgba(117, 120, 123, 1);
+        margin-bottom: 8px;
+    }
+
+    .dataValidateModal .flex-container .item p.dataUser {
+        font-family: Montserrat-Regular;
+        font-size: 16px;
+        line-height: 19px;
+        color: rgba(59, 69, 89, 1);
+        margin-bottom: 8px;
+    }
+
+    .dataValidateModal .continueButton {
+        text-align: right;
+    }
+
+    .continueButton a {
+        background: rgba(25, 138, 255, 1);
+        color: rgba(255, 255, 255, 1);
+        display: inline-block;
+        padding: 13px 16px;
+        -webkit-border-radius: 24vw;
+        -moz-border-radius: 24vw;
+        border-radius: 24vw;
+        font-size: 16px;
+        text-align: center;
+        font-family: Montserrat-Regular;
+        width: 138px;
+        line-height: 25px;
+    }
+
+    .continueButton img {
+        max-width: 20px;
+        position: relative;
+        top: 5px;
+    }
+
+    @media (max-width: 991.98px) {
+        .dataValidateModal {
+            width: 100%;
+        }
+
+        .dataValidateModal .flex-container .item {
+            width: 100%;
+        }
+
+        .dataValidateModal .flex-container {
+            padding-bottom: 0 !important;
+        }
+
+        .dataValidateModal .flex-container {
+            justify-content: center;
+        }
+
+    }
+
+    @media (max-width: 767.98px) {}
+</style>
+<div id="verifyDataModal" class="customModalContainer">
+    <div class="dataValidateModal">
+        <div class="goBackLink" onclick="hideVerifyDatamodal(event);">
+            <p><img src="../assets/img/nuevos/icons/arrowBackGray.svg">Actualizar datos</p>
+        </div>
+        <div class="titleVerify">
+            <h1>Para continuar verifica tus datos</h1>
+        </div>
+        <ul class="flex-container">
+            <li class="item">
+                <p class="titleData">Nombre(s)</p>
+                <p class="dataUser">Ana Cecilia González Flores</p>
+            </li>
+            <li class="item">
+                <p class="titleData">RFC</p>
+                <p class="dataUser">XXXXXXXXXXXX</p>
+            </li>
+            <li class="item">
+                <p class="titleData">Correo electrónico</p>
+                <p class="dataUser">annglztotalplay@totalplay.com.mx</p>
+            </li>
+            <li class="item">
+                <p class="titleData">Identificación</p>
+                <p class="dataUser">INE</p>
+            </li>
+            <li class="item">
+                <p class="titleData">Celular de contacto</p>
+                <p class="dataUser">55 5500 5500</p>
+            </li>
+            <li class="item">
+                <p class="titleData">Teléfono fijo</p>
+                <p class="dataUser">55 5555 5555</p>
+            </li>
+        </ul>
+        <div class="continueButton">
+            <a href="#">Continuar <img src="../assets/img/nuevos/icons/arrowForwardWhite.svg" alt=""></a>
+        </div>
+    </div>
+</div>
+<div class="continueButton" onclick="showVerifyDatamodal(event);">
+    <a href="#">Modal Verificar Datos</a>
+</div>
+<script>
+    var showVerifyDatamodal = function (e) {
+        $("#verifyDataModal").fadeIn(250);
+        event.preventDefault();
+    };
+    var hideVerifyDatamodal = function (e) {
+        $("#verifyDataModal").fadeOut(250);
+        event.preventDefault();
+    };
+</script>
