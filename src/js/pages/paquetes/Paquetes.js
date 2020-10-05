@@ -118,7 +118,7 @@ export class Paquetes {
 	cargarPaquetes(opt) {
 		console.group('Paquetes.js FUNCION cargarPaquetes('+opt+')');
 		let apuntador = this;
-		var tipopaquetes = "totalplay_paquetes_2020_09_09.json";
+		var tipopaquetes = "totalplay_paquetes_2020_09_09.json?v=29SEP0001";
 		if (localStorage.getItem("TP_OF_OBJ_FACTIBILIDAD") != null) {
 			var datosfactibilidad = JSON.parse(localStorage.getItem("TP_OF_OBJ_FACTIBILIDAD"));
 			if (datosfactibilidad.estimulofiscal == "true") {
@@ -147,7 +147,7 @@ export class Paquetes {
 				throw "Error en la llamada Ajax";
 			}
 		}).then(async function (respuesta) {
-			let paqueteList = apuntador.cmsGetImagenPaqueteList();
+			let paqueteList = [];
 			localStorage.setItem("TP_INFO_PAQUETES", JSON.stringify(respuesta));
 			if (opt == "Todos") {
 
@@ -181,6 +181,12 @@ export class Paquetes {
 
 				apuntador.pintarPaquetes(arrelgoApintar, "cardsPackage", paqueteList, opt);
 
+				try {
+					let objetoRecomendados = JSON.parse(arrelgoApintar);
+					localStorage.setItem("TP_PAQUETES_RECOMENDACION", JSON.stringify(objetoRecomendados));
+				} catch (error) {
+					console.log('ERROR RECOMENDADOS:', error);
+				}
 			}
 		});
 		console.groupEnd();
@@ -201,15 +207,6 @@ export class Paquetes {
 		var contador = 1;
 
 		$.each(arreglo, function (key, objPaquete) {
-
-			if(opt !== "home"){
-				if (contador <= 3) {
-					contador++;
-					arregloRecomendacion.push(objPaquete);
-				}
-			}
-			
-
 			var color = objPaquete.color;
 			var claseTipoPaquete;
 			var imagenPaquete;
@@ -229,17 +226,10 @@ export class Paquetes {
 				descriptionApp = objPaquete.detalle.canales;
 			}
 
-			if (listaImagenesCms.length > 0) {
-				listaImagenesCms.forEach((element) => {
-					if (element.id_paquete == objPaquete.id) {
-						color = element.color;
-						objPaquete.imagen = element.imagen.url;
-					}
-				});
-			}
-
-			var regexMegas = /\s(\d{1,3})\sMbps/;
-	        var arrayMegas = regexMegas.exec(objPaquete.detalleServicio);
+			//var regexMegas = /\s(\d{1,3})\sMbps/;
+			//console.log('objPaquete.detalle.megas=>', objPaquete.detalle.megas);
+			var regexMegas = /(\d{1,3})\s/;
+	        var arrayMegas = regexMegas.exec(objPaquete.detalle.megas);
 
 	        var regexPantallas = "";
 	        var arrayPantallas = "";
@@ -262,9 +252,20 @@ export class Paquetes {
 	                claseOcultar = 'hiddenPackageDoble';
 	            }
 	        }
-	        console.log("*************"+opt+"**************++");
+			console.log("*************"+opt+"**************++");
+			var canalesDescripcion = (objPaquete.detalle.canales != undefined)? objPaquete.detalle.canales: '';
 			if (opt == "home") {
+				var nombrePaq = objPaquete.nombre;
+				// Add Arthur
+				
+				var incluido = false;
+				if(nombrePaq.includes("UNBOX") || nombrePaq.includes("MATCH")){
+					var arrPaq = nombrePaq.split(" ");
 
+					nombrePaq = arrPaq[0].charAt(0).toUpperCase() + arrPaq[0].slice(1).toLowerCase();
+					nombrePaq = nombrePaq + " " + arrPaq[1];
+					incluido = true;
+				}
 				plantillaHTML += 
 				'<div class="col-12 col-sm-6 mx-sm-auto col-md-6 col-lg-4 col-xl-3">'+
                 	'<div class="row">'+
@@ -272,24 +273,33 @@ export class Paquetes {
 	                        'onclick="showBootstrapModalFirst(\'installLocation\');">'+
 	                        '<div class="packageInfoContainer" id="'+objPaquete.id+'">'+
 	                            '<div class="titlePackage">'+
-	                                '<p>'+objPaquete.nombre+'</p>'+
+	                                '<p>'+nombrePaq+'</p>'+ // objPaquete.nombre
 	                            '</div>'+
 	                            '<div class="velocityPackage">'+
 	                                '<p>'+objPaquete.detalle.megas+'</p>'+
 	                            '</div>'+
-	                            '<div class="descriptionPackage">'+
-	                                '<p><span>1 línea</span> de teléfono</p>'+
-	                                '<p class="hiddenText"><span>3 equipos</span> de TV con Apps</p>'+
+								'<div class="descriptionPackage">'+
+									'<p><span>'+canalesDescripcion+'</p>'+
+	                                '<p>1 Línea + Softphone</p>'+
+	                                
 	                            '</div>'+
 	                            '<hr>'+
 	                            '<div class="imagePackage">'+
 	                                '<img src="'+imagenPaquete+'" alt="Image Paquete">'+
-	                            '</div>'+
-	                            '<div class="descriptionApp">'+
+								'</div>';
+
+								if(incluido){
+									plantillaHTML = plantillaHTML+ '<div class="descriptionApp">'+
+										'<p><span> incluido </span></p>'+
+									'</div>';
+								}else{
+									plantillaHTML = plantillaHTML+ '<div class="descriptionApp">'+
+										'<p><span> &nbsp; </span></p>'+
+									'</div>';
+								}
+	                            
+	                            plantillaHTML = plantillaHTML+'<div class="descriptionApp">'+
 	                                '<p>'+descriptionApp+'</p>'+
-	                            '</div>'+
-	                            '<div class="packageDiscount">'+
-	                                '<p>Descuento de por vida</p>'+
 	                            '</div>'+
 	                            '<div class="packagePrice">'+
 	                                '<p><a >Desde: <span>$ '+clase.formatoMonedad(objPaquete.precioLista, 0, ".", ",")+' al mes</span></a></p>'+
@@ -300,7 +310,7 @@ export class Paquetes {
 	            '</div>';
 
 			} else if(opt == "match"){
-				var canalesDescripcion = (arrayCanales[1] != undefined)? arrayCanales[1]: '';
+				
 		        plantillaHTML += ``+
 		        `<div class="col-12 col-sm-6 mx-sm-auto col-md-6 col-lg-4 col-xl-4 ${claseOcultar}">
 		            <div class="row">
@@ -314,7 +324,7 @@ export class Paquetes {
 		                        </div>
 		                        <div class="descriptionPackage">
 		                            <p>${canalesDescripcion}</p>
-		                            <p><span>1 línea</span> de teléfono</p>
+		                            <p>1 Línea + Softphone</p>
 		                        </div>
 		                        <hr>
 		                        <div class="imagePackage">
@@ -323,9 +333,7 @@ export class Paquetes {
 		                        <div class="descriptionApp">
 		                            <p>${arrayPantallas[1]} pantalla(s) <span>Premium UHD</span></p>
 		                        </div>
-		                        <div class="packageDiscount">
-		                            <p>Descuento de por vida</p>
-		                        </div>
+		                        
 		                        <div class="packagePrice">
 		                            <p><a >Desde: <span>$ ${clase.formatoMonedad(objPaquete.precioLista, 0, ".", ",") } al mes</span></a></p>
 		                        </div>
@@ -336,7 +344,7 @@ export class Paquetes {
 			}else if(opt == "regular"){
 				var colores = ['surprisePlus','emotionPlus','emotion', 'funPlus', 'fun', 'starter']
         
-		        var canalesDescripcion = (objPaquete.detalle.canales != undefined)? objPaquete.detalle.canales: '';
+		        
 		        plantillaHTML += ``+
 		        `<div class="col-12 col-sm-6 mx-sm-auto col-md-6 col-lg-4 col-xl-4 ${claseOcultar}">
 		            <div class="row">
@@ -350,7 +358,7 @@ export class Paquetes {
 		                        </div>
 		                        <div class="descriptionPackage">
 		                            <p>${canalesDescripcion}</p>
-		                            <p><span>1 línea</span> de teléfono</p>
+		                            <p>1 Línea + Softphone</p>
 		                        </div>
 		                        <hr>
 		                        <div class="imagePackage">
@@ -359,9 +367,7 @@ export class Paquetes {
 		                        <div class="descriptionApp">
 		                            <p>App description</p>
 		                        </div>
-		                        <div class="packageDiscount">
-		                        <p>20% de descuento</p>
-		                        </div>
+		                        
 		                        <div class="packagePrice" >
 		                            <p><a >Desde: <span>$ ${clase.formatoMonedad(objPaquete.precioLista, 0, ".", ",") } al mes</span></a></p>
 		                        </div>
@@ -370,6 +376,7 @@ export class Paquetes {
 		            </div>
 		        </div>`;
 			}else if(opt == "unbox"){
+				
 				plantillaHTML += ``+
 				`<div class="col-12 col-sm-6 mx-sm-auto col-md-6 col-lg-4 col-xl-4 ${claseOcultar}">
                     <div class="row">
@@ -381,9 +388,10 @@ export class Paquetes {
                                 <div class="velocityPackage">
                                     <p>${arrayMegas[1]} Megas</p>
                                 </div>
-                                <div class="descriptionPackage">
-                                    <p><span>1 línea</span> de teléfono</p>
-                                    <p class="hiddenText"><span>3 equipos</span> de TV con Apps</p>
+								<div class="descriptionPackage">
+									<p>${canalesDescripcion}</p>
+                                    <p>1 Línea + Softphone</p>
+                                    
                                 </div>
                                 <hr>
                                 <div class="imagePackage">
@@ -392,9 +400,7 @@ export class Paquetes {
                                 <div class="descriptionApp">
                                     <p>${descriptionApp}</span></p>
                                 </div>
-                                <div class="packageDiscount">
-                                    <p>Descuento de por vida</p>
-                                </div>
+                                
                                 <div class="packagePrice">
                                     <p><a >Desde: <span>$ ${clase.formatoMonedad(objPaquete.precioLista, 0, ".", ",") } al mes</span></a></p>
                                 </div>
@@ -414,7 +420,7 @@ export class Paquetes {
 			clase.clickCards();*/
 		}
 		clase.setListener();
-		localStorage.setItem("TP_PAQUETES_RECOMENDACION", JSON.stringify(arregloRecomendacion));
+		
 	}
 
 	ordenarObjeto(objetoInicial) {
@@ -480,30 +486,7 @@ export class Paquetes {
 
 	setListener() {
 		let referenciaClase = this;
-		/*$(".packageInfoContainer").on("click", function () {
-			var idPaqueteSeleccionado = $(this).attr("id");
-			console.log('idPaqueteSeleccionado=>', idPaqueteSeleccionado);
-			var cadenaOfertaActual = localStorage.getItem("TP_INFO_PAQUETES");
-			var jsonOferta = JSON.parse(cadenaOfertaActual);
-			$.each(jsonOferta, function (familiaPaquete, arrayOferta) {
-				$.each(arrayOferta, function (key, objPaquete) {
-					if (idPaqueteSeleccionado == objPaquete.id) {
-						var objetoInicial = {
-							"idPaquete": objPaquete.id,
-							"detallePaquete":objPaquete,
-							"proceso":{
-								"numeroPaso":1,
-								"url":"detallePaquete.html"
-							}
-						};
-						 localStorage.setItem("TP_STR_PAQUETE_SELECCION", JSON.stringify(objetoInicial));
-						Constantes.paqueteSeleccion = objetoInicial;
-					}
-				});
-			});
-			//window.location = "detallePaquete.html";
-			$("#installLocation").modal('show');
-		});*/
+		
 
 		$("body").on("click",".packageInfoContainer", function (e) {
 			e.stopImmediatePropagation();
@@ -522,8 +505,9 @@ export class Paquetes {
 	                            "url":"detallePaquete.html"
 	                        }
 	                    };
-	                    localStorage.setItem("TP_STR_PAQUETE_SELECCION", JSON.stringify(objetoInicial));
-	                    //window.location = "detallePaquete.html";
+						localStorage.setItem("TP_STR_PAQUETE_SELECCION", JSON.stringify(objetoInicial));
+						//setTimeout(function(){ window.location = "detallePaquete1.html";}, 1000);
+	                    //window.location = "detallePaquete1.html";
 	                    //Constantes.paqueteSeleccion = objetoInicial;
 	                }
 	            });
