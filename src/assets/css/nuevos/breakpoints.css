@@ -1442,6 +1442,12 @@
     .headerPackages .headerPackagesContent .headerPackagesContainer {
         top: 15vh !important;
     }
+    .fixedScrollerCarousel {
+        top: 13vh;
+    }
+    .unfixedScrollerCarousel {
+        top: 410vh;
+    }
 }
 /*Ana K*/
 @media screen and (min-width: 1349px) and (max-height: 768px) and (-webkit-min-device-pixel-ratio: 1) {
