@@ -1553,7 +1553,14 @@
         top: 13vh;
     }
     .unfixedScrollerCarousel {
-        top: 2950px;
+        top: 2850px;
+    }
+    .sliderAppPayments .backgroundSliderPaymentsContainer .backImageFirstAppSlider {
+        left: 43vw;
+    }
+    .sliderAppPayments .backgroundSliderPaymentsContainer .backImageSecondAppSlider {
+        width: 40vw;
+        top: -40vh;
     }
 }
 /*Ana K*/
