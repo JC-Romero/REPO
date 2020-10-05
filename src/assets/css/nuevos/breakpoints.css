@@ -248,6 +248,7 @@
 
     .cardsRow .card .card-body .card-title {
         font-size: 24px;
+        margin-bottom: 1rem;
     }
 
     .cardsRow .card .card-body .appImage a img {
@@ -1406,21 +1407,23 @@
 }
 
 /* ----------- Non-Retina Screens ----------- */
-@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+@media screen and (min-width: 1200px) and (max-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
     .headerPackages {
-        height: 113vh;
+        height: 84vh;
     }
 }
-@media screen and (min-device-width: 1440px) and (-webkit-min-device-pixel-ratio: 1) {
-}
-@media screen and (min-device-width: 1280px) and (max-device-height: 950px) and (-webkit-min-device-pixel-ratio: 1) {
+@media screen and (min-width: 1280px) and (max-height: 950px) and (-webkit-min-device-pixel-ratio: 1) {
     .videoTextContainerSecond .videoTextContentSecond .titleSecondVideo {
         padding-top: 27vh;
     }
+    .headerPackages {
+        height: 90vh;
+    }
+    .headerPackages .headerPackagesContent {
+        top: 5vh;
+    }
 }
-@media screen and (min-device-width: 1280px) and (max-device-height: 900px) and (-webkit-min-device-pixel-ratio: 1) {
-}
-@media screen and (min-device-width: 1280px) and (max-device-height: 800px) and (-webkit-min-device-pixel-ratio: 1) {
+@media screen and (min-width: 1280px) and (max-height: 800px) and (-webkit-min-device-pixel-ratio: 1) {
     .appLogoContainer {
         margin-top: 60vh;
     }
@@ -1431,10 +1434,17 @@
         padding-top: 27vh;
     }
 }
-@media screen and (min-device-width: 1700px) and (-webkit-min-device-pixel-ratio: 1) {
+/*Ana*/
+@media screen and (min-width: 1440px) and (max-height: 900px) and (-webkit-min-device-pixel-ratio: 1) {
+    .headerPackages {
+        height: 95vh !important;
+    }
+    .headerPackages .headerPackagesContent .headerPackagesContainer {
+        top: 15vh !important;
+    }
 }
 /*Ana K*/
-@media screen and (min-device-width: 1349px) and (max-device-height: 768px) and (-webkit-min-device-pixel-ratio: 1) {
+@media screen and (min-width: 1349px) and (max-height: 768px) and (-webkit-min-device-pixel-ratio: 1) {
     .videoTextContainerSecond .videoTextContentSecond .titleSecondVideo {
         padding-top: 16vh;
     }

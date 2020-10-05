@@ -165,7 +165,7 @@ $(window).scroll(function () {
     }
 });
 $(window).scroll(function () {
-    if ($(this).scrollTop() > 3350) {
+    if ($(this).scrollTop() > 3600) {
         $('#upDownRotation').addClass("rotateDown");
         $('#upDownRotation').removeClass("rotateUp");
         $('#downUpRotation').addClass("rotateDown");
