@@ -115,11 +115,13 @@ export class FinalizaContratacion {
 
     funcionQuery(x) {     
         if (x.matches) { // If media query matches
-            $('#btnDatosFisica').html('P. F&Iacute;SICA');
-            $('#btnDatosMoral').html('P. MORAL'); 
+            $('#btnDatosFisica').html('P. F&iacute;sica');
+            $('#btnDatosMoral').html('P. Moral'); 
         } else {
-            $('#btnDatosFisica').html('PERSONA F&Iacute;SICA');
-            $('#btnDatosMoral').html('PERSONA MORAL');
+            /*$('#btnDatosFisica').html('PERSONA F&Iacute;SICA');
+            $('#btnDatosMoral').html('PERSONA MORAL');*/
+            $('#btnDatosFisica').html('Persona F&iacute;sica');
+            $('#btnDatosMoral').html('Persona Moral');
         }
     }
 
@@ -528,6 +530,10 @@ export class FinalizaContratacion {
             }
         });
 
+        $("#contenedorSubeArchivoINER").click(function () {
+            $("#inputFileINER").click();
+        });
+
         $("#contenedorSubeArchivoComprobante").click(function () {
             if(referenciaClase.props.banderaComprobante){
                 $("#inputFileComprobante").click();
@@ -578,7 +584,49 @@ export class FinalizaContratacion {
             }else{
                 $('#errorArchivoINE').css('display','block')
             }
-            
+        });
+
+        $("#inputFileINER").change(function (){
+            $('#errorArchivoINER').css('display','none');
+            $('#contenedorSubeArchivoINER').css('border', '1px dashed #1A76D2');
+            var propiedadesArchivo = $('#inputFileINER').prop('files');
+            var archivo = $('#inputFileINER').val();
+            if(referenciaClase.validaExtensionFile(archivo,1)){
+                //Archivo válido
+                $('#iconoSubeINER').css('display','none');
+                $("#divArchivoIdentificacionR").html('<i class="far fa-file-alt"></i>&nbsp;&nbsp;<span>'+propiedadesArchivo[0].name+'</span>');
+                $('#eliminarIdentificacionR').show();
+
+                var filIdeOfi = document.getElementById("inputFileINER")!=null ? document.getElementById("inputFileINER").files[0]:"";
+                var arrayPromesas = [];
+                arrayPromesas.push(referenciaClase.getFileB64(filIdeOfi,"filIdeOfi"));
+
+                Promise.all(arrayPromesas).then(function(result){
+                        referenciaClase.props.jsonparams.fileINE = result[0].b64;
+                        referenciaClase.props.jsonparams.extINE = referenciaClase.props.extensionINE;
+
+                        referenciaClase.props.archivosInfo[3] = {
+                            "tipoDocumento": "Identificación",
+                            "nombreArchivo": "identificacion",
+                            "archivoB64": result[0].b64,
+                            "tipoArchivo": referenciaClase.props.tipoArchivo[referenciaClase.props.extensionINE],
+                        }
+                        localStorage.setItem('TP_ARCHIVOS', JSON.stringify(referenciaClase.props.archivosInfo));
+                }).catch(err=>{
+                    console.error("Error en promesa base64:" + err);
+                });
+
+            }else{
+                $('#errorArchivoINER').css('display','block')
+            }
+        });
+
+        $('#eliminarIdentificacionR').on('click',function(event){
+            event.preventDefault();
+            $("#inputFileINER").val(null);
+            $('#iconoSubeINER').css('display','block');
+            $("#divArchivoIdentificacionR").html('Agrega tu documento adicional pdf o jpg. Máx. 5Mb.');
+            $('#eliminarIdentificacionR').hide();
         });
 
         $('#eliminarIdentificacion').on('click',function(event){
@@ -1075,7 +1123,8 @@ export class FinalizaContratacion {
                 }
 
                 if(idCampo == 'facturacionCalle'){
-                    if(!referenciaClase.validaCalle(dirCalleTarjeta)){
+                    //if(!referenciaClase.validaCalle(dirCalleTarjeta)){
+                    if(!referenciaClase.validaDir(dirCalleTarjeta)){
                         $("#errorCalleTarjeta").css("display","block");
                         $("#errorCalleTarjeta").html("*Campo no v&aacute;lido");
                         validacion = false;
@@ -2232,7 +2281,7 @@ export class FinalizaContratacion {
             idOportunidad = objVenta.idOportunidad;
 
             objPaquete = JSON.parse(straPaquete);
-            nombrePaquete = objPaquete.detallePaquete.detalle.nombreComercial;
+            nombrePaquete = objPaquete.detallePaquete.nombre;
         }catch(e){}
 
         let objCliente = referenciaClase.obtenerObjetoCliente();
@@ -2267,6 +2316,13 @@ export class FinalizaContratacion {
             "paquete": nombrePaquete
         };
 
+        let direccionInstalacionFull = objDireccion.direccionCalculada.nombreCalle + " "
+        + objDireccion.direccionCalculada.numeroDireccion + " ,"
+        + objDireccion.direccionCalculada.colonia + " ,"
+        + objDireccion.direccionCalculada.delegacionMunicipio + " ,"
+        + objDireccion.direccionCalculada.estado + " ,"
+        + objDireccion.direccionCalculada.codigoPostal;
+
         console.log('PARAMETROS AGENDAMIENTOS ENVIADOS:', parametros);
 
         $.ajax({
@@ -2281,6 +2337,8 @@ export class FinalizaContratacion {
 
             var fechaInfo = referenciaClase.obtenerFechaFormato($('#datepicker').datepicker("getDate"));
             localStorage.setItem('TP_CLIENTE_FECHA_INSTALACION', fechaInfo);
+            localStorage.setItem('TP_CLIENTE_DIR_INSTALACION', direccionInstalacionFull);
+            localStorage.setItem('TP_CLIENTE_PAQUETE', nombrePaquete);
             window.location = 'finaliza.html';
 
             if(respuesta.codigo == 0){
