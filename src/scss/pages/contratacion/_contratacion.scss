@@ -23,8 +23,8 @@
 	background-color: $gray-100;
 	z-index: 100;
 	transition: all 0.4s;
-	@include flex-box(row, center, center);
-	padding: 0 5%;
+	@include flex-box(row);
+	padding: 0;
 	box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
 
 	@include break-point("500") {
@@ -36,7 +36,7 @@
 	@include break-point("1100") {
 	}
 	.main-header {
-		width: 30%;
+		width: 25%;
 		display: none;
 		@include break-point("768") {
 			display: flex;
@@ -56,6 +56,7 @@
 		padding-bottom: 3px;
 		position: relative;
 		width: 300px;
+		padding-top: 8px;
 		@include flex-box(column, center, center);
 		@include break-point("500") {
 			width: 50%;
@@ -90,8 +91,18 @@
 				padding: 8px;
 			}
 
+			&__item:first-child {
+				position: relative;
+				left: 10px;
+			}
+			&__item:nth-child(3) {
+				position: relative;
+				left: -8px;
+			}
 			&__item:last-child {
 				margin-right: 0;
+				position: relative;
+				left: -20px;
 			}
 
 			&__item {
@@ -108,6 +119,7 @@
 				background-color: transparent;
 				@include break-point("360") {
 					display: none;
+					margin-right: 0;
 				}
 				@include break-point("768") {
 					display: flex;
@@ -2881,6 +2893,32 @@
 	top: -89px;
 	margin: 0 auto;
 }
+.complementosContainer .flex-container .item p.addedItem {
+	font-size: 14px;
+	position: relative;
+	top: -274px;
+	text-align: center;
+	display: inline;
+}
+.complementosContainer .flex-container .item p.addedItem.hideAdded {
+	display: none;
+}
+.complementosContainer .flex-container .item p.addedItem.added {
+	display: block;
+}
+.complementosContainer .flex-container .item p.addedItem img {
+	display: inline;
+	max-width: 21px;
+	position: relative;
+	top: 25px;
+}
+.complementosContainer .flex-container .item .overlapComplement p.addedItem {
+	top: -260px !important;
+	font-size: 14px !important;
+}
+.complementosContainer .flex-container .item .overlapComplement p.addedItem img {
+	top: 4px !important;
+}
 .complementosContainer .flex-container .item:nth-child(1) p.promotion {
 	display: inline-block;
 	padding: 4px 7px 6px 7px;
@@ -3110,7 +3148,7 @@
 	.specialBar {
 		position: absolute !important;
 		width: calc(100% - 16px);
-		left: 103vw;
+		left: 15px;
 		bottom: 0;
 	}
 }

@@ -85,6 +85,15 @@ function pintarDetallePaquete(objetoPaquete){
     }
 
     $('#cntNombrePaqueteBar').html(objetoPaquete.detallePaquete.nombre);
+    if(objetoPaquete.detallePaquete.nombre.includes("MATCH")){
+        $('#matchBanner').show();
+        $('#licenciaMatch').html(objetoPaquete.detallePaquete.detalle.licencia);
+        $('#descripcionLicenciaMatch').html(objetoPaquete.detallePaquete.detalle.licenciaDescripcion);
+    }else if(objetoPaquete.detallePaquete.nombre.includes("Unbox")){
+        $('#unboxBanner').show();
+        $('#licenciaUnbox').html(objetoPaquete.detallePaquete.detalle.licencia);
+        $('#descripcionLicenciaUnbox').html(objetoPaquete.detallePaquete.detalle.licenciaDescripcion);
+    }
     $('#cntPrecioPaqueteBar').html(objetoPaquete.detallePaquete.detalle.desc6ProntoPago);
 
     $('#cntNombrePaquete').html(objetoPaquete.detallePaquete.nombre);

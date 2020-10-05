@@ -1,8 +1,13 @@
 var scene = document.getElementById('scene');
 var parallax = new Parallax(scene);
-
+var $rowPayments = $("#paymentsSlider");
+var $fixScrollCarousel = $("#scrollCarousel");
+var $appCards = $(".appCards");
+var $appImageDownload = $(".appImageDownload");
+var $appFaqs = $(".appFaqs");
+var $footer = $("#footer");
 $(document).ready(function () {
-    /*    var $rowVideos = $("#rowVideosApp");
+    /*  var $rowVideos = $("#rowVideosApp");
         var $mainBanner = $("#mainSliderLandingApp");
         var $window = $(window);
         $window.scroll(function () {
@@ -20,14 +25,14 @@ $(document).ready(function () {
         speed: 500,
         dots: false,
         draggable: true,
-        fade: true,
+        fade: false,
         infinite: true,
         pauseOnHover: false,
         swipe: true,
         touchMove: true,
-        swipeToSlide: true
+        swipeToSlide: true,
+        adaptiveHeight: true
     });
-    //ticking machine
     var percentTime;
     var tick;
     var time = .1;
@@ -67,19 +72,12 @@ $(document).ready(function () {
         clearInterval(tick);
     }
     startProgressbar();
-    // End ticking machine
-
     $('.progressBarContainer div').click(function () {
         clearInterval(tick);
         var goToThisIndex = $(this).find("span").data("slickIndex");
         $('.single-item').slick('slickGoTo', goToThisIndex, false);
         startProgressbar();
     });
-    var $rowPayments = $("#paymentsSlider");
-    var $fixScrollCarousel = $("#scrollCarousel");
-    var $appCards = $(".appCards");
-    var $appImageDownload = $(".appImageDownload");
-    var $appFaqs = $(".appFaqs");
     var $window = $(window);
     $window.scroll(function () {
         if ($rowPayments.is(":in-viewport")) {
@@ -94,25 +92,13 @@ $(document).ready(function () {
         } else if ($appFaqs.is(":in-viewport")) {
             $fixScrollCarousel.addClass('unfixedScrollerCarousel');
             $fixScrollCarousel.removeClass('fixedScrollerCarousel');
+        } else if ($footer.is(":in-viewport")) {
+            $fixScrollCarousel.addClass('unfixedScrollerCarousel');
+            $fixScrollCarousel.removeClass('fixedScrollerCarousel');
         } else {
             $fixScrollCarousel.removeClass('unfixedScrollerCarousel');
         }
     });
-});
-
-$(window).scroll(function () {
-    if ($(this).scrollTop() > 3350) {
-        $('#upDownRotation').addClass("rotateDown");
-        $('#upDownRotation').removeClass("rotateUp");
-        $('#downUpRotation').addClass("rotateDown");
-        $('#downUpRotation').removeClass("rotateUp");
-    }
-    else {
-        $('#upDownRotation').removeClass("rotateDown");
-        $('#upDownRotation').addClass("rotateUp");
-        $('#downUpRotation').removeClass("rotateDown");
-        $('#downUpRotation').addClass("rotateUp");
-    }
 });
 $(window).scroll(function () {
     if ($(this).scrollTop() > 650) {
@@ -127,31 +113,71 @@ $(window).scroll(function () {
     }
 });
 $(window).scroll(function () {
-    if ($(this).scrollTop() > 1500) {
-        $("#firstScrollerMessage").addClass('hideText')
-        $("#secondScrollerMessage").removeClass('showText')
+    if ($(this).scrollTop() > 650) {
+        $("#firstScrollerMessage").addClass('showText');
+        $("#firstScrollerMessage").removeClass('hideText');
+        $("#firstScrollerImage").addClass('showImage');
+        $("#firstScrollerImage").removeClass('hideImage');
+        $("#secondScrollerMessage").removeClass('showText');
+        $("#secondScrollerMessage").addClass('hideText');
+        $("#secondScrollerImage").removeClass('showImage');
+        $("#secondScrollerImage").addClass('hideImage');
     } else {
-        $("#firstScrollerMessage").removeClass('hideText')
-        $("#secondScrollerMessage").removeClass('showText')
+        $("#firstScrollerMessage").removeClass('showText');
+        $("#firstScrollerMessage").addClass('hideText');
+        $("#firstScrollerImage").removeClass('showImage');
+        $("#firstScrollerImage").addClass('hideImage');
     }
 });
 $(window).scroll(function () {
-    if ($(this).scrollTop() > 1510) {
-        $("#secondScrollerMessage").addClass('showText')
+    if ($(this).scrollTop() > 1650) {
+        $("#firstScrollerMessage").addClass('hideText');
+        $("#firstScrollerMessage").removeClass('showText');
+        $("#firstScrollerImage").removeClass('showImage');
+        $("#firstScrollerImage").addClass('hideImage');
+        $("#secondScrollerImage").addClass('showImage');
+        $("#secondScrollerImage").removeClass('hideImage');
+        $("#secondScrollerMessage").addClass('showText');
+        $("#secondScrollerMessage").removeClass('hideText');
     } else {
-        $("#secondScrollerMessage").removeClass('showText')
-    }
-});
-$(window).scroll(function () {
-    if ($(this).scrollTop() > 2010) {
-        $("#thirdScrollerMessage").addClass('showText');
-        $("#secondScrollerMessage").removeClass('showText')
-    } else {
-        $("#thirdScrollerMessage").removeClass('showText')
-        $("#secondScrollerMessage").addClass('showText')
+        $("#secondScrollerMessage").addClass('hideText');
+        $("#secondScrollerMessage").removeClass('showText');
+        $("#secondScrollerImage").removeClass('showImage');
+        $("#secondScrollerImage").addClass('hideImage');
     }
 });
 
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 2650) {
+        $("#secondScrollerMessage").addClass('hideText');
+        $("#secondScrollerMessage").removeClass('showText');
+        $("#secondScrollerImage").addClass('hideImage');
+        $("#secondScrollerImage").removeClass('showImage');
+        $("#thirdScrollerMessage").addClass('showText');
+        $("#thirdScrollerMessage").removeClass('hideText');
+        $("#thirdScrollerImage").addClass('showImage');
+        $("#thirdScrollerImage").removeClass('hideImage');
+    } else {
+        $("#thirdScrollerMessage").addClass('hideText');
+        $("#thirdScrollerMessage").removeClass('showText');
+        $("#thirdScrollerImage").removeClass('showImage');
+        $("#thirdScrollerImage").addClass('hideImage');
+    }
+});
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 3350) {
+        $('#upDownRotation').addClass("rotateDown");
+        $('#upDownRotation').removeClass("rotateUp");
+        $('#downUpRotation').addClass("rotateDown");
+        $('#downUpRotation').removeClass("rotateUp");
+    }
+    else {
+        $('#upDownRotation').removeClass("rotateDown");
+        $('#upDownRotation').addClass("rotateUp");
+        $('#downUpRotation').removeClass("rotateDown");
+        $('#downUpRotation').addClass("rotateUp");
+    }
+});
 var showInnerModal = function (item, e) {
     if ($('#' + item).is(":visible")) {
         $('#' + item).fadeOut(300);
