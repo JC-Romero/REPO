@@ -2763,7 +2763,7 @@
 }
 .barraEcommerce .botonAvance {
 	position: relative;
-	top: -35px;
+	top: -45px;
 }
 .barraEcommerce .botonRegreso {
 	position: relative;
@@ -3125,6 +3125,8 @@
 		width: 47px;
 		height: 47px;
 		margin-right: 24px;
+		position: relative;
+		top: -13px;
 	}
 	.barraEcommerce .botonAvance a span {
 		display: none;
@@ -3140,7 +3142,6 @@
 		-moz-border-radius: 8px;
 		border-radius: 8px;
 		bottom: 16px;
-		position: fixed;
 		left: 16px;
 		bottom: 16px;
 		margin: 0 auto;
