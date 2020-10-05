@@ -1422,12 +1422,6 @@
     .headerPackages .headerPackagesContent {
         top: 5vh;
     }
-    .fixedScrollerCarousel {
-        top: 13vh;
-    }
-    .unfixedScrollerCarousel {
-        top: 2950px;
-    }
 }
 @media screen and (min-width: 1280px) and (max-height: 800px) and (-webkit-min-device-pixel-ratio: 1) {
     .appLogoContainer {
@@ -1443,10 +1437,16 @@
 /*Ana*/
 @media screen and (max-width: 1440px) and (max-height: 900px) and (-webkit-min-device-pixel-ratio: 1) {
     .headerPackages {
-        height: 95vh !important;
+        height: 105vh !important;
     }
     .headerPackages .headerPackagesContent .headerPackagesContainer {
         top: 15vh !important;
+    }
+    .fixedScrollerCarousel {
+        top: 13vh;
+    }
+    .unfixedScrollerCarousel {
+        top: 2950px;
     }
 }
 /*Ana K*/
