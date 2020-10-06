@@ -372,7 +372,7 @@ function obtenerCanales(tmcode) {
                     '</div>';
             });
             
-            $('#channelsContentList1').html('<div class="col-12 col-sm-12 col-md-8 col-lg-10 col-xl-10 channelContainer" id="channelsContentList1"><div class="row" id="cntCanales">'+htmlInterno+'</div></div>');
+            $('#channelsContentList1').html('<div class="row" id="cntCanales">'+htmlInterno+'</div>');
             $('#filterCat').html(htmlCategoria);
 
         }catch(e){            
