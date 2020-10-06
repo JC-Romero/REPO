@@ -375,7 +375,7 @@ export class FinalizaContratacion {
                 if(telefonoModal == '' || telefonoModal == undefined){
                     $('#telefonoModal').html('n/a');
                 }else{
-                    $('#telefonoModal').html(celularModal);
+                    $('#telefonoModal').html(telefonoModal);
                 }
                 
                 $("#verifyDataModal").fadeIn(250);
