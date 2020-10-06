@@ -287,7 +287,7 @@ export class FinalizaContratacion {
         });
 
         this.props.botonTitularContinuar.addEventListener('click', () => {
-            if(referenciaClase.validarCamposTitular()){
+            if(!referenciaClase.validarCamposTitular()){
                 if($('#btnDatosFisica').hasClass('botonSeleccionado')){
                     let titularNombre = $('#titularNombre').val().trim();
                     let titularApellidoPaterno = $('#titularApellidoPaterno').val().trim();
@@ -351,14 +351,15 @@ export class FinalizaContratacion {
                     localStorage.setItem('TP_TIPO_CLIENTE', 2);
                 }
 
-                this.props.formTitularData.style.cssText = 'display: none;';
+                $("#verifyDataModal").fadeIn(250);
+                /*this.props.formTitularData.style.cssText = 'display: none;';
                 this.props.resumeTitularData.style.cssText = 'display: flex;';
                 this.props.btnEditTitular.style.cssText = 'display: flex;';
                 this.props.panels[1].style.cssText = 'display: flex; padding: 0;';
 
                 setTimeout(function() {
                     $('html,body').animate({scrollTop: $("#formaPago" ).offset().top - 90}, 'slow');
-                }, 100);
+                }, 100);*/
             }
         });
 
@@ -789,6 +790,18 @@ export class FinalizaContratacion {
                 $('#diaMoral').css('pointer-events','none');
             }
         });
+
+        $('#btnConfirmaDatosTitular').on('click',function(){
+            $("#verifyDataModal").fadeOut(250);
+            referenciaClase.props.formTitularData.style.cssText = 'display: none;';
+            referenciaClase.props.resumeTitularData.style.cssText = 'display: flex;';
+            referenciaClase.props.btnEditTitular.style.cssText = 'display: flex;';
+            referenciaClase.props.panels[1].style.cssText = 'display: flex; padding: 0;';
+
+            setTimeout(function() {
+                $('html,body').animate({scrollTop: $("#formaPago" ).offset().top - 90}, 'slow');
+            }, 100);
+        })
     }
 
     nextStep() {
