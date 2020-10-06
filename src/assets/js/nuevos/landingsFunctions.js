@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
     var windw = this;
     $.fn.followTo = function (elem) {
@@ -70,7 +69,6 @@ $(document).ready(function () {
         ]
     });
 });
-
 (function ($) {
     $.fn.visible = function (partial) {
         var $t = $(this),
