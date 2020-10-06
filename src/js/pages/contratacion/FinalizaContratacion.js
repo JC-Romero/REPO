@@ -287,7 +287,8 @@ export class FinalizaContratacion {
         });
 
         this.props.botonTitularContinuar.addEventListener('click', () => {
-            if(!referenciaClase.validarCamposTitular()){
+            if(referenciaClase.validarCamposTitular()){
+                let objetoTitular;
                 if($('#btnDatosFisica').hasClass('botonSeleccionado')){
                     let titularNombre = $('#titularNombre').val().trim();
                     let titularApellidoPaterno = $('#titularApellidoPaterno').val().trim();
@@ -304,7 +305,7 @@ export class FinalizaContratacion {
                     $('#titularCelularTarjeta').html(titularCelular);
                     $('#titularIdentificacionTarjeta').html('INE/IFE y Comprobante de domicilio');
 
-                    let objetoTitular = {
+                    objetoTitular = {
                         "nombreCompleto": titularNombre + ' ' +titularApellidoPaterno+ ' ' +titularApellidoMaterno,
                         "nombre": titularNombre,
                         "apellidoPaterno": titularApellidoPaterno,
@@ -335,7 +336,7 @@ export class FinalizaContratacion {
                     $('#titularTelefonoTarjeta').html(titularCelular);
                     $('#titularCelularTarjeta').html(titularCelular);
 
-                    let objetoTitular = {
+                    objetoTitular = {
                         "nombreCompleto": nombreMoral + ' ' +apellidosMoral,
                         "nombre": nombreMoral,
                         "apellidos": apellidosMoral,
@@ -351,6 +352,32 @@ export class FinalizaContratacion {
                     localStorage.setItem('TP_TIPO_CLIENTE', 2);
                 }
 
+                $('#titularModal').html(objetoTitular.nombreCompleto);
+                $('#rfcModal').html(objetoTitular.rfc.toUpperCase());
+                if($('.checkINE').is(':checked')){
+                    $('#identificacionModal').html('INE');
+                }else if($('.checkPasaporte').is(':checked')){
+                    $('#identificacionModal').html('Pasaporte');
+                }else if($('.checkCedulaProf').is(':checked')){
+                    $('#identificacionModal').html('Cédula Profesional');
+                }
+                
+                $('#correoModal').html('correo@totalplay.com.mx');
+                
+                var celularModal = objetoTitular.celular;
+                if(celularModal == '' || celularModal == undefined){
+                    $('#celularModal').html('n/a');
+                }else{
+                    $('#celularModal').html(celularModal);
+                }
+
+                var telefonoModal = objetoTitular.telefono;
+                if(telefonoModal == '' || telefonoModal == undefined){
+                    $('#telefonoModal').html('n/a');
+                }else{
+                    $('#telefonoModal').html(celularModal);
+                }
+                
                 $("#verifyDataModal").fadeIn(250);
                 /*this.props.formTitularData.style.cssText = 'display: none;';
                 this.props.resumeTitularData.style.cssText = 'display: flex;';
@@ -795,7 +822,7 @@ export class FinalizaContratacion {
             $("#verifyDataModal").fadeOut(250);
             referenciaClase.props.formTitularData.style.cssText = 'display: none;';
             referenciaClase.props.resumeTitularData.style.cssText = 'display: flex;';
-            referenciaClase.props.btnEditTitular.style.cssText = 'display: flex;';
+            //referenciaClase.props.btnEditTitular.style.cssText = 'display: flex;';
             referenciaClase.props.panels[1].style.cssText = 'display: flex; padding: 0;';
 
             setTimeout(function() {
