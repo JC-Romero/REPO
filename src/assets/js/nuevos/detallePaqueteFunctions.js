@@ -50,13 +50,13 @@ $(document).ready(function () {
     iniciarObjetoPaquete()
 });
 
-function iniciarObjetoPaquete(){
-    
+function iniciarObjetoPaquete() {
+
     let objetoPaquete;
     let paqueteCadena = localStorage.getItem('TP_STR_PAQUETE_SELECCION');
     try {
         objetoPaquete = JSON.parse(paqueteCadena);
-        
+
         pintarDetallePaquete(objetoPaquete);
         //obtenerComplementos();
     } catch (error) {
@@ -65,31 +65,31 @@ function iniciarObjetoPaquete(){
     }
 }
 
-function pintarDetallePaquete(objetoPaquete){
+function pintarDetallePaquete(objetoPaquete) {
     console.log('objetoPaquete', objetoPaquete);
 
-    if(objetoPaquete.detallePaquete.detalle.canales == ''){
+    if (objetoPaquete.detallePaquete.detalle.canales == '') {
         $('#cntTelevision').hide();
         $('#cntTarjetaTelevision').hide();
     }
 
     console.log('objetoPaquete.detallePaquete.tipoOferta=>', objetoPaquete.detallePaquete.tipoOferta);
-    if(objetoPaquete.detallePaquete.tipoOferta == '2P'){
+    if (objetoPaquete.detallePaquete.tipoOferta == '2P') {
         $('.tarjeta3P').hide();
     }
 
     var regexMegas = /(\d{1,3})\s/;
     var arrayMegas = regexMegas.exec(objetoPaquete.detallePaquete.detalle.megas);
-    if(parseInt(arrayMegas[1]) < 150){
+    if (parseInt(arrayMegas[1]) < 150) {
         $('#tarjetaPromocionPremium').hide();
     }
 
     $('#cntNombrePaqueteBar').html(objetoPaquete.detallePaquete.nombre);
-    if(objetoPaquete.detallePaquete.nombre.includes("MATCH")){
+    if (objetoPaquete.detallePaquete.nombre.includes("MATCH")) {
         $('#matchBanner').show();
         $('#licenciaMatch').html(objetoPaquete.detallePaquete.detalle.licencia);
         $('#descripcionLicenciaMatch').html(objetoPaquete.detallePaquete.detalle.licenciaDescripcion);
-    }else if(objetoPaquete.detallePaquete.nombre.includes("Unbox")){
+    } else if (objetoPaquete.detallePaquete.nombre.includes("Unbox")) {
         $('#unboxBanner').show();
         $('#licenciaUnbox').html(objetoPaquete.detallePaquete.detalle.licencia);
         $('#descripcionLicenciaUnbox').html(objetoPaquete.detallePaquete.detalle.licenciaDescripcion);
@@ -99,12 +99,12 @@ function pintarDetallePaquete(objetoPaquete){
     $('#cntNombrePaquete').html(objetoPaquete.detallePaquete.nombre);
     $('#cntPaqueteDescripcion').html(objetoPaquete.detallePaquete.descripcion);
 
-    $('#cntMegas').html('Internet de '+ objetoPaquete.detallePaquete.detalle.megas);
+    $('#cntMegas').html('Internet de ' + objetoPaquete.detallePaquete.detalle.megas);
     $('#cntMegasDetalle').html(objetoPaquete.detallePaquete.detalle.megasDetalle);
     $('#cntTVDetalle').html(objetoPaquete.detallePaquete.detalle.canales);
     $('#cntTVPromo').html(objetoPaquete.detallePaquete.detalle.promoCanales);
 
-    
+
 
     $('#cntPrecioPaquete').html(objetoPaquete.detallePaquete.detalle.desc6ProntoPago);
 
@@ -117,11 +117,11 @@ function pintarDetallePaquete(objetoPaquete){
     $('#cntCardTelevisionDetalle').html(objetoPaquete.detallePaquete.detalle.promoCanalesDetalle);
 
     obtenerComplementos(objetoPaquete.idPaquete)
-    
+
 }
 
 function obtenerComplementos(idPaquete) {
-    
+
     var parametros = {
         "idPlan": idPaquete,
         "plaza": "CIUDAD DE MEXICO",
@@ -145,7 +145,7 @@ function obtenerComplementos(idPaquete) {
         let arregloProductos = respuesta.datos.infoAddons.productosAdd.productos;
         let arregloServicios = respuesta.datos.infoAddons.serviciosAdd.servicios;
 
-        buscarInfoComplementos(arregloPromociones,arregloProductos,arregloServicios, arregloGarantia);
+        buscarInfoComplementos(arregloPromociones, arregloProductos, arregloServicios, arregloGarantia);
 
 
     }).fail(function (jqXHR, textStatus) {
@@ -154,12 +154,12 @@ function obtenerComplementos(idPaquete) {
     });
 }
 
-function buscarInfoComplementos(arregloPromociones, arregloProductos,arregloServicios, arregloGarantia){
+function buscarInfoComplementos(arregloPromociones, arregloProductos, arregloServicios, arregloGarantia) {
     let objetoComplementos = {};
     let arregloPromocion = new Array();
     let infoParrilla = new Array();
     $.each(arregloPromociones, function (key, objetoPromociones) {
-    //$.each(arregloProductos[0].adicional, function (key, objetoPromociones) {
+        //$.each(arregloProductos[0].adicional, function (key, objetoPromociones) {
         //let nombrePromocion = objetoPromociones.adicionalProductoNombre;
         let nombrePromocion = objetoPromociones.nombre;
         if (nombrePromocion == "FOX PREMIUM.") {
@@ -184,13 +184,13 @@ function buscarInfoComplementos(arregloPromociones, arregloProductos,arregloServ
             arregloTelevision.push(objetoProductos);
 
             $.each(objetoProductos.adicional, function (index, objetoParrilla) {
-                if(objetoParrilla.nombre == 'TV BASICA'){
+                if (objetoParrilla.nombre == 'TV BASICA') {
                     infoParrilla[0] = objetoParrilla.idPlanParrilla;
                 }
-                if(objetoParrilla.nombre == 'TV AVANZADA'){
+                if (objetoParrilla.nombre == 'TV AVANZADA') {
                     infoParrilla[1] = objetoParrilla.idPlanParrilla;
                 }
-                if(objetoParrilla.nombre == 'TV PREMIUM'){
+                if (objetoParrilla.nombre == 'TV PREMIUM') {
                     infoParrilla[2] = objetoParrilla.idPlanParrilla;
                 }
                 console.log('idPlanParrilla=>', objetoParrilla.idPlanParrilla);
@@ -223,7 +223,7 @@ function buscarInfoComplementos(arregloPromociones, arregloProductos,arregloServ
     let costoIntalacion = 0;
 
     $.each(arregloGarantia, function (key, objetoGarantia,) {
-        if(objetoGarantia.Agrupacion == 'Costo y Garantia'){
+        if (objetoGarantia.Agrupacion == 'Costo y Garantia') {
             $.each(objetoGarantia.adicional, function (index, objetoAdicional) {
                 costoIntalacion += objetoAdicional.precio;
             });
@@ -270,17 +270,27 @@ var showFilters = function (item, e) {
     }
     event.preventDefault();
 };
+var showFiltersMobile = function (item, e) {
+    if ($('#' + item).is(":visible")) {
+        $('#' + item).fadeOut(300);
+        $('.filterToggleParagraphMobile').removeClass('closeIconFilters');
+    } else {
+        $('#' + item).fadeIn(300);
+        $('.filterToggleParagraphMobile').addClass('closeIconFilters');
+    }
+    event.preventDefault();
+};
 
 /*AKHM modal canales*/
-function obtenerCanalesParrilla(){
-    $("body").on('click', '.botonParrilla', function() {
+function obtenerCanalesParrilla() {
+    $("body").on('click', '.botonParrilla', function () {
 
-        
-        var arregloTexto = ['80 canales, 35 en HD','120 canales, 80 en HD.','255 canales, 130 en HD.','275 canales, 160 en HD.']
+
+        var arregloTexto = ['80 canales, 35 en HD', '120 canales, 80 en HD.', '255 canales, 130 en HD.', '275 canales, 160 en HD.']
         var tipo = $(this).attr('data-tipo');
         var tmCode = $(this).attr('data-code');
 
-        $('#textoTipoParrilla').html('Disfruta de '+ arregloTexto[tipo]);
+        $('#textoTipoParrilla').html('Disfruta de ' + arregloTexto[tipo]);
         $('#cntCanales').remove();
         $('.botonParrilla').removeClass('parrillaSeleccionada');
         $(this).addClass('parrillaSeleccionada');
@@ -290,94 +300,94 @@ function obtenerCanalesParrilla(){
 }
 
 function obtenerCanales(tmcode) {
-    
+
     //consolo.log('', 'INICIANDO EL SERVICIO [obtener-canales]');
     let obtenerCanales = "https://5ui1bow6gf.execute-api.us-east-1.amazonaws.com/Desarrollo/obtener-canales";
-    
+
     $.ajax({
         url: obtenerCanales,
-        data: JSON.stringify({'tmCode':tmcode}),
+        data: JSON.stringify({ 'tmCode': tmcode }),
         dataType: "json",
         type: 'POST'
     }).done(function (respuesta) {
         //printConsole('', 'SERVICIO [obtener-canales] RESPONDE', respuesta);
 
-        try{
+        try {
             var informacion = respuesta.body;
-            localStorage.setItem('TP_OF_OBJ_CANALES', JSON.stringify (respuesta.body) );
+            localStorage.setItem('TP_OF_OBJ_CANALES', JSON.stringify(respuesta.body));
 
             var arrayCategoria = new Array();
 
             var htmlInterno = '';
             var totalCanales = 0;
-            $.each( informacion, function( categoria, objListaCanales ) {
+            $.each(informacion, function (categoria, objListaCanales) {
                 /*[C=Canales][M=Mosaico][I=Apps]*/
-                $.each( objListaCanales, function( key, objCanal ) {
-                    if(objCanal.type == 'C'){
+                $.each(objListaCanales, function (key, objCanal) {
+                    if (objCanal.type == 'C') {
                         arrayCategoria.push(categoria);
                         return false;
                     }
                 });
                 /*[C=Canales][M=Mosaico][I=Apps]*/
-                $.each( objListaCanales, function( key, objCanal ) {
-                    if(objCanal.type == 'C'){
+                $.each(objListaCanales, function (key, objCanal) {
+                    if (objCanal.type == 'C') {
                         totalCanales++;
                         var srcImage = '';
-                        if(objCanal.images['SUPER'] != undefined){
-                            srcImage = 'https://imgn.cdn.iutpcdn.com/IMGS/CHANNEL/SUPER/'+objCanal.images['SUPER']['misId']+'-8c.'+objCanal.images['SUPER']['ext'];
+                        if (objCanal.images['SUPER'] != undefined) {
+                            srcImage = 'https://imgn.cdn.iutpcdn.com/IMGS/CHANNEL/SUPER/' + objCanal.images['SUPER']['misId'] + '-8c.' + objCanal.images['SUPER']['ext'];
                         }
 
-                        htmlInterno += ''+
-                            '<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 content-channel" data-categoria="'+categoria+'" data-canal="'+objCanal.lchId+'">'+
-                                '<div class="row">'+
-                                    '<div class="col-12 mx-auto channelItem">'+
-                                        '<div class="row channelItemImage">'+
-                                            '<div class="col-12">'+
-                                                '<img src="'+srcImage+'" width="50" width="100">'+
-                                            '</div>'+
-                                        '</div>'+
-                                        '<div class="row channelItemName">'+
-                                            '<div class="col-12 logo-channel">'+
-                                                '<p>'+objCanal.number+'</p>'+
-                                            '</div>'+
-                                        '</div>'+
-                                    '</div>'+
-                                '</div>'+
+                        htmlInterno += '' +
+                            '<div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 content-channel" data-categoria="' + categoria + '" data-canal="' + objCanal.lchId + '">' +
+                            '<div class="row">' +
+                            '<div class="col-12 mx-auto channelItem">' +
+                            '<div class="row channelItemImage">' +
+                            '<div class="col-12">' +
+                            '<img src="' + srcImage + '" width="50" width="100">' +
+                            '</div>' +
+                            '</div>' +
+                            '<div class="row channelItemName">' +
+                            '<div class="col-12 logo-channel">' +
+                            '<p>' + objCanal.number + '</p>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
                             '</div>';
                     }
-                        
+
                 });
             });
-            
-            var htmlCategoria = '<div class="row filterItem filtroCanal" data-filtro="todos">'+
-                    '<div class="col-12">'+
-                        '<div class="form-check">'+
-                            '<input class="form-check-input" type="radio" name="filterName" id="filterRadio" value="filterName">'+
-                            '<label class="form-check-label" for="filterRadio">'+
-                                'Todos ('+totalCanales+')'+
-                            '</label>'+
-                        '</div>'+
-                    '</div>'+
+
+            var htmlCategoria = '<div class="row filterItem filtroCanal" data-filtro="todos">' +
+                '<div class="col-12">' +
+                '<div class="form-check">' +
+                '<input class="form-check-input" type="radio" name="filterName" id="filterRadio" value="filterName">' +
+                '<label class="form-check-label" for="filterRadio">' +
+                'Todos (' + totalCanales + ')' +
+                '</label>' +
+                '</div>' +
+                '</div>' +
                 '</div>';
-            $.each( arrayCategoria, function( index, categoria ) {
-                
-                htmlCategoria += '<div class="row filterItem filtroCanal" data-filtro="'+categoria+'">'+
-                        '<div class="col-12">'+
-                            '<div class="form-check">'+
-                                '<input class="form-check-input" type="radio" name="filterName" id="filterRadio" value="filterName">'+
-                                '<label class="form-check-label" for="filterRadio">'+categoria+
-                                '</label>'+
-                            '</div>'+
-                        '</div>'+
+            $.each(arrayCategoria, function (index, categoria) {
+
+                htmlCategoria += '<div class="row filterItem filtroCanal" data-filtro="' + categoria + '">' +
+                    '<div class="col-12">' +
+                    '<div class="form-check">' +
+                    '<input class="form-check-input" type="radio" name="filterName" id="filterRadio" value="filterName">' +
+                    '<label class="form-check-label" for="filterRadio">' + categoria +
+                    '</label>' +
+                    '</div>' +
+                    '</div>' +
                     '</div>';
             });
-            
-            $('#channelsContentList1').html('<div class="col-12 col-sm-12 col-md-8 col-lg-10 col-xl-10 channelContainer" id="channelsContentList1"><div class="row" id="cntCanales">'+htmlInterno+'</div></div>');
+
+            $('#channelsContentList1').html('<div class="col-12 col-sm-12 col-md-8 col-lg-10 col-xl-10 channelContainer" id="channelsContentList1"><div class="row" id="cntCanales">' + htmlInterno + '</div></div>');
             $('#filterCat').html(htmlCategoria);
 
-        }catch(e){            
+        } catch (e) {
 
-            console.log('OCURRIO ALGO INESPERADO EN LA FUNCION [obtenerCanales] ERROR[' + e+ ']');
+            console.log('OCURRIO ALGO INESPERADO EN LA FUNCION [obtenerCanales] ERROR[' + e + ']');
         }
     }).fail(function (jqXHR, textStatus) {
 
@@ -391,17 +401,17 @@ $("body").on('click', '.filtroCanal', function (evet) {
 
     var filtroSeleccionado = $(this).attr('data-filtro');
 
-    if(filtroSeleccionado == 'todos'){
+    if (filtroSeleccionado == 'todos') {
         $('.content-channel').show();
-    }else{
-        $.each( $('.content-channel'), function( key, html ) {
+    } else {
+        $.each($('.content-channel'), function (key, html) {
             var categoriaCanal = $(this).attr('data-categoria');
 
-            if(filtroSeleccionado == categoriaCanal){
+            if (filtroSeleccionado == categoriaCanal) {
                 $(this).show();
                 var v = $(this).find("form-check-input");
             }
-            if(filtroSeleccionado != categoriaCanal){
+            if (filtroSeleccionado != categoriaCanal) {
                 $(this).hide();
             }
         });

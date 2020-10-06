@@ -2840,7 +2840,7 @@
 	line-height: 24px;
 }
 .complementosContainer .flex-container {
-	max-width: 840px;
+	max-width: 1060px;
 	width: 100%;
 	list-style-type: none;
 	margin: 20px auto;
@@ -2940,16 +2940,23 @@
 	position: relative;
 	top: -234px;
 }
-.complementosContainer .flex-container .item:nth-child(2) {
+.complementosContainer .flex-container.fourElements .item:nth-child(2),
+.complementosContainer .flex-container.fourElements .item:nth-child(3) {
 	box-shadow: none;
-	background: rgba(255, 255, 255, 0);
+	background: transparent;
 }
-.complementosContainer .flex-container .item:nth-child(2) .imageComplement {
+.complementosContainer .flex-container.threeElements .item:nth-child(2) {
+	box-shadow: none;
+	background: transparent;
+}
+.complementosContainer .flex-container .item:nth-child(2) .imageComplement,
+.complementosContainer .flex-container .item:nth-child(3) .imageComplement {
 	height: 272px;
 	border-radius: 4px;
 	overflow: hidden;
 }
-.complementosContainer .flex-container .item:nth-child(2) .imageComplement:after {
+.complementosContainer .flex-container .item:nth-child(2) .imageComplement:after,
+.complementosContainer .flex-container .item:nth-child(3) .imageComplement:after {
 	border-radius: 4px;
 	content: "";
 	width: 100%;
@@ -2980,7 +2987,8 @@
 	z-index: 10;
 	top: -230px;
 }
-.complementosContainer .flex-container .item:nth-child(2) .imageComplement img {
+.complementosContainer .flex-container .item:nth-child(2) .imageComplement img,
+.complementosContainer .flex-container .item:nth-child(3) .imageComplement img {
 	height: auto;
 	min-width: 150%;
 	position: relative;
@@ -2988,7 +2996,8 @@
 	z-index: 0;
 	left: -48px;
 }
-.complementosContainer .flex-container .item:nth-child(2) .overlapComplement {
+.complementosContainer .flex-container .item:nth-child(2) .overlapComplement,
+.complementosContainer .flex-container .item:nth-child(3) .overlapComplement {
 	height: 219px;
 	width: 192px;
 	margin: 0 auto;
@@ -2999,14 +3008,16 @@
 	z-index: 11;
 	border-radius: 8px;
 }
-.complementosContainer .flex-container .item:nth-child(2) .overlapComplement img {
+.complementosContainer .flex-container .item:nth-child(2) .overlapComplement img,
+.complementosContainer .flex-container .item:nth-child(3) .overlapComplement img {
 	height: auto;
 	width: 124px;
 	margin: 0 auto;
 	position: relative;
 	top: -16px;
 }
-.complementosContainer .flex-container .item:nth-child(2) .overlapComplement h1 {
+.complementosContainer .flex-container .item:nth-child(2) .overlapComplement h1,
+.complementosContainer .flex-container .item:nth-child(3) .overlapComplement h1 {
 	font-family: Montserrat-Bold;
 	font-size: 18px;
 	line-height: 22px;
@@ -3014,7 +3025,8 @@
 	position: relative;
 	top: -104px;
 }
-.complementosContainer .flex-container .item:nth-child(2) .overlapComplement p {
+.complementosContainer .flex-container .item:nth-child(2) .overlapComplement p,
+.complementosContainer .flex-container .item:nth-child(3) .overlapComplement p {
 	font-family: Montserrat-Regular;
 	font-size: 16px;
 	line-height: 19px;
@@ -3022,7 +3034,8 @@
 	position: relative;
 	top: -105px;
 }
-.complementosContainer .flex-container .item:nth-child(2) .overlapComplement p.price {
+.complementosContainer .flex-container .item:nth-child(2) .overlapComplement p.price,
+.complementosContainer .flex-container .item:nth-child(3) .overlapComplement p.price {
 	font-family: Montserrat-Regular;
 	font-size: 14px;
 	line-height: 18px;
@@ -3034,14 +3047,16 @@
 	padding: 4px 7px 6px 7px;
 	border-radius: 4px;
 }
-.complementosContainer .flex-container .item:nth-child(3) img {
+.complementosContainer .flex-container.threeElements .item:nth-child(3) img,
+.complementosContainer .flex-container.fourElements .item:nth-child(4) img {
 	width: 72px;
 	height: 58px;
 	margin: 0 auto;
 	position: relative;
 	top: -20px;
 }
-.complementosContainer .flex-container .item:nth-child(3) h1 {
+.complementosContainer .flex-container.threeElements .item:nth-child(3) h1,
+.complementosContainer .flex-container.fourElements .item:nth-child(4) h1 {
 	color: rgba(59, 69, 89, 1);
 	font-family: Montserrat-Bold;
 	font-size: 18px;
@@ -3049,7 +3064,8 @@
 	position: relative;
 	top: -92px;
 }
-.complementosContainer .flex-container .item:nth-child(3) p {
+.complementosContainer .flex-container.threeElements .item:nth-child(3) p,
+.complementosContainer .flex-container.fourElements .item:nth-child(4) p {
 	font-family: Montserrat-Regular;
 	font-size: 14px;
 	width: 100%;
@@ -3059,7 +3075,8 @@
 	top: -89px;
 	margin: 0 auto;
 }
-.complementosContainer .flex-container .item:nth-child(3) hr {
+.complementosContainer .flex-container.threeElements .item:nth-child(3) hr,
+.complementosContainer .flex-container.fourElements .item:nth-child(4) hr {
 	width: 150px;
 	border: rgba(224, 224, 224, 1) solid 1px;
 	margin: 0 auto;
@@ -3069,7 +3086,8 @@
 	position: relative;
 	top: -15px;
 }
-.complementosContainer .flex-container .item:nth-child(3) p.price {
+.complementosContainer .flex-container.threeElements .item:nth-child(3) p.price,
+.complementosContainer .flex-container.fourElements .item:nth-child(4) p.price {
 	position: relative;
 	top: 11px;
 	font-size: 16px;
@@ -3156,9 +3174,6 @@
 
 // Medium devices (tablets, less than 992px)
 @media (max-width: 991.98px) {
-	.flex-container {
-		padding-bottom: 12vh !important;
-	}
 }
 
 // Large devices (desktops, less than 1200px)

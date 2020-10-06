@@ -106,7 +106,6 @@
         -webkit-border-radius: 8px;
         -moz-border-radius: 8px;
         border-radius: 8px;
-        display: block;
     }
 
     .landingPackageResume .landingPackagePrice .priceContainer .buttonContainer .generalButton span::after {
@@ -526,6 +525,8 @@
     }
     .modalChannelsContainer .filtersContainer .marginMobile {
         margin-bottom: 1rem;
+        border: rgba(224, 224, 224, 1) solid 1px;
+        margin-top: 1rem;
     }
     .extraBanners .extraBannerChannel .extraBannerChannelCol .extraBannerLogo img {
         margin-top: 0;

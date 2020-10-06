@@ -3958,6 +3958,8 @@ footer .legalAdvice p {
 
 .cardsRowLandingPackages {
     background: rgba(246, 246, 246, 1);
+    padding-bottom: 0;
+    padding-top: 0;
 }
 
 .cardsRowLandingPackages h5 {
@@ -5495,10 +5497,23 @@ video {
     font-weight: 600;
     font-size: 20px;
 }
+.appFaqs .faqsContainer .card .card-header h2:focus {
+    outline: none;
+}
+.appFaqs .faqsContainer .card .card-header h2 button:focus {
+    outline: none;
+}
 .appFaqs .faqsContainer .card .card-body {
     color: rgba(59, 69, 89, 1);
     font-weight: 300;
     font-size: 18px;
+}
+.appFaqs .faqsContainer .card .card-body p {
+    margin-bottom: 10px;
+}
+.appFaqs .faqsContainer .card .card-body ol li,
+.appFaqs .faqsContainer .card .card-body ul li {
+    margin-bottom: 10px;
 }
 .appFaqs .faqsContainer .card .card-body a {
     font-size: 18px;
@@ -5708,7 +5723,10 @@ video {
     border: solid rgba(26, 118, 210, 1) 2px;
     background: rgba(26, 118, 210, 0.15);
 }
-.modalChannelsContainer .channelsTopBar .channelsTopBarToggle li a.active {
+.modalChannelsContainer .channelsTopBar .channelsTopBarToggle li:focus {
+    outline: none;
+}
+.modalChannelsContainer .channelsTopBar .channelsTopBarToggle li.parrillaSeleccionada a {
     border: solid rgba(26, 118, 210, 1) 2px;
     font-weight: 700;
     pointer-events: none;
@@ -6699,7 +6717,6 @@ video {
     left: -15px;
     padding-right: 30px;
     padding-left: 30px;
-    opacity: 0;
 }
 .scrollerContainer .scrollerCarousel.showCarousel {
     animation: opacityShow 300ms forwards;
@@ -7037,7 +7054,12 @@ video {
         }
     }
 }
-/*MODAL CANALES AKHM*/
-.parrillaSeleccionada {
-    border: solid rgba(26, 118, 210, 1) 2px;
+.mobileFilters .mobileFiltersContainer .form-check {
+    padding-left: 15px;
+    margin-left: 20px;
 }
+.mobileFilters .form-check-label {
+    color: rgba(117, 120, 123, 1);
+    font-size: 14px;
+}
+/*MODAL CANALES AKHM*/

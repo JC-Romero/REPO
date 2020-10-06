@@ -52,7 +52,7 @@ layout: home
                         <span id="cntMegasDetalle"></span>
                     </div>
                 </div>
-                
+
                 <div class="row resumeItem" id="cntTelevision">
                     <div class="col-9 col-sm-9 col-md-9 col-lg-10 col-xl-10 HDSingle mx-auto">
                         <p id="cntTVDetalle"></p>
@@ -89,7 +89,9 @@ layout: home
                                 <span>Pagando a tiempo y a partir del 6º mes</span>
                             </div>
                             <div class="col-6 col-sm-12 col-md-12 col-lg-12 col-xl-12 buttonContainer">
-                                <button class="generalButton btnDeshabilitado" id="btnObtenerPaquete" disabled="" onclick="window.location='contratacion.html'" ><i class="fas fa-circle-notch fa-spin" style="color: #1a76d2;"></i></button>
+                                <button class="generalButton btnDeshabilitado" id="btnObtenerPaquete" disabled=""
+                                    onclick="window.location='contratacion.html'"><i class="fas fa-circle-notch fa-spin"
+                                        style="color: #1a76d2;"></i></button>
                             </div>
                         </div>
                     </div>
@@ -107,53 +109,64 @@ layout: home
         </div>
     </div>
 </section>
-<div class="card-deck cardsRow cardsRowLandingPackages ">
-    <div class="card whiteCard">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-10 mx-auto">
-                    <h5 id="cntCardMegas">350 Megas</h5>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-10 mx-auto">
-                    <p id="cntCardMegasPaquete">Para lo que necesites, manten a tu familia conectada sin problemas.</p>
-                </div>
-            </div>
-            <div class="row cardBadgeContainer">
-                <div class="col-10 col-sm-10 col-md-8 col-lg-6 col-xl-6 mx-auto">
-                    <div class="cardBadge">
-                        <p id="cntCardMegasDetalle">Podrás elegir más megas o más canales sin costo por 4 meses</p>
+<section class="row cardsRow cardsRowLandingPackages">
+    <div class="col-12 col-sm-12 col-md-11 col-lg-11 col-xl-11 mx-auto">
+        <div class="row equal-height">
+            <div class="col-12 col-sm-12 col-md-11 col-lg-6 col-xl-6 mx-auto mx-sm-auto mx-md-auto">
+                <div class="card whiteCard">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-10 mx-auto">
+                                <h5 id="cntCardMegas">350 Megas</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-10 mx-auto">
+                                <p id="cntCardMegasPaquete">Para lo que necesites, manten a tu familia conectada sin
+                                    problemas.</p>
+                            </div>
+                        </div>
+                        <div class="row cardBadgeContainer">
+                            <div class="col-10 col-sm-10 col-md-8 col-lg-6 col-xl-6 mx-auto">
+                                <div class="cardBadge">
+                                    <p id="cntCardMegasDetalle">Podrás elegir más megas o más canales sin costo por 4
+                                        meses</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <img src="../assets/img/nuevos/cardArt1.png" class="card-img-top" alt="Decodificador Totalplay">
+                </div>
+            </div>
+            <div class="col-11 col-sm-11 col-md-11 col-lg-6 col-xl-6 mx-auto mx-sm-auto mx-md-auto">
+                <div class="card whiteCard" id="cntTarjetaTelevision">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-10 mx-auto">
+                                <h5 id="cntCardTelevision">Televisión</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-10 mx-auto">
+                                <p id="cntCardTelevisionPaquete">Más de 80 canales, 21 en HD</p>
+                                <a href="#" onclick="showChannels(event);">Ver canales</a>
+                            </div>
+                        </div>
+                        <div class="row cardBadgeContainer">
+                            <div class="col-10 col-sm-10 col-md-8 col-lg-6 col-xl-6 mx-auto">
+                                <div class="cardBadge">
+                                    <p id="cntCardTelevisionDetalle">Podrás elegir 500 Megas ó 120 Canales sin costo por
+                                        4 meses</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="../assets/img/nuevos/tvBasica.png" class="card-img-bottom" alt="Decodificador Totalplay">
                 </div>
             </div>
         </div>
-        <img src="../assets/img/nuevos/cardArt1.png" class="card-img-top" alt="Decodificador Totalplay">
     </div>
-    <div class="card whiteCard" id="cntTarjetaTelevision">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-10 mx-auto">
-                    <h5 id="cntCardTelevision">Televisión</h5>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-10 mx-auto">
-                    <p id="cntCardTelevisionPaquete">Más de 80 canales, 21 en HD</p>
-                    <a href="#" onclick="showChannels(event);">Ver canales</a>
-                </div>
-            </div>
-            <div class="row cardBadgeContainer">
-                <div class="col-10 col-sm-10 col-md-8 col-lg-6 col-xl-6 mx-auto">
-                    <div class="cardBadge">
-                        <p id="cntCardTelevisionDetalle">Podrás elegir 500 Megas ó 120 Canales sin costo por 4 meses</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <img src="../assets/img/nuevos/tvBasica.png" class="card-img-bottom" alt="Decodificador Totalplay">
-    </div>
-</div>
+</section>
 <section class="row landingFullWidthBanner matchBanner" id="matchBanner" style="display: none;">
     <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 mx-auto">
         <div class="row landingBannerContainer">
@@ -204,116 +217,147 @@ layout: home
         </div>
     </div>
 </section>
-<section id="scrollFirst" class="card-deck cardsRow cardsRowLandingPackages tarjeta3P">
-    <div class="card blueGradientCard" id="tarjetaPromocionPremium">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-10 mx-auto">
-                    <h5>Elige HBO ó Fox Premium</h5>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-10 mx-auto">
-                    <p>Disfruta una suscripción al mejor contenido cinematográfico en todos tus dispositivos.</p>
-                </div>
-            </div>
-            <div class="row cardBadgeContainer">
-                <div class="col-10 col-sm-10 col-md-8 col-lg-6 col-xl-6 mx-auto">
-                    <div class="cardBadge">
-                        <p>Incluido en tu paquete durante 6 meses</p>
+<section id="scrollFirst" class="row cardsRow cardsRowLandingPackages tarjeta3P">
+    <div class="col-12 col-sm-12 col-md-11 col-lg-11 col-xl-11 mx-auto">
+        <div class="row equal-height">
+            <div class="col-12 col-sm-12 col-md-11 col-lg-6 col-xl-6 mx-auto mx-sm-auto mx-md-auto">
+                <div class="card blueGradientCard" id="tarjetaPromocionPremium">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-10 mx-auto">
+                                <h5>Elige HBO ó Fox Premium</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-10 mx-auto">
+                                <p>Disfruta una suscripción al mejor contenido cinematográfico en todos tus
+                                    dispositivos.</p>
+                            </div>
+                        </div>
+                        <div class="row cardBadgeContainer">
+                            <div class="col-10 col-sm-10 col-md-8 col-lg-6 col-xl-6 mx-auto">
+                                <div class="cardBadge">
+                                    <p>Incluido en tu paquete durante 6 meses</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <img src="../assets/img/nuevos/imgFeatureNew.png" class="card-img-bottom"
+                        alt="Decodificador Totalplay">
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-11 col-lg-6 col-xl-6 mx-auto mx-sm-auto mx-md-auto">
+                <div class="card deepBlueCard">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-10 mx-auto">
+                                <h5>Tecnología 4K</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-10 mx-auto">
+                                <p>Con acceso a las apps más populares y en cada equipo un punto de acceso a internet
+                                    para maximizar
+                                    la cobertura wifi de tu hogar.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="../assets/img/nuevos/4kNew.png" class="card-img-bottom" alt="Decodificador Totalplay">
                 </div>
             </div>
         </div>
-        <img src="../assets/img/nuevos/imgFeatureNew.png" class="card-img-bottom" alt="Decodificador Totalplay">
-    </div>
-    <div class="card deepBlueCard">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-10 mx-auto">
-                    <h5>Tecnología 4K</h5>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-10 mx-auto">
-                    <p>Con acceso a las apps más populares y en cada equipo un punto de acceso a internet para maximizar la cobertura wifi de tu hogar.</p>
-                </div>
-            </div>
-        </div>
-        <img src="../assets/img/nuevos/4kNew.png" class="card-img-bottom" alt="Decodificador Totalplay">
     </div>
 </section>
-<section class="card-deck cardsRow cardsRowLandingPackages tarjeta3P">
-    <div class="card purpleGradientCard">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-10 mx-auto">
-                    <h5 class="card-title">OnDemand</h5>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-10 mx-auto">
-                    <p>Renta películas, estrenos, conciertos y más. ¡Comienza la función!</p>
-                    
-                </div>
-            </div>
-        </div>
-        <img src="../assets/img/nuevos/salveseNew.png" class="card-img-top" alt="Decodificador Totalplay">
-    </div>
-    <div class="card pinkGradientCard">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-10 mx-auto">
-                    <h5 class="card-title">Cuando Sea </h5>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-10 mx-auto">
-                    <p>Regresa el tiempo hasta por 7 días y disfruta tus programas favoritos una y otra vez.</p>
-                </div>
-            </div>
-            <!--div class="row cardBadgeContainer">
-                <div class="col-10 col-sm-10 col-md-8 col-lg-6 col-xl-6 mx-auto">
-                    <div class="cardBadge">
-                        <p>Sin costo durante 6 meses</p>
+<section class="row cardsRow cardsRowLandingPackages tarjeta3P">
+    <div class="col-12 col-sm-12 col-md-11 col-lg-11 col-xl-11 mx-auto">
+        <div class="row equal-height">
+            <div class="col-12 col-sm-12 col-md-11 col-lg-6 col-xl-6 mx-auto mx-sm-auto mx-md-auto">
+                <div class="card purpleGradientCard">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-10 mx-auto">
+                                <h5 class="card-title">OnDemand</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-10 mx-auto">
+                                <p>Renta películas, estrenos, conciertos y más. ¡Comienza la función!</p>
+
+                            </div>
+                        </div>
                     </div>
+                    <img src="../assets/img/nuevos/salveseNew.png" class="card-img-top" alt="Decodificador Totalplay">
                 </div>
-            </div-->
+            </div>
+            <div class="col-12 col-sm-12 col-md-11 col-lg-6 col-xl-6 mx-auto mx-sm-auto mx-md-auto">
+                <div class="card pinkGradientCard">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-10 mx-auto">
+                                <h5 class="card-title">Cuando Sea </h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-10 mx-auto">
+                                <p>Regresa el tiempo hasta por 7 días y disfruta tus programas favoritos una y otra vez.
+                                </p>
+                            </div>
+                        </div>
+                        <!--div class="row cardBadgeContainer">
+                            <div class="col-10 col-sm-10 col-md-8 col-lg-6 col-xl-6 mx-auto">
+                                <div class="cardBadge">
+                                    <p>Sin costo durante 6 meses</p>
+                                </div>
+                            </div>
+                        </div-->
+                    </div>
+                    <img src="../assets/img/nuevos/exatlon.png" class="card-img-top" alt="Decodificador Totalplay">
+                </div>
+            </div>
         </div>
-        <img src="../assets/img/nuevos/exatlon.png" class="card-img-top" alt="Decodificador Totalplay">
     </div>
 </section>
-<section class="card-deck cardsRow cardsRowLandingPackages">
-    <div class="card deepBlueGradientCard">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-10 mx-auto">
-                    <h5 class="card-title">App Totalplay</h5>
+
+<section class="row cardsRow cardsRowLandingPackages tarjeta3P">
+    <div class="col-12 col-sm-12 col-md-11 col-lg-11 col-xl-11 mx-auto">
+        <div class="row equal-height">
+            <div class="col-12 col-sm-12 col-md-11 col-lg-6 col-xl-6 mx-auto mx-sm-auto mx-md-auto">
+                <div class="card deepBlueGradientCard">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-10 mx-auto">
+                                <h5 class="card-title">App Totalplay</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-10 mx-auto">
+                                <p>Descárgala y lleva Totalplay a Donde Sea en tus dispositivos móviles.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <img src="../assets/img/nuevos/tusAppsFavoritas.png" class="card-img-top"
+                        alt="Decodificador Totalplay">
                 </div>
             </div>
-            <div class="row">
-                <div class="col-10 mx-auto">
-                    <p>Descárgala y lleva Totalplay a Donde Sea en tus dispositivos móviles.</p>
-                    
+            <div class="col-12 col-sm-12 col-md-11 col-lg-6 col-xl-6 mx-auto mx-sm-auto mx-md-auto">
+                <div class="card secondWhiteCard">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-10 mx-auto">
+                                <h5 class="card-title">Telefonía incluida</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-10 mx-auto">
+                                <p>Lleva tu línea en tu móvil con llamadas incluidas a MEX/ E.U./ CAN.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="../assets/img/nuevos/telefono.png" class="card-img-top" alt="Decodificador Totalplay">
                 </div>
             </div>
         </div>
-        <img src="../assets/img/nuevos/tusAppsFavoritas.png" class="card-img-top" alt="Decodificador Totalplay">
-    </div>
-    <div class="card secondWhiteCard">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-10 mx-auto">
-                    <h5 class="card-title">Telefonía incluida</h5>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-10 mx-auto">
-                    <p>Lleva tu línea en tu móvil con llamadas incluidas a MEX/ E.U./ CAN.</p>
-                </div>
-            </div>
-        </div>
-        <img src="../assets/img/nuevos/telefono.png" class="card-img-top" alt="Decodificador Totalplay">
     </div>
 </section>
 <section class="row landingFullWidthBanner">
@@ -329,7 +373,8 @@ layout: home
                         </div>
                         <div class="row landingBannerParagraph">
                             <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 mx-auto">
-                                <p>Integramos las apps que amas para disfrutar la mejor experiencia de entretenimiento y siempre tener tu contenido favorito a un solo clic.</p>
+                                <p>Integramos las apps que amas para disfrutar la mejor experiencia de entretenimiento y
+                                    siempre tener tu contenido favorito a un solo clic.</p>
                             </div>
                         </div>
                         <div class="row landingBannerImages">
@@ -379,7 +424,7 @@ layout: home
                                 <p>Envíos, música y <span>prime video.</span></p>
                             </div>
                             <div class="packageDiscount">
-                                
+
                             </div>
                             <div class="packagePrice">
                                 <p><a href="#">Revisa disponibilidad</a></p>
@@ -410,7 +455,7 @@ layout: home
                                 <p>4 pantallas <span>Premium UHD</span></p>
                             </div>
                             <div class="packageDiscount">
-                                
+
                             </div>
                             <div class="packagePrice">
                                 <p><a href="#">Desde: <span>$ 1,679 al mes</span></a></p>
@@ -442,7 +487,7 @@ layout: home
                                 <p>App description</p>
                             </div>
                             <div class="packageDiscount">
-                                
+
                             </div>
                             <div class="packagePrice">
                                 <p><a href="#">Desde: <span>$ 1,649 al mes</span></a></p>
