@@ -28,7 +28,9 @@ export class ModalContrata {
             nip: '',
             dataUser: null,
             lsgStorage: window.localStorage,
-            objFinaliza : null
+            objFinaliza : null,
+            emailContact: '',
+            celContact: ''
         }
 
         //this.listenerInputs();
@@ -42,7 +44,19 @@ export class ModalContrata {
     }
 
     mostrarVentana() {
-        this.setText('Comienza tu contratación', 'Ingresa tus datos de contacto para continuar.');
+        this.setText('Comienza tu contratación', '');
+
+        try{
+            var objeto = JSON.parse(localStorage.getItem('TP_STR_CLIENTE_MODAL'));
+            var numeroTmp = objeto.titular.celular;
+            if(numeroTmp != '' || numeroTmp != undefined || numeroTmp.length == 10){
+                var numero = numeroTmp.substring(7);
+                $('#numeroCodigoVerif').html("*******"+numero);
+            }
+        }catch(error){
+            console.log("error al traer el numero de celular");
+        }
+
 
         this.props.modalContract.style.display = 'flex';
         this.props.step_1.style.display = 'flex';
@@ -86,7 +100,23 @@ export class ModalContrata {
         });
 
         this.props.btnContinue.addEventListener('click', (e) => {
-            let emailUser = document.getElementById('email');
+            var objeto = JSON.parse(localStorage.getItem('TP_STR_CLIENTE_MODAL'));
+            var celular;
+            var correo;
+            if(objeto.titular.celular != '' || objeto.titular.celular != undefined || objeto.titular.celular.length == 10){
+                celular = objeto.titular.celular;
+            }
+
+            if(objeto.titular.email != '' || objeto.titular.email != undefined){
+                correo = objeto.titular.email;
+            }
+
+            if((celular !== '' || celular !== undefined) &&
+                (correo !== '' || correo !== undefined)){
+                referenciaClase.iniciarObjetoPersona(correo, celular);
+                referenciaClase.generarCodigo(correo, celular);
+            }
+            /*let emailUser = document.getElementById('email');
             let mobileUser = document.getElementById('mobile');
             var procesa = true;
 
@@ -125,7 +155,7 @@ export class ModalContrata {
                 /*referenciaClase.mostrarVentanaContratacion();
                 $('#botonContinuar').removeAttr('disabled');
                 $('.iconoContinuar').hide();//*/
-            }
+            /*}*/
         });
     }
 
