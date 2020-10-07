@@ -332,6 +332,7 @@ export class FinalizaContratacion {
                     };
 
                     referenciaClase.actualizarClienteTitular(objetoTitular);
+                    referenciaClase.actualizarClienteTitularModal(objetoTitularModal);
                     //referenciaClase.props.tipoCliente = 1;
                     localStorage.setItem('TP_TIPO_CLIENTE', 1);
                 }else{
@@ -362,7 +363,9 @@ export class FinalizaContratacion {
                         "constitucionDia":diaMoral,
                         "constitucionMes":mesMoral,
                         "constitucionAnio":anioMoral,
-                        "tipo": "moral"
+                        "tipo": "moral",
+                        "email": titularEmail,
+                        "celular": titularCelular
                     };
 
                     objetoTitularModal = {
@@ -374,11 +377,10 @@ export class FinalizaContratacion {
                         "constitucionDia":diaMoral,
                         "constitucionMes":mesMoral,
                         "constitucionAnio":anioMoral,
-                        "email": titularEmail,
-                        "celular": titularCelular,
                         "tipo": "moral"
                     };
                     referenciaClase.actualizarClienteTitular(objetoTitular);
+                    referenciaClase.actualizarClienteTitularModal(objetoTitularModal);
                     //referenciaClase.props.tipoCliente = 2;
                     localStorage.setItem('TP_TIPO_CLIENTE', 2);
                 }
@@ -2541,6 +2543,26 @@ export class FinalizaContratacion {
                 "titular":objetoTitular
             }
             localStorage.setItem('TP_STR_CLIENTE', JSON.stringify(objetoCliente));
+        }
+
+        console.groupEnd();
+    }
+
+    actualizarClienteTitularModal(objetoTitular){
+        console.group('FUNCION actualizarClienteTitular()');
+        let cadenaCliente= localStorage.getItem('TP_STR_CLIENTE');
+        
+        try {
+            let objetoCliente = JSON.parse(cadenaCliente);
+            objetoCliente.titular = objetoTitular;
+            localStorage.setItem('TP_STR_CLIENTE_MODAL', JSON.stringify(objetoCliente));
+            console.log('OBJETO CLIENTE ACTUALIZADO');
+        } catch (error) {
+            console.log('ERROR AL ACTUALIAR EL OBJETO CLIENTE CON TITULAR POR:', error);
+            let objetoCliente = {
+                "titular":objetoTitular
+            }
+            localStorage.setItem('TP_STR_CLIENTE_MODAL', JSON.stringify(objetoCliente));
         }
 
         console.groupEnd();
