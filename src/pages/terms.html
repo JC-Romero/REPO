@@ -1,0 +1,299 @@
+---
+layout: home
+---
+<style>
+    body,
+    * {
+        height: auto;
+    }
+
+    html,
+    body {
+        overflow-x: hidden !important;
+    }
+
+    footer {
+        max-width: 102%;
+    }
+
+    .faqsQuestionContainer a {
+        color: rgba(25, 136, 255, 1);
+        font-weight: 400;
+        font-size: 13px;
+    }
+
+    .faqsQuestionContainer a::after {
+        display: none;
+    }
+
+    .faqsQuestionContainer h1 {
+        font-size: 16px;
+        color: #3b4559;
+        font-weight: 700;
+        margin: 0px;
+    }
+
+    .faqsQuestionContainer p {
+        color: #3D4669;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 19px;
+    }
+
+    .faqsQuestionContainer small {
+        font-size: 10px;
+        font-weight: 400;
+    }
+
+    .faqsQuestionContainer ol {
+        list-style: decimal;
+        padding-left: 30px;
+    }
+
+    .faqsQuestionContainer ul {
+        list-style-type: disc;
+        padding-left: 30px;
+    }
+
+    .faqsQuestionContainer ol li,
+    .faqsQuestionContainer ul li {
+        color: #3D4669;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 19px;
+    }
+
+    .faqsQuestionContainer ul li span {
+        font-weight: 700;
+    }
+</style>
+<section class="row faqsMainContainer">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="row faqsLargeContainer">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 faqsToggleContainer">
+                <ul class="d-block d-sm-block d-md-none faqsMobileLinks">
+                    <li><a id="mobileToggleInternet" class="mobileactiveFaq" href="#"
+                            onclick="mobileFaqsToggle('internetQuestions','tvQuestions','phoneQuestions','supportQuestions','mobileToggleInternet','mobileToggleTelevisión','mobileToggleTeléfono','mobileToggleSupport','internetToggle','tvToggle','phoneToggle','supportToggle',event);">Faqs
+                            1</a>
+                    </li>
+                    <li><a id="mobileToggleTelevisión" class="" href="#"
+                            onclick="mobileFaqsToggle('tvQuestions','internetQuestions','phoneQuestions','supportQuestions','mobileToggleTelevisión','mobileToggleInternet','mobileToggleTeléfono','mobileToggleSupport','tvToggle','internetToggle','phoneToggle','supportToggle',event);">Faqs
+                            2</a>
+                    </li>
+                    <li><a id="mobileToggleTeléfono" class="" href="#"
+                            onclick="mobileFaqsToggle('phoneQuestions','internetQuestions','tvQuestions','supportQuestions','mobileToggleTeléfono','mobileToggleTelevisión','mobileToggleInternet','mobileToggleSupport','phoneToggle','supportToggle','internetToggle','tvToggle',event);">Faqs
+                            3</a>
+                    </li>
+                    <li><a id="mobileToggleSupport" class="" href="#"
+                            onclick="mobileFaqsToggle('supportQuestions','internetQuestions','tvQuestions','phoneQuestions','mobileToggleSupport','mobileToggleTelevisión','mobileToggleTeléfono','mobileToggleInternet','supportToggle','phoneToggle','tvToggle','internetToggle',event);">Faqs
+                            4</a></li>
+                </ul>
+                <div class="row">
+                    <div class="d-none d-sm-none d-md-block col-md-12 col-lg-12 col-xl-12 faqsItem">
+                        <a id="internetToggle" class="activeFaq" href="#"
+                            onclick="faqsToggle('internetQuestions','tvQuestions','phoneQuestions','supportQuestions','internetToggle','tvToggle','phoneToggle','supportToggle','mobileToggleInternet','mobileToggleTelevisión','mobileToggleTeléfono','mobileToggleSupport',event);">Faqs
+                            1</a>
+                    </div>
+                    <div class="d-none d-sm-none d-md-block col-md-12 col-lg-12 col-xl-12 faqsItem">
+                        <a id="tvToggle" href="#"
+                            onclick="faqsToggle('tvQuestions','internetQuestions','phoneQuestions','supportQuestions','tvToggle','internetToggle','phoneToggle','supportToggle','mobileToggleTelevisión','mobileToggleInternet','mobileToggleTeléfono','mobileToggleSupport',event);">Faqs
+                            2</a>
+                    </div>
+                    <div class="d-none d-sm-none d-md-block col-md-12 col-lg-12 col-xl-12 faqsItem">
+                        <a id="phoneToggle" href="#"
+                            onclick="faqsToggle('phoneQuestions','internetQuestions','tvQuestions','supportQuestions','phoneToggle','tvToggle','internetToggle','supportToggle','mobileToggleTeléfono','mobileToggleSupport','mobileToggleInternet','mobileToggleTelevisión',event);">Faqs
+                            3</a>
+                    </div>
+                    <div class="d-none d-sm-none d-md-block col-md-12 col-lg-12 col-xl-12 faqsItem">
+                        <a id="supportToggle" href="#"
+                            onclick="faqsToggle('supportQuestions','internetQuestions','tvQuestions','phoneQuestions','supportToggle','phoneToggle','tvToggle','internetToggle','mobileToggleSupport','mobileToggleTeléfono','mobileToggleTelevisión','mobileToggleInternet',event);">Faqs
+                            4</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-9 faqsCardsContainer">
+                <div id="internetQuestions" class="row">
+                    <div class="col-11 mx-auto faqsQuestionContainer">
+                        <h1>Portabilidad numérica 1</h1>
+                        <p>El trámite de portabilidad consiste en conservar el mismo número telefónico que tienes
+                            actualmente con tu compañía, al contratar Totalplay.</p>
+                        <p>Si tienes activo el servicio de telefonía con tu proveedor anterior:</p>
+                        <ul>
+                            <li>Deberás marcar desde la línea telefónica de tu proveedor anterior al 051 para solicitar
+                                el NIP de portabilidad. Un sistema automático te regresará la llamada para indicarle el
+                                NIP de portabilidad.</li>
+                            <li>Llenar el formato de solicitud de portabilidad (lo puedes bajar desde el sitio de
+                                Totalplay.com.mx, en la sección de ayuda). Si ya no tienes activo el servicio de
+                                telefonía con tu proveedor anterior</li>
+                            <li> Copia de tu identificación oficial vigente (Identificación del Representante Legal y
+                                Acta Constitutiva para personas morales). Si ya no tienes activo el servicio de
+                                telefonía con tu proveedor anterior:</li>
+                            <li>Contar con la carta de cancelación del servicio de tu proveedor anterior.</li>
+                            <li> Copia de tu identificación oficial vigente (Identificación del Representante Legal y
+                                Acta Constitutiva para personas morales).</li>
+                            <li><span>IMPORTANTE:</span> El proceso de portabilidad únicamente puede iniciar cuando tu
+                                servicio de telefonía de Totalplay ya se encuentre instalado y funcionando.</li>
+                            <li> La generación del NIP de portabilidad es responsabilidad de la autoridad
+                                correspondiente y Totalplay es ajeno a este proceso.</li>
+                            <li> El trámite se realiza por tu cuenta a través del sitio de MI CUENTA TOTALPLAY
+                                (<a href="http://www.mitotalplay.com.mx/" target="_blank">www.mitotalplay.com.mx</a>)
+                            </li>
+                            <li> No se puede hacer Portabilidad de números móviles. • Realizar el proceso de
+                                portabilidad no te exenta de pagar los posibles adeudos u obligaciones contractuales que
+                                tengas con la compañía anterior.</li>
+                        </ul>
+                        <p>¿Qué debo hacer si mi velocidad de conexión es lenta o no tengo Internet?</p>
+
+                        <p>Si no tienes internet o tu velocidad es lenta, debes verificar que la señal de internet
+                            llegue a tus dispositivos correctamente de la siguiente manera:</p>
+                        <ol>
+                            <li>Revisando que los leds de tu módem se encuentren encendidos.</li>
+                            <li> Si la señal es buena, puede que exista una interferencia entre tu módem y tus
+                                dispositivos.</li>
+                            <li> Si no puedes acceder a un sitio, puede que se encuentre saturado, verifica otros sitios
+                                y vuelve a intentarlo. Material de construcción Intensidad WiFi.</li>
+                        </ol>
+                        <small>* El pago se verá reflejado en su primer Estado de Cuenta el cual se enviará una vez
+                            instalado el servicio. Este pago se deberá realizar al instalador de Totalplay.</small>
+                    </div>
+                </div>
+                <div id="tvQuestions" class="row" style="display: none;">
+                    <div class="col-11 mx-auto faqsQuestionContainer">
+                        <h1>Portabilidad numérica 2</h1>
+                        <p>El trámite de portabilidad consiste en conservar el mismo número telefónico que tienes
+                            actualmente con tu compañía, al contratar Totalplay.</p>
+                        <p>Si tienes activo el servicio de telefonía con tu proveedor anterior:</p>
+                        <ul>
+                            <li>Deberás marcar desde la línea telefónica de tu proveedor anterior al 051 para solicitar
+                                el NIP de portabilidad. Un sistema automático te regresará la llamada para indicarle el
+                                NIP de portabilidad.</li>
+                            <li>Llenar el formato de solicitud de portabilidad (lo puedes bajar desde el sitio de
+                                Totalplay.com.mx, en la sección de ayuda). Si ya no tienes activo el servicio de
+                                telefonía con tu proveedor anterior</li>
+                            <li> Copia de tu identificación oficial vigente (Identificación del Representante Legal y
+                                Acta Constitutiva para personas morales). Si ya no tienes activo el servicio de
+                                telefonía con tu proveedor anterior:</li>
+                            <li>Contar con la carta de cancelación del servicio de tu proveedor anterior.</li>
+                            <li> Copia de tu identificación oficial vigente (Identificación del Representante Legal y
+                                Acta Constitutiva para personas morales).</li>
+                            <li><span>IMPORTANTE:</span> El proceso de portabilidad únicamente puede iniciar cuando tu
+                                servicio de telefonía de Totalplay ya se encuentre instalado y funcionando.</li>
+                            <li> La generación del NIP de portabilidad es responsabilidad de la autoridad
+                                correspondiente y Totalplay es ajeno a este proceso.</li>
+                            <li> El trámite se realiza por tu cuenta a través del sitio de MI CUENTA TOTALPLAY
+                                (<a href="http://www.mitotalplay.com.mx/" target="_blank">www.mitotalplay.com.mx</a>)
+                            </li>
+                            <li> No se puede hacer Portabilidad de números móviles. • Realizar el proceso de
+                                portabilidad no te exenta de pagar los posibles adeudos u obligaciones contractuales que
+                                tengas con la compañía anterior.</li>
+                        </ul>
+                        <p>¿Qué debo hacer si mi velocidad de conexión es lenta o no tengo Internet?</p>
+
+                        <p>Si no tienes internet o tu velocidad es lenta, debes verificar que la señal de internet
+                            llegue a tus dispositivos correctamente de la siguiente manera:</p>
+                        <ol>
+                            <li>Revisando que los leds de tu módem se encuentren encendidos.</li>
+                            <li> Si la señal es buena, puede que exista una interferencia entre tu módem y tus
+                                dispositivos.</li>
+                            <li> Si no puedes acceder a un sitio, puede que se encuentre saturado, verifica otros sitios
+                                y vuelve a intentarlo. Material de construcción Intensidad WiFi.</li>
+                        </ol>
+                        <small>* El pago se verá reflejado en su primer Estado de Cuenta el cual se enviará una vez
+                            instalado el servicio. Este pago se deberá realizar al instalador de Totalplay.</small>
+                    </div>
+                </div>
+                <div id="phoneQuestions" class="row" style="display: none;">
+                    <div class="col-11 mx-auto faqsQuestionContainer">
+                        <h1>Portabilidad numérica 3</h1>
+                        <p>El trámite de portabilidad consiste en conservar el mismo número telefónico que tienes
+                            actualmente con tu compañía, al contratar Totalplay.</p>
+                        <p>Si tienes activo el servicio de telefonía con tu proveedor anterior:</p>
+                        <ul>
+                            <li>Deberás marcar desde la línea telefónica de tu proveedor anterior al 051 para solicitar
+                                el NIP de portabilidad. Un sistema automático te regresará la llamada para indicarle el
+                                NIP de portabilidad.</li>
+                            <li>Llenar el formato de solicitud de portabilidad (lo puedes bajar desde el sitio de
+                                Totalplay.com.mx, en la sección de ayuda). Si ya no tienes activo el servicio de
+                                telefonía con tu proveedor anterior</li>
+                            <li> Copia de tu identificación oficial vigente (Identificación del Representante Legal y
+                                Acta Constitutiva para personas morales). Si ya no tienes activo el servicio de
+                                telefonía con tu proveedor anterior:</li>
+                            <li>Contar con la carta de cancelación del servicio de tu proveedor anterior.</li>
+                            <li> Copia de tu identificación oficial vigente (Identificación del Representante Legal y
+                                Acta Constitutiva para personas morales).</li>
+                            <li><span>IMPORTANTE:</span> El proceso de portabilidad únicamente puede iniciar cuando tu
+                                servicio de telefonía de Totalplay ya se encuentre instalado y funcionando.</li>
+                            <li> La generación del NIP de portabilidad es responsabilidad de la autoridad
+                                correspondiente y Totalplay es ajeno a este proceso.</li>
+                            <li> El trámite se realiza por tu cuenta a través del sitio de MI CUENTA TOTALPLAY
+                                (<a href="http://www.mitotalplay.com.mx/" target="_blank">www.mitotalplay.com.mx</a>)
+                            </li>
+                            <li> No se puede hacer Portabilidad de números móviles. • Realizar el proceso de
+                                portabilidad no te exenta de pagar los posibles adeudos u obligaciones contractuales que
+                                tengas con la compañía anterior.</li>
+                        </ul>
+                        <p>¿Qué debo hacer si mi velocidad de conexión es lenta o no tengo Internet?</p>
+
+                        <p>Si no tienes internet o tu velocidad es lenta, debes verificar que la señal de internet
+                            llegue a tus dispositivos correctamente de la siguiente manera:</p>
+                        <ol>
+                            <li>Revisando que los leds de tu módem se encuentren encendidos.</li>
+                            <li> Si la señal es buena, puede que exista una interferencia entre tu módem y tus
+                                dispositivos.</li>
+                            <li> Si no puedes acceder a un sitio, puede que se encuentre saturado, verifica otros sitios
+                                y vuelve a intentarlo. Material de construcción Intensidad WiFi.</li>
+                        </ol>
+                        <small>* El pago se verá reflejado en su primer Estado de Cuenta el cual se enviará una vez
+                            instalado el servicio. Este pago se deberá realizar al instalador de Totalplay.</small>
+                    </div>
+                </div>
+                <div id="supportQuestions" class="row" style="display: none;">
+                    <div class="col-11 mx-auto faqsQuestionContainer">
+                        <h1>Portabilidad numérica 4</h1>
+                        <p>El trámite de portabilidad consiste en conservar el mismo número telefónico que tienes
+                            actualmente con tu compañía, al contratar Totalplay.</p>
+                        <p>Si tienes activo el servicio de telefonía con tu proveedor anterior:</p>
+                        <ul>
+                            <li>Deberás marcar desde la línea telefónica de tu proveedor anterior al 051 para solicitar
+                                el NIP de portabilidad. Un sistema automático te regresará la llamada para indicarle el
+                                NIP de portabilidad.</li>
+                            <li>Llenar el formato de solicitud de portabilidad (lo puedes bajar desde el sitio de
+                                Totalplay.com.mx, en la sección de ayuda). Si ya no tienes activo el servicio de
+                                telefonía con tu proveedor anterior</li>
+                            <li> Copia de tu identificación oficial vigente (Identificación del Representante Legal y
+                                Acta Constitutiva para personas morales). Si ya no tienes activo el servicio de
+                                telefonía con tu proveedor anterior:</li>
+                            <li>Contar con la carta de cancelación del servicio de tu proveedor anterior.</li>
+                            <li> Copia de tu identificación oficial vigente (Identificación del Representante Legal y
+                                Acta Constitutiva para personas morales).</li>
+                            <li><span>IMPORTANTE:</span> El proceso de portabilidad únicamente puede iniciar cuando tu
+                                servicio de telefonía de Totalplay ya se encuentre instalado y funcionando.</li>
+                            <li> La generación del NIP de portabilidad es responsabilidad de la autoridad
+                                correspondiente y Totalplay es ajeno a este proceso.</li>
+                            <li> El trámite se realiza por tu cuenta a través del sitio de MI CUENTA TOTALPLAY
+                                (<a href="http://www.mitotalplay.com.mx/" target="_blank">www.mitotalplay.com.mx</a>)
+                            </li>
+                            <li> No se puede hacer Portabilidad de números móviles. • Realizar el proceso de
+                                portabilidad no te exenta de pagar los posibles adeudos u obligaciones contractuales que
+                                tengas con la compañía anterior.</li>
+                        </ul>
+                        <p>¿Qué debo hacer si mi velocidad de conexión es lenta o no tengo Internet?</p>
+
+                        <p>Si no tienes internet o tu velocidad es lenta, debes verificar que la señal de internet
+                            llegue a tus dispositivos correctamente de la siguiente manera:</p>
+                        <ol>
+                            <li>Revisando que los leds de tu módem se encuentren encendidos.</li>
+                            <li> Si la señal es buena, puede que exista una interferencia entre tu módem y tus
+                                dispositivos.</li>
+                            <li> Si no puedes acceder a un sitio, puede que se encuentre saturado, verifica otros sitios
+                                y vuelve a intentarlo. Material de construcción Intensidad WiFi.</li>
+                        </ol>
+                        <small>* El pago se verá reflejado en su primer Estado de Cuenta el cual se enviará una vez
+                            instalado el servicio. Este pago se deberá realizar al instalador de Totalplay.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{> modalesIndex}}
