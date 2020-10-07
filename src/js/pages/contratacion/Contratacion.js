@@ -61,6 +61,8 @@ export class Contratacion {
             invoiceListApps: document.querySelector('.main-summary-tv__invoice-data-block-content_apps'),
             itemsNamesSteps: [...document.querySelectorAll('.contratacion--top-bar__steps__list-names__item')],
             listPointsStepItems: document.querySelectorAll('.contratacion--top-bar__steps--content-items__item'),
+            optTvAdicional: document.getElementById('complementoTVAdicional'),
+            optWifi: document.getElementById('complementoWifi'),
             lastSelectedchild: 0,
             currentStep: 0,
             lastScrollTop: 0,
@@ -464,6 +466,30 @@ export class Contratacion {
             this.props.barAdd.removeAttribute('style');
         });
 
+        this.props.optTvAdicional.addEventListener('click',()=>{
+            let precio = Math.round($('#complementoTVAdicional').attr('data-precio'));
+            let precioTotal = $("#precioComplemento").html().replace("$","").trim();
+            precioTotal = parseFloat(precioTotal);
+            if ($('#complementoTVAdicional').hasClass('selected')) {
+                precioTotal = precioTotal - precio;
+            }else{
+                precioTotal = precioTotal + precio;
+            }
+            $("#precioComplemento").html("$"+precioTotal);
+        });
+
+        this.props.optWifi.addEventListener('click',()=>{
+            let precio = Math.round($('#complementoWifi').attr('data-precio'));
+            let precioTotal = $("#precioComplemento").html().replace("$","").trim();
+            precioTotal = parseFloat(precioTotal);
+            if ($('#complementoWifi').hasClass('selected')) {
+                precioTotal = precioTotal - precio;
+            }else{
+                precioTotal = precioTotal + precio;
+            }
+            $("#precioComplemento").html("$"+precioTotal);
+        });
+
         $("body").on('click', '.content-contratacion__shopping-cart-top--car', function () {
             localStorage.setItem('TP_CONTADOR_CARRITO', '1');
         });
@@ -594,6 +620,7 @@ export class Contratacion {
 
                     let etiquetaPrecio = $('#cntEquipoTV').find(".price");
                     let etiquetaSeleccion = $('#cntEquipoTV').find(".addedItem");
+
                     $(etiquetaPrecio).hide();
                     $(etiquetaSeleccion).css('display', 'contents');
                     $('#cntEquipoTV').addClass('activo');
