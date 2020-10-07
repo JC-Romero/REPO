@@ -247,7 +247,7 @@ export class FinalizaContratacion {
             return result;
         });
         
-        $("#titularTelefono, #titularCelular, #facturacionCP").keypress(function(e){
+        $("#titularTelefono, #titularCelular, #facturacionCP, #celularMoral").keypress(function(e){
             //console.log('LETRA:', String.fromCharCode(e.which));
             let letraCapturada = String.fromCharCode(e.which);
             var regex = /[0-9]/;
@@ -289,6 +289,8 @@ export class FinalizaContratacion {
         this.props.botonTitularContinuar.addEventListener('click', () => {
             if(referenciaClase.validarCamposTitular()){
                 let objetoTitular;
+                let objetoTitularModal;
+
                 if($('#btnDatosFisica').hasClass('botonSeleccionado')){
                     let titularNombre = $('#titularNombre').val().trim();
                     let titularApellidoPaterno = $('#titularApellidoPaterno').val().trim();
@@ -296,10 +298,11 @@ export class FinalizaContratacion {
                     let titularRFC = $('#titularRFC').val().trim();
                     let titularTelefono = $('#titularTelefono').val().trim();
                     let titularCelular = $('#titularCelular').val().trim();
+                    let titularEmail = $('#titularEmail').val().trim();
 
                     $('#titularNombreTarjeta').html(titularNombre + ' ' +titularApellidoPaterno+ ' ' +titularApellidoMaterno);
                     $('#titularRFCTarjeta').html(titularRFC);
-                    $('#titularCorreoTarjeta').html($('#email').val());
+                    $('#titularCorreoTarjeta').html(titularEmail);
                     
                     $('#titularTelefonoTarjeta').html(titularTelefono);
                     $('#titularCelularTarjeta').html(titularCelular);
@@ -315,6 +318,19 @@ export class FinalizaContratacion {
                         "rfc": titularRFC,
                         "tipo": "fisica"
                     };
+
+                    objetoTitularModal = {
+                        "nombreCompleto": titularNombre + ' ' +titularApellidoPaterno+ ' ' +titularApellidoMaterno,
+                        "nombre": titularNombre,
+                        "apellidoPaterno": titularApellidoPaterno,
+                        "apellidoMaterno": titularApellidoMaterno,
+                        "celular": titularCelular,
+                        "telefono": titularTelefono,
+                        "rfc": titularRFC,
+                        "email": titularEmail,
+                        "tipo": "fisica"
+                    };
+
                     referenciaClase.actualizarClienteTitular(objetoTitular);
                     //referenciaClase.props.tipoCliente = 1;
                     localStorage.setItem('TP_TIPO_CLIENTE', 1);
@@ -326,11 +342,12 @@ export class FinalizaContratacion {
                     let rfcMoral = $('#rfcMoral').val().trim();
                     let nombreMoral = $('#nombreMoral').val().trim();
                     let apellidosMoral = $('#apellidosMoral').val().trim();
-                    let titularCelular = $('#titularCelular').val().trim();
+                    let titularCelular = $('#celularMoral').val().trim();
+                    let titularEmail = $('#correoMoral').val().trim();
 
                     $('#titularNombreTarjeta').html(nombreMoral + ' ' +apellidosMoral);
                     $('#titularRFCTarjeta').html(rfcMoral);
-                    $('#titularCorreoTarjeta').html($('#email').val());
+                    $('#titularCorreoTarjeta').html(titularEmail);
                     $('#titularIdentificacionTarjeta').html('INE/IFE, Comprobante de domicilio y Constancia de Situaci&oacute;n Fiscal');
                     
                     $('#titularTelefonoTarjeta').html(titularCelular);
@@ -347,13 +364,27 @@ export class FinalizaContratacion {
                         "constitucionAnio":anioMoral,
                         "tipo": "moral"
                     };
+
+                    objetoTitularModal = {
+                        "nombreCompleto": nombreMoral + ' ' +apellidosMoral,
+                        "nombre": nombreMoral,
+                        "apellidos": apellidosMoral,
+                        "rfc": rfcMoral,
+                        "razonSocial": razonSocial,
+                        "constitucionDia":diaMoral,
+                        "constitucionMes":mesMoral,
+                        "constitucionAnio":anioMoral,
+                        "email": titularEmail,
+                        "celular": titularCelular,
+                        "tipo": "moral"
+                    };
                     referenciaClase.actualizarClienteTitular(objetoTitular);
                     //referenciaClase.props.tipoCliente = 2;
                     localStorage.setItem('TP_TIPO_CLIENTE', 2);
                 }
 
-                $('#titularModal').html(objetoTitular.nombreCompleto);
-                $('#rfcModal').html(objetoTitular.rfc.toUpperCase());
+                $('#titularModal').html(objetoTitularModal.nombreCompleto);
+                $('#rfcModal').html(objetoTitularModal.rfc.toUpperCase());
                 if($('.checkINE').is(':checked')){
                     $('#identificacionModal').html('INE');
                 }else if($('.checkPasaporte').is(':checked')){
@@ -362,16 +393,21 @@ export class FinalizaContratacion {
                     $('#identificacionModal').html('Cédula Profesional');
                 }
                 
-                $('#correoModal').html('correo@totalplay.com.mx');
+                var correoModal = objetoTitularModal.email;
+                if(correoModal == '' || correoModal == undefined){
+                    $('#correoModal').html('n/a');
+                }else{
+                    $('#correoModal').html(correoModal);
+                }
                 
-                var celularModal = objetoTitular.celular;
+                var celularModal = objetoTitularModal.celular;
                 if(celularModal == '' || celularModal == undefined){
                     $('#celularModal').html('n/a');
                 }else{
                     $('#celularModal').html(celularModal);
                 }
 
-                var telefonoModal = objetoTitular.telefono;
+                var telefonoModal = objetoTitularModal.telefono;
                 if(telefonoModal == '' || telefonoModal == undefined){
                     $('#telefonoModal').html('n/a');
                 }else{
@@ -869,6 +905,7 @@ export class FinalizaContratacion {
             let titularCelular = $('#titularCelular').val().trim();
             let inputINE = $("#inputFileINE").val();
             let inputComprobante = $("#inputFileComprobante").val();
+            let inputEmail = $('#titularEmail').val();
 
             if(referenciaClase.esVacio(titularNombre)){
                 $("#errorNombreContratacion").css("display","block");
@@ -966,7 +1003,21 @@ export class FinalizaContratacion {
                 $('#contenedorSubeArchivoComprobante').css('border', '1px dashed red');
             }else{
                 $('#contenedorSubeArchivoComprobante').css('border', '1px dashed #1A76D2');
-            }//*/
+            }
+
+            if(referenciaClase.esVacio(inputEmail)){
+                $("#errorMailContratacion2").css("display","block");
+                $("#errorMailContratacion2").html("*Campo obligatorio");
+                validacion = false;
+            }else{
+                if(!referenciaClase.validaEmail(inputEmail)){
+                    $("#errorMailContratacion2").css("display","block");
+                    $("#errorMailContratacion2").html("*Campo no v&aacute;lido");
+                    validacion = false;
+                } else {
+                   $("#errorMailContratacion2").hide(); 
+                }
+            }
 
         }else{
             referenciaClase.props.jsonparams.nodocts = 3;
@@ -981,6 +1032,8 @@ export class FinalizaContratacion {
             let inputINE = $("#inputFileINE").val();
             let inputComprobante = $("#inputFileComprobante").val();
             let inputRFC = $('#inputFileRFC').val();
+            let inputEmail = $('#correoMoral').val().trim();
+            let titularCelular = $('#celularMoral').val().trim();
 
             if(referenciaClase.esVacio(razonSocial)){
                 $("#errorRazonSocial").css("display","block");
@@ -1060,6 +1113,34 @@ export class FinalizaContratacion {
                     validacion = false;
                 } else {
                    $("#errorApellidosMoral").hide(); 
+                }
+            }
+
+            if(referenciaClase.esVacio(inputEmail)){
+                $("#errorCorreoMoral").css("display","block");
+                $("#errorCorreoMoral").html("*Campo obligatorio");
+                validacion = false;
+            }else{
+                if(!referenciaClase.validaEmail(inputEmail)){
+                    $("#errorCorreoMoral").css("display","block");
+                    $("#errorCorreoMoral").html("*Campo no v&aacute;lido");
+                    validacion = false;
+                } else {
+                   $("#errorCorreoMoral").hide(); 
+                }
+            }
+
+            if(referenciaClase.esVacio(titularCelular)){
+                $("#errorCelularMoral").css("display","block");
+                $("#errorCelularMoral").html("*Campo obligatorio");
+                validacion = false;
+            }else{
+                if(!referenciaClase.validaTelefono(titularCelular)){
+                    $("#errorCelularMoral").css("display","block");
+                    $("#errorCelularMoral").html("*Campo no v&aacute;lido");
+                    validacion = false;
+                } else {
+                   $("#errorCelularMoral").hide(); 
                 }
             }
         }        
