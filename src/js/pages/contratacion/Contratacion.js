@@ -1460,8 +1460,18 @@ export class Contratacion {
                     let promo = null;
                     try{
                         jsonComplementos = JSON.parse(cadenaComplementos);
-                        promo = jsonComplementos.promocion;
+                        console.log(jsonComplementos);
+                        let tele = jsonComplementos.television;
+                        console.log("TELeVISIOn");
+                        console.log(tele);
+                        tele.forEach((val,idx)=>{
+                            if(val.Agrupacion==="Canales"){
+                                promo = val.adicional;
+                            }
+                        });
                     }catch(e){}
+
+                    console.log(promo);
 
                     if (idHTML == 'contenedorHBO') {
                         console.log("Se escogio HBO,mostrar FOX");
@@ -1476,13 +1486,13 @@ export class Contratacion {
                         //Llenar caracteristicas FOX
                         if(promo!=null){
                             promo.forEach((val,idx)=>{
-                                if(val.tipo=="PROMO_FOX"){
+                                if(val.nombre=="FOX PREMIUM."){
                                     $("#contenedorFoxApp").attr("data-id",val.Id);
-                                    $("#contenedorFoxApp").attr("data-precio",val.precio);
-                                    $("#precioFox").html(val.precio);
+                                    $("#contenedorFoxApp").attr("data-precio",Math.round(val.precio));
+                                    $("#precioFox").html(Math.round(val.precio));
                                     $("#contenedorFoxApp").attr("data-name",val.nombre);
-                                    $("#contenedorFoxApp").attr("data-tipo",val.tipo);
-                                    $("#contenedorFoxApp").attr("data-index",val.adicionalProductoNombre);
+                                    $("#contenedorFoxApp").attr("data-tipo",val.tipoProducto);
+                                    $("#contenedorFoxApp").attr("data-index","FOX");
                                     localStorage.setItem("opChanSel","FOX");
                                 }
                             });
@@ -1502,20 +1512,19 @@ export class Contratacion {
                         //Llenar caracteristicas HBO
                         if(promo!=null){
                             promo.forEach((val,idx)=>{
-                                if(val.tipo=="PROMO_HBO"){
+                                if(val.nombre=="HBO MAX"){
                                     $("#contenedorHBOApp").attr("data-id",val.Id);
-                                    $("#contenedorHBOApp").attr("data-precio",val.precio);
-                                    $("#precioHbo").html(val.precio);
+                                    $("#contenedorHBOApp").attr("data-precio",Math.round(val.precio));
+                                    $("#precioHbo").html(Math.round(val.precio));
                                     $("#contenedorHBOApp").attr("data-name",val.nombre);
-                                    $("#contenedorHBOApp").attr("data-tipo",val.tipo);
-                                    $("#contenedorHBOApp").attr("data-index",val.adicionalProductoNombre);
+                                    $("#contenedorHBOApp").attr("data-tipo",val.tipoProducto);
+                                    $("#contenedorHBOApp").attr("data-index","HBO");
                                     localStorage.setItem("opChanSel","HBO");
                                 }
                             })
                         }
                     }
 
-                    console.log("Agregado=>" , agregado);
                     if (agregado == 'Agregado') {
                         this.props.cardPositionPromo = [...document.getElementsByClassName('content-contratacion__packages')];
                         this.props.windowW = window.innerWidth;
