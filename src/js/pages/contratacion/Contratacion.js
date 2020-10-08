@@ -712,11 +712,11 @@ export class Contratacion {
             console.log('infoCanalesPremium=>', infoCanalesPremium);
             $.each(infoCanalesPremium, function (key, objCanalesPremium) {
                 let precio = objCanalesPremium.precio.toFixed(0);
-                if (objCanalesPremium.tipo == 'PROMO_HBO') {
+                if (objCanalesPremium.tipo == 'PROMO_HBO' || objCanalesPremium.nombre.includes("HBO")) {
                     $('#contenedorHBOApp').attr('data-id', objCanalesPremium.Id);
                     $('#appHBOPrecio').html('$ ' + precio);
                 }
-                if (objCanalesPremium.tipo == 'PROMO_FOX') {
+                if (objCanalesPremium.tipo == 'PROMO_FOX' || objCanalesPremium.nombre.includes("FOX")) {
                     $('#contenedorFoxApp').attr('data-id', objCanalesPremium.Id);
                     $('#appFOXPrecio').html('$ ' + precio);
                 }
@@ -1290,6 +1290,54 @@ export class Contratacion {
     }
 
     iniciarIdPromocion() {
+        /*QUITAR LAS SIGUIENTES LINEAS CUANDO SE APUNTE A PROD*/
+        let objetoPromociones = [
+            {
+                "tipo":"PROMO_FOX",
+                "tipoReferencia": null,
+                "requiereOpp": null,
+                "nombre": "CADENAS FOX",
+                "montoDescuento": 175,
+                "mesesPagoAnt": null,
+                "imagen": null,
+                "Id": "a0r3f000000XvriAAC",
+                "esAutomatica": false,
+                "bloqueaEfectivo": null,
+                "aplicaDescEmpleado": false,
+                "aplicaCodigo": false,
+                "adicionalProductoNombre": "FOX",
+                "adicionalProductoId": "a0u3f000000XoT4AAK"
+            },
+            {
+                "tipo":"PROMO_HBO",
+                "tipoReferencia": null,
+                "requiereOpp": null,
+                "nombre": "CADENAS HBO",
+                "montoDescuento": 169,
+                "mesesPagoAnt": null,
+                "imagen": null,
+                "Id": "a0r3f000000XvrXAAS",
+                "esAutomatica": false,
+                "bloqueaEfectivo": null,
+                "aplicaDescEmpleado": false,
+                "aplicaCodigo": false,
+                "adicionalProductoNombre": "HBO",
+                "adicionalProductoId": "a0u3f000000XoRxAAK"
+            }
+        ];
+
+        let cadenaComplementos= localStorage.getItem('TP_STR_COMPLEMENTOS');
+        
+        try {
+            let objetoComplementos = JSON.parse(cadenaComplementos);
+            objetoComplementos.promocion = objetoPromociones;
+            localStorage.setItem('TP_STR_COMPLEMENTOS', JSON.stringify(objetoComplementos));
+            console.log('OBJETO CLIENTE ACTUALIZADO');
+        } catch (error) {
+            console.log('ERROR AL ACTUALIAR EL OBJETO COMPLEMENTOS POR:', error);
+        }
+        /*FIN*/
+
         let referenciaClase = this;
 
         $.each(referenciaClase.props.infoComplementos.promocion, function (key, objPromocion) {
@@ -1298,8 +1346,9 @@ export class Contratacion {
             }
             if (objPromocion.tipo == 'PROMO_FOX') {
                 $('#contenedorFOX').attr('data-id', objPromocion.Id);
-            }
+            }            
         });
+        
     }
 
     seListenersBoton() {
@@ -3028,6 +3077,7 @@ export class Contratacion {
 
     agregarPromocionSeleccionada(idPromocion) {
         console.group('agregarPromocionSeleccionada()');
+        console.log("idPromocion "+idPromocion);
         let referenciaClase = this;
         let cadenaPaquete = localStorage.getItem('TP_STR_PAQUETE_SELECCION');
         let cadenaComplementos = localStorage.getItem('TP_STR_COMPLEMENTOS');
@@ -3038,6 +3088,7 @@ export class Contratacion {
             let objetoPromoSeleccion;
             $.each(objComplementos.promocion, function (key, objPromocion) {
                 if (objPromocion.Id == idPromocion) {
+                    console.log("SI ES IGUAL");
                     objetoPromoSeleccion = objPromocion;
                     referenciaClase.props.infoPaquete.promocionPremium = objPromocion;
                 }

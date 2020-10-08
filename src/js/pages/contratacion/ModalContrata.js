@@ -114,6 +114,7 @@ export class ModalContrata {
 
             if((celular !== '' || celular !== undefined) &&
                 (correo !== '' || correo !== undefined)){
+                $('.iconoContinuar').show();
                 referenciaClase.iniciarObjetoPersona(correo, celular);
                 referenciaClase.generarCodigo(correo, celular);
             }
