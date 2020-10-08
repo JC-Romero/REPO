@@ -361,12 +361,12 @@ function obtenerCanales(tmcode) {
                 '</div>';
             $.each( arrayCategoria, function( index, categoria ) {
                 var filtroNoSpaces = categoria;
-                filtroNoSpaces = filtroNoSpaces.replace(" ","");
+                filtroNoSpaces = filtroNoSpaces.split(" ").join("");
                 htmlCategoria += '<div class="row filterItem filtroCanal" data-filtro="'+categoria+'">'+
                         '<div class="col-12">'+
                             '<div class="form-check">'+
                                 '<input class="form-check-input" type="radio" name="filterName" id="filterRadio'+filtroNoSpaces+'" value="filterName">'+
-                                '<label class="form-check-label" for="filterRadio">'+categoria+
+                                '<label class="form-check-label" for="filterRadio'+filtroNoSpaces+'">'+categoria+
                                 '</label>'+
                             '</div>'+
                         '</div>'+
@@ -375,6 +375,10 @@ function obtenerCanales(tmcode) {
             
             $('#channelsContentList1').html('<div class="row" id="cntCanales">'+htmlInterno+'</div>');
             $('#filterCat').html(htmlCategoria);
+
+            /*setTimeout(function(){
+                $('#filterRadiotodos').prop('checked', true);
+            },2000);*/
 
         }catch(e){            
 

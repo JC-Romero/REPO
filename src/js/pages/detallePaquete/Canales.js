@@ -604,18 +604,20 @@ export class Canales{
 
 $(document).ready(function() {
     //printConsole('', 'SCRIPT CHANNEL.JS CARGADO OK');
-
+    var lastSel = "todos";
+    
     $("body").on('click', '.filtroCanal', function () {
         var filtroSeleccionado = $(this).attr('data-filtro');
-        console.log("**********")
-        console.log("Filtro seleccionado");
-        console.log(filtroSeleccionado);
+       
         var filtroNoSpaces = filtroSeleccionado;
         filtroNoSpaces = filtroNoSpaces.split(" ").join("");
-        console.log("Filtro No spaces");
-        console.log(filtroNoSpaces);
-        $('input[type="radio"]').attr('checked',false);
-        $(this).find("#filterRadio"+filtroNoSpaces).attr("checked",true);
+        
+        if(lastSel.length>0){
+            $('#filterRadio'+lastSel).prop('checked', false);
+        }        
+       
+        $('#filterRadio'+filtroNoSpaces).prop('checked', true);
+        lastSel = filtroNoSpaces;
 
         if(filtroSeleccionado == 'todos'){
             $('.content-channel').show();            
@@ -682,8 +684,7 @@ function obtenerCanales(tmcode) {
                                             '</div>'+
                                             '<span>'+objCanal.number+'</span>'+
                                         '</div>';
-                    }
-                        
+                    }                        
                 });
             });
 
@@ -694,7 +695,6 @@ function obtenerCanales(tmcode) {
 
             $('#channelsContentList1').html('<ul class="channels-list"><li id="cntCanales">'+htmlInterno+'</li></ul>');
             $('#filterCat').html(htmlCategoria);
-
         }catch(e){
             
 
