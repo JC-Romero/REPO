@@ -62,6 +62,7 @@ export class Contratacion {
             itemsNamesSteps: [...document.querySelectorAll('.contratacion--top-bar__steps__list-names__item')],
             listPointsStepItems: document.querySelectorAll('.contratacion--top-bar__steps--content-items__item'),
             optTvAdicional: document.getElementById('complementoTVAdicional'),
+            optCanales: document.getElementById('complementoCanal'),
             optWifi: document.getElementById('complementoWifi'),
             lastSelectedchild: 0,
             currentStep: 0,
@@ -466,29 +467,50 @@ export class Contratacion {
             this.props.barAdd.removeAttribute('style');
         });
 
-        this.props.optTvAdicional.addEventListener('click',()=>{
-            let precio = Math.round($('#complementoTVAdicional').attr('data-precio'));
-            let precioTotal = $("#precioComplemento").html().replace("$","").trim();
-            precioTotal = parseFloat(precioTotal);
-            if ($('#complementoTVAdicional').hasClass('selected')) {
-                precioTotal = precioTotal - precio;
-            }else{
-                precioTotal = precioTotal + precio;
-            }
-            $("#precioComplemento").html("$"+precioTotal);
-        });
+        try{
+            this.props.optTvAdicional.addEventListener('click',()=>{
+                let precio = Math.round($('#complementoTVAdicional').attr('data-precio'));
+                let precioTotal = $("#precioComplemento").html().replace("$","").trim();
+                precioTotal = parseFloat(precioTotal);
+                if ($('#complementoTVAdicional').hasClass('selected')) {
+                    //Quitar
+                    precioTotal = precioTotal - precio;
+                }else{
+                    //Agregar
+                    precioTotal = precioTotal + precio;
+                }
+                $("#precioComplemento").html("$"+precioTotal);
+            });
+        }catch(e){}
 
-        this.props.optWifi.addEventListener('click',()=>{
-            let precio = Math.round($('#complementoWifi').attr('data-precio'));
-            let precioTotal = $("#precioComplemento").html().replace("$","").trim();
-            precioTotal = parseFloat(precioTotal);
-            if ($('#complementoWifi').hasClass('selected')) {
-                precioTotal = precioTotal - precio;
-            }else{
-                precioTotal = precioTotal + precio;
-            }
-            $("#precioComplemento").html("$"+precioTotal);
-        });
+        try{
+            this.props.optCanales.addEventListener('click',()=>{
+                let precio = Math.round($('#complementoCanal').attr('data-precio'));
+                let precioTotal = $("#precioComplemento").html().replace("$","").trim();
+                precioTotal = parseFloat(precioTotal);
+                if ($('#complementoCanal').hasClass('selected')) {
+                    precioTotal = precioTotal - precio;
+                }else{
+                    precioTotal = precioTotal + precio;
+                }
+                $("#precioComplemento").html("$"+precioTotal);
+            })
+        }catch(e){}
+
+
+        try{
+            this.props.optWifi.addEventListener('click',()=>{
+                let precio = Math.round($('#complementoWifi').attr('data-precio'));
+                let precioTotal = $("#precioComplemento").html().replace("$","").trim();
+                precioTotal = parseFloat(precioTotal);
+                if ($('#complementoWifi').hasClass('selected')) {
+                    precioTotal = precioTotal - precio;
+                }else{
+                    precioTotal = precioTotal + precio;
+                }
+                $("#precioComplemento").html("$"+precioTotal);
+            });
+        }catch(e){}
 
         $("body").on('click', '.content-contratacion__shopping-cart-top--car', function () {
             localStorage.setItem('TP_CONTADOR_CARRITO', '1');
@@ -586,7 +608,7 @@ export class Contratacion {
         });
 
         $('#nextComplementos').on('click', function () {
-
+            
             if (apuntador.props.currentStep === 1) {
                 apuntador.nextStep();
 
@@ -607,6 +629,29 @@ export class Contratacion {
                     $('#cntEquipoWifi').addClass('activo');
 
                     $('#confirmBoxes').trigger('click');
+                }
+
+                if($("#complementoCanal").hasClass('selected')){
+                    /*let arregloCanales = apuntador.buscarCanalesPremium();
+                    let idCanal = $('#complementoCanal').attr('data-id');
+                    $.each(arregloCanales, function (key, objetoCanal) {
+                        if(objetoCanal.Id===idCanal){
+                            apuntador.agregarCanalPremiumSeleccion(objetoCanal);
+                        }
+                    });*/
+                    let idCanal = $('#complementoCanal').attr('data-id');
+                    let canSel = $('#complementoCanal').attr('data-name');
+
+                    if(canSel.includes("HBO")){
+                        $("#contenedorHBOApp").addClass('selected');
+                    }
+
+                    if(canSel.includes("Fox")){
+                        $("#contenedorFoxApp").addClass('selected');
+                    }
+
+                    $('#confirmPremium').attr("data-id",idCanal);
+                    $('#confirmPremium').trigger('click');
                 }
 
                 if ($('#complementoTVAdicional').hasClass('selected')) {
@@ -1454,7 +1499,6 @@ export class Contratacion {
                                     $('#imageComplementCanalLogo').attr('src','/assets/img/pages/contratacion/LogoFox.png');
                                     $('#titleComplementCanal').html("Fox Premium");
                                     $('#priceComplementCanal').html("$"+val.precio.toFixed(0));
-                                    localStorage.setItem("opChanSel","FOX");
                                 }
                             });
                         }
@@ -1478,9 +1522,8 @@ export class Contratacion {
                                     $('#complementoCanal').attr("data-tipo",val.tipo);
                                     $('#imageComplementBack').attr('src','assets/img/pages/contratacion/Canales_1.png');
                                     $('#imageComplementCanalLogo').attr('src','assets/img/pages/contratacion/hbo-holding.png');
-                                    $('#titleComplementCanal').html("Fox Premium");
+                                    $('#titleComplementCanal').html("HBO");
                                     $('#priceComplementCanal').html("$"+val.precio.toFixed(0));
-                                    localStorage.setItem("opChanSel","FOX");
                                 }
                             });
                         }
