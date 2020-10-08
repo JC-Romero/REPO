@@ -62,6 +62,7 @@ export class Contratacion {
             itemsNamesSteps: [...document.querySelectorAll('.contratacion--top-bar__steps__list-names__item')],
             listPointsStepItems: document.querySelectorAll('.contratacion--top-bar__steps--content-items__item'),
             optTvAdicional: document.getElementById('complementoTVAdicional'),
+            optCanal: document.getElementById('complementoCanal'),
             optWifi: document.getElementById('complementoWifi'),
             lastSelectedchild: 0,
             currentStep: 0,
@@ -480,6 +481,30 @@ export class Contratacion {
             });
         }catch(e){}
 
+
+        try{
+            this.props.optCanal.addEventListener("click",()=>{
+                var opt = localStorage.getItem("opChanSel");
+
+                let precio = 0;
+
+                if(opt==='HBO'){
+                    precio = Math.round($("#contenedorHBOApp").attr("data-precio"));
+                }else if(opt==='FOX'){
+                    precio = Math.round($("#contenedorFoxApp").attr("data-precio"));
+                }
+
+                let precioTotal = $("#precioComplemento").html().replace("$","").trim();
+                precioTotal = parseFloat(precioTotal);
+                if ($('#complementoCanal').hasClass('selected')) {
+                    precioTotal = precioTotal - precio;
+                }else{
+                    precioTotal = precioTotal + precio;
+                }
+                $("#precioComplemento").html("$"+precioTotal);
+            });
+        }catch(e){}
+
         try{
             this.props.optWifi.addEventListener('click',()=>{
                 let precio = Math.round($('#complementoWifi').attr('data-precio'));
@@ -761,6 +786,8 @@ export class Contratacion {
 
         try {
             let objComplementos = JSON.parse(strComplementos);
+            console.log("COMPLEMENTOS=>objComplementos");
+            console.log(objComplementos);
             /* ------------------ EQUIPO ADICIONAL ------------------ */
             let jsonAdicional = objComplementos.equipoAdicional;
             $.each(jsonAdicional, function (key, objetoAdicional) {
@@ -1296,12 +1323,64 @@ export class Contratacion {
     iniciarIdPromocion() {
         let referenciaClase = this;
 
+        /QUITAR LAS SIGUIENTES LINEAS CUANDO SE APUNTE A PROD/
+        let objetoPromociones = [
+            {
+                "tipo":"PROMO_FOX",
+                "tipoReferencia": null,
+                "requiereOpp": null,
+                "nombre": "CADENAS FOX",
+                "montoDescuento": 175,
+                "precio":175,
+                "mesesPagoAnt": null,
+                "imagen": null,
+                "Id": "a0r3f000000XvriAAC",
+                "esAutomatica": false,
+                "bloqueaEfectivo": null,
+                "aplicaDescEmpleado": false,
+                "aplicaCodigo": false,
+                "adicionalProductoNombre": "FOX",
+                "adicionalProductoId": "a0u3f000000XoT4AAK"
+            },
+            {
+                "tipo":"PROMO_HBO",
+                "tipoReferencia": null,
+                "requiereOpp": null,
+                "nombre": "CADENAS HBO",
+                "montoDescuento": 169,
+                "precio":169,
+                "mesesPagoAnt": null,
+                "imagen": null,
+                "Id": "a0r3f000000XvrXAAS",
+                "esAutomatica": false,
+                "bloqueaEfectivo": null,
+                "aplicaDescEmpleado": false,
+                "aplicaCodigo": false,
+                "adicionalProductoNombre": "HBO",
+                "adicionalProductoId": "a0u3f000000XoRxAAK"
+            }
+        ];
+
+        let cadenaComplementos= localStorage.getItem('TP_STR_COMPLEMENTOS');
+        
+        try {
+            let objetoComplementos = JSON.parse(cadenaComplementos);
+            objetoComplementos.promocion = objetoPromociones;
+            localStorage.setItem('TP_STR_COMPLEMENTOS', JSON.stringify(objetoComplementos));
+            console.log('OBJETO CLIENTE ACTUALIZADO');
+        } catch (error) {
+            console.log('ERROR AL ACTUALIAR EL OBJETO COMPLEMENTOS POR:', error);
+        }
+        /FIN/
+
         $.each(referenciaClase.props.infoComplementos.promocion, function (key, objPromocion) {
             if (objPromocion.tipo == 'PROMO_HBO') {
                 $('#contenedorHBO').attr('data-id', objPromocion.Id);
+                $("#contenedorHBOApp").attr('data-id', objPromocion.Id);
             }
             if (objPromocion.tipo == 'PROMO_FOX') {
                 $('#contenedorFOX').attr('data-id', objPromocion.Id);
+                $("#contenedorFoxApp").attr('data-id', objPromocion.Id);
             }
         });
     }
@@ -1378,23 +1457,68 @@ export class Contratacion {
                     $(e.target).addClass('tarjeta-promo-seleccion');
 
                     console.log('idHTML[' + idHTML + ']');
+
+                    let cadenaComplementos= localStorage.getItem('TP_STR_COMPLEMENTOS');
+                    let jsonComplementos = null;
+                    let promo = null;
+                    try{
+                        jsonComplementos = JSON.parse(cadenaComplementos);
+                        promo = jsonComplementos.promocion;
+                    }catch(e){}
+
                     if (idHTML == 'contenedorHBO') {
+                        console.log("Se escogio HBO,mostrar FOX");
                         $('#contenedorFOX').removeClass('tarjeta-promo-seleccion');
                         $('#contenedorHBOCambio').addClass('selected');
                         $('#contenedorFOXCambio').removeClass('selected');
+                        $("#complementoCanal").removeClass('selected');
 
                         $('#contenedorFoxApp').show();
                         $('#contenedorHBOApp').hide();
+
+                        //Llenar caracteristicas FOX
+                        if(promo!=null){
+                            promo.forEach((val,idx)=>{
+                                if(val.tipo=="PROMO_FOX"){
+                                    $("#contenedorFoxApp").attr("data-id",val.Id);
+                                    $("#contenedorFoxApp").attr("data-precio",val.precio);
+                                    $("#precioFox").html(val.precio);
+                                    $("#contenedorFoxApp").attr("data-name",val.nombre);
+                                    $("#contenedorFoxApp").attr("data-tipo",val.tipo);
+                                    $("#contenedorFoxApp").attr("data-index",val.adicionalProductoNombre);
+                                    localStorage.setItem("opChanSel","FOX");
+                                }
+                            });
+                        }                        
                     }
 
                     if (idHTML == 'contenedorFOX') {
+                        console.log("Se escogio FOX,mostrar HBO");
                         $('#contenedorHBO').removeClass('tarjeta-promo-seleccion');
                         $('#contenedorFOXCambio').addClass('selected');
                         $('#contenedorHBOCambio').removeClass('selected');
+                        $("#complementoCanal").removeClass('selected');
+
                         $('#contenedorHBOApp').show();
                         $('#contenedorFoxApp').hide();
+
+                        //Llenar caracteristicas HBO
+                        if(promo!=null){
+                            promo.forEach((val,idx)=>{
+                                if(val.tipo=="PROMO_HBO"){
+                                    $("#contenedorHBOApp").attr("data-id",val.Id);
+                                    $("#contenedorHBOApp").attr("data-precio",val.precio);
+                                    $("#precioHbo").html(val.precio);
+                                    $("#contenedorHBOApp").attr("data-name",val.nombre);
+                                    $("#contenedorHBOApp").attr("data-tipo",val.tipo);
+                                    $("#contenedorHBOApp").attr("data-index",val.adicionalProductoNombre);
+                                    localStorage.setItem("opChanSel","HBO");
+                                }
+                            })
+                        }
                     }
 
+                    console.log("Agregado=>" , agregado);
                     if (agregado == 'Agregado') {
                         this.props.cardPositionPromo = [...document.getElementsByClassName('content-contratacion__packages')];
                         this.props.windowW = window.innerWidth;
