@@ -1423,6 +1423,16 @@ export class Contratacion {
                     $(e.target).addClass('tarjeta-promo-seleccion');
 
                     console.log('idHTML[' + idHTML + ']');
+
+                    let cadenaComplementos= localStorage.getItem('TP_STR_COMPLEMENTOS');
+                    let jsonComplementos = null;
+                    let promo = null;
+                    try{
+                        jsonComplementos = JSON.parse(cadenaComplementos);
+                        promo = jsonComplementos.promocion;
+                        promo = jsonComplementos.television[0].adicional;
+                    }catch(e){}
+
                     if (idHTML == 'contenedorHBO') {
                         $('#contenedorFOX').removeClass('tarjeta-promo-seleccion');
                         $('#contenedorHBOCambio').addClass('selected');
@@ -1430,6 +1440,24 @@ export class Contratacion {
 
                         $('#contenedorFoxApp').show();
                         $('#contenedorHBOApp').hide();
+
+                        //Llenar caracteristicas FOX
+                        if(promo!=null){
+                            promo.forEach((val,idx)=>{
+                                if(val.tipo=="PROMO_FOX" || val.nombre.includes("FOX")){
+                                    console.log("***********ok")
+                                    $('#complementoCanal').attr("data-id",val.Id);
+                                    $('#complementoCanal').attr("data-precio",val.precio.toFixed(0));
+                                    $('#complementoCanal').attr("data-name",val.nombre);
+                                    $('#complementoCanal').attr("data-tipo",val.tipo);
+                                    $('#imageComplementBack').attr('src','/assets/img/pages/contratacion/Canales_2.png');
+                                    $('#imageComplementCanalLogo').attr('src','/assets/img/pages/contratacion/LogoFox.png');
+                                    $('#titleComplementCanal').html("Fox Premium");
+                                    $('#priceComplementCanal').html("$"+val.precio.toFixed(0));
+                                    localStorage.setItem("opChanSel","FOX");
+                                }
+                            });
+                        }
                     }
 
                     if (idHTML == 'contenedorFOX') {
@@ -1438,6 +1466,24 @@ export class Contratacion {
                         $('#contenedorHBOCambio').removeClass('selected');
                         $('#contenedorHBOApp').show();
                         $('#contenedorFoxApp').hide();
+
+                        //Llenar caracteristicas HBO
+                        if(promo!=null){
+                            promo.forEach((val,idx)=>{
+                                if(val.tipo=="PROMO_FOX" || val.nombre.includes("HBO")){
+                                    console.log("***********ok")
+                                    $('#complementoCanal').attr("data-id",val.Id);
+                                    $('#complementoCanal').attr("data-precio",val.precio.toFixed(0));
+                                    $('#complementoCanal').attr("data-name",val.nombre);
+                                    $('#complementoCanal').attr("data-tipo",val.tipo);
+                                    $('#imageComplementBack').attr('src','assets/img/pages/contratacion/Canales_1.png');
+                                    $('#imageComplementCanalLogo').attr('src','assets/img/pages/contratacion/hbo-holding.png');
+                                    $('#titleComplementCanal').html("Fox Premium");
+                                    $('#priceComplementCanal').html("$"+val.precio.toFixed(0));
+                                    localStorage.setItem("opChanSel","FOX");
+                                }
+                            });
+                        }
                     }
 
                     if (agregado == 'Agregado') {
