@@ -352,7 +352,7 @@ function obtenerCanales(tmcode) {
             var htmlCategoria = '<div class="row filterItem filtroCanal" data-filtro="todos">'+
                     '<div class="col-12">'+
                         '<div class="form-check">'+
-                            '<input class="form-check-input" type="radio" name="filterName" id="filterRadio" value="filterName">'+
+                            '<input class="form-check-input" type="radio" name="filterName" id="filterRadiotodos" value="filterName">'+
                             '<label class="form-check-label" for="filterRadio">'+
                                 'Todos ('+totalCanales+')'+
                             '</label>'+
@@ -360,12 +360,13 @@ function obtenerCanales(tmcode) {
                     '</div>'+
                 '</div>';
             $.each( arrayCategoria, function( index, categoria ) {
-                
+                var filtroNoSpaces = categoria;
+                filtroNoSpaces = filtroNoSpaces.split(" ").join("");
                 htmlCategoria += '<div class="row filterItem filtroCanal" data-filtro="'+categoria+'">'+
                         '<div class="col-12">'+
                             '<div class="form-check">'+
-                                '<input class="form-check-input" type="radio" name="filterName" id="filterRadio" value="filterName">'+
-                                '<label class="form-check-label" for="filterRadio">'+categoria+
+                                '<input class="form-check-input" type="radio" name="filterName" id="filterRadio'+filtroNoSpaces+'" value="filterName">'+
+                                '<label class="form-check-label" for="filterRadio'+filtroNoSpaces+'">'+categoria+
                                 '</label>'+
                             '</div>'+
                         '</div>'+
@@ -374,6 +375,10 @@ function obtenerCanales(tmcode) {
             
             $('#channelsContentList1').html('<div class="row" id="cntCanales">'+htmlInterno+'</div>');
             $('#filterCat').html(htmlCategoria);
+
+            /*setTimeout(function(){
+                $('#filterRadiotodos').prop('checked', true);
+            },2000);*/
 
         }catch(e){            
 

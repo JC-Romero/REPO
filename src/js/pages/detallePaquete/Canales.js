@@ -604,28 +604,29 @@ export class Canales{
 
 $(document).ready(function() {
     //printConsole('', 'SCRIPT CHANNEL.JS CARGADO OK');
-
+    var lastSel = "todos";
+    
     $("body").on('click', '.filtroCanal', function () {
         var filtroSeleccionado = $(this).attr('data-filtro');
-        /*console.log("Filtro seleccionado");
-        console.log(filtroSeleccionado);
-        console.log("Cambiar check");*/
-        var item = $(this);
-        /*console.log(item);
-        console.log(item.find("#filterRadio"));*/
-        //$('input[type="radio"]').prop('checked', false);
-        //item.find("#filterRadio").attr("checked",true);
+       
+        var filtroNoSpaces = filtroSeleccionado;
+        filtroNoSpaces = filtroNoSpaces.split(" ").join("");
+        
+        if(lastSel.length>0){
+            $('#filterRadio'+lastSel).prop('checked', false);
+        }        
+       
+        $('#filterRadio'+filtroNoSpaces).prop('checked', true);
+        lastSel = filtroNoSpaces;
 
         if(filtroSeleccionado == 'todos'){
             $('.content-channel').show();            
-            item.find("#filterRadio").attr("checked",true);
         }else{
             $.each( $('.content-channel'), function( key, html ) {
                 var categoriaCanal = $(this).attr('data-categoria');
 
                 if(filtroSeleccionado == categoriaCanal){
                     $(this).show();
-                    item.find("#filterRadio").attr("checked",true);
                 }
                 if(filtroSeleccionado != categoriaCanal){
                     $(this).hide();
@@ -683,8 +684,7 @@ function obtenerCanales(tmcode) {
                                             '</div>'+
                                             '<span>'+objCanal.number+'</span>'+
                                         '</div>';
-                    }
-                        
+                    }                        
                 });
             });
 
@@ -695,7 +695,6 @@ function obtenerCanales(tmcode) {
 
             $('#channelsContentList1').html('<ul class="channels-list"><li id="cntCanales">'+htmlInterno+'</li></ul>');
             $('#filterCat').html(htmlCategoria);
-
         }catch(e){
             
 
