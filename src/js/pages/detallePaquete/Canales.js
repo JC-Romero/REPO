@@ -607,25 +607,24 @@ $(document).ready(function() {
 
     $("body").on('click', '.filtroCanal', function () {
         var filtroSeleccionado = $(this).attr('data-filtro');
-        /*console.log("Filtro seleccionado");
+        console.log("**********")
+        console.log("Filtro seleccionado");
         console.log(filtroSeleccionado);
-        console.log("Cambiar check");*/
-        var item = $(this);
-        /*console.log(item);
-        console.log(item.find("#filterRadio"));*/
-        //$('input[type="radio"]').prop('checked', false);
-        //item.find("#filterRadio").attr("checked",true);
+        var filtroNoSpaces = filtroSeleccionado;
+        filtroNoSpaces = filtroNoSpaces.split(" ").join("");
+        console.log("Filtro No spaces");
+        console.log(filtroNoSpaces);
+        $('input[type="radio"]').attr('checked',false);
+        $(this).find("#filterRadio"+filtroNoSpaces).attr("checked",true);
 
         if(filtroSeleccionado == 'todos'){
             $('.content-channel').show();            
-            item.find("#filterRadio").attr("checked",true);
         }else{
             $.each( $('.content-channel'), function( key, html ) {
                 var categoriaCanal = $(this).attr('data-categoria');
 
                 if(filtroSeleccionado == categoriaCanal){
                     $(this).show();
-                    item.find("#filterRadio").attr("checked",true);
                 }
                 if(filtroSeleccionado != categoriaCanal){
                     $(this).hide();

@@ -256,18 +256,19 @@ export class Paquetes {
 			var canalesDescripcion = (objPaquete.detalle.canales != undefined)? objPaquete.detalle.canales: '';
 			if (opt == "home") {
 				var nombrePaq = objPaquete.nombre;
-				// Add Arthur
-				
-				var incluido = false;
+								
 				if(nombrePaq.includes("UNBOX") || nombrePaq.includes("MATCH")){
 					var arrPaq = nombrePaq.split(" ");
 
 					nombrePaq = arrPaq[0].charAt(0).toUpperCase() + arrPaq[0].slice(1).toLowerCase();
 					nombrePaq = nombrePaq + " " + arrPaq[1];
+				}
+				
+				var incluido = false;
+				if(nombrePaq.includes("Unbox") || nombrePaq.includes("Match")){
 					incluido = true;
 				}
-				plantillaHTML += 
-				'<div class="col-12 col-sm-6 mx-sm-auto col-md-6 col-lg-4 col-xl-3">'+
+				plantillaHTML += '<div class="col-12 col-sm-6 mx-sm-auto col-md-6 col-lg-4 col-xl-3">'+
                 	'<div class="row">'+
 	                    '<div class="col-10 col-sm-11 col-md-11 col-lg-11 col-xl-11 mx-auto mainContainerpackage '+claseTipoPaquete+'"'+
 	                        'onclick="showBootstrapModalFirst(\'installLocation\');">'+
@@ -329,11 +330,13 @@ export class Paquetes {
 		                        <hr>
 		                        <div class="imagePackage">
 		                            <img src="/assets/img/nuevos/1200px-Netflix_2015_logo.svg.png" alt="Image Paquete">
-		                        </div>
+								</div>
+								<div class="descriptionApp">
+									<p><span> incluido </span></p>
+								</div>
 		                        <div class="descriptionApp">
 		                            <p>${arrayPantallas[1]} pantalla(s) <span>Premium UHD</span></p>
-		                        </div>
-		                        
+		                        </div>		                        
 		                        <div class="packagePrice">
 		                            <p><a >Desde: <span>$ ${clase.formatoMonedad(objPaquete.precioLista, 0, ".", ",") } al mes</span></a></p>
 		                        </div>
@@ -343,8 +346,7 @@ export class Paquetes {
 		        </div>`;
 			}else if(opt == "regular"){
 				var colores = ['surprisePlus','emotionPlus','emotion', 'funPlus', 'fun', 'starter']
-        
-		        
+
 		        plantillaHTML += ``+
 		        `<div class="col-12 col-sm-6 mx-sm-auto col-md-6 col-lg-4 col-xl-4 ${claseOcultar}">
 		            <div class="row">
@@ -396,7 +398,10 @@ export class Paquetes {
                                 <hr>
                                 <div class="imagePackage">
                                     <img src="${imagenPaquete}" alt="Image Paquete">
-                                </div>
+								</div>
+								<div class="descriptionApp">
+									<p><span> incluido </span></p>
+								</div>
                                 <div class="descriptionApp">
                                     <p>${descriptionApp}</span></p>
                                 </div>

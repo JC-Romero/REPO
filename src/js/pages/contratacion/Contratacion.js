@@ -466,29 +466,33 @@ export class Contratacion {
             this.props.barAdd.removeAttribute('style');
         });
 
-        this.props.optTvAdicional.addEventListener('click',()=>{
-            let precio = Math.round($('#complementoTVAdicional').attr('data-precio'));
-            let precioTotal = $("#precioComplemento").html().replace("$","").trim();
-            precioTotal = parseFloat(precioTotal);
-            if ($('#complementoTVAdicional').hasClass('selected')) {
-                precioTotal = precioTotal - precio;
-            }else{
-                precioTotal = precioTotal + precio;
-            }
-            $("#precioComplemento").html("$"+precioTotal);
-        });
+        try{
+            this.props.optTvAdicional.addEventListener('click',()=>{
+                let precio = Math.round($('#complementoTVAdicional').attr('data-precio'));
+                let precioTotal = $("#precioComplemento").html().replace("$","").trim();
+                precioTotal = parseFloat(precioTotal);
+                if ($('#complementoTVAdicional').hasClass('selected')) {
+                    precioTotal = precioTotal - precio;
+                }else{
+                    precioTotal = precioTotal + precio;
+                }
+                $("#precioComplemento").html("$"+precioTotal);
+            });
+        }catch(e){}
 
-        this.props.optWifi.addEventListener('click',()=>{
-            let precio = Math.round($('#complementoWifi').attr('data-precio'));
-            let precioTotal = $("#precioComplemento").html().replace("$","").trim();
-            precioTotal = parseFloat(precioTotal);
-            if ($('#complementoWifi').hasClass('selected')) {
-                precioTotal = precioTotal - precio;
-            }else{
-                precioTotal = precioTotal + precio;
-            }
-            $("#precioComplemento").html("$"+precioTotal);
-        });
+        try{
+            this.props.optWifi.addEventListener('click',()=>{
+                let precio = Math.round($('#complementoWifi').attr('data-precio'));
+                let precioTotal = $("#precioComplemento").html().replace("$","").trim();
+                precioTotal = parseFloat(precioTotal);
+                if ($('#complementoWifi').hasClass('selected')) {
+                    precioTotal = precioTotal - precio;
+                }else{
+                    precioTotal = precioTotal + precio;
+                }
+                $("#precioComplemento").html("$"+precioTotal);
+            });
+        }catch(e){}
 
         $("body").on('click', '.content-contratacion__shopping-cart-top--car', function () {
             localStorage.setItem('TP_CONTADOR_CARRITO', '1');
