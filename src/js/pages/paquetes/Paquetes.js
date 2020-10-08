@@ -211,11 +211,13 @@ export class Paquetes {
 			var claseTipoPaquete;
 			var imagenPaquete;
 			var descriptionApp;
+			var texto="";
 
 			if(objPaquete.nombre.includes("unbox") || objPaquete.nombre.includes("UNBOX") || objPaquete.nombre.includes("Unbox") || opt == "unbox"){
 				claseTipoPaquete = "unbox";
 				imagenPaquete = "/assets/img/nuevos/amazon-prime-logoMain.png";
 				descriptionApp = "Envíos, música y <span>prime video.</span>";
+				texto="<span>Video, música y envíos gratis.</span>";
 			}else if(objPaquete.nombre.includes("match") || objPaquete.nombre.includes("MATCH") || objPaquete.nombre.includes("Match")){
 				claseTipoPaquete = "match";
 				imagenPaquete = "/assets/img/nuevos/1200px-Netflix_2015_logo.svg.png";
@@ -284,7 +286,7 @@ export class Paquetes {
 	                                
 	                            '</div>'+
 	                            '<hr>'+
-	                            '<div class="imagePackage">'+
+	                            '<div class="imagePackage">'+texto+
 	                                '<img src="'+imagenPaquete+'" alt="Image Paquete">'+
 								'</div>';
 
