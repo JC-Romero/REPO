@@ -240,7 +240,7 @@ export class FinalizaContratacion {
             }
         });
 
-        $("#titularNombre, #titularApellidoPaterno, #titularApellidoMaterno, #nombreTarjeta, #facturacionColonia, #facturacionMunicipio, #facturacionEstado").keypress(function(e){
+        $("#titularNombre, #titularApellidoPaterno, #titularApellidoMaterno, #nombreTarjeta, #facturacionColonia, #facturacionMunicipio, #facturacionEstado, #nombreMoral, #apellidosMoral").keypress(function(e){
             let letraCapturada = String.fromCharCode(e.which);
             var regex = /[a-zA-ZÑñ\sáéíóúÁÉÍÓÚ]/;
             var result = regex.test(letraCapturada);
@@ -377,7 +377,9 @@ export class FinalizaContratacion {
                         "constitucionDia":diaMoral,
                         "constitucionMes":mesMoral,
                         "constitucionAnio":anioMoral,
-                        "tipo": "moral"
+                        "tipo": "moral",
+                        "email": titularEmail,
+                        "celular": titularCelular
                     };
                     referenciaClase.actualizarClienteTitular(objetoTitular);
                     referenciaClase.actualizarClienteTitularModal(objetoTitularModal);
@@ -912,11 +914,13 @@ export class FinalizaContratacion {
             if(referenciaClase.esVacio(titularNombre)){
                 $("#errorNombreContratacion").css("display","block");
                 $("#errorNombreContratacion").html("*Campo obligatorio");
+                referenciaClase.scrollToError('titularNombre');
                 validacion = false;
             }else{
                 if(!referenciaClase.validaName(titularNombre)){
                     $("#errorNombreContratacion").css("display","block");
                     $("#errorNombreContratacion").html("*Campo no v&aacute;lido");
+                    referenciaClase.scrollToError('titularNombre');
                     validacion = false;
                 } else {
                    $("#errorNombreContratacion").hide(); 
@@ -926,11 +930,13 @@ export class FinalizaContratacion {
             if(referenciaClase.esVacio(titularApellidoPaterno)){
                 $("#errorPaternoContratacion").css("display","block");
                 $("#errorPaternoContratacion").html("*Campo obligatorio");
+                referenciaClase.scrollToError('titularApellidoPaterno');
                 validacion = false;
             }else{
                 if(!referenciaClase.validaName(titularApellidoPaterno)){
                     $("#errorPaternoContratacion").css("display","block");
                     $("#errorPaternoContratacion").html("*Campo no v&aacute;lido");
+                    referenciaClase.scrollToError('titularApellidoPaterno');
                     validacion = false;
                 } else {
                    $("#errorPaternoContratacion").hide(); 
@@ -940,25 +946,29 @@ export class FinalizaContratacion {
             if(referenciaClase.esVacio(titularApellidoMaterno)){
                 $("#errorMaternoContratacion").css("display","block");
                 $("#errorMaternoContratacion").html("*Campo obligatorio");
+                referenciaClase.scrollToError('titularApellidoMaterno');
                 validacion = false;
             }else{
                 if(!referenciaClase.validaName(titularApellidoMaterno)){
                     $("#errorMaternoContratacion").css("display","block");
                     $("#errorMaternoContratacion").html("*Campo no v&aacute;lido");
+                    referenciaClase.scrollToError('titularApellidoMaterno');
                     validacion = false;
                 } else {
-                   $("#errorPaternoContratacion").hide(); 
+                   $("#errorMaternoContratacion").hide(); 
                 }
             }
 
             if(referenciaClase.esVacio(titularRFC)){
                 $("#errorRFCContratacion").css("display","block");
                 $("#errorRFCContratacion").html("*Campo obligatorio");
+                referenciaClase.scrollToError('titularRFC');
                 validacion = false;
             }else{
                 if(!referenciaClase.validaRFC(titularRFC)){
                     $("#errorRFCContratacion").css("display","block");
                     $("#errorRFCContratacion").html("*Campo no v&aacute;lido");
+                    referenciaClase.scrollToError('titularRFC');
                     validacion = false;
                 } else {
                    $("#errorRFCContratacion").hide(); 
@@ -968,11 +978,13 @@ export class FinalizaContratacion {
             if(referenciaClase.esVacio(titularTelefono)){
                 $("#errorTelContratacion").css("display","block");
                 $("#errorTelContratacion").html("*Campo obligatorio");
+                referenciaClase.scrollToError('titularTelefono');
                 validacion = false;
             }else{
                 if(!referenciaClase.validaTelefono(titularTelefono)){
                     $("#errorTelContratacion").css("display","block");
                     $("#errorTelContratacion").html("*Campo no v&aacute;lido");
+                    referenciaClase.scrollToError('titularTelefono');
                     validacion = false;
                 } else {
                    $("#errorTelContratacion").hide(); 
@@ -982,11 +994,13 @@ export class FinalizaContratacion {
             if(referenciaClase.esVacio(titularCelular)){
                 $("#errorMovilContratacion2").css("display","block");
                 $("#errorMovilContratacion2").html("*Campo obligatorio");
+                referenciaClase.scrollToError('titularCelular');
                 validacion = false;
             }else{
                 if(!referenciaClase.validaTelefono(titularCelular)){
                     $("#errorMovilContratacion2").css("display","block");
                     $("#errorMovilContratacion2").html("*Campo no v&aacute;lido");
+                    referenciaClase.scrollToError('titularCelular');
                     validacion = false;
                 } else {
                    $("#errorMovilContratacion2").hide(); 
@@ -996,6 +1010,7 @@ export class FinalizaContratacion {
             if(referenciaClase.esVacio(inputINE)){
                 validacion = false;
                 $('#contenedorSubeArchivoINE').css('border', '1px dashed red');
+                referenciaClase.scrollToError('inputFileINE');
             }else{
                 $('#contenedorSubeArchivoINE').css('border', '1px dashed #1A76D2');
             }
@@ -1003,6 +1018,7 @@ export class FinalizaContratacion {
             if(referenciaClase.esVacio(inputComprobante)){
                 validacion = false;
                 $('#contenedorSubeArchivoComprobante').css('border', '1px dashed red');
+                referenciaClase.scrollToError('inputFileComprobante');
             }else{
                 $('#contenedorSubeArchivoComprobante').css('border', '1px dashed #1A76D2');
             }
@@ -1010,11 +1026,13 @@ export class FinalizaContratacion {
             if(referenciaClase.esVacio(inputEmail)){
                 $("#errorMailContratacion2").css("display","block");
                 $("#errorMailContratacion2").html("*Campo obligatorio");
+                referenciaClase.scrollToError('titularEmail');
                 validacion = false;
             }else{
                 if(!referenciaClase.validaEmail(inputEmail)){
                     $("#errorMailContratacion2").css("display","block");
                     $("#errorMailContratacion2").html("*Campo no v&aacute;lido");
+                    referenciaClase.scrollToError('titularEmail');
                     validacion = false;
                 } else {
                    $("#errorMailContratacion2").hide(); 
@@ -1040,11 +1058,13 @@ export class FinalizaContratacion {
             if(referenciaClase.esVacio(razonSocial)){
                 $("#errorRazonSocial").css("display","block");
                 $("#errorRazonSocial").html("*Campo obligatorio");
+                referenciaClase.scrollToError('razonSocial');
                 validacion = false;
             }else{
                 if(!referenciaClase.validaCalle(razonSocial)){
                     $("#errorRazonSocial").css("display","block");
                     $("#errorRazonSocial").html("*Campo no v&aacute;lido");
+                    referenciaClase.scrollToError('razonSocial');
                     validacion = false;
                 } else {
                    $("#errorRazonSocial").hide(); 
@@ -1054,6 +1074,7 @@ export class FinalizaContratacion {
             if(anioMoral == "0"){
                 $("#errorAnioMoral").css("display","block");
                 $("#errorAnioMoral").html("*Campo no v&aacute;lido");
+                referenciaClase.scrollToError('anioMoral');
                 validacion = false;
             }else{
                 $("#errorAnioMoral").hide();
@@ -1062,6 +1083,7 @@ export class FinalizaContratacion {
             if(mesMoral == "0"){
                 $("#errorAnioMoral").css("display","block");
                 $("#errorAnioMoral").html("*Campo no v&aacute;lido");
+                referenciaClase.scrollToError('mesMoral');
                 validacion = false;
             }else{
                 $("#errorAnioMoral").hide();
@@ -1071,6 +1093,7 @@ export class FinalizaContratacion {
                 console.log("estoy en diaMoral "+diaMoral);
                 $("#errorAnioMoral").css("display","block");
                 $("#errorAnioMoral").html("*Campo no v&aacute;lido");
+                referenciaClase.scrollToError('diaMoral');
                 validacion = false;
             }else{
                 $("#errorAnioMoral").hide();
@@ -1079,11 +1102,13 @@ export class FinalizaContratacion {
             if(referenciaClase.esVacio(rfcMoral)){
                 $("#errorRfcMoral").css("display","block");
                 $("#errorRfcMoral").html("*Campo obligatorio");
+                referenciaClase.scrollToError('rfcMoral');
                 validacion = false;
             }else{
                 if(!referenciaClase.validaRFC(rfcMoral)){
                     $("#errorRfcMoral").css("display","block");
                     $("#errorRfcMoral").html("*Campo no v&aacute;lido");
+                    referenciaClase.scrollToError('rfcMoral');
                     validacion = false;
                 } else {
                    $("#errorRfcMoral").hide(); 
@@ -1093,11 +1118,13 @@ export class FinalizaContratacion {
             if(referenciaClase.esVacio(nombreMoral)){
                 $("#errorNombreMoral").css("display","block");
                 $("#errorNombreMoral").html("*Campo obligatorio");
+                referenciaClase.scrollToError('nombreMoral');
                 validacion = false;
             }else{
                 if(!referenciaClase.validaName(nombreMoral)){
                     $("#errorNombreMoral").css("display","block");
                     $("#errorNombreMoral").html("*Campo no v&aacute;lido");
+                    referenciaClase.scrollToError('nombreMoral');
                     validacion = false;
                 } else {
                    $("#errorNombreMoral").hide(); 
@@ -1107,11 +1134,13 @@ export class FinalizaContratacion {
             if(referenciaClase.esVacio(apellidosMoral)){
                 $("#errorApellidosMoral").css("display","block");
                 $("#errorApellidosMoral").html("*Campo obligatorio");
+                referenciaClase.scrollToError('apellidosMoral');
                 validacion = false;
             }else{
                 if(!referenciaClase.validaName(apellidosMoral)){
                     $("#errorApellidosMoral").css("display","block");
                     $("#errorApellidosMoral").html("*Campo no v&aacute;lido");
+                    referenciaClase.scrollToError('apellidosMoral');
                     validacion = false;
                 } else {
                    $("#errorApellidosMoral").hide(); 
@@ -1121,11 +1150,13 @@ export class FinalizaContratacion {
             if(referenciaClase.esVacio(inputEmail)){
                 $("#errorCorreoMoral").css("display","block");
                 $("#errorCorreoMoral").html("*Campo obligatorio");
+                referenciaClase.scrollToError('correoMoral');
                 validacion = false;
             }else{
                 if(!referenciaClase.validaEmail(inputEmail)){
                     $("#errorCorreoMoral").css("display","block");
                     $("#errorCorreoMoral").html("*Campo no v&aacute;lido");
+                    referenciaClase.scrollToError('correoMoral');
                     validacion = false;
                 } else {
                    $("#errorCorreoMoral").hide(); 
@@ -1135,15 +1166,41 @@ export class FinalizaContratacion {
             if(referenciaClase.esVacio(titularCelular)){
                 $("#errorCelularMoral").css("display","block");
                 $("#errorCelularMoral").html("*Campo obligatorio");
+                referenciaClase.scrollToError('celularMoral');
                 validacion = false;
             }else{
                 if(!referenciaClase.validaTelefono(titularCelular)){
                     $("#errorCelularMoral").css("display","block");
                     $("#errorCelularMoral").html("*Campo no v&aacute;lido");
+                    referenciaClase.scrollToError('celularMoral');
                     validacion = false;
                 } else {
                    $("#errorCelularMoral").hide(); 
                 }
+            }
+
+            if(referenciaClase.esVacio(inputINE)){
+                validacion = false;
+                $('#contenedorSubeArchivoINE').css('border', '1px dashed red');
+                referenciaClase.scrollToError('inputFileINE');
+            }else{
+                $('#contenedorSubeArchivoINE').css('border', '1px dashed #1A76D2');
+            }
+
+            if(referenciaClase.esVacio(inputComprobante)){
+                validacion = false;
+                $('#contenedorSubeArchivoComprobante').css('border', '1px dashed red');
+                referenciaClase.scrollToError('inputFileComprobante');
+            }else{
+                $('#contenedorSubeArchivoComprobante').css('border', '1px dashed #1A76D2');
+            }
+
+            if(referenciaClase.esVacio(inputRFC)){
+                validacion = false;
+                $('#contenedorSubeArchivoRFC').css('border', '1px dashed red');
+                referenciaClase.scrollToError('inputFileComprobante');
+            }else{
+                $('#contenedorSubeArchivoRFC').css('border', '1px dashed #1A76D2');
             }
         }        
 
@@ -1626,16 +1683,19 @@ export class FinalizaContratacion {
                 $('#visasvg').removeAttr('style');
                 $('#mastersvg').attr('style','opacity:10%');
                 $('#amexsvg').attr('style','opacity:10%');
+                $('#imagenTarjetaResumen').attr('src','assets/img/pages/contratacion/visa.svg');
                 break;
             case 'MASTERCARD' :
                 $('#mastersvg').removeAttr('style');
                 $('#visasvg').attr('style','opacity:10%');
                 $('#amexsvg').attr('style','opacity:10%');
+                $('#imagenTarjetaResumen').attr('src','assets/img/pages/contratacion/mastercard.svg');
                 break;
             case 'AMEX' :
                 $('#amexsvg').removeAttr('style');                
                 $('#visasvg').attr('style','opacity:10%');
                 $('#mastersvg').attr('style','opacity:10%');
+                $('#imagenTarjetaResumen').attr('src','assets/img/pages/contratacion/amex.svg');
                 break;
             default :
                 break;
@@ -2706,6 +2766,12 @@ export class FinalizaContratacion {
         } catch (error) {
             
         }
+    }
+
+    scrollToError(elementId){
+        $('html, body').animate({
+            scrollTop: ($('#'+elementId).offset().top - 300)
+        }, 200);
     }
 }
 

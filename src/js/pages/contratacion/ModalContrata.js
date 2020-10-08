@@ -75,6 +75,7 @@ export class ModalContrata {
         this.setText('Comienza tu contratación', 'Hemos enviado un código de seguridad, ingr\u00E9salo para continuar.');
         this.props.step_1.style.display = 'none';
         this.props.step_2.style.display = 'flex';
+        document.getElementById('nip_1').focus();
     }
 
     onkeypress() {
@@ -113,6 +114,7 @@ export class ModalContrata {
 
             if((celular !== '' || celular !== undefined) &&
                 (correo !== '' || correo !== undefined)){
+                $('.iconoContinuar').show();
                 referenciaClase.iniciarObjetoPersona(correo, celular);
                 referenciaClase.generarCodigo(correo, celular);
             }
